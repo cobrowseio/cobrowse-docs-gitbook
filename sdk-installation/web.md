@@ -1,3 +1,7 @@
+---
+description: Javascript SDK for Web
+---
+
 # Web
 
 ## Cobrowse.io - Javascript SDK for Web
