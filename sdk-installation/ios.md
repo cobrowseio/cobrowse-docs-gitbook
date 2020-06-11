@@ -1,14 +1,10 @@
+---
+description: iOS Native SDK
+---
+
 # iOS
 
-
-
-## Cobrowse.io - iOS Native SDK
-
 Cobrowse.io for iOS supports iOS 9.0+.
-
-Cobrowse.io is 100% free and easy to try out in your own apps. Please see full documentation at [https://cobrowse.io/docs](https://cobrowse.io/docs).
-
-Try our **online demo** at the bottom of our homepage at [https://cobrowse.io/\#tryit](https://cobrowse.io/#tryit).
 
 ### Installation
 
@@ -109,22 +105,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ### Try it out
 
 Once you have your app running in the iOS Simulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
-
-### Optional features
-
-[Initiate sessions with push](./docs/initiate-with-push.md)
-
-[Use 6-digit codes](./docs/user-generated-codes.md)
-
-[Redact sensitive data](./docs/redact-sensitive-data.md)
-
-[Requiring acceptance from the user](./docs/require-user-consent.md)
-
-[Customizing the interface](./docs/customizing-the-interface.md)
-
-[Full device screenshare](./docs/full-device-screenshare.md)
-
-[Alternate render method](./docs/alternate-render-method.md)
 
 ### Questions?
 
