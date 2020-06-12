@@ -41,7 +41,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="iOS \(Obj-C\)" %}
-```text
+```objective-c
 @import CobrowseIO;
 
 - (BOOL)application:(UIApplication*) application didFinishLaunchingWithOptions:(NSDictionary*) launchOptions
