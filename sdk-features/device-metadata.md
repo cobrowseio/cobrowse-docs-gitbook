@@ -20,7 +20,7 @@ CobrowseIO.customData = {
 {% endtab %}
 
 {% tab title="iOS \(Swift\)" %}
-```
+```swift
  import CobrowseIO
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
@@ -43,7 +43,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="iOS \(Obj-C\)" %}
-```
+```objective-c
 @import CobrowseIO;
 
 - (BOOL)application:(UIApplication*) application didFinishLaunchingWithOptions:(NSDictionary*) launchOptions
@@ -56,7 +56,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="Android" %}
-```
+```java
 package com.example;
 
 import android.app.Application;
@@ -87,7 +87,7 @@ public class MainApplication extends Application {
 {% endtab %}
 
 {% tab title="React Native" %}
-```
+```javascript
 CobrowseIO.customData = {
     user_email: "react-native@example.com"
 };
@@ -95,7 +95,7 @@ CobrowseIO.customData = {
 {% endtab %}
 
 {% tab title="Xamarin" %}
-```
+```cs
 CobrowseIO.Instance.SetLicense("<your license key here>");
 CobrowseIO.Instance.SetCustomData(new Dictionary<string, object>
 {
