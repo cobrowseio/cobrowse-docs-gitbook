@@ -1,8 +1,6 @@
 # Add device metadata
 
-
-
-#### Add device metadata
+## Add device metadata
 
 To help you identify, search, and filter devices in your Cobrowse dashboard, it's helpful to specify any meaningful metadata.
 
@@ -43,7 +41,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="iOS \(Obj-C\)" %}
-```objective-c
+```text
 @import CobrowseIO;
 
 - (BOOL)application:(UIApplication*) application didFinishLaunchingWithOptions:(NSDictionary*) launchOptions
@@ -95,7 +93,7 @@ CobrowseIO.customData = {
 {% endtab %}
 
 {% tab title="Xamarin" %}
-```cs
+```csharp
 CobrowseIO.Instance.SetLicense("<your license key here>");
 CobrowseIO.Instance.SetCustomData(new Dictionary<string, object>
 {
@@ -110,11 +108,5 @@ CobrowseIO.Instance.Start();
 {% endtab %}
 {% endtabs %}
 
-```javascript
-CobrowseIO.customData = {
-    user_name: "Joe Blogs",
-    user_id: "12345",
-    user_email: "joe@example.com"
-}
-```
+
 
