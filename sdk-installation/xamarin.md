@@ -108,25 +108,6 @@ Please register an account and generate your free License Key at [https://cobrow
 
 This will associate sessions from your mobile app with your Cobrowse account.
 
-#### Add device metadata
-
-To help you identify, search, and filter devices in your Cobrowse dashboard, it's helpful to specify any meaningful metadata. We recommend specifying the end-user's email if available.
-
-You may add any custom key/value pairs you'd like, and they will all be searchable and filterable in your online dashboard. We've added a few placeholders for convenience only - all fields are optional.
-
-```csharp
-CobrowseIO.Instance.SetLicense("<your license key here>");
-CobrowseIO.Instance.SetCustomData(new Dictionary<string, object>
-{
-    { CobrowseIO.UserIdKey, "<your_user_id>" },
-    { CobrowseIO.UserNameKey, "<your_user_name>" },
-    { CobrowseIO.UserEmailKey, "<your_user_email>" },
-    { CobrowseIO.DeviceIdKey, "<your_device_id>" },
-    { CobrowseIO.DeviceNameKey, "<your_device_name>" }
-});
-CobrowseIO.Instance.Start();
-```
-
 ### Xamarin sample app
 
 We provide a sample application showing how to use Cobrowse.io NuGet packages in Xamarin. [Xamarin.Forms sample](https://github.com/cobrowseio/cobrowse-sdk-xamarin/tree/master/SampleForms) includes using 6-digit codes, full device screen sharing, and redacting sensitive data. [Xamarin Classic sample](https://github.com/cobrowseio/cobrowse-sdk-xamarin/tree/master/Sample) is also available.

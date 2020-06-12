@@ -13,7 +13,7 @@
 ## SDK Features
 
 * [Add device metadata](sdk-features/device-metadata.md)
-* [6-digit codes](sdk-features/6-digit-codes.md)
+* [Use 6-digit codes](sdk-features/6-digit-codes.md)
 * [Redact sensitive data](sdk-features/redact-sensitive-data.md)
 * [Require acceptance from user](sdk-features/require-acceptance-from-user.md)
 * [Customize the interface](sdk-features/customize-the-interface.md)

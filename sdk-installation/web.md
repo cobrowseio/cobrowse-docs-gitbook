@@ -28,20 +28,6 @@ Please register an account and generate your free License Key at [https://cobrow
 
 This will associate sessions from your website with your Cobrowse.io account.
 
-#### Add device metadata
-
-To help you identify, search, and filter devices in your Cobrowse dashboard, it's helpful to specify any meaningful metadata.
-
-You may add any custom key/value pairs you'd like, and they will all be searchable and filterable in your online dashboard. We've added a few placeholders for convenience only - all fields are optional.
-
-```javascript
-CobrowseIO.customData = {
-    user_name: "Joe Blogs",
-    user_id: "12345",
-    user_email: "joe@example.com"
-}
-```
-
 ### Try it out
 
 Once you have your Javascript snippet and license key set up, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!

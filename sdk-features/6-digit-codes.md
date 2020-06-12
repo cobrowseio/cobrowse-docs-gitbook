@@ -1,2 +1,2 @@
-# 6-digit codes
+# Use 6-digit codes
 

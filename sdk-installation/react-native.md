@@ -26,18 +26,6 @@ CobrowseIO.license = "<your license key here>";
 CobrowseIO.start();
 ```
 
-#### Add device metadata
-
-To help you identify, search, and filter devices in your Cobrowse dashboard, it's helpful to specify any meaningful metadata. We recommend specifying the end-user's email if available.
-
-You may add any custom key/value pairs you'd like, and they will all be searchable and filterable in your online dashboard. We've added a few placeholders for convenience only - all fields are optional.
-
-```javascript
-CobrowseIO.customData = {
-    user_email: "react-native@example.com"
-};
-```
-
 ### Try it out
 
 Once you have your app running in the iOS Simulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!

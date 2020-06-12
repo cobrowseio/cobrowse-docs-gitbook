@@ -47,41 +47,6 @@ Please register an account and generate your free License Key at [https://cobrow
 
 This will associate sessions from your mobile app with your Cobrowse.io account.
 
-#### Add device metadata
-
-To help you identify, search, and filter devices in your Cobrowse dashboard, it's helpful to specify any meaningful metadata.
-
-You may add any custom key/value pairs you'd like, and they will all be searchable and filterable in your online dashboard. We've added a few placeholders for convenience only - all fields are optional.
-
-```java
-package com.example;
-
-import android.app.Application;
-import io.cobrowse.CobrowseIO;
-
-public class MainApplication extends Application {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
-        CobrowseIO.instance().license("<your license key here>");
-
-        Log.i("App", "Cobrowse device id: " + CobrowseIO.instance().deviceId(this));
-
-        HashMap<String, Object> customData = new HashMap<>();
-        customData.put("user_id", "<your_user_id>");
-        customData.put("user_name", "<your_user_name>");
-        customData.put("user_email", "<your_user_email>");
-        customData.put("device_id", "<your_device_id>");
-        customData.put("device_name", "<your_device_name>");
-        CobrowseIO.instance().customData(customData);
-
-        CobrowseIO.instance().start(this);
-    }
-}
-```
-
 ### Try it out
 
 Once you have your app running in the Android emulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
