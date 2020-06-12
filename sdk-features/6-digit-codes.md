@@ -2,11 +2,11 @@
 
 ## Implementation
 
-These are the requirements to initiate sessions using 6-digit codes. More info at <https://cobrowse.io/docs#user-generated-codes>
+These are the requirements to initiate sessions using 6-digit codes. More info at [https://cobrowse.io/docs\#user-generated-codes](https://cobrowse.io/docs#user-generated-codes)
 
 You may expose a small UI in your app for users to generate a 6-digit code that they pass to an agent over the phone or chat to initiate a session.
 
-**Note:** this guide will use our default UI to display the code. You can replace it with your own UI if you prefer! Please see Customizing the interface!
+**Note:** this guide will use our default UI to display the code. You can replace it with your own UI if you prefer! Please see Customize the interface!
 
 {% tabs %}
 {% tab title="Web" %}
@@ -131,6 +131,7 @@ namespace SampleApp.iOS
 // For a full example written in C#, see our sample app at: <https://github.com/cobrowseio/cobrowse-sdk-xamarin>
 ```
 {% endtab %}
+
 {% tab title="Xamarin.Android" %}
 ```csharp
 using Xamarin.CobrowseIO;
@@ -152,6 +153,7 @@ namespace SampleApp.Android
 // For a full example written in C#, see our sample app at: <https://github.com/cobrowseio/cobrowse-sdk-xamarin>
 ```
 {% endtab %}
+
 {% tab title="Xamarin.Forms" %}
 ```csharp
 using Xamarin.CobrowseIO.Abstractions;
