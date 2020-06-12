@@ -41,7 +41,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="iOS \(Obj-C\)" %}
-```text
+```objectivec
 @import CobrowseIO;
 
 - (BOOL)application:(UIApplication*) application didFinishLaunchingWithOptions:(NSDictionary*) launchOptions
@@ -107,17 +107,3 @@ CobrowseIO.Instance.Start();
 ```
 {% endtab %}
 {% endtabs %}
-
-
-
-```objectivec
-@import CobrowseIO;
-
-- (BOOL)application:(UIApplication*) application didFinishLaunchingWithOptions:(NSDictionary*) launchOptions
-{
-    CobrowseIO.instance.license = @"<your license key here>";
-    [CobrowseIO.instance start];
-    return YES;
-}
-```
-
