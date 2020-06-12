@@ -19,7 +19,7 @@ CobrowseIO.customData = {
 
 {% tab title="iOS \(Swift\)" %}
 ```swift
- import CobrowseIO
+import CobrowseIO
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
 {
