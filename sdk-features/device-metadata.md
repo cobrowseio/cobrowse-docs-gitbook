@@ -18,6 +18,7 @@ CobrowseIO.customData = {
 {% endtab %}
 
 {% tab title="iOS" %}
+**Swift**
 ```swift
 CobrowseIO.instance().customData = [
     kCBIOUserIdKey: "<your_user_id>" as NSObject,
@@ -26,8 +27,10 @@ CobrowseIO.instance().customData = [
     kCBIODeviceIdKey: "<your_device_id>" as NSObject,
     kCBIODeviceNameKey: "<your_device_name>" as NSObject
 ]
+```
 
-
+**Objective-C**
+```objectivec
 CobrowseIO.instance.customData = @{
     kCBIOUserIdKey: @"<your_user_id>",
     kCBIOUserNameKey: @"<your_user_name>",
