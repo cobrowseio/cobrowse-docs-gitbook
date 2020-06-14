@@ -10,7 +10,7 @@ Cobrowse.io for Android supports API 19 \(4.4 KitKat\) and above.
 
 **In your app build.gradle**
 
-```text
+```java
 dependencies {
     // ... other dependencies ...
     implementation 'io.cobrowse:cobrowse-sdk-android:2.+'
