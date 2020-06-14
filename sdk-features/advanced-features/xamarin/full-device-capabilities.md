@@ -1,6 +1,10 @@
+---
+description: >-
+  Xamarin specific docs regarding full device screenshare for iOS and full
+  device remote control for Android.
+---
+
 # Full device capabilities
-
-
 
 ### Overview
 

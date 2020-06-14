@@ -29,7 +29,8 @@
     * [Full device screenshare](sdk-features/advanced-features/ios/full-device-screenshare.md)
   * [Android](sdk-features/advanced-features/android/README.md)
     * [Full device remote control](sdk-features/advanced-features/android/full-device-remote-control.md)
-  * [React Native](sdk-features/advanced-features/react-native.md)
+  * [React Native](sdk-features/advanced-features/react-native/README.md)
+    * [Full device capabilities](sdk-features/advanced-features/react-native/full-device-capabilities.md)
   * [Xamarin](sdk-features/advanced-features/xamarin/README.md)
     * [Full device capabilities](sdk-features/advanced-features/xamarin/full-device-capabilities.md)
 
