@@ -8,7 +8,7 @@ For this purpose, we provide a default plug-and-play UI that provides this funct
 
 ## Implementation
 
-These are the requirements to initiate sessions using 6-digit codes. 
+These are the requirements to initiate sessions using 6-digit codes.
 
 You may expose a small UI in your app for users to generate a 6-digit code that they pass to an agent over the phone or chat to initiate a session.
 
@@ -33,9 +33,10 @@ CobrowseIO.client().then(function() {
 To setup 6-digit codes on iOS:
 
 1. Add the appropriate code below into a view controller in your app.
-2. Hook up a trigger for the action (or call it programatically if you prefer).
+2. Hook up a trigger for the action \(or call it programatically if you prefer\).
 
 #### Swift
+
 ```swift
 import CobrowseIO
 
@@ -183,7 +184,5 @@ Make sure you've hooked up a trigger for the `StartCobrowse` method that we've j
 {% endtab %}
 {% endtabs %}
 
-{% hint style="success" %}
 
-{% endhint %}
 
