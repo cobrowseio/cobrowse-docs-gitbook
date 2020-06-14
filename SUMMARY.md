@@ -30,7 +30,8 @@
   * [Android](sdk-features/advanced-features/android/README.md)
     * [Full device remote control](sdk-features/advanced-features/android/full-device-remote-control.md)
   * [React Native](sdk-features/advanced-features/react-native.md)
-  * [Xamarin](sdk-features/advanced-features/xamarin.md)
+  * [Xamarin](sdk-features/advanced-features/xamarin/README.md)
+    * [Full device capabilities](sdk-features/advanced-features/xamarin/full-device-capabilities.md)
 
 ## Agent-side integrations
 
