@@ -1,7 +1,5 @@
 # Add device metadata
 
-## Add device metadata
-
 To help you identify, search, and filter devices in your Cobrowse dashboard, it's helpful to specify any meaningful metadata.
 
 You may add any custom key/value pairs you'd like, and they will all be searchable and filterable in your online dashboard. We've added a few placeholders for convenience only - all fields are optional.
@@ -19,6 +17,7 @@ CobrowseIO.customData = {
 
 {% tab title="iOS" %}
 **Swift**
+
 ```swift
 CobrowseIO.instance().customData = [
     kCBIOUserIdKey: "<your_user_id>" as NSObject,
@@ -30,6 +29,7 @@ CobrowseIO.instance().customData = [
 ```
 
 **Objective-C**
+
 ```objectivec
 CobrowseIO.instance.customData = @{
     kCBIOUserIdKey: @"<your_user_id>",
