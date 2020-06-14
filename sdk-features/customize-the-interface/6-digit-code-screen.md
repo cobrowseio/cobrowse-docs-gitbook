@@ -20,7 +20,11 @@ CobrowseIO.client().then(function() {
 {% endtab %}
 
 {% tab title="iOS" %}
-You can build your own UI to completely replace the default UI we provide for generating 6-digit codes. You can generate a code for your UI by using the `createSession` API:
+You can build your own UI to completely replace the default UI we provide for generating 6-digit codes. You can generate a code for your UI by using the `createSession` API.
+
+#### Swift
+
+#### Objective C
 
 ```objectivec
 [CobrowseIO.instance createSession:^(NSError * _Nullable err, CBIOSession * _Nullable session) {
