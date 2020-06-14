@@ -68,7 +68,7 @@ CobrowseIO.client().then(function() {
 {% tab title="iOS" %}
 The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
 
-**Swift**
+### **Swift**
 
 ```swift
 import CobrowseIO
@@ -128,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CobrowseIODelegate {
 }
 ```
 
-**Objective C**
+### **Objective C**
 
 ```objectivec
 @implementation CBAppDelegate // should implement CobrowseIODelegate

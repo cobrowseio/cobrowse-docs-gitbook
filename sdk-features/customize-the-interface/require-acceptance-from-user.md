@@ -1,6 +1,6 @@
 # User consent dialog
 
-By default, Cobrowse will show a user consent dialog when a new session is incoming. You may modify and customize the consent prompt as you wish, using the SDK hooks described below. 
+By default, Cobrowse will show a user consent dialog when a new session is incoming. You may modify and customize the consent prompt as you wish, using the SDK hooks described below.
 
 Admin users may also disable this consent prompt from your account settings if you prefer to remove it entirely: [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings)
 
@@ -20,11 +20,12 @@ CobrowseIO.confirmSession = function() {
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Swift
+### Swift
 
+_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._ 
 
+### Objective C
 
-#### Objective C
 ```objectivec
 @implementation CBAppDelegate // should implement CobrowseIODelegate
 
@@ -96,7 +97,7 @@ CobrowseIO.handleSessionRequest = function(session) {
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### Xamarin.iOS implementation
+### Xamarin.iOS implementation
 
 ```csharp
 using Xamarin.CobrowseIO;
@@ -127,7 +128,7 @@ public class CustomCobrowseDelegate : CobrowseIODelegate
 }
 ```
 
-### Xamarin.Android implementation
+## Xamarin.Android implementation
 
 ```csharp
 using Xamarin.CobrowseIO;
@@ -177,7 +178,7 @@ public class CustomCobrowseDelegate : Java.Lang.Object, CobrowseIO.ISessionReque
 }
 ```
 
-### Xamarin.Forms implementation
+## Xamarin.Forms implementation
 
 You can also achieve this functionality from a cross-platform project. In this case you don't have to implement your own delegate, but instead you subscribe to the `SessionDidRequest` event:
 

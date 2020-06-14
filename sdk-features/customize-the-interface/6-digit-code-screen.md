@@ -4,7 +4,7 @@
 
 {% tabs %}
 {% tab title="Web" %}
-The Web SDK provides a promise that will resolve a 6-digit code. You may then show that to the end-user any way you would like. 
+The Web SDK provides a promise that will resolve a 6-digit code. You may then show that to the end-user any way you would like.
 
 ```javascript
 // ensure Cobrowse is loaded
@@ -22,9 +22,11 @@ CobrowseIO.client().then(function() {
 {% tab title="iOS" %}
 You can build your own UI to completely replace the default UI we provide for generating 6-digit codes. You can generate a code for your UI by using the `createSession` API.
 
-#### Swift
+### Swift
 
-#### Objective C
+_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._ 
+
+### Objective C
 
 ```objectivec
 [CobrowseIO.instance createSession:^(NSError * _Nullable err, CBIOSession * _Nullable session) {
@@ -81,7 +83,7 @@ session.isEnded() // session is over and can no longer be used or edited
 {% endtab %}
 
 {% tab title="React Native" %}
-_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._ 
+_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._
 {% endtab %}
 
 {% tab title="Xamarin" %}
