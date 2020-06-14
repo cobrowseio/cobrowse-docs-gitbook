@@ -1,8 +1,10 @@
-# Require acceptance from user
+# User consent dialog
 
-By default, Cobrowse will show a user consent dialog when a new session is incoming. You may disable this consent prompt from your account settings: [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings)
+By default, Cobrowse will show a user consent dialog when a new session is incoming. You may modify and customize the consent prompt as you wish, using the SDK hooks described below. 
 
-You may also modify and customize the consent prompt as you wish, using the SDK hooks described below.
+Admin users may also disable this consent prompt from your account settings if you prefer to remove it entirely: [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings)
+
+Here are the SDK hooks:
 
 {% tabs %}
 {% tab title="Web" %}
