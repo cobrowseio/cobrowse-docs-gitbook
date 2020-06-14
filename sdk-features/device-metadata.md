@@ -19,24 +19,13 @@ CobrowseIO.customData = {
 
 {% tab title="iOS \(Swift\)" %}
 ```swift
-import CobrowseIO
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
-{
-    CobrowseIO.instance().license = "<your license key here>"
-
-    print("Cobrowse device id:  \(CobrowseIO.instance().deviceId)")
-
-    CobrowseIO.instance().customData = [
-        kCBIOUserIdKey: "<your_user_id>" as NSObject,
-        kCBIOUserNameKey: "<your_user_name>" as NSObject,
-        kCBIOUserEmailKey: "<your_user_email>" as NSObject,
-        kCBIODeviceIdKey: "<your_device_id>" as NSObject,
-        kCBIODeviceNameKey: "<your_device_name>" as NSObject
-    ]
-
-    return true
-}
+CobrowseIO.instance().customData = [
+    kCBIOUserIdKey: "<your_user_id>" as NSObject,
+    kCBIOUserNameKey: "<your_user_name>" as NSObject,
+    kCBIOUserEmailKey: "<your_user_email>" as NSObject,
+    kCBIODeviceIdKey: "<your_device_id>" as NSObject,
+    kCBIODeviceNameKey: "<your_device_name>" as NSObject
+]
 ```
 {% endtab %}
 
