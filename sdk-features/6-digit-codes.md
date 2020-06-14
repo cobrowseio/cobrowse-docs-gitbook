@@ -4,7 +4,7 @@ By default, Cobrowse does not require any visible UI presented to the user. It w
 
 You may optionally present a UI in your app that enables users to generate 6-digit codes. Users may then read a code over the phone or in chat, and agents can use the 6-digit code to initiate the Cobrowse session.
 
-For this purpose, we provide a default plug-and-play UI that provides this functionality. We also provide a set of public methods if you prefer to build a custom UI.
+For this purpose, we provide a default plug-and-play UI that provides this functionality. We also provide a set of public methods if you prefer to build a custom UI. More info at [Customize the interface](https://app.gitbook.com/@cobrowseio/s/cobrowse-io-docs/~/drafts/-M9otxrbXuGBH0m3aame/v/master/sdk-features/customize-the-interface).
 
 ## Implementation
 

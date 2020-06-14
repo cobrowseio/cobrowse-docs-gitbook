@@ -16,7 +16,7 @@
 * [Use 6-digit codes](sdk-features/6-digit-codes.md)
 * [Redact sensitive data](sdk-features/redact-sensitive-data.md)
 * [Customize the interface](sdk-features/customize-the-interface/README.md)
-  * [Session indicator](sdk-features/customize-the-interface/session-indicator.md)
+  * [Active session indicator](sdk-features/customize-the-interface/session-indicator.md)
   * [User consent dialog](sdk-features/customize-the-interface/require-acceptance-from-user.md)
   * [6-digit code screen](sdk-features/customize-the-interface/6-digit-code-screen.md)
 * [Initiate sessions with push](sdk-features/initiate-sessions-with-push.md)
