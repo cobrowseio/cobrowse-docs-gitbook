@@ -30,7 +30,6 @@ CobrowseIO.client().then(function() {
 {% endtab %}
 
 {% tab title="iOS" %}
-```swift
 To setup 6-digit codes on iOS:
 
 1. Add the appropriate code below into a view controller in your app.
