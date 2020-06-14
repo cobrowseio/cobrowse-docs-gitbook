@@ -170,3 +170,7 @@ namespace YourAppNamespace.Forms
 {% endtab %}
 {% endtabs %}
 
+{% hint style="success" %}
+
+{% endhint %}
+
