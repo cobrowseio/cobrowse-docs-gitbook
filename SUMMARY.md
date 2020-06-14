@@ -34,17 +34,12 @@
 ## Agent-side integrations
 
 * [CRM / Helpdesk integrations](agent-side-integrations/crm-helpdesk-integrations/README.md)
-  * [Freshdesk](agent-side-integrations/crm-helpdesk-integrations/freshdesk.md)
-  * [Zendesk](agent-side-integrations/crm-helpdesk-integrations/zendesk.md)
-  * [Salesforce](agent-side-integrations/crm-helpdesk-integrations/salesforce.md)
   * [Intercom](agent-side-integrations/crm-helpdesk-integrations/intercom.md)
+  * [Zendesk](agent-side-integrations/crm-helpdesk-integrations/zendesk.md)
   * [Genesys](agent-side-integrations/crm-helpdesk-integrations/genesys.md)
+  * [Salesforce](agent-side-integrations/crm-helpdesk-integrations/salesforce.md)
+  * [Freshdesk](agent-side-integrations/crm-helpdesk-integrations/freshdesk.md)
 * [Custom iFrame integrations](agent-side-integrations/custom-iframe-integrations/README.md)
-  * [Auto-connect URLs](agent-side-integrations/custom-iframe-integrations/auto-connect-urls.md)
-  * [6-digit code entry](agent-side-integrations/custom-iframe-integrations/6-digit-code-entry.md)
-  * [Dashboard / device list](agent-side-integrations/custom-iframe-integrations/dashboard-device-list.md)
-* [Single sign-on \(SSO\)](agent-side-integrations/single-sign-on-sso/README.md)
-  * [Google / GitHub login](agent-side-integrations/single-sign-on-sso/google-github-login.md)
-  * [OpenId Connect / SAML](agent-side-integrations/single-sign-on-sso/openid-connect-saml.md)
-  * [JSON Web Tokens \(JWTs\)](agent-side-integrations/single-sign-on-sso/json-web-tokens-jwts.md)
+  * [Embed options](agent-side-integrations/custom-iframe-integrations/embed-options.md)
+  * [JSON Web Tokens \(JWTs\)](agent-side-integrations/custom-iframe-integrations/json-web-tokens-jwts.md)
 
