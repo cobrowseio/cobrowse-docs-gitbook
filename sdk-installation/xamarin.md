@@ -12,8 +12,8 @@ We recommend installing the Cobrowse.io SDK using NuGet. Add the following packa
 
 * `CobrowseIO.Xamarin`: [![CobrowseIO.iOS NuGet](https://img.shields.io/nuget/v/CobrowseIO.Xamarin.svg?label=CobrowseIO.Xamarin)](https://www.nuget.org/packages/CobrowseIO.Xamarin/)
 
-**Xamarin.iOS**
-
+{% tabs %}
+{% tab title="Xamarin.iOS" %}
 To use Cobrowse.io in your Xamarin.iOS project, please add the following lines to your `AppDelegate.cs`:
 
 ```csharp
@@ -51,9 +51,9 @@ This NuGet, however, does not copy the Swift libraries in the right place when g
 4. Select the _Archives_ tab
 5. On the left side of the window, select your app
 6. Click on _Distribute App_ button and follow the wizard
+{% endtab %}
 
-**Xamarin.Android**
-
+{% tab title="Xamarin.Android" %}
 To use Cobrowse.io in your Xamarin.Android project, please add the following lines to your Application subclass.
 
 ```csharp
@@ -82,9 +82,9 @@ public class MainApplication : Application
 * The Cobrowse.io SDK uses AndroidX, so make sure you have [migrated to AndroidX](https://docs.microsoft.com/en-us/xamarin/android/platform/androidx#migration-tooling)
 
 You may also start CobrowseIO in your `MainActivity` or other Activity if necessary. In that case, the SDK will continue to function even as new Activities are being created and destroyed.
+{% endtab %}
 
-**Xamarin.Forms**
-
+{% tab title="Xamarin.Forms" %}
 Alternatively, it is possible to access Cobrowse.io features from Xamarin.Forms projects. In this case you only need to initialize the Cobrowse.io SDK in your cross-platform project:
 
 ```csharp
@@ -101,6 +101,8 @@ public partial class App : Xamarin.Forms.Application
     }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 #### Add your License Key
 
