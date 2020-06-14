@@ -24,7 +24,7 @@ When implementing your own UI, you can use the following javascript code to prog
 CobrowseIO.currentSession.end();
 ```
 
-### Example
+## Example
 
 Here's a simple example that re-create the default UI, but with a blue button and some different text:
 
@@ -64,7 +64,7 @@ CobrowseIO.client().then(function() {
 {% endtab %}
 
 {% tab title="iOS" %}
-### Customizing the Session Indicator
+## Customizing the Session Indicator
 
 You can fully customize the interface for a Cobrowse session. The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
 
@@ -152,7 +152,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CobrowseIODelegate {
 @end
 ```
 
-### Customizing the 6 Digit Code screen
+## Customizing the 6 Digit Code screen
 
 You can build your own UI to completely replace the default UI we provide for generating 6 digit codes. You can generate a code for your UI by using the `createSession` API:
 
@@ -183,7 +183,7 @@ You can get information about the state of the session using the following metho
 {% endtab %}
 
 {% tab title="Android" %}
-### Customize the Session Indicator
+## Customize the Session Indicator
 
 The SDK provides hooks via `CobrowseIO.SessionControlsDelegate` for you to render your own interface:
 
@@ -217,7 +217,7 @@ public class MainApplication extends Application implements CobrowseIO.SessionCo
 }
 ```
 
-### Customize the 6 Digit Code screen
+## Customize the 6 Digit Code screen
 
 You can build your own UI to completely replace the default UI we provide for generating 6 digit codes. You can generate a code for your UI by using the `createSession` API:
 
