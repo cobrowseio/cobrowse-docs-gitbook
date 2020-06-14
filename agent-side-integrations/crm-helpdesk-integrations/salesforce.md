@@ -1,6 +1,8 @@
 # Salesforce
 
-Learn more at [https://cobrowse.io/salesforce](https://cobrowse.io/salesforce)
+## Overview
+
+Cobrowse.io provides an integration with Salesforce available in the Salesforce AppExchange Marketplace. Get started here [https://cobrowse.io/salesforce](https://cobrowse.io/salesforce)
 
 ## Install the app
 
