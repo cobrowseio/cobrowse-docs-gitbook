@@ -3,7 +3,7 @@
 {% tabs %}
 {% tab title="Web" %}
 
-```
+
 {% endtab %}
 
 {% tab title="iOS" %}
