@@ -17,6 +17,7 @@
 * [Redact sensitive data](sdk-features/redact-sensitive-data.md)
 * [Require acceptance from user](sdk-features/require-acceptance-from-user.md)
 * [Customize the interface](sdk-features/customize-the-interface.md)
+* [Initiate sessions with push](sdk-features/initiate-sessions-with-push.md)
 * [Advanced features](sdk-features/advanced-features/README.md)
   * [Web](sdk-features/advanced-features/web/README.md)
     * [Cross-document iFrames](sdk-features/advanced-features/web/cross-document-iframes.md)
@@ -24,10 +25,8 @@
   * [iOS](sdk-features/advanced-features/ios/README.md)
     * [Alternate render method](sdk-features/advanced-features/ios/alternate-render-method.md)
     * [Full device screenshare](sdk-features/advanced-features/ios/full-device-screenshare.md)
-    * [Initiate sessions with push](sdk-features/advanced-features/ios/initiate-sessions-with-push.md)
   * [Android](sdk-features/advanced-features/android/README.md)
     * [Full device remote control](sdk-features/advanced-features/android/full-device-remote-control.md)
-    * [Initiate sessions with push](sdk-features/advanced-features/android/initiate-sessions-with-push.md)
   * [React Native](sdk-features/advanced-features/react-native.md)
   * [Xamarin](sdk-features/advanced-features/xamarin.md)
 
