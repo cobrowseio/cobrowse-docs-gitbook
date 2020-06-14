@@ -12,7 +12,7 @@ These are the requirements to initiate sessions using 6-digit codes.
 
 You may expose a small UI in your app for users to generate a 6-digit code that they pass to an agent over the phone or chat to initiate a session.
 
-**Note:** this guide will use our default UI to display the code. You can replace it with your own UI if you prefer! Please see [Customize the interface](https://app.gitbook.com/@cobrowseio/s/cobrowse-io-docs/v/master/sdk-features/customize-the-interface).
+**Note:** This guide will use our default UI to display the code. You can replace it with your own UI if you prefer! Please see [Customize the interface](https://app.gitbook.com/@cobrowseio/s/cobrowse-io-docs/v/master/sdk-features/customize-the-interface).
 
 {% tabs %}
 {% tab title="Web" %}
