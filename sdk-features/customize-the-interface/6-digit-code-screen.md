@@ -1,13 +1,26 @@
 # 6-digit code screen
 
+**Note:** The codes expire shortly after creation \(codes last less than 10 minutes\), so wait until your user is ready to share the code with an agent before generating it.
+
 {% tabs %}
 {% tab title="Web" %}
+The Web SDK provides a promise that will resolve a 6-digit code. You may then show that to the end-user any way you would like. 
 
+```javascript
+// ensure Cobrowse is loaded
+CobrowseIO.client().then(function() {
 
+    // create a code a display it to the user using your own UI
+    CobrowseIO.createSessionCode().then(function(code) {
+       console.log('your code is', code);
+    });
+
+});
+```
 {% endtab %}
 
 {% tab title="iOS" %}
-You can build your own UI to completely replace the default UI we provide for generating 6 digit codes. You can generate a code for your UI by using the `createSession` API:
+You can build your own UI to completely replace the default UI we provide for generating 6-digit codes. You can generate a code for your UI by using the `createSession` API:
 
 ```objectivec
 [CobrowseIO.instance createSession:^(NSError * _Nullable err, CBIOSession * _Nullable session) {
@@ -15,8 +28,6 @@ You can build your own UI to completely replace the default UI we provide for ge
     else NSLog(@"Created session code: %@", session.code);
 }];
 ```
-
-**Note:** the codes expire shortly after creation \(codes last less than 10 minutes\), so wait until your user is ready to share the code with an agent before generating it:
 
 You can monitor changes in the state of the session you create using the Cobrowse delegate methods:
 
@@ -48,8 +59,6 @@ CobrowseIO.instance().createSession(new Callback<Error, Session>() {
 });
 ```
 
-**Note:** the codes expire shortly after creation \(codes last less than 10 minutes\), so wait until your user is ready to share the code with an agent before generating it:
-
 You can monitor changes in the state of the session you create using the Cobrowse delegate methods:
 
 ```java
@@ -68,7 +77,7 @@ session.isEnded() // session is over and can no longer be used or edited
 {% endtab %}
 
 {% tab title="React Native" %}
-
+_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._ 
 {% endtab %}
 
 {% tab title="Xamarin" %}
@@ -87,8 +96,6 @@ CobrowseIO.Instance.CreateSession((error, session) =>
     }
 });
 ```
-
-**Note:** the codes expire shortly after creation \(codes last less than 10 minutes\), so wait until your user is ready to share the code with an agent before generating it.
 
 You can monitor changes in the state of the session you create using the CobrowseIO delegate methods:
 
@@ -114,3 +121,4 @@ You can get information about the state of the session using the following prope
 | Session.IsEnded | Session is over and can no longer be used or edited |
 {% endtab %}
 {% endtabs %}
+

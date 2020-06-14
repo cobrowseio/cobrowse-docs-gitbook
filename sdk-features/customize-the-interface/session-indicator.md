@@ -210,7 +210,7 @@ export default class App extends Component {
 {% tab title="Xamarin" %}
 The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
 
-#### Xamarin.iOS implementation
+### Xamarin.iOS implementation
 
 ```csharp
 using Xamarin.CobrowseIO;
@@ -287,7 +287,7 @@ public class CustomCobrowseDelegate : CobrowseIODelegate
 }
 ```
 
-#### Xamarin.Android implementation
+### Xamarin.Android implementation
 
 You can fully customize the interface for a Cobrowse session. The SDK provides hooks via `CobrowseIO.ISessionControlsDelegate` for you to render your own interface:
 
@@ -318,7 +318,7 @@ public class MainApplication : Application, CobrowseIO.ISessionControlsDelegate
 }
 ```
 
-#### Xamarin.Forms implementation
+### Xamarin.Forms implementation
 
 Even though Cobrowse.io works with native views, there is nothing that would prevent you from using `Xamarin.Forms.VisualElement` as a session indicator.
 
