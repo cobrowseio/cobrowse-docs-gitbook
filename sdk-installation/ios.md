@@ -16,8 +16,8 @@ pod 'CobrowseIO', '~>2'
 
 _Don't forget to run `pod repo update` then `pod install` after you've edited your Podfile._
 
-**Swift**
-
+{% tabs %}
+{% tab title="iOS \(Swift\)" %}
 ```swift
 import CobrowseIO
 
@@ -28,10 +28,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return true
 }
 ```
+{% endtab %}
 
-**Objective C**
-
-```text
+{% tab title="iOS \(Objective-C\)" %}
+```
 @import CobrowseIO;
 
 - (BOOL)application:(UIApplication*) application didFinishLaunchingWithOptions:(NSDictionary*) launchOptions
@@ -41,6 +41,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return YES;
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 _Important: Do this in your `application:didFinishLaunchingWithOptions:` implementation to make sure your device shows up in your dashboard right away._
 
@@ -49,12 +51,6 @@ _Important: Do this in your `application:didFinishLaunchingWithOptions:` impleme
 Please register an account and generate your free License Key at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings).
 
 This will associate sessions from your mobile app with your Cobrowse account.
-
-#### Add device metadata
-
-To help you identify, search, and filter devices in your Cobrowse dashboard, it's helpful to specify any meaningful metadata. We recommend specifying the end-user's email if available.
-
-You may add any custom key/value pairs you'd like, and they will all be searchable and filterable in your online dashboard. We've added a few placeholders for convenience only - all fields are optional.
 
 ### Try it out
 
