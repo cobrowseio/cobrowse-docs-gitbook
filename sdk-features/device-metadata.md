@@ -17,7 +17,7 @@ CobrowseIO.customData = {
 ```
 {% endtab %}
 
-{% tab title="iOS \(Swift\)" %}
+{% tab title="iOS" %}
 ```swift
 CobrowseIO.instance().customData = [
     kCBIOUserIdKey: "<your_user_id>" as NSObject,
@@ -26,50 +26,27 @@ CobrowseIO.instance().customData = [
     kCBIODeviceIdKey: "<your_device_id>" as NSObject,
     kCBIODeviceNameKey: "<your_device_name>" as NSObject
 ]
-```
-{% endtab %}
 
-{% tab title="iOS \(Obj-C\)" %}
-```objectivec
-@import CobrowseIO;
 
-- (BOOL)application:(UIApplication*) application didFinishLaunchingWithOptions:(NSDictionary*) launchOptions
-{
-    CobrowseIO.instance.license = @"<your license key here>";
-    [CobrowseIO.instance start];
-    return YES;
-}
+CobrowseIO.instance.customData = @{
+    kCBIOUserIdKey: @"<your_user_id>",
+    kCBIOUserNameKey: @"<your_user_name>",
+    kCBIOUserEmailKey: @"<your_user_email>",
+    kCBIODeviceIdKey: @"<your_device_id>",
+    kCBIODeviceNameKey: @"<your_device_name>"
+};
 ```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
-package com.example;
-
-import android.app.Application;
-import io.cobrowse.CobrowseIO;
-
-public class MainApplication extends Application {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
-        CobrowseIO.instance().license("<your license key here>");
-
-        Log.i("App", "Cobrowse device id: " + CobrowseIO.instance().deviceId(this));
-
-        HashMap<String, Object> customData = new HashMap<>();
-        customData.put("user_id", "<your_user_id>");
-        customData.put("user_name", "<your_user_name>");
-        customData.put("user_email", "<your_user_email>");
-        customData.put("device_id", "<your_device_id>");
-        customData.put("device_name", "<your_device_name>");
-        CobrowseIO.instance().customData(customData);
-
-        CobrowseIO.instance().start(this);
-    }
-}
+HashMap<String, Object> customData = new HashMap<>();
+customData.put("user_id", "<your_user_id>");
+customData.put("user_name", "<your_user_name>");
+customData.put("user_email", "<your_user_email>");
+customData.put("device_id", "<your_device_id>");
+customData.put("device_name", "<your_device_name>");
+CobrowseIO.instance().customData(customData);
 ```
 {% endtab %}
 
@@ -83,7 +60,6 @@ CobrowseIO.customData = {
 
 {% tab title="Xamarin" %}
 ```csharp
-CobrowseIO.Instance.SetLicense("<your license key here>");
 CobrowseIO.Instance.SetCustomData(new Dictionary<string, object>
 {
     { CobrowseIO.UserIdKey, "<your_user_id>" },
@@ -92,7 +68,6 @@ CobrowseIO.Instance.SetCustomData(new Dictionary<string, object>
     { CobrowseIO.DeviceIdKey, "<your_device_id>" },
     { CobrowseIO.DeviceNameKey, "<your_device_name>" }
 });
-CobrowseIO.Instance.Start();
 ```
 {% endtab %}
 {% endtabs %}
