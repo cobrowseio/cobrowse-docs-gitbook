@@ -8,7 +8,7 @@ This feature is supported in API 21 \(5.0 Lollipop\) and above.
 
 ### Implementation
 
-Add the following line to one of your resources xml files, eg. in res/values/bools.xml:
+Add the following line to one of your resources xml files, eg. in `res/values/bools.xml`:
 
 ```markup
 <?xml version="1.0" encoding="utf-8"?>
