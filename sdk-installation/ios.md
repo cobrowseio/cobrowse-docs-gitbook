@@ -4,8 +4,6 @@ description: iOS Native SDK
 
 # iOS
 
-Cobrowse.io for iOS supports iOS 9.0+.
-
 ## Installation
 
 We recommend installing the Cobrowse.io SDK using Cocoapods. Add this to your Podfile:
@@ -56,11 +54,11 @@ This will associate sessions from your mobile app with your Cobrowse account.
 
 Once you have your app running in the iOS Simulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-## Questions?
-
-Any questions at all? Please email us directly at [hello@cobrowse.io](mailto:hello@cobrowse.io).
-
 ## Requirements
 
 * iOS 9.0 or later
+
+{% hint style="success" %}
+Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
+{% endhint %}
 

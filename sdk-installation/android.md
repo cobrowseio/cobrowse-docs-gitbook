@@ -4,8 +4,6 @@ description: Android Native SDK
 
 # Android
 
-Cobrowse.io for Android supports API 19 \(4.4 KitKat\) and above.
-
 ### Installation
 
 **In your app build.gradle**
@@ -51,11 +49,11 @@ This will associate sessions from your mobile app with your Cobrowse.io account.
 
 Once you have your app running in the Android emulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-### Questions?
-
-Any questions at all? Please email us directly at [hello@cobrowse.io](mailto:hello@cobrowse.io).
-
 ### Requirements
 
-* API version 19 or later
+* API version 19 \(4.4 KitKat\) or later
+
+{% hint style="success" %}
+Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
+{% endhint %}
 
