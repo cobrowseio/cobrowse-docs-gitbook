@@ -30,11 +30,11 @@ CobrowseIO.start();
 
 Once you have your app running in the iOS Simulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-### Questions?
-
-Any questions at all? Please email us directly at [hello@cobrowse.io](mailto:hello@cobrowse.io).
-
 ### Requirements
 
 * iOS 9.0, Android API 19 or above.
+
+{% hint style="success" %}
+Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
+{% endhint %}
 

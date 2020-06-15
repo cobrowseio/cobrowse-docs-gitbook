@@ -4,8 +4,6 @@ description: Xamarin SDK
 
 # Xamarin
 
-Cobrowse.io for Xamarin supports iOS 9.0+ and Android API 19+ \(4.4 KitKat and above\).
-
 ### Installation
 
 We recommend installing the Cobrowse.io SDK using NuGet. Add the following package to your Xamarin projects:
@@ -118,12 +116,12 @@ We provide a sample application showing how to use Cobrowse.io NuGet packages in
 
 Once you have your app running in the iOS Simulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-### Questions?
-
-Any questions at all? Please email us directly at [hello@cobrowse.io](mailto:hello@cobrowse.io).
-
 ### Requirements
 
 * iOS 9.0 or later
-* Android API version 19 or later
+* Android API version 19 \(4.4 KitKat\) or later
+
+{% hint style="success" %}
+Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
+{% endhint %}
 
