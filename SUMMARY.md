@@ -49,5 +49,5 @@
 
 
 
-# Questions?
+# Any Questions?
 Email us any time at [hello@cobrowse.io](mailto:hello@cobrowse.io)
