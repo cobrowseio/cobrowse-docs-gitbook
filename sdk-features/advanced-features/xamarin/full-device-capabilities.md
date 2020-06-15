@@ -8,7 +8,9 @@ description: >-
 
 ### Overview
 
-By default, the Cobrowse.io SDKs for iOS and Android will capture the user activity inside your app only. You can enable the capture of the full device, i.e. screens outside your app, including home screen, device settings, and everything else. Follow this guide to add the required App Extension for iOS and enable an accessibility service on Android required for capturing full device frames.
+By default, the Cobrowse.io SDKs for iOS and Android will capture the user activity inside your app only. You can enable the capture of the full device, i.e. screens outside your app, including home screen, device settings, and everything else. 
+
+Follow this guide to add the required App Extension for iOS and enable an accessibility service on Android required for capturing full device frames.
 
 {% tabs %}
 {% tab title="Xamarin.iOS" %}
