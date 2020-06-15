@@ -1,4 +1,4 @@
-# Add device metadata
+# Identify your devices
 
 To help you identify, search, and filter devices in your Cobrowse dashboard, it's helpful to specify any meaningful metadata.
 
