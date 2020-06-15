@@ -2,7 +2,7 @@
 
 ### Overview
 
-By default, the Cobrowse.io SDKs for iOS will capture the user activity inside your app only. You can enable the capture of the full device, i.e. screens outside your app, including home screen, device settings, and everything else. Follow this guide to add the required App Extension required for capturing full device frames.
+By default, the Cobrowse.io SDKs for iOS will capture the user activity inside your app only. You can enable the capture of the full device, i.e. screens outside your app, including home screen, device settings, and everything else. Follow this guide to add the App Extension required for capturing full device frames.
 
 ### Implementation
 
