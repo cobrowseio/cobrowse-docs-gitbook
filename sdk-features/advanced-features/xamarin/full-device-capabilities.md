@@ -41,7 +41,7 @@ Take the bundle ID of the **extension** you created above, and add the following
 <string>your.app.extension.bundle.ID.here</string>
 ```
 
-**Add the Cobrowse.io AppExntesion NuGet**
+**Add the Cobrowse.io AppExtension NuGet**
 
 The app extension needs a dependency on the CobrowseIO app extension framework. Add the following NuGet to the **extension project** \(not to the iOS app project\):
 
