@@ -10,8 +10,8 @@ description: >-
 
 By default, the Cobrowse.io SDKs for iOS and Android will capture the user activity inside your app only. You can enable the capture of the full device, i.e. screens outside your app, including home screen, device settings, and everything else. Follow this guide to add the required App Extension for iOS and enable an accessibility service on Android required for capturing full device frames.
 
-### Xamarin.iOS implementation
-
+{% tabs %}
+{% tab title="Xamarin.iOS" %}
 **Add a Broadcast Extension project**
 
 In Visual Studio for Mac:
@@ -87,9 +87,9 @@ Open Info.plist of the extension project and make sure that `NSExtension` sectio
 **Build and run your app**
 
 You're now ready to build and run your app. The full device capability is only available on phsyical devices, it will not work in the iOS simulator.
+{% endtab %}
 
-### Xamarin.Android implementation
-
+{% tab title="Xamarin.Android" %}
 Full device remote control for Android uses an accessibility service that must be enabled on the device to grant access. This feature is supported in API 21 \(5.0 Lollipop\) and above.
 
 **Configure Full Device Control flag**
@@ -135,4 +135,10 @@ For unattended full device access, we strongly recommend:
 
 * Please initiate sessions with push notifications, rather than our default sockets. This will enable unattended access, even when your app has been backgrounded a long time, or force closed. More info at [Initiate sessions with push](../../initiate-sessions-with-push.md).
 * Please turn off "Require User Consent" prompts at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings). Otherwise, a user must always accept the consent prompt on the device before a session can start.
+{% endtab %}
+{% endtabs %}
+
+### 
+
+### 
 
