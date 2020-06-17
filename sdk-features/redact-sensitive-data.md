@@ -305,5 +305,11 @@ namespace YourAppNamespace.Android
 
 You can also define redactions using a selector entered into the web dashboard. This can be useful if your app is already in production and you need to redact a field retrospectively, either due to a missed redaction entry in the app build or changing requirements. Visit the [dashboard settings](https://cobrowse.io/dashboard/settings/redaction) to enter redaction selectors.
 {% endtab %}
+{% tab title="Windows" %}
+
+```csharp
+placeholder
+```
+{% endtab %}
 {% endtabs %}
 

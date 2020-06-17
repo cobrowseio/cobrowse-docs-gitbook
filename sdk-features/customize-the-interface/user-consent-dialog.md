@@ -245,5 +245,10 @@ public partial class App : Xamarin.Forms.Application
 }
 ```
 {% endtab %}
+{% tab title="Windows" %}
+```csharp
+placeholder
+```
+{% endtab %}
 {% endtabs %}
 

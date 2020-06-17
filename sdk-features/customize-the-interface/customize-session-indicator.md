@@ -467,5 +467,10 @@ public class CustomOverlayCobrowseDelegate : CobrowseDelegateImplementation, Cob
 }
 ```
 {% endtab %}
+{% tab title="Windows" %}
+```csharp
+placeholder
+```
+{% endtab %}
 {% endtabs %}
 
