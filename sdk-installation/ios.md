@@ -4,7 +4,7 @@ description: iOS Native SDK
 
 # iOS
 
-## Installation
+### Installation
 
 We recommend installing the Cobrowse.io SDK using Cocoapods. Add this to your Podfile:
 
