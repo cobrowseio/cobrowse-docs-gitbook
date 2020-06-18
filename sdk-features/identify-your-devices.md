@@ -75,7 +75,14 @@ CobrowseIO.Instance.SetCustomData(new Dictionary<string, object>
 {% endtab %}
 {% tab title="Windows" %}
 ```csharp
-placeholder
+CobrowseIO.Instance.CustomData = new Dictionary<string, object>()
+{
+  { CobrowseIO.USER_ID_KEY, "<your_user_id>" },
+  { CobrowseIO.USER_NAME_KEY, "<your_user_name>" },
+  { CobrowseIO.USER_EMAIL_KEY, "<your_user_email>" },
+  { CobrowseIO.DEVICE_ID_KEY, "<your_device_id>" },
+  { CobrowseIO.DEVICE_NAME_KEY, "<your_device_name>" },
+};
 ```
 {% endtab %}
 {% endtabs %}
