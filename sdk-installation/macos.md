@@ -19,7 +19,8 @@ _Don't forget to run `pod repo update` then `pod install` after you've edited yo
 ```swift
 import CobrowseIO
 
-func applicationDidFinishLaunching(_ aNotification: Notification) {
+func applicationDidFinishLaunching(_ aNotification: Notification)
+{
     CobrowseIO.instance().license = "<your license key here>"
     CobrowseIO.instance().start()
 }
@@ -30,7 +31,8 @@ func applicationDidFinishLaunching(_ aNotification: Notification) {
 ```objectivec
 @import CobrowseIO;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)notification {
+- (void)applicationDidFinishLaunching:(NSNotification *)notification
+{
     CobrowseIO.instance.license = @"<your license key here>";
     [CobrowseIO.instance start];
 }
