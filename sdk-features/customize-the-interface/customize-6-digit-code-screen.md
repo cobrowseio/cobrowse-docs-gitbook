@@ -121,10 +121,10 @@ You can get information about the state of the session using the following prope
 
 | Property | Description |
 | :--- | :--- |
-| Session.IsPending | Session has been created but is waiting for agent or user |
-| Session.IsAuthorizing | Waiting for the user to confirm the session |
-| Session.IsActive | Session running, frames are streaming to the agent |
-| Session.IsEnded | Session is over and can no longer be used or edited |
+| `Session.IsPending` | Session has been created but is waiting for agent or user |
+| `Session.IsAuthorizing` | Waiting for the user to confirm the session |
+| `Session.IsActive` | Session running, frames are streaming to the agent |
+| `Session.IsEnded` | Session is over and can no longer be used or edited |
 {% endtab %}
 {% endtabs %}
 
