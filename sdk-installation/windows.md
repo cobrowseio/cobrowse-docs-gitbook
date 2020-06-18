@@ -33,17 +33,6 @@ Please register an account and generate your free License Key at [https://cobrow
 
 This will associate sessions from your Windows app with your Cobrowse account.
 
-#### User Consent Dialog
-
-Cobrowse.io Windows SDK does not provide default dialog for session authorization. You should add your own UI for this. 
-To do that, add handler for `CobrowseIO.Instance.SessionAuthorizing` event:
-
-```csharp
-  CobrowseIO.Instance.SessionAuthorizing += OnSessionAuthorizing;
-```
-
-**Warning:** Callback will be called from non-UI thread, so be aware to dispatch it to the UI one.
-
 ### Try it out
 
 Once you have your app running on a Windows computer, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!

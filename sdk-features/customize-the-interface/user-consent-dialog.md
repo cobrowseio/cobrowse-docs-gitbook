@@ -248,15 +248,13 @@ public partial class App : Xamarin.Forms.Application
 {% tab title="Windows" %}
 ## Windows implementation
 
-You may use either Windows Forms, or WPF in your application, so Cobrowse.io Windows SDK does not provide default UI for user authorization dialog.
-
-To handle it, add handler to `CobrowseIO.Instance.SessionAuthorizing` event:
+You can override the default session authorization dialog with adding handler to `CobrowseIO.Instance.SessionAuthorizing` event:
 
 ```csharp
   CobrowseIO.Instance.SessionAuthorizing += OnSessionAuthorizing;
 ```
 
-**Warning:** Handling of this event is mandatory. Callback will be called from non-UI thread, so be aware to dispatch it to the UI one.
+**Warning:** Callback will be called from non-UI thread, so be aware to dispatch it to the UI one.
 
 * To confirm session:
 

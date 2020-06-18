@@ -77,11 +77,11 @@ CobrowseIO.Instance.SetCustomData(new Dictionary<string, object>
 ```csharp
 CobrowseIO.Instance.CustomData = new Dictionary<string, object>()
 {
-  { CobrowseIO.USER_ID_KEY, "<your_user_id>" },
-  { CobrowseIO.USER_NAME_KEY, "<your_user_name>" },
-  { CobrowseIO.USER_EMAIL_KEY, "<your_user_email>" },
-  { CobrowseIO.DEVICE_ID_KEY, "<your_device_id>" },
-  { CobrowseIO.DEVICE_NAME_KEY, "<your_device_name>" },
+  { CobrowseIO.UserIdKey, "<your_user_id>" },
+  { CobrowseIO.UserNameKey, "<your_user_name>" },
+  { CobrowseIO.UserEmailKey, "<your_user_email>" },
+  { CobrowseIO.DeviceNameKey, "<your_device_id>" },
+  { CobrowseIO.DeviceIdKey, "<your_device_name>" },
 };
 ```
 {% endtab %}
