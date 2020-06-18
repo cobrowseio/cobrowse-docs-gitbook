@@ -247,15 +247,13 @@ public partial class App : Xamarin.Forms.Application
 {% endtab %}
 
 {% tab title="Windows" %}
-## Windows implementation
-
-You can override the default session authorization dialog with adding handler to `CobrowseIO.Instance.SessionAuthorizing` event:
+You can override the default session authorization dialog by adding a handler to the `CobrowseIO.Instance.SessionAuthorizing` event:
 
 ```csharp
   CobrowseIO.Instance.SessionAuthorizing += OnSessionAuthorizing;
 ```
 
-**Warning:** Callback will be called from non-UI thread, so be aware to dispatch it to the UI one.
+**Warning:** Callback will be called from non-UI thread, so be sure to dispatch it to the UI one.
 
 * To confirm session:
 
@@ -263,7 +261,7 @@ You can override the default session authorization dialog with adding handler to
 await CobrowseIO.Instance.CurrentSession.Activate();
 ```
 
-* To cancel session:
+* To reject a session:
 
 ```csharp
 await CobrowseIO.Instance.CurrentSession.End();
