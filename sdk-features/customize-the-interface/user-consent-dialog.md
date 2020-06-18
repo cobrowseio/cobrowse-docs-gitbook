@@ -267,7 +267,7 @@ await CobrowseIO.Instance.CurrentSession.Activate();
 await CobrowseIO.Instance.CurrentSession.End();
 ```
 
-WPF messagebox example:
+WPF MessageBox example:
 
 ```csharp
 if (MessageBox.Show(
