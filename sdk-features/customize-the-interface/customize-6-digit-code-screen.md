@@ -126,5 +126,11 @@ You can get information about the state of the session using the following prope
 | `Session.IsActive` | Session running, frames are streaming to the agent |
 | `Session.IsEnded` | Session is over and can no longer be used or edited |
 {% endtab %}
+
+{% tab title="Windows" %}
+To customize the 6-digit code screen for Windows, please see the Windows tab at the link below:
+
+{% page-ref page="../6-digit-codes.md" %}
+{% endtab %}
 {% endtabs %}
 
