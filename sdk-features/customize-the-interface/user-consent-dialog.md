@@ -246,9 +246,43 @@ public partial class App : Xamarin.Forms.Application
 ```
 {% endtab %}
 {% tab title="Windows" %}
+## Windows implementation
+
+You can override the default session authorization dialog with adding handler to `CobrowseIO.Instance.SessionAuthorizing` event:
+
 ```csharp
-placeholder
+  CobrowseIO.Instance.SessionAuthorizing += OnSessionAuthorizing;
 ```
+
+**Warning:** Callback will be called from non-UI thread, so be aware to dispatch it to the UI one.
+
+* To confirm session:
+
+```csharp
+await CobrowseIO.Instance.CurrentSession.Activate();
+```
+
+* To cancel session:
+
+```csharp
+await CobrowseIO.Instance.CurrentSession.End();
+```
+
+WPF messagebox example:
+
+```csharp
+if (MessageBox.Show(
+        window,
+        "Would you like to authorize the Cobrowse.io screenshare session?",
+        "Authorization",
+        MessageBoxButton.YesNo,
+        MessageBoxImage.Question
+      ) == MessageBoxResult.Yes)
+  await CobrowseIO.Instance.CurrentSession.Activate();
+else
+  await CobrowseIO.Instance.CurrentSession.End();
+```
+
 {% endtab %}
 {% endtabs %}
 
