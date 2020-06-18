@@ -4,15 +4,15 @@ description: Windows SDK
 
 # Windows
 
-### Installation
+## Installation
 
-#### NuGet
+### NuGet
 
 We recommend installing the Cobrowse.io SDK using NuGet. Add the following package to your projects:
 
 [![CobrowseIO.Windows NuGet](https://img.shields.io/nuget/v/CobrowseIO.Windows.svg?label=CobrowseIO.Windows)](https://www.nuget.org/packages/CobrowseIO.Windows/)
 
-#### Usage
+### Usage
 
 To use Cobrowse.io in your project, use the `Cobrowse.IO` namespace:
 
@@ -27,29 +27,28 @@ CobrowseIO.Instance.License = "<your license key here>";
 await CobrowseIO.Instance.Start();
 ```
 
-#### Add your License Key
+### Add your License Key
 
 Please register an account and generate your free License Key at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings).
 
 This will associate sessions from your Windows app with your Cobrowse account.
 
-### Try it out
+## Try it out
 
 Once you have your app running on a Windows computer, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-### Requirements
+## Requirements
 
 * .NET Framework 4.6.2
 * Dependencies of NuGet package
 * Minimal supported OS is Windows 7
-* *x86* and *x64* architectures only are supported
+* _x86_ and _x64_ architectures only are supported
 
-#### HiDPI Support
+### HiDPI Support
 
-For Windows 10 HiDPI mode (when display scale is not 100%) client application should be "DPI aware". To enable this please add
-`app.manifest` ("New item" -> "Application Manifest File" in Visual Studio) and add/uncomment the following XML tag:
+For Windows 10 HiDPI mode \(when display scale is not 100%\) client application should be "DPI aware". To enable this please add `app.manifest` \("New item" -&gt; "Application Manifest File" in Visual Studio\) and add/uncomment the following XML tag:
 
-```XML
+```markup
 <application xmlns="urn:schemas-microsoft-com:asm.v3">
   <windowsSettings>
     <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true</dpiAware>

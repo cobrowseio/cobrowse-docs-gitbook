@@ -22,11 +22,11 @@ CobrowseIO.client().then(function() {
 {% tab title="iOS" %}
 You can build your own UI to completely replace the default UI we provide for generating 6-digit codes. You can generate a code for your UI by using the `createSession` API.
 
-### Swift
+## Swift
 
-_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._ 
+_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._
 
-### Objective C
+## Objective C
 
 ```objectivec
 [CobrowseIO.instance createSession:^(NSError * _Nullable err, CBIOSession * _Nullable session) {
@@ -126,6 +126,5 @@ You can get information about the state of the session using the following prope
 | Session.IsActive | Session running, frames are streaming to the agent |
 | Session.IsEnded | Session is over and can no longer be used or edited |
 {% endtab %}
-
 {% endtabs %}
 

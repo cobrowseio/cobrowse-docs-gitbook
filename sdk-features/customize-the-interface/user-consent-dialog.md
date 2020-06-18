@@ -22,7 +22,7 @@ CobrowseIO.confirmSession = function() {
 {% tab title="iOS" %}
 ### Swift
 
-_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._ 
+_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._
 
 ### Objective C
 
@@ -245,6 +245,7 @@ public partial class App : Xamarin.Forms.Application
 }
 ```
 {% endtab %}
+
 {% tab title="Windows" %}
 ## Windows implementation
 
@@ -282,7 +283,6 @@ if (MessageBox.Show(
 else
   await CobrowseIO.Instance.CurrentSession.End();
 ```
-
 {% endtab %}
 {% endtabs %}
 

@@ -467,8 +467,8 @@ public class CustomOverlayCobrowseDelegate : CobrowseDelegateImplementation, Cob
 }
 ```
 {% endtab %}
-{% tab title="Windows" %}
 
+{% tab title="Windows" %}
 ## Windows implementation
 
 You may override the default session and active display indicator with handling `CobrowseIO.Instance.SessionControlsUpdated`:
@@ -484,7 +484,6 @@ Callback will be called when:
 * Session ends. `FrameInfo` param will be `null`. This means that session UI should be hidden.
 
 **Warning:** Be aware that callback is called from non-UI thread.
-
 {% endtab %}
 {% endtabs %}
 
