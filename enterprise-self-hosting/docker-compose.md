@@ -11,7 +11,9 @@ You'll need these installed on the host system before continuing:
 
 ### Initial Setup
 
-Before you're ready to run Cobrowse you'll need to download our docker-compose file. This files defines the services and internal configuration that is required to easily set up the different Cobrowse server components. You should not need to edit this file at all.
+Before you're ready to run Cobrowse you'll need to download our docker-compose file. For access, please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
+
+This files defines the services and internal configuration that is required to easily set up the different Cobrowse server components. You should not need to edit this file at all.
 
 * Setup access to our private Docker registry. This is where your Docker host can obtain the Cobrowse Enterprise images. You will need the Cobrowse Enterprise repo password that has been assigned to you.
 
