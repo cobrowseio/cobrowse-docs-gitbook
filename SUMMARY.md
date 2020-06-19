@@ -48,3 +48,8 @@
   * [Embed options](agent-side-integrations/custom-iframe-integrations/embed-options.md)
   * [JSON Web Tokens \(JWTs\)](agent-side-integrations/custom-iframe-integrations/json-web-tokens-jwts.md)
 
+## Enterprise self-hosting
+
+* [Docker compose](enterprise-self-hosting/docker-compose.md)
+* [AWS Terraform](enterprise-self-hosting/aws-terraform.md)
+
