@@ -4,7 +4,7 @@ description: Windows SDK
 
 # Windows
 
-### Installation
+## Installation
 
 We recommend installing the Cobrowse.io SDK using NuGet. Add the following package to your projects:
 
