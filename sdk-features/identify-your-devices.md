@@ -8,10 +8,12 @@ You may add any custom key/value pairs you'd like, and they will all be searchab
 {% tab title="Web" %}
 ```javascript
 CobrowseIO.customData = {
-    user_name: "Joe Blogs",
-    user_id: "12345",
-    user_email: "joe@example.com"
-}
+    user_id: "<your_user_id>",
+    user_name: "<your_user_name>",
+    user_email: "<your_user_email>",
+    device_id: "<your_device_id>",
+    device_name: "<your_device_name>"
+};
 ```
 {% endtab %}
 
@@ -56,7 +58,11 @@ CobrowseIO.instance().customData(customData);
 {% tab title="React Native" %}
 ```javascript
 CobrowseIO.customData = {
-    user_email: "react-native@example.com"
+    user_id: "<your_user_id>",
+    user_name: "<your_user_name>",
+    user_email: "<your_user_email>",
+    device_id: "<your_device_id>",
+    device_name: "<your_device_name>"
 };
 ```
 {% endtab %}
