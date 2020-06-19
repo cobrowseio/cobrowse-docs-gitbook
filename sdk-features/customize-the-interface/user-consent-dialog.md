@@ -247,7 +247,6 @@ public partial class App : Xamarin.Forms.Application
 {% endtab %}
 
 {% tab title="MacOS" %}
-
 ```objectivec
 @implementation CBAppDelegate // should implement CobrowseIODelegate
 
@@ -304,3 +303,4 @@ else
 ```
 {% endtab %}
 {% endtabs %}
+

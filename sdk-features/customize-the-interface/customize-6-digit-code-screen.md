@@ -125,16 +125,14 @@ You can get information about the state of the session using the following prope
 | `Session.IsAuthorizing` | Waiting for the user to confirm the session |
 | `Session.IsActive` | Session running, frames are streaming to the agent |
 | `Session.IsEnded` | Session is over and can no longer be used or edited |
-
 {% endtab %}
 
 {% tab title="MacOS" %}
 To customize the 6-digit code screen for MacOS, please see the MacOS tab on the [6 digit code page](../6-digit-codes.md).
-
 {% endtab %}
 
 {% tab title="Windows" %}
 To customize the 6-digit code screen for Windows, please see the Windows tab on the [6 digit code page](../6-digit-codes.md).
-
 {% endtab %}
 {% endtabs %}
+

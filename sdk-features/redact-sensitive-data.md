@@ -2,49 +2,39 @@
 
 When remotely viewing a user's screen, there may be certain sensitive data that should not be viewable by the agent.
 
-For this purpose, we provide a redaction API that automatically blurs on device all sensitive data sources such as credit cards, social security numbers, etc. When certain data is redacted, it will never leave the user's device.
+For this purpose, we provide a redaction API that automatically blocks out on device all sensitive data sources such as credit cards, social security numbers, etc. When certain data is redacted, it will never leave the user's device.
 
-{% tabs %}
-{% tab title="Web" %}
-Redaction allows you to remove specific elements from the agents view. This allows you to keep private user data private.
-
-You can define redactions using a CSS selector entered into the web dashboard. Visit the [dashboard settings](https://cobrowse.io/dashboard/settings/redaction) to enter redaction selectors.
-{% endtab %}
-
-{% tab title="iOS" %}
-Cobrowse provides two methods for redacting sensitive data in your iOS app:
+Cobrowse provides two methods for redacting sensitive data in your applications:
 
 **1. Define the redacted views in your app source code \(recommended\)**
 
-This is the recommended method as it will make sure your redactions are tied to app version. Implement the `CobrowseIORedacted` protocol on any `UIViewController` that contains sensitive views. This protocol contains one method:
+This is the recommended method as it will make sure your redactions are tied to app version.
+
+{% tabs %}
+{% tab title="Web" %}
+You can only define redactions via the web dashboard for the web SDK. Enter CSS selectors on the [dashboard settings](https://cobrowse.io/dashboard/settings/redaction) page.
+{% endtab %}
+
+{% tab title="iOS" %}
+Implement the `CobrowseIORedacted` protocol on any `UIViewController` that contains sensitive views. This protocol contains one method:
 
 ```objectivec
--(NSArray*) redactedViews;
-
-// From this method you should return a list of the views you want Cobrowse to redact, for example:
+// From this method you should return a list of the views you want
+// Cobrowse to redact, for example:
 - (NSArray*) redactedViews {
     return @[ redactedTextView ];
 }
 ```
 
-If making changes to your UIViewController subclasses isn't an option, we also support a delegate style method to allow you to supply this information in one place. Find out more about this by emailing us at [hello@cobrowse.io](hello@cobrowse.io).
-
-**2. Use the Cobrowse web dashboard to define redacted views**
-
-You can also define redactions using a selector entered into the web dashboard. This can be useful if your app is already in production and you need to redact a field retrospectively, either due to a missed redaction entry in the app build or changing requirements. Visit the [dashboard settings](https://cobrowse.io/dashboard/settings/redaction) to enter redaction selectors.
+If making changes to your `UIViewController` subclasses isn't an option, we also support a delegate style method to allow you to supply this information in one place. Find out more about this by emailing us at [hello@cobrowse.io](https://github.com/cobrowseio/cobrowse-docs-gitbook/tree/91f22fdcf9e3124fc8f6f9877feb64cda4b8af39/sdk-features/hello@cobrowse.io).
 {% endtab %}
 
 {% tab title="Android" %}
-Cobrowse provides two methods for redacting sensitive data in your Android app:
-
-**1. Define the redacted views in your app source code \(recommended\)**
-
 Implement the CobrowseIO.Redacted interface on any Activity that contains sensitive views. This interface contains one method:
 
 ```java
-List<View> redactedViews();
-
-// From this method you should return a list of the views you want Cobrowse to redact, for example:
+// From this method you should return a list of the views you want
+// Cobrowse to redact, for example:
 public List<View> redactedViews() {
     List<View> redacted = new ArrayList<>();
     redacted.add(findViewById(R.id.redact_me));
@@ -52,15 +42,11 @@ public List<View> redactedViews() {
 }
 ```
 
-If making changes to your Activity classes isn't an option, we also support a delegate style method to allow you to supply this information in one place. Find out more about this by emailing us at [hello@cobrowse.io](hello@cobrowse.io).
-
-**2. Use the Cobrowse web dashboard to define redacted views**
-
-You can also define redactions using a selector entered into the web dashboard. This can be useful if your app is already in production and you need to redact a field retrospectively, either due to a missed redaction entry in the app build or changing requirements. Visit the [dashboard settings](https://cobrowse.io/dashboard/settings/redaction) to enter redaction selectors.
+If making changes to your Activity classes isn't an option, we also support a delegate style method to allow you to supply this information in one place. Find out more about this by emailing us at [hello@cobrowse.io](https://github.com/cobrowseio/cobrowse-docs-gitbook/tree/91f22fdcf9e3124fc8f6f9877feb64cda4b8af39/sdk-features/hello@cobrowse.io).
 {% endtab %}
 
 {% tab title="React Native" %}
-To redact an element in your React native application you can wrap it in a  tag provided by the Cobrowse module:
+To redact an element in your React native application you can wrap it in a tag provided by the Cobrowse module:
 
 ```javascript
 import React, { Component } from 'react';
@@ -84,13 +70,9 @@ export default class MyComponent extends Component {
 {% endtab %}
 
 {% tab title="Xamarin" %}
-Cobrowse provides two methods for redacting sensitive data in your Xamarin app:
-
-#### 1. Define the redacted views in your app source code \(recommended\)
-
 **Xamarin.iOS implementation**
 
-This is the recommended method as it will make sure your redactions are tied to app version. Implement the `ICobrowseIORedacted` interface on any `UIViewController` that contains sensitive views. This interface contains one `RedactedViews` property:
+Implement the `ICobrowseIORedacted` interface on any `UIViewController` that contains sensitive views. This interface contains one `RedactedViews` property:
 
 ```csharp
 public partial class ViewController : UIViewController, ICobrowseIORedacted
@@ -100,8 +82,6 @@ public partial class ViewController : UIViewController, ICobrowseIORedacted
         => new[] { redactedTextView };
 }
 ```
-
-If making changes to your `UIViewController` subclasses isn't an option, we also support a delegate style method to allow you to supply this information in one place. Find out more about this by emailing us at [hello@cobrowse.io](hello@cobrowse.io).
 
 **Xamarin.Android implementation**
 
@@ -121,8 +101,6 @@ public class MainActivity : AppCompatActivity, CobrowseIO.IRedacted
     }
 }
 ```
-
-If making changes to your Activity classes isn't an option, we also support a delegate style method to allow you to supply this information in one place. Find out more about this by emailing us at [hello@cobrowse.io](hello@cobrowse.io).
 
 **Xamarin.Forms implementation**
 
@@ -300,9 +278,10 @@ namespace YourAppNamespace.Android
     }
 }
 ```
-
-#### 2. Use the Cobrowse web dashboard to define redacted views
-
-You can also define redactions using a selector entered into the web dashboard. This can be useful if your app is already in production and you need to redact a field retrospectively, either due to a missed redaction entry in the app build or changing requirements. Visit the [dashboard settings](https://cobrowse.io/dashboard/settings/redaction) to enter redaction selectors.
 {% endtab %}
 {% endtabs %}
+
+**2. Use the Cobrowse web dashboard to define redacted views**
+
+You can also define redactions using a selector entered into the web dashboard. This can be useful if your app is already in production and you need to redact a field retrospectively, either due to a missed redaction entry in the app build or changing requirements. Visit the [dashboard settings](https://cobrowse.io/dashboard/settings/redaction) to enter redaction selectors.
+

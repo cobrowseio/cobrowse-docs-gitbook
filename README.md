@@ -1,5 +1,7 @@
 ---
-description: 'Get started with our easy to use SDKs for Android, iOS, MacOS, Windows and Web.'
+description: >-
+  Get started with our easy to use SDKs for Android, iOS, MacOS, Windows and
+  Web.
 ---
 
 # Getting started
@@ -29,3 +31,4 @@ Try our **online demo** at the bottom of our homepage at [https://cobrowse.io/\#
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}
+
