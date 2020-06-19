@@ -1,5 +1,5 @@
 ---
-description: 'Get started with our easy to use SDKs for Android, iOS, Windows and Web.'
+description: 'Get started with our easy to use SDKs for Android, iOS, MacOS, Windows and Web.'
 ---
 
 # Getting started
