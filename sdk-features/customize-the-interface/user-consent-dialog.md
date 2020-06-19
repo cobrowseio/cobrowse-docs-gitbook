@@ -246,6 +246,27 @@ public partial class App : Xamarin.Forms.Application
 ```
 {% endtab %}
 
+{% tab title="MacOS" %}
+
+```objectivec
+@implementation CBAppDelegate // should implement CobrowseIODelegate
+
+- (void)applicationDidFinishLaunching:(NSNotification *)notification
+    CobrowseIO.instance.delegate = self;
+    // ... the rest of your app setup
+}
+
+-(void) cobrowseHandleSessionRequest:(CBIOSession*) session {
+    // show your own UI here
+    // call [session activate: <callback>] to accept and start the session
+    // provide a callback to handle any errors during session initiation
+    [session activate: nil];
+}
+
+@end
+```
+{% endtab %}
+
 {% tab title="Windows" %}
 You can override the default session authorization dialog by adding a handler to the `CobrowseIO.Instance.SessionAuthorizing` event:
 
@@ -283,4 +304,3 @@ else
 ```
 {% endtab %}
 {% endtabs %}
-

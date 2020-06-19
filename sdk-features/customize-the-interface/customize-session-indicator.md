@@ -468,6 +468,29 @@ public class CustomOverlayCobrowseDelegate : CobrowseDelegateImplementation, Cob
 ```
 {% endtab %}
 
+{% tab title="iOS" %}
+The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
+
+```objectivec
+@implementation CBAppDelegate // should implement CobrowseIODelegate
+
+- (void)applicationDidFinishLaunching:(NSNotification *)notification
+    CobrowseIO.instance.delegate = self;
+    // ... the rest of your app setup
+}
+
+- (void)cobrowseShowSessionControls:(CBIOSession*) session {
+    // You can render controls however you like here.
+}
+
+- (void)cobrowseHideSessionControls:(CBIOSession*) session {
+    // hide your custom control here
+}
+
+@end
+```
+{% endtab %}
+
 {% tab title="Windows" %}
 You may override the default session and active display indicator by handling `CobrowseIO.Instance.SessionControlsUpdated`:
 
@@ -484,4 +507,3 @@ Callback will be called when:
 **Warning:** Be aware that callback is called from non-UI thread.
 {% endtab %}
 {% endtabs %}
-
