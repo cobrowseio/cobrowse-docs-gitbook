@@ -133,3 +133,4 @@ To customize the 6-digit code screen for Windows, please see the Windows tab at 
 {% page-ref page="../6-digit-codes.md" %}
 {% endtab %}
 {% endtabs %}
+
