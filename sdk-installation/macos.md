@@ -4,7 +4,7 @@ description: MacOS SDK
 
 # MacOS
 
-### Installation
+## Installation
 
 The Cobrowse SDK for MacOS is available for installation via several dependency managers, or as a framework to integrate directly into your project:
 
