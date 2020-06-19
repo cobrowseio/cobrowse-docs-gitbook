@@ -9,6 +9,7 @@
 * [Android](sdk-installation/android.md)
 * [React Native](sdk-installation/react-native.md)
 * [Xamarin](sdk-installation/xamarin.md)
+* [MacOS](sdk-installation/macos.md)
 * [Windows](sdk-installation/windows.md)
 
 ## SDK Features
@@ -46,4 +47,3 @@
 * [Custom iFrame integrations](agent-side-integrations/custom-iframe-integrations/README.md)
   * [Embed options](agent-side-integrations/custom-iframe-integrations/embed-options.md)
   * [JSON Web Tokens \(JWTs\)](agent-side-integrations/custom-iframe-integrations/json-web-tokens-jwts.md)
-
