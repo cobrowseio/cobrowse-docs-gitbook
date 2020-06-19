@@ -6,11 +6,27 @@ description: MacOS SDK
 
 ### Installation
 
-We recommend installing the Cobrowse.io SDK using Cocoapods. Add this to your Podfile:
+The Cobrowse SDK for MacOS is available for installation via several dependency managers, or as a framework to integrate directly into your project:
 
+{% tabs %}
+{% tab title="Pods" %}
 ```ruby
 pod 'CobrowseIO', '~>2'
 ```
+{% endtab %}
+
+{% tab title="Carthage" %}
+Carthage support is currently unavailable for our MacOS SDK as Carthage does not yet support XCFrameworks.
+{% endtab %}
+
+{% tab title="Manual" %}
+Add CobrowseIO._**xc**framework_  \(_**not**_ CobrowseIO.framework\) to your project to use the SDK for MacOS:
+
+```
+https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases
+```
+{% endtab %}
+{% endtabs %}
 
 _Don't forget to run `pod repo update` then `pod install` after you've edited your Podfile._
 
