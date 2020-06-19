@@ -4,7 +4,7 @@ description: React Native SDK
 
 # React Native
 
-### Installation
+## Installation
 
 ```bash
 npm install --save cobrowse-sdk-react-native
@@ -13,7 +13,7 @@ react-native link
 
 **Note:** For iOS you need to be using Pods to manage dependencies for `react-native link` to work out of the box \(and also remember to run `pod install` after the link step\).
 
-#### Add your License Key
+### Add your License Key
 
 Please register an account and generate your free License Key at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings).
 
@@ -26,11 +26,11 @@ CobrowseIO.license = "<your license key here>";
 CobrowseIO.start();
 ```
 
-### Try it out
+## Try it out
 
 Once you have your app running in the iOS Simulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-### Requirements
+## Requirements
 
 * iOS 9.0, Android API 19 or above.
 
