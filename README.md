@@ -1,5 +1,5 @@
 ---
-description: 'Get started with our easy to use SDKs for Android, iOS, and Web.'
+description: 'Get started with our easy to use SDKs for Android, iOS, Windows and Web.'
 ---
 
 # Getting started
@@ -18,7 +18,9 @@ Once each SDK is added to your app, authenticated agents can connect to user dev
 
 {% page-ref page="sdk-installation/xamarin.md" %}
 
-Cobrowse.io is 100% free and easy to try out on your own sites. 
+{% page-ref page="sdk-installation/windows.md" %}
+
+Cobrowse.io is 100% free and easy to try out on your own sites.
 
 Try our **online demo** at the bottom of our homepage at [https://cobrowse.io/\#tryit](https://cobrowse.io/#tryit).
 

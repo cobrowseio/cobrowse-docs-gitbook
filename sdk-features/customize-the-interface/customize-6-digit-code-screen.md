@@ -22,11 +22,11 @@ CobrowseIO.client().then(function() {
 {% tab title="iOS" %}
 You can build your own UI to completely replace the default UI we provide for generating 6-digit codes. You can generate a code for your UI by using the `createSession` API.
 
-### Swift
+## Swift
 
-_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._ 
+_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._
 
-### Objective C
+## Objective C
 
 ```objectivec
 [CobrowseIO.instance createSession:^(NSError * _Nullable err, CBIOSession * _Nullable session) {
@@ -121,10 +121,16 @@ You can get information about the state of the session using the following prope
 
 | Property | Description |
 | :--- | :--- |
-| Session.IsPending | Session has been created but is waiting for agent or user |
-| Session.IsAuthorizing | Waiting for the user to confirm the session |
-| Session.IsActive | Session running, frames are streaming to the agent |
-| Session.IsEnded | Session is over and can no longer be used or edited |
+| `Session.IsPending` | Session has been created but is waiting for agent or user |
+| `Session.IsAuthorizing` | Waiting for the user to confirm the session |
+| `Session.IsActive` | Session running, frames are streaming to the agent |
+| `Session.IsEnded` | Session is over and can no longer be used or edited |
+{% endtab %}
+
+{% tab title="Windows" %}
+To customize the 6-digit code screen for Windows, please see the Windows tab at the link below:
+
+{% page-ref page="../6-digit-codes.md" %}
 {% endtab %}
 {% endtabs %}
 

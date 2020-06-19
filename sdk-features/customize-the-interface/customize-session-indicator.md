@@ -467,5 +467,21 @@ public class CustomOverlayCobrowseDelegate : CobrowseDelegateImplementation, Cob
 }
 ```
 {% endtab %}
+
+{% tab title="Windows" %}
+You may override the default session and active display indicator by handling `CobrowseIO.Instance.SessionControlsUpdated`:
+
+```csharp
+CobrowseIO.Instance.SessionControlsUpdated += OnSessionControlsUpdated;
+```
+
+Callback will be called when:
+
+* Session starts. `FrameInfo` will contian information about the display currently captured by the screenshare session.
+* Active display is switched. `FrameInfo` will contain information about the display which is being switched to.
+* Session ends. `FrameInfo` param will be `null`. This means that session UI should be hidden.
+
+**Warning:** Be aware that callback is called from non-UI thread.
+{% endtab %}
 {% endtabs %}
 

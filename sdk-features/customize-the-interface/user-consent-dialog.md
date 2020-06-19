@@ -22,7 +22,7 @@ CobrowseIO.confirmSession = function() {
 {% tab title="iOS" %}
 ### Swift
 
-_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._ 
+_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._
 
 ### Objective C
 
@@ -243,6 +243,43 @@ public partial class App : Xamarin.Forms.Application
         }
     }
 }
+```
+{% endtab %}
+
+{% tab title="Windows" %}
+You can override the default session authorization dialog by adding a handler to the `CobrowseIO.Instance.SessionAuthorizing` event:
+
+```csharp
+  CobrowseIO.Instance.SessionAuthorizing += OnSessionAuthorizing;
+```
+
+**Warning:** Callback will be called from non-UI thread, so be sure to dispatch it to the UI one.
+
+* To confirm session:
+
+```csharp
+await CobrowseIO.Instance.CurrentSession.Activate();
+```
+
+* To reject a session:
+
+```csharp
+await CobrowseIO.Instance.CurrentSession.End();
+```
+
+WPF MessageBox example:
+
+```csharp
+if (MessageBox.Show(
+        window,
+        "Would you like to authorize the Cobrowse.io screenshare session?",
+        "Authorization",
+        MessageBoxButton.YesNo,
+        MessageBoxImage.Question
+      ) == MessageBoxResult.Yes)
+  await CobrowseIO.Instance.CurrentSession.Activate();
+else
+  await CobrowseIO.Instance.CurrentSession.End();
 ```
 {% endtab %}
 {% endtabs %}
