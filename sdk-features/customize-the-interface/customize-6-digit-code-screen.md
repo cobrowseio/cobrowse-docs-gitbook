@@ -127,4 +127,10 @@ You can get information about the state of the session using the following prope
 | `Session.IsEnded` | Session is over and can no longer be used or edited |
 
 {% endtab %}
+
+{% tab title="MacOS" %}
+To customize the 6-digit code screen for MacOS, please see the MacOS tab at the link below:
+
+{% page-ref page="../6-digit-codes.md" %}
+{% endtab %}
 {% endtabs %}
