@@ -6,7 +6,7 @@ description: iOS Native SDK
 
 ### Installation
 
-The Cobrowse SDK for iOS is available for installation via several dependency manager, or as frameworks to integrate into your project manually:
+The Cobrowse SDK for iOS is available for installation via several dependency managers, or as frameworks to integrate directly into your project:
 
 {% tabs %}
 {% tab title="Pods" %}
