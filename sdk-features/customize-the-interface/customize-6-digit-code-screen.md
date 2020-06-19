@@ -132,7 +132,6 @@ To customize the 6-digit code screen for MacOS, please see the MacOS tab at the 
 
 {% page-ref page="../6-digit-codes.md" %}
 {% endtab %}
-{% endtabs %}
 
 {% tab title="Windows" %}
 To customize the 6-digit code screen for Windows, please see the Windows tab at the link below:
