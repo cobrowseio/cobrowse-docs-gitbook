@@ -40,8 +40,6 @@ func applicationDidFinishLaunching(_ aNotification: Notification)
 {% endtab %}
 {% endtabs %}
 
-_Important: Do this in your `application:didFinishLaunchingWithOptions:` implementation to make sure your device shows up in your dashboard right away._
-
 ### Add your License Key
 
 Please register an account and generate your free License Key at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings).
