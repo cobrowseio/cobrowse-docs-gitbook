@@ -13,12 +13,16 @@ The Cobrowse SDK for iOS is available for installation via several dependency ma
 ```ruby
 pod 'CobrowseIO', '~>2'
 ```
+
+_Don't forget to run `pod repo update` then `pod install` after you've edited your Podfile._
 {% endtab %}
 
 {% tab title="Carthage" %}
 ```
 github "cobrowseio/cobrowse-sdk-ios-binary" ~> 2.0
 ```
+
+_Don't forget to run `carthage update`  after you've edited your Cartfile._
 {% endtab %}
 
 {% tab title="Manual" %}
@@ -29,8 +33,6 @@ https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases
 ```
 {% endtab %}
 {% endtabs %}
-
-_Don't forget to run `pod repo update` then `pod install` after you've edited your Podfile._
 
 {% tabs %}
 {% tab title="iOS \(Swift\)" %}
