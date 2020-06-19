@@ -122,3 +122,7 @@ The config directory created by our command line utility is a git repo. You can 
 
 One you have done that, you can `terraform init && terraform apply` the to update your deployment.
 
+{% hint style="success" %}
+Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
+{% endhint %}
+
