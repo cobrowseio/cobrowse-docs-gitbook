@@ -4,7 +4,7 @@ description: Android Native SDK
 
 # Android
 
-### Installation
+## Installation
 
 **In your app build.gradle**
 
@@ -39,17 +39,17 @@ public class MainApplication extends Application {
 
 You may also start CobrowseIO in your MainActivity or other Activity if necessary. In that case, the SDK will continue to function even as new Activities are being created and destroyed.
 
-#### Add your license key
+### Add your license key
 
 Please register an account and generate your free License Key at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings).
 
 This will associate sessions from your mobile app with your Cobrowse.io account.
 
-### Try it out
+## Try it out
 
 Once you have your app running in the Android emulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-### Requirements
+## Requirements
 
 * API version 19 \(4.4 KitKat\) or later
 

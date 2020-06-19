@@ -4,7 +4,7 @@ description: Javascript SDK for Web
 
 # Web
 
-### Installation
+## Installation
 
 Add this javascript snippet to the top of the `<head>` section of your website.
 
@@ -22,13 +22,13 @@ Add this javascript snippet to the top of the `<head>` section of your website.
 </script>
 ```
 
-#### Add your license key
+### Add your license key
 
 Please register an account and generate your free License Key at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings).
 
 This will associate sessions from your website with your Cobrowse.io account.
 
-### Try it out
+## Try it out
 
 Once you have your Javascript snippet and license key set up, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 

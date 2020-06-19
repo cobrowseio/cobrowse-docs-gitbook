@@ -4,7 +4,7 @@ description: iOS Native SDK
 
 # iOS
 
-### Installation
+## Installation
 
 The Cobrowse SDK for iOS is available for installation via several dependency managers, or as frameworks to integrate directly into your project:
 
@@ -73,6 +73,12 @@ This will associate sessions from your mobile app with your Cobrowse account.
 ## Try it out
 
 Once you have your app running in the iOS Simulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
+
+## Full device capabilities
+
+Cobrowse.io optionally supports full device screen sharing on iOS. 
+
+{% page-ref page="../sdk-features/advanced-features/ios/full-device-screenshare.md" %}
 
 ## Requirements
 
