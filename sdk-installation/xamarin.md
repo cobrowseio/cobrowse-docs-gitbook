@@ -4,7 +4,7 @@ description: Xamarin SDK
 
 # Xamarin
 
-### Installation
+## Installation
 
 We recommend installing the Cobrowse.io SDK using NuGet. Add the following package to your Xamarin projects:
 
@@ -102,7 +102,7 @@ public partial class App : Xamarin.Forms.Application
 {% endtab %}
 {% endtabs %}
 
-#### Add your License Key
+### Add your License Key
 
 Please register an account and generate your free License Key at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings).
 
@@ -112,11 +112,17 @@ This will associate sessions from your mobile app with your Cobrowse account.
 
 We provide a sample application showing how to use Cobrowse.io NuGet packages in Xamarin. [Xamarin.Forms sample](https://github.com/cobrowseio/cobrowse-sdk-xamarin/tree/master/SampleForms) includes using 6-digit codes, full device screen sharing, and redacting sensitive data. [Xamarin Classic sample](https://github.com/cobrowseio/cobrowse-sdk-xamarin/tree/master/Sample) is also available.
 
-### Try it out
+## Try it out
 
 Once you have your app running in the iOS Simulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-### Requirements
+## Full device capabilities <a id="full-device-capabilities"></a>
+
+Cobrowse.io optionally supports full device capabilities on Android and iOS.
+
+{% page-ref page="../sdk-features/advanced-features/xamarin/full-device-capabilities.md" %}
+
+## Requirements
 
 * iOS 9.0 or later
 * Android API version 19 \(4.4 KitKat\) or later
