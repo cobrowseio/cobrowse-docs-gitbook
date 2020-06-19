@@ -6,11 +6,29 @@ description: iOS Native SDK
 
 ### Installation
 
-We recommend installing the Cobrowse.io SDK using Cocoapods. Add this to your Podfile:
+The Cobrowse SDK for iOS is available for installation via several dependency manager, or as frameworks to integrate into your project manually:
 
+{% tabs %}
+{% tab title="Pods" %}
 ```ruby
 pod 'CobrowseIO', '~>2'
 ```
+{% endtab %}
+
+{% tab title="Carthage" %}
+```
+github "cobrowseio/cobrowse-sdk-ios-binary" ~> 2.0
+```
+{% endtab %}
+
+{% tab title="Manual" %}
+Frameworks are available for manual integration into your Xcode projects from:
+
+```
+https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases
+```
+{% endtab %}
+{% endtabs %}
 
 _Don't forget to run `pod repo update` then `pod install` after you've edited your Podfile._
 
