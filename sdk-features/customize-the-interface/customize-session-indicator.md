@@ -468,7 +468,7 @@ public class CustomOverlayCobrowseDelegate : CobrowseDelegateImplementation, Cob
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="MacOS" %}
 The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
 
 ```objectivec
