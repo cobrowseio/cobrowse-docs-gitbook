@@ -52,4 +52,5 @@
 
 * [Docker compose](enterprise-self-hosting/docker-compose.md)
 * [AWS Terraform](enterprise-self-hosting/aws-terraform.md)
+* [Custom requirements](enterprise-self-hosting/custom-requirements.md)
 
