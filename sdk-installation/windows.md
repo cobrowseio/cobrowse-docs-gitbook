@@ -4,9 +4,7 @@ description: Windows SDK
 
 # Windows
 
-## Installation
-
-### NuGet
+### Installation
 
 We recommend installing the Cobrowse.io SDK using NuGet. Add the following package to your projects:
 
@@ -39,8 +37,7 @@ Once you have your app running on a Windows computer, navigate to [https://cobro
 
 ## Requirements
 
-* .NET Framework 4.6.2
-* Dependencies of NuGet package
+* .NET Framework 4.6.1
 * Minimal supported OS is Windows 7
 * _x86_ and _x64_ architectures only are supported
 
