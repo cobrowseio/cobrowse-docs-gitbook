@@ -22,19 +22,13 @@
   * [User consent dialog](sdk-features/customize-the-interface/user-consent-dialog.md)
   * [6-digit code screen](sdk-features/customize-the-interface/customize-6-digit-code-screen.md)
 * [Initiate sessions with push](sdk-features/initiate-sessions-with-push.md)
+* [Full device capabilities](sdk-features/full-device-capabilities.md)
 * [Advanced features](sdk-features/advanced-features/README.md)
   * [Web](sdk-features/advanced-features/web/README.md)
     * [Cross-document iFrames](sdk-features/advanced-features/web/cross-document-iframes.md)
     * [IE 11 polyfills](sdk-features/advanced-features/web/ie-11-polyfills.md)
   * [iOS](sdk-features/advanced-features/ios/README.md)
     * [Alternate render method](sdk-features/advanced-features/ios/alternate-render-method.md)
-    * [Full device screenshare](sdk-features/advanced-features/ios/full-device-screenshare.md)
-  * [Android](sdk-features/advanced-features/android/README.md)
-    * [Full device remote control](sdk-features/advanced-features/android/full-device-remote-control.md)
-  * [React Native](sdk-features/advanced-features/react-native/README.md)
-    * [Full device capabilities](sdk-features/advanced-features/react-native/full-device-capabilities.md)
-  * [Xamarin](sdk-features/advanced-features/xamarin/README.md)
-    * [Full device capabilities](sdk-features/advanced-features/xamarin/full-device-capabilities.md)
 
 ## Agent-side integrations
 
