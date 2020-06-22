@@ -49,6 +49,7 @@ For Windows 10 HiDPI mode \(when display scale is not 100%\) client application 
 <application xmlns="urn:schemas-microsoft-com:asm.v3">
   <windowsSettings>
     <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true</dpiAware>
+    <dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">PerMonitorV2</dpiAwareness>
   </windowsSettings>
 </application>
 ```
