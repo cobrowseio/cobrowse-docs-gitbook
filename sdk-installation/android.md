@@ -49,12 +49,6 @@ This will associate sessions from your mobile app with your Cobrowse.io account.
 
 Once you have your app running in the Android emulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-## Full device capabilities <a id="full-device-capabilities"></a>
-
-Cobrowse.io optionally supports full device remote control on Android.
-
-{% page-ref page="../sdk-features/advanced-features/android/full-device-remote-control.md" %}
-
 ## Requirements
 
 * API version 19 \(4.4 KitKat\) or later

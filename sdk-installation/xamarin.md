@@ -116,12 +116,6 @@ We provide a sample application showing how to use Cobrowse.io NuGet packages in
 
 Once you have your app running in the iOS Simulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-## Full device capabilities <a id="full-device-capabilities"></a>
-
-Cobrowse.io optionally supports full device capabilities on Android and iOS.
-
-{% page-ref page="../sdk-features/advanced-features/xamarin/full-device-capabilities.md" %}
-
 ## Requirements
 
 * iOS 9.0 or later

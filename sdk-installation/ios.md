@@ -74,12 +74,6 @@ This will associate sessions from your mobile app with your Cobrowse account.
 
 Once you have your app running in the iOS Simulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-## Full device capabilities
-
-Cobrowse.io optionally supports full device screen sharing on iOS. 
-
-{% page-ref page="../sdk-features/advanced-features/ios/full-device-screenshare.md" %}
-
 ## Requirements
 
 * iOS 9.0 or later
