@@ -230,7 +230,7 @@ public async Task StartCobrowse()
 private void OnSessionUpdated(Session session)
 {
   if (session.Code != null)
-    Debug.WriteLine("Created session code: {0}", session.Code);
+    Debug.WriteLine($"Created session code: {0}", session.Code);
 }
 ```
 
