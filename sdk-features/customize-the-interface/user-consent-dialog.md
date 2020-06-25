@@ -191,7 +191,7 @@ public partial class App : Xamarin.Forms.Application
     {
         InitializeComponent();
 
-        CobrowseIO.Instance.SetLicense("trial");
+        CobrowseIO.Instance.License = "trial";
         CobrowseIO.Instance.Start();
         // and the rest of cobrowse setup ...
     }
