@@ -2,11 +2,13 @@
 
 Once your self-hosted instance is up and running, there are a few steps to bootstrap the account and configure our SDKs to use your private instance.
 
-### Account setup
+## Register an account
 
-Please first setup a superuser account. Once you have a superuser head to [https://cobrowse.example.com/admin](https://cobrowse.example.com/admin). This will list all the accounts that have been created in your instance. To remove the development-only banner, please set the "Period Members" limit to a high value \(using the "X of \[limit\]" edit box\).
+Once your instance is up and running, you will need to register yourself an account. Head to [https://&lt;your instance domain&gt;/register](https://cobrowse.io/register) to setup your account. 
 
-### Setting API location in the SDKs
+You may register multiple accounts in your instance if you would like. Some customers register accounts for dev, test, staging, etc. 
+
+## Setting API location in the SDKs
 
 You will need to set the API location when integrating the SDKs in order to point them at your private instance.
 
