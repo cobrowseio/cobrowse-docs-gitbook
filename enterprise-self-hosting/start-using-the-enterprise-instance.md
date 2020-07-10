@@ -12,15 +12,21 @@ You will need to set the API location when integrating the SDKs in order to poin
 
 {% tabs %}
 {% tab title="Web" %}
+```javascript
 CobrowseIO.api = "[https://cobrowse.example.com](https://cobrowse.example.com)";
+```
 {% endtab %}
 
 {% tab title="iOS" %}
+```objectivec
 CobrowseIO.instance.api = @"[https://cobrowse.example.com](https://cobrowse.example.com)";
+```
 {% endtab %}
 
 {% tab title="Android" %}
+```java
 CobrowseIO.instance\(\).api\("[https://cobrowse.example.com](https://cobrowse.example.com)"\);
+```
 {% endtab %}
 {% endtabs %}
 
