@@ -8,6 +8,8 @@ Once your instance is up and running, you will need to register yourself an acco
 
 You may register multiple accounts in your instance if you would like. Some customers register accounts for dev, test, staging, etc. 
 
+If you are using the Email "magic link" sign-in flow, but do not have a mail server set up, then please  retrieve the "magic link" used to sign-in directly via the application logs. 
+
 ## Setting API location in the SDKs
 
 You will need to set the API location when integrating the SDKs in order to point them at your private instance.
