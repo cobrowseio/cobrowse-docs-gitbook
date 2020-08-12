@@ -25,9 +25,19 @@ This files defines the services and internal configuration that is required to e
 * Download the docker-compose.yml file to a directory on the host system. This directory should be private. It is where Cobrowse will store all the deployment related files, such as the database and certificates.
 * You're now ready to continue to the configuration section below.
 
-### Configuration
+### Generate the Config Directory
 
-Before starting Cobrowse, there's some configuration you need to provide. We expect the following environment variables to be provided to run Cobrowse:
+We have provided a small command line utility to help you get started. This utility will gather the required config for your deployment. Run the following command from your terminal:
+
+```bash
+> npx cobrowse-enterprise create compose ./example
+```
+
+You can replace "./example" with the directory where you wish to save the configuration data. The directory will be created if it does not exist yet.
+
+### Customize the Configuration
+
+The installer above will generate a `.env` file that contains your configuration. You may edit this file to add further configuration. We support the following environment variables:
 
 | ENV VAR | Description | Example | Required |
 | :---: | :---: | :---: | :---: |
@@ -38,13 +48,6 @@ Before starting Cobrowse, there's some configuration you need to provide. We exp
 | SSL\_VALIDATION | 0 = disable cert validation \(self signed certs\) | 0 | No |
 | ACCOUNT\_CREATORS | RegEx to limit account creators email addresses | .\*@example.com | No |
 | SUPERUSERS | RegEx to specify super user email addresses | .\*@example.com | No |
-
-You can manage the environment variables however you like, so long as they are available when docker-compose runs. One option is to create a `.env` file next to the docker-compose.yml file and store them in there, for example a `.env` file may contain:
-
-```text
-DOMAIN=mydomain.com
-LICENSE=<your long license string here>
-```
 
 #### Configuring DNS
 
@@ -93,14 +96,18 @@ Open up a terminal to the location of the docker-compose.yml file and run:
 
 The Cobrowse docker-compose file will start a MongoDB instance for you. The database storage will be exposed on a docker volume at `./data/db` relative to the path of the docker-compose.yml file.
 
-**Backing up MongoDB** - You are responsible for backing up the database regularly. Cobrowse will not do this automatically in any way. See the [MonogDB docs](https://docs.mongodb.com/manual/core/backups/) for recommendations on backup strategies.
+**Backing up MongoDB**
+
+You are responsible for backing up the database regularly. Cobrowse will not do this automatically in any way. See the [MonogDB docs](https://docs.mongodb.com/manual/core/backups/) for recommendations on backup strategies.
 
 #### Upgrading Cobrowse
 
-To upgrade Cobrowse to a newer version, simply replace the docker-compose.yml file with the latest version we supply, and then run:
+The config directory created by our command line utility is a git repo. You can update to the latest version by doing:
 
 ```bash
-> docker-compose down && docker-compose up
+> docker-compose down
+> git pull upstream master
+> docker-compose up
 ```
 
 _Note: We recommend making a database backup before upgrading to new versions_
