@@ -6,14 +6,13 @@ This is the documentation for how to use Docker Compose to set up Cobrowse.io on
 
 You'll need these installed on the host system before continuing:
 
-* [Docker](https://www.docker.com)
-* [Docker Compose](https://docs.docker.com/compose/install/)
+* \*\*\*\*[**Docker**](https://www.docker.com)\*\*\*\*
+* \*\*\*\*[**Docker Compose**](https://docs.docker.com/compose/install/)\*\*\*\*
+* \*\*\*\*[**NodeJS**](https://nodejs.org/en/) – version 10 or above
 
 ### Initial Setup
 
-Before you're ready to run Cobrowse you'll need to download our docker-compose file. For access, please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
-
-This files defines the services and internal configuration that is required to easily set up the different Cobrowse server components. You should not need to edit this file at all.
+Before you're ready to run Cobrowse you'll need to configure the host system with our managed Docker Compose file. The Docker Compose files defines the services and internal configuration that is required to easily set up the different Cobrowse server components.
 
 * Setup access to our private Docker registry. This is where your Docker host can obtain the Cobrowse Enterprise images. You will need the Cobrowse Enterprise repo password that has been assigned to you.
 
@@ -22,8 +21,6 @@ This files defines the services and internal configuration that is required to e
   ```
 
 * Enter your Cobrowse Enterprise repo password when prompted for a password.
-* Download the docker-compose.yml file to a directory on the host system. This directory should be private. It is where Cobrowse will store all the deployment related files, such as the database and certificates.
-* You're now ready to continue to the configuration section below.
 
 ### Generate the Config Directory
 
