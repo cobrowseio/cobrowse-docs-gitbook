@@ -97,7 +97,9 @@ You're now ready to build and run your app. The full device capability is only a
 {% endtab %}
 
 {% tab title="Android" %}
-Full device remote control for Android, including unattended access, is officially supported starting in our v2.0 release. It uses an accessibility service that must be enabled on the device to grant access.
+Full device screen capture for Android is supported out of box with our Android SDK, and does not require any extra development or configuration. 
+
+Full device remote control for Android, including unattended access, is officially supported starting in our v2.0 release. It uses an Accessibility Service that must be enabled on the device to grant access.
 
 This feature is supported in API 21 \(5.0 Lollipop\) and above.
 
@@ -144,6 +146,10 @@ For unattended full device access, we strongly recommend:
 
 * Please initiate sessions with push notifications, rather than our default sockets. This will enable unattended access, even when your app has been backgrounded a long time, or force closed. More info at [Initiate sessions with push](initiate-sessions-with-push.md).
 * Please turn off "Require User Consent" prompts at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings). Otherwise, a user must always accept the consent prompt on the device before a session can start.
+
+### Troubleshooting
+
+* If the screen is black during full device screen capture, please make sure your views are not marked as secure. More info here: [https://developer.android.com/reference/android/view/WindowManager.LayoutParams\#FLAG\_SECURE](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_SECURE)
 {% endtab %}
 
 {% tab title="React Native" %}
