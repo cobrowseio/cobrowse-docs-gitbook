@@ -14,7 +14,7 @@ The Cobrowse.io SDK for iOS allows full device screen capture, but this requires
 
 {% tabs %}
 {% tab title="iOS" %}
-Follow this guide to add the App Extension required for capturing full device frames.
+Follow this guide to add the Broadcast Extension required for capturing full device frames.
 
 ### Implementation
 
