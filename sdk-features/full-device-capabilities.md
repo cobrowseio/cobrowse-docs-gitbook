@@ -6,9 +6,11 @@ description: 'For use with Android, iOS, React Native, and Xamarin SDKs only.'
 
 ### Overview
 
-By default, the Cobrowse.io SDKs for iOS and Android will capture the user activity inside your app only. You can enable the capture of the full device, i.e. screens outside your app, including home screen, device settings, and everything else. 
+The Cobrowse.io SDK for Android will allow full device screen capture, including home screen, device settings, and everything else, just by toggling "full device mode" during an active session. There's no changes in the Android SDK required to support this. If you do not want this feature, you may completely disable "Full Device Viewing" in your account settings. 
 
-Follow this guide to add the required App Extension for iOS and enable an accessibility service on Android required for capturing full device frames.
+On Android, you can also enable full device remote control, including optional unattended access, but this requires enabling the Accessibility Service when integrating the Android SDK. Please follow the directions below. 
+
+The Cobrowse.io SDK for iOS allows full device screen capture, but this requires enabling the Broadcast Extension when integrating the iOS SDK. Please follow the directions below. 
 
 {% tabs %}
 {% tab title="iOS" %}
