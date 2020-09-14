@@ -94,6 +94,14 @@ class SampleHandler: CobrowseIOReplayKitExtension {
 **Build and run your app**
 
 You're now ready to build and run your app. The full device capability is only available on physical devices, it will not work in the iOS Simulator.
+
+### Troubleshooting
+
+If full device screen capture is not working, please check the following:
+
+* Please verify you are testing on a physical device, and not the iOS simulator.
+* Please verify you have added the Bundle Id of your Broadcast Extension to your main app's Info.plist as described in our documentation. If you have not, then no options will appear in the list after clicking the blue circular record button. 
+* Please verify you are not running any other screen recording or screen mirroring software at the same time, as this will interfere. 
 {% endtab %}
 
 {% tab title="Android" %}
