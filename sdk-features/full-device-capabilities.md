@@ -97,7 +97,7 @@ You're now ready to build and run your app. The full device capability is only a
 
 ### Troubleshooting
 
-If full device screen capture is not working, please check the following:
+If full device screen capture on iOS is not working, please check the following:
 
 * Please verify you are testing on a physical device, and not the iOS simulator.
 * Please verify you have added the Bundle Id of your Broadcast Extension to your main app's Info.plist as described in our documentation. If you have not, then no options will appear in the list after clicking the blue circular record button. 
