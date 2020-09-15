@@ -14,6 +14,7 @@ We support several query parameters to configure what is shown:
 | `token=[token_value]` | Provide a JWT to auto-authenticate the specified user. For example `?token=eyJh...dCI6` |
 | `filter_[name]=[value]` | Filter the list of devices based on any metadata specified in your SDK integration. You may add multiple filters as additional query parameters. All filters are ANDed together when filtering the device list. Please prefix each with "filter\_" and ensure the \[name\] matches the field used in your SDK integration. For example, `?filter_user_email=john@example.com`. |
 | `end_action=none` | When session ends, do not return user to /dashboard. You may also use `end_action=code` to return user to /code endpoint. |
+| `allow_popout` | Set to `false` to disable the popout button when in a session. |
 
 This logic enables you to embed the relevant IFrame data on each place in your CRM. For example, when an agent is looking at a user account view in your CRM, you might use filters to show all of that user's available devices.
 
