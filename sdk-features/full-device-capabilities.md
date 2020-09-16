@@ -95,6 +95,10 @@ class SampleHandler: CobrowseIOReplayKitExtension {
 
 You're now ready to build and run your app. The full device capability is only available on physical devices, it will not work in the iOS Simulator.
 
+If you've set everything up properly, after clicking the blue circular icon you should see the following screen to select your Broadcast Extension. 
+
+![Select your Broadcast Extension from the list](../.gitbook/assets/broadcast_extension_example.png)
+
 ### Troubleshooting
 
 If full device screen capture on iOS is not working, please check the following:
