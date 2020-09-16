@@ -17,19 +17,19 @@ We support several query parameters to configure what is shown:
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><code>nochrome</code>
+      <td style="text-align:left"><b>nochrome</b>
       </td>
       <td style="text-align:left">Set to <code>true</code> to remove the navigation bar. For example <code>?nochrome=true</code>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>token</code>
+      <td style="text-align:left"><b>token</b>
       </td>
       <td style="text-align:left">Provide a JWT to auto-authenticate the specified user. For example <code>?token=eyJh...dCI6</code>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>filter_[name]</code>
+      <td style="text-align:left"><b>filter_[name]</b>
       </td>
       <td style="text-align:left">
         <p>Filter the list of devices based on any metadata specified in your SDK
@@ -42,7 +42,7 @@ We support several query parameters to configure what is shown:
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>end_action</code>
+      <td style="text-align:left"><b>end_action</b>
       </td>
       <td style="text-align:left">
         <p>Set to <code>dashbaord</code> to rediect back to the device list (/dashboard)
@@ -55,7 +55,7 @@ We support several query parameters to configure what is shown:
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>allow_popout</code>
+      <td style="text-align:left"><b>allow_popout</b>
       </td>
       <td style="text-align:left">Set to <code>false</code> to disable the popout button when in a session.
         For example<code>?allow_popout=false</code>
