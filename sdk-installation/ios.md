@@ -25,6 +25,8 @@ github "cobrowseio/cobrowse-sdk-ios-binary" ~> 2.0
 ```
 
 _Don't forget to run `carthage update`  after you've edited your Cartfile._
+
+_More information about Carthage at_ [_https://github.com/Carthage/Carthage\#if-youre-building-for-ios-tvos-or-watchos_](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)_._
 {% endtab %}
 
 {% tab title="Manual" %}
