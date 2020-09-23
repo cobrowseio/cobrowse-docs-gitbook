@@ -14,7 +14,7 @@ The JWT you create and sign should contain the following claims:
 | **iss** | Issuer - Should be the License Key for your Cobrowse account which can be found at [settings](https://cobrowse.io/dashboard/settings). | `j6ZCJL61wJ` |
 | **sub** | Subject - The email of the support agent that you'd like to auto-authenticate. User will be automatically created if it does not yet exist. | `joe@example.com` |
 | **displayName** | Agent Display Name - The name of the support agent \(may be displayed to the end user\). | `Joe Bloggs` |
-| **policy** | Policy \(optional\) - Optionally limit the scope of the JWT \(e.g. limiting which devices can be listed and connected to\). |  |
+| **policy** | Policy \(optional\) - Optionally limit the scope of the JWT \(e.g. limiting which devices can be listed and connected to\). | `{ devices: { user_id: '362545823684324' } }` |
 
 1. Generate a RS256 private key by following the guide [here](https://rietta.com/blog/2012/01/27/openssl-generating-rsa-key-from-command/).
 2. Enter the associated public key in your [settings](https://cobrowse.io/dashboard/settings/integrations).
