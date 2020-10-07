@@ -163,6 +163,7 @@ For unattended full device access, we strongly recommend:
 
 * If the screen is black during full device screen capture, please make sure your views are not marked as secure. More info here: [https://developer.android.com/reference/android/view/WindowManager.LayoutParams\#FLAG\_SECURE](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_SECURE)
 * If you are using Android Enterprise, please ensure your enterprise settings do not disallow screen capture.
+* If you get `compile error android:foregroundServiceType not found`, please update your Android project to use `compileSdkVersion 29`. 
 {% endtab %}
 
 {% tab title="React Native" %}
