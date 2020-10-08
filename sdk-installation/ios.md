@@ -16,6 +16,8 @@ pod 'CobrowseIO', '~>2'
 
 _Don't forget to run `pod repo update` then `pod install` after you've edited your Podfile._
 
+_Make sure you are on the latest stable version of Pods. Run `pod --version` to check!_
+
 **Note:** Depending on your project, you may also need `use_frameworks!` in your Podfile.
 {% endtab %}
 
