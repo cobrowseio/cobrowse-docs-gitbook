@@ -1,6 +1,6 @@
 # AWS terraform
 
-This is the documentation for how to use our terraform for AWS to set up Cobrowse.io in your cloud.
+This is the documentation for how to use our terraform for AWS to set up Cobrowse.io Server in your cloud.
 
 ### Initial Setup
 

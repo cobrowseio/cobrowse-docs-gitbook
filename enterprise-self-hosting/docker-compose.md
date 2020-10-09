@@ -1,6 +1,6 @@
 # Docker compose
 
-This is the documentation for how to use Docker Compose to set up Cobrowse.io on a single host.
+This is the documentation for how to use Docker Compose to set up Cobrowse.io Server on a single host.
 
 ### Dependencies
 
@@ -9,6 +9,12 @@ You'll need these installed on the host system before continuing:
 * \*\*\*\*[**Docker**](https://www.docker.com)\*\*\*\*
 * \*\*\*\*[**Docker Compose**](https://docs.docker.com/compose/install/)\*\*\*\*
 * \*\*\*\*[**NodeJS**](https://nodejs.org/en/) – version 10 or above
+
+### System Requirements
+
+A single VM is all that is required to run Cobrowse.io Server. We recommend at least 2 vCPUs, 4GB memory, and 50GB SSD storage. This setup is a fast way to get started, and works well for some deployments. 
+
+Cobrowse.io is based on Docker, and we support many additional configurations to provide highly-available and large scale deployments. Please reach out below to discuss your specific requirements!
 
 ### Initial Setup
 
