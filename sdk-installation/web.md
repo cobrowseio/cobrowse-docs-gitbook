@@ -34,6 +34,14 @@ Once you have your Javascript snippet and license key set up, navigate to [https
 
 **Note: Cobrowse needs to be able to access your website, so localhost addresses are not recommenced for testing. To test on a local development version, we recommend using** [**ngrok**](https://ngrok.com/)**.**
 
+## **Advanced features**
+
+{% page-ref page="../sdk-features/advanced-features/web/cross-document-iframes.md" %}
+
+{% page-ref page="../sdk-features/advanced-features/web/ie-11-polyfills.md" %}
+
+
+
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}
