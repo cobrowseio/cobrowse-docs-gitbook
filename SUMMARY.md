@@ -25,7 +25,7 @@
 * [Full device capabilities](sdk-features/full-device-capabilities.md)
 * [Advanced features](sdk-features/advanced-features/README.md)
   * [Web](sdk-features/advanced-features/web/README.md)
-    * [Cross-document iFrames](sdk-features/advanced-features/web/cross-document-iframes.md)
+    * [IFrames support](sdk-features/advanced-features/web/cross-document-iframes.md)
     * [IE 11 polyfills](sdk-features/advanced-features/web/ie-11-polyfills.md)
   * [iOS](sdk-features/advanced-features/ios/README.md)
     * [Alternate render method](sdk-features/advanced-features/ios/alternate-render-method.md)
