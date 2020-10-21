@@ -23,7 +23,7 @@
   * [6-digit code screen](sdk-features/customize-the-interface/customize-6-digit-code-screen.md)
 * [Initiate sessions with push](sdk-features/initiate-sessions-with-push.md)
 * [Full device capabilities](sdk-features/full-device-capabilities.md)
-* [Advanced features](sdk-features/advanced-features/README.md)
+* [Advanced configuration](sdk-features/advanced-features/README.md)
   * [Web](sdk-features/advanced-features/web/README.md)
     * [IFrames support](sdk-features/advanced-features/web/cross-document-iframes.md)
     * [IE 11 polyfills](sdk-features/advanced-features/web/ie-11-polyfills.md)

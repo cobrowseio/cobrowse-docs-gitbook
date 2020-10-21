@@ -1,2 +1,2 @@
-# Advanced features
+# Advanced configuration
 

@@ -84,7 +84,7 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 
 * iOS 9.0 or later
 
-## Advanced features
+## Advanced configuration
 
 {% page-ref page="../sdk-features/advanced-features/ios/alternate-render-method.md" %}
 
