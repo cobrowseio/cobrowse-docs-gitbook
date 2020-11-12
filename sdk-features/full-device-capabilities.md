@@ -26,7 +26,7 @@ Follow this guide to add the Broadcast Extension required for capturing full dev
 4. Enter a name for the target
 5. Uncheck "Include UI Extension"
 6. Create the target, noting its bundle ID
-7. Change the target SDK of your Broadcast Extension target to at least iOS 10.0
+7. Change the target SDK of your Broadcast Extension to iOS 12.0 or higher _\(Note: it should still work as far back to iOS 10.0\)_
 
 **Set up Keychain Sharing**
 
