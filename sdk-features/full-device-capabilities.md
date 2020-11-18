@@ -173,6 +173,10 @@ Please follow the iOS and Android documentation to implement full device capabil
 
 Any questions, please [email us](mailto:hello@cobrowse.io). 
 {% endhint %}
+
+### Troubleshooting
+
+* For React Native on iOS, some clients have reported that Xcode does not automatically create the _{{extensionname}}.entitlements_ file in the extension directory, which is necessary for the "io.cobrowse" keychain sharing to work. 
 {% endtab %}
 
 {% tab title="Xamarin.iOS" %}
