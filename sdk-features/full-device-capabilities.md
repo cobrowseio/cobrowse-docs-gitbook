@@ -4,21 +4,13 @@ description: 'For use with Android, iOS, React Native, and Xamarin SDKs only.'
 
 # Full device capabilities
 
-### Overview
-
-The Cobrowse.io SDK for Android will allow full device screen capture, including home screen, device settings, and everything else, just by toggling "full device mode" during an active session. There's no changes in the Android SDK required to support this. If you do not want this feature, you may completely disable "Full Device Viewing" in your account settings. 
-
-On Android, you can also enable full device remote control, including optional unattended access, but this requires enabling the Accessibility Service when integrating the Android SDK. Please follow the directions below. 
-
-The Cobrowse.io SDK for iOS allows full device screen capture, but this requires enabling the Broadcast Extension when integrating the iOS SDK. Please follow the directions below. 
-
 {% tabs %}
 {% tab title="Web" %}
+### Overview
+
 The Cobrowse.io SDK for Web includes an optional "full device" toggle in the bottom right when running an active session. This feature enables the end-user to share their entire screen on their laptop or desktop. This is great if the end-user navigates to browser tabs outside of your website, where the Web SDK's JavaScript snippet is not installed, or if the end-user needs to share a PDF, or their entire desktop. 
 
-_Note that redaction, annotation, and remote control are disabled when in full device mode via our Web SDK. If you require full desktop redaction, annotation, and remote control, please see our_ [_MacOS_](../sdk-installation/macos.md) _and_ [_Windows_](../sdk-installation/windows.md) _SDKs, which will require a downloaded utility on the end-user's computer._
-
-To customize the UI of the full device consent prompt on Web:
+### Customizing the full device UI on Web
 
 ```javascript
 CobrowseIO.confirmFullDevice = function() {
@@ -29,9 +21,17 @@ CobrowseIO.confirmFullDevice = function() {
     });
 }
 ```
+
+{% hint style="info" %}
+Redaction, annotation, and remote control are disabled when in full device mode via our Web SDK. If you require full desktop redaction, annotation, and remote control, please see our [MacOS](../sdk-installation/macos.md) and [Windows](../sdk-installation/windows.md) SDKs, which will require a downloaded utility on the end-user's computer.
+{% endhint %}
 {% endtab %}
 
 {% tab title="iOS" %}
+### Overview
+
+The Cobrowse.io SDK for iOS allows full device screen capture, but this requires enabling the Broadcast Extension when integrating the iOS SDK. Please follow the directions below. 
+
 Follow this guide to add the Broadcast Extension required for capturing full device frames.
 
 ### Implementation
@@ -127,6 +127,12 @@ If full device screen capture on iOS is not working, please check the following:
 {% endtab %}
 
 {% tab title="Android" %}
+### Overview
+
+The Cobrowse.io SDK for Android will allow full device screen capture, including home screen, device settings, and everything else, just by toggling "full device mode" during an active session. There's no changes in the Android SDK required to support this. If you do not want this feature, you may completely disable "Full Device Viewing" in your account settings. 
+
+On Android, you can also enable full device remote control, including optional unattended access, but this requires enabling the Accessibility Service when integrating the Android SDK. Please follow the directions below. 
+
 Full device screen capture for Android is supported out of box with our Android SDK, and does not require any extra development or configuration. 
 
 Full device remote control for Android, including unattended access, is officially supported starting in our v2.0 release. It uses an Accessibility Service that must be enabled on the device to grant access.
