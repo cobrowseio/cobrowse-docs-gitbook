@@ -34,13 +34,21 @@ Once you have your Javascript snippet and license key set up, navigate to [https
 
 **Note: Cobrowse needs to be able to access your website, so localhost addresses are not recommenced for testing. To test on a local development version, we recommend using** [**ngrok**](https://ngrok.com/)**.**
 
+## Minimum browser requirements
+
+Cobrowse.io for Web supports all major browsers including Chrome, Firefox, Safari, Opera, Edge, and IE11. 
+
+Our Web SDK has an optional "full-device" mode which enables the user to share their entire desktop without any installation. Due to browser limitations, this feature is not available on IE11, or in the mobile browsers such as Mobile Chrome and Mobile Safari. Please see our native [Android](android.md) and [iOS](ios.md) SDKs for [full device capabilities](../sdk-features/full-device-capabilities.md) on mobile. 
+
+The specific browser versions supported are Chrome 16+, Firefox 11+, Safari 7+, Opera 12.1+, Edge 12+, and IE11. 
+
 ## **Advanced configuration**
 
 {% page-ref page="../sdk-features/advanced-features/web/cross-document-iframes.md" %}
 
 {% page-ref page="../sdk-features/advanced-features/web/ie-11-polyfills.md" %}
 
-## Minimum browser requirements
+
 
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
