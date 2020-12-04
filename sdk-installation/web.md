@@ -40,7 +40,7 @@ Once you have your Javascript snippet and license key set up, navigate to [https
 
 {% page-ref page="../sdk-features/advanced-features/web/ie-11-polyfills.md" %}
 
-
+## Minimum browser requirements
 
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
