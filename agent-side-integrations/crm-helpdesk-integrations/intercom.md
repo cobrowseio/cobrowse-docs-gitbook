@@ -20,7 +20,7 @@ We are aware of a possible issue with React Native apps only, where the user con
 
 #### Sorry, you do not have permissions to modify this app installation.
 
-Intercom recently changed the way their OAuth tokens work, and it now requires users to have the "Can install, configure and delete apps" permission in order to use the Cobrowse.io Messenger App. 
+Intercom recently changed the way their OAuth tokens work, and it now requires users to have the "Can install, configure and delete apps" permission in order to use the Cobrowse.io Messenger App.   You may grant your users this permission in Settings -&gt; General -&gt; Teammates -&gt; Edit.
 
 To work around this problem, we have released the Cobrowse.io Inbox App, which lives in the sidebar of Intercom, and enables connecting to the end-user's device\(s\) with just one click. 
 
