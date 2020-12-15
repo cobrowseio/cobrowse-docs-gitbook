@@ -20,7 +20,7 @@ You may expose a small UI in your app for users to generate a 6-digit code that 
 
 When using 6-digit codes, we strongly recommend delaying the call to `CobrowseIO.start()` in our [Web SDK installation instructions](../sdk-installation/web.md#installation) until you are ready to generate a 6-digit code. This prevents unnecessary device registrations until the user is ready to start a session. 
 
-{% hint style="warning" %}
+{% hint style="info" %}
 6-digit codes expire after approximately 15 minutes, so it's best practice to generate a 6-digit code only when a user wants to start a session. 
 {% endhint %}
 
