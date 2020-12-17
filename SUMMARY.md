@@ -38,9 +38,10 @@
   * [Genesys](agent-side-integrations/crm-helpdesk-integrations/genesys.md)
   * [Salesforce](agent-side-integrations/crm-helpdesk-integrations/salesforce.md)
   * [Freshdesk](agent-side-integrations/crm-helpdesk-integrations/freshdesk.md)
-* [Custom iFrame integrations](agent-side-integrations/custom-iframe-integrations/README.md)
-  * [Embed options](agent-side-integrations/custom-iframe-integrations/embed-options.md)
-  * [JSON Web Tokens \(JWTs\)](agent-side-integrations/custom-iframe-integrations/json-web-tokens-jwts.md)
+* [Custom integrations](agent-side-integrations/custom-integrations/README.md)
+  * [Agent API \(alpha\)](agent-side-integrations/custom-integrations/agent-api.md)
+  * [iFrame integrations](agent-side-integrations/custom-integrations/custom-iframe-integrations.md)
+  * [JSON Web Tokens \(JWTs\)](agent-side-integrations/custom-integrations/json-web-tokens-jwts.md)
 
 ## Enterprise self-hosting
 
