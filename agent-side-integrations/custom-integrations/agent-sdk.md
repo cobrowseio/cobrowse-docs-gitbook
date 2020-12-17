@@ -2,11 +2,11 @@
 description: Client-side JavaScript SDK to build custom agent-side integrations
 ---
 
-# Agent API \(alpha\)
+# Agent SDK \(alpha\)
 
 ## Overview
 
-Our Agent API can be used to build 100% customized agent-side integrations into your own products and services. 
+Our Agent SDK can be used to build 100% customized agent-side integrations into your own products and services. 
 
 ## Quick start
 
@@ -16,7 +16,7 @@ This Demo Page uses our [Agent UI components library](https://github.com/cobrows
 
 ## Features
 
-The Agent API can be used to:
+The Agent SDK can be used to:
 
 * List Devices and/or Sessions matching your filter criteria
   * Build your own 100% customized dashboard or device list
@@ -30,7 +30,7 @@ The Agent API can be used to:
 
 
 {% hint style="info" %}
-The Agent API is currently in alpha release, and subject to change without notice. 
+The Agent SDK is currently in alpha release, and subject to change without notice. 
 {% endhint %}
 
 

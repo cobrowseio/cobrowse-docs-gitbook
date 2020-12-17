@@ -4,8 +4,8 @@ Rather than accessing Cobrowse.io via our website, many of our customers integra
 
 We provide a variety of resources to make this as easy as possible, including:
 
-* [Agent API](agent-api.md) \(client-side JavaScript SDK\)
-* [Examples of customizable UI components](agent-api.md) \(written in React, more frameworks coming soon\)
+* [Agent SDK](agent-sdk.md) \(client-side JavaScript SDK\)
+* [Examples of customizable UI components](agent-sdk.md) \(written in React, more frameworks coming soon\)
 * [iFrames](custom-iframe-integrations.md) \(to easily drop the entire Cobrowse.io dashboard into your own website\)
 * [JSON Web Tokens](json-web-tokens-jwts.md) \(used for automatic authentication and permission scoping\)
 
