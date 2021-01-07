@@ -16,22 +16,11 @@ You may expose a small UI in your app for users to generate a 6-digit code that 
 
 {% tabs %}
 {% tab title="Web" %}
-### Delay call to CobrowseIO.start\(\) 
-
-When using 6-digit codes, we strongly recommend delaying the call to `CobrowseIO.start()` in our [Web SDK installation instructions](../sdk-installation/web.md#installation) until you are ready to generate a 6-digit code. This prevents unnecessary device registrations until the user is ready to start a session. 
-
-{% hint style="info" %}
-6-digit codes expire after approximately 15 minutes, so it's best practice to generate a 6-digit code only when a user wants to start a session. 
-{% endhint %}
-
 ### Generate the 6-digit code
 
 ```javascript
 // ensure Cobrowse is loaded
 CobrowseIO.client().then(function() {
-    // start cobrowse here only when ready to generate a code
-    CobrowseIO.start();
-    
     // create a code a display it to the user using your own UI
     CobrowseIO.createSessionCode().then(function(code) {
        console.log('your code is', code);
@@ -39,6 +28,10 @@ CobrowseIO.client().then(function() {
 
 });
 ```
+
+{% hint style="info" %}
+6-digit codes expire after approximately 15 minutes, so it's best practice to generate a 6-digit code only when a user wants to start a session. 
+{% endhint %}
 {% endtab %}
 
 {% tab title="iOS" %}
