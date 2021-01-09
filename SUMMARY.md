@@ -39,7 +39,7 @@
   * [Salesforce](agent-side-integrations/crm-helpdesk-integrations/salesforce.md)
   * [Freshdesk](agent-side-integrations/crm-helpdesk-integrations/freshdesk.md)
 * [Custom integrations](agent-side-integrations/custom-integrations/README.md)
-  * [Agent SDK \(alpha\)](agent-side-integrations/custom-integrations/agent-sdk.md)
+  * [Agent SDK \(beta\)](agent-side-integrations/custom-integrations/agent-sdk.md)
   * [iFrame integrations](agent-side-integrations/custom-integrations/custom-iframe-integrations.md)
   * [JSON Web Tokens \(JWTs\)](agent-side-integrations/custom-integrations/json-web-tokens-jwts.md)
 

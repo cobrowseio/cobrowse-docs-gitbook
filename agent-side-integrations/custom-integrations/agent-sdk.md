@@ -2,7 +2,7 @@
 description: Client-side JavaScript SDK to build custom agent-side integrations
 ---
 
-# Agent SDK \(alpha\)
+# Agent SDK \(beta\)
 
 ## Overview
 
@@ -82,7 +82,7 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
 ```
 
 {% hint style="info" %}
-The Agent SDK is currently in alpha release, and subject to change without notice. 
+The Agent SDK is currently in beta release. Some APIs may change.
 {% endhint %}
 
 
