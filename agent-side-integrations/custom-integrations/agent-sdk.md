@@ -54,7 +54,7 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
     // get details for a single device
     if (devices.length > 0) {
         console.log('last active', devices[0].last_active);
-        console.log('custom data', JSON.stringify(devices[0].custom_data));
+        console.log('custom data', JSON.stringify(devices[0].custom_data);
     }
 }());
 ```
