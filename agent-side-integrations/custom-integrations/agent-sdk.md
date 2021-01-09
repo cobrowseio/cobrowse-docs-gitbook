@@ -20,6 +20,7 @@ The Agent SDK can be used to:
 
 * List Devices and/or Sessions matching your filter criteria
   * Build your own 100% customized dashboard or device list
+  * Show only a single user's devices in the context of a support ticket or chat
 * Subscribe to events on Devices and Sessions
   * Create a smart connect button, that changes color when the devices goes online/offline
 * Interact with embedded Cobrowse.io iFrames
@@ -27,7 +28,58 @@ The Agent SDK can be used to:
   * Attach a button in the parent page to end the session, or select the agent's tool
   * Programmatically end the session before the parent page closes
 
+### List devices and sessions
 
+```javascript
+import CobrowseAPI from 'cobrowse-agent-sdk';
+
+(async function() {
+    const cobrowse = new CobrowseAPI();
+    cobrowse.token = 'jwt token>'; // generate a JWT (see docs)
+    
+    // list devices and sessions
+    const [devices, sessions] = await Promise.all([
+        cobrowse.devices.list(),
+        cobrowse.sessions.list({state:['active', 'ended'], activated: new Date(0)})
+    ]);
+    
+    // subscribe to updates for these resources
+    devices.forEach(device => device.subscribe());
+    sessions.forEach(sessions => sessions.subscribe());
+    
+    // listen for updates
+    devices.forEach(device => device.on('updated', (d) => console.log(d)));
+    sessions.forEach(session => session.on('updated', (s) => console.log(s)));
+}());
+```
+
+### Attach context to iFrame
+
+```javascript
+import CobrowseAPI from 'cobrowse-agent-sdk';
+
+(async function() {
+    const cobrowse = new CobrowseAPI(); // JWT not required
+    
+    // attach to iframe
+    const frameEl = document.getElementById('#myIframe');
+    const ctx = await cobrowse.attachContext(frameEl);
+    
+    // listen for updates to session
+    ctx.on('session.updated', (session) => {
+        console.log('session was updated', session);
+        if (session.ended) {
+            console.log('session has ended');
+            ctx.destroy();
+        }
+    });
+    
+    // interact with iframe
+    const currentTool = await ctx.getTool();
+    await ctx.setTool('laser');
+    await ctx.endSession();
+}());
+```
 
 {% hint style="info" %}
 The Agent SDK is currently in alpha release, and subject to change without notice. 
