@@ -35,7 +35,7 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
 
 (async function() {
     const cobrowse = new CobrowseAPI();
-    cobrowse.token = 'jwt token>'; // generate a JWT (see docs)
+    cobrowse.token = 'jwt token'; // generate a JWT (see docs)
     
     // list devices and sessions
     const [devices, sessions] = await Promise.all([
@@ -50,6 +50,14 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
     // listen for updates
     devices.forEach(device => device.on('updated', (d) => console.log(d)));
     sessions.forEach(session => session.on('updated', (s) => console.log(s)));
+    
+    // get details for a single device
+    if (devices.length > 0) {
+        console.log('online status', devices[0].online());
+        console.log('connectable status', devices[0].connectable());
+        console.log('last active', devices[0].last_active());
+        console.log('custom data', JSON.stringify(devices[0].custom_data()));
+    }
 }());
 ```
 
@@ -77,6 +85,7 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
     // interact with iframe
     const currentTool = await ctx.getTool();
     await ctx.setTool('laser');
+    await ctx.clearAnnotations();
     await ctx.endSession();
 }());
 ```
