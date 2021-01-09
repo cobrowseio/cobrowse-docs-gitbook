@@ -67,7 +67,7 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
 (async function() {
     const cobrowse = new CobrowseAPI(); // JWT not required
     
-    // attach to iframe
+    // attach to iframe (make sure it has loaded!)
     const frameEl = document.getElementById('myIframe');
     const ctx = await cobrowse.attachContext(frameEl);
     
@@ -82,9 +82,9 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
     
     // interact with iframe
     const currentTool = await ctx.getTool();
-    await ctx.setTool('laser');
-    await ctx.clearAnnotations();
-    await ctx.endSession();
+    // await ctx.setTool('laser');
+    // await ctx.clearAnnotations();
+    // await ctx.endSession();
 }());
 ```
 
