@@ -53,10 +53,8 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
     
     // get details for a single device
     if (devices.length > 0) {
-        console.log('online status', devices[0].online());
-        console.log('connectable status', devices[0].connectable());
-        console.log('last active', devices[0].last_active());
-        console.log('custom data', JSON.stringify(devices[0].custom_data()));
+        console.log('last active', devices[0].last_active);
+        console.log('custom data', JSON.stringify(devices[0].custom_data));
     }
 }());
 ```
@@ -70,7 +68,7 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
     const cobrowse = new CobrowseAPI(); // JWT not required
     
     // attach to iframe
-    const frameEl = document.getElementById('#myIframe');
+    const frameEl = document.getElementById('myIframe');
     const ctx = await cobrowse.attachContext(frameEl);
     
     // listen for updates to session
