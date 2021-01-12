@@ -23,10 +23,10 @@ When you override these functions, we will not show any default UI for the end-u
 When implementing your own UI, you can use the following javascript code to programatically end the Cobrowse session.
 
 ```javascript
-CobrowseIO.currentSession.end();
+if (CobrowseIO.currentSession) {
+    CobrowseIO.currentSession.end();
+}
 ```
-
-## Example
 
 Here's a simple example that re-create the default UI, but with a blue button and some different text:
 
