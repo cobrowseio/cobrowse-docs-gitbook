@@ -23,7 +23,7 @@ CobrowseIO.confirmFullDevice = function() {
         // you must show a button or UI as part of the DOM 
         // for the user to click before resolving the promise
         // 
-        // call resolve() to start full device, or reject() 
+        // call resolve(true) to start full device, or reject() 
         // to turn off full device
     });
 }
