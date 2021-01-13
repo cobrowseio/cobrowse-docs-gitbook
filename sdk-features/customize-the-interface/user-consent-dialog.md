@@ -12,7 +12,7 @@ Here are the SDK hooks:
 CobrowseIO.confirmSession = function() {
     return new Promise(function(resolve, reject) {
         // replace the code below with your own confirmation prompt, calling resolve or reject as a appropriate
-        if (window.confirm('Allow session?')) resolve();
+        if (window.confirm('Allow session?')) resolve(true);
         else reject();
     });
 }
