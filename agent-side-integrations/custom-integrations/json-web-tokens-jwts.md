@@ -16,8 +16,8 @@ The JWT you create and sign should contain the following claims:
 | **displayName** | Agent Display Name - The name of the support agent \(may be displayed to the end user\). | `Joe Bloggs` |
 | **policy** | Policy \(optional\) - Optionally limit the scope of the JWT \(e.g. limiting which devices can be listed and connected to\). | `{ devices: { user_id: '362545823684324' } }` |
 
-1. Generate a RS256 private key by following the guide [here](https://rietta.com/blog/2012/01/27/openssl-generating-rsa-key-from-command/).
+1. Generate an RS256 private key by following the guide [here](https://rietta.com/blog/2012/01/27/openssl-generating-rsa-key-from-command/).
 2. Enter the associated public key in your [settings](https://cobrowse.io/dashboard/settings/integrations).
-3. Sign your JSON object using your private key.HintFind a range of JWT signing libraries at [https://jwt.io/](https://jwt.io/)
-4. Add the JWT as a query parameter to the IFrame source URL in any way you'd like. In our own testing, we set the IFrame source URL to our own backend. Once the request was received by our backend, we generated the JWT, constructed the full URL with the JWT, and did a simple redirect. However, any method will do!
+3. Sign your claims object using your private key. Find a range of JWT signing libraries at [https://jwt.io/](https://jwt.io/).
+4. Add the JWT as a query parameter to the IFrame source URL.
 
