@@ -205,6 +205,12 @@ export default class App extends Component {
     }
 }
 ```
+
+When implementing your own UI, you can use the following javascript code to programatically end the Cobrowse session.
+
+```javascript
+await CobrowseIO.endSession();
+```
 {% endtab %}
 
 {% tab title="Xamarin" %}
