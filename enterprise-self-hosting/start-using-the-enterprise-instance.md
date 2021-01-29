@@ -1,4 +1,4 @@
-# Start using the enterprise instance
+# Starting the enterprise instance
 
 Once your self-hosted instance is up and running, there are a few steps to bootstrap the account and configure our SDKs to use your private instance.
 
