@@ -48,5 +48,6 @@
 * [Docker compose](enterprise-self-hosting/docker-compose.md)
 * [AWS terraform](enterprise-self-hosting/aws-terraform.md)
 * [Custom requirements](enterprise-self-hosting/custom-requirements.md)
+* [Sizing guidelines](enterprise-self-hosting/sizing-guidelines.md)
 * [Start using the enterprise instance](enterprise-self-hosting/start-using-the-enterprise-instance.md)
 

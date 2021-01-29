@@ -12,7 +12,7 @@ You'll need these installed on the host system before continuing:
 
 ### System Requirements
 
-A single VM is all that is required to run Cobrowse.io Server. We recommend at least 2 vCPUs, 4GB memory, and 50GB SSD storage. This setup is a fast way to get started, and works well for many customers. 
+A single VM is all that is required to run Cobrowse.io Server. We recommend at least 2 vCPUs, 4GB memory, and 50GB SSD storage. This setup is a fast way to get started, and works well for many customers. For more information about system requirements, please see [Sizing guidelines](sizing-guidelines.md).
 
 Cobrowse.io is based on Docker, and we support many additional configurations to provide highly-available and large scale deployments. Please reach out below to discuss your specific requirements!
 
