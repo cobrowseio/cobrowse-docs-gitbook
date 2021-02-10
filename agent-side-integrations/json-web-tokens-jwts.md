@@ -37,3 +37,5 @@ The JWT you create and sign should contain the following claims:
 
 We recorded a video showing the complete steps to generate a RS256 private key, use it to sign a JSON object with the required claims, and use it as a query parameter to automatically authenticate the specified user.  Hope it is helpful! [https://www.youtube.com/watch?v=jm8AYUfH9hw](https://www.youtube.com/watch?v=jm8AYUfH9hw)
 
+We also recorded a video showing how to use the JWT Policy claim to restrict the scope of the JWT to a filtered set of devices. [https://www.youtube.com/watch?v=LCNEtzMv5U0](https://www.youtube.com/watch?v=LCNEtzMv5U0)
+
