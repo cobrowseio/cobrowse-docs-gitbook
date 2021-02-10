@@ -33,5 +33,7 @@ The JWT you create and sign should contain the following claims:
 3. Sign your claims object using your private key. Find a range of JWT signing libraries at [https://jwt.io/](https://jwt.io/).
 4. Add the JWT as a query parameter to the [IFrame source URL](custom-iframe-embeds.md), or pass it to the [Agent JS API](agent-sdk.md).
 
+### Step-by-step guidance
 
+We recorded a video showing the complete steps to generate a RS256 private key, use it to sign a JSON object with the required claims, and use it as a query parameter to automatically authenticate the specified user.  Hope it is helpful! [https://www.youtube.com/watch?v=jm8AYUfH9hw](https://www.youtube.com/watch?v=jm8AYUfH9hw)
 
