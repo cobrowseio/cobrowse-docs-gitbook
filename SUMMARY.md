@@ -14,6 +14,7 @@
 
 ## SDK Features
 
+* [Account config](sdk-features/account-configuration.md)
 * [Identify your devices](sdk-features/identify-your-devices.md)
 * [Use 6-digit codes](sdk-features/6-digit-codes.md)
 * [Redact sensitive data](sdk-features/redact-sensitive-data.md)
@@ -32,16 +33,16 @@
 
 ## Agent-side integrations
 
-* [CRM / Helpdesk integrations](agent-side-integrations/crm-helpdesk-integrations/README.md)
+* [Platform integrations](agent-side-integrations/crm-helpdesk-integrations/README.md)
   * [Intercom](agent-side-integrations/crm-helpdesk-integrations/intercom.md)
   * [Zendesk](agent-side-integrations/crm-helpdesk-integrations/zendesk.md)
   * [Genesys](agent-side-integrations/crm-helpdesk-integrations/genesys.md)
   * [Salesforce](agent-side-integrations/crm-helpdesk-integrations/salesforce.md)
   * [Freshdesk](agent-side-integrations/crm-helpdesk-integrations/freshdesk.md)
-* [Custom integrations](agent-side-integrations/custom-integrations/README.md)
-  * [Agent SDK \(beta\)](agent-side-integrations/custom-integrations/agent-sdk.md)
-  * [iFrame integrations](agent-side-integrations/custom-integrations/custom-iframe-integrations.md)
-  * [JSON Web Tokens \(JWTs\)](agent-side-integrations/custom-integrations/json-web-tokens-jwts.md)
+* [Custom integrations](agent-side-integrations/custom-integrations.md)
+* [Agent JS API \(beta\)](agent-side-integrations/agent-sdk.md)
+* [Authentication \(JWTs\)](agent-side-integrations/json-web-tokens-jwts.md)
+* [IFrame embeds](agent-side-integrations/custom-iframe-embeds.md)
 
 ## Enterprise self-hosting
 

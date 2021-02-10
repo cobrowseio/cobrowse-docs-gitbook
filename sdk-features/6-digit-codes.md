@@ -16,7 +16,7 @@ You may expose a small UI in your app for users to generate a 6-digit code that 
 
 {% tabs %}
 {% tab title="Web" %}
-### Generate the 6-digit code
+### Generate the 6-digit code programmatically
 
 ```javascript
 // ensure Cobrowse is loaded
