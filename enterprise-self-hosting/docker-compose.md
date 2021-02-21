@@ -16,7 +16,7 @@ A single VM is all that is required to run Cobrowse.io Server. We recommend at l
 
 Cobrowse.io is based on Docker, and we support many additional configurations to provide highly-available and large scale deployments. Please reach out below to discuss your specific requirements!
 
-### Initial Setup
+## Initial Setup
 
 Before you're ready to run Cobrowse you'll need to configure the host system with our managed Docker Compose file. The Docker Compose files defines the services and internal configuration that is required to easily set up the different Cobrowse server components.
 
@@ -93,7 +93,7 @@ Open up a terminal to the location of the docker-compose.yml file and run:
 > docker-compose down
 ```
 
-### Other considerations
+## Other considerations
 
 #### Managing the database
 
