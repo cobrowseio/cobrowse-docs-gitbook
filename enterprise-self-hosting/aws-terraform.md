@@ -2,7 +2,7 @@
 
 This is the documentation for how to use our terraform for AWS to set up Cobrowse.io Server in your cloud.
 
-### Initial Setup
+## Initial Setup
 
 These are the steps you'll need to go through to get Cobrowse running:
 
@@ -14,7 +14,7 @@ These are the steps you'll need to go through to get Cobrowse running:
 6. Configure your DNS provider
 7. Check your deployment works
 
-#### Database setup
+### 1. Database setup
 
 The first thing you'll need is access to a MongoDB database. Cobrowse will need a connection string containing the address and authentication information for your cluster.
 
@@ -22,7 +22,7 @@ A MongoDB cluster is required for running Cobrowse. We **do not** provide this a
 
 You will need to create a cluster and provide the connection URL as a part of the Cobrowse configuration. You can either [run your own MongoDB cluster](https://docs.mongodb.com/manual/administration/install-community/) and manage the deployment and backups yourself. Alternatively, we recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/). They have a [range of certifications](https://www.mongodb.com/cloud/trust) required by many enterprises with compliance requirements.
 
-#### Install local dependencies
+### 2. Install local dependencies
 
 Next, make sure you have installed \(on your local machine\) the required tools to manage and deploy the Cobrowse infrastructure to AWS. You'll need these installed before running the setup scripts:
 
@@ -31,13 +31,13 @@ Next, make sure you have installed \(on your local machine\) the required tools 
 
 You'll also need an AWS account with credentials available to the setup script through the environment. This is most easily managed via the official [AWS cli tools](https://aws.amazon.com/cli/).
 
-#### Create an S3 bucket
+### 3. Create an S3 bucket
 
 Terraform will be configured to save the state of the resources it creates to an S3 bucket. This bucket must be created manually. It's access should be completely private as the terraform state may contain sensitive information.
 
 See the AWS documentation on [how to create a bucket](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html) if you are unsure about how to do this.
 
-#### Generate the config directory
+### 4. Generate the config directory
 
 We have provided a small command line utility to help you get started. This utility will gather the required config for your deployment. Run the following command from your terminal:
 
@@ -47,7 +47,7 @@ We have provided a small command line utility to help you get started. This util
 
 You can replace "./example" with the directory where you wish to save the configuration data. The directory will be created if it does not exist yet.
 
-#### Deploy the Terraform
+### 5. Deploy the Terraform
 
 Once you have successfully generated a configuration directory via our command line utility you are then ready to deploy the terraform to AWS.
 
@@ -69,7 +69,7 @@ Run the following command to start the deployment of resources to AWS:
 
 This will list the modifications that terraform will make to your AWS account. If that looks good, type 'yes' to continue the deployment.
 
-#### Configure your DNS provider
+### 6. Configure your DNS provider
 
 Once the terraform managed resources have been deployed to AWS, you should have an output similar to this:
 
@@ -92,11 +92,11 @@ The last step is to configure the two required DNS records with your DNS provide
 
 Create CNAMES to direct the `api_domain` to the `api_dns_name` value shown in the output from `terraform apply`, and the `frontend_domain` to the `frontend_dns_name` value.
 
-#### Check your deployment
+### 7. Check your deployment
 
 Your deployment should now be available. Open up a web browser to your Cobrowse domain and check the deployment!
 
-### Monitoring your Deployment
+## Monitoring your Deployment
 
 Here we've listed a few useful resources created by our terraform. These can be used to check on the health of your deployment, or dig into any errors you might be experiencing:
 
@@ -108,11 +108,11 @@ View your cluster in [ECS](https://console.aws.amazon.com/ecs/home). There shoul
 
 ## Other considerations
 
-#### Managing the database
+### Managing the database
 
 You are responsible for backing up the database regularly. Cobrowse will not do this automatically in any way. See the [MonogDB docs](https://docs.mongodb.com/manual/core/backups/) for recommendations on backup strategies. [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) can be configured to do this automatically.
 
-#### Upgrading Cobrowse
+### Upgrading Cobrowse
 
 The config directory created by our command line utility is a git repo. You can update to the latest version by doing:
 
