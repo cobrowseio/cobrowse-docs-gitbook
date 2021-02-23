@@ -22,7 +22,11 @@ The configuration values can be added via Genesys GAX, Genesys Administrator, or
 | cobrowse.api | string | eg. https://cobrowse.yourcompany.com |
 | cobrowse.license | string | your license key |
 
-## 
+### 3. Start Workspace Desktop Edition
+
+You should now see the COBROWSE tab within your Workspace Desktop Edition when interacting with an end-user, such as on a phone call, or via a live chat. 
+
+
 
 
 
