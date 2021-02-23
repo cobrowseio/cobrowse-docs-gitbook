@@ -8,7 +8,7 @@ We believe in putting Cobrowse where your agents are already working. Therefore,
 
 {% page-ref page="zendesk.md" %}
 
-{% page-ref page="genesys.md" %}
+{% page-ref page="genesys/" %}
 
 {% page-ref page="salesforce.md" %}
 
