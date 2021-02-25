@@ -1,4 +1,4 @@
 # Engage Workspace Web Edition \(WWE\)
 
-Coming soon!
+For installation instructions, please email hello@cobrowse.io.
 
