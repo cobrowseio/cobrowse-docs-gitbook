@@ -10,7 +10,7 @@ description: Engage Cloud and Engage On-Premise WWE
 
 Define a new Interaction Tab in your WWE Cluster configuration using Genesys GAX or Genesys Administrator.
 
-You may name the tab as you wish, for example CobrowseIOTab. The tab should have the following values:
+You may name the tab as you wish, for example `CobrowseIOTab`. The tab should have the following values:
 
 * **label** – The label that should be displayed in the tab within the WWE UI, eg. COBROWSE
 * **url** – The URL to the web content that will be displayed within the tab.  The URL can also contain variable names pertaining to agent and interaction data. This value will be provided by Cobrowse.io. The default value when using the Cobrowse.io hosted version is `https://cobrowse.io/apps/genesys/index.html?env=wwe&license=<your license key>`
@@ -19,7 +19,7 @@ More information about how to add a new Interaction Tab to Workspace Web Edition
 
 ### 2. Add the Tab to your Workspace
 
-Navigate to the interaction-workspace/interaction.web-content and add the value CobrowseIOTab to this list to enable it. 
+Navigate to the `interaction-workspace/interaction.web-content` and add the value `CobrowseIOTab` to this list to enable it. 
 
 ### 3. Start Workspace Web Edition
 
