@@ -51,6 +51,8 @@
 
 * [Docker compose](enterprise-self-hosting/docker-compose.md)
 * [AWS terraform](enterprise-self-hosting/aws-terraform.md)
+* [Azure terraform](enterprise-self-hosting/azure-terraform.md)
+* [GCP terraform](enterprise-self-hosting/gcp-terraform.md)
 * [Sizing guidelines](enterprise-self-hosting/sizing-guidelines.md)
 * [Custom requirements](enterprise-self-hosting/custom-requirements.md)
 * [Starting the enterprise instance](enterprise-self-hosting/start-using-the-enterprise-instance.md)
