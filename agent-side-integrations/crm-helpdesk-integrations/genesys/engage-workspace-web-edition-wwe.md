@@ -17,11 +17,13 @@ You may name the tab as you wish, for example `CobrowseIOTab`. The tab should ha
 
 More information about how to add a new Interaction Tab to Workspace Web Edition \(WWE\) available at [https://developer.genesys.com/customizing-genesys-workspace-web-edition-2/](https://developer.genesys.com/customizing-genesys-workspace-web-edition-2/).
 
-### 2. Add the Tab to your Workspace
+Next, navigate to the `interaction-workspace/interaction.web-content` and add the value `CobrowseIOTab` to this list to enable it. 
 
-Navigate to the `interaction-workspace/interaction.web-content` and add the value `CobrowseIOTab` to this list to enable it. 
+{% hint style="info" %}
+If you are using Engage Cloud \(AWS or Azure\), you may configure the Interaction Tab following the instructions at [https://all.docs.genesys.com/PEC-AS/Current/ManageCC/External\_URLs](https://all.docs.genesys.com/PEC-AS/Current/ManageCC/External_URLs). 
+{% endhint %}
 
-### 3. Start Workspace Web Edition
+### 2. Start Workspace Web Edition
 
 You should now see the COBROWSE tab within your Workspace Web Edition when interacting with an end-user, such as on a phone call, or via a live chat. 
 
