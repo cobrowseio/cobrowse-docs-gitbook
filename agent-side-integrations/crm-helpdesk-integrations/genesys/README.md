@@ -20,6 +20,18 @@ Genesys Cloud - [https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a
 
 Genesys Engage - [https://appfoundry.genesys.com/filter/genesysengage/listing/3c4d2d1a-fbfc-4ddd-901b-f3f7b8253069](https://appfoundry.genesys.com/filter/genesysengage/listing/3c4d2d1a-fbfc-4ddd-901b-f3f7b8253069)
 
+### Installation instructions
+
+Please follow the links to the specific platforms below. 
+
+{% page-ref page="genesys-cloud.md" %}
+
+{% page-ref page="engage-workspace-web-edition-wwe.md" %}
+
+{% page-ref page="engage-workspace-desktop-edition-wde.md" %}
+
+
+
 {% hint style="info" %}
 These instructions are for the agent-side integration into your Genesys workspace. For hosting the Cobrowse.io Server on-premise, or in your own cloud account, please see [Enterprise self-hosting](../../../enterprise-self-hosting/docker-compose.md). For client-side SDKs such as our Javascript Snippet to add Cobrowse to your website, please see our [SDK installation instructions](../../../sdk-installation/web.md). 
 {% endhint %}
