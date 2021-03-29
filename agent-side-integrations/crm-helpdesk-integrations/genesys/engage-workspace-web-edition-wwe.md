@@ -10,6 +10,10 @@ description: Engage Cloud and Engage On-Premise WWE
 
 Define a new Interaction Tab in your WWE Cluster configuration using Genesys GAX or Genesys Administrator.
 
+{% hint style="info" %}
+If you are using Engage Cloud \(AWS or Azure\), you may configure the Interaction Tab following the instructions at [https://all.docs.genesys.com/PEC-AS/Current/ManageCC/External\_URLs](https://all.docs.genesys.com/PEC-AS/Current/ManageCC/External_URLs). 
+{% endhint %}
+
 You may name the tab as you wish, for example `CobrowseIOTab`. The tab should have the following values:
 
 * **label** – The label that should be displayed in the tab within the WWE UI, eg. COBROWSE
@@ -18,10 +22,6 @@ You may name the tab as you wish, for example `CobrowseIOTab`. The tab should ha
 More information about how to add a new Interaction Tab to Workspace Web Edition \(WWE\) available at [https://developer.genesys.com/customizing-genesys-workspace-web-edition-2/](https://developer.genesys.com/customizing-genesys-workspace-web-edition-2/).
 
 Next, navigate to the `interaction-workspace/interaction.web-content` and add the value `CobrowseIOTab` to this list to enable it. 
-
-{% hint style="info" %}
-If you are using Engage Cloud \(AWS or Azure\), you may configure the Interaction Tab following the instructions at [https://all.docs.genesys.com/PEC-AS/Current/ManageCC/External\_URLs](https://all.docs.genesys.com/PEC-AS/Current/ManageCC/External_URLs). 
-{% endhint %}
 
 ### 2. Start Workspace Web Edition
 
