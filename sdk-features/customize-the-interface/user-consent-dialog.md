@@ -11,31 +11,29 @@ Here are the SDK hooks:
 ```javascript
 CobrowseIO.confirmSession = function() {
     return new Promise(function(resolve, reject) {
-        // replace the code below with your own confirmation prompt, calling resolve or reject as a appropriate
-        if (window.confirm('Allow session?')) resolve(true);
+        // replace the code below with your own confirmation prompt
+        // calling resolve or reject as a appropriate
+        // NOTE: do not use window.confirm in production!
+        if (window.confirm('Replace this window.confirm with your consent dialog!'))
+            resolve(true);
         else reject();
     });
 }
-
 ```
 
 ### Sample UI
 
-We've created a Sample UI that you may drop directly into your website to show the 6-digit code in a simple modal, which inherits the styles and colors from your website.
+We've created a Sample UI that you may drop directly into your website to show customize the consent prompt, which inherits the styles and colors from your website.
 
 ```javascript
-// ensure Cobrowse is loaded
-CobrowseIO.client().then(function() {
-
-    // create a code a display it to the user using your own UI
-    CobrowseIO.createSessionCode().then(function(code) {
-       // show 6-digit code in sample UI
-       // coming soon!
+// coming soon!
+CobrowseIO.confirmSession = function() {
+    return new Promise(function(resolve, reject) {
+        if (true) resolve(true);
+        else reject();
     });
-
-});
+}
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
