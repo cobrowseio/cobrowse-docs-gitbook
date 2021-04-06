@@ -18,6 +18,24 @@ CobrowseIO.confirmSession = function() {
 }
 
 ```
+
+### Sample UI
+
+We've created a Sample UI that you may drop directly into your website to show the 6-digit code in a simple modal, which inherits the styles and colors from your website.
+
+```javascript
+// ensure Cobrowse is loaded
+CobrowseIO.client().then(function() {
+
+    // create a code a display it to the user using your own UI
+    CobrowseIO.createSessionCode().then(function(code) {
+       // show 6-digit code in sample UI
+       // coming soon!
+    });
+
+});
+```
+
 {% endtab %}
 
 {% tab title="iOS" %}
