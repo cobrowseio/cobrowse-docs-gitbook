@@ -16,6 +16,7 @@ CobrowseIO.confirmSession = function() {
         else reject();
     });
 }
+
 ```
 {% endtab %}
 
