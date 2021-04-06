@@ -4,7 +4,7 @@ Rather than accessing Cobrowse.io via our website, many of our customers integra
 
 We provide a variety of resources to make this as easy as possible, including:
 
-* [Agent JS API](agent-sdk.md) \(client-side JavaScript SDK\)
+* [Agent SDK](agent-sdk.md) \(client-side JavaScript SDK\)
 * [Agent UI component library](agent-sdk.md) \(written in React\)
 * [Authentication \(JWTs\) ](json-web-tokens-jwts.md) \(automatic authentication and permission scoping\)
 * [IFrame embeds](custom-iframe-embeds.md) \(eg. to embed the entire Cobrowse.io dashboard\)

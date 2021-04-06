@@ -2,27 +2,27 @@
 description: Client-side JavaScript SDK to build custom agent-side integrations
 ---
 
-# Agent JS API \(beta\)
+# Agent SDK \(beta\)
 
 ## Overview
 
-Our Agent JS API can be used to build 100% customized agent-side integrations into your own products and services. 
+Our Agent SDK can be used to build 100% customized agent-side integrations into your own products and services. 
 
 ## Quick start
 
-Navigate to our [Agent JS API Demo Page](https://cobrowse-agent-sdk-examples.cbrws.io/) and open up our [Cobrowse.io Online Demo](https://cobrowse.io/demo) in another browser tab to generate your Demo ID. 
+Navigate to our [Agent SDK Demo Page](https://cobrowse-agent-sdk-examples.cbrws.io/) and open up our [Cobrowse.io Online Demo](https://cobrowse.io/demo) in another browser tab to generate your Demo ID. 
 
-This Demo Page uses our [Agent UI component library](https://github.com/cobrowseio/cobrowse-agent-ui), our [Agent JS API](https://www.npmjs.com/package/cobrowse-agent-sdk), and ties it together into an [Agent SDK Examples project](https://github.com/cobrowseio/cobrowse-agent-sdk-examples) which you can run locally. 
+This Demo Page uses our [Agent UI component library](https://github.com/cobrowseio/cobrowse-agent-ui), our [Agent SDK](https://www.npmjs.com/package/cobrowse-agent-sdk), and ties it together into an [Agent SDK Examples project](https://github.com/cobrowseio/cobrowse-agent-sdk-examples) which you can run locally. 
 
 ### Authentication
 
-If you are using the Agent JS API just to communicate over postMessage to an embedded IFrame, a JWT is not required. 
+If you are using the Agent SDK just to communicate over postMessage to an embedded IFrame, a JWT is not required. 
 
-Device and Session listing via the Agent JS API requires a JSON Web Token \(JWT\) for authentication. Learn how to generate a JWT for your account at [Authentication \(JWTs\)](json-web-tokens-jwts.md). 
+Device and Session listing via the Agent SDK requires a JSON Web Token \(JWT\) for authentication. Learn how to generate a JWT for your account at [Authentication \(JWTs\)](json-web-tokens-jwts.md). 
 
 ## Features
 
-The Agent JS API can be used to:
+The Agent SDK can be used to:
 
 * List Devices and/or Sessions matching your filter criteria
   * Build your own 100% customized dashboard or device list
@@ -95,7 +95,7 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
 ```
 
 {% hint style="info" %}
-The Agent JS API is currently in beta release. Some APIs may change.
+The Agent SDK is currently in beta release. Some APIs may change.
 {% endhint %}
 
 
