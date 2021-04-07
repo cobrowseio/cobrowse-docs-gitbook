@@ -67,6 +67,10 @@ function showSessionCode() {
   });
 }
 
+// Important: you should not create session codes until your user needs
+// them. They will expire shortly after creation so do not create them when
+// the page loads. Instead we provide a button the user can click to generate
+// a new code.
 var button = document.createElement('a');
 button.innerHTML = '<b>Create a screen share code</b>';
 document.body.appendChild(button);
