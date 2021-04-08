@@ -62,7 +62,7 @@ function showSessionCode() {
   CobrowseIO.client().then(function() {
     // create a code a display it to the user
     CobrowseIO.createSessionCode().then(function(code) {
-      new Alert().show('Cobrowse Code', 'Your screen sharing code is '+code);
+      new Alert().show('Support Code', 'Your Support Code is '+code);
     });
   });
 }
@@ -72,7 +72,7 @@ function showSessionCode() {
 // the page loads. Instead we provide a button the user can click to generate
 // a new code.
 var button = document.createElement('a');
-button.innerHTML = '<b>Create a screen share code</b>';
+button.innerHTML = '<b>Create a Support Code</b>';
 document.body.appendChild(button);
 button.addEventListener('click', showSessionCode);
 
