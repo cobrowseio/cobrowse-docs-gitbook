@@ -29,6 +29,8 @@ CobrowseIO.client().then(function() {
 });
 ```
 
+For Sample UI, please see [Customize the interface](customize-the-interface/customize-6-digit-code-screen.md)
+
 {% hint style="info" %}
 6-digit codes expire after approximately 15 minutes, so it's best practice to generate a 6-digit code only when a user wants to start a session. 
 {% endhint %}
