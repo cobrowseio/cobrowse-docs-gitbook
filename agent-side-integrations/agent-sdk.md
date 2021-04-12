@@ -87,8 +87,7 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
     });
     
     // interact with iframe
-    const currentTool = await ctx.getTool();
-    // await ctx.setTool('laser');
+    await ctx.setTool('laser');
     // await ctx.clearAnnotations();
     // await ctx.endSession();
 }());
