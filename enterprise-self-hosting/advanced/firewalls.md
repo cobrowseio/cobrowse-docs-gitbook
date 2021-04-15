@@ -2,9 +2,13 @@
 
 This guide contains some information that can be useful when needing to secure your implementation behind a L7 firewall. There are two subsets of the API that are generally used by internal vs external roles:
 
+{% hint style="info" %}
+Paths are listed as prefixes only – all subpaths must be allowed by a firewall configuration.
+{% endhint %}
+
 ### SDK required APIs
 
-Here you can find the subset of the APIs that must be accessible to end user devices running our SDKs. These are listed as prefixes only, so all subpaths must be allowed by a firewall configuration:
+Here you can find the subset of the APIs that must be accessible to end user devices running our SDKs:
 
 ```bash
 # Only a subset of the REST API is required for SDK use
