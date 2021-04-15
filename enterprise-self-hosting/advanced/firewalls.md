@@ -41,8 +41,8 @@ As well as the routes above, the HTML frontend must also be accessible for agent
 # The frontend routes for HTML, CSS and JS
 /index.html
 /favicon.png
-/apps
-/static
+/apps/
+/static/
 ```
 
 **Important:** The frontend is built as a static single page application, with an `index.html` entrypoint. Any route not included in the prefixes listed above should be considered a frontend route and resolve to `index.html`.
