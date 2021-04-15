@@ -34,7 +34,7 @@ These are the APIs required by the agent dashboard, or embedded agent side UI:
 As well as the routes above, the HTML frontend must also be accessible for agents. Paths include:
 
 ```bash
-# And the front end routes
+# The frontend routes for HTML, CSS and JS
 /index.html
 /favicon.png
 /apps
