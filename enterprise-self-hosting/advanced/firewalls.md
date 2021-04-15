@@ -1,4 +1,4 @@
-# L7 Firewall configuration
+# L7 firewall configuration
 
 This guide contains some information that can be useful when needing to secure your implementation behind a L7 firewall. There are two subsets of the API that are generally used by internal vs external roles.
 
