@@ -1,14 +1,14 @@
 # L7 Firewall configuration
 
-This guide contains some information that can be useful when needing to secure your implementation behind a L7 firewall. There are two subsets of the API that are generally used by internal vs external roles:
+This guide contains some information that can be useful when needing to secure your implementation behind a L7 firewall. There are two subsets of the API that are generally used by internal vs external roles.
 
 {% hint style="info" %}
-Paths are listed as prefixes only – all subpaths must be allowed by a firewall configuration.
+Paths are listed as **prefixes only** – all subpaths must be allowed by a firewall configuration.
 {% endhint %}
 
 ### SDK required APIs
 
-Here you can find the subset of the APIs that must be accessible to end user devices running our SDKs:
+Here you can find the subset of the APIs that must be accessible to end user devices running our SDKs.
 
 ```bash
 # Only a subset of the REST API is required for SDK use
@@ -22,7 +22,7 @@ Here you can find the subset of the APIs that must be accessible to end user dev
 
 ### Agent-side required APIs 
 
-These are the APIs required by the agent dashboard, or embedded agent side UI:
+These are the APIs required by the agent dashboard, or embedded agent side UI.
 
 ```bash
 # For the agent side, the entire API is required
@@ -35,7 +35,7 @@ These are the APIs required by the agent dashboard, or embedded agent side UI:
 /sockets/1/
 ```
 
-As well as the routes above, the HTML frontend must also be accessible for agents. Paths include:
+As well as the routes above, the HTML frontend must also be accessible for agents. Paths include.
 
 ```bash
 # The frontend routes for HTML, CSS and JS
