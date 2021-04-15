@@ -1,6 +1,6 @@
 # Sizing guidelines
 
-Cobrowse.io Server is a very efficient set of micro-services built on Docker which can deploy on a single VM, or scale to a highly available architecture serving 100,000+ concurrent sessions across millions of end-users and devices.
+The Cobrowse Enterprise server is an efficient set of micro-services deployed via containers which can run on a single VM, or scale to a highly available architecture serving 100,000+ concurrent sessions across millions of end-users and devices.
 
 In determining hardware requirements for self-hosted or on-premise deployments, please use the following numbers as a guide. 
 
@@ -11,7 +11,7 @@ In determining hardware requirements for self-hosted or on-premise deployments, 
 
 ### Session recording
 
-If session recording is enabled for your account, storage requirement will increase based on the total number and type of sessions which will be stored. 
+If session recording is enabled for your account, storage requirements will increase based on the total number and type of sessions which will be stored. 
 
 You may estimate how many sessions will be stored by multiplying the \# of sessions per month \* the desired data retention length in months.
 
@@ -21,7 +21,7 @@ You may estimate how many sessions will be stored by multiplying the \# of sessi
 
 ### Database sizing
 
-The underlying database used by Cobrowse.io Server is MongoDB. The storage requirement will increase based on the total number of co-browsing sessions which are stored. 
+The underlying database used by Cobrowse Enterprise server is MongoDB. The storage requirement will increase based on the total number of co-browsing sessions which are stored. 
 
 You may estimate how many sessions will be stored by multiplying the \# of sessions per month \* the desired data retention length in months.
 
