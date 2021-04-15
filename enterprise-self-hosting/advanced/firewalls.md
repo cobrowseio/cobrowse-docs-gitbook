@@ -52,6 +52,6 @@ As well as the routes above, the HTML frontend must also be accessible for agent
 All headers, including custom headers, must be forwarded on the non-frontend routes. All query parameters must be forwarded on all routes.
 
 {% hint style="warning" %}
-**Warning:** We may add routes and parameters between versions. We always recommend  deploying new software versions to a staging environment and testing behind your firewall configuration, before promoting new versions to production.
+**Warning:** We may add routes and parameters between versions. We always recommend  deploying new software versions to a staging environment and testing behind your firewall configuration before promoting new versions to production.
 {% endhint %}
 
