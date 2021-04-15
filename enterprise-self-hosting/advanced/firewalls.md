@@ -45,7 +45,7 @@ As well as the routes above, the HTML frontend must also be accessible for agent
 /static/
 ```
 
-**Important:** The frontend is built as a static single page application, with an `index.html` entrypoint. Any route not included in the prefixes listed above should be considered a frontend route and resolve to `index.html`.
+**Important:** The frontend is built as a static single page application, with an `index.html` entrypoint. Any route not included in the prefixes listed above should be considered a frontend route and resolve to `/index.html`.
 
 ### Headers and Query Parameters
 
