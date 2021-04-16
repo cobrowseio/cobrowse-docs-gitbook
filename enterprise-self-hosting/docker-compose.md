@@ -44,12 +44,11 @@ The installer above will generate a `.env` file that contains your configuration
 
 | ENV VAR | Description | Example | Required |
 | :---: | :---: | :---: | :---: |
-| DOMAIN | The domain your users will be accessing Cobrowse on | mydomain.com | Yes |
+| DOMAIN | Domain name to run Cobrowse on | mydomain.com | Yes |
 | LICENSE | The license string you have been given by us |  | Yes |
-| SSL\_PORT | The port that HTTPS connections will be accepted on | 443 | No |
-| SSL\_GENERATION | "automatic" \(default, uses LetsEncrypt\) or "manual" | automatic | No |
+| SSL\_PORT | Port to accept HTTPS connections on | 443 | No |
+| SSL\_GENERATION | "automatic" \(uses LetsEncrypt\) or "manual" | automatic | No |
 | SSL\_VALIDATION | 0 = disable cert validation \(self signed certs\) | 0 | No |
-| ACCOUNT\_CREATORS | RegEx to limit account creators email addresses | .\*@example.com | No |
 | SUPERUSERS | RegEx to specify super user email addresses | .\*@example.com | No |
 
 #### Configuring DNS
