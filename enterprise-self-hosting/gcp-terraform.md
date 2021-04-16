@@ -6,8 +6,8 @@ This is the documentation for how to use our terraform for GCP to set up Cobrows
 
 You will need the following installed locally:
 
-* **Terraform** - version 0.12 or above
-* **NodeJS** - version 10 or above
+* [**Terraform**](https://www.terraform.io/) – version 0.12 or above
+* [**NodeJS**](https://nodejs.org/en/) – version 10 or above
 * **gcloud CLI**
 * **kubectl**
 
