@@ -4,7 +4,7 @@ This is the documentation for how to use our terraform for Azure to set up Cobro
 
 ## Initial Setup
 
-You will need to following installed locally:
+You will need the following installed locally:
 
 * **Terraform** - version 0.12 or above
 * **NodeJS** - version 10 or above

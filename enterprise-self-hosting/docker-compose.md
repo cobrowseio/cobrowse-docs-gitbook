@@ -1,4 +1,4 @@
-# Docker compose
+# Docker Compose
 
 This is the documentation for how to use Docker Compose to set up Cobrowse Enterprise on a single host.
 

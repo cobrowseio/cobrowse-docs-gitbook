@@ -4,15 +4,14 @@ This is the documentation for how to use our terraform for AWS to set up Cobrows
 
 ## Initial Setup
 
-These are the steps you'll need to go through to get Cobrowse running:
+Make sure you have installed \(on your local machine\) the required tools to manage and deploy the Cobrowse infrastructure to AWS. You'll need these installed before running the setup scripts:
 
-1. Database Setup
-2. Install local dependencies
-3. Create an S3 bucket
-4. Generate config directory
-5. Deploy the terraform
-6. Configure your DNS provider
-7. Check your deployment works
+* [**Terraform**](https://www.terraform.io/) – version 0.12 or above
+* [**NodeJS**](https://nodejs.org/en/) – version 10 or above
+
+You'll also need an AWS account with credentials available to the setup script through the environment. This is most easily managed via the official [AWS cli tools](https://aws.amazon.com/cli/).
+
+## Installation steps
 
 ### 1. Database setup
 
@@ -22,22 +21,13 @@ A MongoDB cluster is required for running Cobrowse. We **do not** provide this a
 
 You will need to create a cluster and provide the connection URL as a part of the Cobrowse configuration. You can either [run your own MongoDB cluster](https://docs.mongodb.com/manual/administration/install-community/) and manage the deployment and backups yourself. Alternatively, we recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/). They have a [range of certifications](https://www.mongodb.com/cloud/trust) required by many enterprises with compliance requirements.
 
-### 2. Install local dependencies
-
-Next, make sure you have installed \(on your local machine\) the required tools to manage and deploy the Cobrowse infrastructure to AWS. You'll need these installed before running the setup scripts:
-
-* [**Terraform**](https://www.terraform.io/) – version 0.12 or above
-* [**NodeJS**](https://nodejs.org/en/) – version 10 or above
-
-You'll also need an AWS account with credentials available to the setup script through the environment. This is most easily managed via the official [AWS cli tools](https://aws.amazon.com/cli/).
-
-### 3. Create an S3 bucket
+### 2. Create an S3 bucket
 
 Terraform will be configured to save the state of the resources it creates to an S3 bucket. This bucket must be created manually. It's access should be completely private as the terraform state may contain sensitive information.
 
 See the AWS documentation on [how to create a bucket](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html) if you are unsure about how to do this.
 
-### 4. Generate the config directory
+### 3. Generate the config directory
 
 We have provided a small command line utility to help you get started. This utility will gather the required config for your deployment. Run the following command from your terminal:
 
@@ -47,7 +37,7 @@ We have provided a small command line utility to help you get started. This util
 
 You can replace "./example" with the directory where you wish to save the configuration data. The directory will be created if it does not exist yet.
 
-### 5. Deploy the Terraform
+### 4. Deploy the Terraform
 
 Once you have successfully generated a configuration directory via our command line utility you are then ready to deploy the terraform to AWS.
 
@@ -69,7 +59,7 @@ Run the following command to start the deployment of resources to AWS:
 
 This will list the modifications that terraform will make to your AWS account. If that looks good, type 'yes' to continue the deployment.
 
-### 6. Configure your DNS provider
+### 5. Configure your DNS provider
 
 Once the terraform managed resources have been deployed to AWS, you should have an output similar to this:
 
@@ -92,7 +82,7 @@ The last step is to configure the two required DNS records with your DNS provide
 
 Create CNAMES to direct the `api_domain` to the `api_dns_name` value shown in the output from `terraform apply`, and the `frontend_domain` to the `frontend_dns_name` value.
 
-### 7. Check your deployment
+### 6. Check your deployment
 
 Your deployment should now be available. Open up a web browser to your Cobrowse domain and check the deployment!
 
@@ -102,11 +92,11 @@ Your deployment should now be available. Open up a web browser to your Cobrowse 
 
 Here we've listed a few useful resources created by our terraform. These can be used to check on the health of your deployment, or dig into any errors you might be experiencing:
 
-View your cluster in [ECS](https://console.aws.amazon.com/ecs/home). There should be several services running \(cobrowse-api, cobrowse-api-sockets, and cobrowse-proxy\). Each should have at least one stably running task.
+View your cluster in [ECS](https://console.aws.amazon.com/ecs/home). There should be several services running \(cobrowse-api, cobrowse-api-sockets, cobrowse-recording and cobrowse-proxy\). Each should have at least one stably running task.
 
 [CloudWatch metrics](https://console.aws.amazon.com/cloudwatch/home#dashboards:name=cobrowse-enterprise) for Cobrowse. Here you can see many metrics in one place, including general container metrics such as CPU and memory utilization, as well as some application metrics such as number of sessions started.
 
-[CloudWatch Logs](https://console.aws.amazon.com/cloudwatch/home#logStream:group=cobrowse-enterprise) for application level logging. _Note:_ we recommend using a command line tool like [awslogs](https://github.com/jorgebastida/awslogs) to make viewing the aggregated log stream easier, the AWS dashboard interface is not great.
+[CloudWatch Logs](https://console.aws.amazon.com/cloudwatch/home#logStream:group=cobrowse-enterprise) for application level logging. _Note:_ we recommend using a command line tool like [awslogs](https://github.com/jorgebastida/awslogs) to make viewing the aggregated log stream easier.
 
 ## Managing your deployment
 
