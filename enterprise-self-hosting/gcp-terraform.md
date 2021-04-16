@@ -23,7 +23,7 @@ A MongoDB cluster is required for running Cobrowse. We **do not** provide this a
 
 You will need to create a cluster and provide the connection URL as a part of the Cobrowse configuration. You can either [run your own MongoDB cluster](https://docs.mongodb.com/manual/administration/install-community/) and manage the deployment and backups yourself. Alternatively, we recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/). They have a [range of certifications](https://www.mongodb.com/cloud/trust) required by many enterprises with compliance requirements.
 
-### 2. Create initial Azure resources
+### 2. Create initial GCP resources
 
 There are some resources that are not created by our Terraform. You will need to manually create:
 
