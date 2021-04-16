@@ -1,6 +1,6 @@
 # Custom requirements
 
-Cobrowse.io self-hosting is based on Docker, and can be easily adapted to use alternate orchestration like Kubernetes, or run on different clouds like Google Cloud Platform, Microsoft Azure, or Alibaba Cloud. 
+Cobrowse.io self-hosting is based on containers, and can be easily adapted to use alternate orchestration like Kubernetes, or run on different clouds like Google Cloud Platform, Microsoft Azure, or Alibaba Cloud. 
 
 Please reach out below to discuss your specific requirements!
 

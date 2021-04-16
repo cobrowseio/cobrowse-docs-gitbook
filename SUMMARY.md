@@ -54,8 +54,9 @@
 * [Azure terraform](enterprise-self-hosting/azure-terraform.md)
 * [GCP terraform](enterprise-self-hosting/gcp-terraform.md)
 * [Sizing guidelines](enterprise-self-hosting/sizing-guidelines.md)
-* [Custom requirements](enterprise-self-hosting/custom-requirements.md)
 * [Starting the enterprise instance](enterprise-self-hosting/start-using-the-enterprise-instance.md)
+* [Managing your deployment](enterprise-self-hosting/management.md)
+* [Custom requirements](enterprise-self-hosting/custom-requirements.md)
 * [Advanced configuration](enterprise-self-hosting/advanced/README.md)
   * [L7 firewall configuration](enterprise-self-hosting/advanced/firewalls.md)
 

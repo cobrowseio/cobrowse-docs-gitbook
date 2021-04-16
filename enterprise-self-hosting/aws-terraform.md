@@ -1,6 +1,6 @@
 # AWS terraform
 
-This is the documentation for how to use our terraform for AWS to set up Cobrowse.io Server in your cloud.
+This is the documentation for how to use our terraform for AWS to set up Cobrowse Enterprise in your cloud.
 
 ## Initial Setup
 
@@ -96,6 +96,8 @@ Create CNAMES to direct the `api_domain` to the `api_dns_name` value shown in th
 
 Your deployment should now be available. Open up a web browser to your Cobrowse domain and check the deployment!
 
+{% page-ref page="start-using-the-enterprise-instance.md" %}
+
 ## Monitoring your Deployment
 
 Here we've listed a few useful resources created by our terraform. These can be used to check on the health of your deployment, or dig into any errors you might be experiencing:
@@ -106,23 +108,7 @@ View your cluster in [ECS](https://console.aws.amazon.com/ecs/home). There shoul
 
 [CloudWatch Logs](https://console.aws.amazon.com/cloudwatch/home#logStream:group=cobrowse-enterprise) for application level logging. _Note:_ we recommend using a command line tool like [awslogs](https://github.com/jorgebastida/awslogs) to make viewing the aggregated log stream easier, the AWS dashboard interface is not great.
 
-## Other considerations
+## Managing your deployment
 
-### Managing the database
-
-You are responsible for backing up the database regularly. Cobrowse will not do this automatically in any way. See the [MonogDB docs](https://docs.mongodb.com/manual/core/backups/) for recommendations on backup strategies. [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) can be configured to do this automatically.
-
-### Upgrading Cobrowse
-
-The config directory created by our command line utility is a git repo. You can update to the latest version by doing:
-
-```bash
-> git pull upstream master
-```
-
-One you have done that, you can `terraform init && terraform apply` the to update your deployment.
-
-{% hint style="success" %}
-Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
-{% endhint %}
+{% page-ref page="management.md" %}
 
