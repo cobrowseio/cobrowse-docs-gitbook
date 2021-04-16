@@ -110,5 +110,7 @@ View your cluster in [ECS](https://console.aws.amazon.com/ecs/home). There shoul
 
 ## Managing your deployment
 
+Next, learn about managing and upgrading your deployment.
+
 {% page-ref page="management.md" %}
 

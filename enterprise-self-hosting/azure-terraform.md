@@ -75,5 +75,7 @@ Your Cobrowse instance should now be deployed. Head to `/register`on your domain
 
 ## Managing your deployment
 
+Next, learn about managing and upgrading your deployment.
+
 {% page-ref page="management.md" %}
 
