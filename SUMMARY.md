@@ -50,6 +50,7 @@
 ## Enterprise self-hosting
 
 * [Docker Compose](enterprise-self-hosting/docker-compose.md)
+* [Helm chart](enterprise-self-hosting/helm-chart.md)
 * [AWS terraform](enterprise-self-hosting/aws-terraform.md)
 * [Azure terraform](enterprise-self-hosting/azure-terraform.md)
 * [GCP terraform](enterprise-self-hosting/gcp-terraform.md)
