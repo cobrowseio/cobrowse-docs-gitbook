@@ -82,7 +82,7 @@ When all the docker containers have started, Cobrowse should be available on the
 
 Open up a web browser and navigate to your Cobrowse domain, you should then be able to use the email registration flow to create a new account and test out your deployment!
 
-{% page-ref page="start-using-the-enterprise-instance.md" %}
+{% page-ref page="getting-started/" %}
 
 
 

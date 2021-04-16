@@ -70,11 +70,11 @@ Once the terraform is deployed and the DNS configured you may have to wait for t
 
 Your Cobrowse instance should now be deployed. Head to `/register`on your domain to create an account. 
 
-{% page-ref page="start-using-the-enterprise-instance.md" %}
+{% page-ref page="getting-started/" %}
 
 ## Managing your deployment
 
 Next, learn about managing and upgrading your deployment.
 
-{% page-ref page="management.md" %}
+{% page-ref page="getting-started/management.md" %}
 

@@ -54,8 +54,10 @@
 * [Azure terraform](enterprise-self-hosting/azure-terraform.md)
 * [GCP terraform](enterprise-self-hosting/gcp-terraform.md)
 * [Sizing guidelines](enterprise-self-hosting/sizing-guidelines.md)
-* [Starting the enterprise instance](enterprise-self-hosting/start-using-the-enterprise-instance.md)
-* [Managing your deployment](enterprise-self-hosting/management.md)
+* [Running your instance](enterprise-self-hosting/getting-started/README.md)
+  * [Adding a superuser](enterprise-self-hosting/getting-started/adding-a-superuser.md)
+  * [Limiting account creation](enterprise-self-hosting/getting-started/limiting-account-creation.md)
+  * [Managing your deployment](enterprise-self-hosting/getting-started/management.md)
 * [Advanced configuration](enterprise-self-hosting/advanced/README.md)
   * [L7 firewall configuration](enterprise-self-hosting/advanced/firewalls.md)
 

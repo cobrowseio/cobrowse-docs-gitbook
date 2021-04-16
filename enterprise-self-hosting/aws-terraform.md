@@ -86,7 +86,7 @@ Create CNAMES to direct the `api_domain` to the `api_dns_name` value shown in th
 
 Your deployment should now be available. Open up a web browser to your Cobrowse domain and check the deployment!
 
-{% page-ref page="start-using-the-enterprise-instance.md" %}
+{% page-ref page="getting-started/" %}
 
 ## Monitoring your Deployment
 
@@ -102,5 +102,5 @@ View your cluster in [ECS](https://console.aws.amazon.com/ecs/home). There shoul
 
 Next, learn about managing and upgrading your deployment.
 
-{% page-ref page="management.md" %}
+{% page-ref page="getting-started/management.md" %}
 
