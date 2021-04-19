@@ -17,5 +17,5 @@ For Terraform based deployments you need to add a "superusers" entry to the `ter
 
 ### Configuring superusers via Docker Compose
 
-For Docker Compose based deployments, you must configure the `SUPERUSERS` environment variable with the regular expression desribing superuser emails. See the docs for [Docker Compose docs](../docker-compose.md).
+For Docker Compose based deployments, you must configure the `SUPERUSERS` environment variable with a regular expression describing superuser emails. See the docs for [Docker Compose docs](../docker-compose.md).
 
