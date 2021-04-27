@@ -6,7 +6,7 @@ This is the documentation for how to use our terraform for AWS to set up Cobrows
 
 Make sure you have installed \(on your local machine\) the required tools to manage and deploy the Cobrowse infrastructure to AWS. You'll need these installed before running the setup scripts:
 
-* [**Terraform**](https://www.terraform.io/) – version 0.12 or above
+* [**Terraform**](https://www.terraform.io/)
 * [**NodeJS**](https://nodejs.org/en/) – version 10 or above
 
 You'll also need an AWS account with credentials available to the setup script through the environment. This is most easily managed via the official [AWS cli tools](https://aws.amazon.com/cli/).
