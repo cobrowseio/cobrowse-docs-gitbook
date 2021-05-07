@@ -2,6 +2,10 @@
 
 This is the documentation for how to use our terraform for GCP to set up Cobrowse Enterprise in your cloud.
 
+{% hint style="warning" %}
+GCP terraform deployment is current in **beta**. There may be breaking changes without warning.  
+{% endhint %}
+
 ## Initial Setup
 
 You will need the following installed locally:

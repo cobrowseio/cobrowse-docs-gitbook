@@ -2,6 +2,10 @@
 
 This is the documentation for how to use our terraform for Azure to set up Cobrowse Enterprise in your cloud.
 
+{% hint style="warning" %}
+Azure terraform is currently in **beta**. There may be breaking changes without warning.
+{% endhint %}
+
 ## Initial Setup
 
 You will need the following installed locally:
