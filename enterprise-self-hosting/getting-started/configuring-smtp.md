@@ -16,5 +16,5 @@ If your mail server does not require authentication, you can omit the `username:
 
 If your mail server does not require a TLS connection, use can use the `smtp://` protocol in the URL instead, e.g. `smtp://smtp.example.com`
 
-If your mail server uses a non-standard port you can specficy that via the URL as well, e.g. `smtp://smtp.example.com:12345`
+If your mail server uses a non-standard port you can specficy that via the URL, e.g. `smtp://smtp.example.com:12345`
 
