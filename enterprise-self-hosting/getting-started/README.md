@@ -42,7 +42,7 @@ Now your instance is up an running, you should review the documentation below to
 
 {% page-ref page="limiting-account-creation.md" %}
 
+{% page-ref page="configuring-smtp.md" %}
+
 {% page-ref page="management.md" %}
-
-
 
