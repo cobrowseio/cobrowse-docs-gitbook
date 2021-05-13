@@ -4,10 +4,12 @@
 
 ### 1. Install plugin
 
-Add the plugin to your Workspace Desktop Edition installation:
+Add the plugin and dependencies to your Workspace Desktop Edition installation:
 
 * Genesyslab.Desktop.Modules.CobrowseIO.dll
 * Genesyslab.Desktop.Modules.CobrowseIO.module-config
+* Additional files/folders for dependencies included in the package
+* Ensure that you have Microsoft Visual C++ 2015 \(or later\) x86 Redistributable package installed. If not, you can download it from [https://www.microsoft.com/en-us/download/details.aspx?id=48145](https://www.microsoft.com/en-us/download/details.aspx?id=48145)
 
 These files should be added adjacent to your other Module `.dll` files, in the same directory as `InteractionWorkspace.exe`. This executable is most commonly found at`C:\Program Files (x86)\GCTI\Workspace Desktop Edition`.
 
