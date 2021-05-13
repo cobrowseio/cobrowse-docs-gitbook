@@ -61,5 +61,6 @@
   * [Configuring SMTP](enterprise-self-hosting/getting-started/configuring-smtp.md)
   * [Managing your deployment](enterprise-self-hosting/getting-started/management.md)
 * [Advanced configuration](enterprise-self-hosting/advanced/README.md)
+  * [Pin web SDK version](enterprise-self-hosting/advanced/web-sdk-pinning.md)
   * [L7 firewall configuration](enterprise-self-hosting/advanced/firewalls.md)
 
