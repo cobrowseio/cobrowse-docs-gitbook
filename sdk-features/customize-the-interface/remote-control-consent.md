@@ -7,10 +7,6 @@ Admin users may also disable this remote control consent prompt from your accoun
 Here are the SDK hooks:
 
 {% tabs %}
-{% tab title="" %}
-
-{% endtab %}
-
 {% tab title="Web" %}
 ```javascript
 CobrowseIO.confirmRemoteControl = function() {
