@@ -34,6 +34,7 @@ There are some resources that are not created by our Terraform. You will need to
 1. A resource group for Cobrowse. You can do with via the cli or in the Azure portal: [https://portal.azure.com/\#blade/HubsExtension/BrowseResourceGroups](https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups)
 2. A key vault for Cobrowse secrets. You can do this via the cli or in the Azure portal: [https://portal.azure.com/\#blade/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults)
 3. Add a secret in the key vault called "mongo-url" with the value set to the url of the Mongo database from step 1.
+4. Make sure you have [initialized the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli) with your access credentials.
 
 ### 3. Generate the config directory
 
