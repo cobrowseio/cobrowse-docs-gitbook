@@ -29,6 +29,12 @@ CobrowseIO.client().then(function() {
 });
 ```
 
+If you are **only** using 6 digit codes to start Cobrowse sessions in your implementation, you should add the following option to your call to `CobrowseIO.start()` in the default snippet we provide. This will prevent our SDK contacting the Cobrowse server until a screen sharing session is required.
+
+```javascript
+CobrowseIO.start({register:false})
+```
+
 For Sample UI, please see [Customize the interface](customize-the-interface/customize-6-digit-code-screen.md)
 
 {% hint style="info" %}
