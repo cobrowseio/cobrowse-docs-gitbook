@@ -68,7 +68,7 @@ CobrowseIO.confirmRemoteControl = function() {
 {% endtab %}
 
 {% tab title="iOS" %}
-To override the the default remote control consent prompt, you should implement the `cobrowseHandleRemoteControlRequest` method of `CobrowseIODelegate`.
+To override the the default remote control consent prompt, you should implement the `cobrowseHandleRemoteControlRequest:` method of `CobrowseIODelegate`.
 
 ## Sample UI
 
