@@ -69,11 +69,157 @@ CobrowseIO.confirmRemoteControl = function() {
 {% endtab %}
 
 {% tab title="iOS" %}
-Coming soon. 
+
+```objc
+@interface CBAppDelegate : UIResponder <UIApplicationDelegate, CobrowseIODelegate>
+
+@end
+
+
+@implementation CBAppDelegate
+
+// Custom consent dialog UI
+UIAlertController *remoteControlPrompt;
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    CobrowseIO.instance.delegate = self;
+    // insert your license key here
+    CobrowseIO.instance.license = @"trial";
+    [CobrowseIO.instance start];
+    
+    ...
+}
+
+// Implement cobrowseHandleRemoteControlRequest:(CBIOSession*) to show a custom prompt
+- (void) cobrowseHandleRemoteControlRequest:(CBIOSession *)session {
+    // replace the code below with your own confirmation prompt
+    remoteControlPrompt = [UIAlertController alertControllerWithTitle:@"Allow remote control?"
+                                             message:@"A support agent would like to control this app. Do you accept?"
+                                             preferredStyle:UIAlertControllerStyleAlert];
+    [remoteControlPrompt addAction: [UIAlertAction actionWithTitle:@"Accept"
+                                                   style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * _Nonnull action) {
+        [session setRemoteControl:kCBIORemoteControlStateOn callback:nil];
+        remoteControlPrompt = nil;
+    }]];
+    [remoteControlPrompt addAction: [UIAlertAction actionWithTitle:@"Decline"
+                                                   style:UIAlertActionStyleCancel
+                                                   handler:^(UIAlertAction * _Nonnull action) {
+        [session setRemoteControl:kCBIORemoteControlStateRejected callback:nil];
+        remoteControlPrompt = nil;
+    }]];
+    
+    UIViewController* appViewController = [self findPresentedViewController];
+    [appViewController presentViewController:remoteControlPrompt animated:YES completion:nil];
+}
+
+- (void)cobrowseSessionDidEnd:(CBIOSession *)session {
+    if (remoteControlPrompt) {
+        [remoteControlPrompt dismissViewControllerAnimated:NO completion:^{
+            remoteControlPrompt = nil;
+        }];
+    }
+}
+
+@end
+
+```
 {% endtab %}
 
 {% tab title="Android" %}
-Coming soon.
+
+```java
+
+public class MainApplication extends Application 
+    implements CobrowseIO.Delegate, CobrowseIO.RemoteControlRequestDelegate {
+    
+    // Custom consent dialog UI
+    private CustomRemoteControlConsentDialogFragment customRemoteControlConsent;
+    
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        CobrowseIO.instance().setDelegate(this);
+        // insert your license key here
+        CobrowseIO.instance().license("trial");
+        CobrowseIO.instance().start(this);
+        
+        ...
+    }
+
+    /*
+     * Implement handleRemoteControlRequest(Activity, Session) from CobrowseIO.RemoteControlRequestDelegate
+     * to show a custom prompt
+     */
+    @Override
+    public void handleRemoteControlRequest(@NonNull Activity activity, @NonNull Session session) {
+        // replace the code below with your own confirmation prompt
+        String tag = "RemoteControlConsentDialog";
+        FragmentManager fragments = activity.getFragmentManager();
+        FragmentTransaction transaction = fragments.beginTransaction();
+        Fragment previous = fragments.findFragmentByTag(tag);
+        if (previous != null) transaction.remove(previous);
+        customRemoteControlConsent = new CustomRemoteControlConsentDialogFragment();
+        customRemoteControlConsent.show(transaction, tag);
+    }  
+
+    @Override
+    public void sessionDidEnd(@NonNull Session session) {
+        if (customRemoteControlConsent != null && customRemoteControlConsent.isAdded()) {
+            customRemoteControlConsent.dismiss();
+            customRemoteControlConsent = null;
+        }
+    }  
+}
+
+
+public class CustomRemoteControlConsentDialogFragment extends DialogFragment {
+
+    public CustomRemoteControlConsentDialogFragment() {
+        super();
+    }
+
+    @Override
+    public void onCreate(@NonNull Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
+
+
+    @Override
+    public void onDestroyView() {
+        if (getDialog() != null && getRetainInstance()) {
+            getDialog().setDismissMessage(null);
+        }
+        super.onDestroyView();
+    }
+
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(@NonNull Bundle savedInstanceState) {
+        this.setCancelable(false);
+        return new AlertDialog.Builder(getActivity())
+                .setTitle("Allow remote control?")
+                .setMessage("A support agent would like to control this app. Do you accept?")
+                .setPositiveButton("Allow", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int w) {
+                        Session session = CobrowseIO.instance().currentSession();
+                        if (session != null) session.setRemoteControl(Session.RemoteControlState.On, null);
+                    }})
+                .setNegativeButton("Reject", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int w) {
+                        Session session = CobrowseIO.instance().currentSession();
+                        if (session != null) session.setRemoteControl(Session.RemoteControlState.Rejected, null);
+                    }
+                })
+                .create();
+    }
+}
+
+```
+
 {% endtab %}
 {% endtabs %}
 
