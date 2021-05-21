@@ -19,10 +19,9 @@ CobrowseIO.confirmRemoteControl = function() {
         else reject();
     });
 };
-
 ```
 
-### Sample UI
+## Sample UI
 
 We've created a Sample UI that you may drop directly into your website to show customize the remote control consent prompt, which inherits the styles and colors from your website.
 
@@ -69,8 +68,11 @@ CobrowseIO.confirmRemoteControl = function() {
 {% endtab %}
 
 {% tab title="iOS" %}
+To override the the default remote control consent prompt, you should implement the `cobrowseHandleRemoteControlRequest` method of `CobrowseIODelegate`.
 
-```objc
+## Sample UI
+
+```objectivec
 @interface CBAppDelegate : UIResponder <UIApplicationDelegate, CobrowseIODelegate>
 
 @end
@@ -87,7 +89,7 @@ UIAlertController *remoteControlPrompt;
     // insert your license key here
     CobrowseIO.instance.license = @"trial";
     [CobrowseIO.instance start];
-    
+
     ...
 }
 
@@ -109,7 +111,7 @@ UIAlertController *remoteControlPrompt;
         [session setRemoteControl:kCBIORemoteControlStateRejected callback:nil];
         remoteControlPrompt = nil;
     }]];
-    
+
     UIViewController* appViewController = [self findPresentedViewController];
     [appViewController presentViewController:remoteControlPrompt animated:YES completion:nil];
 }
@@ -123,29 +125,26 @@ UIAlertController *remoteControlPrompt;
 }
 
 @end
-
 ```
 {% endtab %}
 
 {% tab title="Android" %}
+To override the the default remote control consent prompt, you should implement the `CobrowseIO.RemoteControlRequestDelegate` interface on your `CobrowseIO.Delegate`.
+
+## Sample UI
 
 ```java
-
 public class MainApplication extends Application 
     implements CobrowseIO.Delegate, CobrowseIO.RemoteControlRequestDelegate {
-    
+
     // Custom consent dialog UI
     private CustomRemoteControlConsentDialogFragment customRemoteControlConsent;
-    
+
     @Override
     public void onCreate() {
         super.onCreate();
 
         CobrowseIO.instance().setDelegate(this);
-        // insert your license key here
-        CobrowseIO.instance().license("trial");
-        CobrowseIO.instance().start(this);
-        
         ...
     }
 
@@ -173,8 +172,11 @@ public class MainApplication extends Application
         }
     }  
 }
+```
 
+And an example Fragment for showing the UI:
 
+```java
 public class CustomRemoteControlConsentDialogFragment extends DialogFragment {
 
     public CustomRemoteControlConsentDialogFragment() {
@@ -217,9 +219,7 @@ public class CustomRemoteControlConsentDialogFragment extends DialogFragment {
                 .create();
     }
 }
-
 ```
-
 {% endtab %}
 {% endtabs %}
 
