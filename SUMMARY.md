@@ -32,6 +32,8 @@
     * [IE 11 polyfills](sdk-features/advanced-features/web/ie-11-polyfills.md)
   * [iOS](sdk-features/advanced-features/ios/README.md)
     * [Alternate render method](sdk-features/advanced-features/ios/alternate-render-method.md)
+  * [Android](sdk-features/advanced-features/android/README.md)
+    * [Backporting TLS 1.2 to Android 4.4 \(API 19\)](sdk-features/advanced-features/android/backporting-tls-1.2-to-android-4.4-api-19.md)
 
 ## Agent-side integrations
 
