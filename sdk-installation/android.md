@@ -53,6 +53,10 @@ Once you have your app running in the Android emulator or on a physical device, 
 
 * API version 19 \(4.4 KitKat\) or later
 
+{% hint style="warning" %}
+Due to OkHttp dropping support for Android 4.4 after its v3.12.x releases on December 31, 2021, support for Android 4.4 will likely be supported in 2.x releases of the Cobrowse.io Android SDK only. 
+{% endhint %}
+
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}
