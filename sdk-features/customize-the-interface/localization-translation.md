@@ -1,21 +1,14 @@
 # Localization / translation
 
-You may use the documentation under [Customize the interface](./) to completely replace our default UI in our SDKs with your own custom UI. However, some clients prefer to use our existing default UI, but simply localize or modify the text strings. 
-
-More information about this coming soon!
+You may use the documentation under [Customize the interface](./) to completely replace our default UI in our SDKs with your own custom UI. However, some clients prefer to use our existing default UI, but simply localize or modify the text strings.
 
 {% tabs %}
-{% tab title="Web" %}
-Coming soon
-{% endtab %}
-
 {% tab title="iOS" %}
-
 Create a new strings file named `CobrowseIO.strings` in your app project and select all localization you want to support in the File Inspector. Refer to [the Apple documentation](https://developer.apple.com/documentation/xcode/localization) to see more details about this approach.
 
-The content of `CobrowseIO.strings` should be the following (replace string values with your own text):
+The content of `CobrowseIO.strings` should be the following \(replace string values with your own text\):
 
-```
+```text
 "CodeDisplayViewMessageInstruction" = "Provide this code to your support agent to begin screen sharing.";
 "ErrorDisplayViewMessage" = "Sorry, something went wrong. Check you're online and try again.";
 "ManageSessionViewMessage" = "You're sharing screens from this app with a support agent.";
@@ -40,21 +33,19 @@ The content of `CobrowseIO.strings` should be the following (replace string valu
 "SessionIndicatorButtonEnd" = "End";
 "SessionIndicatorButtonCancel" = "Cancel";
 ```
-
 {% endtab %}
 
 {% tab title="Android" %}
-
 Create a new `strings-cobrowse.xml` resource file in your app project:
 
-- in the `values` directory, in order to modify the text strings
-- in the `values-XX` directory where `XX` represents a two-letter ISO 639-1 language code, in order to localize the text strings
+* in the `values` directory, in order to modify the text strings
+* in the `values-XX` directory where `XX` represents a two-letter ISO 639-1 language code, in order to localize the text strings
 
 Refer to [the Android documentation](https://developer.android.com/guide/topics/resources/localization) to see more details about this approach.
 
-The content of `strings-cobrowse.xml` should be the following (replace XML values with your own text):
+The content of `strings-cobrowse.xml` should be the following \(replace XML values with your own text\):
 
-```xml
+```markup
 <resources>
     <string name="cobrowse_code_display_description">Provide this code to your support agent to begin screen sharing.</string>
     <string name="cobrowse_approve_session_description">A support agent would like to use this app with you. Do you accept?</string>
@@ -78,9 +69,6 @@ The content of `strings-cobrowse.xml` should be the following (replace XML value
     <string name="cobrowse_approve_remote_control_button_no">Cancel</string>
 </resources>
 ```
-
 {% endtab %}
 {% endtabs %}
-
-
 
