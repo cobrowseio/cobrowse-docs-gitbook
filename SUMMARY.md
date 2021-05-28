@@ -23,7 +23,7 @@
   * [6-digit code screen](sdk-features/customize-the-interface/customize-6-digit-code-screen.md)
   * [User consent dialog](sdk-features/customize-the-interface/user-consent-dialog.md)
   * [Remote control consent dialog](sdk-features/customize-the-interface/remote-control-consent.md)
-  * [Localization / translation](sdk-features/customize-the-interface/localization-translation.md)
+  * [Localization / translation](sdk-features/customize-the-interface/localization.md)
 * [Initiate sessions with push](sdk-features/initiate-sessions-with-push.md)
 * [Full device capabilities](sdk-features/full-device-capabilities.md)
 * [Advanced configuration](sdk-features/advanced-features/README.md)
