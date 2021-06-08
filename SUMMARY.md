@@ -53,7 +53,7 @@
 
 ## Enterprise self-hosting
 
-* [Self-hosting overview](enterprise-self-hosting/self-hosting--overview.md)
+* [Self-hosting overview](enterprise-self-hosting/self-hosting-overview.md)
 * [Docker Compose](enterprise-self-hosting/docker-compose.md)
 * [Helm chart](enterprise-self-hosting/helm.md)
 * [AWS terraform](enterprise-self-hosting/aws-terraform.md)
