@@ -9,6 +9,12 @@ description: iOS Native SDK
 The Cobrowse SDK for iOS is available for installation via several dependency managers, or as frameworks to integrate directly into your project:
 
 {% tabs %}
+{% tab title="SPM" %}
+```text
+https://github.com/cobrowseio/cobrowse-sdk-ios-binary.git
+```
+{% endtab %}
+
 {% tab title="Pods" %}
 ```ruby
 pod 'CobrowseIO', '~>2'
@@ -40,8 +46,10 @@ https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases
 {% endtab %}
 {% endtabs %}
 
+Configure the SDK in your app:
+
 {% tabs %}
-{% tab title="iOS \(Swift\)" %}
+{% tab title="Swift" %}
 ```swift
 import CobrowseIO
 
@@ -54,7 +62,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 {% endtab %}
 
-{% tab title="iOS \(Objective-C\)" %}
+{% tab title="Objective-C" %}
 ```objectivec
 @import CobrowseIO;
 
