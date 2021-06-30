@@ -33,7 +33,8 @@ Run the following commands to add our helm repository.
 | `redis.url` | Your Redis cluster connection URL  |
 | `ingress.class` | The ingress class name to use |
 | `ingress.annotations` | Extra annoations to add to the Kubernetes ingress. |
-| `storage` | Amount of NFS storage to provision for recordings. We require a storage class called "nfs" to exist in the cluster that supports "ReadWriteMany" access. Default is 50Gb. |
+| `storage.size` | Amount of NFS storage to provision for recordings. Default is 50Gb. |
+| `storage.class` | A storage class available in the cluster that supports "ReadWriteMany" access. Default is "nfs". |
 
 ### Dependencies
 
