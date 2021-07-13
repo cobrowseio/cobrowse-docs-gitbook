@@ -323,5 +323,40 @@ StartActivity(intent);
 {% endtab %}
 {% endtabs %}
 
+### Controlling full device from the SDK
 
+In some situations it is useful to be able to switch a Cobrowsing session into full device mode using the SDK. For example, if you would like sessions to default to full device mode, or enforce full device mode is always \(or never\) used. We provide an API for doing this.
+
+{% tabs %}
+{% tab title="Web" %}
+```javascript
+await session.setFullDevice(true)
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+```objectivec
+[session setFullDevice:YES callback:^(NSError* err, CBIOSession* session) {
+    // catch errors
+}];
+```
+{% endtab %}
+
+{% tab title="Android" %}
+```java
+session.setFullDevice(true, (err, arg) -> {
+    // handle error
+});
+```
+{% endtab %}
+{% endtabs %}
+
+These API can be used in combination with our various delegate APIs \(`sessionDidUpdate` etc...\) to switch the session in and out of full device mode as your use case requires.For example, to enforce full device is always used on Android:
+
+```java
+- (void)cobrowseSessionDidUpdate:(CBIOSession *)session {
+    // ensure the screen share session is always in full device
+    [session setFullDevice:YES callback: null];
+}
+```
 
