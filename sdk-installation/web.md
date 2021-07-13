@@ -6,6 +6,10 @@ description: Javascript SDK for Web
 
 ## Installation
 
+The Cobrowse SDK for web is available either using a `<script>` tag via CDN, or can be included in your build via NPM.
+
+{% tabs %}
+{% tab title="Script" %}
 Add this javascript snippet to the top of the `<head>` section of your website.
 
 ```markup
@@ -21,6 +25,25 @@ Add this javascript snippet to the top of the `<head>` section of your website.
     });
 </script>
 ```
+{% endtab %}
+
+{% tab title="NPM" %}
+First install the Cobrowse SDK for web via NPM:
+
+```bash
+> npm install cobrowse-sdk-js --save
+```
+
+Then you can initialise the SDK:
+
+```javascript
+import CobrowseIO from 'cobrowse-sdk-js'
+
+CobrowseIO.license = '<your license key here>'
+CobrowseIO.start()
+```
+{% endtab %}
+{% endtabs %}
 
 ### Add your license key
 
