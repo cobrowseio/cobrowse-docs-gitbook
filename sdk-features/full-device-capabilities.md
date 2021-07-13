@@ -323,7 +323,7 @@ StartActivity(intent);
 {% endtab %}
 {% endtabs %}
 
-### Controlling full device from the SDK
+### Controlling full device state from the SDK
 
 In some situations it is useful to be able to switch a Cobrowsing session into full device mode using the SDK. For example, if you would like sessions to default to full device mode, or enforce full device mode is always \(or never\) used. We provide an API for doing this.
 
