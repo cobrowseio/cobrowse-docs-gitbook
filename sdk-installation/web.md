@@ -28,6 +28,10 @@ Add this javascript snippet to the top of the `<head>` section of your website.
 {% endtab %}
 
 {% tab title="NPM" %}
+{% hint style="warning" %}
+NPM distribution is currntly experimental. There may be breaking changes between versions.
+{% endhint %}
+
 First install the Cobrowse SDK for web via NPM:
 
 ```bash
