@@ -29,7 +29,7 @@ public class MainApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        CobrowseIO.instance().license("<your license key here>");
+        CobrowseIO.instance().license("put your license key here");
         CobrowseIO.instance().start(this);
     }
 }

@@ -37,7 +37,7 @@ import CobrowseIO
 
 func applicationDidFinishLaunching(_ aNotification: Notification)
 {
-    CobrowseIO.instance().license = "<your license key here>"
+    CobrowseIO.instance().license = "put your license key here"
     CobrowseIO.instance().start()
 }
 ```
@@ -49,7 +49,7 @@ func applicationDidFinishLaunching(_ aNotification: Notification)
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
-    CobrowseIO.instance.license = @"<your license key here>";
+    CobrowseIO.instance.license = @"put your license key here";
     [CobrowseIO.instance start];
 }
 ```

@@ -21,7 +21,7 @@ using Cobrowse.IO;
 To start Cobrowse.io:
 
 ```csharp
-CobrowseIO.Instance.License = "<your license key here>";
+CobrowseIO.Instance.License = "put your license key here";
 await CobrowseIO.Instance.Start();
 ```
 
