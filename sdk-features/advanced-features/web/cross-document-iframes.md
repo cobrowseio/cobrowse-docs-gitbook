@@ -4,13 +4,13 @@
 
 _Note: IFrames that are not cross document are supported out-of-box without adding the SDK to the embedded page. This guide is for supporting cross document IFrames._
 
-To use Cobrowse for Web with **cross document** IFrames you will need to add our javascript snippet to the page being embedded. You will then need to add a list of trusted origins that will be allowed to access the page content for Cobrowse purposes:
+To use Cobrowse for Web with **cross document** IFrames you will need to add our javascript snippet to the page being embedded, i.e. the iframed page. You will then need to add a list of trusted origins of all the parent pages that will be allowed to access the iframed page content for Cobrowse purposes:
 
 ```javascript
 // NOTE: this configuration should go into the page being embedded, NOT the top level page.
 CobrowseIO.trustedOrigins = [
-    'https://myexample.com',
-    'https://my-other-website.net'
+    'https://myexample.com', // parent origin to trust
+    'https://my-other-website.net' // another parent origin to trust
 ];
 CobrowseIO.start();
 ```
