@@ -16,8 +16,8 @@ If session recording is enabled for your account, storage requirements will incr
 You may estimate how many sessions will be stored by multiplying the \# of sessions per month \* the desired data retention length in months.
 
 * **10GB** for every **100,000** web co-browsing session recordings
-* **10GB** for every **10,000** mobile co-browsing session recordings with an average length of 5 minutes, and minimal video content
-* **10GB** for every **1,000** mobile co-browsing session recordings with average length of 5 minutes, and video content playing 100% of the time
+* **10GB** for every **10,000** mobile co-browsing session recordings with an average length of 5 minutes, and minimal video content, approximately 3.33kb/s
+* **10GB** for every **1,000** mobile co-browsing session recordings with average length of 5 minutes, and video content playing 100% of the time, approximately 33.33kb/s
 
 ### Database sizing
 
