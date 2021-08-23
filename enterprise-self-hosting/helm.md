@@ -18,31 +18,31 @@ Run the following commands to add our helm repository.
 
 ```bash
 > helm repo add cobrowse-enterprise https://cobrowseio.github.io/cobrowse-enterprise-helm/packages
-> helm install cobrowse-enterprise/cobrowse-enterprise
+> helm install cobrowse cobrowse-enterprise/cobrowse-enterprise
 ```
 
 ### Common Parameters
 
-| Parameter Name | Description |
-| :--- | :--- |
-| `imageCredentials.password` | The docker password required to access the Cobrowse images \(provided by Cobrowse.io\) |
-| `license` | Your Cobrowse enterprise license \(provided by Cobrowse.io\) |
-| `domain` | The domain name for your deployment |
-| `superusers` | RegEx to specify superuser email addresses |
-| `mongo.url` | Your MongoDB connection URL |
-| `redis.url` | Your Redis cluster connection URL  |
-| `ingress.class` | The ingress class name to use |
-| `ingress.annotations` | Extra annoations to add to the Kubernetes ingress. |
-| `storage.size` | Amount of storage to provision for recordings. Default is 50Gb. |
-| `storage.class` | A storage class available in the cluster that supports "ReadWriteMany" access. Default is "nfs". |
+| Parameter Name | Required | Description |
+| :--- | :--- | :--- |
+| `imageCredentials.password` | Yes | The docker password required to access the Cobrowse images \(provided by Cobrowse.io\) |
+| `license` | Yes | Your Cobrowse enterprise license \(provided by Cobrowse.io\) |
+| `domain` | Yes | The domain name for your deployment |
+| `superusers` | No | RegEx to specify superuser email addresses |
+| `mongo.url` | Yes | Your MongoDB connection URL |
+| `redis.url` | Yes | Your Redis cluster connection URL  |
+| `ingress.class` | Yes | The ingress class name to use |
+| `ingress.annotations` | No | Extra annotations to add to the Kubernetes ingress. |
+| `storage.size` | No | Amount of storage to provision for recordings. Default is 50Gb. |
+| `storage.class` | No | A storage class available in the cluster that supports "ReadWriteMany" access. Default is "nfs". |
 
 ### Dependencies
 
 For all deployments there are some dependencies that must be configured outside of the Cobrowse Helm chart:
 
 1. **Redis** - we require access to a redis cluster. It must be running in cluster mode. Bitnami provide an easy to use [Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/redis-cluster).
-2. **MongoDB** - we require access to a MongoDB cluster. We recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/) whenever possible. Alternatively MongoDB provide a [helm chart](https://www.mongodb.com/blog/post/introducing-the-mongodb-enterprise-operator-for-kubernetes) for deploying to your own insfrastrcture.
-3. **NFS storage class** - we require that the cluster provides an NFS storage provisioner for the storage class called "nfs".
+2. **MongoDB** - we require access to a MongoDB cluster. We recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/) whenever possible. Alternatively MongoDB provide a [helm chart](https://www.mongodb.com/blog/post/introducing-the-mongodb-enterprise-operator-for-kubernetes) for deploying to your own infrastructure.
+3. **NFS storage class** - we require that the cluster provides an NFS storage provisioner for the storage class that is by default called "nfs". You can configure the name of the storage class by setting `storage.class`. 
 
 There's also some extra configuration available for some cloud providers.
 
