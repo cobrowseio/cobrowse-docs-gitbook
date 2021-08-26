@@ -8,7 +8,13 @@ Many customers are happy to use our default UI which works out of box. This is a
 
 {% page-ref page="user-consent-dialog.md" %}
 
+
+
 {% page-ref page="customize-6-digit-code-screen.md" %}
+
+{% page-ref page="remote-control-consent.md" %}
+
+{% page-ref page="localization.md" %}
 
 
 
