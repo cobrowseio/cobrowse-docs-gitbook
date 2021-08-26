@@ -14,6 +14,10 @@ If you are using the Email "magic link" sign-in flow, but do not have a mail ser
 
 You will need to set the API location when integrating the SDKs in order to point them at your private instance.
 
+{% hint style="info" %}
+When specifying the API, please do not use a trailing slash. 
+{% endhint %}
+
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
