@@ -10,7 +10,7 @@ We believe in putting Cobrowse where your agents are already working. Therefore,
 
 {% page-ref page="genesys/" %}
 
-{% page-ref page="salesforce.md" %}
+{% page-ref page="salesforce-legacy.md" %}
 
 {% page-ref page="freshdesk.md" %}
 
