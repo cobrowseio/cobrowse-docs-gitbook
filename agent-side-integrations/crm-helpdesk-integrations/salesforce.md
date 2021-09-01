@@ -72,7 +72,7 @@ You can also add the Cobrowse.io widget to your record pages for Cases, Contacts
 
 ![Select Edit Page to add the sidebar widget. It has already been added to the Contact Record page above.](../../.gitbook/assets/screenshot-2021-09-01-at-23.12.10.png)
 
-You can then drag and drop the Cobrowse.io Sidebar managed component \(from Custom - Managed on the left\) into the location of your choice.
+You can then drag and drop the Cobrowse.io Sidebar managed component \(from Custom - Managed on the left\) into the location of your choice and Save.
 
 ![Drag and drop the Cobrowse.io Sidebar component.](../../.gitbook/assets/screenshot-2021-09-01-at-23.15.09.png)
 
