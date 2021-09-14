@@ -54,6 +54,10 @@ Select Edit Policies and change Permitted Users to "Admin Approved users are pre
 
 ![Select Admin approved users are pre-authorized to enable access to users in your organization.](../../.gitbook/assets/screenshot-2021-09-01-at-22.44.44.png)
 
+## Managing access using Salesforce Profiles 
+
+If you allow manage access using Salesforce Profiles and require all users within your organisation to access Cobrowse.io then follow the steps below. If you require specific Permission Sets, skip to the next section.
+
 Next select Manage Profiles from the Profiles section of the Manage page display. 
 
 ![Select Manage Profiles to allow user profiles access to Cobrowse.io. ](../../.gitbook/assets/screenshot-2021-09-01-at-22.47.33.png)
@@ -65,6 +69,26 @@ Search Cobrowse.io in the App Launcher search bar again and go back to the dashb
 ![Search for Cobrowse.io again in the App Launcher and go to the dashboard.](../../.gitbook/assets/screenshot-2021-09-01-at-22.53.59.png)
 
 The Cobrowse.io dashboard should now be visible to both administrators and support agents. Account settings from the previous integration will have been preserved.
+
+## Managing access using Salesforce Permission Sets
+
+If you manage access using Salesforce Permission Sets, then follow the instructions below. Otherwise, use the previous section to enable Cobrowse.io for all Users in your organisation using Salesforce Profiles.  
+
+Due to an underlying Salesforce restriction, we will need to clone the Permission Sets that are shipped with our App when it is installed in order to enabled them. 
+
+To do this, go to your organisation's Permission Sets tab and Clone the Cobrowse.io Agent and Cobrowse.io Admin Permission Sets. **Note: clone them without making any changes to the Permission Sets.** This will mean that two Permission Sets for both Cobrowse.io Agent and Cobrowse.io Admin appear, this is expected. 
+
+![Click the Clone button on the Permission Sets and save them without changing anything else.](../../.gitbook/assets/screenshot-2021-09-14-at-16.42.46.png)
+
+Go back to the App Manager and manage CobrowseIOWebApp again. Select Manage Permission Sets and add both of the cloned Cobrowse.io Agent and Cobrowse.io Admin Permission Sets to the App. The correct ones are the ones that are able to be added, the non-cloned ones will show an error message. 
+
+![Add the cloned Permission Sets to the CobrowseIOWebApp, leave the original in place.](../../.gitbook/assets/screenshot-2021-09-14-at-16.44.57.png)
+
+Next, simply add the relevant Permission Sets to the Profiles or Users who you wish to access Cobrowse.io. Make sure to correctly add the appropriate Permission Set \(either Admin or Agent\) and to add both copies of the Permission Set to be sure the right one has been added, e.g. both Cobrowse.io Agent Permission Sets for each agent who does not have admin rights.
+
+![Add the Permission Sets to the correct Users \(or Profiles\)](../../.gitbook/assets/screenshot-2021-09-14-at-16.46.41.png)
+
+The Cobrowse.io application will now appear to your agents and admins who have been granted the correct permissions.
 
 ## Sidebar widget placement
 
