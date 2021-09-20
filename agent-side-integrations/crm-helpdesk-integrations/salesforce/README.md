@@ -54,8 +54,6 @@ Within the Manage Profiles options select System Administrator and Standard User
 
 Search Cobrowse.io in the App Launcher search bar again and go back to the dashboard by selecting either option.
 
-![Search for Cobrowse.io again in the App Launcher and go to the dashboard.](../../../.gitbook/assets/screenshot-2021-09-01-at-22.53.59.png)
-
 The Cobrowse.io dashboard should now be visible to both administrators and support agents. Account settings from the previous integration will have been preserved.
 
 ## Managing access using Salesforce Permission Sets
