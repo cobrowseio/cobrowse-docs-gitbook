@@ -10,7 +10,7 @@ The new version of our Salesforce integration is now available. System admins ca
 
 **Migrating from version 1? Follow the instructions here first:** [**Migrating from legacy to v2**](migrating-from-legacy-to-v2.md)**.**
 
-## Install the new app
+## Install the app
 
 Search for 'Cobrowse.io' in the App Marketplace and select our application. Follow the install guidance and complete the information until you see the screen below.
 
