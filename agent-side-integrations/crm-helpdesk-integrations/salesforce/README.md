@@ -12,17 +12,19 @@ The new version of our Salesforce integration is now available. System admins ca
 
 ## Install the app
 
-Search for 'Cobrowse.io' in the AppExchange Marketplace and select our application. Follow the install guidance and complete the information until you see the screen below.
+Search for 'Cobrowse.io' in the AppExchange Marketplace and select our application. 
 
-Select Install for All Users at the install page.
+![The Cobrowse.io AppExchange Marketplace application.](../../../.gitbook/assets/screenshot-2021-09-20-at-15.19.06.png)
 
-![Select Install for All Users on the install page.](../../../.gitbook/assets/screenshot-2021-09-01-at-22.28.03.png)
+Follow the install guidance and complete the information until you see the screen below. Select Install for All Users at the install page.
+
+![Select Install for All Users at the install page.](../../../.gitbook/assets/screenshot-2021-09-20-at-15.22.51.png)
 
 This will allow all users to access the application after permissions have been granted within Salesforce \(as shown later\). The install process will take a few minutes.
 
 Verify that the app has been installed by searching for Cobrowse.io in the App Launcher search bar.
 
-![Searching for Cobrowse.io should show that the app has installed successfully.](../../../.gitbook/assets/screenshot-2021-09-01-at-22.36.37.png)
+![](../../../.gitbook/assets/screenshot-2021-09-20-at-15.25.37.png)
 
 Click on either option and the below screen should appear.
 
@@ -34,11 +36,11 @@ This is expected and verifies that the application has been installed correctly.
 
 Go to Setup and search for App Manager. Select Manage for the CobrowseIOWebApp as shown below.
 
-![Manage the CobrowseIOWebApp to grant access to Users.](../../../.gitbook/assets/screenshot-2021-09-01-at-22.42.58.png)
+![Manage the CobrowseIOWebApp to grant access to Users.](../../../.gitbook/assets/screenshot-2021-09-20-at-15.32.03.png)
 
 Select Edit Policies and change Permitted Users to "Admin Approved users are pre-authorized" and then Save.
 
-![Select Admin approved users are pre-authorized to enable access to users in your organization.](../../../.gitbook/assets/screenshot-2021-09-01-at-22.44.44.png)
+![Select Admin approved users are pre-authorized to enable access to users.](../../../.gitbook/assets/screenshot-2021-09-20-at-15.34.17.png)
 
 ## Managing access using Salesforce Profiles 
 
@@ -46,7 +48,7 @@ If you allow manage access using Salesforce Profiles and require all users withi
 
 Next select Manage Profiles from the Profiles section of the Manage page display. 
 
-![Select Manage Profiles to allow user profiles access to Cobrowse.io. ](../../../.gitbook/assets/screenshot-2021-09-01-at-22.47.33.png)
+![Select Manage Profiles to allow user profiles access to Cobrowse.io. ](../../../.gitbook/assets/screenshot-2021-09-20-at-15.36.40.png)
 
 Within the Manage Profiles options select System Administrator and Standard User then Save. 
 
@@ -80,11 +82,11 @@ The Cobrowse.io application will now appear to your agents and admins who have b
 
 You can also add the Cobrowse.io widget to your record pages for Cases, Contacts, Accounts, or any other record pages accessible via Sales Console, Service Console, or otherwise. To do this, navigate to the  page you would like to add the widget to and click the settings button in the top right to "Edit Page".
 
-![Select Edit Page to add the sidebar widget. It has already been added to the Contact Record page above.](../../../.gitbook/assets/screenshot-2021-09-01-at-23.12.10.png)
+![Select Edit Page underneath the cog to add the sidebar widget.](../../../.gitbook/assets/screenshot-2021-09-20-at-15.41.34.png)
 
 You can then drag and drop the Cobrowse.io Sidebar managed component \(from Custom - Managed on the left\) into the location of your choice and Save.
 
-![Drag and drop the Cobrowse.io Sidebar component.](../../../.gitbook/assets/screenshot-2021-09-01-at-23.15.09.png)
+![Drag and drop the Cobrowse.io Sidebar component.](../../../.gitbook/assets/screenshot-2021-09-20-at-16.28.20.png)
 
 The sidebar widget should then be displayed in all of the pages that it has been added to.
 
@@ -104,7 +106,7 @@ This step is optional for clients who wish to override the default device filter
 
 In Salesforce legacy, this filtering was provided in the Cobrowse.io Settings tab. It is now located within the Cobrowse.io Dashboard. Go to Cobrowse.io Dashboard \(e.g. via App Launcher search\) then Account Settings \(Admins only\), then Integrations, then Salesforce record Mapping. 
 
-![](../../../.gitbook/assets/screenshot-2021-09-01-at-23.25.24.png)
+![](../../../.gitbook/assets/screenshot-2021-09-20-at-16.31.34.png)
 
 The first argument specifies the page for the filtering to be applied to, e.g. "Case". Then the key:value pair specifies the SalesforceMetadata:Cobrowse.ioCustomData that should be mapped together, linking the Salesforce metadata from a page to the corresponding Cobrowse.io custom data field to filter the devices.
 
