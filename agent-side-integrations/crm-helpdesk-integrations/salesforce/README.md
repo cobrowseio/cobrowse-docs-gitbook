@@ -12,7 +12,7 @@ The new version of our Salesforce integration is now available. System admins ca
 
 ## Install the app
 
-Search for 'Cobrowse.io' in the App Marketplace and select our application. Follow the install guidance and complete the information until you see the screen below.
+Search for 'Cobrowse.io' in the AppExchange Marketplace and select our application. Follow the install guidance and complete the information until you see the screen below.
 
 Select Install for All Users at the install page.
 
