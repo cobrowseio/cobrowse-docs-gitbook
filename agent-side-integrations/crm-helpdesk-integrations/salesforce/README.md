@@ -88,6 +88,16 @@ You can then drag and drop the Cobrowse.io Sidebar managed component \(from Cust
 
 The sidebar widget should then be displayed in all of the pages that it has been added to.
 
+## Configuring Cobrowse.io Account Settings
+
+[Account Settings](../../../sdk-features/account-configuration.md) can be configured by an admin user by going to the Cobrowse.io application and clicking on the Account Settings icon.
+
+![Configure your Cobrowse.io Account Settings](../../../.gitbook/assets/screenshot-2021-09-20-at-11.34.44.png)
+
+## Add our SDKs to get started!
+
+See [Getting started](../../../) to add our SDKs and begin end-to-end testing! Your license key can be found in your Account Settings, seen above.
+
 ## Filtering devices using Salesforce Record metadata \(optional\)
 
 This step is optional for clients who wish to override the default device filtering in the Cobrowse.io Sidebar widget. For example in Cases and Contacts, the sidebar widget will filter by devices that match the end user's email address by default.
