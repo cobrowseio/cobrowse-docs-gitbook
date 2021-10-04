@@ -2,10 +2,6 @@
 
 This is the documentation for how to use Helm to set up Cobrowse Enterprise in your Kubernetes cluster.
 
-{% hint style="info" %}
-Helm deployment is currently in **beta**. There may be breaking changes without warning.
-{% endhint %}
-
 ## Initial Setup
 
 Make sure you have installed \(on your local machine\) the required tools to manage and deploy the Cobrowse infrastructure to your Kubernetes cluster. You'll need these installed before running the setup:
