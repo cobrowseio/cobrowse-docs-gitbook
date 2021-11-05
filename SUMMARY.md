@@ -30,10 +30,11 @@
   * [Web](sdk-features/advanced-features/web/README.md)
     * [IFrames support](sdk-features/advanced-features/web/cross-document-iframes.md)
     * [IE 11 polyfills](sdk-features/advanced-features/web/ie-11-polyfills.md)
+    * [Cross-domain session support](sdk-features/advanced-features/web/cross-domain-session-support.md)
   * [iOS](sdk-features/advanced-features/ios/README.md)
     * [Alternate render method](sdk-features/advanced-features/ios/alternate-render-method.md)
   * [Android](sdk-features/advanced-features/android/README.md)
-    * [Backporting TLS 1.2 to Android 4.4 \(API 19\)](sdk-features/advanced-features/android/android-tls-1.2.md)
+    * [Backporting TLS 1.2 to Android 4.4 (API 19)](sdk-features/advanced-features/android/android-tls-1.2.md)
 
 ## Agent-side integrations
 
@@ -42,15 +43,15 @@
   * [Zendesk](agent-side-integrations/crm-helpdesk-integrations/zendesk.md)
   * [Genesys](agent-side-integrations/crm-helpdesk-integrations/genesys/README.md)
     * [Genesys Cloud](agent-side-integrations/crm-helpdesk-integrations/genesys/genesys-cloud.md)
-    * [Engage Workspace Web Edition \(WWE\)](agent-side-integrations/crm-helpdesk-integrations/genesys/engage-workspace-web-edition-wwe.md)
-    * [Engage Workspace Desktop Edition \(WDE\)](agent-side-integrations/crm-helpdesk-integrations/genesys/engage-workspace-desktop-edition-wde.md)
+    * [Engage Workspace Web Edition (WWE)](agent-side-integrations/crm-helpdesk-integrations/genesys/engage-workspace-web-edition-wwe.md)
+    * [Engage Workspace Desktop Edition (WDE)](agent-side-integrations/crm-helpdesk-integrations/genesys/engage-workspace-desktop-edition-wde.md)
   * [Salesforce](agent-side-integrations/crm-helpdesk-integrations/salesforce/README.md)
     * [Migrating from legacy to v2](agent-side-integrations/crm-helpdesk-integrations/salesforce/migrating-from-legacy-to-v2.md)
-  * [Salesforce \(Legacy\)](agent-side-integrations/crm-helpdesk-integrations/salesforce-legacy.md)
+  * [Salesforce (Legacy)](agent-side-integrations/crm-helpdesk-integrations/salesforce-legacy.md)
   * [Freshdesk](agent-side-integrations/crm-helpdesk-integrations/freshdesk.md)
 * [Custom integrations](agent-side-integrations/custom-integrations.md)
-* [Agent SDK \(beta\)](agent-side-integrations/agent-sdk.md)
-* [Authentication \(JWTs\)](agent-side-integrations/json-web-tokens-jwts.md)
+* [Agent SDK (beta)](agent-side-integrations/agent-sdk.md)
+* [Authentication (JWTs)](agent-side-integrations/json-web-tokens-jwts.md)
 * [IFrame embeds](agent-side-integrations/custom-iframe-embeds.md)
 
 ## Enterprise self-hosting
@@ -70,4 +71,3 @@
 * [Advanced configuration](enterprise-self-hosting/advanced/README.md)
   * [Pin web SDK version](enterprise-self-hosting/advanced/web-sdk-pinning.md)
   * [L7 firewall configuration](enterprise-self-hosting/advanced/firewalls.md)
-
