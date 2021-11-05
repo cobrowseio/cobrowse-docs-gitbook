@@ -11,10 +11,10 @@ In some cases, several of your domains or sub-domains need to be visited in a si
 To enable this, add the following javascript snippet within our [web SDK](../../../sdk-installation/web.md) to all required pages.&#x20;
 
 {% hint style="info" %}
-Trusted origins must be served from _https_ and include the full domain or sub-domain, with no trailing slash, url path, or parameters.
+Trusted origins must be served over _HTTP_ and include the full domain or sub-domain, with no trailing slash, url path, or parameters.
 {% endhint %}
 
-```
+```javascript
 CobrowseIO.trustedOrigins = [
   'https://myexample.com', // origin to trust
   'https://my-other-website.net', // another origin to trust
@@ -23,7 +23,7 @@ CobrowseIO.trustedOrigins = [
 CobrowseIO.start(); // before the start call
 ```
 
-This provides Cobrowse for Web with a list of _trusted origins_ to allow your session to continue on.&#x20;
+This provides Cobrowse for Web with a list of _trusted origins_ to allow your session to continue on. All trusted origins must be listed on&#x20;
 
 ### Supported browsers
 
