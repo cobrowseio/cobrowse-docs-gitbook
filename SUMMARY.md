@@ -71,3 +71,4 @@
 * [Advanced configuration](enterprise-self-hosting/advanced/README.md)
   * [Pin web SDK version](enterprise-self-hosting/advanced/web-sdk-pinning.md)
   * [L7 firewall configuration](enterprise-self-hosting/advanced/firewalls.md)
+* [Troubleshooting](enterprise-self-hosting/troubleshooting.md)
