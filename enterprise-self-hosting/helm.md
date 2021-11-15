@@ -4,7 +4,7 @@ This is the documentation for how to use Helm to set up Cobrowse Enterprise in y
 
 ## Initial Setup
 
-Make sure you have installed \(on your local machine\) the required tools to manage and deploy the Cobrowse infrastructure to your Kubernetes cluster. You'll need these installed before running the setup:
+Make sure you have installed (on your local machine) the required tools to manage and deploy the Cobrowse infrastructure to your Kubernetes cluster. You'll need these installed before running the setup:
 
 * **Helm**
 
@@ -19,18 +19,18 @@ Run the following commands to add our helm repository.
 
 ### Common Parameters
 
-| Parameter Name | Required | Description |
-| :--- | :--- | :--- |
-| `imageCredentials.password` | Yes | The docker password required to access the Cobrowse images \(provided by Cobrowse.io\) |
-| `license` | Yes | Your Cobrowse enterprise license \(provided by Cobrowse.io\) |
-| `domain` | Yes | The domain name for your deployment |
-| `superusers` | No | RegEx to specify superuser email addresses |
-| `mongo.url` | Yes | Your MongoDB connection URL |
-| `redis.url` | Yes | Your Redis cluster connection URL  |
-| `ingress.class` | Yes | The ingress class name to use |
-| `ingress.annotations` | No | Extra annotations to add to the Kubernetes ingress. |
-| `storage.size` | No | Amount of storage to provision for recordings. Default is 50Gb. |
-| `storage.class` | No | A storage class available in the cluster that supports "ReadWriteMany" access. Default is "nfs". |
+| Parameter Name              | Required | Description                                                                                                                                                                                                                                                                                                                 |
+| --------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `imageCredentials.password` | Yes      | The docker password required to access the Cobrowse images (provided by Cobrowse.io)                                                                                                                                                                                                                                        |
+| `license`                   | Yes      | Your Cobrowse enterprise license (provided by Cobrowse.io)                                                                                                                                                                                                                                                                  |
+| `domain`                    | Yes      | The domain name for your deployment                                                                                                                                                                                                                                                                                         |
+| `superusers`                | No       | RegEx to specify superuser email addresses                                                                                                                                                                                                                                                                                  |
+| `mongo.url`                 | Yes      | Your MongoDB connection URL                                                                                                                                                                                                                                                                                                 |
+| `redis.url`                 | Yes      | <p>Your Redis cluster connection URL in the format:</p><p> </p><p><code>redis://username:password@your-redis-host.com:PORT</code></p><p></p><p>Or, if you are using TLS:</p><p></p><p><code>rediss://username:password@your-redis-host.com:PORT</code></p><p>(note the double <code>s</code> in <code>rediss://</code>)</p> |
+| `ingress.class`             | Yes      | The ingress class name to use                                                                                                                                                                                                                                                                                               |
+| `ingress.annotations`       | No       | Extra annotations to add to the Kubernetes ingress.                                                                                                                                                                                                                                                                         |
+| `storage.size`              | No       | Amount of storage to provision for recordings. Default is 50Gb.                                                                                                                                                                                                                                                             |
+| `storage.class`             | No       | A storage class available in the cluster that supports "ReadWriteMany" access. Default is "nfs".                                                                                                                                                                                                                            |
 
 ### Dependencies
 
@@ -38,7 +38,7 @@ For all deployments there are some dependencies that must be configured outside 
 
 1. **Redis** - we require access to a redis cluster. It must be running in cluster mode. Bitnami provide an easy to use [Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/redis-cluster).
 2. **MongoDB** - we require access to a MongoDB cluster. We recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/) whenever possible. Alternatively MongoDB provide a [helm chart](https://www.mongodb.com/blog/post/introducing-the-mongodb-enterprise-operator-for-kubernetes) for deploying to your own infrastructure.
-3. **NFS storage class** - we require that the cluster provides an NFS storage provisioner for the storage class that is by default called "nfs". You can configure the name of the storage class by setting `storage.class`. 
+3. **NFS storage class** - we require that the cluster provides an NFS storage provisioner for the storage class that is by default called "nfs". You can configure the name of the storage class by setting `storage.class`.&#x20;
 
 There's also some extra configuration available for some cloud providers.
 
@@ -56,7 +56,7 @@ To use Azure Application Gateway, you will need to enable [AGIC](https://docs.mi
 {% tab title="GCP / GKE" %}
 **SSL Generation**
 
-If you use the GCE ingress \(set `ingress.class` to `gce`\), we will automatically provision a certificate using a GCP ManagedCertificate. You do not need install anything extra to use this.  
+If you use the GCE ingress (set `ingress.class` to `gce`), we will automatically provision a certificate using a GCP ManagedCertificate. You do not need install anything extra to use this. &#x20;
 {% endtab %}
 {% endtabs %}
 
@@ -64,5 +64,6 @@ If you use the GCE ingress \(set `ingress.class` to `gce`\), we will automatical
 
 Next, learn about managing and upgrading your deployment.
 
-{% page-ref page="getting-started/management.md" %}
-
+{% content-ref url="getting-started/management.md" %}
+[management.md](getting-started/management.md)
+{% endcontent-ref %}
