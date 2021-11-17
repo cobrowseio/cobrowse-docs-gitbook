@@ -221,5 +221,24 @@ public class CustomRemoteControlConsentDialogFragment extends DialogFragment {
 }
 ```
 {% endtab %}
-{% endtabs %}
 
+{% tab title="React Native" %}
+```javascript
+CobrowseIO.handleRemoteControlRequest = function(session) {
+    // Replace this with your own logic
+    Alert.alert(
+      'Remote Control Request',
+      'A support agent would like to take remote control of this app. Do you accept?',
+      [{
+        text: 'Reject',
+        onPress: () => session.setRemoteControl('rejected'),
+        style: 'cancel'
+      }, {
+        text: 'Accept',
+        onPress: () => session.setRemoteControl('on')
+      }], { cancelable: false })
+  }
+}
+```
+{% endtab %}
+{% endtabs %}
