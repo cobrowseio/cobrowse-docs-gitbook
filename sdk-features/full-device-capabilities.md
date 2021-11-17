@@ -1,5 +1,5 @@
 ---
-description: 'For use with Android, iOS, React Native, and Xamarin SDKs only.'
+description: For use with Android, iOS, React Native, and Xamarin SDKs only.
 ---
 
 # Full device capabilities
@@ -8,7 +8,7 @@ description: 'For use with Android, iOS, React Native, and Xamarin SDKs only.'
 {% tab title="Web" %}
 ### Overview
 
-The Cobrowse.io SDK for Web includes an optional "full device" toggle in the bottom right when running an active session. This feature enables the end-user to share their entire screen on their laptop or desktop. This is great if the end-user navigates to browser tabs outside of your website, where the Web SDK's JavaScript snippet is not installed, or if the end-user needs to share a PDF, or their entire desktop. 
+The Cobrowse.io SDK for Web includes an optional "full device" toggle in the bottom right when running an active session. This feature enables the end-user to share their entire screen on their laptop or desktop. This is great if the end-user navigates to browser tabs outside of your website, where the Web SDK's JavaScript snippet is not installed, or if the end-user needs to share a PDF, or their entire desktop.&#x20;
 
 ### Customizing the full device UI on Web
 
@@ -29,7 +29,7 @@ CobrowseIO.confirmFullDevice = function() {
 }
 ```
 
-If your custom confirmation prompt is not working in some browsers, please ensure you resolve the promise in response to a user action, such as a button click. This is required by both Safari and Firefox browsers when calling the browser's getDisplayMedia\(\) API, which is used for full device screen share on Web.  The call to getDisplayMedia\(\) must be made from code which is running in response to a user action, such as in an event handler.
+If your custom confirmation prompt is not working in some browsers, please ensure you resolve the promise in response to a user action, such as a button click. This is required by both Safari and Firefox browsers when calling the browser's getDisplayMedia() API, which is used for full device screen share on Web.  The call to getDisplayMedia() must be made from code which is running in response to a user action, such as in an event handler.
 
 {% hint style="info" %}
 Redaction, annotation, and remote control are disabled when in full device mode via our Web SDK. If you require full desktop redaction, annotation, and remote control, please see our [MacOS](../sdk-installation/macos.md) and [Windows](../sdk-installation/windows.md) SDKs, which will require a downloaded utility on the end-user's computer.
@@ -39,7 +39,7 @@ Redaction, annotation, and remote control are disabled when in full device mode 
 {% tab title="iOS" %}
 ### Overview
 
-The Cobrowse.io SDK for iOS allows full device screen capture, but this requires enabling the Broadcast Extension when integrating the iOS SDK. Please follow the directions below. 
+The Cobrowse.io SDK for iOS allows full device screen capture, but this requires enabling the Broadcast Extension when integrating the iOS SDK. Please follow the directions below.&#x20;
 
 Follow this guide to add the Broadcast Extension required for capturing full device frames.
 
@@ -48,12 +48,12 @@ Follow this guide to add the Broadcast Extension required for capturing full dev
 **Add a Broadcast Extension target**
 
 1. Open your Xcode project
-2. Navigate to File &gt; New &gt; Target...
+2. Navigate to File > New > Target...
 3. Pick "Broadcast Upload Extension"
 4. Enter a name for the target
 5. Uncheck "Include UI Extension"
 6. Create the target, noting its bundle ID
-7. Change the target SDK of your Broadcast Extension to iOS 12.0 or higher _\(Note: it should still work as far back to iOS 10.0\)_
+7. Change the target SDK of your Broadcast Extension to iOS 12.0 or higher _(Note: it should still work as far back to iOS 10.0)_
 
 **Set up Keychain Sharing**
 
@@ -63,7 +63,7 @@ In **both** your **app target** and your **extension target** add a Keychain Sha
 
 **Add the bundle ID to your plist**
 
-Take the bundle ID of the **extension** you created above, and add the following entry in your apps `Info.plist` \(_Note:_ **not** in the extensions `Info.plist`\), replacing the bundle ID below with your own:
+Take the bundle ID of the **extension** you created above, and add the following entry in your apps `Info.plist` (_Note:_ **not** in the extensions `Info.plist`), replacing the bundle ID below with your own:
 
 ```markup
 <key>CBIOBroadcastExtension</key>
@@ -84,7 +84,7 @@ _Make sure to run `pod install` after updating your Podfile_
 
 **Implement the extension**
 
-Xcode will have added `SampleHandler.m` and `SampleHandler.h` \(or `SampleHander.swift`\) files as part of the target you created earlier. Replace the content of the files with the following:
+Xcode will have added `SampleHandler.m` and `SampleHandler.h` (or `SampleHander.swift`) files as part of the target you created earlier. Replace the content of the files with the following:
 
 ### Swift
 
@@ -122,31 +122,31 @@ class SampleHandler: CobrowseIOReplayKitExtension {
 
 You're now ready to build and run your app. The full device capability is only available on physical devices, it will not work in the iOS Simulator.
 
-If you've set everything up properly, after clicking the blue circular icon you should see the following screen to select your Broadcast Extension. 
+If you've set everything up properly, after clicking the blue circular icon you should see the following screen to select your Broadcast Extension.&#x20;
 
-![Select your Broadcast Extension from the list](../.gitbook/assets/broadcast_extension_example.png)
+![Select your Broadcast Extension from the list](../.gitbook/assets/broadcast\_extension\_example.png)
 
 ### Troubleshooting
 
 If full device screen capture on iOS is not working, please check the following:
 
 * Please verify you are testing on a physical device, and not the iOS simulator.
-* Please verify you have added the Bundle Id of your Broadcast Extension to your main app's Info.plist as described in our documentation. If you have not, then no options will appear in the list after clicking the blue circular record button. 
-* Please verify you are not running any other screen recording or screen mirroring software at the same time, as this will interfere. 
+* Please verify you have added the Bundle Id of your Broadcast Extension to your main app's Info.plist as described in our documentation. If you have not, then no options will appear in the list after clicking the blue circular record button.&#x20;
+* Please verify you are not running any other screen recording or screen mirroring software at the same time, as this will interfere.&#x20;
 {% endtab %}
 
 {% tab title="Android" %}
 ### Overview
 
-The Cobrowse.io SDK for Android will allow full device screen capture, including home screen, device settings, and everything else, just by toggling "full device mode" during an active session. There's no changes in the Android SDK required to support this. If you do not want this feature, you may completely disable "Full Device Viewing" in your account settings. 
+The Cobrowse.io SDK for Android will allow full device screen capture, including home screen, device settings, and everything else, just by toggling "full device mode" during an active session. There's no changes in the Android SDK required to support this. If you do not want this feature, you may completely disable "Full Device Viewing" in your account settings.&#x20;
 
-On Android, you can also enable full device remote control, including optional unattended access, but this requires enabling the Accessibility Service when integrating the Android SDK. Please follow the directions below. 
+On Android, you can also enable full device remote control, including optional unattended access, but this requires enabling the Accessibility Service when integrating the Android SDK. Please follow the directions below.&#x20;
 
-Full device screen capture for Android is supported out of box with our Android SDK, and does not require any extra development or configuration. 
+Full device screen capture for Android is supported out of box with our Android SDK, and does not require any extra development or configuration.&#x20;
 
 Full device remote control for Android, including unattended access, is officially supported starting in our v2.0 release. It uses an Accessibility Service that must be enabled on the device to grant access.
 
-This feature is supported in API 21 \(5.0 Lollipop\) and above.
+This feature is supported in API 21 (5.0 Lollipop) and above.
 
 ### Implementation
 
@@ -161,7 +161,7 @@ Add the following line to one of your resources xml files, eg. in `res/values/bo
 
 _Note: Please add this value to a Values resource file, and not an XML resource file._
 
-Enable the accessibility service the Cobrowse SDK will have added in the main device settings, eg. Settings -&gt; Accessibility -&gt; Your App Name. Note: this only has to be done the very first time.
+Enable the accessibility service the Cobrowse SDK will have added in the main device settings, eg. Settings -> Accessibility -> Your App Name. Note: this only has to be done the very first time.
 
 We also have built some logic to detect if accessibility service is running, and if not, to deep link the user to the settings to enable it.
 
@@ -191,32 +191,50 @@ For unattended full device access, we strongly recommend:
 
 * Please initiate sessions with push notifications, rather than our default sockets. This will enable unattended access, even when your app has been backgrounded a long time, or force closed. More info at [Initiate sessions with push](initiate-sessions-with-push.md).
 * Please turn off "Require User Consent" prompts at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings). Otherwise, a user must always accept the consent prompt on the device before a session can start.
-* Be wary of battery optimization policies. On some devices you may need to add your app to a battery optimization whitelist to prevent it from killing the push notifications. More info here: [https://dontkillmyapp.com/](https://dontkillmyapp.com/)
+* Be wary of battery optimization policies. On some devices you may need to add your app to a battery optimization whitelist to prevent it from killing the push notifications. More info here: [https://dontkillmyapp.com/](https://dontkillmyapp.com)
 
 ### Troubleshooting
 
-* If the screen is black during full device screen capture, please make sure your views are not marked as secure. More info here: [https://developer.android.com/reference/android/view/WindowManager.LayoutParams\#FLAG\_SECURE](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_SECURE)
+* If the screen is black during full device screen capture, please make sure your views are not marked as secure. More info here: [https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE)
 * If you are using Android Enterprise, please ensure your enterprise settings do not disallow screen capture.
-* If you get `compile error android:foregroundServiceType not found`, please update your Android project to use `compileSdkVersion 29`. 
+* If you get `compile error android:foregroundServiceType not found`, please update your Android project to use` compileSdkVersion 29`.&#x20;
 {% endtab %}
 
 {% tab title="React Native" %}
 {% hint style="info" %}
 Please follow the iOS and Android documentation to implement full device capabilities on React Native.
 
-Any questions, please [email us](mailto:hello@cobrowse.io). 
+Any questions, please [email us](mailto:hello@cobrowse.io).&#x20;
 {% endhint %}
+
+### Detecting AccessibilityService state
+
+Show the sample UI with:
+
+```javascript
+import { CobrowseAccessibilityService } from 'cobrowse-sdk-react-native'
+CobrowseAccessibilityService.showSetup(...);
+```
+
+Check if accessibility service is already running with:
+
+```javascript
+import { CobrowseAccessibilityService } from 'cobrowse-sdk-react-native'
+CobrowseAccessibilityService.isRunning(...);
+```
+
+
 
 ### Troubleshooting
 
-* For React Native on iOS, some clients have reported that Xcode does not automatically create the _{{extensionname}}.entitlements_ file in the extension directory, which is necessary for the "io.cobrowse" keychain sharing to work. 
+* For React Native on iOS, some clients have reported that Xcode does not automatically create the _{{extensionname}}.entitlements_ file in the extension directory, which is necessary for the "io.cobrowse" keychain sharing to work.&#x20;
 {% endtab %}
 
 {% tab title="Xamarin.iOS" %}
 {% hint style="info" %}
-Please review the iOS documentation for full device capabilities first. 
+Please review the iOS documentation for full device capabilities first.&#x20;
 
-This documentation specific to Xamarin.iOS is supplementary, and covers the differences only. 
+This documentation specific to Xamarin.iOS is supplementary, and covers the differences only.&#x20;
 {% endhint %}
 
 **Add a Broadcast Extension project**
@@ -224,8 +242,8 @@ This documentation specific to Xamarin.iOS is supplementary, and covers the diff
 In Visual Studio for Mac:
 
 1. Open your Xamarin solution
-2. Right click on the solution, select Add &gt; New Project...
-3. Navigate iOS &gt; Extension
+2. Right click on the solution, select Add > New Project...
+3. Navigate iOS > Extension
 4. Pick "Broadcast Upload Extension"
 5. Enter a name for the target, e.g. `YourApp.iOS.BroadcastUploadExtension`
 6. Select your iOS app to add the extension to
@@ -241,7 +259,7 @@ In **both** your **iOS app** and your **extension project** add a Keychain Shari
 
 **Add the bundle ID to your plist**
 
-Take the bundle ID of the **extension** you created above, and add the following entry in your apps `Info.plist` \(_Note:_ **not** in the extensions `Info.plist`\), replacing the bundle ID below with your own:
+Take the bundle ID of the **extension** you created above, and add the following entry in your apps `Info.plist` (_Note:_ **not** in the extensions `Info.plist`), replacing the bundle ID below with your own:
 
 ```markup
 <key>CBIOBroadcastExtension</key>
@@ -250,7 +268,7 @@ Take the bundle ID of the **extension** you created above, and add the following
 
 **Add the Cobrowse.io AppExtension NuGet**
 
-The app extension needs a dependency on the CobrowseIO app extension framework. Add the following NuGet to the **extension project** \(not to the iOS app project\):
+The app extension needs a dependency on the CobrowseIO app extension framework. Add the following NuGet to the **extension project** (not to the iOS app project):
 
 * [![CobrowseIO.AppExtension.iOS NuGet](https://img.shields.io/nuget/v/CobrowseIO.AppExtension.iOS.svg?label=CobrowseIO.AppExtension.iOS)](https://www.nuget.org/packages/CobrowseIO.AppExtension.iOS/)
 
@@ -294,9 +312,9 @@ Open Info.plist of the extension project and make sure that `NSExtension` sectio
 
 {% tab title="Xamarin.Android" %}
 {% hint style="info" %}
-Please review the Android documentation for full device capabilities first. 
+Please review the Android documentation for full device capabilities first.&#x20;
 
-This documentation specific to Xamarin.Android is supplementary, and covers the differences only. 
+This documentation specific to Xamarin.Android is supplementary, and covers the differences only.&#x20;
 {% endhint %}
 
 When adding the Full Device Control flag from the Android documentation, please add this value to a file with Build Action set to `AndroidResource`, and not to an XML resource file.
@@ -325,7 +343,7 @@ StartActivity(intent);
 
 ### Controlling full device state from the SDK
 
-In some situations it is useful to be able to switch a Cobrowsing session into full device mode using the SDK. For example, if you would like sessions to default to full device mode, or enforce full device mode is always \(or never\) used. We provide an API for doing this.
+In some situations it is useful to be able to switch a Cobrowsing session into full device mode using the SDK. For example, if you would like sessions to default to full device mode, or enforce full device mode is always (or never) used. We provide an API for doing this.
 
 {% tabs %}
 {% tab title="Web" %}
@@ -349,9 +367,15 @@ session.setFullDevice(true, (err, arg) -> {
 });
 ```
 {% endtab %}
+
+{% tab title="ReactNative" %}
+```javascript
+await session.setFullDevice(true)
+```
+{% endtab %}
 {% endtabs %}
 
-These API can be used in combination with our various delegate APIs \(`sessionDidUpdate` etc...\) to switch the session in and out of full device mode as your use case requires.For example, to enforce full device is always used on Android:
+These API can be used in combination with our various delegate APIs (`sessionDidUpdate` etc...) to switch the session in and out of full device mode as your use case requires.For example, to enforce full device is always used on Android:
 
 ```java
 - (void)cobrowseSessionDidUpdate:(CBIOSession *)session {
@@ -359,4 +383,3 @@ These API can be used in combination with our various delegate APIs \(`sessionDi
     [session setFullDevice:YES callback: null];
 }
 ```
-
