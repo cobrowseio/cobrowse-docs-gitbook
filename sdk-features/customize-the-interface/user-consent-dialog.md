@@ -125,7 +125,7 @@ public class MainApplication extends Application implements CobrowseIO.SessionRe
 ```javascript
 CobrowseIO.handleSessionRequest = function(session) {
     // Replace this with your own logic
-    // Just be sure to call CobrowseIO.activateSession() to
+    // Just be sure to call session.activate() to
     // accept the session.
     Alert.alert(
         'Session Requested',
@@ -136,7 +136,7 @@ CobrowseIO.handleSessionRequest = function(session) {
                 onPress: () => {},
                 style: 'cancel',
             },
-            {text: 'OK', onPress: () => CobrowseIO.activateSession()},
+            {text: 'OK', onPress: () => session.activate()},
         ],
         {cancelable: true},
     );
@@ -351,4 +351,3 @@ else
 ```
 {% endtab %}
 {% endtabs %}
-
