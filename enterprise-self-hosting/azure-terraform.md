@@ -23,17 +23,39 @@ A MongoDB cluster is required for running Cobrowse. We **do not** provide this a
 
 You will need to create a cluster and provide the connection URL as a part of the Cobrowse configuration. You can either [run your own MongoDB cluster](https://docs.mongodb.com/manual/administration/install-community/) and manage the deployment and backups yourself. Alternatively, we recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/). They have a [range of certifications](https://www.mongodb.com/cloud/trust) required by many enterprises with compliance requirements.
 
-### 2. Create initial Azure resources
+### 2. Set up the Azure CLI
+
+Terraform requires the Azure CLI to be installed and authenticated.
+
+1. [Install](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos) the Azure CLI
+2. [Authenticate](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli) the Azure CLI (hint: `az login`)
+
+### 3. Create initial Azure resources
 
 There are some resources that are not created by our Terraform. You will need to manually create:
 
-1. A resource group for Cobrowse. You can do with via the cli or in the Azure portal: [https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups](https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups)
-2. A key vault for Cobrowse secrets. You can do this via the cli or in the Azure portal: [https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults)
-3. Add a secret in the key vault called "mongo-url" with the value set to the url of the Mongo database from step 1.
-4. Make sure you have [initialized the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli) with your access credentials.
-5. A storage bucket to save terraform state (this is optional but **strongly** recommended)
+1. A storage bucket to save terraform state (this is optional but **strongly** recommended)
+2. A resource group for Cobrowse. You create it via the cli or in the Azure portal:[ https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups](https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups)
+3. A key vault for Cobrowse secrets. You can do this via the cli or in the Azure portal: [https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults)
+4. Add a secret in the key vault called "mongo-url" with the value set to the url of the Mongo database from step 1.
+5. Make sure you have [initialized the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli) with your access credentials.
 
-### 3. Generate the config directory
+{% hint style="info" %}
+**Azure CLI Examples**
+
+```bash
+# 1. Create a resource group (replace <your location> with your Azure region)
+> az group create --location <your location> --name CobrowseEnterprise
+
+# 2. Create a key vault
+> az keyvault create --resource-group CobrowseEnterprise --name CobrowseEnterpriseKV
+
+# 3. Add a secret in the key vault called "mongo-url"
+> az keyvault secret set --vault-name CobrowseEnterpriseKV --name mongo-url --file ./mongo-url.txt
+```
+{% endhint %}
+
+### 4. Generate the config directory
 
 We have provided a small command line utility to help you get started. This utility will gather the required config for your deployment. Run the following command from your terminal:
 
@@ -63,11 +85,45 @@ This will instruct terraform to prepare the resources it needs to deploy. Run th
 
 This will list the modifications that terraform will make to your Azure account. If that looks good, type 'yes' to continue the deployment.
 
-### 5. Configure your DNS provider
+{% hint style="info" %}
+**Configure kubectl**
 
-Configure your DNS provider with an A record to point to the IP address provisioned by the terraform. We recommend doing this as soon as the IP is provisioned in the Azure portal to prevent DNS propagation delays, although this is not essential.
+`kubectl` is an essential utility for navigating and inspecting the kubernetes cluster deployed with the terraform scripts. Once the terraform finishes applying, we recommend installing and configuring `kubectl` to communicate with the kubernetes cluster.
 
-Once the terraform is deployed and the DNS configured you may have to wait for the certificate to be provisioned. Depending on DNS propagation delays this can take some time (usually between 5 minutes and an hour).
+If you have not installed `kubectl` you can do so by running:
+
+```bash
+> az aks install-cli
+```
+
+Once installed, you can configure it by running:
+
+```bash
+> az aks get-credentials --resource-group CobrowseEnterprise --name cobrowse-enterprise
+```
+
+When complete, test that it works by running:
+
+```bash
+> kubectl get pod
+```
+{% endhint %}
+
+### 5. Configure your DNS provider and SSL certificate
+
+Configure your DNS provider with an A record to point to the IP address provisioned by the terraform. We recommend doing this as soon as the IP is provisioned in the Azure portal to prevent DNS propagation delays, although this is not essential
+
+Once the terraform is deployed and the DNS is configured you will have to wait for the certificate to be provisioned. Depending on DNS propagation delays this can take some time (usually between 5 minutes and an hour).
+
+{% hint style="info" %}
+**How is SSL Configured?**
+
+The terraform automatically creates an SSL certificate for you using the [Let's Encrypt HTTP-01 challenge](https://letsencrypt.org/docs/challenge-types/#http-01-challenge).
+
+In practice, this means that upon initial deployment, a pod resource is polling your configured public service domain at the HTTP-01 path. Once the DNS provider configuration has finished propagating, the HTTP-01 challenge check will succeed and your SSL certificate will be issued.
+
+Only once the SSL certificate is issued will an HTTPS listener be created for your deployment. Once complete, the Let's Encrypt resources used to verify your DNS name will be destroyed.&#x20;
+{% endhint %}
 
 ### 6. Check your deployment
 
