@@ -65,7 +65,7 @@ We have provided a small command line utility to help you get started. This util
 
 You can replace "./example" with the directory where you wish to save the configuration data. The directory will be created if it does not exist yet.
 
-### 4. Deploy the Terraform
+### 5. Deploy the Terraform
 
 {% hint style="warning" %}
 _**Warning:**_ This will store all Terraform state locally. We **strongly** recommend [adding a backend](https://www.terraform.io/docs/language/settings/backends/azurerm.html) configuration for almost all deployment scenarios.
@@ -109,7 +109,7 @@ When complete, test that it works by running:
 ```
 {% endhint %}
 
-### 5. Configure your DNS provider and SSL certificate
+### 6. Configure your DNS provider and SSL certificate
 
 Configure your DNS provider with an A record to point to the IP address provisioned by the terraform. We recommend doing this as soon as the IP is provisioned in the Azure portal to prevent DNS propagation delays, although this is not essential
 
@@ -125,7 +125,7 @@ In practice, this means that upon initial deployment, a pod resource is polling 
 Only once the SSL certificate is issued will an HTTPS listener be created for your deployment. Once complete, the Let's Encrypt resources used to verify your DNS name will be destroyed.&#x20;
 {% endhint %}
 
-### 6. Check your deployment
+### 7. Check your deployment
 
 Your Cobrowse instance should now be deployed. Head to `/register`on your domain to create an account.
 
