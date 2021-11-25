@@ -6,7 +6,7 @@ This is the documentation for how to use our terraform for Azure to set up Cobro
 
 You will need the following installed locally:
 
-* [**Terraform**](https://www.terraform.io/)
+* [**Terraform**](https://www.terraform.io)
 * [**NodeJS**](https://nodejs.org/en/) – version 10 or above
 * **Azure CLI**
 * **kubectl**
@@ -27,10 +27,11 @@ You will need to create a cluster and provide the connection URL as a part of th
 
 There are some resources that are not created by our Terraform. You will need to manually create:
 
-1. A resource group for Cobrowse. You can do with via the cli or in the Azure portal: [https://portal.azure.com/\#blade/HubsExtension/BrowseResourceGroups](https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups)
-2. A key vault for Cobrowse secrets. You can do this via the cli or in the Azure portal: [https://portal.azure.com/\#blade/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults)
+1. A resource group for Cobrowse. You can do with via the cli or in the Azure portal: [https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups](https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups)
+2. A key vault for Cobrowse secrets. You can do this via the cli or in the Azure portal: [https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults)
 3. Add a secret in the key vault called "mongo-url" with the value set to the url of the Mongo database from step 1.
 4. Make sure you have [initialized the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli) with your access credentials.
+5. A storage bucket to save terraform state (this is optional but **strongly** recommended)
 
 ### 3. Generate the config directory
 
@@ -66,17 +67,20 @@ This will list the modifications that terraform will make to your Azure account.
 
 Configure your DNS provider with an A record to point to the IP address provisioned by the terraform. We recommend doing this as soon as the IP is provisioned in the Azure portal to prevent DNS propagation delays, although this is not essential.
 
-Once the terraform is deployed and the DNS configured you may have to wait for the certificate to be provisioned. Depending on DNS propagation delays this can take some time \(usually between 5 minutes and an hour\).
+Once the terraform is deployed and the DNS configured you may have to wait for the certificate to be provisioned. Depending on DNS propagation delays this can take some time (usually between 5 minutes and an hour).
 
 ### 6. Check your deployment
 
 Your Cobrowse instance should now be deployed. Head to `/register`on your domain to create an account.
 
-{% page-ref page="getting-started/" %}
+{% content-ref url="getting-started/" %}
+[getting-started](getting-started/)
+{% endcontent-ref %}
 
 ## Managing your deployment
 
 Next, learn about managing and upgrading your deployment.
 
-{% page-ref page="getting-started/management.md" %}
-
+{% content-ref url="getting-started/management.md" %}
+[management.md](getting-started/management.md)
+{% endcontent-ref %}
