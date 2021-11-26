@@ -1,6 +1,6 @@
 # GCP terraform
 
-**How**This is the documentation for how to use our terraform for GCP to set up Cobrowse Enterprise in your cloud.
+This is the documentation for how to use our terraform for GCP to set up Cobrowse Enterprise in your cloud.
 
 ## Initial Setup
 
