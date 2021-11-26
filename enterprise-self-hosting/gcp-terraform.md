@@ -43,7 +43,7 @@ There are some resources that are not created by our Terraform. You will need to
 
 ```bash
 # 1. Create a secret called "mongo_url"
-> gcloud secrets create mongo-url --data-file=mongo-url.txt
+> gcloud secrets create mongo_url --data-file=mongo-url.txt
 ```
 {% endhint %}
 
