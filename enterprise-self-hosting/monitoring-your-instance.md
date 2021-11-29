@@ -27,8 +27,8 @@ If metrics are successfully exposed, you should receive a text document in your 
 
 Please explore the subsections of this article to find the deployment guidance that is best for you:
 
-* [Google Cloud](google-cloud.md)
-* [Microsoft Azure](microsoft-azure.md)
-* Amazon Web Services
-* [Self-Hosted Prometheus](self-hosted-prometheus.md)
+* [Amazon Web Services](monitoring-your-instance/amazon-web-services.md)
+* [Google Cloud](monitoring-your-instance/google-cloud.md)
+* [Microsoft Azure](monitoring-your-instance/microsoft-azure.md)
+* [Self-Hosted Prometheus](monitoring-your-instance/self-hosted-prometheus.md)
 

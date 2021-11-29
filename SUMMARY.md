@@ -68,7 +68,7 @@
   * [Limiting account creation](enterprise-self-hosting/getting-started/limiting-account-creation.md)
   * [Configuring SMTP](enterprise-self-hosting/getting-started/configuring-smtp.md)
   * [Managing your deployment](enterprise-self-hosting/getting-started/management.md)
-* [Monitoring your instance](enterprise-self-hosting/monitoring-your-instance/README.md)
+* [Monitoring your instance](enterprise-self-hosting/monitoring-your-instance.md)
   * [Amazon Web Services](enterprise-self-hosting/monitoring-your-instance/amazon-web-services.md)
   * [Google Cloud](enterprise-self-hosting/monitoring-your-instance/google-cloud.md)
   * [Microsoft Azure](enterprise-self-hosting/monitoring-your-instance/microsoft-azure.md)
