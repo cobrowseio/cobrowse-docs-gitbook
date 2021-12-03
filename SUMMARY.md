@@ -50,7 +50,8 @@
   * [Salesforce (Legacy)](agent-side-integrations/crm-helpdesk-integrations/salesforce-legacy.md)
   * [Freshdesk](agent-side-integrations/crm-helpdesk-integrations/freshdesk.md)
 * [Custom integrations](agent-side-integrations/custom-integrations.md)
-* [Agent SDK (beta)](agent-side-integrations/agent-sdk.md)
+* [Agent SDK](agent-side-integrations/agent-sdk/README.md)
+  * [API Reference](agent-side-integrations/agent-sdk/api-reference.md)
 * [Authentication (JWTs)](agent-side-integrations/json-web-tokens-jwts.md)
 * [IFrame embeds](agent-side-integrations/custom-iframe-embeds.md)
 

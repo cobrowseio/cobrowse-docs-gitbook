@@ -2,23 +2,23 @@
 description: Client-side JavaScript SDK to build custom agent-side integrations
 ---
 
-# Agent SDK \(beta\)
+# Agent SDK
 
 ## Overview
 
-Our Agent SDK can be used to build 100% customized agent-side integrations into your own products and services. 
+Our Agent SDK can be used to build 100% customized agent-side integrations into your own products and services.&#x20;
 
 ## Quick start
 
-Navigate to our [Agent SDK Demo Page](https://cobrowse-agent-sdk-examples.cbrws.io/) and open up our [Cobrowse.io Online Demo](https://cobrowse.io/demo) in another browser tab to generate your Demo ID. 
+Navigate to our [Agent SDK Demo Page](https://cobrowse-agent-sdk-examples.cbrws.io) and open up our [Cobrowse.io Online Demo](https://cobrowse.io/demo) in another browser tab to generate your Demo ID.&#x20;
 
-This Demo Page uses our [Agent UI component library](https://github.com/cobrowseio/cobrowse-agent-ui), our [Agent SDK](https://www.npmjs.com/package/cobrowse-agent-sdk), and ties it together into an [Agent SDK Examples project](https://github.com/cobrowseio/cobrowse-agent-sdk-examples) which you can run locally. 
+This Demo Page uses our [Agent UI component library](https://github.com/cobrowseio/cobrowse-agent-ui), our [Agent SDK](https://www.npmjs.com/package/cobrowse-agent-sdk), and ties it together into an [Agent SDK Examples project](https://github.com/cobrowseio/cobrowse-agent-sdk-examples) which you can run locally.&#x20;
 
 ### Authentication
 
-If you are using the Agent SDK just to communicate over postMessage to an embedded IFrame, a JWT is not required. 
+If you are using the Agent SDK just to communicate over postMessage to an embedded IFrame, a JWT is not required.&#x20;
 
-Device and Session listing via the Agent SDK requires a JSON Web Token \(JWT\) for authentication. Learn how to generate a JWT for your account at [Authentication \(JWTs\)](json-web-tokens-jwts.md). 
+Device and Session listing via the Agent SDK requires a JSON Web Token (JWT) for authentication. Learn how to generate a JWT for your account at [Authentication (JWTs)](../json-web-tokens-jwts.md).&#x20;
 
 ## Features
 
@@ -34,7 +34,7 @@ The Agent SDK can be used to:
   * Attach a button in the parent page to end the session, or select the agent's tool
   * Programmatically end the session before the parent page closes
 
-### List devices and sessions \(JWT required\)
+### List devices and sessions (JWT required)
 
 ```javascript
 import CobrowseAPI from 'cobrowse-agent-sdk';
@@ -65,7 +65,7 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
 }());
 ```
 
-### Attach context to iFrame \(no JWT required\)
+### Attach context to iFrame (no JWT required)
 
 ```javascript
 import CobrowseAPI from 'cobrowse-agent-sdk';
@@ -92,12 +92,6 @@ import CobrowseAPI from 'cobrowse-agent-sdk';
     // await ctx.endSession();
 }());
 ```
-
-{% hint style="info" %}
-The Agent SDK is currently in beta release. Some APIs may change.
-{% endhint %}
-
-
 
 
 
