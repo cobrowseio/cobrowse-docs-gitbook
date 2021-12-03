@@ -2,17 +2,27 @@
 
 ## Deployment options
 
-Cobrowse.io is deployed as containers, and we try to support a range of deployments covering public clouds and on-premise requirements. 
+Cobrowse.io is deployed as containers, and we try to support a range of deployments covering public clouds and on-premise requirements.&#x20;
 
-{% page-ref page="docker-compose.md" %}
+{% content-ref url="docker-compose.md" %}
+[docker-compose.md](docker-compose.md)
+{% endcontent-ref %}
 
-{% page-ref page="helm.md" %}
+{% content-ref url="helm/" %}
+[helm](helm/)
+{% endcontent-ref %}
 
-{% page-ref page="aws-terraform.md" %}
+{% content-ref url="aws-terraform.md" %}
+[aws-terraform.md](aws-terraform.md)
+{% endcontent-ref %}
 
-{% page-ref page="azure-terraform.md" %}
+{% content-ref url="azure-terraform.md" %}
+[azure-terraform.md](azure-terraform.md)
+{% endcontent-ref %}
 
-{% page-ref page="gcp-terraform.md" %}
+{% content-ref url="gcp-terraform.md" %}
+[gcp-terraform.md](gcp-terraform.md)
+{% endcontent-ref %}
 
 {% hint style="success" %}
 Any questions or specific requirements to review? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io)!
@@ -20,11 +30,13 @@ Any questions or specific requirements to review? Please email us at [hello@cobr
 
 ## Next steps
 
-{% page-ref page="getting-started/" %}
+{% content-ref url="getting-started/" %}
+[getting-started](getting-started/)
+{% endcontent-ref %}
 
-{% page-ref page="advanced/" %}
-
-
+{% content-ref url="advanced/" %}
+[advanced](advanced/)
+{% endcontent-ref %}
 
 
 

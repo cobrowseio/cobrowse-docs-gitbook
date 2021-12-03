@@ -59,7 +59,8 @@
 
 * [Self-hosting overview](enterprise-self-hosting/self-hosting-overview.md)
 * [Docker Compose](enterprise-self-hosting/docker-compose.md)
-* [Helm chart](enterprise-self-hosting/helm.md)
+* [Helm chart](enterprise-self-hosting/helm/README.md)
+  * [Advanced Configuration](enterprise-self-hosting/helm/advanced-configuration.md)
 * [AWS terraform](enterprise-self-hosting/aws-terraform.md)
 * [Azure terraform](enterprise-self-hosting/azure-terraform.md)
 * [GCP terraform](enterprise-self-hosting/gcp-terraform.md)
