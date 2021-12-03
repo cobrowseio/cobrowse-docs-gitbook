@@ -171,7 +171,9 @@ The url for an Enterprise Cobrowse instance.
 
 Represents a device in Cobrowse. A device in Cobrowse is how a single instance of an app or website is tracked by Cobrowse. Each website within each different browser on a user's machine will be tracked as a separate device. Devices can be listed and filtered by support agents to find a specific user's device. Read more about [Identifying your devices](https://docs.cobrowse.io/sdk-features/identify-your-devices) to add metadata for filtering.
 
-**`fires`** updated - The updated event will be trigged when device data changes.
+#### Events
+
+**`fires`** updated - The updated event will be fired when device data changes.
 
 ### Hierarchy
 
@@ -403,7 +405,11 @@ Supported query parameters:
 
 Control Cobrowse hosted in an iframe from a parent context.
 
-**`fires`** session.updated
+#### Events
+
+**`fires`** session.updated - This event is fired when a property of the session is changed, for example full\_device mode is switched on of off.
+
+**`fires`** screen.updated - This event is triggered when some metadata about the screen changes, for example the size or orientation. Note, this event is only available via the RemoteContext.
 
 ### Hierarchy
 
@@ -459,7 +465,7 @@ Listen for session events in this context.
 
 | Name       | Type                             |
 | ---------- | -------------------------------- |
-| `event`    | `"session.updated"`              |
+| `event`    | `string`                         |
 | `listener` | (`session`: `Session`) => `void` |
 
 **Returns**
@@ -528,9 +534,11 @@ Set the tool to use in the Agent session.
 
 Represents a session in Cobrowse.
 
-**`fires`** updated
+#### Events
 
-**`fires`** ended
+**`fires`** updated - fired when a session property changes
+
+**`fires`** ended - fired when a session transitions to the `ended` state
 
 ### Hierarchy
 
@@ -894,8 +902,6 @@ Supported query parameters:
 ## Interface: User
 
 Represents a user in Cobrowse.
-
-**`fires`** updated
 
 ### Hierarchy
 
