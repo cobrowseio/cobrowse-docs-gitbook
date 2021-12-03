@@ -1,8 +1,27 @@
 # Advanced Configuration
 
+## Image Pull Secret
+
+In order for your kubernetes cluster to install the Cobrowse service components, you need to specify the Github token that Cobrowse provided to you.
+
+The easiest way to specify this is in `values.yaml` in the `imageCredentials.password` value. If you wish to manage this secret externally from the Helm chart, you can follow these instructions.
+
+1. Remove the token from the `imageCredentials.password` value
+2. Deploy the Helm chart without the password. You will notice that the Helm deploy process will delete a Secret resource called `cobrowse-docker-cfg`. **At this time, new pods will no longer be able to pull the cobrowse enterprise docker images from Github**.
+3. Deploy the `cobrowse-docker-cfg` Secret resource yourself with the command:
+
+```bash
+> kubectl create secret docker-registry cobrowse-docker-cfg \
+>   --docker-server=ghcr.io \
+>   --docker-username=cobrowse-enterprise \
+>   --docker-password="<token provided by cobrowse>"
+```
+
+## Environment Variables
+
 Many of the cobrowse service component configurations are managed using environment variables specified in `ConfigMap` and `Secret` resources, and these configurations can be overridden outside of the Helm chart by resources that you manage.
 
-## ConfigMap Resources
+### ConfigMap Resources
 
 To see a list of all `ConfigMap` resources managed by the Helm chart, you can run:
 
@@ -32,7 +51,7 @@ To see what environment variables are available to be configured for a particula
 > kubectl describe configmap cobrowse-api-envvars
 ```
 
-## Secret Resources
+### Secret Resources
 
 To see a list of all `Secret` resources managed by the Helm chart, you can run:
 
