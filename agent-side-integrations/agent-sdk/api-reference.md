@@ -20,7 +20,7 @@ Create a new Agent SDK instance. An instance encapsulates information about your
 
 **Options**
 
-`api` - The url for an Enterprise Cobrowse instance.
+`api` - The url for an Enterprise Cobrowse instance. You do not need to configure this when using our global hosted service.
 
 **Parameters**
 
@@ -35,7 +35,7 @@ Create a new Agent SDK instance. An instance encapsulates information about your
 
 • `get` **api**(): `string`
 
-The url for the Cobrowse instance. You do not need to change this if using our global hosted service.
+The url for the Cobrowse instance.
 
 **Returns**
 
