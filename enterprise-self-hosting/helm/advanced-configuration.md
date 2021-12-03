@@ -78,7 +78,7 @@ cobrowse-sockets-custom-envvars
 {% hint style="info" %}
 **Order of Priority**
 
-The following order of priority is taken, when resolving environment variables using the **api** service component as an example:
+The following order of priority is followed while resolving environment variables, using the **api** service component as an example:
 
 1. **Secret:** cobrowse-api-custom-envvars
 2. **Secret:** cobrowse-api-envvars
