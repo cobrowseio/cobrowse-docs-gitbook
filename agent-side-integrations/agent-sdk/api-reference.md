@@ -18,12 +18,16 @@ The library can be used either from the browser (most common), or a NodeJS envir
 
 Create a new Agent SDK instance. An instance encapsulates information about your API location (if using the self-hosted Cobrowse Enterprise option), and optionally, the authorization token for the agent using the SDK.
 
+**Options**
+
+`api` - The url for an Enterprise Cobrowse instance.
+
 **Parameters**
 
-| Name       | Type                 | Description                                                                                             |
-| ---------- | -------------------- | ------------------------------------------------------------------------------------------------------- |
-| `token?`   | `string`             | The [JWT](https://docs.cobrowse.io/agent-side-integrations/json-web-tokens-jwts) for API authorization. |
-| `options?` | `CobrowseAPIOptions` | Options for configuring this instance of CobrowseAPI.                                                   |
+| Name       | Type                      | Description                                                                                             |
+| ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `token?`   | `string`                  | The [JWT](https://docs.cobrowse.io/agent-side-integrations/json-web-tokens-jwts) for API authorization. |
+| `options?` | `Record`<`string`, `any`> | Options for configuring this instance of CobrowseAPI.                                                   |
 
 ### Accessors
 
@@ -154,18 +158,6 @@ ctx.on('session.updated', (session) => {
 `Promise`<`RemoteContext`>
 
 * The context returns contains methods specific to controlling the iframe
-
-## Interface: CobrowseAPIOptions
-
-Options for modifying the SDK.
-
-### Properties
-
-#### api
-
-• `Optional` **api**: `string`
-
-The url for an Enterprise Cobrowse instance.
 
 ## Interface: Device
 
