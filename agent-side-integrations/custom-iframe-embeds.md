@@ -12,11 +12,11 @@ If you are using our 6-digit codes to initiate sessions, and that is the only me
 
 #### Direct Device Connection
 
-Using the Cobrowse Connect URL (`https://cobrowse.io/connect?filter_device_id=123`), Cobrowse will automatically try to connect to the matching device. If multiple devices match the filters you provide, you will be prompted which to select. Make sure to set customData in our SDKs, and use those values in your filters!
+Using the Cobrowse Connect URL (`https://cobrowse.io/connect`), Cobrowse will automatically try to connect to the matching device. If multiple devices match the filters you provide, you will be prompted which to select. Make sure to set customData in our SDKs, and use those values in your filters!
 
 #### Screenshare Only
 
-If you just want to embed the UI for an active session, or even just the video feed, and will replace all other UI with your own implementations, then this is the endpoint you should use: `https://cobrowse.io/session/<session id>`. You will need to replace the \<session id> with a valid session ID. See our [Agent SDK](agent-sdk/) docs.
+If you just want to embed the UI for an active session, or even just the video feed, and will replace all other UI with your own implementations, then this is the endpoint you should use: `https://cobrowse.io/session/<session id>`. You will need to replace the `<session id>` with a valid session ID. See our [Agent SDK](agent-sdk/) docs.
 
 {% hint style="info" %}
 Note sure which embed URL is right for you? Get in touch with us at [hello@cobrowse.io](mailto:hello@cobrowse.io) and we'll be happy to advise for your use case.
