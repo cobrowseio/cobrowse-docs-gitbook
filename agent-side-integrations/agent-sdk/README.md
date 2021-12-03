@@ -10,9 +10,9 @@ Our Agent SDK can be used to build 100% customized agent-side integrations into 
 
 ## Quick start
 
-Navigate to our [Agent SDK Demo Page](https://cobrowse-agent-sdk-examples.cbrws.io) and open up our [Cobrowse.io Online Demo](https://cobrowse.io/demo) in another browser tab to generate your Demo ID.&#x20;
+Navigate to our [Agent SDK Demo Page](https://cobrowseio.github.io/cobrowse-agent-sdk-examples/react-example/) and open up our [Cobrowse.io Online Demo](https://cobrowse.io/demo) in another browser tab to generate your Demo ID.&#x20;
 
-This Demo Page uses our [Agent UI component library](https://github.com/cobrowseio/cobrowse-agent-ui), our [Agent SDK](https://www.npmjs.com/package/cobrowse-agent-sdk), and ties it together into an [Agent SDK Examples project](https://github.com/cobrowseio/cobrowse-agent-sdk-examples) which you can run locally.&#x20;
+This Demo Page uses our [Agent UI component library](https://github.com/cobrowseio/cobrowse-agent-ui), our [Agent SDK](https://www.npmjs.com/package/cobrowse-agent-sdk), and ties it together into an [Agent SDK Examples project](https://github.com/cobrowseio/cobrowse-agent-sdk-examples).&#x20;
 
 ### Authentication
 
