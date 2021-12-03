@@ -14,7 +14,7 @@ The easiest way to specify this is in `values.yaml` in the `imageCredentials.pas
 > kubectl create secret docker-registry cobrowse-docker-cfg \
 >   --docker-server=ghcr.io \
 >   --docker-username=cobrowse-enterprise \
->   --docker-password="<token provided by cobrowse>"
+>   --docker-password="<github token provided by cobrowse>"
 ```
 
 ## Environment Variables
