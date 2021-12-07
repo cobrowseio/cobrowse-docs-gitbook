@@ -411,6 +411,30 @@ Control Cobrowse hosted in an iframe from a parent context.
 
 ### Methods
 
+#### androidBack
+
+▸ **androidBack**(): `Promise`<`boolean`>
+
+Triggers the Android Back button
+
+**Returns**
+
+`Promise`<`boolean`>
+
+***
+
+#### androidHome
+
+▸ **androidHome**(): `Promise`<`boolean`>
+
+Triggers the Android Home button
+
+**Returns**
+
+`Promise`<`boolean`>
+
+***
+
 #### clearAnnotations
 
 ▸ **clearAnnotations**(): `Promise`<`boolean`>
