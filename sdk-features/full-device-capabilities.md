@@ -150,6 +150,10 @@ This feature is supported in API 21 (5.0 Lollipop) and above.
 
 ### Implementation
 
+{% hint style="warning" %}
+Due to recent Google Play Store policy changes these instructions have been updated. You must be using SDK version **v2.16.0** or above.
+{% endhint %}
+
 Add a new service declaration to your app's `AndroidManifest.xml` file
 
 ```xml
