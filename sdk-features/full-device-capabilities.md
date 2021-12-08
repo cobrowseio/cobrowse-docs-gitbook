@@ -150,16 +150,22 @@ This feature is supported in API 21 (5.0 Lollipop) and above.
 
 ### Implementation
 
-Add the following line to one of your resources xml files, eg. in `res/values/bools.xml`:
+Add a new service declaration to your app's `AndroidManifest.xml` file
 
-```markup
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <bool name="cobrowse_enable_full_device_control">true</bool>
-</resources>
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    ...
+    <application>
+        ...
+        <service
+            android:name="io.cobrowse.CobrowseAccessibilityService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            tools:node="merge" />
+
+    </application>
+</manifest>
 ```
-
-_Note: Please add this value to a Values resource file, and not an XML resource file._
 
 Enable the accessibility service the Cobrowse SDK will have added in the main device settings, eg. Settings -> Accessibility -> Your App Name. Note: this only has to be done the very first time.
 
@@ -197,7 +203,7 @@ For unattended full device access, we strongly recommend:
 
 * If the screen is black during full device screen capture, please make sure your views are not marked as secure. More info here: [https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE)
 * If you are using Android Enterprise, please ensure your enterprise settings do not disallow screen capture.
-* If you get `compile error android:foregroundServiceType not found`, please update your Android project to use` compileSdkVersion 29`.&#x20;
+* If you get `compile error android:foregroundServiceType not found`, please update your Android project to use `compileSdkVersion 29`.&#x20;
 {% endtab %}
 
 {% tab title="React Native" %}
