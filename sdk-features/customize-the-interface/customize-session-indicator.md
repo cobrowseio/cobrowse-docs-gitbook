@@ -209,8 +209,13 @@ export default class App extends Component {
 When implementing your own UI, you can use the following javascript code to programatically end the Cobrowse session.
 
 ```javascript
-await CobrowseIO.endSession();
+// Get a reference to the current session if you don't have one
+const session = await CobrowseIO.currentSession();
+// if there's an ongoing session, end it
+if (session) await session.end()
 ```
+
+
 {% endtab %}
 
 {% tab title="Xamarin" %}
@@ -328,7 +333,7 @@ public class MainApplication : Application, CobrowseIO.ISessionControlsDelegate
 
 Even though Cobrowse.io works with native views, there is nothing that would prevent you from using `Xamarin.Forms.VisualElement` as a session indicator.
 
-First, create an indicator view using Xamarin.Forms \(`CobrowseCustomView.xaml`\):
+First, create an indicator view using Xamarin.Forms (`CobrowseCustomView.xaml`):
 
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>
@@ -513,4 +518,3 @@ Callback will be called when:
 **Warning:** Be aware that callback is called from non-UI thread.
 {% endtab %}
 {% endtabs %}
-
