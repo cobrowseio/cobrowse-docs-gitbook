@@ -60,6 +60,12 @@ If you use the GCE ingress (set `ingress.class` to `gce`), we will automatically
 {% endtab %}
 {% endtabs %}
 
+## Scaling the infrastructure
+
+By default we only run one replica per service as can be seen in our public [values.yaml](https://github.com/cobrowseio/cobrowse-enterprise-helm/blob/master/values.yaml) file. This should be changed for high availability (HA) setups.
+
+The individual service replica counts should be set according to your load and availability requirements, for example `api.replicas = 3`sets 3 replicas of the api service.&#x20;
+
 ## Managing your deployment
 
 Next, learn about managing and upgrading your deployment.
