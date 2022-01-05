@@ -32,3 +32,28 @@ Please explore the subsections of this article to find the deployment guidance t
 * [Microsoft Azure](monitoring-your-instance/microsoft-azure.md)
 * [Self-Hosted Prometheus](monitoring-your-instance/self-hosted-prometheus.md)
 
+## Custom metrics provided
+
+Some of the custom cobrowse metrics we provide are:
+
+* device\_registrations
+* session\_created
+* session\_duration
+* session\_unused (these are sessions that were created but that never activated)
+* websocket\_message\_in
+* websocket\_byte\_in
+* websocket\_message\_size
+* websocket\_connections
+* websocket\_connection\_duration
+* websocket\_connection\_start
+* websocket\_connection\_end
+* presence\_queue\_length (number of sockets waiting in the presence system processing queue, should be close to 0 most of the time)
+* presence\_queue\_delay (wait time for presence queue processing, should be close to 0 most of the time)
+
+Many of these will depend on the behaviour of your deployment and use case, so we do not provide specific ranges thresholds to monitor by default. You should monitor and decide what the appropriate limits are for your deployment.
+
+As well as these custom metrics, the prometheus client also collects some generic system metrics and node specific metrics, see below for more information:
+
+{% embed url="https://prometheus.io/docs/instrumenting/writing_clientlibs#standard-and-runtime-collectors" %}
+
+{% embed url="https://github.com/siimon/prom-client/tree/master/lib/metrics" %}
