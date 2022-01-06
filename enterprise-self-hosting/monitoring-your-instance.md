@@ -38,18 +38,19 @@ Some of the custom cobrowse metrics we provide are:
 
 | Metric Name               | Metric Type | Description                    |
 | ------------------------- | ----------- | ------------------------------ |
-| **device\_registrations** | Counter     | Number of device registrations |
-|                           |             |                                |
-|                           |             |                                |
-|                           |             |                                |
-|                           |             |                                |
-|                           |             |                                |
-|                           |             |                                |
-|                           |             |                                |
-|                           |             |                                |
-|                           |             |                                |
-|                           |             |                                |
-|                           |             |                                |
+| **cobrowse\_device\_registrations\_total** | Counter | Count of devices registered |
+| **cobrowse\_presence\_queue\_delay\_seconds** | Gauge | Current wait time for presence queue processing (should be close to 0 most of the time) |
+| **cobrowse\_presence\_queue\_length\_count** | Gauge | Current number of sockets waiting in the presence system processing queue (should be close to 0 most of the time) |
+| **cobrowse\_session\_created\_total** | Counter | Count of sessions created |
+| **cobrowse\_session\_duration\_seconds** | Summary | Duration of sessions |
+| **cobrowse\_session\_unused\_total** | Counter | Count of sessions that were created but then never activated |
+| **cobrowse\_websocket\_byte\_in\_total** | Counter | Count of websocket bytes received |
+| **cobrowse\_websocket\_connection\_duration\_seconds** | Summary | Duration of websocket connection |
+| **cobrowse\_websocket\_connection\_end\_total** | Counter | Count of websocket connections ended |
+| **cobrowse\_websocket\_connection\_start\_total** | Counter | Count of websocket connections started |
+| **cobrowse\_websocket\_connections\_count** | Gauge | Current number of open websocket connections |
+| **cobrowse\_websocket\_message\_in\_total** | Counter | Count of websocket messages received |
+| **cobrowse\_websocket\_message\_size\_bytes** | Summary | Size of websocket message |
 
 Many of these will depend on the behaviour of your deployment and use case, so we do not provide specific ranges thresholds to monitor by default. You should monitor and decide what the appropriate limits are for your deployment.
 
