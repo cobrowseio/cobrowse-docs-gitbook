@@ -5,7 +5,7 @@ Cobrowse Enterprise services make Node.js, Redis and custom application metrics 
 The right service to consume it is largely dependent on your organization and the existing tools and expertise you have at your disposal. Because of this, while cobrowse offers a variety of example configurations and guidance in this article for the most popular use-cases, it is your responsibility to provision and configure the resources that make the most sense for your organization and needs.
 
 {% hint style="warning" %}
-If you use a hosted service to collect application metrics, keep in mind that collecting more metrics into the service **almost always increases costs.**&#x20;
+If you use a hosted service to collect application metrics, keep in mind that collecting more metrics into the service **almost always increases costs.**
 
 Without additional filters, collecting all application metrics into such a service can add **hundreds of new metrics**, depending on how the service handles different combinations of OpenMetrics labels and values.
 
@@ -22,7 +22,7 @@ You can verify that metrics are being exposed by accessing a terminal session to
 > bash-5.1$ wget -O- http://localhost:8080/metrics
 ```
 
-If metrics are successfully exposed, you should receive a text document in your terminal listing a variety of labelled process, nodejs and cobrowse metric values.&#x20;
+If metrics are successfully exposed, you should receive a text document in your terminal listing a variety of labelled process, nodejs and cobrowse metric values.
 {% endhint %}
 
 Please explore the subsections of this article to find the deployment guidance that is best for you:
@@ -36,20 +36,20 @@ Please explore the subsections of this article to find the deployment guidance t
 
 Some of the custom cobrowse metrics we provide are:
 
-| Metric Name | Metric Type | Description |
-| **cobrowse_device_registrations_total** | Counter | Count of devices registered |
-| **cobrowse_presence_queue_delay_seconds** | Gauge | Current wait time for presence queue processing (should be close to 0 most of the time) |
-| **cobrowse_presence_queue_length_count** | Gauge | Current number of sockets waiting in the presence system processing queue (should be close to 0 most of the time) |
-| **cobrowse_session_created_total** | Counter | Count of sessions created |
-| **cobrowse_session_duration_seconds** | Summary | Duration of sessions |
-| **cobrowse_session_unused_total** | Counter | Count of sessions that were created but then never activated |
-| **cobrowse_websocket_byte_in_total** | Counter | Count of websocket bytes received |
-| **cobrowse_websocket_connection_duration_seconds** | Summary | Duration of websocket connection |
-| **cobrowse_websocket_connection_end_total** | Counter | Count of websocket connections ended |
-| **cobrowse_websocket_connection_start_total** | Counter | Count of websocket connections started |
-| **cobrowse_websocket_connections_count** | Gauge | Current number of open websocket connections |
-| **cobrowse_websocket_message_in_total** | Counter | Count of websocket messages received |
-| **cobrowse_websocket_message_size_bytes** | Summary | Size of websocket message |
+| Metric Name               | Metric Type | Description                    |
+| ------------------------- | ----------- | ------------------------------ |
+| **device\_registrations** | Counter     | Number of device registrations |
+|                           |             |                                |
+|                           |             |                                |
+|                           |             |                                |
+|                           |             |                                |
+|                           |             |                                |
+|                           |             |                                |
+|                           |             |                                |
+|                           |             |                                |
+|                           |             |                                |
+|                           |             |                                |
+|                           |             |                                |
 
 Many of these will depend on the behaviour of your deployment and use case, so we do not provide specific ranges thresholds to monitor by default. You should monitor and decide what the appropriate limits are for your deployment.
 
