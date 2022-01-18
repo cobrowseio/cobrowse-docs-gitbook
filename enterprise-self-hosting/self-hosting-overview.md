@@ -34,8 +34,8 @@ Any questions or specific requirements to review? Please email us at [hello@cobr
 [getting-started](getting-started/)
 {% endcontent-ref %}
 
-{% content-ref url="advanced/" %}
-[advanced](advanced/)
+{% content-ref url="../sdk-features/advanced-features/" %}
+[advanced-features](../sdk-features/advanced-features/)
 {% endcontent-ref %}
 
 

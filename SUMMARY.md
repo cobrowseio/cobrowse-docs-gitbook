@@ -19,7 +19,7 @@
 * [Use 6-digit codes](sdk-features/6-digit-codes.md)
 * [Redact sensitive data](sdk-features/redact-sensitive-data.md)
 * [Customize the interface](sdk-features/customize-the-interface/README.md)
-  * [Active session controls](sdk-features/customize-the-interface/customize-session-indicator.md)
+  * [Active session controls](sdk-features/customize-the-interface/customize-session-controls.md)
   * [6-digit code screen](sdk-features/customize-the-interface/customize-6-digit-code-screen.md)
   * [User consent dialog](sdk-features/customize-the-interface/user-consent-dialog.md)
   * [Remote control consent dialog](sdk-features/customize-the-interface/remote-control-consent.md)
