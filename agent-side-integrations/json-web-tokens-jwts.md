@@ -29,14 +29,15 @@ The JWT you create and sign should contain the following claims:
 | **policy**      | Policy (optional) - Optionally limit the scope of the JWT (e.g. limiting which devices can be listed and connected to).                                                                                       | `{ devices: { user_id: '362545823684324' } }` |
 
 {% hint style="warning" %}
-Your sub and displayName claims are used for audit trail purposes. Along with the policy claim, they also scope agent access to your end-user's devices/information. This means that setting these claims as non-unique values is not generally recommended.
+Your sub and displayName claims are used for audit trail purposes. Along with the policy claim, they also scope agent access to your end-user's devices/information. This means that setting these claims as shared values between users is not recommended.
 {% endhint %}
 
 Follow these steps to generate your JWT:
 
-1. Generate an RS256 private key by clicking the "Generate" button in the [integration settings page](https://cobrowse.io/dashboard/settings/integrations).
-2. Sign your claims object using your private key downloaded from step 1. Find a range of JWT signing libraries at [https://jwt.io/](https://jwt.io).
-3. Add the JWT as a query parameter to the [IFrame source URL](custom-iframe-embeds.md), or pass it to the [Agent JS API](agent-sdk/).
+1. Generate an RS256 key pair by clicking the "Generate" button in the [integration settings page](https://cobrowse.io/dashboard/settings/integrations).
+2. Keep the private key safe, and do not change the public key in the JWT SSO text box.&#x20;
+3. Sign your claims object using your private key downloaded from step 1. Find a range of JWT signing libraries at [https://jwt.io/](https://jwt.io). (Video guide below.)
+4. Add the JWT as a query parameter to the [IFrame source URL](custom-iframe-embeds.md), or pass it to the [Agent JS API](agent-sdk/).
 
 ### Step-by-step guidance
 
