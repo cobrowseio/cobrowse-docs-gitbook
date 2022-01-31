@@ -10,9 +10,15 @@ The Cobrowse Agent SDK provides a way to interact with the Cobrowse APIs for a v
 
 The library can be used either from the browser (most common), or a NodeJS environment. Note: not all APIs are available when used in NodeJS.
 
+### Hierarchy
+
+*   `EventEmitter`
+
+    ↳ **`CobrowseAPI`**
+
 ### Constructors
 
-#### constructor
+#### constructor <a href="#constructor" id="constructor"></a>
 
 • **new CobrowseAPI**(`token?`, `options?`)
 
@@ -29,9 +35,13 @@ Create a new Agent SDK instance. An instance encapsulates information about your
 | `token?`   | `string`                  | The [JWT](https://docs.cobrowse.io/agent-side-integrations/json-web-tokens-jwts) for API authorization. |
 | `options?` | `Record`<`string`, `any`> | Options for configuring this instance of CobrowseAPI.                                                   |
 
+**Overrides**
+
+EventEmitter.constructor
+
 ### Accessors
 
-#### api
+#### api <a href="#api" id="api"></a>
 
 • `get` **api**(): `string`
 
@@ -43,7 +53,7 @@ The url for the Cobrowse instance.
 
 ***
 
-#### devices
+#### devices <a href="#devices" id="devices"></a>
 
 • `get` **devices**(): `DevicesAPI`
 
@@ -55,7 +65,7 @@ Namespace API for devices. A device in Cobrowse is how a single instance of an a
 
 ***
 
-#### license
+#### license <a href="#license" id="license"></a>
 
 • `get` **license**(): `string`
 
@@ -81,7 +91,7 @@ The license key for the Cobrowse account. This uniquely identifies your account 
 
 ***
 
-#### sessions
+#### sessions <a href="#sessions" id="sessions"></a>
 
 • `get` **sessions**(): `SessionsAPI`
 
@@ -93,7 +103,7 @@ Namespace API for sessions. A session in Cobrowse represents a single screenshar
 
 ***
 
-#### token
+#### token <a href="#token" id="token"></a>
 
 • `get` **token**(): `string`
 
@@ -119,7 +129,7 @@ The [JWT](https://docs.cobrowse.io/agent-side-integrations/json-web-tokens-jwts)
 
 ***
 
-#### users
+#### users <a href="#users" id="users"></a>
 
 • `get` **users**(): `UsersAPI`
 
@@ -131,7 +141,7 @@ Namespace API for users.
 
 ### Methods
 
-#### attachContext
+#### attachContext <a href="#attachcontext" id="attachcontext"></a>
 
 ▸ **attachContext**(`target`): `Promise`<`RemoteContext`>
 
@@ -175,7 +185,7 @@ Represents a device in Cobrowse. A device in Cobrowse is how a single instance o
 
 ### Properties
 
-#### connectable
+#### connectable <a href="#connectable" id="connectable"></a>
 
 • **connectable**: `boolean`
 
@@ -183,7 +193,7 @@ Is the device in a state where it can accept a screenshare connection
 
 ***
 
-#### custom\_data
+#### custom\_data <a href="#custom_data" id="custom_data"></a>
 
 • **custom\_data**: `Record`<`string`, `any`>
 
@@ -191,7 +201,7 @@ The metadata you have associated with this device for discoverability and filter
 
 ***
 
-#### device
+#### device <a href="#device" id="device"></a>
 
 • **device**: `DeviceInfo`
 
@@ -199,7 +209,7 @@ The device metadata exposed by the Cobrowse SDKs
 
 ***
 
-#### id
+#### id <a href="#id" id="id"></a>
 
 • **id**: `string`
 
@@ -207,7 +217,7 @@ The unique ID of this device, generated internally by the Cobrowse SDKs. You can
 
 ***
 
-#### last\_active
+#### last\_active <a href="#last_active" id="last_active"></a>
 
 • **last\_active**: `Date`
 
@@ -215,7 +225,7 @@ The last time the device was seen
 
 ***
 
-#### online
+#### online <a href="#online" id="online"></a>
 
 • **online**: `boolean`
 
@@ -223,7 +233,7 @@ Is the device currently connected to the Cobrowse service
 
 ### Methods
 
-#### on
+#### on <a href="#on" id="on"></a>
 
 ▸ **on**(`event`, `listener`): `Device`
 
@@ -246,7 +256,7 @@ EventEmitter.on
 
 ***
 
-#### subscribe
+#### subscribe <a href="#subscribe" id="subscribe"></a>
 
 ▸ **subscribe**(): `Promise`<`void`>
 
@@ -258,7 +268,7 @@ Subscribe to changes in this device.
 
 ***
 
-#### toJSON
+#### toJSON <a href="#tojson" id="tojson"></a>
 
 ▸ **toJSON**(): `Device`
 
@@ -270,7 +280,7 @@ Converts this device instance to a plain object.
 
 ***
 
-#### unsubscribe
+#### unsubscribe <a href="#unsubscribe" id="unsubscribe"></a>
 
 ▸ **unsubscribe**(): `void`
 
@@ -284,7 +294,7 @@ Unsubscribe from this device.
 
 ### Properties
 
-#### app\_id
+#### app\_id <a href="#app_id" id="app_id"></a>
 
 • **app\_id**: `string`
 
@@ -292,7 +302,7 @@ An identifier for the app being used (e.g. the domain name, or iOS app ID).
 
 ***
 
-#### app\_name
+#### app\_name <a href="#app_name" id="app_name"></a>
 
 • **app\_name**: `string`
 
@@ -300,7 +310,7 @@ The name of the app being used by the end user.
 
 ***
 
-#### device
+#### device <a href="#device" id="device"></a>
 
 • **device**: `string`
 
@@ -308,7 +318,7 @@ The type of the device being used, e.g. iPhone or Chrome Browser.
 
 ***
 
-#### device\_locale
+#### device\_locale <a href="#device_locale" id="device_locale"></a>
 
 • **device\_locale**: `string`
 
@@ -316,7 +326,7 @@ The preferred locale of the user's device.
 
 ***
 
-#### device\_timezone
+#### device\_timezone <a href="#device_timezone" id="device_timezone"></a>
 
 • **device\_timezone**: `string`
 
@@ -324,7 +334,15 @@ The timezone of the user's device.
 
 ***
 
-#### os\_version
+#### full\_device\_control <a href="#full_device_control" id="full_device_control"></a>
+
+• **full\_device\_control**: `boolean`
+
+(Android only) Indicates whether full device remote control is currently available
+
+***
+
+#### os\_version <a href="#os_version" id="os_version"></a>
 
 • **os\_version**: `string`
 
@@ -332,7 +350,7 @@ The OS version of the device.
 
 ***
 
-#### platform
+#### platform <a href="#platform" id="platform"></a>
 
 • **platform**: `string`
 
@@ -340,7 +358,7 @@ Which platform is being used, e.g. web, ios, android, windows, macos
 
 ***
 
-#### sdk\_version
+#### sdk\_version <a href="#sdk_version" id="sdk_version"></a>
 
 • **sdk\_version**: `string`
 
@@ -350,7 +368,7 @@ The version of the Cobrowse SDK that the device is running
 
 ### Methods
 
-#### get
+#### get <a href="#get" id="get"></a>
 
 ▸ **get**(`id`, `query?`): `Promise`<`Device`>
 
@@ -369,7 +387,7 @@ Get a device by ID.
 
 ***
 
-#### list
+#### list <a href="#list" id="list"></a>
 
 ▸ **list**(`query?`): `Promise`<`Device`\[]>
 
@@ -411,7 +429,7 @@ Control Cobrowse hosted in an iframe from a parent context.
 
 ### Methods
 
-#### androidBack
+#### androidBack <a href="#androidback" id="androidback"></a>
 
 ▸ **androidBack**(): `Promise`<`boolean`>
 
@@ -423,7 +441,7 @@ Triggers the Android Back button
 
 ***
 
-#### androidHome
+#### androidHome <a href="#androidhome" id="androidhome"></a>
 
 ▸ **androidHome**(): `Promise`<`boolean`>
 
@@ -435,7 +453,7 @@ Triggers the Android Home button
 
 ***
 
-#### clearAnnotations
+#### clearAnnotations <a href="#clearannotations" id="clearannotations"></a>
 
 ▸ **clearAnnotations**(): `Promise`<`boolean`>
 
@@ -447,7 +465,7 @@ Clear all agent session annotations from the user's view.
 
 ***
 
-#### destroy
+#### destroy <a href="#destroy" id="destroy"></a>
 
 ▸ **destroy**(): `void`
 
@@ -459,7 +477,7 @@ Destroy this remote context; stops listening for events and detaches from the if
 
 ***
 
-#### endSession
+#### endSession <a href="#endsession" id="endsession"></a>
 
 ▸ **endSession**(): `Promise`<`boolean`>
 
@@ -471,7 +489,7 @@ End the current agent session.
 
 ***
 
-#### on
+#### on <a href="#on" id="on"></a>
 
 ▸ **on**(`event`, `listener`): `RemoteContext`
 
@@ -494,7 +512,7 @@ EventEmitter.on
 
 ***
 
-#### setFullDevice
+#### setFullDevice <a href="#setfulldevice" id="setfulldevice"></a>
 
 ▸ **setFullDevice**(`state`): `Promise`<`boolean`>
 
@@ -512,7 +530,7 @@ Set the current state of the session full-device mode. A full device session ena
 
 ***
 
-#### setRemoteControl
+#### setRemoteControl <a href="#setremotecontrol" id="setremotecontrol"></a>
 
 ▸ **setRemoteControl**(`state`): `Promise`<`boolean`>
 
@@ -530,7 +548,7 @@ Set the current state of remote control, allowing the agent to request remote co
 
 ***
 
-#### setTool
+#### setTool <a href="#settool" id="settool"></a>
 
 ▸ **setTool**(`tool`): `Promise`<`boolean`>
 
@@ -564,7 +582,7 @@ Represents a session in Cobrowse.
 
 ### Properties
 
-#### activated
+#### activated <a href="#activated" id="activated"></a>
 
 • **activated**: `Date`
 
@@ -572,7 +590,7 @@ The activation timestamp of the session. This is the time the user accepted the 
 
 ***
 
-#### agent
+#### agent <a href="#agent" id="agent"></a>
 
 • **agent**: `Object`
 
@@ -588,7 +606,7 @@ Metadata about the agent that started the session
 
 ***
 
-#### code
+#### code <a href="#code" id="code"></a>
 
 • **code**: `string`
 
@@ -596,7 +614,7 @@ A 6 digit, human friendly code that can be used to initiate a session
 
 ***
 
-#### created
+#### created <a href="#created" id="created"></a>
 
 • **created**: `Date`
 
@@ -604,7 +622,7 @@ The date the session was first created (this will usually be before the `activat
 
 ***
 
-#### custom\_data
+#### custom\_data <a href="#custom_data" id="custom_data"></a>
 
 • **custom\_data**: `Record`<`string`, `any`>
 
@@ -612,7 +630,7 @@ The metadata you have associated with this session for discoverability and filte
 
 ***
 
-#### device
+#### device <a href="#device" id="device"></a>
 
 • **device**: `DeviceInfo`
 
@@ -620,7 +638,7 @@ Metadata about the user's device
 
 ***
 
-#### ended
+#### ended <a href="#ended" id="ended"></a>
 
 • **ended**: `Date`
 
@@ -628,7 +646,7 @@ The timestamp the session was ended
 
 ***
 
-#### full\_device
+#### full\_device <a href="#full_device" id="full_device"></a>
 
 • **full\_device**: `boolean`
 
@@ -636,7 +654,7 @@ Is the session in full device capturing mode or not
 
 ***
 
-#### id
+#### id <a href="#id" id="id"></a>
 
 • **id**: `string`
 
@@ -644,7 +662,7 @@ The unique ID for this screenshare session
 
 ***
 
-#### recorded
+#### recorded <a href="#recorded" id="recorded"></a>
 
 • **recorded**: `boolean`
 
@@ -652,7 +670,7 @@ Was the session recorded
 
 ***
 
-#### remote\_control
+#### remote\_control <a href="#remote_control" id="remote_control"></a>
 
 • **remote\_control**: `"on"` | `"off"` | `"requested"` | `"rejected"`
 
@@ -660,7 +678,7 @@ The state of the remote control authorization for the session
 
 ***
 
-#### state
+#### state <a href="#state" id="state"></a>
 
 • **state**: `"pending"` | `"authorizing"` | `"active"` | `"ended"`
 
@@ -668,7 +686,7 @@ The current state of the session. A session will progress through its lifecycle 
 
 ***
 
-#### updated
+#### updated <a href="#updated" id="updated"></a>
 
 • **updated**: `Date`
 
@@ -676,7 +694,7 @@ The timestamp of the last update to the session
 
 ### Methods
 
-#### end
+#### end <a href="#end" id="end"></a>
 
 ▸ **end**(): `Promise`<`void`>
 
@@ -688,7 +706,7 @@ Ends this session.
 
 ***
 
-#### isActive
+#### isActive <a href="#isactive" id="isactive"></a>
 
 ▸ **isActive**(): `boolean`
 
@@ -700,7 +718,7 @@ True if the session is active. An active session is one where the user has accep
 
 ***
 
-#### isAuthorizing
+#### isAuthorizing <a href="#isauthorizing" id="isauthorizing"></a>
 
 ▸ **isAuthorizing**(): `boolean`
 
@@ -712,7 +730,7 @@ True if the session is authorizing. An authorizing session is one where the user
 
 ***
 
-#### isEnded
+#### isEnded <a href="#isended" id="isended"></a>
 
 ▸ **isEnded**(): `boolean`
 
@@ -724,7 +742,7 @@ True if the session is ended.
 
 ***
 
-#### isPending
+#### isPending <a href="#ispending" id="ispending"></a>
 
 ▸ **isPending**(): `boolean`
 
@@ -736,7 +754,7 @@ True if the session is pending. A pending session is the inital state, waiting f
 
 ***
 
-#### on
+#### on <a href="#on" id="on"></a>
 
 ▸ **on**(`event`, `listener`): `Session`
 
@@ -776,7 +794,7 @@ EventEmitter.on
 
 ***
 
-#### setFullDevice
+#### setFullDevice <a href="#setfulldevice" id="setfulldevice"></a>
 
 ▸ **setFullDevice**(`state`): `Promise`<`void`>
 
@@ -794,7 +812,7 @@ Set the current state of the session full-device mode. A full device session ena
 
 ***
 
-#### setRemoteControl
+#### setRemoteControl <a href="#setremotecontrol" id="setremotecontrol"></a>
 
 ▸ **setRemoteControl**(`state`): `Promise`<`void`>
 
@@ -812,7 +830,7 @@ Set the current state of remote control, allowing the agent to request remote co
 
 ***
 
-#### subscribe
+#### subscribe <a href="#subscribe" id="subscribe"></a>
 
 ▸ **subscribe**(): `Promise`<`void`>
 
@@ -824,7 +842,7 @@ Subscribe to changes in this session.
 
 ***
 
-#### toJSON
+#### toJSON <a href="#tojson" id="tojson"></a>
 
 ▸ **toJSON**(): `Session`
 
@@ -836,7 +854,7 @@ Converts this session instance to a plain object.
 
 ***
 
-#### unsubscribe
+#### unsubscribe <a href="#unsubscribe" id="unsubscribe"></a>
 
 ▸ **unsubscribe**(): `void`
 
@@ -850,17 +868,18 @@ Unsubscribe from this session.
 
 ### Methods
 
-#### create
+#### create <a href="#create" id="create"></a>
 
-▸ **create**(`query?`): `Promise`<`Session`>
+▸ **create**(`resource?`, `query?`): `Promise`<`Session`>
 
 Create a session, optionally passing additional query parameters.
 
 **Parameters**
 
-| Name     | Type                         |
-| -------- | ---------------------------- |
-| `query?` | `Record`<`string`, `string`> |
+| Name        | Type                         |
+| ----------- | ---------------------------- |
+| `resource?` | `any`                        |
+| `query?`    | `Record`<`string`, `string`> |
 
 **Returns**
 
@@ -868,7 +887,7 @@ Create a session, optionally passing additional query parameters.
 
 ***
 
-#### get
+#### get <a href="#get" id="get"></a>
 
 ▸ **get**(`id`, `query?`): `Promise`<`Session`>
 
@@ -887,7 +906,7 @@ Get a session by ID
 
 ***
 
-#### list
+#### list <a href="#list" id="list"></a>
 
 ▸ **list**(`query?`): `Promise`<`Session`\[]>
 
@@ -927,13 +946,13 @@ Represents a user in Cobrowse.
 
 ### Properties
 
-#### id
+#### id <a href="#id" id="id"></a>
 
 • **id**: `string`
 
 ### Methods
 
-#### on
+#### on <a href="#on" id="on"></a>
 
 ▸ **on**(`event`, `listener`): `User`
 
@@ -956,7 +975,7 @@ EventEmitter.on
 
 ***
 
-#### toJSON
+#### toJSON <a href="#tojson" id="tojson"></a>
 
 ▸ **toJSON**(): `User`
 
@@ -970,7 +989,7 @@ Converts this device instance to a plain object.
 
 ### Methods
 
-#### get
+#### get <a href="#get" id="get"></a>
 
 ▸ **get**(`id`, `query?`): `Promise`<`User`>
 
