@@ -31,7 +31,7 @@ CobrowseIO.on('session.loaded', session => {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS / MacOS" %}
 ```objc
 -(void) sessionDidLoad: (CBIOSession*) session {
     NSLog(@"A session was loaded %@", session);
@@ -63,7 +63,7 @@ CobrowseIO.on('session.updated', session => {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS / MacOS" %}
 ```objc
 -(void) sessionDidUpdate: (CBIOSession*) session {
     NSLog(@"A session was updated %@", session);
@@ -95,7 +95,7 @@ CobrowseIO.on('session.ended', session => {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS / MacOS" %}
 ```objc
 -(void) sessionDidEnd: (CBIOSession*) session {
     NSLog(@"A session was updated %@", session);
