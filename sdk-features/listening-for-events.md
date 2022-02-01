@@ -32,7 +32,7 @@ CobrowseIO.on('session.loaded', session => {
 {% endtab %}
 
 {% tab title="iOS / MacOS" %}
-```objc
+```objectivec
 -(void) sessionDidLoad: (CBIOSession*) session {
     NSLog(@"A session was loaded %@", session);
 }
@@ -46,6 +46,14 @@ CobrowseIO.on('session.loaded', session => {
 public void sessionDidLoad(@NonNull Session session) {
     Log.i("App", "A session was loaded " + session);
 }
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+```javascript
+CobrowseIO.addListener('session.loaded', session => {
+    console.log('A session was loaded', session)
+})
 ```
 {% endtab %}
 {% endtabs %}
@@ -64,7 +72,7 @@ CobrowseIO.on('session.updated', session => {
 {% endtab %}
 
 {% tab title="iOS / MacOS" %}
-```objc
+```objectivec
 -(void) sessionDidUpdate: (CBIOSession*) session {
     NSLog(@"A session was updated %@", session);
 }
@@ -78,6 +86,14 @@ CobrowseIO.on('session.updated', session => {
 public void sessionDidUpdate(@NonNull Session session) {
     Log.i("App", "A session was updated " + session);
 }
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+```javascript
+CobrowseIO.addListener('session.updated', session => {
+    console.log('A session was updated', session)
+})
 ```
 {% endtab %}
 {% endtabs %}
@@ -96,7 +112,7 @@ CobrowseIO.on('session.ended', session => {
 {% endtab %}
 
 {% tab title="iOS / MacOS" %}
-```objc
+```objectivec
 -(void) sessionDidEnd: (CBIOSession*) session {
     NSLog(@"A session was updated %@", session);
 }
@@ -110,6 +126,14 @@ CobrowseIO.on('session.ended', session => {
 public void sessionDidEnd(@NonNull Session session) {
     Log.i("App", "A session was ended " + session);
 }
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+```javascript
+CobrowseIO.addListener('session.ended', session => {
+    console.log('A session was ended', session)
+})
 ```
 {% endtab %}
 {% endtabs %}
