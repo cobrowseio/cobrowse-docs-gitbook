@@ -1,4 +1,4 @@
-# Listening for Events
+# Listening for events
 
 The Cobrowse SDKs offer a range of events that you can use to hook in to the lifecycle of a Cobrowse session. The lifecycle of a Cobrowse session is based on the following states:
 
@@ -10,9 +10,7 @@ The Cobrowse SDKs offer a range of events that you can use to hook in to the lif
 
 **ended** - The session is finished and can no longer be used or updated
 
-The typical transition between states of a session is: `pending` ( -> `authorizing`) -> `active` -> `ended`
-
-If session authorization is disabled (i.e. no user consent is required), the authorizing step will be skipped.
+The typical transition between states of a Cobrowse session is: `pending` ( -> `authorizing`) -> `active` -> `ended`. If session authorization is disabled (i.e. no user consent is required), the authorizing step will be skipped.
 
 ### Session Lifecycle Events
 
