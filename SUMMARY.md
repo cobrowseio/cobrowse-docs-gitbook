@@ -25,7 +25,7 @@
   * [Remote control consent dialog](sdk-features/customize-the-interface/remote-control-consent.md)
   * [Localization / translation](sdk-features/customize-the-interface/localization.md)
 * [Initiate sessions with push](sdk-features/initiate-sessions-with-push.md)
-* [Listening for Events](sdk-features/listening-for-events.md)
+* [Listening for events](sdk-features/listening-for-events.md)
 * [Full device capabilities](sdk-features/full-device-capabilities.md)
 * [Advanced configuration](sdk-features/advanced-features/README.md)
   * [Web](sdk-features/advanced-features/web/README.md)
