@@ -17,7 +17,7 @@ CobrowseIO.customData = {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS / MacOS" %}
 **Swift**
 
 ```swift
@@ -80,32 +80,6 @@ CobrowseIO.Instance.CustomData = new Dictionary<string, object>
 ```
 {% endtab %}
 
-{% tab title="MacOS" %}
-**Swift**
-
-```swift
-CobrowseIO.instance().customData = [
-    kCBIOUserIdKey: "<your_user_id>" as NSObject,
-    kCBIOUserNameKey: "<your_user_name>" as NSObject,
-    kCBIOUserEmailKey: "<your_user_email>" as NSObject,
-    kCBIODeviceIdKey: "<your_device_id>" as NSObject,
-    kCBIODeviceNameKey: "<your_device_name>" as NSObject
-]
-```
-
-**Objective-C**
-
-```objectivec
-CobrowseIO.instance.customData = @{
-    kCBIOUserIdKey: @"<your_user_id>",
-    kCBIOUserNameKey: @"<your_user_name>",
-    kCBIOUserEmailKey: @"<your_user_email>",
-    kCBIODeviceIdKey: @"<your_device_id>",
-    kCBIODeviceNameKey: @"<your_device_name>"
-};
-```
-{% endtab %}
-
 {% tab title="Windows" %}
 ```csharp
 CobrowseIO.Instance.CustomData = new Dictionary<string, object>()
@@ -119,4 +93,3 @@ CobrowseIO.Instance.CustomData = new Dictionary<string, object>()
 ```
 {% endtab %}
 {% endtabs %}
-
