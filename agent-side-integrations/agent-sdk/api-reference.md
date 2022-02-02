@@ -922,7 +922,7 @@ Supported query parameters:
 
 `agent` - Administrator may set this to `all` to list sessions for all agents. Agent roles may only list their own sessions.
 
-`state` - Filter by session that are in one of the supported states: `pending`, `authorizing`, `activated`, `ended`.
+`state` - Filter by session that are in one of the supported states: `pending`, `authorizing`, `active`, `ended`.
 
 **Parameters**
 
