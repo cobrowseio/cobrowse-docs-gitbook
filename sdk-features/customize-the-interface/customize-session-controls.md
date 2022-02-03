@@ -19,15 +19,169 @@ CobrowseIO.hideSessionControls = function() {
 ```
 
 When you override these functions, we will not show any default UI for the end-user to end their session. You can then display your own button or other UI to allow your end-user to end their session.
+{% endtab %}
 
-When implementing your own UI, you can use the following javascript code to programatically end the Cobrowse session.
+{% tab title="iOS / MacOS" %}
+The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
 
-```javascript
-if (CobrowseIO.currentSession) {
-    CobrowseIO.currentSession.end();
+#### **Swift**
+
+```swift
+func cobrowseShowSessionControls(_ session: CBIOSession) {
+    // You can render controls however you like here.
+}
+
+func cobrowseHideSessionControls(_ session: CBIOSession) {
+    // hide your session controls
 }
 ```
 
+#### **Objective C**
+
+```objectivec
+- (void)cobrowseShowSessionControls:(CBIOSession*) session {
+    // You can render controls however you like here.
+}
+
+- (void)cobrowseHideSessionControls:(CBIOSession*) session {
+     // hide your session controls
+}
+```
+{% endtab %}
+
+{% tab title="Android" %}
+The SDK provides hooks via `CobrowseIO.SessionControlsDelegate` for you to render your own interface:
+
+```java
+@Override
+public void showSessionControls(final Activity activity, final Session session) {
+    // show your own controls here
+}
+
+@Override
+public void hideSessionControls(final Activity activity, final Session session) {
+    // hide your controls here
+}
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+Our React Native SDK provides a component you can use to wrap your session control components. Our component will then handle showing and hiding your controls when required:
+
+```javascript
+import { SessionControl } from 'cobrowse-sdk-react-native';
+
+export default class App extends Component {
+    render() {
+        return (
+            <View>
+                <SessionControl>
+                    <Text>This will only show when a session is active!</Text>
+                </SessionControl>
+            </View>
+        );
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### Xamarin.iOS implementation
+
+The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
+
+```csharp
+public override void CobrowseShowSessionControls(Session session) {
+    // show session controls
+}
+
+public override void CobrowseHideSessionControls(Session session) {
+    // hide session controls
+}
+```
+
+#### Xamarin.Android implementation
+
+You can fully customize the interface for a Cobrowse session. The SDK provides hooks via `CobrowseIO.ISessionControlsDelegate` for you to render your own interface:
+
+```csharp
+public void ShowSessionControls(Activity activity, Session session) {
+    // show session controls
+}
+
+public void HideSessionControls(Activity activity, Session session) {
+    // hide session controls
+}
+```
+{% endtab %}
+
+{% tab title="Windows" %}
+You may override the default session and active display indicator by handling `CobrowseIO.Instance.SessionControlsUpdated`:
+
+```csharp
+CobrowseIO.Instance.SessionControlsUpdated += OnSessionControlsUpdated;
+```
+
+Callback will be called when:
+
+* Session starts. `FrameInfo` will contian information about the display currently captured by the screenshare session.
+* Active display is switched. `FrameInfo` will contain information about the display which is being switched to.
+* Session ends. `FrameInfo` param will be `null`. This means that session UI should be hidden.
+
+**Warning:** Be aware that callback is called from non-UI thread.
+{% endtab %}
+{% endtabs %}
+
+When implementing your own session controls, it's a good idea to provide the user with some UI to end the current Cobrowse session. You can call the following APIs from your UI to end the session:
+
+{% tabs %}
+{% tab title="Web" %}
+```javascript
+if (CobrowseIO.currentSession)
+    await CobrowseIO.currentSession.end();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+```objectivec
+[CobrowseIO.instance.currentSession end:^(NSError * _Nullable err, CBIOSession * _Nullable session) {
+    // handle errors here
+}];
+```
+{% endtab %}
+
+{% tab title="Android" %}
+```java
+if (CobrowseIO.instance().currentSession() != null ) {
+    CobrowseIO.instance().currentSession().end((err, session) -> {
+        // handle errors here
+    });
+}
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+```javascript
+// Get a reference to the current session if you don't have one
+const session = await CobrowseIO.currentSession();
+// if there's an ongoing session, end it
+if (session) await session.end()
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+```csharp
+CobrowseIO.Instance().CurrentSession?.End(null);
+```
+{% endtab %}
+{% endtabs %}
+
+### Example UIs
+
+To illustrate how these APIs should be used we have put together some example code for customizing the active session indicators:
+
+{% tabs %}
+{% tab title="Web" %}
 Here's a simple example that re-create the default UI, but with a blue button and some different text:
 
 ```markup
@@ -66,10 +220,6 @@ CobrowseIO.client().then(function() {
 {% endtab %}
 
 {% tab title="iOS" %}
-The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
-
-### **Swift**
-
 ```swift
 import CobrowseIO
 
@@ -127,101 +277,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CobrowseIODelegate {
 
 }
 ```
-
-### **Objective C**
-
-```objectivec
-@implementation CBAppDelegate // should implement CobrowseIODelegate
-
-- (BOOL)application:(UIApplication*) application didFinishLaunchingWithOptions:(NSDictionary*) launchOptions {
-    CobrowseIO.instance.delegate = self;
-    // ... the rest of your app setup
-    return YES;
-}
-
-- (void)cobrowseShowSessionControls:(CBIOSession*) session {
-    // You can render controls however you like here. One option is to add a floating
-    // control visible over all other controls by adding it as a subview of the keyWindow
-    [UIApplication.sharedApplication.keyWindow addSubview: self.myCustomCobrowseView];
-}
-
-- (void)cobrowseHideSessionControls:(CBIOSession*) session {
-    [self.myCustomCobrowseView removeFromSuperview];
-}
-
-@end
-```
-{% endtab %}
-
-{% tab title="Android" %}
-The SDK provides hooks via `CobrowseIO.SessionControlsDelegate` for you to render your own interface:
-
-```java
-package com.example;
-
-import io.cobrowse.CobrowseIO;
-
-public class MainApplication extends Application implements CobrowseIO.SessionControlsDelegate {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        CobrowseIO.instance().setDelegate(this);
-
-        // and the rest of cobrowse setup ...
-    }
-
-    @Override
-    public void showSessionControls(final Activity activity, final Session session) {
-        // optionally show your own controls here
-    }
-
-    @Override
-    public void hideSessionControls(final Activity activity, final Session session) {
-        // hide controls created by the method above here
-    }
-
-    //...
-
-}
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-The SDK provides hooks for you to render your own interface:
-
-```javascript
-import { SessionControl } from 'cobrowse-sdk-react-native';
-
-export default class App extends Component {
-    render() {
-        return (
-            <View>
-                <SessionControl>
-                    <Text>This will only show when a session is active!</Text>
-                </SessionControl>
-            </View>
-        );
-    }
-}
-```
-
-When implementing your own UI, you can use the following javascript code to programatically end the Cobrowse session.
-
-```javascript
-// Get a reference to the current session if you don't have one
-const session = await CobrowseIO.currentSession();
-// if there's an ongoing session, end it
-if (session) await session.end()
-```
-
-
 {% endtab %}
 
 {% tab title="Xamarin" %}
-The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
-
-### Xamarin.iOS implementation
+#### Xamarin.iOS implementation
 
 ```csharp
 using Xamarin.CobrowseIO;
@@ -298,7 +357,7 @@ public class CustomCobrowseDelegate : CobrowseIODelegate
 }
 ```
 
-### Xamarin.Android implementation
+#### Xamarin.Android implementation
 
 You can fully customize the interface for a Cobrowse session. The SDK provides hooks via `CobrowseIO.ISessionControlsDelegate` for you to render your own interface:
 
@@ -329,7 +388,7 @@ public class MainApplication : Application, CobrowseIO.ISessionControlsDelegate
 }
 ```
 
-### Xamarin.Forms implementation
+#### Xamarin.Forms implementation
 
 Even though Cobrowse.io works with native views, there is nothing that would prevent you from using `Xamarin.Forms.VisualElement` as a session indicator.
 
@@ -477,44 +536,5 @@ public class CustomOverlayCobrowseDelegate : CobrowseDelegateImplementation, Cob
     }
 }
 ```
-{% endtab %}
-
-{% tab title="MacOS" %}
-The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
-
-```objectivec
-@implementation CBAppDelegate // should implement CobrowseIODelegate
-
-- (void)applicationDidFinishLaunching:(NSNotification *)notification
-    CobrowseIO.instance.delegate = self;
-    // ... the rest of your app setup
-}
-
-- (void)cobrowseShowSessionControls:(CBIOSession*) session {
-    // You can render controls however you like here.
-}
-
-- (void)cobrowseHideSessionControls:(CBIOSession*) session {
-    // hide your custom control here
-}
-
-@end
-```
-{% endtab %}
-
-{% tab title="Windows" %}
-You may override the default session and active display indicator by handling `CobrowseIO.Instance.SessionControlsUpdated`:
-
-```csharp
-CobrowseIO.Instance.SessionControlsUpdated += OnSessionControlsUpdated;
-```
-
-Callback will be called when:
-
-* Session starts. `FrameInfo` will contian information about the display currently captured by the screenshare session.
-* Active display is switched. `FrameInfo` will contain information about the display which is being switched to.
-* Session ends. `FrameInfo` param will be `null`. This means that session UI should be hidden.
-
-**Warning:** Be aware that callback is called from non-UI thread.
 {% endtab %}
 {% endtabs %}
