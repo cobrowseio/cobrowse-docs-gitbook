@@ -12,8 +12,6 @@ To generate a 6-digit code in your integration you can use the following APIs. O
 
 {% tabs %}
 {% tab title="Web" %}
-Generate the 6-digit code programmatically using the following APIs. You can then display this code inside your own UI.
-
 ```javascript
 // ensure Cobrowse is loaded
 CobrowseIO.client().then(function() {
@@ -53,9 +51,9 @@ CobrowseIO.instance().createSession((err, session) -> {
 
 {% tab title="Xamarin" %}
 ```csharp
-CobrowseIO.instance().createSession((err, session) -> {
-    if (err != null) Log.w("App", "Failed to create code");
-    else if (session != null) Log.i("App", "Session code " + session.code());
+CobrowseIO.Instance.CreateSession((Exception err, ISession session) => {
+    if (err != null) Debug.WriteLine("Failed to create a code");
+    else if (session != null) Debug.WriteLine("Session code " + session.Code);
 });
 ```
 {% endtab %}
