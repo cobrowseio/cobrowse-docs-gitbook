@@ -6,13 +6,23 @@ For this purpose, we provide a redaction API that automatically blocks out on de
 
 Cobrowse provides two methods for redacting sensitive data in your applications:
 
-**1. Define the redacted views in your app source code \(recommended\)**
+**1. Define the redacted views in your app source code (recommended)**
 
-This is the recommended method as it will make sure your redactions are tied to app version.
+This is the recommended method as it will make sure your redactions are tied to application or websites code version.
 
 {% tabs %}
 {% tab title="Web" %}
-You can only define redactions via the web dashboard for the web SDK. Enter CSS selectors on the [dashboard settings](https://cobrowse.io/dashboard/settings/redaction) page.
+Redactions are defined as CSS selectors, passed as an array to the Cobrowse SDK. We recommend using a simple css class to signify redaction where possible, although more complex selectors will also work.
+
+```javascript
+CobrowseIO.redactedViews = ['.redacted', ...some other selectors...]
+```
+
+Our web SDK also supports an un-redaction mechanism, where by you can define sub-elements inside of a redacted element that should be visible to the agent. You can specify un-redaction selectors like this:
+
+```javascript
+CobrowseIO.unredactedViews = ['.unredacted', ...some other selectors...]
+```
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -26,7 +36,7 @@ Implement the `CobrowseIORedacted` protocol on any `UIViewController` that conta
 }
 ```
 
-If making changes to your `UIViewController` subclasses isn't an option, we also support a delegate style method to allow you to supply this information in one place. Find out more about this by emailing us at [hello@cobrowse.io](https://github.com/cobrowseio/cobrowse-docs-gitbook/tree/91f22fdcf9e3124fc8f6f9877feb64cda4b8af39/sdk-features/hello@cobrowse.io).
+If making changes to your `UIViewController` subclasses isn't an option, we also support a [delegate style](listening-for-events.md) method to allow you to supply this information in one place. Find out more about this by emailing us at [hello@cobrowse.io](https://github.com/cobrowseio/cobrowse-docs-gitbook/tree/91f22fdcf9e3124fc8f6f9877feb64cda4b8af39/sdk-features/hello@cobrowse.io).
 {% endtab %}
 
 {% tab title="Android" %}
@@ -283,5 +293,8 @@ namespace YourAppNamespace.Android
 
 **2. Use the Cobrowse web dashboard to define redacted views**
 
-You can also define redactions using a selector entered into the web dashboard. This can be useful if your app is already in production and you need to redact a field retrospectively, either due to a missed redaction entry in the app build or changing requirements. Visit the [dashboard settings](https://cobrowse.io/dashboard/settings/redaction) to enter redaction selectors.
+{% hint style="warning" %}
+This mechanism is provided as a fallback, use the SDK APIs when possible for maximum resiliency and efficiency.
+{% endhint %}
 
+You can also define redactions using a selector entered into the web dashboard. This can be useful if your app is already in production and you need to redact a field retrospectively, either due to a missed redaction entry in the app build or changing requirements. Visit the [dashboard settings](https://cobrowse.io/dashboard/settings/redaction) to enter redaction selectors.
