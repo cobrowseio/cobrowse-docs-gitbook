@@ -68,12 +68,6 @@ CobrowseIO.confirmSession = function() {
 {% endtab %}
 
 {% tab title="iOS" %}
-### Swift
-
-_Not yet documented. Please contact us at_ [_hello@cobrowse.io_](mailto:hello@cobrowse.io)_._
-
-### Objective C
-
 ```objectivec
 @implementation CBAppDelegate // should implement CobrowseIODelegate
 
