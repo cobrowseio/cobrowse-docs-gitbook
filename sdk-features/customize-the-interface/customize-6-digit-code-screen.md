@@ -6,6 +6,8 @@ For details on how to generate a 6-digit code, please see this page:
 [6-digit-codes.md](../6-digit-codes.md)
 {% endcontent-ref %}
 
+### Example UIs
+
 Here's some examples of how you can use a custom UI to display a 6 digit code:
 
 {% tabs %}

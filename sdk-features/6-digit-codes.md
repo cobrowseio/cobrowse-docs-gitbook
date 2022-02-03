@@ -19,6 +19,7 @@ CobrowseIO.client().then(function() {
     CobrowseIO.createSessionCode().then(function(code) {
        console.log('your code is', code);
     });
+
 });
 ```
 
@@ -35,13 +36,7 @@ CobrowseIO.start({register:false})
     if (err) NSLog(@"Failed to create code")
     else NSLog(@"%@", session.code);
 }];
-```
-{% endtab %}
 
-{% tab title="React Native" %}
-```javascript
-const session = await CobrowseIO.createSession()
-console.log('Your 6 digit code is', session.code)
 ```
 {% endtab %}
 
@@ -71,7 +66,7 @@ Console.WriteLine("Code: {0}", session.Code);
 {% endtab %}
 {% endtabs %}
 
-You can monitor changes in the state of the session using the Cobrowse delegate methods to listen for events:
+You can monitor changes in the state of the session you create using the Cobrowse delegate methods to listen for events:
 
 {% content-ref url="listening-for-events.md" %}
 [listening-for-events.md](listening-for-events.md)
@@ -238,9 +233,3 @@ The Cobrowse.io SDK for Windows does not provide a default UI for generating 6 d
 A complete example of a WPF integration is available [here](https://github.com/cobrowseio/cobrowse-sdk-windows-examples).
 {% endtab %}
 {% endtabs %}
-
-To see some code samples for how to build a custom UI for your platform see:
-
-{% content-ref url="customize-the-interface/customize-6-digit-code-screen.md" %}
-[customize-6-digit-code-screen.md](customize-the-interface/customize-6-digit-code-screen.md)
-{% endcontent-ref %}
