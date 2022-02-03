@@ -19,7 +19,6 @@ CobrowseIO.client().then(function() {
     CobrowseIO.createSessionCode().then(function(code) {
        console.log('your code is', code);
     });
-
 });
 ```
 
@@ -36,7 +35,13 @@ CobrowseIO.start({register:false})
     if (err) NSLog(@"Failed to create code")
     else NSLog(@"%@", session.code);
 }];
+```
+{% endtab %}
 
+{% tab title="React Native" %}
+```javascript
+const session = await CobrowseIO.createSession()
+console.log('Your 6 digit code is', session.code)
 ```
 {% endtab %}
 
@@ -66,7 +71,7 @@ Console.WriteLine("Code: {0}", session.Code);
 {% endtab %}
 {% endtabs %}
 
-You can monitor changes in the state of the session you create using the Cobrowse delegate methods to listen for events:
+You can monitor changes in the state of the session using the Cobrowse delegate methods to listen for events:
 
 {% content-ref url="listening-for-events.md" %}
 [listening-for-events.md](listening-for-events.md)
@@ -77,6 +82,10 @@ You can monitor changes in the state of the session you create using the Cobrows
 We provide a very simple default plug-and-play UI that provides the 6-digit code display functionality. We also provide a set of public methods if you prefer to build a custom UI (see above). Learn more at [Customize the interface.](customize-the-interface/)
 
 {% tabs %}
+{% tab title="Web" %}
+The Cobrowse.io SDK for web does not provide a default UI for generating 6 digit codes.
+{% endtab %}
+
 {% tab title="iOS" %}
 1. Add the appropriate code below into a view controller in your app.
 2. Hook up a trigger for the action (or call it programatically if you prefer).
@@ -233,3 +242,9 @@ The Cobrowse.io SDK for Windows does not provide a default UI for generating 6 d
 A complete example of a WPF integration is available [here](https://github.com/cobrowseio/cobrowse-sdk-windows-examples).
 {% endtab %}
 {% endtabs %}
+
+To see some code samples for how to build a custom UI for your platform see:
+
+{% content-ref url="customize-the-interface/customize-6-digit-code-screen.md" %}
+[customize-6-digit-code-screen.md](customize-the-interface/customize-6-digit-code-screen.md)
+{% endcontent-ref %}
