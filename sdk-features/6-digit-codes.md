@@ -4,19 +4,15 @@ By default, Cobrowse does not require any visible UI presented to the user. It w
 
 You may optionally present a UI in your app that enables users to generate 6-digit codes. Users may then read a code over the phone or in chat, and agents can use the 6-digit code to initiate the Cobrowse session.
 
-For this purpose, we provide a default plug-and-play UI that provides this functionality. We also provide a set of public methods if you prefer to build a custom UI. More info at [Customize the interface.](customize-the-interface/)
+{% hint style="info" %}
+**Important**: 6-digit codes expire after approximately 15 minutes, so it's best practice to generate a code only when a user wants to start a session.&#x20;
+{% endhint %}
 
-## Implementation
-
-These are the requirements to initiate sessions using 6-digit codes.
-
-You may expose a small UI in your app for users to generate a 6-digit code that they pass to an agent over the phone or chat to initiate a session.
-
-**Note:** This guide will use our default UI \(very basic!\) to display the code. You can replace it with your own UI if you prefer! Please see [Customize the interface](customize-the-interface/).
+To generate a 6-digit code in your integration you can use the following APIs. Once you have generated the code you can display it to the user in your own UI. You should only generate a code when a user needs it as they expire shortly after creation.
 
 {% tabs %}
 {% tab title="Web" %}
-### Generate the 6-digit code programmatically
+Generate the 6-digit code programmatically using the following APIs. You can then display this code inside your own UI.
 
 ```javascript
 // ensure Cobrowse is loaded
@@ -34,19 +30,58 @@ If you are **only** using 6 digit codes to start Cobrowse sessions in your imple
 ```javascript
 CobrowseIO.start({register:false})
 ```
-
-For Sample UI, please see [Customize the interface](customize-the-interface/customize-6-digit-code-screen.md)
-
-{% hint style="info" %}
-6-digit codes expire after approximately 15 minutes, so it's best practice to generate a 6-digit code only when a user wants to start a session. 
-{% endhint %}
 {% endtab %}
 
-{% tab title="iOS" %}
-To setup 6-digit codes on iOS:
+{% tab title="iOS / MacOS" %}
+```objectivec
+[CobrowseIO.instance createSession:^(NSError * err, CBIOSession * session) {
+    if (err) NSLog(@"Failed to create code")
+    else NSLog(@"%@", session.code);
+}];
 
+```
+{% endtab %}
+
+{% tab title="Android" %}
+```java
+CobrowseIO.instance().createSession((err, session) -> {
+    if (err != null) Log.w("App", "Failed to create code");
+    else if (session != null) Log.i("App", "Session code " + session.code());
+});
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+```csharp
+CobrowseIO.instance().createSession((err, session) -> {
+    if (err != null) Log.w("App", "Failed to create code");
+    else if (session != null) Log.i("App", "Session code " + session.code());
+});
+```
+{% endtab %}
+
+{% tab title="Windows" %}
+```csharp
+Session session = await CobrowseIO.Instance.CreateSession();
+Console.WriteLine("Code: {0}", session.Code);
+```
+{% endtab %}
+{% endtabs %}
+
+You can monitor changes in the state of the session you create using the Cobrowse delegate methods to listen for events:
+
+{% content-ref url="listening-for-events.md" %}
+[listening-for-events.md](listening-for-events.md)
+{% endcontent-ref %}
+
+### Default 6-digit code UI
+
+We provide a very simple default plug-and-play UI that provides the 6-digit code display functionality. We also provide a set of public methods if you prefer to build a custom UI (see above). Learn more at [Customize the interface.](customize-the-interface/)
+
+{% tabs %}
+{% tab title="iOS" %}
 1. Add the appropriate code below into a view controller in your app.
-2. Hook up a trigger for the action \(or call it programatically if you prefer\).
+2. Hook up a trigger for the action (or call it programatically if you prefer).
 
 #### Swift
 
@@ -128,10 +163,8 @@ export default class App extends Component {
 {% tab title="Xamarin" %}
 ### Xamarin.iOS implementation
 
-To setup user-initiated sessions:
-
 1. Add the appropriate code below into a view controller in your app.
-2. Hook up a trigger for the action \(or call it programatically if you prefer\).
+2. Hook up a trigger for the action (or call it programatically if you prefer).
 
 ```csharp
 using Xamarin.CobrowseIO;
@@ -148,7 +181,7 @@ namespace SampleApp.iOS
 }
 ```
 
-For a full example written in C\#, see our sample app at: [https://github.com/cobrowseio/cobrowse-sdk-xamarin](https://github.com/cobrowseio/cobrowse-sdk-xamarin)
+For a full example written in C#, see our sample app at: [https://github.com/cobrowseio/cobrowse-sdk-xamarin](https://github.com/cobrowseio/cobrowse-sdk-xamarin)
 
 ### Xamarin.Android implementation
 
@@ -190,80 +223,15 @@ namespace YourAppNamespace.Forms
     }
 }
 ```
-
-## Test it
-
-Make sure you've hooked up a trigger for the `StartCobrowse` method that we've just added. Then head to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) and enter the 6 digit code that will be generated by your app when you trigger the action!
 {% endtab %}
 
 {% tab title="MacOS" %}
-The Cobrowse.io SDK for MacOS does not provide a default UI for generating 6 digit codes, instead you can generate a code for your UI by using the `-createSession` API:
-
-```objectivec
-[CobrowseIO.instance createSession:^(NSError * _Nullable err, CBIOSession * _Nullable session) {
-    if (err) NSLog(@"Error creating code %@", err);
-    else NSLog(@"Created session code: %@", session.code);
-}];
-```
-
-You can monitor changes in the state of the session you create using the Cobrowse delegate methods:
-
-```objectivec
--(void) cobrowseSessionDidUpdate: (nonnull CBIOSession*) session;
--(void) cobrowseSessionDidEnd: (nonnull CBIOSession*) session;
-```
-
-You can get information about the state of the session using the following methods, which may adjust the UI you are showing:
-
-```objectivec
-[session isPending] // session has been created but is waiting for agent or user
-[session isAuthorizing] // waiting for the user to confirm the session
-[session isActive] // session running, frames are streaming to the agent
-[session isEnded] // session is over and can no longer be used or edited
-```
+The Cobrowse.io SDK for MacOS does not provide a default UI for generating 6 digit codes.
 {% endtab %}
 
 {% tab title="Windows" %}
-### Windows implementation
+The Cobrowse.io SDK for Windows does not provide a default UI for generating 6 digit codes, instead you can generate a code for your UI by using the `CreateSession` API.
 
-You may use either Windows Forms, or WPF in your application. The Cobrowse.io SDK for Windows does not provide a default UI for generating 6 digit codes, instead you can generate a code for your UI by using the `CreateSession` API:
-
-```csharp
-public async Task StartCobrowse()
-{
-  CobrowseIO.Instance.SessionAuthorizing += OnSessionAuthorizing;
-  CobrowseIO.Instance.SessionUpdated += OnSessionUpdated;
-
-  await CobrowseIO.Instance.Start();
-  await CobrowseIO.Instance.CreateSession();
-}
-
-...
-
-private void OnSessionUpdated(Session session)
-{
-  if (session.Code != null)
-    Debug.WriteLine($"Created session code: {0}", session.Code);
-}
-```
-
-**Warning:** Be aware that callback is called from non-UI thread.
-
-In _WPF_ you can just bind to CobrowseIO instance property:
-
-```text
-  xmlns:io="clr-namespace:Cobrowse.IO;assembly=Cobrowse.IO"
-
-  ...
-
-  <TextBlock Text="{Binding Source={x:Static io:CobrowseIO.Instance}, Path=CurrentSession.Code}"/>
-```
-
-Complete example of WPF integration is available [here](https://github.com/cobrowseio/cobrowse-sdk-windows-examples).
-
-## Test it
-
-Make sure you've added a call to the `StartCobrowse` method that we've just created. Then head to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) and enter the 6 digit code that will be generated by your app when you trigger the action!
+A complete example of a WPF integration is available [here](https://github.com/cobrowseio/cobrowse-sdk-windows-examples).
 {% endtab %}
 {% endtabs %}
-
