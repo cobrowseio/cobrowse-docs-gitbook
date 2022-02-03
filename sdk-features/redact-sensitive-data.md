@@ -40,7 +40,7 @@ If making changes to your `UIViewController` subclasses isn't an option, we also
 {% endtab %}
 
 {% tab title="Android" %}
-Implement the CobrowseIO.Redacted interface on any Activity that contains sensitive views. This interface contains one method:
+Implement the `CobrowseIO.Redacted` interface on any Activity that contains sensitive views. This interface contains one method:
 
 ```java
 // From this method you should return a list of the views you want
