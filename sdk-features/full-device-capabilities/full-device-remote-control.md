@@ -47,7 +47,13 @@ Enable the accessibility service the Cobrowse SDK will have added in the main de
 
 {% tab title="React Native" %}
 {% hint style="info" %}
-Please follow the iOS and Android documentation to implement full device capabilities on React Native.
+Please follow the Android documentation to implement full device remote control using React Native.
+{% endhint %}
+{% endtab %}
+
+{% tab title="Xamarin" %}
+{% hint style="info" %}
+Please follow the Android documentation to implement full device remote control using Xamarin.
 {% endhint %}
 {% endtab %}
 {% endtabs %}
