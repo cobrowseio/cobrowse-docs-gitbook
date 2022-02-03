@@ -135,3 +135,45 @@ CobrowseIO.addListener('session.ended', session => {
 ```
 {% endtab %}
 {% endtabs %}
+
+### Delegate implementation
+
+Our SDKs offer many API touch points for you to customize the behaviour of your integration. These are primarily exposed through the implementation of a delegate object which you then pass to the Cobrowse SDK.&#x20;
+
+{% tabs %}
+{% tab title="iOS / MacOS" %}
+On iOS we offer a protocol you can implement called `CobrowseIODelegate`. This offers a range of callbacks you can implement such as the lifecycle methods described above, as well as callbacks to control session UIs, consents and redactions.
+
+To assign your delegate implementation, you should use:
+
+```objectivec
+CobrowseIO.instance.delegate = /* your delegate instance */
+```
+{% endtab %}
+
+{% tab title="Android" %}
+On Android we offer a range of delegate interfaces that you can implement depending on the functionality you wish to alter.
+
+{% hint style="info" %}
+You can only have one delegate instance configured, so the same instance must be used to implement any of the interfaces that you wish to use from the list here.
+{% endhint %}
+
+`CobrowseIO.Delegate` - provides callbacks for session lifecycle events
+
+`CobrowseIO.SessionLoadDelegate` - provides callbacks for session lifecycle events
+
+`CobrowseIO.SessionRequestDelegate` - for handling session consent requests
+
+`CobrowseIO.RemoteControlRequestDelegate` - for session remote control consent
+
+`CobrowseIO.SessionControlsDelegate` - for altering session indicator UIs
+
+`CobrowseIO.RedactionDelegate` - an option for passing redactions to the SDK
+
+To assign your delegate implementation, you should use:
+
+```java
+CobrowseIO.instance().setDelegate(/* your delegate implementation */);
+```
+{% endtab %}
+{% endtabs %}
