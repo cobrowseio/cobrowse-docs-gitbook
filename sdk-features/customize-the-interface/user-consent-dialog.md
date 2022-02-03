@@ -4,8 +4,6 @@ By default, Cobrowse will show a user consent dialog when a new session is incom
 
 Admin users may also disable this consent prompt from your account settings if you prefer to remove it entirely: [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings)
 
-Here are the SDK hooks:
-
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
@@ -20,11 +18,121 @@ CobrowseIO.confirmSession = function() {
     });
 }
 ```
+{% endtab %}
 
-### Sample UI
+{% tab title="iOS / Mac OS" %}
+```objectivec
+-(void) cobrowseHandleSessionRequest:(CBIOSession*) session {
+    // show your own UI here
+    // call [session activate: <callback>] to accept and start the session
+    // provide a callback to handle any errors during session initiation
+    [session activate: nil];
+    // or [session end: nil]; to reject the session
+}
+```
+{% endtab %}
 
-We've created a Sample UI that you may drop directly into your website to show customize the consent prompt, which inherits the styles and colors from your website.
+{% tab title="Android" %}
+```java
+@Override
+public void handleSessionRequest(final Activity currentActivity, final Session session) {
+    // Do something here, e.g. showing a permission request dialog
+    // Make sure to call activate(<callback>) on the session object if
+    // you want to start the session.
+    // Provide a callback if you wish to handle errors during session
+    // initiation.
+    session.activate(null);
+    // or session.end(null) to reject the session
+}
+```
+{% endtab %}
 
+{% tab title="React Native" %}
+```javascript
+CobrowseIO.handleSessionRequest = function(session) {
+    // Replace this with your own logic
+    // Just be sure to call session.activate() to
+    // accept the session, or session.end() to reject it
+    session.activate()
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### Xamarin.iOS implementation
+
+```csharp
+public override void CobrowseHandleSessionRequest(Session session) {
+    // show your own UI here
+    // call Activate(<callback>) to accept and start the session
+    // provide a callback to handle any errors during session initiation
+    session.Activate(callback: null);
+    // or session.End(null) to reject the session
+}
+```
+
+### Xamarin.Android implementation
+
+```csharp
+public void HandleSessionRequest(Activity activity, Session session) {
+    // Do something here, e.g. showing a permission request dialog
+    // Make sure to call Activate(<callback>) on the session object if
+    // you want to start the session.
+    // Provide a callback if you wish to handle errors during session
+    // initiation.
+    session.Activate(callback: null);
+    // or session.End(null) to reject the session
+}
+```
+
+### Xamarin.Forms implementation
+
+You can also achieve this functionality from a cross-platform project. In this case you don't have to implement your own delegate, but instead you subscribe to the `SessionDidRequest` event:
+
+```csharp
+CobrowseIO.Instance.SessionDidRequest += OnCobrowseSessionDidRequest;
+...
+private async void OnCobrowseSessionDidRequest(object sender, ISession session) {
+    // Do something here, e.g. showing a permission request dialog
+    // Make sure to call Activate(<callback>) on the session object if
+    // you want to start the session.
+    // Provide a callback if you wish to handle errors during session
+    // initiation.
+    session.Activate(null);
+    // or session.End(null) to reject the session
+}
+```
+{% endtab %}
+
+{% tab title="Windows" %}
+You can override the default session authorization dialog by adding a handler to the `CobrowseIO.Instance.SessionAuthorizing` event:
+
+```csharp
+  CobrowseIO.Instance.SessionAuthorizing += OnSessionAuthorizing;
+```
+
+**Warning:** Callback will be called from non-UI thread, so be sure to dispatch it to the UI one.
+
+* To confirm session:
+
+```csharp
+await CobrowseIO.Instance.CurrentSession.Activate();
+```
+
+* To reject a session:
+
+```csharp
+await CobrowseIO.Instance.CurrentSession.End();
+```
+{% endtab %}
+{% endtabs %}
+
+### Example UIs
+
+We've created a set of sample UIs that you may drop directly into your app or website as a starting point to customize the consent prompt.
+
+{% tabs %}
+{% tab title="Web" %}
 ```javascript
 // A generic consent dialog class
 function Consent() {
@@ -139,7 +247,7 @@ CobrowseIO.handleSessionRequest = function(session) {
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### Xamarin.iOS implementation
+#### Xamarin.iOS implementation
 
 ```csharp
 using Xamarin.CobrowseIO;
@@ -170,7 +278,7 @@ public class CustomCobrowseDelegate : CobrowseIODelegate
 }
 ```
 
-## Xamarin.Android implementation
+#### Xamarin.Android implementation
 
 ```csharp
 using Xamarin.CobrowseIO;
@@ -220,7 +328,7 @@ public class CustomCobrowseDelegate : Java.Lang.Object, CobrowseIO.ISessionReque
 }
 ```
 
-## Xamarin.Forms implementation
+#### Xamarin.Forms implementation
 
 You can also achieve this functionality from a cross-platform project. In this case you don't have to implement your own delegate, but instead you subscribe to the `SessionDidRequest` event:
 
@@ -309,28 +417,6 @@ public partial class App : Xamarin.Forms.Application
 {% endtab %}
 
 {% tab title="Windows" %}
-You can override the default session authorization dialog by adding a handler to the `CobrowseIO.Instance.SessionAuthorizing` event:
-
-```csharp
-  CobrowseIO.Instance.SessionAuthorizing += OnSessionAuthorizing;
-```
-
-**Warning:** Callback will be called from non-UI thread, so be sure to dispatch it to the UI one.
-
-* To confirm session:
-
-```csharp
-await CobrowseIO.Instance.CurrentSession.Activate();
-```
-
-* To reject a session:
-
-```csharp
-await CobrowseIO.Instance.CurrentSession.End();
-```
-
-WPF MessageBox example:
-
 ```csharp
 if (MessageBox.Show(
         window,
