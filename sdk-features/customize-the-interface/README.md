@@ -20,7 +20,7 @@ Some actions in a cobrowsing session may require extra consents from the user, h
 [full-device-consent-dialog.md](full-device-consent-dialog.md)
 {% endcontent-ref %}
 
-### Customizing Session UIs
+### Customizing in-session UIs
 
 When a Cobrowse session is active it is a good idea to show an indicator to the user, and provide a way for them to end the session if they wish. Here's how you can do that:
 
