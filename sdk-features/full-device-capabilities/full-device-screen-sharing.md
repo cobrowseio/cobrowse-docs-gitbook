@@ -134,8 +134,6 @@ For unattended full device access, we strongly recommend:
 {% tab title="React Native" %}
 {% hint style="info" %}
 Please follow the iOS and Android documentation to implement full device capabilities on React Native.
-
-Any questions, please [email us](mailto:hello@cobrowse.io).&#x20;
 {% endhint %}
 
 

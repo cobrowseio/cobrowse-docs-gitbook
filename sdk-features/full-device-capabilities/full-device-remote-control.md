@@ -48,8 +48,6 @@ Enable the accessibility service the Cobrowse SDK will have added in the main de
 {% tab title="React Native" %}
 {% hint style="info" %}
 Please follow the iOS and Android documentation to implement full device capabilities on React Native.
-
-Any questions, please [email us](mailto:hello@cobrowse.io).&#x20;
 {% endhint %}
 {% endtab %}
 {% endtabs %}
