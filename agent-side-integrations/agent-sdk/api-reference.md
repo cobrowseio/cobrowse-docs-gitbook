@@ -28,6 +28,11 @@ Create a new Agent SDK instance. An instance encapsulates information about your
 
 `api` - The url for an Enterprise Cobrowse instance. You do not need to configure this when using our global hosted service.
 
+```javascript
+const token = await myJWTGeneratingFunction()
+const cobrowse = new CobrowseAPI(token, { api: 'https://cobrowse.example.com' })
+```
+
 **Parameters**
 
 | Name       | Type                      | Description                                                                                             |
@@ -173,6 +178,13 @@ ctx.on('session.updated', (session) => {
 
 Represents a device in Cobrowse. A device in Cobrowse is how a single instance of an app or website is tracked by Cobrowse. Each website within each different browser on a user's machine will be tracked as a separate device. Devices can be listed and filtered by support agents to find a specific user's device. Read more about [Identifying your devices](https://docs.cobrowse.io/sdk-features/identify-your-devices) to add metadata for filtering.
 
+```javascript
+const cobrowse = new CobrowseAPI(...)
+const device = await cobrowse.device.get('some device id here')
+device.subscribe()
+device.on('updated', d -> console.log('device was updated', d))
+```
+
 #### Events
 
 **`fires`** updated - The updated event will be fired when device data changes.
@@ -243,7 +255,7 @@ Listen for events on this device.
 
 | Name       | Type                           |
 | ---------- | ------------------------------ |
-| `event`    | `"updated"`                    |
+| `event`    | `string`                       |
 | `listener` | (`device`: `Device`) => `void` |
 
 **Returns**
@@ -374,6 +386,11 @@ The version of the Cobrowse SDK that the device is running
 
 Get a device by ID.
 
+```javascript
+const cobrowse = new CobrowseAPI(...)
+const device = await cobrowse.devices.get('some device id here')
+```
+
 **Parameters**
 
 | Name     | Type                         |
@@ -400,6 +417,11 @@ Supported query parameters:
 `seen_before` - only include devices that checked-in with the Cobrowse service before this date
 
 `seen_after` - only include devices that checked-in with the Cobrowse service after this date
+
+```javascript
+const cobrowse = new CobrowseAPI(...)
+const devices = await cobrowse.devices.list({ filter_user_id: 'abcdef' } })
+```
 
 **Parameters**
 
@@ -435,6 +457,12 @@ Control Cobrowse hosted in an iframe from a parent context.
 
 Triggers the Android Back button
 
+```javascript
+const cobrowse = new CobrowseAPI()
+const ctx = cobrowse.attachContext(document.querySelector('#my-iframe-id'))
+ctx.androidBack()
+```
+
 **Returns**
 
 `Promise`<`boolean`>
@@ -446,6 +474,12 @@ Triggers the Android Back button
 ▸ **androidHome**(): `Promise`<`boolean`>
 
 Triggers the Android Home button
+
+```javascript
+const cobrowse = new CobrowseAPI()
+const ctx = cobrowse.attachContext(document.querySelector('#my-iframe-id'))
+ctx.androidHome()
+```
 
 **Returns**
 
@@ -459,6 +493,12 @@ Triggers the Android Home button
 
 Clear all agent session annotations from the user's view.
 
+```javascript
+const cobrowse = new CobrowseAPI()
+const ctx = cobrowse.attachContext(document.querySelector('#my-iframe-id'))
+ctx.clearAnnotations()
+```
+
 **Returns**
 
 `Promise`<`boolean`>
@@ -471,6 +511,12 @@ Clear all agent session annotations from the user's view.
 
 Destroy this remote context; stops listening for events and detaches from the iframe.
 
+```javascript
+const cobrowse = new CobrowseAPI()
+const ctx = cobrowse.attachContext(document.querySelector('#my-iframe-id'))
+ctx.destroy()
+```
+
 **Returns**
 
 `void`
@@ -482,6 +528,12 @@ Destroy this remote context; stops listening for events and detaches from the if
 ▸ **endSession**(): `Promise`<`boolean`>
 
 End the current agent session.
+
+```javascript
+const cobrowse = new CobrowseAPI()
+const ctx = cobrowse.attachContext(document.querySelector('#my-iframe-id'))
+ctx.endSession()
+```
 
 **Returns**
 
@@ -518,6 +570,12 @@ EventEmitter.on
 
 Set the current state of the session full-device mode. A full device session enables the agent to capture all screens of the user's device, not just those inside your app or website. Initiates request or ends full-device mode. The user must approve when switching to full device mode.
 
+```javascript
+const cobrowse = new CobrowseAPI()
+const ctx = cobrowse.attachContext(document.querySelector('#my-iframe-id'))
+ctx.setFullDevice(true)
+```
+
 **Parameters**
 
 | Name    | Type      |
@@ -536,6 +594,12 @@ Set the current state of the session full-device mode. A full device session ena
 
 Set the current state of remote control, allowing the agent to request remote control of the user's device. Initiate or end remote control. Note: The agent may not set the remote control state to `on` directly, they can only set it to `requested` and the user must approve if required.
 
+```javascript
+const cobrowse = new CobrowseAPI()
+const ctx = cobrowse.attachContext(document.querySelector('#my-iframe-id'))
+ctx.setRemoteControl('requested')
+```
+
 **Parameters**
 
 | Name    | Type                                               |
@@ -553,6 +617,12 @@ Set the current state of remote control, allowing the agent to request remote co
 ▸ **setTool**(`tool`): `Promise`<`boolean`>
 
 Set the tool to use in the Agent session.
+
+```javascript
+const cobrowse = new CobrowseAPI()
+const ctx = cobrowse.attachContext(document.querySelector('#my-iframe-id'))
+ctx.setTool('drawing')
+```
 
 **Parameters**
 
