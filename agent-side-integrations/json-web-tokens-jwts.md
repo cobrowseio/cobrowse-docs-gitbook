@@ -26,7 +26,7 @@ The JWT you create and sign should contain the following claims:
 | **iss**         | Issuer - Should be the license key for your Cobrowse account which can be found at [account settings](https://cobrowse.io/dashboard/settings).                                                                 |
 | **sub**         | Subject - The email of the support agent that you'd like to auto-authenticate. User will be automatically created if it does not yet exist.                                                                    |
 | **displayName** | Agent Display Name - The name of the support agent (may be displayed to the end user).                                                                                                                         |
-| **policy**      | <p>Policy (optional) - Optionally limit the scope of the JWT (e.g. limiting which devices can be listed and connected to).<br>e.g. <code>{ devices: { user_id: '362545823684324' } }</code></p>                |
+| **policy**      | <p>Policy (optional) - Optionally limit the scope of the JWT (e.g. limiting which devices can be listed and connected to).<br>e.g. <code>{ devices: { user_id: 'abcde' } }</code></p>                          |
 
 {% hint style="warning" %}
 Your sub and displayName claims are used for audit trail purposes. Along with the policy claim, they also scope agent access to your end-user's devices/information. This means that setting these claims as shared values between users is not recommended.
