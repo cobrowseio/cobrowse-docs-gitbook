@@ -2,9 +2,9 @@
 
 Full device screen sharing allows your support agents to view screens from applications outside of your own. This is often useful where support agents need to check the state of system settings, or need to see the user navigate between multiple applications.
 
-If you do not want this feature, you may completely disable "Full Device Viewing" in your account settings.&#x20;
+If you do not want this feature, you may completely disable "Full Device upgrade" in your [account settings](../account-configuration.md).&#x20;
 
-Full device screen sharing is supported through all of SDKs. Check below for to see if any extra steps are required for your platform:
+Full device screen sharing is supported by all SDKs. Check below to see if any extra steps are required for your platform:
 
 {% tabs %}
 {% tab title="Web" %}
@@ -12,7 +12,9 @@ Full device screen sharing is supported through all of SDKs. Check below for to 
 Redaction, annotation, and remote control are disabled when in full device mode via our Web SDK. If you require full desktop redaction, annotation, and remote control, please see our [MacOS](../../sdk-installation/macos.md) and [Windows](../../sdk-installation/windows.md) SDKs, which will require a downloaded utility on the end-user's computer.
 {% endhint %}
 
-The Cobrowse.io SDK for Web includes an optional "full device" toggle in the bottom right when running an active session. This feature enables the end-user to share their entire screen on their laptop or desktop. This is great if the end-user navigates to browser tabs outside of your website, where the Web SDK's JavaScript snippet is not installed, or if the end-user needs to share a PDF, or their entire desktop.&#x20;
+The Cobrowse.io SDK for Web includes an optional "full device" toggle in the bottom right when running an active session. This feature enables the end-user to share their entire screen on their laptop/desktop, or select individual apps or browser tabs to share (browser dependent).
+
+This is great if the end-user navigates to browser tabs outside of your website, where the Web SDK's JavaScript snippet is not installed, or if the end-user needs to share a PDF, or their entire desktop.&#x20;
 
 No extra integration work is required to use full device mode via our Web SDK.
 {% endtab %}
@@ -227,6 +229,14 @@ Open Info.plist of the extension project and make sure that `NSExtension` sectio
 {% hint style="info" %}
 Please see the Android documentation for full device capabilities.&#x20;
 {% endhint %}
+{% endtab %}
+
+{% tab title="macOS" %}
+Full device screen share by default, no extra integration needed.
+{% endtab %}
+
+{% tab title="Windows" %}
+Full device screen share by default, no extra integration needed.
 {% endtab %}
 {% endtabs %}
 

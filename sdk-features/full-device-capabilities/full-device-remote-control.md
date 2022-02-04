@@ -1,10 +1,10 @@
 # Full device remote control
 
-Full device remote control allows your support agents to take full control of a users device, for example to change system settings or control other apps. This feature is only supported on Android and Windows SDKs.
+Full device remote control allows your support agents to take full control of a user's device, for example to change system settings or control other apps. This feature is only supported on the Android and Windows SDKs.
 
 ### Configuring full device remote control
 
-On platforms that support full device remote control, some extra steps are required during your SDK integration:
+On platforms that support full device remote control, there may be extra steps required during your SDK integration:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -56,11 +56,17 @@ Please follow the Android documentation to implement full device remote control 
 Please follow the Android documentation to implement full device remote control using Xamarin.
 {% endhint %}
 {% endtab %}
+
+{% tab title="Windows" %}
+Full device remote control by default, no extra integration needed.
+{% endtab %}
 {% endtabs %}
 
-### Detecting AccessibilityService state
+### Detecting AccessibilityService state on Android
 
-We have built some logic and APIs to detect if the accessibility service is running, and if not, to deep link the user to the settings to enable it. Show the sample UI with:
+We have built some logic and APIs to detect if the Android accessibility service is running, and if not, to deep link the user to the settings to enable it.
+
+Show the sample UI with:
 
 {% tabs %}
 {% tab title="Android" %}
