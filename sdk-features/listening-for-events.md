@@ -58,7 +58,7 @@ CobrowseIO.addListener('session.loaded', session => {
 
 #### Session Updated Events
 
-The session updated event is trigged multiple times throughout the life of a session. This signifies that a change to the session configuration has been made, potentially to any of the session properties. For example, the session has been switched into full device mode, or remote control was requested, or a range of other properties. You can tap in to this event to check the new state of the session:
+The session updated event is trigged multiple times throughout the life of a session. This signifies that a change to the session configuration has been made, potentially to any of the [session properties](../agent-side-integrations/agent-sdk/api-reference.md#interface-session). For example, the session has been switched into full device mode, or remote control was requested, or a range of other properties. You can tap in to this event to check the new state of the session:
 
 {% tabs %}
 {% tab title="Web" %}
@@ -92,6 +92,18 @@ public void sessionDidUpdate(@NonNull Session session) {
 CobrowseIO.addListener('session.updated', session => {
     console.log('A session was updated', session)
 })
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+```
+public void SessionDidUpdate (Session session);
+```
+
+In Xamarin.Forms you can subscribe to the following CobrowseIO events:
+
+```
+event EventHandler<ISession> SessionDidUpdate;
 ```
 {% endtab %}
 {% endtabs %}
@@ -132,6 +144,18 @@ public void sessionDidEnd(@NonNull Session session) {
 CobrowseIO.addListener('session.ended', session => {
     console.log('A session was ended', session)
 })
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+```
+public void SessionDidEnd (Session session);
+```
+
+In Xamarin.Forms you can subscribe to the following CobrowseIO events:
+
+```
+event EventHandler<ISession> SessionDidEnd;
 ```
 {% endtab %}
 {% endtabs %}
