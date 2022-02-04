@@ -123,3 +123,7 @@ There's multiple ways to end a Cobrowse session, which one to use will depend on
 2. Using the default agent-side UI by clicking the red "hang-up" icon
 3. Using the agent SDK APIs to programatically end the session, either via the [IFrame context](https://docs.cobrowse.io/agent-side-integrations/agent-sdk/api-reference#endsession), or via an[ API call](https://docs.cobrowse.io/agent-side-integrations/agent-sdk/api-reference#end) with a JWT.
 4. Letting the server end the session after a timeout. If the device or agent closes the app or browser the server will clean up sessions automatically after approximately 5 minutes of inactivity.
+
+### Leave without ending the session
+
+Sometimes it's useful to be able to leave the session without ending it, for example when a supervisor is monitoring a number of ongoing sessions needs to switch between them. You can simply close the tab or remove the IFrame without ending the session.

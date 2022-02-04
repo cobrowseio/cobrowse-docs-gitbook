@@ -57,7 +57,7 @@
 * [Custom integrations](agent-side-integrations/custom-integrations.md)
 * [Agent SDK](agent-side-integrations/agent-sdk/README.md)
   * [API Reference](agent-side-integrations/agent-sdk/api-reference.md)
-  * [How do I...](agent-side-integrations/agent-sdk/faqs.md)
+  * [How do I...](agent-side-integrations/agent-sdk/how-do-i....md)
 * [Authentication (JWTs)](agent-side-integrations/json-web-tokens-jwts.md)
 * [IFrame embeds](agent-side-integrations/custom-iframe-embeds.md)
 

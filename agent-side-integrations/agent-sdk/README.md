@@ -33,8 +33,8 @@ The Agent SDK can be used to:
 
 We have put together a list of commonly ask questions and useful code snippets to get you started:
 
-{% content-ref url="faqs.md" %}
-[faqs.md](faqs.md)
+{% content-ref url="how-do-i....md" %}
+[how-do-i....md](how-do-i....md)
 {% endcontent-ref %}
 
 You can find the full developer documentation for the agent SDK API here:
