@@ -9,13 +9,11 @@ Admin users may also disable this consent prompt from your account settings if y
 ```javascript
 CobrowseIO.confirmSession = function() {
     return new Promise(function(resolve, reject) {
-        // replace the code below with your own confirmation prompt
-        // calling resolve or reject as a appropriate
-        // NOTE: do not use window.confirm in production!
-        if (window.confirm('Replace this window.confirm with your consent dialog!'))
-            resolve(true);
-        else reject();
-    });
+        // show your UI here
+        // call resovle(true) to accept the session
+        resolve(true)
+        // or reject() to reject the session
+    })
 }
 ```
 {% endtab %}
@@ -59,7 +57,7 @@ CobrowseIO.handleSessionRequest = function(session) {
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### Xamarin.iOS implementation
+#### Xamarin.iOS implementation
 
 ```csharp
 public override void CobrowseHandleSessionRequest(Session session) {
@@ -71,7 +69,7 @@ public override void CobrowseHandleSessionRequest(Session session) {
 }
 ```
 
-### Xamarin.Android implementation
+#### Xamarin.Android implementation
 
 ```csharp
 public void HandleSessionRequest(Activity activity, Session session) {
@@ -85,7 +83,7 @@ public void HandleSessionRequest(Activity activity, Session session) {
 }
 ```
 
-### Xamarin.Forms implementation
+#### Xamarin.Forms implementation
 
 You can also achieve this functionality from a cross-platform project. In this case you don't have to implement your own delegate, but instead you subscribe to the `SessionDidRequest` event:
 
