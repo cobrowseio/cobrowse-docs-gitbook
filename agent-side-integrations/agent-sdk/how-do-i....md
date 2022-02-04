@@ -6,7 +6,7 @@ Our agent SDK is a powerful toolkit to build the experience that you want for yo
 
 Using our [custom data](../../sdk-features/identify-your-devices.md) mechanism you can add metadata that lets you link Cobrowse device and session records with your users. You can use this same data to filter when listing resources via our agent SDK.&#x20;
 
-You can construct a filter query for a custom data entry by prepending "filter\_" to the key of your custom data. For example, `user_id` becomes `filter_user_id:`
+You can construct a filter query for a custom data entry by prepending "filter\_" to the key of your custom data. For example, `user_id` becomes `filter_user_id`:
 
 ```javascript
 const sessions = await cobrowse.sessions.list({
@@ -38,9 +38,9 @@ const sessions = await cobrowse.sessions.list({
 
 // subscribe to updates for these Sessions
 sessions.forEach((session) => {
-    session.subscribe();
-    session.on('updated', () => console.log('session was updated', session.id);
-});
+    session.subscribe()
+    session.on('updated', () => console.log('session was updated', session.id)
+})
 ```
 
 #### Subscribing to Device resources
@@ -53,9 +53,9 @@ const devices = await cobrowse.devices.list({
 
 // subscribe to updates for these Devices
 devices.forEach((device) => {
-    device.subscribe();
-    device.on('updated', () => console.log('device was updated', device.id);
-});
+    device.subscribe()
+    device.on('updated', () => console.log('device was updated', device.id)
+})
 ```
 
 ### Control an IFrame embedded in my support agents' portal
@@ -63,27 +63,27 @@ devices.forEach((device) => {
 When integrating Cobrowse to your own custom helpdesk or CRM, many customers need to control some aspects within the Cobrowse IFrames, such as switch the agent tool, or ending the session. We provide an easy mechanism for this (no JWT required!)
 
 ```javascript
-const cobrowse = new CobrowseAPI(); // JWT not required
+const cobrowse = new CobrowseAPI() // JWT not required
     
 // attach to iframe (make sure it has loaded!)
-const frameEl = document.getElementById('myIframe');
-const ctx = await cobrowse.attachContext(frameEl);
+const frameEl = document.getElementById('myIframe')
+const ctx = await cobrowse.attachContext(frameEl)
     
 // listen for updates to session
 ctx.on('session.updated', (session) => {
-    console.log('session was updated', session);
+    console.log('session was updated', session)
     if (session.ended) {
-        console.log('session has ended');
-        ctx.destroy();
+        console.log('session has ended')
+        ctx.destroy()
     }
-});
+})
     
 // interact with the iframe
-await ctx.setTool('laser');
-await ctx.clearAnnotations();
-await ctx.setFullDevice(true);
-await ctx.setRemoteControl('requested');
-await ctx.endSession();
+await ctx.setTool('laser')
+await ctx.clearAnnotations()
+await ctx.setFullDevice(true)
+await ctx.setRemoteControl('requested')
+await ctx.endSession()
 ```
 
 See the API reference for full details on what you can do [using an IFrame context](https://docs.cobrowse.io/agent-side-integrations/agent-sdk/api-reference#interface-remotecontext). You may also find the embed documentation useful:
