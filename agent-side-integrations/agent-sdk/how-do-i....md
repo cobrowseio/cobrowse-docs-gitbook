@@ -126,4 +126,4 @@ There's multiple ways to end a Cobrowse session, which one to use will depend on
 
 ### Leave without ending the session
 
-Sometimes it's useful to be able to leave the session without ending it, for example when a supervisor is monitoring a number of ongoing sessions needs to switch between them. You can simply close the tab or remove the IFrame without ending the session.
+Sometimes it's useful to be able to leave the session without ending it, for example when a supervisor is monitoring a number of ongoing sessions needs to switch between them. You can simply close the tab or remove the IFrame without ending the session to achieve this.
