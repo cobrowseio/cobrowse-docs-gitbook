@@ -2,7 +2,7 @@
 
 Our agent SDK is a powerful toolkit to build the experience that you want for your support agents. Here we have put together a number of examples of commonly required functionality.
 
-### List only relevant Devices or Session using filters
+### List only relevant sessions or devices using filters
 
 Using our [custom data](../../sdk-features/identify-your-devices.md) mechanism you can add metadata that lets you link Cobrowse device and session records with your users. You can use this same data to filter when listing resources via our agent SDK.&#x20;
 
