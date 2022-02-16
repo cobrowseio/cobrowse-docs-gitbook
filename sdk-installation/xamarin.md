@@ -31,7 +31,7 @@ public class AppDelegate : UIResponder, IUIApplicationDelegate
 }
 ```
 
-_Important: Do this in your `UIApplicationDelegate.FinishedLaunching` implementation to make sure your device shows up in your dashboard right away._
+__
 
 **Xamarin.iOS Swift support**
 
@@ -39,7 +39,7 @@ Cobrowse.io SDK uses Swift language, and if you are targeting iOS 12.1 or earlie
 
 * [![NuGet](https://img.shields.io/nuget/v/Xamarin.iOS.SwiftRuntimeSupport.svg?label=Xamarin.iOS.SwiftRuntimeSupport)](https://www.nuget.org/packages/Xamarin.iOS.SwiftRuntimeSupport/)
 
-This NuGet copies the necessary Swift libraries in the right place when building your app or when generating the archive of the app \(not the IPA\).
+This NuGet copies the necessary Swift libraries in the right place when building your app or when generating the archive of the app (not the IPA).
 
 This NuGet, however, does not copy the Swift libraries in the right place when generating the IPA using Visual Studio, causing the rejection of the App Store when uploading the IPA. Please follow [Xamarin documentation](https://github.com/xamarin/XamarinComponents/blob/master/iOS/SwiftRuntimeSupport/readme.txt) describing how to build and publish your Xamarin.iOS application using the Xcode IPA wizard. The steps are:
 
@@ -72,11 +72,10 @@ public class MainApplication : Application
 
 **Important:**
 
-* Make sure you do this in your custom Application subclass `OnCreate()` to ensure devices register in your dashboard right away.
-* Also make sure you are targeting Android 10 \(API 29\). In Visual Studio:
+* Also make sure you are targeting Android 10 (API 29). In Visual Studio:
   * Open the project settings
   * Navigate to _Build_ → _General_
-  * In _"Compile using Android version: \(Target Framework\)_" drop-down list choose **Android 10.0 \(Q\)**
+  * In _"Compile using Android version: (Target Framework)_" drop-down list choose **Android 10.0 (Q)**
 * The Cobrowse.io SDK uses AndroidX, so make sure you have [migrated to AndroidX](https://docs.microsoft.com/en-us/xamarin/android/platform/androidx#migration-tooling)
 
 You may also start CobrowseIO in your `MainActivity` or other Activity if necessary. In that case, the SDK will continue to function even as new Activities are being created and destroyed.
@@ -119,9 +118,8 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 ## Requirements
 
 * iOS 9.0 or later
-* Android API version 19 \(4.4 KitKat\) or later
+* Android API version 19 (4.4 KitKat) or later
 
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}
-
