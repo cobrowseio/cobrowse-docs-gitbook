@@ -10,7 +10,7 @@ The Cobrowse SDK for iOS is available for installation via several dependency ma
 
 {% tabs %}
 {% tab title="SPM" %}
-```text
+```
 https://github.com/cobrowseio/cobrowse-sdk-ios-binary.git
 ```
 {% endtab %}
@@ -34,7 +34,7 @@ github "cobrowseio/cobrowse-sdk-ios-binary" ~> 2.0
 
 _Don't forget to run `carthage update`  after you've edited your Cartfile._
 
-_More information about Carthage at_ [_https://github.com/Carthage/Carthage\#if-youre-building-for-ios-tvos-or-watchos_](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)_._
+_More information about Carthage at_ [_https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos_](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)_._
 {% endtab %}
 
 {% tab title="Manual" %}
@@ -46,7 +46,33 @@ https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases
 {% endtab %}
 {% endtabs %}
 
-Configure the SDK in your app:
+Add the following lines to your code which will register this device with the Cobrowse servers so you can connect to it. You could choose to do this on app startup, or when your users visits a support page in your application, or any other time.
+
+{% tabs %}
+{% tab title="Swift" %}
+```swift
+import CobrowseIO
+...
+
+CobrowseIO.instance().license = "put your license key here"
+CobrowseIO.instance().start()
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+@import CobrowseIO;
+...
+
+CobrowseIO.instance.license = @"put your license key here";
+[CobrowseIO.instance start];
+```
+{% endtab %}
+{% endtabs %}
+
+#### Registering on startup
+
+If you would like your devices to register as soon as your app starts, we recommend doing this in your app delegate `application:didFinishLaunchingWithOptions:` method. For example:
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -76,8 +102,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
-_Important: Do this in your `application:didFinishLaunchingWithOptions:` implementation to make sure your device shows up in your dashboard right away._
-
 ### Add your License Key
 
 Please register an account and generate your free License Key at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings).
@@ -94,11 +118,12 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 
 ## Advanced configuration
 
-{% page-ref page="../sdk-features/advanced-features/ios/alternate-render-method.md" %}
+{% content-ref url="../sdk-features/advanced-features/ios/alternate-render-method.md" %}
+[alternate-render-method.md](../sdk-features/advanced-features/ios/alternate-render-method.md)
+{% endcontent-ref %}
 
 
 
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}
-

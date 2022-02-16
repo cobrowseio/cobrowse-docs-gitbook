@@ -15,7 +15,7 @@ dependencies {
 ```
 {% endcode %}
 
-Add the following lines to your code which will register this device with the Cobrowse servers so you can connect to it. You could choose to do this on app startup, or when your users visits a support page in your application.
+Add the following lines to your code which will register this device with the Cobrowse servers so you can connect to it. You could choose to do this on app startup, or when your users visits a support page in your application, or any other time.
 
 ```java
 import io.cobrowse.CobrowseIO;
