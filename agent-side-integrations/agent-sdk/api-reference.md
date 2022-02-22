@@ -96,6 +96,18 @@ The license key for the Cobrowse account. This uniquely identifies your account 
 
 ***
 
+#### recordings <a href="#recordings" id="recordings"></a>
+
+• `get` **recordings**(): `SessionRecordingAPI`
+
+Namespace API for recordings. A recording in Cobrowse represents the video and event metadata for a recorded session.
+
+**Returns**
+
+`SessionRecordingAPI`
+
+***
+
 #### sessions <a href="#sessions" id="sessions"></a>
 
 • `get` **sessions**(): `SessionsAPI`
@@ -182,7 +194,7 @@ Represents a device in Cobrowse. A device in Cobrowse is how a single instance o
 const cobrowse = new CobrowseAPI(...)
 const device = await cobrowse.device.get('some device id here')
 device.subscribe()
-device.on('updated', d -> console.log('device was updated', d))
+device.on('updated', d => console.log('device was updated', d))
 ```
 
 #### Events
@@ -933,6 +945,108 @@ Unsubscribe from this session.
 **Returns**
 
 `void`
+
+## Interface: SessionRecording
+
+Represents a session recording in Cobrowse.
+
+### Hierarchy
+
+*   `EventEmitter`
+
+    ↳ **`SessionRecording`**
+
+### Properties
+
+#### id <a href="#id" id="id"></a>
+
+• **id**: `string`
+
+The unique ID for this recording
+
+***
+
+#### video <a href="#video" id="video"></a>
+
+• **video**: `Object`
+
+Provides access to the video for this recording
+
+**Type declaration**
+
+| Name    | Type                      |
+| ------- | ------------------------- |
+| `fetch` | () => `Promise`<`any`>    |
+| `url`   | () => `Promise`<`string`> |
+
+### Methods
+
+#### destroy <a href="#destroy" id="destroy"></a>
+
+▸ **destroy**(): `Promise`<`any`>
+
+Deletes this recording from the server
+
+**Returns**
+
+`Promise`<`any`>
+
+***
+
+#### events <a href="#events" id="events"></a>
+
+▸ **events**(): `Promise`<`any`\[]>
+
+Gets the list of events for this recording
+
+**Returns**
+
+`Promise`<`any`\[]>
+
+***
+
+#### toJSON <a href="#tojson" id="tojson"></a>
+
+▸ **toJSON**(): `SessionRecording`
+
+Converts this session instance to a plain object.
+
+**Returns**
+
+`SessionRecording`
+
+## Interface: SessionRecordingAPI
+
+### Methods
+
+#### destroy <a href="#destroy" id="destroy"></a>
+
+▸ **destroy**(): `Promise`<`SessionRecording`>
+
+Deletes a recording by its ID
+
+**Returns**
+
+`Promise`<`SessionRecording`>
+
+***
+
+#### get <a href="#get" id="get"></a>
+
+▸ **get**(`id`, `query?`): `Promise`<`SessionRecording`>
+
+Get a recording by (Session) ID
+
+**Parameters**
+
+| Name     | Type                         |
+| -------- | ---------------------------- |
+| `id`     | `string`                     |
+| `query?` | `Record`<`string`, `string`> |
+
+**Returns**
+
+`Promise`<`SessionRecording`>
 
 ## Interface: SessionsAPI
 
