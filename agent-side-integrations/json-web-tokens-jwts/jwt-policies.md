@@ -1,4 +1,4 @@
-# JWT Polices
+# JWT Policies
 
 Sometimes you may want to limit the scope of what a JWT can be used for. For example, you may want to limit which devices a support agent can connect to, or which sessions they are allowed to view. Our JWT policy system provides a powerful mechanism for you to configure these types of rules. &#x20;
 
@@ -8,7 +8,7 @@ The rules are defined as an extra `policy` claim in the [JWT](./), described usi
 {
   version: 2,
   sessions: { ... optional policy description ... },
-  devices: { ... optional policy description ... },
+  devices: { ... optional policy description ... }
 }
 ```
 
