@@ -8,7 +8,7 @@ The rules are defined as an extra `policy` claim in the [JWT](./), described usi
 {
   version: 2,
   sessions: { ... optional policy description ... },
-  devices: { ... options policy description ... },
+  devices: { ... optional policy description ... },
 }
 ```
 
