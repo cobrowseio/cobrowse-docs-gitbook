@@ -16,7 +16,7 @@ This Demo Page uses our [Agent UI component library](https://github.com/cobrowse
 
 If you are using the Agent SDK just to communicate to an embedded IFrame, a JWT is not required.&#x20;
 
-Device and Session listing via the Agent SDK requires a JSON Web Token (JWT) for authentication. Learn how to generate a JWT for your account at [Authentication (JWTs)](../json-web-tokens-jwts.md).&#x20;
+Device and Session listing via the Agent SDK requires a JSON Web Token (JWT) for authentication. Learn how to generate a JWT for your account at [Authentication (JWTs)](../json-web-tokens-jwts/).&#x20;
 
 ### Features
 

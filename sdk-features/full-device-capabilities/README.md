@@ -1,7 +1,3 @@
----
-description: For use with Android, iOS, React Native, and Xamarin SDKs only.
----
-
 # Full device capabilities
 
 If you wish, you can allow your support agents to upgrade in-app Cobrowse sessions to allow screen sharing from the entire device. For example, to capture other apps and settings on mobile, or the entire screen of a computer.

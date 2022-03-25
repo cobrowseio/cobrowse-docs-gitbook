@@ -58,7 +58,8 @@
 * [Agent SDK](agent-side-integrations/agent-sdk/README.md)
   * [API Reference](agent-side-integrations/agent-sdk/api-reference.md)
   * [How do I...](agent-side-integrations/agent-sdk/how-do-i....md)
-* [Authentication (JWTs)](agent-side-integrations/json-web-tokens-jwts.md)
+* [Authentication (JWTs)](agent-side-integrations/json-web-tokens-jwts/README.md)
+  * [JWT Polices](agent-side-integrations/json-web-tokens-jwts/jwt-polices.md)
 * [IFrame embeds](agent-side-integrations/custom-iframe-embeds.md)
 
 ## Enterprise self-hosting
