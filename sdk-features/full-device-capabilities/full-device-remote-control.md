@@ -9,7 +9,7 @@ On platforms that support full device remote control, there may be extra steps r
 {% tabs %}
 {% tab title="Android" %}
 {% hint style="warning" %}
-Due to recent Google Play Store policy changes these instructions have been updated. You must be using SDK version **v2.16.0** or above.
+Due to recent Google Play Store policy changes these instructions have been updated. You must be using SDK version **v2.16.0** or above. See the [Google Play Store requirements](https://support.google.com/googleplay/android-developer/answer/10964491?hl=en) for details on listing your app when using this API.&#x20;
 {% endhint %}
 
 Full device remote control for Android, including unattended access, uses an Accessibility Service that must be enabled on the device to grant access.
