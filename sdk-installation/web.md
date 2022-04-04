@@ -75,7 +75,29 @@ The specific browser versions supported are Chrome 16+, Firefox 11+, Safari 7+, 
 [ie-11-polyfills.md](../sdk-features/advanced-features/web/ie-11-polyfills.md)
 {% endcontent-ref %}
 
+## Non-public resources (e.g. CSS)
 
+In pre-production environments (such as UAT), certain resources (e.g. CSS) may not be exposed to the public internet and so these elements of your webpage will not appear in sessions. Make sure these resources are accessible to our server by whitelisting requests from \*.cobrowse.io.
+
+In production environments, these assets are always available and so there is no problem! We also support local testing advise exposing your webpage using ngrok (or similar) for end-to-end testing.
+
+## Content Security Policies **(CSPs)**
+
+If you have CSPs on your website then they may block the functionality of Cobrowse.io. When a CSP is blocking Cobrowse.io, then there will be an error in the javascript console stating:
+
+_Refused to connect to https://cobrowse.io/... because it violates the document's Content Security Policy._
+
+To solve this, you will need to enable the following in your CSP:
+
+connect src of: **connect-src** [**cobrowse.io**](http://cobrowse.io) **\*.**[**cobrowse.io**](http://cobrowse.io) **wss://\*.**[**cobrowse.io**](http://cobrowse.io)**;**
+
+script-src of: **script-src 'unsafe-inline'** [**js.cobrowse.io**](http://js.cobrowse.io)**;**
+
+You should be able to replace the unsafe-inline with the hash of your snippet if you wish. This will be available in the javascript console.
+
+## Incognito/private browser windows
+
+If the same user has an incognito window (or multiple) running at the same time as their usual browser window, then the incognito windows will be separate devices in the device listing.
 
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
