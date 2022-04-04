@@ -26,6 +26,7 @@ The JWT you create and sign should contain the following claims:
 | <p><strong>iss</strong><br><strong></strong>required</p>         | Issuer - Should be the license key for your Cobrowse account which can be found at [account settings](https://cobrowse.io/dashboard/settings).                                                                 |
 | <p><strong>sub</strong><br><strong></strong>required</p>         | Subject - The email of the support agent that you'd like to auto-authenticate. User will be automatically created if it does not yet exist.                                                                    |
 | <p><strong>displayName</strong><br><strong></strong>optional</p> | Agent Display Name - The name of the support agent (may be displayed to the end user).                                                                                                                         |
+| <p><strong>role</strong><br>optional</p>                         | User role - 'administrator' or 'agent'. Used for admin-level API calls, e.g. [listing active sessions](https://docs.cobrowse.io/agent-side-integrations/agent-sdk/faqs#check-the-number-of-active-sessions).   |
 | <p><strong>policy</strong><br><strong></strong>optional</p>      | Policy - Optionally limit the scope of the JWT (e.g. limiting which devices can be listed and connected to). See the [docs on policies](jwt-policies.md) for more details.                                     |
 
 {% hint style="warning" %}
