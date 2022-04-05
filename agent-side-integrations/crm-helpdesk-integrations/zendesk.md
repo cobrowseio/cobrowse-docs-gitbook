@@ -20,6 +20,10 @@ Zendesk Support App - [https://www.zendesk.com/apps/support/cobrowseio/](https:/
 
 Zendesk Chat App - [https://www.zendesk.com/apps/chat/cobrowseio/](https://www.zendesk.com/apps/chat/cobrowseio/)
 
+### Controlling user access
+
+Follow the Zendesk docs to restrict access to the Cobrowse.io Apps to certain roles or groups [https://support.zendesk.com/hc/en-us/articles/4409155972378-Managing-your-installed-apps#topic\_xyf\_wmw\_qfb](https://support.zendesk.com/hc/en-us/articles/4409155972378-Managing-your-installed-apps#topic\_xyf\_wmw\_qfb).
+
 ## Troubleshooting
 
 If you signed up via Zendesk and also via our website dashboard, you will have two accounts. See this link for a description of this problem and the solution [https://support.cobrowse.io/help-i-have-issues-with-my-zendesk-account](https://support.cobrowse.io/help-i-have-issues-with-my-zendesk-account).
