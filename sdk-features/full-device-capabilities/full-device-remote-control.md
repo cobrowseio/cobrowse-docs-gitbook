@@ -43,6 +43,16 @@ When added, your manifest should look something similar to this:
 ```
 
 Enable the accessibility service the Cobrowse SDK will have added in the main device settings, eg. Settings -> Accessibility -> Your App Name. Note: this only has to be done the very first time.
+
+#### Uploading to the Google Play Store?
+
+Add the following resource via an XML file to enable a consent request to your users each time full device remote control is requested:
+
+```
+<bool
+    name="cobrowse_automatically_accept_media_projection_prompt">false
+</bool>
+```
 {% endtab %}
 
 {% tab title="React Native" %}
