@@ -29,7 +29,7 @@ If your custom confirmation prompt is not working in some browsers, please ensur
 {% tab title="iOS" %}
 To override the the full device consent prompt, you should implement the `cobrowseHandleFullDeviceRequest:` method of `CobrowseIODelegate`.
 
-When you override this method you are responsible for presenting a `RPSystemBroadcastPickerView` to the user. This view is required by the iOS system in order to launch the broadcast extension.
+When you override this method you are responsible for presenting a `RPSystemBroadcastPickerView` to the user. See the [Apple docs ](https://developer.apple.com/documentation/replaykit/rpsystembroadcastpickerview?language=objc)for further information on customizing this required view. This view is required by the iOS system in order to launch the broadcast extension.
 
 ```objectivec
 -(void) cobrowseHandleFullDeviceRequest:(CBIOSession*) session {
