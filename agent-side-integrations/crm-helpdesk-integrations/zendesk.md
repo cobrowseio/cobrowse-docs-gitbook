@@ -14,6 +14,10 @@ Overview with screenshots - [https://cobrowse.io/zendesk](https://cobrowse.io/ze
 
 Demo video - [https://www.youtube.com/watch?v=uR1EEQA0\_ck](https://www.youtube.com/watch?v=uR1EEQA0\_ck)
 
+### Zendesk Requirements
+
+You must have an active trial/subscription with Zendesk Support (even to use our App with Zendesk Chat). This is a requirement from Zendesk to use their secure authentication that is not available for Apps on Chat-only accounts.
+
 ### Zendesk App Marketplace links
 
 Zendesk Support App - [https://www.zendesk.com/apps/support/cobrowseio/](https://www.zendesk.com/apps/support/cobrowseio/)
