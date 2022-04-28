@@ -585,14 +585,14 @@ Set the current state of the session full-device mode. A full device session ena
 ```javascript
 const cobrowse = new CobrowseAPI()
 const ctx = cobrowse.attachContext(document.querySelector('#my-iframe-id'))
-ctx.setFullDevice(true)
+ctx.setFullDevice('requested')
 ```
 
 **Parameters**
 
-| Name    | Type      |
-| ------- | --------- |
-| `state` | `boolean` |
+| Name    | Type                     |
+| ------- | ------------------------ |
+| `state` | `"off"` \| `"requested"` |
 
 **Returns**
 
@@ -616,7 +616,7 @@ ctx.setRemoteControl('requested')
 
 | Name    | Type                                               |
 | ------- | -------------------------------------------------- |
-| `state` | `"on"` \| `"off"` \| `"requested"` \| `"rejected"` |
+| `state` | `"off"` \| `"requested"` \| `"on"` \| `"rejected"` |
 
 **Returns**
 
@@ -730,13 +730,13 @@ The timestamp the session was ended
 
 #### full\_device <a href="#full_device" id="full_device"></a>
 
-• **full\_device**: `boolean`
+• **full\_device**: `"off"` | `"requested"` | `"on"` | `"rejected"`
 
-Is the session in full device capturing mode or not
+The state of the full device mode
 
 ***
 
-#### id <a href="#id" id="id"></a>
+#### id <a href="#id-1" id="id-1"></a>
 
 • **id**: `string`
 
@@ -754,7 +754,7 @@ Was the session recorded
 
 #### remote\_control <a href="#remote_control" id="remote_control"></a>
 
-• **remote\_control**: `"on"` | `"off"` | `"requested"` | `"rejected"`
+• **remote\_control**: `"off"` | `"requested"` | `"on"` | `"rejected"`
 
 The state of the remote control authorization for the session
 
@@ -878,19 +878,19 @@ EventEmitter.on
 
 #### setFullDevice <a href="#setfulldevice" id="setfulldevice"></a>
 
-▸ **setFullDevice**(`state`): `Promise`<`void`>
+▸ **setFullDevice**(`state`): `Promise`<`boolean`>
 
 Set the current state of the session full-device mode. A full device session enables the agent to capture all screens of the user's device, not just those inside your app or website. Initiates request or ends full-device mode. The user must approve when switching to full device mode.
 
 **Parameters**
 
-| Name    | Type      |
-| ------- | --------- |
-| `state` | `boolean` |
+| Name    | Type                     |
+| ------- | ------------------------ |
+| `state` | `"off"` \| `"requested"` |
 
 **Returns**
 
-`Promise`<`void`>
+`Promise`<`boolean`>
 
 ***
 
@@ -904,7 +904,7 @@ Set the current state of remote control, allowing the agent to request remote co
 
 | Name    | Type                                               |
 | ------- | -------------------------------------------------- |
-| `state` | `"on"` \| `"off"` \| `"requested"` \| `"rejected"` |
+| `state` | `"off"` \| `"requested"` \| `"on"` \| `"rejected"` |
 
 **Returns**
 
