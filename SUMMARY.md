@@ -38,6 +38,7 @@
     * [Cross-domain session support](sdk-features/advanced-features/web/cross-domain-session-support.md)
   * [iOS](sdk-features/advanced-features/ios/README.md)
     * [Alternate render method](sdk-features/advanced-features/ios/alternate-render-method.md)
+    * [Custom touch handling](sdk-features/advanced-features/ios/custom-touch-handling.md)
   * [Android](sdk-features/advanced-features/android/README.md)
     * [Backporting TLS 1.2 to Android 4.4 (API 19)](sdk-features/advanced-features/android/android-tls-1.2.md)
 
