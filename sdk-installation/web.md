@@ -55,7 +55,7 @@ This will associate sessions from your website with your Cobrowse.io account.
 
 Once you have your Javascript snippet and license key set up, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-**Note: Cobrowse needs to be able to access your website, so localhost addresses are not recommenced for testing. To test on a local development version, we recommend using** [**ngrok**](https://ngrok.com)**.**
+**Note: Cobrowse needs to be able to access your website, so localhost addresses are not recommenced for testing. To test on a local development version, we recommend using** [**ngrok**](https://ngrok.com/)**.**
 
 ## Minimum browser requirements
 
@@ -81,6 +81,10 @@ In pre-production environments (such as UAT), certain resources (e.g. CSS) may n
 
 In production environments, these assets are always available and so there is no problem! We also support local testing advise exposing your webpage using ngrok (or similar) for end-to-end testing.
 
+## **Firewalls**
+
+If your agents work behind a firewall (e.g. a corporate firewall), then the **agent-side** API routes will need to be whitelisted as specified here: [https://docs.cobrowse.io/enterprise-self-hosting/advanced/firewalls#agent-side-required-apis](https://docs.cobrowse.io/enterprise-self-hosting/advanced/firewalls#agent-side-required-apis).
+
 ## Content Security Policies **(CSPs)**
 
 If you have CSPs on your website then they may block the functionality of Cobrowse.io. When a CSP is blocking Cobrowse.io, then there will be an error in the javascript console stating:
@@ -89,9 +93,9 @@ _Refused to connect to https://cobrowse.io/... because it violates the document'
 
 To solve this, you will need to enable the following in your CSP:
 
-connect src of: **connect-src** [**cobrowse.io**](http://cobrowse.io) **\*.**[**cobrowse.io**](http://cobrowse.io) **wss://\*.**[**cobrowse.io**](http://cobrowse.io)**;**
+connect src of: **connect-src** [**cobrowse.io**](http://cobrowse.io/) **\*.**[**cobrowse.io**](http://cobrowse.io/) **wss://\*.**[**cobrowse.io**](http://cobrowse.io/)**;**
 
-script-src of: **script-src 'unsafe-inline'** [**js.cobrowse.io**](http://js.cobrowse.io)**;**
+script-src of: **script-src 'unsafe-inline'** [**js.cobrowse.io**](http://js.cobrowse.io/)**;**
 
 You should be able to replace the unsafe-inline with the hash of your snippet if you wish. This will be available in the javascript console.
 
