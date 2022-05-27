@@ -89,7 +89,7 @@ If your agents work behind a firewall (e.g. a corporate firewall), then the **ag
 
 If you have CSPs on your website then they may block the functionality of Cobrowse.io. When a CSP is blocking Cobrowse.io, then there will be an error in the javascript console stating:
 
-_Refused to connect to https://cobrowse.io/... because it violates the document's Content Security Policy._
+`Refused to connect to https://cobrowse.io/... because it violates the document's Content Security Policy.`
 
 To solve this, you will need to enable the following in your CSP:
 

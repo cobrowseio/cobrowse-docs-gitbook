@@ -43,7 +43,7 @@ Once you have your app running on a Windows computer, navigate to [https://cobro
 
 ### HiDPI Support
 
-For Windows 10 HiDPI mode \(when display scale is not 100%\) client application should be "DPI aware". To enable this please add `app.manifest` \("New item" -&gt; "Application Manifest File" in Visual Studio\) and add/uncomment the following XML tag:
+For Windows 10 HiDPI mode (when display scale is not 100%) client application should be "DPI aware". To enable this please add `app.manifest` ("New item" -> "Application Manifest File" in Visual Studio) and add/uncomment the following XML tag:
 
 ```markup
 <application xmlns="urn:schemas-microsoft-com:asm.v3">
@@ -58,3 +58,6 @@ For Windows 10 HiDPI mode \(when display scale is not 100%\) client application 
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}
 
+## **Firewalls**
+
+If your agents work behind a firewall (e.g. a corporate firewall), then the **agent-side** API routes will need to be whitelisted as specified here: [https://docs.cobrowse.io/enterprise-self-hosting/advanced/firewalls#agent-side-required-apis](https://docs.cobrowse.io/enterprise-self-hosting/advanced/firewalls#agent-side-required-apis).
