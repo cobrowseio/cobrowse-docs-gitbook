@@ -17,6 +17,10 @@ The Cobrowse.io SDK for Web includes an optional "full device" toggle in the bot
 This is great if the end-user navigates to browser tabs outside of your website, where the Web SDK's JavaScript snippet is not installed, or if the end-user needs to share a PDF, or their entire desktop.&#x20;
 
 No extra integration work is required to use full device mode via our Web SDK.
+
+{% hint style="warning" %}
+Due to browser limitations, this feature is not available on IE11, or in the mobile browsers such as Mobile Chrome and Mobile Safari. Please see our native [Android](../../sdk-installation/android.md) and [iOS](../../sdk-installation/ios.md) SDKs for [full device capabilities](./) on mobile.&#x20;
+{% endhint %}
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -123,7 +127,7 @@ For unattended full device access, we strongly recommend:
 
 * Please initiate sessions with push notifications, rather than our default sockets. This will enable unattended access, even when your app has been backgrounded a long time, or force closed. More info at [Initiate sessions with push](../initiate-sessions-with-push.md).
 * Please turn off "Require User Consent" prompts at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings). Otherwise, a user must always accept the consent prompt on the device before a session can start.
-* Be wary of battery optimization policies. On some devices you may need to add your app to a battery optimization whitelist to prevent it from killing the push notifications. More info here: [https://dontkillmyapp.com/](https://dontkillmyapp.com)
+* Be wary of battery optimization policies. On some devices you may need to add your app to a battery optimization whitelist to prevent it from killing the push notifications. More info here: [https://dontkillmyapp.com/](https://dontkillmyapp.com/)
 * This requires enabling the Accessibility Service when integrating the Android SDK. Please see the [full device remote control docs](full-device-remote-control.md).
 
 ### Troubleshooting
@@ -142,7 +146,7 @@ Please follow the iOS and Android documentation to implement full device capabil
 
 ### Troubleshooting
 
-* For React Native on iOS, some clients have reported that Xcode does not automatically create the _{{extensionname}}.entitlements_ file in the extension directory, which is necessary for the "io.cobrowse" keychain sharing to work.&#x20;
+* For React Native on iOS, some clients have reported that Xcode does not automatically create the _\{{extensionname\}}.entitlements_ file in the extension directory, which is necessary for the "io.cobrowse" keychain sharing to work.&#x20;
 {% endtab %}
 
 {% tab title="Xamarin.iOS" %}
