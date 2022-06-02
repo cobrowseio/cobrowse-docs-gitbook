@@ -82,6 +82,10 @@ Due to OkHttp dropping support for Android 4.4 after its v3.12.x releases on Dec
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}
 
+## Flutter Support
+
+There is a community-built Flutter plugin: [https://github.com/robodigital/cobrowseio\_flutter](https://github.com/robodigital/cobrowseio\_flutter).
+
 ## **Firewalls**
 
 If your agents work behind a firewall (e.g. a corporate firewall), then the **agent-side** API routes will need to be whitelisted as specified here: [https://docs.cobrowse.io/enterprise-self-hosting/advanced/firewalls#agent-side-required-apis](https://docs.cobrowse.io/enterprise-self-hosting/advanced/firewalls#agent-side-required-apis).
