@@ -65,22 +65,14 @@ Our Web SDK has an optional "full-device" mode which enables the user to share t
 
 The specific browser versions supported are Chrome 16+, Firefox 11+, Safari 7+, Opera 12.1+, Edge 12+, and IE11.&#x20;
 
-## **IFrames support**
+## **Advanced configuration**
 
 {% content-ref url="../sdk-features/advanced-features/web/cross-document-iframes.md" %}
 [cross-document-iframes.md](../sdk-features/advanced-features/web/cross-document-iframes.md)
 {% endcontent-ref %}
 
-## IE 11 support
-
 {% content-ref url="../sdk-features/advanced-features/web/ie-11-polyfills.md" %}
 [ie-11-polyfills.md](../sdk-features/advanced-features/web/ie-11-polyfills.md)
-{% endcontent-ref %}
-
-## Cross-domain support
-
-{% content-ref url="../sdk-features/advanced-features/web/cross-domain-session-support.md" %}
-[cross-domain-session-support.md](../sdk-features/advanced-features/web/cross-domain-session-support.md)
 {% endcontent-ref %}
 
 ## Non-public resources (e.g. CSS)
