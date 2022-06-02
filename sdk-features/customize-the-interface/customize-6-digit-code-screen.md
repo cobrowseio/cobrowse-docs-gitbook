@@ -69,3 +69,5 @@ button.addEventListener('click', showSessionCode);
 ```
 {% endtab %}
 {% endtabs %}
+
+See this in action: [https://github.com/cobrowseio/cobrowse-sdk-js-examples#standalone-support-code-example](https://github.com/cobrowseio/cobrowse-sdk-js-examples#standalone-support-code-example).
