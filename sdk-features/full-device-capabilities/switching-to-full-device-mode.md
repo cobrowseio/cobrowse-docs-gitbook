@@ -40,6 +40,8 @@ await session.setFullDevice(true)
 {% endtab %}
 {% endtabs %}
 
+See this in action: [https://github.com/cobrowseio/cobrowse-sdk-js-examples#full-device-mode-by-default](https://github.com/cobrowseio/cobrowse-sdk-js-examples#full-device-mode-by-default).
+
 These APIs can be used in combination with our various [delegate APIs](../listening-for-events.md) to switch the session in and out of full device mode as your use case requires.
 
 For example, to request full device is used by default, you can set the full device state when the session is first loaded by the SDK:
