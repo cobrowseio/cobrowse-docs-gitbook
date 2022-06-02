@@ -116,7 +116,9 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 
 * iOS 9.0 or later
 
-## Advanced configuration
+## Problems rendering certain views?
+
+&#x20;Try our alternative rendering method below:
 
 {% content-ref url="../sdk-features/advanced-features/ios/alternate-render-method.md" %}
 [alternate-render-method.md](../sdk-features/advanced-features/ios/alternate-render-method.md)
