@@ -116,12 +116,22 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 
 * iOS 9.0 or later
 
+## Flutter Support
+
+There is a community-built Flutter plugin: [https://github.com/robodigital/cobrowseio\_flutter](https://github.com/robodigital/cobrowseio\_flutter).
+
 ## Problems rendering certain views?
 
 &#x20;Try our alternative rendering method below:
 
 {% content-ref url="../sdk-features/advanced-features/ios/alternate-render-method.md" %}
 [alternate-render-method.md](../sdk-features/advanced-features/ios/alternate-render-method.md)
+{% endcontent-ref %}
+
+## Adding custom touch handlers
+
+{% content-ref url="../sdk-features/advanced-features/ios/custom-touch-handling.md" %}
+[custom-touch-handling.md](../sdk-features/advanced-features/ios/custom-touch-handling.md)
 {% endcontent-ref %}
 
 ## **Firewalls**
