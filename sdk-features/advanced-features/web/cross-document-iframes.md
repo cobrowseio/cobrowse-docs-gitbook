@@ -17,13 +17,15 @@ CobrowseIO.start();
 
 It is **not** necessary for the embedded page to contain the Cobrowse license key, if provided it will be ignored.
 
+### Code example
+
+See our JS examples repo for the parent and child SDK configuration: [https://github.com/cobrowseio/cobrowse-sdk-js-examples#cross-document-iframes](https://github.com/cobrowseio/cobrowse-sdk-js-examples#cross-document-iframes).
+
 ## Running only in an IFrame
 
-A few customers want to run Cobrowse.io only within an IFrame, and not any containing or parent page. This is supported, but requires passing an extra configuration option when starting Cobrowse. 
+A few customers want to run Cobrowse.io only within an IFrame, and not any containing or parent page. This is supported, but requires passing an extra configuration option when starting Cobrowse.&#x20;
 
 ```javascript
 CobrowseIO.start({allowIFrameStart:true});
 ```
-
-
 

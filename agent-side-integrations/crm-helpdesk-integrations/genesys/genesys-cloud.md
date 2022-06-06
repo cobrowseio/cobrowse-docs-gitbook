@@ -5,7 +5,7 @@ The Cobrowse.io integration for Genesys Cloud may be installed directly from the
 * Cobrowse.io Standalone App
 * Cobrowse.io Interaction Widget
 
-For each Premium App, please activate it, and under Configuration you can select which Groups and Queues will have access to it. 
+For each Premium App, please activate it, and under Configuration you can select which Groups and Queues will have access to it.&#x20;
 
 For the Cobrowse.io Interaction Widget, you will also need to specify the Communication Type Filtering, eg. `chat,call,callback,email,sms,line,facebook,twitter,whatsapp`
 
@@ -13,5 +13,10 @@ For the Cobrowse.io Interaction Widget, you will also need to specify the Commun
 
 App Foundry link - [https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566](https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566)
 
-Demo video - [https://www.youtube.com/watch?v=vd8A4\_JrpLs](https://www.youtube.com/watch?v=vd8A4_JrpLs)
+Demo video - [https://www.youtube.com/watch?v=vd8A4\_JrpLs](https://www.youtube.com/watch?v=vd8A4\_JrpLs)
 
+### Self-hosted instances
+
+If you are [self-hosting](../../../enterprise-self-hosting/self-hosting-overview.md) the Cobrowse.io instance, you will need to replace "cobrowse.io" in both Application URLs with your self-hosted domain, e.g. https://\<your self-hosted domain>/apps/genesys/index.html?langTag=\{{pcLangTag\}}\&environment=\{{pcEnvironment\}}\&env=cloud
+
+![](<../../../.gitbook/assets/Screenshot 2022-06-06 at 11.07.18.png>)
