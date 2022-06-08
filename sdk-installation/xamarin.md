@@ -7,7 +7,7 @@ description: Xamarin SDK
 ## Installation
 
 {% hint style="info" %}
-Looking for net6.0-android and net6.0-ios support? Please [email us](mailto:hello@cobrowse.io)
+Looking for `net6.0-android` and `net6.0-ios` support? Please [email us](mailto:hello@cobrowse.io)
 {% endhint %}
 
 We recommend installing the Cobrowse.io SDK using NuGet. Add the following package to your Xamarin projects:

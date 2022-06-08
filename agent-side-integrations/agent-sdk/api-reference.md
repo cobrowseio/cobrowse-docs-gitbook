@@ -4,7 +4,7 @@ description: Agent SDK API reference
 
 # API Reference
 
-## Class: CobrowseAPI
+## Class: default
 
 The Cobrowse Agent SDK provides a way to interact with the Cobrowse APIs for a variety of use cases. Primarily this library is designed for building a fully white-labeled version of Cobrowse, including custom user interfaces and styling to match your own platform.
 
@@ -14,13 +14,13 @@ The library can be used either from the browser (most common), or a NodeJS envir
 
 *   `EventEmitter`
 
-    ↳ **`CobrowseAPI`**
+    ↳ **`default`**
 
 ### Constructors
 
 #### constructor <a href="#constructor" id="constructor"></a>
 
-• **new CobrowseAPI**(`token?`, `options?`)
+• **new default**(`token?`, `options?`)
 
 Create a new Agent SDK instance. An instance encapsulates information about your API location (if using the self-hosted Cobrowse Enterprise option), and optionally, the authorization token for the agent using the SDK.
 
@@ -284,7 +284,7 @@ EventEmitter.on
 
 ▸ **subscribe**(): `Promise`<`void`>
 
-Subscribe to changes in this device.
+Subscribe to changes in this device. Note: this is a browser only method and will not work from a NodeJS environment
 
 **Returns**
 
@@ -308,7 +308,7 @@ Converts this device instance to a plain object.
 
 ▸ **unsubscribe**(): `void`
 
-Unsubscribe from this device.
+Unsubscribe from this device. Note: this is a browser only method and will not work from a NodeJS environment
 
 **Returns**
 
@@ -447,7 +447,7 @@ const devices = await cobrowse.devices.list({ filter_user_id: 'abcdef' } })
 
 ## Interface: RemoteContext
 
-Control Cobrowse hosted in an iframe from a parent context.
+Control Cobrowse hosted in an iframe from a parent context. Note: these are browser only methods and will not work from a NodeJS environment
 
 #### Events
 
@@ -736,7 +736,7 @@ The state of the full device mode
 
 ***
 
-#### id <a href="#id-1" id="id-1"></a>
+#### id <a href="#id" id="id"></a>
 
 • **id**: `string`
 
@@ -916,7 +916,7 @@ Set the current state of remote control, allowing the agent to request remote co
 
 ▸ **subscribe**(): `Promise`<`void`>
 
-Subscribe to changes in this session.
+Subscribe to changes in this session. Note: this is a browser only method and will not work from a NodeJS environment
 
 **Returns**
 
@@ -940,7 +940,7 @@ Converts this session instance to a plain object.
 
 ▸ **unsubscribe**(): `void`
 
-Unsubscribe from this session.
+Unsubscribe from this session. Note: this is a browser only method and will not work from a NodeJS environment
 
 **Returns**
 
