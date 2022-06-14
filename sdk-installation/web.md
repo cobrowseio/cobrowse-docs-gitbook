@@ -85,9 +85,9 @@ The specific browser versions supported are Chrome 16+, Firefox 11+, Safari 7+, 
 
 ## Non-public resources (e.g. CSS)
 
-In pre-production environments (such as UAT), certain resources (e.g. CSS) may not be exposed to the public internet and so these elements of your webpage will not appear in sessions. Make sure these resources are accessible to our server by whitelisting requests from \*.cobrowse.io.
+Certain resources (e.g. CSS) may not be exposed to the public internet (e.g. pre-production environments such as UAT) and so these elements of your webpage will not appear in sessions.&#x20;
 
-In production environments, these assets are always available and so there is no problem! We also support local testing advise exposing your webpage using ngrok (or similar) for end-to-end testing.
+Make sure these resources are accessible to our server by whitelisting requests from \*.cobrowse.io!
 
 ## **Firewalls**
 
