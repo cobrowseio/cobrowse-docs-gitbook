@@ -8,6 +8,8 @@ description: v2.x
 
 The new version of our Salesforce integration is now available. System admins can follow the steps below in order to give your organization access to Cobrowse.io within Salesforce.
 
+AppExchange Marketplace listing: [https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FvKspUAF](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FvKspUAF).
+
 **Migrating from version 1? Follow the instructions here first:** [**Migrating from legacy to v2**](migrating-from-legacy-to-v2.md)**.**
 
 ## Install the app
