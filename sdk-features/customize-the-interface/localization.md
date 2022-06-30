@@ -6,9 +6,9 @@ You may use the documentation under [Customize the interface](./) to completely 
 {% tab title="iOS" %}
 Create a new strings file named `CobrowseIO.strings` in your app project and select all localization you want to support in the File Inspector. Refer to [the Apple documentation](https://developer.apple.com/documentation/xcode/localization) to see more details about this approach.
 
-The content of `CobrowseIO.strings` should be the following \(replace string values with your own text\):
+The content of `CobrowseIO.strings` should be the following (replace string values with your own text):
 
-```text
+```
 "CodeDisplayViewMessageInstruction" = "Provide this code to your support agent to begin screen sharing.";
 "ErrorDisplayViewMessage" = "Sorry, something went wrong. Check you're online and try again.";
 "ManageSessionViewMessage" = "You're sharing screens from this app with a support agent.";
@@ -33,6 +33,22 @@ The content of `CobrowseIO.strings` should be the following \(replace string val
 "SessionIndicatorButtonEnd" = "End";
 "SessionIndicatorButtonCancel" = "Cancel";
 ```
+
+### Full Device Screen Share
+
+In order to localize messages in the **broadcast upload extension** used for full device screen sharing, create another file named `CobrowseIO.strings` **in the extension project** and select all localization you want to support in the File Inspector.
+
+The content of CobrowseIO.strings should be the following (replace string values with your own text):
+
+```
+"ReplayKitExtensionNoSession" = "No session available";
+"ReplayKitExtensionSessionNotFound" = "Cobrowsing session wasn't found";
+"ReplayKitExtensionSessionNotActivated" = "Cobrowsing session wasn't activated yet";
+"ReplayKitExtensionSessionEnded" = "Session ended";
+"ReplayKitExtensionSessionNoLongerFullDevice" = "Cobrowsing full-device session has ended";
+"ReplayKitExtensionLicenseKeyMissing" = "License key missing";
+"ReplayKitExtensionApiMissing" = "API missing";
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -43,7 +59,7 @@ Create a new `strings-cobrowse.xml` resource file in your app project:
 
 Refer to [the Android documentation](https://developer.android.com/guide/topics/resources/localization) to see more details about this approach.
 
-The content of `strings-cobrowse.xml` should be the following \(replace XML values with your own text\):
+The content of `strings-cobrowse.xml` should be the following (replace XML values with your own text):
 
 ```markup
 <resources>
@@ -71,4 +87,3 @@ The content of `strings-cobrowse.xml` should be the following \(replace XML valu
 ```
 {% endtab %}
 {% endtabs %}
-
