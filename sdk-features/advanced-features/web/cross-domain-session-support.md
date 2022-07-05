@@ -25,6 +25,8 @@ CobrowseIO.start(); // before the start call
 
 This provides Cobrowse for Web with a list of _trusted origins_ to allow your session to continue on. All trusted origins must be listed.&#x20;
 
+Example code: [https://github.com/cobrowseio/cobrowse-sdk-js-examples#cross-domain-sessions](https://github.com/cobrowseio/cobrowse-sdk-js-examples#cross-domain-sessions).
+
 ### Supported browsers
 
 * Google Chrome
