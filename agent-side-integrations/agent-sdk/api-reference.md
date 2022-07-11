@@ -455,7 +455,7 @@ Control Cobrowse hosted in an iframe from a parent context. Note: these are brow
 
 **`fires`** screen.updated - This event is triggered when some metadata about the screen changes, for example the size or orientation. Note, this event is only available via the RemoteContext.
 
-**`fires`** error - This event is triggered when an error happens int he iframe (e.g. a license limit is hit)
+**`fires`** error - This event is triggered when an error happens in the iframe (e.g. a license limit is hit)
 
 ### Hierarchy
 
