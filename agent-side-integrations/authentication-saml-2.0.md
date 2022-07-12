@@ -38,7 +38,7 @@ All users who login via SAML will by default have the Support Agent role. If you
 
 If you are running Cobrowse in your own IFrame integration, then you may optionally choose to perform the SSO within the IFrame by loading it from:
 
-https://\<your hosted domain>/api/1/saml/auth?provider=\<provider ID>\&redirectTo=\<your URI encoded Cobrowse route>
+`https://<your hosted domain>/api/1/saml/auth?provider=<provider ID>&redirectTo=<your URI encoded Cobrowse route>`
 
 The parameter \<your URI encoded Cobrowse route> depends on your [choice of IFrame embed](custom-iframe-embeds.md) and must be correctly URI encoded.
 
