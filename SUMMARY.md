@@ -61,6 +61,7 @@
   * [How do I...](agent-side-integrations/agent-sdk/how-do-i....md)
 * [Authentication (JWTs)](agent-side-integrations/json-web-tokens-jwts/README.md)
   * [JWT Policies](agent-side-integrations/json-web-tokens-jwts/jwt-policies.md)
+* [Authentication (SAML 2.0)](agent-side-integrations/authentication-saml-2.0.md)
 * [IFrame embeds](agent-side-integrations/custom-iframe-embeds.md)
 
 ## Enterprise self-hosting
