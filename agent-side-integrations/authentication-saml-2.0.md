@@ -25,11 +25,23 @@ If your SAML identity provider requires registering Cobrowse.io as an approved a
 * service provider id: `cobrowseio-saml`
 * ACS / Callback / Recipient / Destination / SSO URL: `https://cobrowse.io/api/1/saml/auth/callback`
 
-### Configuring user roles
+### Configuring Admin users
 
 All users who login via SAML will by default have the Support Agent role. If you'd like to manage your Admin users through SAML, you must:
 
 * create a group/role named "Cobrowse.io Administrator" within your identity provider
 * pass this value through as an attribute in your SAML profile as a value or an array, e.g.:
-  * _"groups" : "Cobrowse.io Administrator"_
-  * _"groups" : \["Cobrowse.io Administrator", "abc", "def", ...]_
+  * `"groups" : "Cobrowse.io Administrator"`
+  * `"groups" : ["Cobrowse.io Administrator", "abc", "def", ...]`
+
+## IFrame integrations
+
+If you are running Cobrowse in your own IFrame integration, then you may optionally choose to perform the SSO within the IFrame by loading it from:
+
+https://\<your hosted domain>/api/1/saml/auth?provider=\<provider ID>\&redirectTo=\<your URI encoded Cobrowse route>
+
+The parameter \<your URI encoded Cobrowse route> depends on your [choice of IFrame embed](custom-iframe-embeds.md) and must be correctly URI encoded.
+
+{% hint style="warning" %}
+Your IFrame settings and identity provider must allow sharing of cookies to your IFramed domain. This includes for additional steps with your provider, such as MFA.&#x20;
+{% endhint %}
