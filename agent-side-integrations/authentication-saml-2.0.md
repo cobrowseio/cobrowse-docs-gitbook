@@ -10,7 +10,7 @@ In your account settings, go to dashboard/settings/integrations and under SAML c
 
 `https://<your hosted domain>/login/saml/<provider ID>`
 
-where `<your hosted domain>` defaults to the domain that is hosting your cobrowse account.
+where `<your hosted domain>` defaults to the domain that is hosting your cobrowse account, e.g. https://cobrowse.io for Global Cloud Hosted customers.
 
 This URL can be used as the login page for your agents.&#x20;
 
@@ -23,7 +23,7 @@ You may be required to add configuration for Cobrowse.io within your identity pr
 If your SAML identity provider requires registering Cobrowse.io as an approved application, then please use the following information:
 
 * service provider id: `cobrowseio-saml`
-* ACS / Callback / Recipient / Destination / SSO URL: `https://cobrowse.io/api/1/saml/auth/callback`
+* ACS / Callback / Recipient / Destination / SSO URL: `https://<your hosted domain>/api/1/saml/auth/callback`
 
 ### Configuring Admin users
 
