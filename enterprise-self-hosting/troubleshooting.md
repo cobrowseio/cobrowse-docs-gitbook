@@ -1,3 +1,7 @@
+---
+description: Troubleshooting your self-hosted deployment.
+---
+
 # Troubleshooting
 
 ## Initial deployment
@@ -15,16 +19,10 @@ Here are the high-level steps to help diagnose the problem:
 
 ### Requesting support
 
-When requesting support for your self-hosted instance of Cobrowse Enterprise, please provide us the following information:
+Please provide the following information to [hello@cobrowse.io](mailto:hello@cobrowse.io):
 
 1. Which type of deployment are you using? (i.e. AWS, GCP, Azure, Helm, Docker-compose, Openshift, etc)
-2. How long has the issue occurred? Has it ever worked? If so, has anything changed on your side?&#x20;
-3. Are all the services up and running? Please share with us the current status of the services.&#x20;
-4. Please send us the container logs for the problematic services. If you are not sure, please share the container logs for all services.
-
-
-
-###
-
-
-
+2. Which version of Cobrowse Enterprise and/or service containers are you using?
+3. How long has the issue occurred? Has it ever worked? If so, has anything changed on your side?&#x20;
+4. Are all the services up and running? Please share with us the current status of the services.&#x20;
+5. Please send us the container logs for the problematic services. If you are not sure, please share the container logs for all services.
