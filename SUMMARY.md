@@ -53,7 +53,7 @@
     * [Engage Workspace Desktop Edition (WDE)](agent-side-integrations/crm-helpdesk-integrations/genesys/engage-workspace-desktop-edition-wde.md)
   * [Salesforce](agent-side-integrations/crm-helpdesk-integrations/salesforce/README.md)
     * [Migrating from legacy to v2](agent-side-integrations/crm-helpdesk-integrations/salesforce/migrating-from-legacy-to-v2.md)
-  * [Salesforce (Legacy)](agent-side-integrations/crm-helpdesk-integrations/salesforce-legacy.md)
+    * [Salesforce (Legacy)](agent-side-integrations/crm-helpdesk-integrations/salesforce/salesforce-legacy.md)
   * [Freshdesk](agent-side-integrations/crm-helpdesk-integrations/freshdesk.md)
 * [Custom integrations](agent-side-integrations/custom-integrations.md)
 * [Agent SDK](agent-side-integrations/agent-sdk/README.md)

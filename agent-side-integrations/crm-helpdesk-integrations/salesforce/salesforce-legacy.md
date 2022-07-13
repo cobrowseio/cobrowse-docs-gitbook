@@ -2,9 +2,11 @@
 description: v1.x
 ---
 
-# Salesforce \(Legacy\)
+# Salesforce (Legacy)
 
 ## Overview
+
+Salesforce (Legacy) has been upgraded, please see [Salesforce V2](./).&#x20;
 
 Cobrowse.io provides an integration with Salesforce available in the Salesforce AppExchange Marketplace. Get started here [https://cobrowse.io/salesforce](https://cobrowse.io/salesforce)
 
@@ -30,7 +32,7 @@ If you have not entered your valid license key into your Salesforce settings, yo
 
 ## Grant access to Users
 
-Next, you need to define which Users will have access to Cobrowse.io within Salesforce. You will need to go to Setup -&gt; App Manager and then click to Manage the CobrowseIO app as shown in the screenshot.
+Next, you need to define which Users will have access to Cobrowse.io within Salesforce. You will need to go to Setup -> App Manager and then click to Manage the CobrowseIO app as shown in the screenshot.
 
 ![salesforce app for cobrowse.io documentation](https://cobrowse.io/static/media/salesforce-manage-1.4cc872d7.png)
 
@@ -38,7 +40,7 @@ We want users to automatically be granted access, as long as they belong to the 
 
 ![salesforce app for cobrowse.io documentation](https://cobrowse.io/static/media/salesforce-manage-2.6bb31379.png)
 
-Please change the option under OAuth Policies -&gt; Permitted Users to "Admin approved users are pre-authorized". Then click Save.
+Please change the option under OAuth Policies -> Permitted Users to "Admin approved users are pre-authorized". Then click Save.
 
 ![salesforce app for cobrowse.io documentation](https://cobrowse.io/static/media/salesforce-manage-3.343b84f6.png)
 
@@ -66,9 +68,9 @@ If you have any questions at all, we'd be happy to guide you through it. Please 
 
 ## Generate signing certificate
 
-As long as your users are authenticated with Salesforce, they will automatically be authenticated with Cobrowse.io. We achieve this by using JSON Web Tokens \(JWTs\) which are signed on the Salesforce backend by a private signing certificate, and verified on the Cobrowse.io backend by the certificate's corresponding public key.
+As long as your users are authenticated with Salesforce, they will automatically be authenticated with Cobrowse.io. We achieve this by using JSON Web Tokens (JWTs) which are signed on the Salesforce backend by a private signing certificate, and verified on the Cobrowse.io backend by the certificate's corresponding public key.
 
-In Salesforce, please naviate to Setup -&gt; Certificate and Key Management and "Create Self-Signed Certificate" named "CobrowseIO".
+In Salesforce, please naviate to Setup -> Certificate and Key Management and "Create Self-Signed Certificate" named "CobrowseIO".
 
 ![salesforce app for cobrowse.io documentation](https://cobrowse.io/static/media/salesforce-cert-1.d88f474d.png)
 
@@ -114,5 +116,4 @@ Now you will see the Cobrowse.io Widget in the sidebar of this Record page. Here
 
 ![salesforce app for cobrowse.io documentation](https://cobrowse.io/static/media/salesforce-edit-page-5.e157d40c.png)
 
-If you'd like to modify which fields are used to pre-filter the relevant devices for a particular Record, this is what the Filter Config setting is for under App Launcher -&gt; Cobrowse.io Settings. Please email us at [support@cobrowse.io](mailto:support@cobrowse.io) if you have any questions!
-
+If you'd like to modify which fields are used to pre-filter the relevant devices for a particular Record, this is what the Filter Config setting is for under App Launcher -> Cobrowse.io Settings. Please email us at [support@cobrowse.io](mailto:support@cobrowse.io) if you have any questions!

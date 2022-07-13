@@ -4,17 +4,27 @@ By default, you may login to the Cobrowse website to view devices, initiate sess
 
 We believe in putting Cobrowse where your agents are already working. Therefore, we've made it easy to integrate seamlessly with your favorite helpdesk or with your own custom CRM:
 
-{% page-ref page="intercom.md" %}
+{% content-ref url="intercom.md" %}
+[intercom.md](intercom.md)
+{% endcontent-ref %}
 
-{% page-ref page="zendesk.md" %}
+{% content-ref url="zendesk.md" %}
+[zendesk.md](zendesk.md)
+{% endcontent-ref %}
 
-{% page-ref page="genesys/" %}
+{% content-ref url="genesys/" %}
+[genesys](genesys/)
+{% endcontent-ref %}
 
-{% page-ref page="salesforce-legacy.md" %}
+{% content-ref url="salesforce/salesforce-legacy.md" %}
+[salesforce-legacy.md](salesforce/salesforce-legacy.md)
+{% endcontent-ref %}
 
-{% page-ref page="freshdesk.md" %}
+{% content-ref url="freshdesk.md" %}
+[freshdesk.md](freshdesk.md)
+{% endcontent-ref %}
 
-{% page-ref page="../custom-integrations.md" %}
-
-
+{% content-ref url="../custom-integrations.md" %}
+[custom-integrations.md](../custom-integrations.md)
+{% endcontent-ref %}
 
