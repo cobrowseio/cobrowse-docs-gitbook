@@ -15,6 +15,8 @@ App Foundry link - [https://appfoundry.genesys.com/filter/genesyscloud/listing/a
 
 Demo video - [https://www.youtube.com/watch?v=vd8A4\_JrpLs](https://www.youtube.com/watch?v=vd8A4\_JrpLs)
 
+Knowledge article - [https://support.cobrowse.io/genesys-cloud-standalone-and-widget-apps](https://support.cobrowse.io/genesys-cloud-standalone-and-widget-apps)
+
 ### Self-hosted instances
 
 Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io) before switching to your self-hosted instance.&#x20;
