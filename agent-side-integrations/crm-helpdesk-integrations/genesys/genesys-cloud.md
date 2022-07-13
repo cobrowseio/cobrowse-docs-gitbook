@@ -17,6 +17,8 @@ Demo video - [https://www.youtube.com/watch?v=vd8A4\_JrpLs](https://www.youtube.
 
 ### Self-hosted instances
 
+Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io) before switching to your self-hosted instance.&#x20;
+
 If you are [self-hosting](../../../enterprise-self-hosting/self-hosting-overview.md) the Cobrowse.io instance, you will need to replace "cobrowse.io" in both Application URLs with your self-hosted domain, e.g. https://\<your self-hosted domain>/apps/genesys/index.html?langTag=\{{pcLangTag\}}\&environment=\{{pcEnvironment\}}\&env=cloud
 
 ![](<../../../.gitbook/assets/Screenshot 2022-06-06 at 11.07.18.png>)
