@@ -6,11 +6,16 @@ Allow your users to authenticate using your SAML 2.0 identity provider for simpl
 
 ## Configure SAML 2.0
 
-In your account settings, go to dashboard/settings/integrations and under SAML config enter your SAML certificate and entrypoint. This will generate a login URL in the format:
+In your account settings, go to dashboard/settings/integrations and under SAML config enter your:
+
+* SAML certificate and
+* entrypoint URL.
+
+This will generate a login URL in the format:
 
 `https://<your hosted domain>/login/saml/<provider ID>`
 
-where `<your hosted domain>` defaults to the domain that is hosting your cobrowse account, e.g. https://cobrowse.io for Global Cloud Hosted customers.
+where `<your hosted domain>` defaults to the domain that is hosting your cobrowse account, e.g. `cobrowse.io` in most cases.
 
 This URL can be used as the login page for your agents.&#x20;
 
@@ -24,6 +29,10 @@ If your SAML identity provider requires registering Cobrowse.io as an approved a
 
 * service provider id: `cobrowseio-saml`
 * ACS / Callback / Recipient / Destination / SSO URL: `https://<your hosted domain>/api/1/saml/auth/callback`
+
+{% hint style="info" %}
+`<your hosted domain>` is `cobrowse.io` when using our hosted service.
+{% endhint %}
 
 ### Configuring Admin users
 
@@ -40,7 +49,11 @@ If you are running Cobrowse in your own IFrame integration, then you may optiona
 
 `https://<your hosted domain>/api/1/saml/auth?provider=<provider ID>&redirectTo=<your URI encoded Cobrowse route>`
 
-The parameter \<your URI encoded Cobrowse route> depends on your [choice of IFrame embed](custom-iframe-embeds.md) and must be correctly URI encoded.
+The parameter `<your URI encoded Cobrowse route>` is the URL specified by your [choice of IFrame embed](custom-iframe-embeds.md) and must be correctly URI encoded.
+
+{% hint style="info" %}
+`<your hosted domain>` is `cobrowse.io` when using our hosted service.
+{% endhint %}
 
 {% hint style="warning" %}
 Your IFrame settings and identity provider must allow sharing of cookies to your IFramed domain. This includes for additional steps with your provider, such as MFA.&#x20;
