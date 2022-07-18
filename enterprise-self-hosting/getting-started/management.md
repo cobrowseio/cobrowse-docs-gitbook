@@ -8,7 +8,7 @@ You are responsible for backing up the database regularly. Cobrowse will not do 
 
 To be notified when a new release is available (for any deployment type), please subscribe to this repo: [https://github.com/cobrowseio/cobrowse-enterprise-helm](https://github.com/cobrowseio/cobrowse-enterprise-helm).&#x20;
 
-Changelog notes for all releases are available: [https://github.com/cobrowseio/cobrowse-enterprise-helm/blob/master/CHANGELOG.md](https://github.com/cobrowseio/cobrowse-enterprise-helm/blob/master/CHANGELOG.md). Image updates usually contain security patches.
+Changelog notes for all releases are available: [https://github.com/cobrowseio/cobrowse-enterprise-helm/releases](https://github.com/cobrowseio/cobrowse-enterprise-helm/releases). Image updates usually contain security patches.
 
 ### Upgrading Cobrowse
 
