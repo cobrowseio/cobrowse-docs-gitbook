@@ -32,7 +32,6 @@ Example code: [https://github.com/cobrowseio/cobrowse-sdk-js-examples#cross-doma
 * Google Chrome
 * Mozilla Firefox
 * Internet Explorer 11
+* Safari
 
 Cross-domain support will fail in a browser's private or "incognito" mode.
-
-Support for Apple Safari is still being explored at this time.
