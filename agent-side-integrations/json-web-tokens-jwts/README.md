@@ -13,7 +13,7 @@ There's no need to create the specified user ahead of time - this is all done au
 The JWT is a token that carries information about which account it is, and who the specified user is. It is cryptographically signed by a RS256 private key on your backend. You will share with us the associated public key in your [account settings](https://cobrowse.io/dashboard/settings/integrations) so that we can verify the request is from you and auto-authenticate the specified user to your account.&#x20;
 
 {% hint style="info" %}
-Want to know more about JWTs? See [https://jwt.io/](https://jwt.io/) for the standard, open source libraries and more!
+Want to know more about JWTs? See [https://jwt.io/](https://jwt.io/) for the standard, open source libraries in many languages and more!
 {% endhint %}
 
 The JWT you create and sign should contain the following claims:
