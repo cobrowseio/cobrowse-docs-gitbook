@@ -12,7 +12,7 @@ CobrowseIO.confirmRemoteControl = function() {
         // show your own UI here
         // call resolve(true) to allow
         // call reject() to reject
-        resovle(true)
+        resolve(true)
     });
 };
 ```
