@@ -14,7 +14,7 @@ You may configure your account-level settings after logging in at [https://cobro
 | Record sessions                    | Should we record sessions for playback and review?                                                       |
 | Device sockets                     | Required for online/offline presence and agent initiated sessions without Firebase push or 6-digit codes |
 | Device listing                     | Allow agents to list devices that have registered into your account?                                     |
-| Allow SDKs to see agent email      | Should the agent email be accessible from the SDKs?                                                      |
-| Save IP addresses                  | Should Cobrowse collect IP addresses for audit trail purposes?                                           |
+| Hide agent emails                  | Should the agent email be accessible from the SDKs?                                                      |
+| Discard IP addresses               | Should Cobrowse collect IP addresses for audit trail purposes?                                           |
 
 ###
