@@ -44,6 +44,7 @@
 
 ## Agent-side integrations
 
+* [Overview](agent-side-integrations/overview.md)
 * [Platform integrations](agent-side-integrations/crm-helpdesk-integrations/README.md)
   * [Zendesk](agent-side-integrations/crm-helpdesk-integrations/zendesk.md)
   * [Salesforce](agent-side-integrations/crm-helpdesk-integrations/salesforce/README.md)
