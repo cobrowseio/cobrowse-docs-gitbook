@@ -92,6 +92,27 @@ See the API reference for full details on what you can do [using an IFrame conte
 [custom-iframe-embeds.md](../custom-iframe-embeds.md)
 {% endcontent-ref %}
 
+### Access and update the session in the IFrame
+
+Sometimes it's useful to access the session that was created in an IFrame in order to modify some properties that cannot be directly controlled through the IFrame methods. First you'll need to get the access to the session from the IFrame:
+
+```javascript
+const cobrowse = new CobrowseAPI(...) 
+    
+// attach to iframe (make sure it has loaded!)
+const frameEl = document.getElementById('myIframe')
+const ctx = await cobrowse.attachContext(frameEl)
+
+// track the latest session that has been loaded into (or created by)
+// the iframe 
+let currentSession = null
+ctx.on('session.updated', session => {
+    latestSession = session
+})
+```
+
+Then at some point later, when you want to make a change to the session, you use the session object that was passed in the `session.updated` event. **Note**: you will need to configure a JWT in the agent SDK to call some methods that require authentication on the session object.
+
 ### Completely replace the session UI with my own design
 
 Cobrowse is designed to be fully customizable, including the agent side experience. We've put together a small example to show how to build your own in-session UI. Find the full [source code on GitHub](https://github.com/cobrowseio/cobrowse-agent-sdk-examples/tree/master/custom-agent-demo), or try the demo [here](https://cobrowseio.github.io/cobrowse-agent-sdk-examples/custom-agent-demo/).
