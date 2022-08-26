@@ -49,7 +49,7 @@ If you are running Cobrowse in your own IFrame integration, then you may optiona
 
 `https://<your hosted domain>/api/1/saml/auth?provider=<provider ID>&redirectTo=<your URI encoded Cobrowse route>`
 
-The parameter `<your URI encoded Cobrowse route>` is the URL specified by your [choice of IFrame embed](custom-iframe-embeds.md) and must be correctly URI encoded.
+The parameter `<your URI encoded Cobrowse route>` is the endpoint specified by your [choice of IFrame embed](custom-iframe-embeds.md) and must be correctly URI encoded, e.g. for `/code` use `%2Fcode`.
 
 {% hint style="info" %}
 `<your hosted domain>` is `cobrowse.io` when using our hosted service.
