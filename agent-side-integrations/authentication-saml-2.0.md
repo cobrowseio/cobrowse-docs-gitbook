@@ -9,7 +9,7 @@ Allow your users to authenticate using your SAML 2.0 identity provider for simpl
 In your account settings, go to dashboard/settings/integrations and under SAML config enter your:
 
 * SAML certificate and
-* entrypoint URL.
+* entrypoint URL (for a Service Provider-initiated request).
 
 This will generate a login URL in the format:
 
