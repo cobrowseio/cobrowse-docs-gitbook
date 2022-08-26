@@ -298,3 +298,21 @@ This mechanism is provided as a fallback, use the SDK APIs when possible for max
 {% endhint %}
 
 You can also define redactions using a selector entered into the web dashboard. This can be useful if your app is already in production and you need to redact a field retrospectively, either due to a missed redaction entry in the app build or changing requirements. Visit the [dashboard settings](https://cobrowse.io/dashboard/settings/redaction) to enter redaction selectors.
+
+{% tabs %}
+{% tab title="Web" %}
+Enter your css selectors, e.g. `.redacted-class` or `#redacted-id`.
+{% endtab %}
+
+{% tab title="iOS" %}
+Enter your objective-C class name and/or view id, e.g. `ClassName#id` or just `#id`.
+
+`ClassName` is the name of the UI class, and `id` is the integer tag of the view object.
+{% endtab %}
+
+{% tab title="Android" %}
+Enter your tag of the view class and/or the identifier name for the view, e.g. `tag#id` or just `#id`.
+
+`tag` is the [simple name](https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getSimpleName--) of the view class, `#id` can usually be found in the XML layout.
+{% endtab %}
+{% endtabs %}
