@@ -134,10 +134,6 @@ There is a community-built Flutter plugin: [https://github.com/robodigital/cobro
 [custom-touch-handling.md](../sdk-features/advanced-features/ios/custom-touch-handling.md)
 {% endcontent-ref %}
 
-## **Firewalls**
-
-If your agents work behind a firewall (e.g. a corporate firewall), then the **agent-side** API routes will need to be whitelisted as specified here: [https://docs.cobrowse.io/enterprise-self-hosting/advanced/firewalls#agent-side-required-apis](https://docs.cobrowse.io/enterprise-self-hosting/advanced/firewalls#agent-side-required-apis).
-
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}

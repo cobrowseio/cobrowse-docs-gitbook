@@ -89,10 +89,6 @@ Certain resources (e.g. CSS) may not be exposed to the public internet (e.g. pre
 
 Make sure these resources are accessible to our server by whitelisting requests from \*.cobrowse.io!
 
-## **Firewalls**
-
-If your agents work behind a firewall (e.g. a corporate firewall), then the **agent-side** API routes will need to be whitelisted as specified here: [https://docs.cobrowse.io/enterprise-self-hosting/advanced/firewalls#agent-side-required-apis](https://docs.cobrowse.io/enterprise-self-hosting/advanced/firewalls#agent-side-required-apis).
-
 ## Content Security Policies **(CSPs)**
 
 If you have CSPs on your website then they may block the functionality of Cobrowse.io. When a CSP is blocking Cobrowse.io, then there will be an error in the javascript console stating:
