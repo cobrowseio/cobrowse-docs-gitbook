@@ -41,6 +41,10 @@ When you override this method you are responsible for presenting a `RPSystemBroa
 {% endtab %}
 
 {% tab title="Android" %}
+{% hint style="info" %}
+**Note:** you cannot replace the system prompt for switching to full device mode. This methods allows you to add logic before the system prompt is shown, or cancel the prompt entirely.
+{% endhint %}
+
 To override the the default remote control consent prompt, you should implement the `CobrowseIO.FullDeviceRequestDelegate` interface on your `CobrowseIO.Delegate`.
 
 ```java
@@ -55,11 +59,19 @@ public void handleFullDeviceRequest(@NonNull Activity activity, @NonNull Session
 {% endtab %}
 
 {% tab title="macOS" %}
-Full device by default, use the [user consent dialog](user-consent-dialog.md).
+To override the the full device consent prompt, you should implement the `cobrowseHandleFullDeviceRequest:` method of `CobrowseIODelegate`.
+
+```objectivec
+-(void) cobrowseHandleFullDeviceRequest:(CBIOSession*) session {
+    // Call [session setFullDeviceState:kCBIOFullDeviceStateRejected callback:nil] if the user
+    // dismisses the prompt without allowing the full device screen share.
+    // Or [session setFullDeviceState:kCBIOFullDeviceStateOn callback:nil] to allow the switch
+    // full device mode.
+}
+```
 {% endtab %}
 
 {% tab title="Windows" %}
 Full device by default, use the [user consent dialog](user-consent-dialog.md).
 {% endtab %}
 {% endtabs %}
-
