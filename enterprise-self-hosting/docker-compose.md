@@ -8,7 +8,7 @@ You'll need these installed on the host system before continuing:
 
 * ****[**Docker**](https://www.docker.com)****
 * ****[**Docker Compose**](https://docs.docker.com/compose/install/)****
-* ****[**NodeJS**](https://nodejs.org/en/) – version 10 or above
+* ****[**NodeJS**](https://nodejs.org/en/) – at least [minimum LTS version](https://nodejs.org/en/about/releases/)
 
 ### System Requirements
 
