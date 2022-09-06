@@ -41,7 +41,17 @@ When you override this method you are responsible for presenting a `RPSystemBroa
 {% endtab %}
 
 {% tab title="Android" %}
-It is not possible to customize the full device prompt on Android. This is a system view and cannot be altered.
+To override the the default remote control consent prompt, you should implement the `CobrowseIO.FullDeviceRequestDelegate` interface on your `CobrowseIO.Delegate`.
+
+```java
+@Override
+public void handleFullDeviceRequest(@NonNull Activity activity, @NonNull Session session) {
+    // show your own UI here
+    // call session.setFullDeviceState(Session.FullDeviceState.On, null) to accept
+    // or session.setFullDeviceState(Session.FullDeviceState.Rejected, null) to reject
+    session.setFullDeviceState(Session.FullDeviceState.On, null);
+}
+```
 {% endtab %}
 
 {% tab title="macOS" %}
