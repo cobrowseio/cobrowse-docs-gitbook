@@ -88,5 +88,5 @@
 * [Advanced configuration](enterprise-self-hosting/advanced/README.md)
   * [Pin web SDK version](enterprise-self-hosting/advanced/web-sdk-pinning.md)
   * [L7 firewall configuration](enterprise-self-hosting/advanced/firewalls.md)
-* [Docker proxy configuration](enterprise-self-hosting/docker-proxy-configuration.md)
+  * [Docker proxy configuration](enterprise-self-hosting/advanced/docker-proxy-configuration.md)
 * [Troubleshooting](enterprise-self-hosting/troubleshooting.md)
