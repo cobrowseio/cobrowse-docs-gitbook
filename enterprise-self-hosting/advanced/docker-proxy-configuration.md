@@ -18,3 +18,7 @@ Add these hostnames to your `noProxy` configuration:
 * `mongodb`
 * `nginx`
 
+You should ensure that your proxy allows access to at least the following domains:
+
+* Docker hub (`docker.io`, `docker.com`, and all subdomains of those)
+* GitHub container registry (`ghcr.io`)
