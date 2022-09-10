@@ -21,4 +21,12 @@ Add these hostnames to your `noProxy` configuration:
 You should ensure that your proxy allows access to at least the following domains:
 
 * Docker hub (`docker.io`, `docker.com`, and all subdomains of those)
-* GitHub container registry (`ghcr.io`)
+* GitHub container registry (`ghcr.io`, `pkg-containers.githubusercontent.com`)
+
+If you are planning to use our built-in support for [LetsEncrypt](https://letsencrypt.org/) to issue your SSL certificates, you will also need to allow access to:
+
+* `acme-v02.api.letsencrypt.org`
+
+{% hint style="info" %}
+**Note that this is not an exhaustive list.** Underlying providers may change the domains they require access to without notice. If you are unsure if a domain is required, please provide us with extracts from your proxy software logs showing the domains being accessed and we can assist.
+{% endhint %}
