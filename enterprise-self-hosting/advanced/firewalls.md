@@ -22,7 +22,7 @@ Here you can find the subset of the APIs that must be accessible to end user dev
 
 #### Pinning the web SDK version
 
-If you choose to [pin the web SDK version](web-sdk-pinning.md), then you will also need to add that route.
+If you choose to [pin the web SDK](web-sdk-pinning.md) using the version that is shipped with your deployment, then you will also need to add that route.
 
 ```
 /sdk-js/
