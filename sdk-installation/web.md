@@ -87,7 +87,11 @@ The specific browser versions supported are Chrome 16+, Firefox 11+, Safari 7+, 
 
 Certain resources (e.g. CSS) may not be exposed to the public internet (e.g. pre-production environments such as UAT) and so these elements of your webpage will not appear in sessions.&#x20;
 
-Make sure these resources are accessible to our server by whitelisting requests from \*.cobrowse.io!
+Make sure these resources are accessible to our server by whitelisting requests from `*.cobrowse.io`!
+
+{% hint style="warning" %}
+If you self-host your instance, then requests from`*.<your instance domain>` should be whitelisted instead of `*.cobrowse.io`.
+{% endhint %}
 
 ## Content Security Policies **(CSPs)**
 
@@ -97,9 +101,17 @@ If you have CSPs on your website then they may block the functionality of Cobrow
 
 To solve this, you will need to enable the following in your CSP:
 
-connect src of: **connect-src** [**cobrowse.io**](http://cobrowse.io/) **\*.**[**cobrowse.io**](http://cobrowse.io/) **wss://\*.**[**cobrowse.io**](http://cobrowse.io/)**;**
+connect src of: **`connect-src cobrowse.io *.cobrowse.io wss://*.cobrowse.io;`**
 
-script-src of: **script-src 'unsafe-inline'** [**js.cobrowse.io**](http://js.cobrowse.io/)**;**
+{% hint style="warning" %}
+If you self-host your instance, then replace`cobrowse.io` with your `<your instance domain>` in each case.
+{% endhint %}
+
+script-src of: **`script-src 'unsafe-inline' js.cobrowse.io;`**
+
+{% hint style="warning" %}
+If you use the self-hosted version of the web SDK instead of `js.cobrowse.io`, e.g. [following this](../enterprise-self-hosting/advanced/web-sdk-pinning.md), then you should use that full URL instead, e.g. `https://<your instance domain>/sdk-js/CobrowseIO.js`.
+{% endhint %}
 
 You should be able to replace the unsafe-inline with the hash of your snippet if you wish. This will be available in the javascript console.
 
