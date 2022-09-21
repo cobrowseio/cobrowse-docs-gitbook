@@ -114,7 +114,7 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 
 ## Requirements
 
-* iOS 9.0 or later
+* iOS 11.0 or later
 
 ## Flutter Support
 

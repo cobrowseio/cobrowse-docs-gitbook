@@ -34,7 +34,7 @@ The Cobrowse.io SDK for iOS allows full device screen capture, but this requires
 4. Enter a name for the target
 5. Uncheck "Include UI Extension"
 6. Create the target, noting its bundle ID
-7. Change the target SDK of your Broadcast Extension to iOS 12.0 or higher _(Note: it should still work as far back to iOS 10.0)_
+7. Change the target SDK of your Broadcast Extension to iOS 12.0 or higher _(Note: it should still work as far back to iOS 11.0)_
 
 **Set up Keychain Sharing**
 

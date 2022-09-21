@@ -68,7 +68,7 @@ Once you have your app running, navigate to [https://cobrowse.io/dashboard](http
 
 ## Requirements
 
-* MacOS 10.10 or later
+* MacOS 10.13 or later
 
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
