@@ -83,11 +83,23 @@ The specific browser versions supported are Chrome 16+, Firefox 11+, Safari 7+, 
 [cross-domain-session-support.md](../sdk-features/advanced-features/web/cross-domain-session-support.md)
 {% endcontent-ref %}
 
+## Something not working?
+
+Please use the following steps to troubleshoot issues on web:
+
+* check that all steps of these docs and requirements have been followed
+* check whether the issues persist when using [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) directly
+* inspect the developer console on the agent and client-side to see any error messages
+* check the below sections to see if they match the error messages you can see
+* send a description, screenshots, and optionally a video of the above to [hello@cobrowse.io](mailto:hello@cobrowse.io)!
+
 ## Non-public resources (e.g. CSS)
 
-Certain resources (e.g. CSS) may not be exposed to the public internet (e.g. pre-production environments such as UAT) and so these elements of your webpage will not appear in sessions.&#x20;
+Certain resources (e.g. CSS) may not be exposed to the public internet (e.g. pre-production environments such as UAT) and so these elements of your webpage will not appear to agents.&#x20;
 
-Make sure these resources are accessible to our server by whitelisting requests from `*.cobrowse.io`!
+You will see error messages in the developer console relating to `https://cobrowse.io/proxy/1/assets/<hex encoded asset>` . You can check which assets are encoded by pasting the hex code into [https://cryptii.com/pipes/hex-decoder](https://cryptii.com/pipes/hex-decoder).
+
+Make sure these assets are accessible to our server by making them public, or by whitelisting requests from `*.cobrowse.io`!
 
 {% hint style="warning" %}
 If you self-host your instance, then requests from`*.<your instance domain>` should be whitelisted instead of `*.cobrowse.io`.
