@@ -86,6 +86,7 @@
   * [Microsoft Azure](enterprise-self-hosting/monitoring-your-instance/microsoft-azure.md)
   * [Self-Hosted Prometheus](enterprise-self-hosting/monitoring-your-instance/self-hosted-prometheus.md)
 * [Advanced configuration](enterprise-self-hosting/advanced/README.md)
+  * [Air gap configuration](enterprise-self-hosting/advanced/air-gap-configuration.md)
   * [Pin web SDK version](enterprise-self-hosting/advanced/web-sdk-pinning.md)
   * [L7 firewall configuration](enterprise-self-hosting/advanced/firewalls.md)
   * [Docker proxy configuration](enterprise-self-hosting/advanced/docker-proxy-configuration.md)
