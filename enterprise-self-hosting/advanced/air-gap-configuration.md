@@ -11,6 +11,19 @@ Cobrowse is distributed using docker container images. You will need to pull the
 * Using a [self-hosted docker registry](https://docs.docker.com/registry/deploying/) and using docker push to populate its images
 * Use a [docker save/load strategy](https://stackoverflow.com/questions/23935141/how-to-copy-docker-images-from-one-host-to-another-without-using-a-repository)
 
+By default, the Cobrowse Enterprise helm chart references repository `ghcr.io/cobrowseio` to fetch images. After making your images available internally, you can override the `image.repo` helm value to change the repository images are pulled from. For example:
+
+```yaml
+# Fetch containers from repo docker.internal (e.g., 
+# "docker.internal/cobrowse-api-enterprise:1.2.3")
+image:
+  repo: "docker.internal"
+  
+# Or, fetch containers from host machine (e.g., "cobrowse-api-enterprise:1.2.3")
+image:
+  repo: ""
+```
+
 ### Database Storage
 
 Cobrowse requires a MongoDB-compatible database for storing its data. You will need to install a MongoDB (or compatible, such as AWS DocumentDB) database accessible from your isolated network.
