@@ -22,7 +22,7 @@ Once you have done that, you can update your deployment via Terraform or Docker 
 
 ### Dedicated staging instance
 
-We recommend self-hosting a separate staging instance of our software to development against and also to test new releases before moving to production. Please contact us if you are interested.
+We recommend self-hosting a separate staging instance of our software to develop against and also to test new releases before moving to production. Please contact us if you are interested.
 
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).

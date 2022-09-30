@@ -8,18 +8,23 @@ Make sure you have installed (on your local machine) the required tools to manag
 
 * [**Terraform**](https://www.terraform.io/)
 * [**NodeJS**](https://nodejs.org/en/) – at least [minimum LTS version](https://nodejs.org/en/about/releases/)
+* [**kubectl**](https://kubernetes.io/docs/tasks/tools/)
 
 You'll also need an AWS account with credentials available to the setup script through the environment. This is most easily managed via the official [AWS cli tools](https://aws.amazon.com/cli/).
 
 ## Installation steps
 
-### 1. Database setup
+### 1. Choose your database
 
-The first thing you'll need is access to a MongoDB database. Cobrowse will need a connection string containing the address and authentication information for your cluster.
+You can choose between MongoDB and AWS DocumentDB as your data storage for Cobrowse Enterprise.&#x20;
 
-A MongoDB cluster is required for running Cobrowse. We **do not** provide this as part of the terraform environment.
+If you wish to use MongoDB, you must first create a cluster beforing continuing the installation process. We **do not** provide MongoDB as part of the terraform environment. You can either [run your own MongoDB cluster](https://docs.mongodb.com/manual/administration/install-community/) and manage the deployment and backups yourself. Alternatively, we recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/). They have a [range of certifications](https://www.mongodb.com/cloud/trust) required by many enterprises with compliance requirements. In a later installation step, you will have an option to indicate you wish to manage your own MongoDB database cluster. At this time, Cobrowse will ask for a connection URL containing the address and authentication information for your MongoDB cluster.
 
-You will need to create a cluster and provide the connection URL as a part of the Cobrowse configuration. You can either [run your own MongoDB cluster](https://docs.mongodb.com/manual/administration/install-community/) and manage the deployment and backups yourself. Alternatively, we recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/). They have a [range of certifications](https://www.mongodb.com/cloud/trust) required by many enterprises with compliance requirements.
+Alternatively, if you wish to use AWS DocumentDB, you don't have to manually create a storage cluster. The Cobrowse terrform environment will create the cluster and configure it into the application for you. In a later installation step, you will have an option to indicate you wish for an AWS-managed DocumentDB database cluster.
+
+{% hint style="warning" %}
+While the Cobrowse terraform environment will create an AWS DocumentDB cluster for you, the database stability and backups are still both managed and supported by AWS. It is recommended that you subscribe to an AWS Business support package or better to ensure you have professional and timely support for your data and backups.
+{% endhint %}
 
 ### 2. Create an S3 bucket
 
@@ -59,28 +64,38 @@ Run the following command to start the deployment of resources to AWS:
 
 This will list the modifications that terraform will make to your AWS account. If that looks good, type 'yes' to continue the deployment.
 
+{% hint style="info" %}
+**Configure kubectl**
+
+`kubectl` is an essential utility for navigating and inspecting the kubernetes cluster deployed with the terraform scripts. If you have not configured kubectl to talk to your new EKS cluster, you can do so using the [AWS CLI](https://aws.amazon.com/cli/):
+
+```bash
+> aws eks update-kubeconfig --name cobrowse-enterprise
+```
+
+When configured, test that it works by running:
+
+```bash
+> kubectl get pod
+```
+{% endhint %}
+
 ### 5. Configure your DNS provider
 
 Once the terraform managed resources have been deployed to AWS, you should have an output similar to this:
 
 ```bash
-Apply complete! Resources: 255 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 144 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-dns = {
-  "api_dns_name" = "cluster-enterprise-XXXXXXXXXX.eu-west-1.elb.amazonaws.com"
-  "api_domain" = "api.example.com"
-  "api_zone_id" = "XXXXXXXXXX"
-  "frontend_dns_name" = "XXXXXXXXXX.cloudfront.net"
-  "frontend_domain" = "example.com"
-  "frontend_zone_id" = "XXXXXXXXXX"
-}
+dns_name = "k8s-default-apiingre-38e727b290-XXXXXXXXXX.eu-west-1.elb.amazonaws.com"
+domain = "example.com"
 ```
 
-The last step is to configure the two required DNS records with your DNS provider (e.g. Route 53). We will not do this automatically.
+The last step is to configure the required DNS record with your DNS provider (e.g. Route 53). We will not do this automatically.
 
-Create CNAMES to direct the `api_domain` to the `api_dns_name` value shown in the output from `terraform apply`, and the `frontend_domain` to the `frontend_dns_name` value.
+Create a CNAME to direct the `domain` to the `dns_name` value shown in the output from `terraform apply`.
 
 ### 6. Check your deployment
 
