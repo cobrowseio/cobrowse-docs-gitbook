@@ -24,11 +24,11 @@ image:
   repo: ""
 ```
 
-### Database Storage
+### Database storage
 
 Cobrowse requires a MongoDB-compatible database for storing its data. You will need to install a MongoDB (or compatible, such as AWS DocumentDB) database accessible from your isolated network.
 
-### Enterprise License Checking
+### Enterprise license checking
 
 Cobrowse Enterprise **does not** require an internet connection to validate your enterprise license, therefore there are no steps needed in an isolated environment.
 
