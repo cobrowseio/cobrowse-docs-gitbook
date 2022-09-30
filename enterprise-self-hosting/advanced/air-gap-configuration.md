@@ -8,7 +8,7 @@ This document contains the extra steps you will (and won't!) have to take to ens
 
 Cobrowse is distributed using docker container images. You will need to pull these images onto a machine and make them available within the isolated network. There are some options available to accomplish this:
 
-* Using a [self-hosted docker registry](https://docs.docker.com/registry/deploying/) and using docker push to populate its images
+* Use a [self-hosted docker registry](https://docs.docker.com/registry/deploying/) and use `docker push` to populate its images
 * Use a [docker save/load strategy](https://stackoverflow.com/questions/23935141/how-to-copy-docker-images-from-one-host-to-another-without-using-a-repository)
 
 By default, the Cobrowse Enterprise helm chart references repository `ghcr.io/cobrowseio` to fetch images. After making your images available internally, you can override the `image.repo` helm value to change the repository images are pulled from. For example:
