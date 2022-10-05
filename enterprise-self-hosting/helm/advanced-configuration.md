@@ -2,7 +2,7 @@
 
 ## Image Pull Secret
 
-In order for your kubernetes cluster to install the Cobrowse service components, you need to specify the Github token that Cobrowse provided to you.
+In order for your Kubernetes cluster to install the Cobrowse service components, you need to specify the Github token that Cobrowse provided to you.
 
 The easiest way to specify this is in `values.yaml` in the `imageCredentials.password` value. If you wish to manage this secret externally from the Helm chart, you can follow these instructions.
 
@@ -19,7 +19,7 @@ The easiest way to specify this is in `values.yaml` in the `imageCredentials.pas
 
 ## Environment Variables
 
-Many of the cobrowse service component configurations are managed using environment variables specified in `ConfigMap` and `Secret` resources, and these configurations can be overridden outside of the Helm chart by resources that you manage.
+Many of the Cobrowse service component configurations are managed using environment variables specified in `ConfigMap` and `Secret` resources, and these configurations can be overridden outside of the Helm chart by resources that you manage.
 
 ### ConfigMap Resources
 
@@ -43,12 +43,6 @@ cobrowse-frontend-custom-envvars
 cobrowse-proxy-custom-envvars
 cobrowse-recording-custom-envvars
 cobrowse-sockets-custom-envvars
-```
-
-To see what environment variables are available to be configured for a particular service component, you can run (for example):
-
-```bash
-> kubectl describe configmap cobrowse-api-envvars
 ```
 
 ### Secret Resources
