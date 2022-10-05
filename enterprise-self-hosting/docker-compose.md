@@ -110,7 +110,7 @@ The config directory created by our command line utility is a git repo. You can 
 
 ```bash
 > docker-compose down
-> git pull upstream master
+> git pull upstream stable
 > docker-compose up
 ```
 
