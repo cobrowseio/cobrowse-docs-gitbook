@@ -1,6 +1,6 @@
 # AWS terraform
 
-This is the documentation for how to use our terraform for AWS to set up Cobrowse Enterprise in your cloud.
+This is the documentation for how to use our Terraform for AWS to set up Cobrowse Enterprise in your cloud.
 
 ## Initial Setup
 
@@ -107,8 +107,8 @@ Create a CNAME to direct the `domain` to the `dns_name` value shown in the outpu
 
 Your deployment should now be available. Open up a web browser to your Cobrowse domain and check the deployment!
 
-{% content-ref url="getting-started/" %}
-[getting-started](getting-started/)
+{% content-ref url="../getting-started/" %}
+[getting-started](../getting-started/)
 {% endcontent-ref %}
 
 ## Monitoring your Deployment
@@ -119,12 +119,12 @@ View your cluster in [EKS](https://console.aws.amazon.com/eks/home). There shoul
 
 [CloudWatch Logs](https://console.aws.amazon.com/cloudwatch/home#logStream:group=cobrowse-enterprise) for application level logging. _Note:_ we recommend using a command line tool like [awslogs](https://github.com/jorgebastida/awslogs) to make viewing the aggregated log stream easier. Standard `kubectl logs` commands will also work to view application logging.
 
-Our Kubernetes deployment also support Prometheus application metrics, however this is not configured automatically. See our docs on configuring the [Prometheus integration for CloudWatch](monitoring-your-instance/amazon-web-services.md).
+Our Kubernetes deployment also support Prometheus application metrics, however this is not configured automatically. See our docs on configuring the [Prometheus integration for CloudWatch](amazon-web-services.md).
 
 ## Managing your deployment
 
 Next, learn about managing and upgrading your deployment.
 
-{% content-ref url="getting-started/management.md" %}
-[management.md](getting-started/management.md)
+{% content-ref url="../getting-started/management.md" %}
+[management.md](../getting-started/management.md)
 {% endcontent-ref %}

@@ -12,16 +12,16 @@ Cobrowse.io is deployed as containers, and we try to support a range of deployme
 [helm](helm/)
 {% endcontent-ref %}
 
-{% content-ref url="aws-terraform.md" %}
-[aws-terraform.md](aws-terraform.md)
+{% content-ref url="aws-terraform/" %}
+[aws-terraform](aws-terraform/)
 {% endcontent-ref %}
 
-{% content-ref url="azure-terraform.md" %}
-[azure-terraform.md](azure-terraform.md)
+{% content-ref url="azure-terraform/" %}
+[azure-terraform](azure-terraform/)
 {% endcontent-ref %}
 
-{% content-ref url="gcp-terraform.md" %}
-[gcp-terraform.md](gcp-terraform.md)
+{% content-ref url="gcp-terraform/" %}
+[gcp-terraform](gcp-terraform/)
 {% endcontent-ref %}
 
 {% hint style="success" %}

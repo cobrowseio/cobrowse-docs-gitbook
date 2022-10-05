@@ -1,18 +1,18 @@
 # Self-Hosted Prometheus
 
-If you are self-hosting your Cobrowse Enterprise kubernetes cluster, then deploying your own Prometheus and Grafana instances into your cluster may make the most sense for you.
+If you are self-hosting your Cobrowse Enterprise Kubernetes cluster, then deploying your own Prometheus and Grafana instances into your cluster may make the most sense for you.
 
-#### Prometheus
+### Prometheus
 
 If you do not have Prometheus running in your cluster already, then you may consider using the [Prometheus Community Helm Chart](https://github.com/prometheus-community/helm-charts) to deploy the components necessary to get you started.
 
-There is one chart that deploys a configurable node-exporter, alertnamanager and server component with ingress, which can get you started querying metrics as quickly a possible:
-
 {% hint style="warning" %}
-These example configurations and commands are intended to demonstrate the Helm repositories and chart resources you can use as a reference to help deploy a non-production prometheus instance that is capable of scraping cobrowse redis cluster and service metrics.
+These example configurations and commands are intended to demonstrate the Helm repositories and chart resources you can use as a reference to help deploy a non-production Prometheus instance that is capable of scraping cobrowse redis cluster and service metrics.
 
-For a production-grade deployment with appropriate **authentication**, **persistence**, and **ingress**, we recommend you research the [Prometheus configuration options](https://prometheus.io/docs/prometheus/latest/configuration/configuration/) and the [full prometheus helm chart values.yaml file](https://github.com/prometheus-community/helm-charts/blob/main/charts/prometheus/values.yaml) that are available to help you make the appropriate decisions for your organization.
+For a production-grade deployment with appropriate **authentication**, **persistence**, and **ingress**, we recommend you research the [Prometheus configuration options](https://prometheus.io/docs/prometheus/latest/configuration/configuration/) and the [full Prometheus helm chart values.yaml file](https://github.com/prometheus-community/helm-charts/blob/main/charts/prometheus/values.yaml) that are available to help you make the appropriate decisions for your organization.
 {% endhint %}
+
+There is one chart that deploys a configurable node-exporter, alertmanager and server component with ingress, which can get you started querying metrics as quickly a possible:
 
 ```yaml
 # values.yml
@@ -34,17 +34,17 @@ server:
 > helm install prometheus prometheus-community/prometheus -f values.yml
 ```
 
-#### Grafana
+### Grafana
 
 If you do not have Grafana installed in your cluster already, then may consider using the [Grafana official Helm Chart](https://github.com/grafana/helm-charts) to deploy the components necessary to get you started.
-
-There is one chart that deploys the Grafana server with ingress and configuration to query your prometheus instance, which can get you querying metrics as quickly as possible:
 
 {% hint style="warning" %}
 These example configurations and commands are intended to demonstrate the Helm repositories and chart resources you can use as a reference to help deploy a non-production Grafana server that is capable of querying a local Prometheus server.
 
 For a production-grade deployment with appropriate **authentication**, **persistence**, and **ingress**, we recommend you research the [Grafana configuration options](https://grafana.com/docs/grafana/latest/administration/configuration/) and the [full Grafana helm chart values.yaml](https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml) file that are available to make the appropriate decisions for your organization.
 {% endhint %}
+
+There is one chart that deploys the Grafana server with ingress and configuration to query your Prometheus instance, which can get you querying metrics as quickly as possible:
 
 ```yaml
 # values.yml

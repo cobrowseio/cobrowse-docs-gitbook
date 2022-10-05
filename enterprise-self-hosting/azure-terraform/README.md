@@ -1,6 +1,6 @@
 # Azure terraform
 
-This is the documentation for how to use our terraform for Azure to set up Cobrowse Enterprise in your cloud.
+This is the documentation for how to use our Terraform for Azure to set up Cobrowse Enterprise in your cloud.
 
 ## Initial Setup
 
@@ -129,14 +129,14 @@ Only once the SSL certificate is issued will an HTTPS listener be created for yo
 
 Your Cobrowse instance should now be deployed. Head to `/register`on your domain to create an account.
 
-{% content-ref url="getting-started/" %}
-[getting-started](getting-started/)
+{% content-ref url="../getting-started/" %}
+[getting-started](../getting-started/)
 {% endcontent-ref %}
 
 ## Managing your deployment
 
 Next, learn about managing and upgrading your deployment.
 
-{% content-ref url="getting-started/management.md" %}
-[management.md](getting-started/management.md)
+{% content-ref url="../getting-started/management.md" %}
+[management.md](../getting-started/management.md)
 {% endcontent-ref %}

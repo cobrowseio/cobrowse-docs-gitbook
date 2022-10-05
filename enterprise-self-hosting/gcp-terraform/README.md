@@ -1,6 +1,6 @@
 # GCP terraform
 
-This is the documentation for how to use our terraform for GCP to set up Cobrowse Enterprise in your cloud.
+This is the documentation for how to use our Terraform for GCP to set up Cobrowse Enterprise in your cloud.
 
 ## Initial Setup
 
@@ -119,14 +119,14 @@ In practice, this means that once the ManagedCertificate process detects that yo
 
 Your Cobrowse instance should now be deployed. Head to `/register`on your domain to create an account.&#x20;
 
-{% content-ref url="getting-started/" %}
-[getting-started](getting-started/)
+{% content-ref url="../getting-started/" %}
+[getting-started](../getting-started/)
 {% endcontent-ref %}
 
 ## Managing your deployment
 
 Next, learn about managing and upgrading your deployment.
 
-{% content-ref url="getting-started/management.md" %}
-[management.md](getting-started/management.md)
+{% content-ref url="../getting-started/management.md" %}
+[management.md](../getting-started/management.md)
 {% endcontent-ref %}
