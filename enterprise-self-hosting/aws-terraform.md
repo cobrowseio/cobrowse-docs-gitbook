@@ -18,17 +18,23 @@ You'll also need an AWS account with credentials available to the setup script t
 
 You can choose between MongoDB and AWS DocumentDB as your data storage for Cobrowse Enterprise.&#x20;
 
-If you wish to use MongoDB, you must first create a cluster beforing continuing the installation process. We **do not** provide MongoDB as part of the terraform environment. You can either [run your own MongoDB cluster](https://docs.mongodb.com/manual/administration/install-community/) and manage the deployment and backups yourself. Alternatively, we recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/). They have a [range of certifications](https://www.mongodb.com/cloud/trust) required by many enterprises with compliance requirements. In a later installation step, you will have an option to indicate you wish to manage your own MongoDB database cluster. At this time, Cobrowse will ask for a connection URL containing the address and authentication information for your MongoDB cluster.
+**Using MongoDB**
 
-Alternatively, if you wish to use AWS DocumentDB, you don't have to manually create a storage cluster. The Cobrowse terrform environment will create the cluster and configure it into the application for you. In a later installation step, you will have an option to indicate you wish for an AWS-managed DocumentDB database cluster.
+We **do not** provide MongoDB as part of the Terraform environment. You can either [run your own MongoDB cluster](https://docs.mongodb.com/manual/administration/install-community/) and manage the deployment and backups yourself. Alternatively, we recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/). They have a [range of certifications](https://www.mongodb.com/cloud/trust) required by many enterprises with compliance requirements.&#x20;
+
+When using MongoDB, the Cobrowse installation will ask for a connection URL containing the address and authentication information for your MongoDB cluster.
+
+**Using AWS Document DB**
+
+If you wish to use AWS DocumentDB, you don't have to manually create a storage cluster. The Cobrowse Terraform environment will create the cluster and configure it into the application for you. You will have an option during the installation process to indicate you wish to use an AWS-managed DocumentDB database cluster.
 
 {% hint style="warning" %}
-While the Cobrowse terraform environment will create an AWS DocumentDB cluster for you, the database stability and backups are still both managed and supported by AWS. It is recommended that you subscribe to an AWS Business support package or better to ensure you have professional and timely support for your data and backups.
+Document DB backups and management and supported directly by AWS. It's recommended that you subscribe to an AWS Business support package to ensure you have support for your data and backups.
 {% endhint %}
 
 ### 2. Create an S3 bucket
 
-Terraform will be configured to save the state of the resources it creates to an S3 bucket. This bucket must be created manually. It's access should be completely private as the terraform state may contain sensitive information.
+Terraform will be configured to save the state of the resources it creates to an S3 bucket. This bucket must be created manually. Its access should be completely private as the terraform state may contain sensitive information.
 
 See the AWS documentation on [how to create a bucket](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html) if you are unsure about how to do this.
 
@@ -67,7 +73,7 @@ This will list the modifications that terraform will make to your AWS account. I
 {% hint style="info" %}
 **Configure kubectl**
 
-`kubectl` is an essential utility for navigating and inspecting the kubernetes cluster deployed with the terraform scripts. If you have not configured kubectl to talk to your new EKS cluster, you can do so using the [AWS CLI](https://aws.amazon.com/cli/):
+`kubectl` is a utility for managing the Kubernetes clusters. If you have not configured kubectl to talk to your new EKS cluster, you can do so using the [AWS CLI](https://aws.amazon.com/cli/):
 
 ```bash
 > aws eks update-kubeconfig --name cobrowse-enterprise
