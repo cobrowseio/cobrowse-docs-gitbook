@@ -113,13 +113,13 @@ Your deployment should now be available. Open up a web browser to your Cobrowse 
 
 ## Monitoring your Deployment
 
-Here we've listed a few useful resources created by our terraform. These can be used to check on the health of your deployment, or dig into any errors you might be experiencing:
+Here we've listed a few useful resources created by our Terraform. These can be used to check on the health of your deployment, or dig into any errors you might be experiencing:
 
-View your cluster in [ECS](https://console.aws.amazon.com/ecs/home). There should be several services running (cobrowse-api, cobrowse-api-sockets, cobrowse-recording and cobrowse-proxy). Each should have at least one stably running task.
+View your cluster in [EKS](https://console.aws.amazon.com/eks/home). There should be several Kubernetes Deployments and StatefulSets running. Each should have at least one stably running pod.
 
-[CloudWatch metrics](https://console.aws.amazon.com/cloudwatch/home#dashboards:name=cobrowse-enterprise) for Cobrowse. Here you can see many metrics in one place, including general container metrics such as CPU and memory utilization, as well as some application metrics such as number of sessions started.
+[CloudWatch Logs](https://console.aws.amazon.com/cloudwatch/home#logStream:group=cobrowse-enterprise) for application level logging. _Note:_ we recommend using a command line tool like [awslogs](https://github.com/jorgebastida/awslogs) to make viewing the aggregated log stream easier. Standard `kubectl logs` commands will also work to view application logging.
 
-[CloudWatch Logs](https://console.aws.amazon.com/cloudwatch/home#logStream:group=cobrowse-enterprise) for application level logging. _Note:_ we recommend using a command line tool like [awslogs](https://github.com/jorgebastida/awslogs) to make viewing the aggregated log stream easier.
+Our Kubernetes deployment also support Prometheus application metrics, however this is not configured automatically. See our docs on configuring the [Prometheus integration for CloudWatch](monitoring-your-instance/amazon-web-services.md).
 
 ## Managing your deployment
 
