@@ -313,6 +313,6 @@ Enter your objective-C class name and/or view id, e.g. `ClassName#id` or just `#
 {% tab title="Android" %}
 Enter your tag of the view class and/or the identifier name for the view, e.g. `tag#id` or just `#id`.
 
-`tag` is the [simple name](https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getSimpleName--) of the view class, `#id` can usually be found in the XML layout.
+`tag` is the [simple name](https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getSimpleName--) of the view class, `#id` can usually be found in the XML layout like so `android:id="@+id/here_is_the_id`. The `#id` must be able to be used with system `android.view.View#findViewById()` and `android.app.Activity#findViewById()` methods.
 {% endtab %}
 {% endtabs %}
