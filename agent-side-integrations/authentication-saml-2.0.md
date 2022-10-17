@@ -2,7 +2,7 @@
 
 ## Overview
 
-Allow your users to authenticate using your SAML 2.0 identity provider for simple SSO.
+Allow your users to authenticate using your SAML 2.0 identity provider for simple SSO. You must support user email address as the ID type with your identity provider.&#x20;
 
 ## Configure SAML 2.0
 
