@@ -20,16 +20,16 @@ You can choose between MongoDB and AWS DocumentDB as your data storage for Cobro
 
 **Using MongoDB**
 
-We **do not** provide MongoDB as part of the Terraform environment. You can either [run your own MongoDB cluster](https://docs.mongodb.com/manual/administration/install-community/) and manage the deployment and backups yourself. Alternatively, we recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/). They have a [range of certifications](https://www.mongodb.com/cloud/trust) required by many enterprises with compliance requirements.&#x20;
+We **do not** provide MongoDB as part of the Terraform environment. We recommend using a hosted service such as [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/). They have a [range of certifications](https://www.mongodb.com/cloud/trust) required by many enterprises with compliance requirements. Alternatively, you can [run your own MongoDB cluster](https://docs.mongodb.com/manual/administration/install-community/) and manage the deployment and backups yourself.
 
-When using MongoDB, the Cobrowse installation will ask for a connection URL containing the address and authentication information for your MongoDB cluster.
+When using MongoDB, the Cobrowse setup process will ask for a connection URL containing the address and authentication information for your MongoDB cluster.
 
 **Using AWS Document DB**
 
-If you wish to use AWS DocumentDB, you don't have to manually create a storage cluster. The Cobrowse Terraform environment will create the cluster and configure it into the application for you. You will have an option during the installation process to indicate you wish to use an AWS-managed DocumentDB database cluster.
+If you wish to use AWS DocumentDB, you don't have to manually create a storage cluster. The Cobrowse Terraform environment will create the cluster and configure it into the application for you. You will have an option during the automated setup process to choose an AWS-managed DocumentDB database cluster.
 
 {% hint style="warning" %}
-Document DB backups and management and supported directly by AWS. It's recommended that you subscribe to an AWS Business support package to ensure you have support for your data and backups.
+Document DB backups and management are supported directly by AWS. It's recommended that you subscribe to an AWS Business (or better) support package to ensure you have support for your data and backups.
 {% endhint %}
 
 ### 2. Create an S3 bucket
