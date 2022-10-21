@@ -42,3 +42,18 @@ You should now see the COBROWSE tab within your Workspace Desktop Edition when i
 
 Demo video - [https://www.youtube.com/watch?v=IuDv8YqcUa0](https://www.youtube.com/watch?v=IuDv8YqcUa0)
 
+## Troubleshooting
+
+### Why is the COBROWSE tab always blank?
+
+Please verify if your version of Genesys Workspace Desktop Edition is 8.5.147.05+. If you are running an earlier version, or if you are running a supported version which still faces this issue, please contact us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
+
+### How do I debug the COBROWSE tab?
+
+Please enable the optional setting `cobrowse.debug = true` as described above.&#x20;
+
+This will provide additional logging from the COBROWSE tab to the Genesys Workspace Desktop Edition logs.&#x20;
+
+The plugin will also activate remote debugging of the web app on port `9222`. Open MS Edge, go to `edge://inspect/#devices` and the plugin will appear there:
+
+<figure><img src="../../../.gitbook/assets/edge_debugging.png" alt=""><figcaption></figcaption></figure>
