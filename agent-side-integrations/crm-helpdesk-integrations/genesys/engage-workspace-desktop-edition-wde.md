@@ -1,21 +1,25 @@
+---
+description: Plugin version v1.0.0
+---
+
 # Engage Workspace Desktop Edition (WDE)
 
 ## Installation
 
-Supported WDE versions: 8.5+.
+Supported WDE versions: 8.5.147.05+.
 
 ### 1. Install plugin
 
 Add the plugin and dependencies to your Workspace Desktop Edition installation:
 
-* Genesyslab.Desktop.Modules.CobrowseIO.dll
-* Genesyslab.Desktop.Modules.CobrowseIO.module-config
-* Additional files/folders for dependencies included in the package
-* Ensure that you have Microsoft Visual C++ 2015 (or later) x86 Redistributable package installed. If not, you can download it from [https://www.microsoft.com/en-us/download/details.aspx?id=48145](https://www.microsoft.com/en-us/download/details.aspx?id=48145)
+* `Genesyslab.Desktop.Modules.CobrowseIO.dll`
+* `Genesyslab.Desktop.Modules.CobrowseIO.module-config`
 
 These files should be added adjacent to your other Module `.dll` files, in the same directory as `InteractionWorkspace.exe`. This executable is most commonly found at`C:\Program Files (x86)\GCTI\Workspace Desktop Edition`.
 
-Cobrowse.io can provide these files to you upon request, free of charge, in order to conduct a proof-of-concept (PoC) or other technical evaluation.
+{% hint style="info" %}
+Cobrowse can provide these files to you upon request, free of charge, in order to conduct a proof-of-concept (PoC) or other technical evaluation.
+{% endhint %}
 
 ### 2. Add required config
 
@@ -23,10 +27,12 @@ The configuration values can be added via Genesys GAX, Genesys Administrator, or
 
 When using Genesys GAX, please navigate to Environment/Applications -> WorkspaceDesktop -> Application Options -> interaction-workspace and add the following fields there.&#x20;
 
-| Field            | Type   | Value                                |
-| ---------------- | ------ | ------------------------------------ |
-| cobrowse.api     | string | eg. https://cobrowse.yourcompany.com |
-| cobrowse.license | string | your license key                     |
+| Field                                                                    | Type   | Value                                                                                                       |
+| ------------------------------------------------------------------------ | ------ | ----------------------------------------------------------------------------------------------------------- |
+| <p><strong>cobrowse.api</strong><br><strong></strong>required</p>        | string | <p>eg. <code>https://cobrowse.yourcompany.com</code><br><br>default is <code>https://cobrowse.io</code></p> |
+| <p><strong>cobrowse.license</strong><br><strong></strong>required</p>    | string | your license key                                                                                            |
+| <p><strong>cobrowse.debug</strong><br><strong></strong>optional</p>      | string | <p><code>true</code> / <code>false</code><br><br>default is <code>false</code></p>                          |
+| <p><strong>cobrowse.initialUrl</strong><br><strong></strong>optional</p> | string | Override initial Url the plugin tab will load                                                               |
 
 ### 3. Start Workspace Desktop Edition
 
