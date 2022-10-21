@@ -1,5 +1,5 @@
 ---
-description: Plugin version v1.0.0
+description: Plugin version v1.x
 ---
 
 # Engage Workspace Desktop Edition (WDE)
