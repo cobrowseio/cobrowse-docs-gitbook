@@ -34,6 +34,8 @@ When using Genesys GAX, please navigate to Environment/Applications -> Workspace
 | <p><strong>cobrowse.debug</strong><br><strong></strong>optional</p>      | string | <p><code>true</code> / <code>false</code><br><br>default is <code>false</code></p>                          |
 | <p><strong>cobrowse.initialUrl</strong><br><strong></strong>optional</p> | string | Override initial Url the plugin tab will load                                                               |
 
+<figure><img src="../../../.gitbook/assets/genesys_wde_gax_settings.png" alt=""><figcaption><p>Screenshot of GAX configuration for interaction-workspace</p></figcaption></figure>
+
 ### 3. Start Workspace Desktop Edition
 
 You should now see the COBROWSE tab within your Workspace Desktop Edition when interacting with an end-user, such as on a phone call, or via a live chat.&#x20;
