@@ -113,6 +113,58 @@ ctx.on('session.updated', session => {
 
 Then at some point later, when you want to make a change to the session, you use the session object that was passed in the `session.updated` event. **Note**: you will need to configure a JWT in the agent SDK to call some methods that require authentication on the session object.
 
+### Add extra data to a session from the agent side
+
+Sometimes the data that you want to associate with a session may not be available from the user-side to use with the device side SDKs.  In this case it is possible to add custom data from the agent side that will remain associated with a session.
+
+```javascript
+// create an API instance
+// Note: a valid JWT is required to modify the session with
+//       extra custom_data
+const cobrowse = new CobrowseAPI(token)
+
+// This function can be used to watch a window (from window.open()), or
+// an Iframe, for changes in the Cobrowse session. When a new session is
+// detected we can then update the custom_data field to include extra
+// data not provided by the device directly. 
+async function watch (windowOrIframe) {
+  const ctx = await cobrowse.attachContext(windowOrIframe)
+  console.log('Watching', windowOrIframe, 'for cobrowse session changes')
+  ctx.on('session.loaded', async (session) => {
+    console.log('Detected a change in Cobrowse session', session)
+    // Modify the session however is required
+    // in this example we'll add two new custom data properties
+    const myData = { some_id: '12345', another_id: '54321' }
+    // Save the changes to the session
+    await session.update({ custom_data: myData })
+    console.log('Updated session custom data with', myData)
+  })
+}
+
+function openSessionById (sessionId) {
+  // In this example we'll open a new window for the Cobrowse session,
+  // using the window.open() browser API available in JavaScript.
+  // This would work equalliy well when connecting to a device via
+  // our connect embed APIs.
+  watch(window.open(`${cobrowse.api}/session/${sessionId}?end_action=none&token=${cobrowse.token}`))
+}
+
+// Call this function with a valid session ID. You can obtain session IDs
+// either via the REST API, the Cobrowse attachContext() APIs,or your own
+// out-of-band channel (e.g. your CRM integration or livechat platform)
+openSessionById('some session id here')
+```
+
+See the links below for more on how to generate a token or choose the best link to embed.
+
+{% content-ref url="../custom-iframe-embeds.md" %}
+[custom-iframe-embeds.md](../custom-iframe-embeds.md)
+{% endcontent-ref %}
+
+{% content-ref url="../json-web-tokens-jwts/" %}
+[json-web-tokens-jwts](../json-web-tokens-jwts/)
+{% endcontent-ref %}
+
 ### Completely replace the session UI with my own design
 
 Cobrowse is designed to be fully customizable, including the agent side experience. We've put together a small example to show how to build your own in-session UI. Find the full [source code on GitHub](https://github.com/cobrowseio/cobrowse-agent-sdk-examples/tree/master/custom-agent-demo), or try the demo [here](https://cobrowseio.github.io/cobrowse-agent-sdk-examples/custom-agent-demo/).
