@@ -119,8 +119,7 @@ Sometimes the data that you want to associate with a session may not be availabl
 
 ```javascript
 // create an API instance
-// Note: a valid JWT is required to modify the session with
-//       extra custom_data
+// Note: a valid JWT is required to modify the session
 const cobrowse = new CobrowseAPI(token)
 
 // This function can be used to watch a window (from window.open()), or
@@ -132,10 +131,10 @@ async function watch (windowOrIframe) {
   console.log('Watching', windowOrIframe, 'for cobrowse session changes')
   ctx.on('session.loaded', async (session) => {
     console.log('Detected a change in Cobrowse session', session)
-    // Modify the session however is required
-    // in this example we'll add two new custom data properties
+    // Modify the session however is required, in this example
+    // we'll add two new custom_data properties
     const myData = { some_id: '12345', another_id: '54321' }
-    // Save the changes to the session
+    // Save the changes back to the session
     await session.update({ custom_data: myData })
     console.log('Updated session custom data with', myData)
   })
@@ -145,7 +144,8 @@ function openSessionById (sessionId) {
   // In this example we'll open a new window for the Cobrowse session,
   // using the window.open() browser API available in JavaScript.
   // This would work equalliy well when connecting to a device via
-  // our connect embed APIs.
+  // our /connect or /code embed APIs. Additionally, this would work 
+  // when using an Iframe rather than window.open().
   watch(window.open(`${cobrowse.api}/session/${sessionId}?end_action=none&token=${cobrowse.token}`))
 }
 
