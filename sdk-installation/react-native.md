@@ -8,10 +8,10 @@ description: React Native SDK
 
 ```bash
 npm install --save cobrowse-sdk-react-native
-react-native link
+(cd ios && pod install)
 ```
 
-**Note:** For `react-native link` to work out of the box on iOS, you need to be using Pods to manage dependencies. Please also remember to run `pod install` after the link step. Depending on your project, you may also need `use_frameworks!` in your Podfile. If using Pods causes a problem for your project, you may use Carthage to manage your Cobrowse.io dependencies, or you may also add the frameworks to your project by hand. More info at [iOS SDK Installation](ios.md).&#x20;
+**Note:** For older versions of React Native, you may need to run `react-native link` before running `pod install`. Depending on your project, you may also need `use_frameworks!` in your Podfile. If using Pods causes a problem for your project, you may use Carthage to manage your Cobrowse.io dependencies, or you may also add the frameworks to your project by hand. More info at [iOS SDK Installation](ios.md).
 
 ### Add your License Key
 

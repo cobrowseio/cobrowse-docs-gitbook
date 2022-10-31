@@ -77,6 +77,34 @@ export default class MyComponent extends Component {
 
 // ... stylesheets etc...
 ```
+
+You can also enable redaction by default which will ensure that all the content inside the selected root view will be hidden to the agents. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.
+
+To achieve this, you'll need to follow the [delegate implementation](listening-for-events.md#session-updated-events) and ensure you pass the root views to the Cobrowse `cobrowseRedactedViewsForViewController` and `redactedViews` methods for iOS and Android respectively. Once you've done this, your application Root Views will be redacted by default and you'll be able to un-redact child components to make them visible to the agents:
+
+```
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+import { Unredacted } from 'cobrowse-sdk-react-native';
+
+export default class MyComponent extends Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text>This text should be secret due to the redaction by default implementation</Text>
+                <Unredacted>
+                    <Text>This text will be visible to the agents because it's wrapped with an Unredacted component</Text>
+                    <Redacted>
+                        <Text>You can also nest redacted elements inside unredacted ones. This text will be hidden to the agents.</Text>
+                    </Redacted>
+                </Unredacted>
+            </View>
+        );
+    }
+}
+```
+
+Finally, within React Native some packages will render in new Windows/Root Views. You can follow the same [delegate implementation](listening-for-events.md#session-updated-events) to identify this views and redact or unredact them by default as required. You can check the provided examples for [iOS](https://github.com/cobrowseio/cobrowse-sdk-react-native/blob/master/Example/ios/Example/AppDelegate.m) and [Android](https://github.com/cobrowseio/cobrowse-sdk-react-native/blob/master/Example/android/app/src/main/java/com/example/MainApplication.java) which redact by default the React Native Dev menu keeping one of the options unredacted to illustrate the technique.
 {% endtab %}
 
 {% tab title="Xamarin" %}
@@ -316,3 +344,5 @@ Enter your tag of the view class and/or the identifier name for the view, e.g. `
 `tag` is the [simple name](https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getSimpleName--) of the view class, `#id` can usually be found in the XML layout like so `android:id="@+id/here_is_the_id`. The `#id` must be able to be used with system `android.view.View#findViewById()` and `android.app.Activity#findViewById()` methods.
 {% endtab %}
 {% endtabs %}
+
+### Redaction by default
