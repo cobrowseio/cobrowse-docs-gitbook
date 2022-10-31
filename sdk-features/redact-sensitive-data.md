@@ -56,53 +56,51 @@ If making changes to your Activity classes isn't an option, we also support a de
 {% endtab %}
 
 {% tab title="React Native" %}
-To redact an element in your React native application you can wrap it in a tag provided by the Cobrowse module:
+To redact an element in your RN application you can wrap it in a tag provided by the Cobrowse module:
 
 ```javascript
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
 import { Redacted } from 'cobrowse-sdk-react-native';
 
-export default class MyComponent extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Redacted>
-                    <Text style={styles.instructions}>This text should be secret</Text>
-                </Redacted>
-            </View>
-        );
-    }
-}
-
-// ... stylesheets etc...
+// ...
+<View style={styles.container}>
+    <Redacted>
+        <Text style={styles.instructions}>This text should be secret</Text>
+    </Redacted>
+</View>
 ```
 
-You can also enable redaction by default which will ensure that all the content inside the selected root view will be hidden to the agents. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.
+####
 
-To achieve this, you'll need to follow the [delegate implementation](listening-for-events.md#session-updated-events) and ensure you pass the root views to the Cobrowse `cobrowseRedactedViewsForViewController` and `redactedViews` methods for iOS and Android respectively. Once you've done this, your application Root Views will be redacted by default and you'll be able to un-redact child components to make them visible to the agents:
+#### Redaction by default
 
-```
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+Sometimes you may want to redact everything on the screen, then selectively "unredact" only the parts your support agents should be able to see. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.
+
+To achieve this, you'll need to follow the [delegate implementation](listening-for-events.md#session-updated-events) and ensure you pass the all your applications root views to the Cobrowse redaction delegate methods for iOS and Android.
+
+{% content-ref url="listening-for-events.md" %}
+[listening-for-events.md](listening-for-events.md)
+{% endcontent-ref %}
+
+Once you've done this, your application root views will be redacted by default and you'll be able to un-redact child components to make them visible to the agents:
+
+```javascript
 import { Unredacted } from 'cobrowse-sdk-react-native';
+// ...
 
-export default class MyComponent extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text>This text should be secret due to the redaction by default implementation</Text>
-                <Unredacted>
-                    <Text>This text will be visible to the agents because it's wrapped with an Unredacted component</Text>
-                    <Redacted>
-                        <Text>You can also nest redacted elements inside unredacted ones. This text will be hidden to the agents.</Text>
-                    </Redacted>
-                </Unredacted>
-            </View>
-        );
-    }
-}
+<View style={styles.container}>
+    <Text>This text should be secret due to the redaction by default implementation</Text>
+    <Unredacted>
+        <Text>This text will be visible to the agents because it's wrapped with an Unredacted component</Text>
+        <Redacted>
+            <Text>You can also nest redacted elements inside unredacted ones. This text will be hidden to the agents.</Text>
+        </Redacted>
+    </Unredacted>
+</View>
 ```
+
+####
+
+#### Redacting views outside React Native
 
 Finally, within React Native some packages will render in new Windows/Root Views. You can follow the same [delegate implementation](listening-for-events.md#session-updated-events) to identify this views and redact or unredact them by default as required. You can check the provided examples for [iOS](https://github.com/cobrowseio/cobrowse-sdk-react-native/blob/master/Example/ios/Example/AppDelegate.m) and [Android](https://github.com/cobrowseio/cobrowse-sdk-react-native/blob/master/Example/android/app/src/main/java/com/example/MainApplication.java) which redact by default the React Native Dev menu keeping one of the options unredacted to illustrate the technique.
 {% endtab %}
