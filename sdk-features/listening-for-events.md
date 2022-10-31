@@ -206,6 +206,10 @@ CobrowseIO.instance().setDelegate(/* your delegate implementation */);
 
 To use the Delegate objects within React Native you can follow the examples below.
 
+{% hint style="info" %}
+**Note:** For newer versions of React Native you may need to to enable **C++ modules** to use the delegate. To do this, you can pass the `-fmodules` or `-fcxx-modules` flags to the "Other C++ Flags" under your project build settings. Remember to do this for any build configuration (ie: Debug, Release and so on).
+{% endhint %}
+
 Ensure that your `AppDelegate` implements the `RCTCobrowseIODelegate` protocol.
 
 ```objectivec
@@ -213,7 +217,9 @@ Ensure that your `AppDelegate` implements the `RCTCobrowseIODelegate` protocol.
 // ...
 #import <RCTCobrowseIO.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, RCTBridgeDelegate, RCTCobrowseIODelegate>
+@interface AppDelegate : UIResponder <
+    UIApplicationDelegate, RCTBridgeDelegate, RCTCobrowseIODelegate
+>
 ```
 
 You should then instantiate the delegate in the `application: didFinishLaunchingWithOptions:` function as such:
@@ -228,9 +234,11 @@ You should then instantiate the delegate in the `application: didFinishLaunching
 
 Finally, you can define the methods as required. You can refer to [this commit](https://github.com/cobrowseio/cobrowse-sdk-react-native/commit/db4ed8a57da53c2acc0310975f5eeda914db05f7) on our SDK for an example.
 
-**Note:** For newer versions of React Native you may need to to enable **C++ modules** to use the delegate. To do this, you can pass the `-fmodules` or `-fcxx-modules` flags to the "Other C++ Flags" under your project build settings. Remember to do this for any build configuration (ie: Debug, Release and so on).
 
-Ensure that your `MainApplication` implements the desired delegate and assign the instance of your application to the `CobrowseIOModule.delegate`. For this example we'll use the `RedactionDelegate`:
+
+### Android
+
+Ensure that your `MainApplication` implements the desired delegate (e.g. `CobrowseIO.RedactionDelegate`) and assign the instance of your application to the `CobrowseIOModule.delegate`. For this example we'll use the `RedactionDelegate`:
 
 ```java
 // android/app/src/main/java/com/example/MainApplication.java
@@ -241,7 +249,6 @@ import io.cobrowse.reactnative.CobrowseIOModule;
 
 public class MainApplication extends Application implements ReactApplication, CobrowseIO.RedactionDelegate {
     // ... 
-
     CobrowseIOModule.delegate = this;
 }
 ```
@@ -249,50 +256,3 @@ public class MainApplication extends Application implements ReactApplication, Co
 From this you can override the methods you need. You can refer to [this commit](https://github.com/cobrowseio/cobrowse-sdk-react-native/commit/00e3036c2247b8a20ed705543ca9df4aa54218f6) for a reference implementation within our React Native example app.
 {% endtab %}
 {% endtabs %}
-
-#### Using the delegates on React Native
-
-To use the Delegate objects within React Native you can follow the examples below.
-
-Ensure that your `AppDelegate` implements the `RCTCobrowseIODelegate` protocol.
-
-```objectivec
-// ios/Example/AppDelegate.h
-// ...
-#import <RCTCobrowseIO.h>
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate, RCTBridgeDelegate, RCTCobrowseIODelegate>
-```
-
-You should then instanciate the delegate in the application function as such:
-
-```objectivec
-// ios/Example/AppDelegate.m
-    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-        // ...
-
-        RCTCobrowseIO.delegate = self;
-    }
-```
-
-Finally, you can define the methods as required. You can refer to [this commit](https://github.com/cobrowseio/cobrowse-sdk-react-native/commit/db4ed8a57da53c2acc0310975f5eeda914db05f7) on our SDK for an example.
-
-**Note:** For newer versions of React Native you may need to to enable **C++ modules** to use the delegate. To do this, you can pass the `-fmodules` or `-fcxx-modules` flags to the "Other C++ Flags" under your project build settings. Remember to do this for any build configuration (ie: Debug, Release and so on).
-
-Ensure that your `MainApplication` implements the desired delegate and assign the instance of your application to the `CobrowseIOModule.delegate`. For this example we'll use the `RedactionDelegate`:
-
-```java
-// android/app/src/main/java/com/example/MainApplication.java
-
-// ...
-import io.cobrowse.reactnative.CobrowseIO;
-import io.cobrowse.reactnative.CobrowseIOModule;
-
-public class MainApplication extends Application implements ReactApplication, CobrowseIO.RedactionDelegate {
-    // ... 
-
-    CobrowseIOModule.delegate = this;
-}
-```
-
-From this you can override the methods you need. You can refer to [this commit](https://github.com/cobrowseio/cobrowse-sdk-react-native/commit/00e3036c2247b8a20ed705543ca9df4aa54218f6) for a reference implementation within our React Native example app.
