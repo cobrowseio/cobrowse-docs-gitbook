@@ -20,6 +20,8 @@ Cobrowse is distributed using docker container images. You will need to pull the
 By default, the Cobrowse Enterprise helm chart references repository `ghcr.io/cobrowseio` to fetch images. After making your images available internally, you can override the `image.repo` helm value to change the repository images are pulled from. For example:
 
 ```yaml
+# values.yml
+
 # Fetch containers from repo docker.internal (e.g., 
 # "docker.internal/cobrowse-api-enterprise:1.2.3")
 image:
@@ -29,6 +31,16 @@ image:
 image:
   repo: ""
 ```
+
+If your internal docker repository requires credentials, you should manage your own docker pull credentials using kubernetes' standard `dockerconfigjson` functionality.
+
+To manage your own credentials, first ensure you do not set an `imageCredentials.password` helm value in your deployment. Then you should create a standard kubernetes docker registry secret named `cobrowse-docker-cfg` (replace `cobrowse` with your helm release name if you've changed it) with your registry credentials. Instructions on how to do this is using `kubectl` are located in the [kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#create-a-secret-by-providing-credentials-on-the-command-line). For example:
+
+```bash
+kubectl create secret docker-registry cobrowse-docker-cfg --docker-server=<server url> --docker-username=<username> --docker-password=<password> --docker-email=<email>
+```
+
+Please consult your docker registry documentation for what values should be used for the docker server, username, password and email address.
 
 ### Database storage
 
