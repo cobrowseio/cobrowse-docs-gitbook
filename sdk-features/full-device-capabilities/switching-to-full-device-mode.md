@@ -13,7 +13,7 @@ await session.setFullDevice(true)
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS / MacOS" %}
 ```objectivec
 [session setFullDevice:YES callback:^(NSError* err, CBIOSession* session) {
     // catch errors
@@ -29,7 +29,7 @@ session.setFullDevice(true, (err, arg) -> {
 ```
 {% endtab %}
 
-{% tab title="ReactNative" %}
+{% tab title="React Native" %}
 ```javascript
 await session.setFullDevice(true)
 ```
@@ -49,7 +49,7 @@ CobrowseIO.on('session.loaded', session => session.setFullDevice(true))
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS / MacOS" %}
 ```objectivec
 // note: you must have implmented the CobrowseIODelegate
 - (void)cobrowseSessionDidLoad:(CBIOSession *)session {
