@@ -68,6 +68,15 @@ public void sessionDidLoad(@NonNull Session session) {
 }
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+```javascript
+CobrowseIO.addListener('session.loaded', session => {
+    console.log('A session was loaded', session)
+    await session.setFullDevice(true)
+})
+```
+{% endtab %}
 {% endtabs %}
 
 ### Controlling full device state from the Agent SDK
