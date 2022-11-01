@@ -30,7 +30,7 @@
 * [Full device capabilities](sdk-features/full-device-capabilities/README.md)
   * [Full device screen sharing](sdk-features/full-device-capabilities/full-device-screen-sharing.md)
   * [Full device remote control](sdk-features/full-device-capabilities/full-device-remote-control.md)
-  * [Switching to full device mode](sdk-features/full-device-capabilities/switching-to-full-device-mode.md)
+  * [Managing full device mode](sdk-features/full-device-capabilities/switching-to-full-device-mode.md)
 * [Advanced configuration](sdk-features/advanced-features/README.md)
   * [Web](sdk-features/advanced-features/web/README.md)
     * [IFrames support](sdk-features/advanced-features/web/cross-document-iframes.md)
