@@ -67,6 +67,10 @@ Please follow the Android documentation to implement full device remote control 
 {% endhint %}
 {% endtab %}
 
+{% tab title="macOS" %}
+Full device remote control available after user consents to the macOS permission and consent prompt, no extra integration needed.
+{% endtab %}
+
 {% tab title="Windows" %}
 Full device remote control by default, no extra integration needed.
 {% endtab %}
