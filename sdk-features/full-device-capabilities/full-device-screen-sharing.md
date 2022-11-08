@@ -236,7 +236,9 @@ Please see the Android documentation for full device capabilities.&#x20;
 {% endtab %}
 
 {% tab title="macOS" %}
-Full device screen share by default, no extra integration needed.
+The Cobrowse.io SDK for macOS will allow full device screen capture, including home screen, device settings, and everything else, just by toggling "full device mode" during an active session.
+
+No extra integration work is required to use full device mode via our macOS SDK.
 {% endtab %}
 
 {% tab title="Windows" %}
