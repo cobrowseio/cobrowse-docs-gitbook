@@ -59,7 +59,7 @@
 * [Custom integrations](agent-side-integrations/custom-integrations.md)
 * [Agent SDK](agent-side-integrations/agent-sdk/README.md)
   * [API Reference](agent-side-integrations/agent-sdk/api-reference.md)
-  * [Sample code snippets](agent-side-integrations/agent-sdk/how-do-i....md)
+  * [Sample code snippets](agent-side-integrations/agent-sdk/sample-code-snippets.md)
 * [Authentication (JWTs)](agent-side-integrations/json-web-tokens-jwts/README.md)
   * [JWT Policies](agent-side-integrations/json-web-tokens-jwts/jwt-policies.md)
 * [Authentication (SAML 2.0)](agent-side-integrations/authentication-saml-2.0.md)
