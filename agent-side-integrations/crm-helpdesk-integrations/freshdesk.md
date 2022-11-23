@@ -38,7 +38,9 @@ The app should then appear in the left-hand sidebar after one or two page refres
 
 To make devices appear (as in the screenshot), your next step is to install our SDKs for your platforms. You can find the links for each platform here: [https://docs.cobrowse.io/](https://docs.cobrowse.io/)
 
-You can then connect to the correct device of the customer to cobrowse with them: [https://support.cobrowse.io/how-do-i-connect-to-the-right-device.](https://support.cobrowse.io/how-do-i-connect-to-the-right-device)
+## Connect from the Freshdesk app
+
+After installation, you can then connect to the correct device of the customer to cobrowse: [https://support.cobrowse.io/how-do-i-connect-to-the-right-device.](https://support.cobrowse.io/how-do-i-connect-to-the-right-device)
 
 ## Connect from Freshchats (within Freshdesk)
 
