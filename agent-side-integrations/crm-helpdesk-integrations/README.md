@@ -16,8 +16,8 @@ We believe in putting Cobrowse where your agents are already working. Therefore,
 [genesys](genesys/)
 {% endcontent-ref %}
 
-{% content-ref url="salesforce/salesforce-legacy.md" %}
-[salesforce-legacy.md](salesforce/salesforce-legacy.md)
+{% content-ref url="salesforce/" %}
+[salesforce](salesforce/)
 {% endcontent-ref %}
 
 {% content-ref url="freshdesk.md" %}
