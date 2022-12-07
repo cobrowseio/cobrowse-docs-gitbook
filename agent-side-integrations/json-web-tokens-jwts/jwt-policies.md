@@ -78,7 +78,7 @@ A policy that allows access to a **session** with id _12345_, but no access at a
 
 Version 1 of our JWT policies are being deprecated in favour of a more flexible structure, so you will need to update your integration with a simple change. To upgrade your policy you should add a `custom_data` object around the policy for each resource type, and an explicit version field to the policy.
 
-For example, a version 1 policy that looked like this:
+For example, a version 1 policy used to start sessions with matching devices looked like this:
 
 ```javascript
 {
