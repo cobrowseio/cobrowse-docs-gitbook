@@ -91,6 +91,7 @@ Would become a version 2 policy that looks like this:
 ```javascript
 {
     version: 2, // add an explicit version of 2
-    devices: { custom_data: { user_id: 'abcde123' } } // Note the new custom_data object
+    devices: { custom_data: { user_id: 'abcde123' } }, // Note the new custom_data object
+    sessions: {}
 }
 ```
