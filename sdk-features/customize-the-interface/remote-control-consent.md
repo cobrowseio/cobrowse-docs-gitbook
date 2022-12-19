@@ -22,7 +22,7 @@ CobrowseIO.confirmRemoteControl = function() {
 To override the the default remote control consent prompt, you should implement the `cobrowseHandleRemoteControlRequest:` method of `CobrowseIODelegate`.
 
 ```objectivec
--(void) cobrowseHandleSessionRequest:(CBIOSession*) session {
+-(void) cobrowseHandleRemoteControlRequest:(CBIOSession*) session {
     // show your own UI here
     // call [session setRemoteControl:kCBIORemoteControlStateOn callback:nil] to allow
     // or [session setRemoteControl:kCBIORemoteControlStateRejected callback:nil] to reject
