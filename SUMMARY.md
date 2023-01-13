@@ -27,6 +27,7 @@
   * [Localization / translation](sdk-features/customize-the-interface/localization.md)
 * [Initiate sessions with push](sdk-features/initiate-sessions-with-push.md)
 * [Listening for events](sdk-features/listening-for-events.md)
+* [Declaring capabilities](sdk-features/declaring-capabilities.md)
 * [Full device capabilities](sdk-features/full-device-capabilities/README.md)
   * [Full device screen sharing](sdk-features/full-device-capabilities/full-device-screen-sharing.md)
   * [Full device remote control](sdk-features/full-device-capabilities/full-device-remote-control.md)

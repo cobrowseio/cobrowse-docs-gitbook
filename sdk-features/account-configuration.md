@@ -16,5 +16,3 @@ You may configure your account-level settings after logging in at [https://cobro
 | Device listing                     | Allow agents to list devices that have registered into your account?                                     |
 | Hide agent emails                  | Should the agent email be accessible from the SDKs?                                                      |
 | Discard IP addresses               | Should Cobrowse collect IP addresses for audit trail purposes?                                           |
-
-###
