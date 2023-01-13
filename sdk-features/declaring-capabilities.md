@@ -29,8 +29,6 @@ A full list of capabilities can be seen in the table below.
 | scroll       | Can the agent scroll the page (web only)                            |
 | select       | Can the agent select text (web only)                                |
 
-{% embed url="https://cobrowse.io/demo" %}
-
 #### Examples
 
 Allow the agent to scroll but not enter any values or navigate
