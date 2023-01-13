@@ -1,5 +1,9 @@
 # Declaring capabilities
 
+{% hint style="info" %}
+Account-level settings for remote control, full device screenshare, and others are available via your account dashboard. Declaring the supported capabilities on the SDK-side as described below is only necessary for fine-tuning or other advanced use cases.&#x20;
+{% endhint %}
+
 Several of our capabilities, like full device or remote control, can be enabled or disabled from the Session Settings of the dashboard. However, you may wish to have greater control allowing for capabilities to be enabled for some use cases but disabled for another.
 
 {% tabs %}
