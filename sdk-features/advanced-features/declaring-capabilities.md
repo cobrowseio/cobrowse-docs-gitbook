@@ -1,5 +1,7 @@
 # Declaring capabilities
 
+
+
 {% hint style="info" %}
 Account-level settings for remote control, full device screenshare, and others are available via your account dashboard. Declaring the supported capabilities on the SDK-side as described below is only necessary for fine-tuning or other advanced use cases.&#x20;
 {% endhint %}
@@ -22,16 +24,16 @@ Any capability included in the array will be enabled. To disable a capability om
 
 A full list of capabilities can be seen in the table below.
 
-| Capability   | Description                                                         |
-| ------------ | ------------------------------------------------------------------- |
-| cursor       | Should agent cursor be rendered on client side                      |
-| drawing      | Can the agent draw over the users screen                            |
-| full\_device | Is full device mode enabled                                         |
-| keypress     | Can the agent generate key events                                   |
-| laser        | Can the agent direct user with laser pointer                        |
-| pointer      | Can the agent point and click on things when in remote control mode |
-| scroll       | Can the agent scroll the page (web only)                            |
-| select       | Can the agent select text (web only)                                |
+| Capability    | Description                                                         |
+| ------------- | ------------------------------------------------------------------- |
+| `cursor`      | Should agent cursor be rendered on client side                      |
+| `drawing`     | Can the agent draw over the users screen                            |
+| `full_device` | Is full device mode enabled                                         |
+| `keypress`    | Can the agent generate key events                                   |
+| `laser`       | Can the agent direct user with laser pointer                        |
+| `pointer`     | Can the agent point and click on things when in remote control mode |
+| `scroll`      | Can the agent scroll the page _(web only)_                          |
+| `select`      | Can the agent select text _(web only)_                              |
 
 #### Examples
 
