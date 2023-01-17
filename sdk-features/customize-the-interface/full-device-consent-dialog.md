@@ -58,6 +58,112 @@ public void handleFullDeviceRequest(@NonNull Activity activity, @NonNull Session
 ```
 {% endtab %}
 
+{% tab title="React Native" %}
+{% hint style="info" %}
+Please follow the iOS and Android documentation to implement full device capabilities on React Native by following the steps outlined on [Full device screen sharing](../full-device-capabilities/full-device-screen-sharing.md)
+{% endhint %}
+
+To override the full device consent prompt, you should overwrite the `handleFullDeviceRequest` method on the sdk. For most scenarios, setting this as an empty function should be enough.
+
+```javascript
+CobrowseIO.handleFullDeviceRequest = (session) => {
+    // your code
+}
+```
+
+Whenever a full device request is received, the callback you set above will be called with the current session object and you're expected to handle the prompt within the application. Please check the examples below.
+
+**iOS**
+
+On iOS, you need to present a `RPSystemBroadcastPickerView` to the user. To achieve this, we expose a Native UI component that you must render on your component, `CBIOBroadcastPickerView`. **Since this is component represent a native view, please remember to set the width and height accordingly**. You can also control the color used to render the button by passing in an HEX color to the `buttonColor` prop.
+
+```javascript
+// FullDevicePrompt.ios.js
+import React from 'react'
+import {
+  Text,
+  View,
+  Modal,
+  Button
+} from 'react-native'
+import CobrowseIO, { CBIOBroadcastPickerView } from 'cobrowse-sdk-react-native'
+
+CobrowseIO.handleFullDeviceRequest = () => {}
+
+export function FullDevicePrompt () {
+  const session = useSession();
+  const isVisible = session?.full_device_state === 'requested'
+
+  const reject = () => session?.setFullDevice('off')
+
+  return (
+    <Modal animationType='slide' visible={isVisible} onRequestClose={reject}>
+      <View>
+        <Text>Tap the record icon to manage full device screen sharing.</Text>
+        <CBIOBroadcastPickerView
+          style={{height: 50, width: 50}}
+          buttonColor="#007AFF"
+        />
+      </View>
+    </Modal>
+  )
+}
+```
+
+{% hint style="info" %}
+Please note that **`RPSystemBroadcastPickerView` is an iOS only component and, as a result, the following code will not work on Android**. You must **ensure that this is only included for iOS** through the use of platform specific files or platform conditionals.
+{% endhint %}
+
+**Android**
+
+On Android, we can't overwrite the system prompt but you can choose to present a prompt that explains what is happening to your users. To do this, you can follow the following example:
+
+```javascript
+// FullDevicePrompt.android.js
+import React from 'react'
+import {
+  Text,
+  View,
+  Modal,
+  Button
+} from 'react-native'
+import CobrowseIO, { CBIOBroadcastPickerView } from 'cobrowse-sdk-react-native'
+
+CobrowseIO.handleFullDeviceRequest = () => {}
+
+export function FullDevicePrompt () {
+  const session = useSession();
+  const isVisible = session?.full_device_state === 'requested'
+
+  const reject = () => session?.setFullDevice('off')
+  const displaySystemPrompt = () => session?.setFullDevice('on')
+
+  return (
+    <Modal animationType='slide' visible={isVisible} onRequestClose={reject}>
+      <View>
+         <Text>
+            An agent has requested to screen share your full device.
+          </Text>
+
+          <Text>
+            If you wish to accept please press "Continue" and "Accept" the
+            system prompt. Otherwise press "Cancel".
+          </Text>
+
+          <Button title='Continue' onPress={displaySystemPrompt} />
+          <Button title='Cancel' onPress={reject} />
+      </View>
+    </Modal>
+  )
+}
+```
+
+{% hint style="info" %}
+Note that you must call `session?.setFullDevice('on')` on your prompt for the require Android prompt to be displayed so the user can accept it.
+{% endhint %}
+
+{% endtab %}
+
 {% tab title="macOS" %}
 To override the the full device consent prompt, you should implement the `cobrowseHandleFullDeviceRequest:` method of `CobrowseIODelegate`.
 
