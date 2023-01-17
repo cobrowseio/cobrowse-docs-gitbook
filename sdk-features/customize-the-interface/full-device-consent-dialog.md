@@ -4,7 +4,7 @@ Before a session is upgraded to [full device](../full-device-capabilities/), som
 
 {% tabs %}
 {% tab title="Web" %}
-### Customizing the full device UI on Web
+#### Customizing the full device UI on Web
 
 ```javascript
 CobrowseIO.confirmFullDevice = function() {
@@ -23,7 +23,7 @@ CobrowseIO.confirmFullDevice = function() {
 }
 ```
 
-If your custom confirmation prompt is not working in some browsers, please ensure you resolve the promise in response to a user action, such as a button click. This is required by both Safari and Firefox browsers when calling the browser's getDisplayMedia() API, which is used for full device screen share on Web.  The call to getDisplayMedia() must be made from code which is running in response to a user action, such as in an event handler.
+If your custom confirmation prompt is not working in some browsers, please ensure you resolve the promise in response to a user action, such as a button click. This is required by both Safari and Firefox browsers when calling the browser's getDisplayMedia() API, which is used for full device screen share on Web. The call to getDisplayMedia() must be made from code which is running in response to a user action, such as in an event handler.
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -63,7 +63,7 @@ public void handleFullDeviceRequest(@NonNull Activity activity, @NonNull Session
 Please follow the iOS and Android documentation to implement full device capabilities on React Native by following the steps outlined on [Full device screen sharing](../full-device-capabilities/full-device-screen-sharing.md)
 {% endhint %}
 
-To override the full device consent prompt, you should overwrite the `handleFullDeviceRequest` method on the sdk. For most scenarios, setting this as an empty function should be enough.
+To override the full device consent prompt, you should overwrite the `handleFullDeviceRequest` method on the SDK's main API. For most scenarios, setting this as an empty function should be enough.
 
 ```javascript
 CobrowseIO.handleFullDeviceRequest = (session) => {
@@ -75,7 +75,13 @@ Whenever a full device request is received, the callback you set above will be c
 
 **iOS**
 
-On iOS, you need to present a `RPSystemBroadcastPickerView` to the user. To achieve this, we expose a Native UI component that you must render on your component, `CBIOBroadcastPickerView`. **Since this is component represent a native view, please remember to set the width and height accordingly**. You can also control the color used to render the button by passing in an HEX color to the `buttonColor` prop.
+On iOS, you need to present a `RPSystemBroadcastPickerView` to the user. To help achieve this, we expose a Native UI component that you must render in your application, `CBIOBroadcastPickerView`.
+
+{% hint style="info" %}
+Please note that **`RPSystemBroadcastPickerView` is an iOS only component and, as a result, the following code will not work on Android**. You must **ensure that this is only included for iOS** through the use of platform specific files or platform conditionals.
+{% endhint %}
+
+You can control the size and color of the `RPSystemBroadcastPickerView` as shown below, via the `style` and `buttonColor` props.
 
 ```javascript
 // FullDevicePrompt.ios.js
@@ -110,10 +116,6 @@ export function FullDevicePrompt () {
 }
 ```
 
-{% hint style="info" %}
-Please note that **`RPSystemBroadcastPickerView` is an iOS only component and, as a result, the following code will not work on Android**. You must **ensure that this is only included for iOS** through the use of platform specific files or platform conditionals.
-{% endhint %}
-
 **Android**
 
 On Android, we can't overwrite the system prompt but you can choose to present a prompt that explains what is happening to your users. To do this, you can follow the following example:
@@ -135,7 +137,7 @@ export function FullDevicePrompt () {
   const session = useSession();
   const isVisible = session?.full_device_state === 'requested'
 
-  const reject = () => session?.setFullDevice('off')
+  const reject = () => session?.setFullDevice('rejected')
   const displaySystemPrompt = () => session?.setFullDevice('on')
 
   return (
@@ -161,7 +163,6 @@ export function FullDevicePrompt () {
 {% hint style="info" %}
 Note that you must call `session?.setFullDevice('on')` on your prompt for the require Android prompt to be displayed so the user can accept it.
 {% endhint %}
-
 {% endtab %}
 
 {% tab title="macOS" %}
