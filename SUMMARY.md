@@ -32,6 +32,7 @@
   * [Full device remote control](sdk-features/full-device-capabilities/full-device-remote-control.md)
   * [Managing full device mode](sdk-features/full-device-capabilities/switching-to-full-device-mode.md)
 * [Advanced configuration](sdk-features/advanced-features/README.md)
+  * [Starting and stopping the SDK](sdk-features/advanced-features/starting-and-stopping-the-sdk.md)
   * [Declaring capabilities](sdk-features/advanced-features/declaring-capabilities.md)
   * [Web](sdk-features/advanced-features/web/README.md)
     * [IFrames support](sdk-features/advanced-features/web/cross-document-iframes.md)
