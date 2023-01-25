@@ -19,6 +19,8 @@ You may estimate how many sessions will be stored by multiplying the # of sessio
 * **10GB** for every **10,000** mobile co-browsing session recordings with an average length of 5 minutes, and minimal video content, approximately 3.33kb/s
 * **10GB** for every **1,000** mobile co-browsing session recordings with average length of 5 minutes, and video content playing 100% of the time, approximately 33.33kb/s
 
+Conversely, if session recording is not enabled for your account, you may choose to disable certain infrastructure components to optimize costs and simplify deployment. See the [optional recording components](helm/advanced-configuration.md#optional-recording-components) section of the advanced helm configuration guide for details.
+
 ### Database sizing
 
 The underlying database used by Cobrowse Enterprise server is MongoDB. The storage requirement will increase based on the total number of co-browsing sessions which are stored.&#x20;
