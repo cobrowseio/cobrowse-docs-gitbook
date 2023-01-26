@@ -6,7 +6,7 @@ Cobrowse.io provides an integration with Intercom available in the [Intercom App
 
 ## Install the app
 
-Install the app from the [Intercom App Store](https://www.intercom.com/app-store/?app\_package\_code=cobrowse-screenshare-permissions) and follow the simple setup instructions!
+Install the app from the [Intercom App Store](https://www.intercom.com/app-store/?app\_package\_code=cobrowse-screenshare-permissions) and follow the setup instructions!
 
 ## Troubleshooting
 
