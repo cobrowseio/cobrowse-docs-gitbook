@@ -16,7 +16,7 @@ It's likely your Intercom account is linked to a separate Cobrowse.io account. W
 
 #### No devices found for user, cannot start cobrowse session.
 
-Please ensure Cobrowse.io Javascript Snippet has been added to your website where you are using Intercom chat. Installation instructions at [Web SDK](../../sdk-installation/web.md).&#x20;
+Please ensure a Cobrowse.io SDK has been added to the platform where you are using Intercom chat. Installation instructions for each SDK are found at [Getting Started](../../).&#x20;
 
 #### Agent is stuck on "waiting for authorization".
 
