@@ -44,7 +44,7 @@ Register a free account for development and testing at [https://cobrowse.io/regi
 
 Cobrowse.io is 100% free and easy to try out in your own apps.
 
-Try our **online demo** at the bottom of our homepage at [https://cobrowse.io/#tryit](https://cobrowse.io/#tryit).
+Try our **online demo** at the bottom of our homepage at [https://cobrowse.io/demo](https://cobrowse.io/demo).
 
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
