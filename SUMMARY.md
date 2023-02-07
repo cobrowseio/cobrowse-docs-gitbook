@@ -38,6 +38,7 @@
     * [IFrames support](sdk-features/advanced-features/web/cross-document-iframes.md)
     * [IE 11 polyfills](sdk-features/advanced-features/web/ie-11-polyfills.md)
     * [Cross-domain session support](sdk-features/advanced-features/web/cross-domain-session-support.md)
+    * [Ignore Views](sdk-features/advanced-features/web/ignore-views.md)
   * [iOS](sdk-features/advanced-features/ios/README.md)
     * [Alternate render method](sdk-features/advanced-features/ios/alternate-render-method.md)
     * [Custom touch handling](sdk-features/advanced-features/ios/custom-touch-handling.md)
