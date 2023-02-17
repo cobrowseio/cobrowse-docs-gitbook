@@ -60,17 +60,20 @@ https://github.com/cobrowseio/cobrowse-sdk-ios-binary.git
 ```
 
 Make sure your **app target** uses `CobrowseIO` package and your **extension target** uses `CobrowseIOExtension` package, respectively:
-<img src="../../.gitbook/assets/xcode_spm_dependency_structure.png" height="320" />
+<img src="../../.gitbook/assets/xcode_spm_dependency_structure.png" height="400" />
 
 {% hint style="info" %}
 Xcode 13.3 and newer might not copy `CobrowseIOExtension.framework` extension dependency into resulting IPA builds. If that happens to you, follow the steps below:
 
 1. Add a new script build phase to your **app target**:
-<img src="../../.gitbook/assets/xcode_add_new_run_script.png" height="320" />
+    <img src="../../.gitbook/assets/xcode_add_new_run_script.png" height="320" />
 2. Configure the new script:
-a. Set the phase name you like (e.g. _Copy Cobrowse.io broadcast extension framework_)
-b. Set _Shell_ to `/usr/bin/ruby`
-c. Copy the script content:
+
+    a) Set the phase name you like (e.g. _Copy Cobrowse.io broadcast extension framework_)
+
+    b) Set _Shell_ to `/usr/bin/ruby`
+
+    c) Copy and paste the script content:
     ```ruby
     require 'fileutils'
 
@@ -93,8 +96,11 @@ c. Copy the script content:
         `codesign --force --verbose --sign "#{codeSignIdentityForItems}" "#{cbioExtFramework}"`
     end
     ```
-d. Uncheck _"For install builds only"_, _"Based on dependency analysis"_, _"Show environment variables in build log"_, and _"Use discovery dependency file"_:
-<img src="../../.gitbook/assets/xcode_spm_copy_extension_script.png" height="320" />
+
+    d) Uncheck _"For install builds only"_, _"Based on dependency analysis"_, _"Show environment variables in build log"_, and _"Use discovery dependency file"_:
+
+    <img src="../../.gitbook/assets/xcode_spm_copy_extension_script.png" height="560" />
+
 {% endhint %}
 {% endtab %}
 {% tab title="CocoaPods" %}
@@ -110,7 +116,7 @@ end
 ```
 
 {% hint style="info" %}
-By default CocoaPods links both `CobrowseIO.framework` and `CobrowseIOExtension.framework` with **your app target** which leads to several warnings shown at runtime, such as _Class CBIOSession is implemented in both CobrowseIOAppExtension.framework and CobrowseIO.framework. One of the two will be used. Which one is undefined._ To get rid of these warnings add the following script to your Podfile:
+By default CocoaPods links both `CobrowseIO.framework` and `CobrowseIOExtension.framework` with **your app target** which leads to several warnings shown at runtime, such as _Class CBIOSession is implemented in both CobrowseIOAppExtension.framework and CobrowseIO.framework. One of the two will be used. Which one is undefined._ To get rid of these warnings, add the following script to your Podfile:
 
 ```ruby
 post_install do |installer|
