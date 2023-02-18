@@ -51,6 +51,10 @@ Take the bundle ID of the **extension** you created above, and add the following
 <string>your.app.extension.bundle.ID.here</string>
 ```
 
+**Add `CobrowseIOExtension` dependency to your project**
+
+The app extension needs a dependency on the CobrowseIO app extension framework. It is available for installation via several dependency managers.
+
 {% tabs %}
 {% tab title="SPM" %}
 **Add the new package dependency to your project**
@@ -60,13 +64,16 @@ https://github.com/cobrowseio/cobrowse-sdk-ios-binary.git
 ```
 
 Make sure your **app target** uses `CobrowseIO` package and your **extension target** uses `CobrowseIOExtension` package, respectively:
+
 <img src="../../.gitbook/assets/xcode_spm_dependency_structure.png" height="400" />
 
 {% hint style="info" %}
 Xcode 13.3 and newer might not copy `CobrowseIOExtension.framework` extension dependency into resulting IPA builds. If that happens to you, follow the steps below:
 
 1. Add a new script build phase to your **app target**:
+
     <img src="../../.gitbook/assets/xcode_add_new_run_script.png" height="320" />
+
 2. Configure the new script:
 
     a) Set the phase name you like (e.g. _Copy Cobrowse.io broadcast extension framework_)
@@ -106,7 +113,7 @@ Xcode 13.3 and newer might not copy `CobrowseIOExtension.framework` extension de
 {% tab title="CocoaPods" %}
 **Add the new target to your Podfile**
 
-The app extension needs a dependency on the CobrowseIO app extension framework. Add the following to your Podfile, replacing the target name with you own extensions target name:
+Add the following to your Podfile, replacing the target name with you own extensions target name:
 
 ```ruby
 # Replace YourExtensionTargetName with your extension target name

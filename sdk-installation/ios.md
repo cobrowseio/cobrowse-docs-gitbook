@@ -13,6 +13,9 @@ The Cobrowse SDK for iOS is available for installation via several dependency ma
 ```
 https://github.com/cobrowseio/cobrowse-sdk-ios-binary.git
 ```
+
+Add the `CobrowseIO` package dependency to **your app target**.
+
 {% endtab %}
 
 {% tab title="Pods" %}
