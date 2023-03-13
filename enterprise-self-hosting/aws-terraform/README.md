@@ -43,7 +43,7 @@ See the AWS documentation on [how to create a bucket](https://docs.aws.amazon.co
 We have provided a small command line utility to help you get started. This utility will gather the required config for your deployment. Run the following command from your terminal:
 
 ```bash
-> npx cobrowse-enterprise create aws ./example
+npx cobrowse-enterprise create aws ./example
 ```
 
 You can replace "./example" with the directory where you wish to save the configuration data. The directory will be created if it does not exist yet.
@@ -55,7 +55,7 @@ Once you have successfully generated a configuration directory via our command l
 Navigate to the configuration directory you created and run the following commands:
 
 ```bash
-> terraform init
+terraform init
 ```
 
 This will instruct terraform to prepare the resources it needs to deploy.
@@ -65,7 +65,7 @@ This will instruct terraform to prepare the resources it needs to deploy.
 Run the following command to start the deployment of resources to AWS:
 
 ```bash
-> terraform apply
+terraform apply
 ```
 
 This will list the modifications that terraform will make to your AWS account. If that looks good, type 'yes' to continue the deployment.
@@ -76,13 +76,13 @@ This will list the modifications that terraform will make to your AWS account. I
 `kubectl` is a utility for managing the Kubernetes clusters. If you have not configured kubectl to talk to your new EKS cluster, you can do so using the [AWS CLI](https://aws.amazon.com/cli/):
 
 ```bash
-> aws eks update-kubeconfig --name cobrowse-enterprise
+aws eks update-kubeconfig --name cobrowse-enterprise
 ```
 
 When configured, test that it works by running:
 
 ```bash
-> kubectl get pod
+kubectl get pod
 ```
 {% endhint %}
 

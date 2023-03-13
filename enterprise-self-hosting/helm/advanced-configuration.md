@@ -11,10 +11,10 @@ The easiest way to specify this is in `values.yaml` in the `imageCredentials.pas
 3. Deploy the `cobrowse-docker-cfg` Secret resource yourself with the command:
 
 ```bash
-> kubectl create secret docker-registry cobrowse-docker-cfg \
->   --docker-server=ghcr.io \
->   --docker-username=cobrowse-enterprise \
->   --docker-password="<github token provided by cobrowse>"
+kubectl create secret docker-registry cobrowse-docker-cfg \
+   --docker-server=ghcr.io \
+   --docker-username=cobrowse-enterprise \
+   --docker-password="<github token provided by cobrowse>"
 ```
 
 ## Environment Variables
@@ -26,7 +26,7 @@ Many of the Cobrowse service component configurations are managed using environm
 To see a list of all `ConfigMap` resources managed by the Helm chart, you can run:
 
 ```bash
-> kubectl get configmap -l "app=cobrowse-cobrowse-enterprise"
+kubectl get configmap -l "app=cobrowse-cobrowse-enterprise"
 NAME                          DATA   AGE
 cobrowse-api-envvars          10     25m
 cobrowse-frontend-envvars     1      25m
@@ -50,7 +50,7 @@ cobrowse-sockets-custom-envvars
 To see a list of all `Secret` resources managed by the Helm chart, you can run:
 
 ```bash
-> kubectl get secret -l "app=cobrowse-cobrowse-enterprise"
+kubectl get secret -l "app=cobrowse-cobrowse-enterprise"
 NAME                         TYPE     DATA   AGE
 cobrowse-api-envvars         Opaque   2      41m
 cobrowse-frontend-envvars    Opaque   0      41m

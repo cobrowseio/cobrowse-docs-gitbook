@@ -15,7 +15,7 @@ Changelog notes for all releases are available: [https://github.com/cobrowseio/c
 The config directory created by our command line utility is a git repo. You can update to the latest version by doing:
 
 ```bash
-> git pull upstream stable
+git pull upstream stable
 ```
 
 Once you have done that, you can update your deployment via Terraform or Docker Compose as in the initial deployment.

@@ -31,7 +31,7 @@ Add this javascript snippet to the top of the `<head>` section of your website.
 First install the Cobrowse SDK for web via NPM:
 
 ```bash
-> npm install cobrowse-sdk-js --save
+npm install cobrowse-sdk-js --save
 ```
 
 Then you can initialise the SDK:

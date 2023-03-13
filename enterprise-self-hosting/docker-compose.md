@@ -22,9 +22,9 @@ Before you're ready to run Cobrowse you'll need to configure the host system wit
 
 *   Setup access to our private Docker registry. This is where your Docker host can obtain the Cobrowse Enterprise images. You will need the Cobrowse Enterprise repo password that has been assigned to you.
 
-    ```bash
-    > docker login ghcr.io --username cobrowse-enterprise
-    ```
+```bash
+docker login ghcr.io --username cobrowse-enterprise
+```
 * Enter your Cobrowse Enterprise repo password when prompted for a password.
 
 ### Generate the Config Directory
@@ -32,7 +32,7 @@ Before you're ready to run Cobrowse you'll need to configure the host system wit
 We have provided a small command line utility to help you get started. This utility will gather the required config for your deployment. Run the following command from your terminal:
 
 ```bash
-> npx cobrowse-enterprise create compose ./example
+npx cobrowse-enterprise create compose ./example
 ```
 
 You can replace "./example" with the directory where you wish to save the configuration data. The directory will be created if it does not exist yet.
@@ -73,7 +73,7 @@ The files are relative to the placement of the `docker-compose.yml` file.
 You're now ready to try starting Cobrowse. Just run these commands in the same location as the docker-compose.yml file:
 
 ```bash
-> docker-compose up
+docker-compose up
 ```
 
 When all the docker containers have started, Cobrowse should be available on the domain you configured above. _Tip: add `--detach` to run the services in the background._
@@ -91,7 +91,7 @@ Open up a web browser and navigate to your Cobrowse domain, you should then be a
 Open up a terminal to the location of the docker-compose.yml file and run:
 
 ```bash
-> docker-compose down
+docker-compose down
 ```
 
 ## Other considerations
@@ -109,9 +109,9 @@ You are responsible for backing up the database regularly. Cobrowse will not do 
 The config directory created by our command line utility is a git repo. You can update to the latest version by doing:
 
 ```bash
-> docker-compose down
-> git pull upstream stable
-> docker-compose up
+docker-compose down
+git pull upstream stable
+docker-compose up
 ```
 
 _Note: We recommend making a database backup before upgrading to new versions_
