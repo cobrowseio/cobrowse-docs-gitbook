@@ -13,8 +13,8 @@ Make sure you have installed (on your local machine) the required tools to manag
 Run the following commands to add our helm repository.
 
 ```bash
-> helm repo add cobrowse-enterprise https://cobrowseio.github.io/cobrowse-enterprise-helm/packages
-> helm install cobrowse cobrowse-enterprise/cobrowse-enterprise
+helm repo add cobrowse-enterprise https://cobrowseio.github.io/cobrowse-enterprise-helm/packages
+helm install cobrowse cobrowse-enterprise/cobrowse-enterprise
 ```
 
 ### Common Parameters

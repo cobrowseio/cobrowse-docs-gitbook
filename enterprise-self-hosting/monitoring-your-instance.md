@@ -17,8 +17,8 @@ Without additional filters, collecting all application metrics into such a servi
 Application metrics for each of our Kubernetes Deployments / StatefulSets are exposed through an HTTP endpoint in each Kubernetes Pod on port `8080` and on path `/metrics`. You can verify that metrics are being exposed by accessing a terminal session to a pod and requesting `http://localhost:8080/metrics` :
 
 ```bash
-> kubectl exec -it <pod name> -- /bin/bash
-> bash-5.1$ wget -O- http://localhost:8080/metrics
+kubectl exec -it <pod name> -- /bin/bash
+bash-5.1$ wget -O- http://localhost:8080/metrics
 ```
 
 If metrics are successfully exposed, you should receive a text document in your terminal listing a variety of labelled process, NodeJS and Cobrowse metric values. Find more details for your deployment type below:

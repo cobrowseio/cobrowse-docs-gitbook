@@ -47,13 +47,13 @@ There are some resources that are not created by our Terraform. You will need to
 
 ```bash
 # 1. Create a resource group (replace <your location> with your Azure region)
-> az group create --location <your location> --name CobrowseEnterprise
+az group create --location <your location> --name CobrowseEnterprise
 
 # 2. Create a key vault
-> az keyvault create --resource-group CobrowseEnterprise --name CobrowseEnterpriseKV
+az keyvault create --resource-group CobrowseEnterprise --name CobrowseEnterpriseKV
 
 # 3. Add a secret in the key vault called "mongo-url"
-> az keyvault secret set --vault-name CobrowseEnterpriseKV --name mongo-url --file ./mongo-url.txt
+az keyvault secret set --vault-name CobrowseEnterpriseKV --name mongo-url --file ./mongo-url.txt
 ```
 {% endhint %}
 
@@ -62,7 +62,7 @@ There are some resources that are not created by our Terraform. You will need to
 We have provided a small command line utility to help you get started. This utility will gather the required config for your deployment. Run the following command from your terminal:
 
 ```bash
-> npx cobrowse-enterprise create azure ./example
+npx cobrowse-enterprise create azure ./example
 ```
 
 You can replace "./example" with the directory where you wish to save the configuration data. The directory will be created if it does not exist yet.
@@ -76,13 +76,13 @@ _**Warning:**_ This will store all Terraform state locally. We **strongly** reco
 Once you have successfully generated a configuration directory via our command line utility you are then ready to deploy the terraform to Azure. Navigate to the configuration directory you created and run the following commands:
 
 ```bash
-> terraform init
+terraform init
 ```
 
 This will instruct terraform to prepare the resources it needs to deploy. Run the following command to start the deployment of resources to Azure:
 
 ```bash
-> terraform apply
+terraform apply
 ```
 
 This will list the modifications that terraform will make to your Azure account. If that looks good, type 'yes' to continue the deployment.
@@ -95,19 +95,19 @@ This will list the modifications that terraform will make to your Azure account.
 If you have not installed `kubectl` you can do so by running:
 
 ```bash
-> az aks install-cli
+az aks install-cli
 ```
 
 Once installed, you can configure it by running:
 
 ```bash
-> az aks get-credentials --resource-group CobrowseEnterprise --name cobrowse-enterprise
+az aks get-credentials --resource-group CobrowseEnterprise --name cobrowse-enterprise
 ```
 
 When complete, test that it works by running:
 
 ```bash
-> kubectl get pod
+kubectl get pod
 ```
 {% endhint %}
 

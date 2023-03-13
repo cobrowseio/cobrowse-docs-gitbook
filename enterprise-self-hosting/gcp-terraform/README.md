@@ -43,7 +43,7 @@ There are some resources that are not created by our Terraform. You will need to
 
 ```bash
 # 1. Create a secret called "mongo_url"
-> gcloud secrets create mongo_url --data-file=mongo-url.txt
+gcloud secrets create mongo_url --data-file=mongo-url.txt
 ```
 {% endhint %}
 
@@ -52,7 +52,7 @@ There are some resources that are not created by our Terraform. You will need to
 We have provided a small command line utility to help you get started. This utility will gather the required config for your deployment. Run the following command from your terminal:
 
 ```bash
-> npx cobrowse-enterprise create gcp ./example
+npx cobrowse-enterprise create gcp ./example
 ```
 
 You can replace "./example" with the directory where you wish to save the configuration data. The directory will be created if it does not exist yet.
@@ -66,13 +66,13 @@ _**Warning:**_ This will store all Terraform state locally. We **strongly** reco
 Once you have successfully generated a configuration directory via our command line utility you are then ready to deploy the terraform to GCP. Navigate to the configuration directory you created and run the following commands:
 
 ```bash
-> terraform init
+terraform init
 ```
 
 This will instruct terraform to prepare the resources it needs to deploy. Run the following command to start the deployment of resources to GCP:
 
 ```bash
-> terraform apply
+terraform apply
 ```
 
 This will list the modifications that terraform will make to your GCP account. If that looks good, type 'yes' to continue the deployment.
@@ -85,19 +85,19 @@ This will list the modifications that terraform will make to your GCP account. I
 If `kubectl` is not installed already, you can install it by running:
 
 ```bash
-> gcloud components install kubectl
+gcloud components install kubectl
 ```
 
 Once installed, you can configure it with your cluster by running:
 
 ```bash
-> gcloud container clusters get-credentials cluster-enterprise
+gcloud container clusters get-credentials cluster-enterprise
 ```
 
 When complete, test that it works by running:
 
 ```bash
-> kubectl get pod
+kubectl get pod
 ```
 {% endhint %}
 
