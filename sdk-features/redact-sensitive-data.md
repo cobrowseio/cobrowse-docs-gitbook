@@ -36,7 +36,16 @@ Implement the `CobrowseIORedacted` protocol on any `UIViewController` that conta
 }
 ```
 
-If making changes to your `UIViewController` subclasses isn't an option, we also support a [delegate style](listening-for-events.md) method to allow you to supply this information in one place. Find out more about this by emailing us at [hello@cobrowse.io](https://github.com/cobrowseio/cobrowse-docs-gitbook/tree/91f22fdcf9e3124fc8f6f9877feb64cda4b8af39/sdk-features/hello@cobrowse.io).
+If making changes to your `UIViewController` subclasses isn't an option, we also support a [delegate style](listening-for-events.md) method to allow you to supply this information in one place.  Implement `cobrowseRedactedViewsForViewController` in your `CobrowseIODelegate` class, then you can pass redacted views for a specific `UIViewController` in a single method:
+
+```objc
+-(NSArray<UIView*>*) cobrowseRedactedViewsForViewController:(UIViewController*) vc {
+    NSMutableArray<UIView*>* redacted = [[NSMutableArray alloc] init];
+    // Return a list of redacted views for a provided UIViewController
+    return redacted;
+}
+```
+
 {% endtab %}
 
 {% tab title="Android" %}
@@ -52,7 +61,17 @@ public List<View> redactedViews() {
 }
 ```
 
-If making changes to your Activity classes isn't an option, we also support a delegate style method to allow you to supply this information in one place. Find out more about this by emailing us at [hello@cobrowse.io](https://github.com/cobrowseio/cobrowse-docs-gitbook/tree/91f22fdcf9e3124fc8f6f9877feb64cda4b8af39/sdk-features/hello@cobrowse.io).
+If making changes to your `Activity` classes isn't an option, we also support a delegate style method to allow you to supply this information in one place. Implement `CobrowseIO.RedactionDelegate` interface in your `CobrowseIO.Delegate` class, then you can pass redacted views for a specific `Activity` in a single method:
+
+```java
+@Override
+public List<View> redactedViews(@NonNull Activity activity) {
+    List<View> redacted = new ArrayList<>();
+    // Return a list of redacted views for a provided activity
+    return redacted;
+}
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
