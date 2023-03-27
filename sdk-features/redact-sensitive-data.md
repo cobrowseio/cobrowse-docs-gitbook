@@ -46,6 +46,38 @@ If making changes to your `UIViewController` subclasses isn't an option, we also
 }
 ```
 
+#### Redaction by default
+
+Sometimes you may want to redact everything on the screen, then selectively "unredact" only the parts your support agents should be able to see. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.
+
+To achieve this, you'll need to follow the delegate implementation and ensure you pass the all your applications root views to the Cobrowse redaction delegate method:
+
+```objc
+-(NSArray<UIView*>*) cobrowseRedactedViewsForViewController:(UIViewController*) vc {
+    return @[self.window.rootViewController.view];
+}
+```
+
+Once you've done this, your application root views will be redacted by default and you'll be able to un-redact child components to make them visible to the agents by implementing `cobrowseUnredactedViewsForViewController` in your `CobrowseIODelegate` class:
+
+```objc
+-(NSArray<UIView*>*) cobrowseUnredactedViewsForViewController:(UIViewController *) vc {
+    UIView *unredacted = [self findViewByAccessibilityLabel:self.window:@"viewToBeUnredacted"];
+    if (unredacted) {
+        return @[unredacted];
+    }
+    return @[];
+}
+```
+
+Alternatively, you can implement `CobrowseIOUnredacted` protocol in your `UIViewController` subclasses:
+
+```objc
+-(NSArray*) unredactedViews {
+    return @[viewToBeUnredacted];
+}
+```
+
 {% endtab %}
 
 {% tab title="Android" %}
@@ -72,6 +104,44 @@ public List<View> redactedViews(@NonNull Activity activity) {
 }
 ```
 
+#### Redaction by default
+
+Sometimes you may want to redact everything on the screen, then selectively "unredact" only the parts your support agents should be able to see. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.
+
+To achieve this, you'll need to follow the delegate implementation and ensure you pass the all your applications root views to the Cobrowse redaction delegate method:
+
+```java
+@Override
+public List<View> redactedViews(@NonNull Activity activity) {
+    return new ArrayList<View>() {{
+        add(activity.getWindow().getDecorView());
+    }};
+}
+```
+
+Once you've done this, your application root views will be redacted by default and you'll be able to un-redact child components to make them visible to the agents by implementing `CobrowseIO.UnredactionDelegate` in your `CobrowseIO.Delegate` class:
+
+```java
+@Override
+public List<View> unredactedViews(@NonNull Activity activity) {
+    return new ArrayList<View>(){{
+        if (findViewById(R.id.view_to_be_unredacted) != null)
+            add(findViewById(R.id.view_to_be_unredacted));
+    }};
+}
+```
+
+Alternatively, you can implement `CobrowseIO.Unredacted` interface in your `Activity` subclasses:
+
+```java
+@Override
+public List<View> unredactedViews() {
+    return new ArrayList<View>(){{
+        if (findViewById(R.id.view_to_be_unredacted) != null)
+            add(findViewById(R.id.view_to_be_unredacted));
+    }};
+}
+```
 {% endtab %}
 
 {% tab title="React Native" %}
