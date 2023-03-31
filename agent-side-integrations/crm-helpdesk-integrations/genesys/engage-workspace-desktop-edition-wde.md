@@ -8,6 +8,8 @@ description: Plugin version v1.x
 
 Supported WDE versions: 8.5.147.05+.
 
+[WebView2](https://docs.genesys.com/Documentation/IW/8.5.1/Developer/Chromium) installed on your WDE instances.
+
 ### 1. Install plugin
 
 Add the plugin and dependencies to your Workspace Desktop Edition installation:
