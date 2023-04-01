@@ -60,7 +60,7 @@ You can replace "./example" with the directory where you wish to save the config
 ### 5. Deploy the Terraform
 
 {% hint style="warning" %}
-_**Warning:**_ This will store all Terraform state locally. We **strongly** recommend [adding a backend](https://www.terraform.io/docs/language/settings/backends/azurerm.html) configuration for almost all deployment scenarios.
+_**Warning:**_ This will store all Terraform state locally. We **strongly** recommend [adding a backend](https://developer.hashicorp.com/terraform/language/settings/backends/gcs) configuration for almost all deployment scenarios.
 {% endhint %}
 
 Once you have successfully generated a configuration directory via our command line utility you are then ready to deploy the terraform to GCP. Navigate to the configuration directory you created and run the following commands:
@@ -91,7 +91,7 @@ gcloud components install kubectl
 Once installed, you can configure it with your cluster by running:
 
 ```bash
-gcloud container clusters get-credentials cluster-enterprise
+gcloud container clusters get-credentials cobrowse-enterprise
 ```
 
 When complete, test that it works by running:
