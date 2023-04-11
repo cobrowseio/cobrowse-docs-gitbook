@@ -35,7 +35,7 @@ public class AppDelegate : UIResponder, IUIApplicationDelegate
 }
 ```
 
-__
+
 
 **Xamarin.iOS Swift support**
 
@@ -127,3 +127,7 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}
+
+## .NET MAUI
+
+This is currently on our roadmap. If this is of intrest to you please do let us know at [hello@cobrowse.io](mailto://hello@cobrowse.io). In the meantime you should be able to use our Xamarin library within your MAUI applications.
