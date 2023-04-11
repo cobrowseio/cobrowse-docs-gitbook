@@ -1,4 +1,4 @@
-# How do I...
+# Sample code snippets
 
 Our agent SDK is a powerful toolkit to build the experience that you want for your support agents. Here we have put together a number of examples of commonly required functionality.
 
@@ -171,7 +171,7 @@ Cobrowse is designed to be fully customizable, including the agent side experien
 
 ### Check the number of active sessions
 
-For customers using our concurrency based licenses, it's often useful to know how many active sessions are in progress, and therefore how close to your license limits you are. The sample below provides a basic way to list all `active` sessions for your account.
+It's often useful to know how many active sessions are in progress. The sample below provides a basic way to list all `active` sessions for your account.
 
 ```javascript
 // token must have role: administrator claim
