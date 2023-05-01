@@ -4,7 +4,7 @@ description: Have greater control over when the SDK is running.
 
 # Starting and stopping the SDK
 
-Starting the Cobrowse SDK is often done early in your application. However, you have the ability to delay the start of the SDK or programmatically stop the SDK so that it runs only when needed.&#x20;
+Starting the Cobrowse SDK is often done early in your application. However, you have the ability to delay the start of the SDK or programmatically stop the SDK so that it runs only when needed.
 
 ### Starting the SDK
 
@@ -15,18 +15,9 @@ await CobrowseIO.client();
 await CobrowseIO.start();
 ```
 
-####
+#### Advanced usage
 
-#### Starting options
-
-The `start()` method accepts some options to allow customization of the start up behaviour.
-
-
-**allowIFrameStart**
-
-A few customers want to run Cobrowse.io only within an IFrame, and not any containing or parent page. This is supported, but requires passing an extra configuration option when starting Cobrowse.&#x20;
-
-
+Sometimes it is required to run Cobrowse.io **only** within an IFrame, and not any containing or parent page. This is supported, but requires passing an extra configuration option when starting Cobrowse. **Most implementations should not need to use this.** Please contact us if you are unsure.
 
 ```javascript
 await CobrowseIO.start({ allowIFrameStart: true });
@@ -76,7 +67,7 @@ await CobrowseIO.Instance.Start();
 
 By default, when the SDK starts it will register the device to your account and share its connectivity state. This provides the dashboard with a list of devices which are online and ready to connect.
 
-If you don't need to see a list of devices in your dashboard, e.g. your sessions start only using [6-digit codes](../customize-the-interface/customize-6-digit-code-screen.md), then you can stop the SDK from registering the device and its status by setting the registration option with a value of `false`.
+If you don't need to see a list of devices in your dashboard, e.g. your sessions start only using [6-digit codes](../customize-the-interface/customize-6-digit-code-screen.md), then you can stop the SDK from registering the device and its connectivity status by setting the registration option with a value of `false`.
 
 {% tabs %}
 {% tab title="Web" %}
