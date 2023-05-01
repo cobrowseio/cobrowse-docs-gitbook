@@ -60,11 +60,31 @@ CobrowseIO.instance().start()
 ```objectivec
 [CobrowseIO.instance start];
 ```
+
+#### Automatic registration
+
+By default, when the SDK starts it will register the device to your account and share its connectivity state. This provides the dashboard with a list of devices which are online and ready to connect.
+
+If you don't need to see a list of devices in your dashboard, e.g. your sessions start only using [6-digit codes](../customize-the-interface/customize-6-digit-code-screen.md), then you can stop the SDK from registering the device and its status by setting the `registration` option with a value of `NO`.
+
+```objc
+CobrowseIO.instance.registration = NO;
+```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
 CobrowseIO.instance().start(this);
+```
+
+#### Automatic registration
+
+By default, when the SDK starts it will register the device to your account and share its connectivity state. This provides the dashboard with a list of devices which are online and ready to connect.
+
+If you don't need to see a list of devices in your dashboard, e.g. your sessions start only using [6-digit codes](../customize-the-interface/customize-6-digit-code-screen.md), then you can stop the SDK from registering the device and its status by passing the `registration` option with a value of `false`.
+
+```java
+CobrowseIO.instance().registration(false);
 ```
 {% endtab %}
 
@@ -83,6 +103,16 @@ CobrowseIO.Instance.Start();
 {% tab title="Windows" %}
 ```csharp
 await CobrowseIO.Instance.Start();
+```
+
+#### Automatic registration
+
+By default, when the SDK starts it will register the device to your account and share its connectivity state. This provides the dashboard with a list of devices which are online and ready to connect.
+
+If you don't need to see a list of devices in your dashboard, e.g. your sessions start only using [6-digit codes](../customize-the-interface/customize-6-digit-code-screen.md), then you can stop the SDK from registering the device and its status by setting the `Registration` option with a value of `false`.
+
+```csharp
+CobrowseIO.Instance.Registration = false;
 ```
 {% endtab %}
 {% endtabs %}
