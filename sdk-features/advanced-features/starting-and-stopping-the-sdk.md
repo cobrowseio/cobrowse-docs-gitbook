@@ -22,21 +22,6 @@ await CobrowseIO.start();
 The `start()` method accepts some options to allow customization of the start up behaviour.
 
 
-
-**register**
-
-By default, when the SDK starts it will register the device to your account and share its connectivity state. This provides the dashboard with a list of devices which are online and ready to connect.&#x20;
-
-If you don't need to see a list of devices in your dashboard, e.g. your sessions start only using [6-digit codes](../customize-the-interface/customize-6-digit-code-screen.md), then you can stop the SDK from registering the device and its status by passing the `register` option with a value of `false`.
-
-
-
-```javascript
-await CobrowseIO.start({ register: false });
-```
-
-****
-
 **allowIFrameStart**
 
 A few customers want to run Cobrowse.io only within an IFrame, and not any containing or parent page. This is supported, but requires passing an extra configuration option when starting Cobrowse.&#x20;
@@ -83,6 +68,38 @@ CobrowseIO.Instance.Start();
 {% tab title="Windows" %}
 ```csharp
 await CobrowseIO.Instance.Start();
+```
+{% endtab %}
+{% endtabs %}
+
+### Automatic registration
+
+By default, when the SDK starts it will register the device to your account and share its connectivity state. This provides the dashboard with a list of devices which are online and ready to connect.
+
+If you don't need to see a list of devices in your dashboard, e.g. your sessions start only using [6-digit codes](../customize-the-interface/customize-6-digit-code-screen.md), then you can stop the SDK from registering the device and its status by setting the registration option with a value of `false`.
+
+{% tabs %}
+{% tab title="Web" %}
+```javascript
+CobrowseIO.registration = false;
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+```objc
+CobrowseIO.instance.registration = NO;
+```
+{% endtab %}
+
+{% tab title="Android" %}
+```java
+CobrowseIO.instance().registration(false);
+```
+{% endtab %}
+
+{% tab title="Windows" %}
+```csharp
+CobrowseIO.Instance.Registration = false;
 ```
 {% endtab %}
 {% endtabs %}
