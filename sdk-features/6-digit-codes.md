@@ -21,12 +21,6 @@ CobrowseIO.client().then(function() {
     });
 });
 ```
-
-If you are **only** using 6 digit codes to start Cobrowse sessions in your implementation, you can add the following option to your call to `CobrowseIO.start()` in the default snippet we provide. This will prevent our SDK contacting the Cobrowse server until a screen sharing session is required.
-
-```javascript
-CobrowseIO.start({register:false})
-```
 {% endtab %}
 
 {% tab title="iOS / MacOS" %}
@@ -70,6 +64,12 @@ Console.WriteLine("Code: {0}", session.Code);
 ```
 {% endtab %}
 {% endtabs %}
+
+If you are **only** using 6 digit codes to start Cobrowse sessions in your implementation, you can prevent the SDK registering in your Cobrowse account until a screen sharing session is required. See the documentation on preventing automatic registration.
+
+{% content-ref url="advanced-features/starting-and-stopping-the-sdk.md" %}
+[starting-and-stopping-the-sdk.md](advanced-features/starting-and-stopping-the-sdk.md)
+{% endcontent-ref %}
 
 You can monitor changes in the state of the session using the Cobrowse delegate methods to listen for events:
 
