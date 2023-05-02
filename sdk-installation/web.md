@@ -101,10 +101,6 @@ You will see error messages in the developer console relating to `https://cobrow
 
 Make sure these assets are accessible to our server by making them public.
 
-{% hint style="warning" %}
-If you self-host your instance, then requests from`*.<your instance domain>` should be whitelisted instead of `*.cobrowse.io`.
-{% endhint %}
-
 ## Content Security Policies **(CSPs)**
 
 If you have CSPs on your website then they may block the functionality of Cobrowse.io. When a CSP is blocking Cobrowse.io, then there will be an error in the javascript console stating:
