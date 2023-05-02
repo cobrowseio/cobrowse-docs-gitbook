@@ -59,11 +59,11 @@ Once you have your Javascript snippet and license key set up, navigate to [https
 
 ## Minimum browser requirements
 
-Cobrowse.io for Web supports all major browsers including Chrome, Firefox, Safari, Opera, Edge, and IE11.&#x20;
+Cobrowse.io for Web supports all major browsers including Chrome, Firefox, Safari, Opera, Edge, and IE11.
 
-Our Web SDK has an optional "full-device" mode which enables the user to share their entire desktop without any installation. Due to browser limitations, this feature is not available on IE11, or in the mobile browsers such as Mobile Chrome and Mobile Safari. Please see our native [Android](android.md) and [iOS](ios.md) SDKs for [full device capabilities](../sdk-features/full-device-capabilities/) on mobile.&#x20;
+Our Web SDK has an optional "full-device" mode which enables the user to share their entire desktop without any installation. Due to browser limitations, this feature is not available on IE11, or in the mobile browsers such as Mobile Chrome and Mobile Safari. Please see our native [Android](android.md) and [iOS](ios.md) SDKs for [full device capabilities](../sdk-features/full-device-capabilities/) on mobile.
 
-The specific browser versions supported are Chrome 16+, Firefox 11+, Safari 7+, Opera 12.1+, Edge 12+, and IE11.&#x20;
+The specific browser versions supported are Chrome 16+, Firefox 11+, Safari 7+, Opera 12.1+, Edge 12+, and IE11.
 
 ## **IFrames support**
 
@@ -95,11 +95,11 @@ Please use the following steps to troubleshoot issues on web:
 
 ## Non-public resources (e.g. CSS)
 
-Certain resources (e.g. CSS) may not be exposed to the public internet (e.g. pre-production environments such as UAT) and so these elements of your webpage will not appear to agents.&#x20;
+Certain resources (e.g. CSS) may not be exposed to the public internet (e.g. pre-production environments such as UAT) and so these elements of your webpage will not appear to agents.
 
 You will see error messages in the developer console relating to `https://cobrowse.io/proxy/1/assets/<hex encoded asset>` . You can check which assets are encoded by pasting the hex code into [https://cryptii.com/pipes/hex-decoder](https://cryptii.com/pipes/hex-decoder).
 
-Make sure these assets are accessible to our server by making them public, or by whitelisting requests from `*.cobrowse.io`!
+Make sure these assets are accessible to our server by making them public.
 
 {% hint style="warning" %}
 If you self-host your instance, then requests from`*.<your instance domain>` should be whitelisted instead of `*.cobrowse.io`.
