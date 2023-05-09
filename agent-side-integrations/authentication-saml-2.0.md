@@ -30,10 +30,10 @@ Please replace `<your hosted domain>` with `cobrowse.io` when using our hosted s
 
 All users who login via SAML will, by default, have the Cobrowse.io "Support Agent" role. If you'd like to manage your Admin users through SAML, you must:
 
-* create a group/role named "Cobrowse.io Administrator" within your identity provider
+* create a group/role named "cobrowseio\_administrator" within your identity provider
 * pass this value through as an attribute in your SAML profile as a value or an array, e.g.:
-  * `"groups" : "Cobrowse.io Administrator"`
-  * `"groups" : ["Cobrowse.io Administrator", "abc", "def", ...]`
+  * `"groups" : "cobrowseio_administrator"`
+  * `"groups" : ["cobrowseio_administrator", "abc", "def", ...]`
 
 ### Configuring display names
 
