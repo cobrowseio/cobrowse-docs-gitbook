@@ -54,3 +54,9 @@ The parameter `<your URI encoded Cobrowse route>` is the endpoint specified by y
 {% hint style="warning" %}
 Your IFrame settings and identity provider must allow sharing of cookies to your IFrame'd domain. This includes for additional steps with your provider, such as MFA.&#x20;
 {% endhint %}
+
+## Advanced
+
+### Validating the Cobrowse SAML request (optional)
+
+Our SAML requests are signed to verify their origin. You can optionally validate this signature within your identity provider. To do this, please use the certificate provided at this endpoint: [https://cobrowse.io/api/1/saml/certificate](https://cobrowse.io/api/1/saml/certificate).
