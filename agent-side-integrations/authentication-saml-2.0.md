@@ -57,6 +57,6 @@ Your IFrame settings and identity provider must allow sharing of cookies to your
 
 ## Advanced
 
-### Validating the Cobrowse SAML request (optional)
+### Validating the Cobrowse.io SAML request (optional)
 
 Our SAML requests are signed to verify their origin. You can optionally validate this signature within your identity provider. To do this, please use the certificate provided at this endpoint: [https://cobrowse.io/api/1/saml/certificate](https://cobrowse.io/api/1/saml/certificate).

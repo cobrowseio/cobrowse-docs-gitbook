@@ -11,7 +11,7 @@ In some cases, several of your domains or sub-domains need to be visited in a si
 To enable this, add the following javascript snippet within our [web SDK](../../../sdk-installation/web.md) to all required pages.&#x20;
 
 {% hint style="info" %}
-Trusted origins must be served over _HTTPS_ and include the full domain or sub-domain, with no trailing slash, url path, or parameters.
+Trusted origins must be served over _HTTPS_ and include the full domain or sub-domain, with no additional url path or parameters.
 {% endhint %}
 
 ```javascript
