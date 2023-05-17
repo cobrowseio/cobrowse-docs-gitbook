@@ -1,6 +1,10 @@
-# Overview
+# Agent-side overview
 
 > We believe in a seamless co-browsing experience for _both_ End-Users and Agents. See below for APIs and guides to implement a highly tailored Agent-side experience.&#x20;
+
+{% hint style="success" %}
+All of our default agent-side UI has the same language support as our web SDK, see the [Web tab on Localization / translation](../sdk-features/customize-the-interface/localization.md) for the full list. &#x20;
+{% endhint %}
 
 {% content-ref url="crm-helpdesk-integrations/" %}
 [crm-helpdesk-integrations](crm-helpdesk-integrations/)
