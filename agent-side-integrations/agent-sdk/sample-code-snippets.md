@@ -54,7 +54,7 @@ const devices = await cobrowse.devices.list({
 // subscribe to updates for these Devices
 devices.forEach((device) => {
     device.subscribe()
-    device.on('updated', () => console.log('device was updated', device.id)
+    device.on('updated', () => console.log('device was updated', device.id))
 })
 ```
 
