@@ -3,6 +3,43 @@
 You may use the documentation under [Customize the interface](./) to completely replace our default UI in our SDKs with your own custom UI. However, some clients prefer to use our existing default UI, but simply localize or modify the text strings.
 
 {% tabs %}
+{% tab title="Web" %}
+Our web SDK contains default language support for the following languages:
+
+* English
+* French
+* German
+* Spanish
+* Spanish Mexico (es-mx)
+* Italian
+* Japanese
+* Chinese Simplified (zh-hans)
+* Chinese Traditional (zh-hant)
+* Hebrew Israel (coming soon!)
+* Korean
+* Malay (coming soon)
+* Marathi India
+* Portuguese
+* Portuguese Brazil (pt-br)
+* Thai
+* Vietnamese
+* Russian
+* Arabic UAE (coming soon!)
+* Hindi India
+* Dutch
+* Czech (coming soon!)
+* Slovak (coming soon!)
+* Slovenian (coming soon!)
+* Lithuanian (coming soon!)
+* Polish (coming soon!)
+* Kazakh (coming soon!)
+* Romanian (coming soon!)
+* Ukrainian (coming soon!)
+* Estonian (coming soon!)
+* Danish (coming soon!)
+* Finnish (coming soon!)
+{% endtab %}
+
 {% tab title="iOS" %}
 Create a new strings file named `CobrowseIO.strings` in your app project and select all localization you want to support in the File Inspector. Refer to [the Apple documentation](https://developer.apple.com/documentation/xcode/localization) to see more details about this approach.
 
