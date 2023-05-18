@@ -8,6 +8,7 @@ Make sure you have installed (on your local machine) the required tools to manag
 
 * [**Terraform**](https://www.terraform.io/)
 * [**NodeJS**](https://nodejs.org/en/) – at least [minimum LTS version](https://nodejs.org/en/about/releases/)
+* [**AWS CLI**](https://aws.amazon.com/cli/)
 * [**kubectl**](https://kubernetes.io/docs/tasks/tools/)
 
 You'll also need an AWS account with credentials available to the setup script through the environment. This is most easily managed via the official [AWS cli tools](https://aws.amazon.com/cli/).
@@ -16,7 +17,7 @@ You'll also need an AWS account with credentials available to the setup script t
 
 ### 1. Choose your database
 
-You can choose between MongoDB and AWS DocumentDB as your data storage for Cobrowse Enterprise.&#x20;
+You can choose between MongoDB and AWS DocumentDB as your data storage for Cobrowse Enterprise.
 
 **Using MongoDB**
 
