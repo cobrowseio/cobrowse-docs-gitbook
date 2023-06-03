@@ -6,9 +6,9 @@ This is the documentation for how to use Docker Compose to set up Cobrowse Enter
 
 You'll need these installed on the host system before continuing:
 
-* ****[**Docker**](https://www.docker.com)****
-* ****[**Docker Compose**](https://docs.docker.com/compose/install/)****
-* ****[**NodeJS**](https://nodejs.org/en/) – at least [minimum LTS version](https://nodejs.org/en/about/releases/)
+* [**Docker**](https://www.docker.com)
+* [**Docker Compose**](https://docs.docker.com/compose/install/)
+* [**NodeJS**](https://nodejs.org/en/) – at least [minimum LTS version](https://nodejs.org/en/about/releases/)
 
 ### System Requirements
 
@@ -20,11 +20,12 @@ Cobrowse.io is deployed as containers, and we support many additional configurat
 
 Before you're ready to run Cobrowse you'll need to configure the host system with our managed Docker Compose file. The Docker Compose files defines the services and internal configuration that is required to easily set up the different Cobrowse server components.
 
-*   Setup access to our private Docker registry. This is where your Docker host can obtain the Cobrowse Enterprise images. You will need the Cobrowse Enterprise repo password that has been assigned to you.
+* Setup access to our private Docker registry. This is where your Docker host can obtain the Cobrowse Enterprise images. You will need the Cobrowse Enterprise repo password that has been assigned to you.
 
 ```bash
 docker login ghcr.io --username cobrowse-enterprise
 ```
+
 * Enter your Cobrowse Enterprise repo password when prompted for a password.
 
 ### Generate the Config Directory
@@ -83,8 +84,6 @@ Open up a web browser and navigate to your Cobrowse domain, you should then be a
 {% content-ref url="getting-started/" %}
 [getting-started](getting-started/)
 {% endcontent-ref %}
-
-
 
 ### Shutting down Cobrowse
 
