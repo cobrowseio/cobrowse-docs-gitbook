@@ -17,13 +17,6 @@ helm repo add cobrowse-enterprise https://cobrowseio.github.io/cobrowse-enterpri
 helm install cobrowse cobrowse-enterprise/cobrowse-enterprise
 ```
 
-{% hint style="info" %}
-If you're performing a upgrade or have installed Cobrowse before, first update your Cobrowse Helm repository before by doing:
-```bash
-helm repo update
-```
-{% endhint %}
-
 ### Common Parameters
 
 | Parameter Name                                                                | Description                                                                                                                                                                                                                                                                                                                                                                                               |

@@ -6,6 +6,8 @@ You are responsible for backing up the database regularly. Cobrowse will not do 
 
 ### Upgrading Cobrowse
 
+#### AWS, Azure, GCP and Docker-compose	
+
 The config directory created by our command line utility is a git repo. You can update to the latest version by doing:
 
 ```bash
@@ -14,7 +16,17 @@ git pull upstream master
 
 One you have done that, you can update your deployment via Terraform or Docker Compose as in the initial deployment.
 
+_Note: We recommend making a database backup before upgrading to new versions_
+
+#### Helm
+
+To upgrade your Helm deployment use:
+
+```bash
+helm repo update 
+helm upgradecobrowse cobrowse-enterprise/cobrowse-enterprise
+```
+
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}
-
