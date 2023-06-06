@@ -99,22 +99,6 @@ docker-compose down
 
 The Cobrowse docker-compose file will start a MongoDB instance for you. The database storage will be exposed on a docker volume at `./data/db` relative to the path of the docker-compose.yml file.
 
-**Backing up MongoDB**
-
-You are responsible for backing up the database regularly. Cobrowse will not do this automatically in any way. See the [MonogDB docs](https://docs.mongodb.com/manual/core/backups/) for recommendations on backup strategies.
-
-### Upgrading Cobrowse
-
-The config directory created by our command line utility is a git repo. You can update to the latest version by doing:
-
-```bash
-docker-compose down
-git pull upstream stable
-docker-compose up
-```
-
-_Note: We recommend making a database backup before upgrading to new versions_
-
 ### Host firewalls
 
 If you're running additional firewalls to those that Docker sets up automatically, you need to ensure that port 80 (HTTP) and port 443 (HTTPS) are both exposed for the docker host.
@@ -122,3 +106,11 @@ If you're running additional firewalls to those that Docker sets up automaticall
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}
+
+## Managing your deployment
+
+Next, learn about managing and upgrading your deployment.
+
+{% content-ref url="../getting-started/management.md" %}
+[management.md](../getting-started/management.md)
+{% endcontent-ref %}
