@@ -24,7 +24,7 @@ To upgrade your Helm deployment use:
 
 ```bash
 helm repo update 
-helm upgradecobrowse cobrowse-enterprise/cobrowse-enterprise
+helm upgrade cobrowse cobrowse-enterprise/cobrowse-enterprise
 ```
 
 {% hint style="success" %}
