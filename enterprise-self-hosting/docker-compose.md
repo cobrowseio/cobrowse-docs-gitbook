@@ -112,5 +112,5 @@ Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrow
 Next, learn about managing and upgrading your deployment.
 
 {% content-ref url="../getting-started/management.md" %}
-[management.md](../getting-started/management.md)
+[management.md](getting-started/management.md)
 {% endcontent-ref %}
