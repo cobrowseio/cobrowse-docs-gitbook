@@ -55,6 +55,10 @@ Add the following resource via an XML file to enable a consent request to your u
 ```
 {% endtab %}
 
+{% tab title="iOS" %}
+Due to limitations and restrictions set by Apple we can not support full device remote control. Agents are able to view the [full device](full-device-screen-sharing.md) but not use any of the agent tools.
+{% endtab %}
+
 {% tab title="React Native" %}
 {% hint style="info" %}
 Please follow the Android documentation to implement full device remote control using React Native.
