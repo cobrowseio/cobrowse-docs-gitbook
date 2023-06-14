@@ -8,6 +8,13 @@ Cobrowse.io provides an integration with Intercom available in the [Intercom App
 
 Install the app from the [Intercom App Store](https://www.intercom.com/app-store/?app\_package\_code=cobrowse-screenshare-permissions) and follow the setup instructions!
 
+## Voice and Video Support
+
+Cobrowse sessions work nicely along the [Intercom Calling](https://www.intercom.com/phone) feature that adds support for voice and video.
+
+To enable the Calling feature go to your Settings>Calling page in [https://app.intercom.com/a/apps/_/settings/calling](https://app.intercom.com/a/apps/_/settings/calling).
+
+
 ## Troubleshooting
 
 #### I can connect from https://cobrowse.io/dashboard, but not from within Intercom.
