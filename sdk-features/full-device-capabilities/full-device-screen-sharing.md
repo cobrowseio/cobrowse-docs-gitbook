@@ -2,7 +2,7 @@
 
 Full device screen sharing allows your support agents to view screens from applications outside of your own. This is often useful where support agents need to check the state of system settings, or need to see the user navigate between multiple applications.
 
-If you do not want this feature, you may completely disable "Full Device upgrade" in your [account settings](../account-configuration.md).&#x20;
+If you do not want this feature, you may completely disable "Full Device upgrade" in your [account settings](../account-configuration.md).
 
 Full device screen sharing is supported by all SDKs. Check below to see if any extra steps are required for your platform:
 
@@ -14,17 +14,17 @@ Redaction, annotation, and remote control are disabled when in full device mode 
 
 The Cobrowse.io SDK for Web includes an optional "full device" toggle in the bottom right when running an active session. This feature enables the end-user to share their entire screen on their laptop/desktop, or select individual apps or browser tabs to share (browser dependent).
 
-This is great if the end-user navigates to browser tabs outside of your website, where the Web SDK's JavaScript snippet is not installed, or if the end-user needs to share a PDF, or their entire desktop.&#x20;
+This is great if the end-user navigates to browser tabs outside of your website, where the Web SDK's JavaScript snippet is not installed, or if the end-user needs to share a PDF, or their entire desktop.
 
 No extra integration work is required to use full device mode via our Web SDK.
 
 {% hint style="warning" %}
-Due to browser limitations, this feature is not available on IE11, or in the mobile browsers such as Mobile Chrome and Mobile Safari. Please see our native [Android](../../sdk-installation/android.md) and [iOS](../../sdk-installation/ios.md) SDKs for [full device capabilities](./) on mobile.&#x20;
+Due to browser limitations, this feature is not available on IE11, or in the mobile browsers such as Mobile Chrome and Mobile Safari. Please see our native [Android](../../sdk-installation/android.md) and [iOS](../../sdk-installation/ios.md) SDKs for [full device capabilities](./) on mobile.
 {% endhint %}
 {% endtab %}
 
 {% tab title="iOS" %}
-The Cobrowse.io SDK for iOS allows full device screen capture, but this requires adding a Broadcast Extension when integrating the iOS SDK. Please follow the directions below.&#x20;
+The Cobrowse.io SDK for iOS allows full device screen capture, but this requires adding a Broadcast Extension when integrating the iOS SDK. Please follow the directions below.
 
 **Add a Broadcast Extension target**
 
@@ -65,22 +65,22 @@ https://github.com/cobrowseio/cobrowse-sdk-ios-binary.git
 
 Make sure your **app target** uses `CobrowseIO` package and your **extension target** uses `CobrowseIOExtension` package, respectively:
 
-<img src="../../.gitbook/assets/xcode_spm_dependency_structure.png" height="400" />
+![](../../.gitbook/assets/xcode\_spm\_dependency\_structure.png)
 
 {% hint style="info" %}
 Xcode 13.3 and newer might not copy `CobrowseIOExtension.framework` extension dependency into resulting IPA builds. If that happens to you, follow the steps below:
 
-1. Add a new script build phase to your **app target**:
+1.  Add a new script build phase to your **app target**:
 
-    <img src="../../.gitbook/assets/xcode_add_new_run_script.png" height="320" />
-
-2. Configure the new script:
+    ![](../../.gitbook/assets/xcode\_add\_new\_run\_script.png)
+2.  Configure the new script:
 
     a) Set the phase name you like (e.g. _Copy Cobrowse.io broadcast extension framework_)
 
     b) Set _Shell_ to `/usr/bin/ruby`
 
     c) Copy and paste the script content:
+
     ```ruby
     require 'fileutils'
 
@@ -106,11 +106,11 @@ Xcode 13.3 and newer might not copy `CobrowseIOExtension.framework` extension de
 
     d) Uncheck _"For install builds only"_, _"Based on dependency analysis"_, _"Show environment variables in build log"_, and _"Use discovery dependency file"_:
 
-    <img src="../../.gitbook/assets/xcode_spm_copy_extension_script.png" height="560" />
-
+    ![](../../.gitbook/assets/xcode\_spm\_copy\_extension\_script.png)
 {% endhint %}
 {% endtab %}
-{% tab title="CocoaPods" %}
+
+{% tab title="Pods" %}
 **Add the new target to your Podfile**
 
 Add the following to your Podfile, replacing the target name with you own extensions target name:
@@ -138,16 +138,16 @@ post_install do |installer|
 end
 ```
 {% endhint %}
+
 _Make sure to run `pod install` after updating your Podfile_
 {% endtab %}
 {% endtabs %}
-
 
 **Implement the extension**
 
 Xcode will have added `SampleHandler.m` and `SampleHandler.h` (or `SampleHander.swift`) files as part of the target you created earlier. Replace the content of the files with the following:
 
-#### Swift
+**Swift**
 
 ```swift
 import CobrowseIOAppExtension
@@ -157,7 +157,7 @@ class SampleHandler: CobrowseIOReplayKitExtension {
 }
 ```
 
-#### Objective C
+**Objective C**
 
 ```objectivec
 // SampleHandler.h
@@ -183,17 +183,17 @@ class SampleHandler: CobrowseIOReplayKitExtension {
 
 You're now ready to build and run your app. The full device capability is only available on physical devices, it will not work in the iOS Simulator.
 
-If you've set everything up properly, after clicking the blue circular icon you should see the following screen to select your Broadcast Extension.&#x20;
+If you've set everything up properly, after clicking the blue circular icon you should see the following screen to select your Broadcast Extension.
 
-<img src="../../.gitbook/assets/broadcast_extension_example.png" title="Select your Broadcast Extension from the list" height="560" />
+![](../../.gitbook/assets/broadcast\_extension\_example.png)
 
-### Troubleshooting
+#### Troubleshooting
 
 If full device screen capture on iOS is not working, please check the following:
 
 * Please verify you are testing on a physical device, and not the iOS simulator.
-* Please verify you have added the Bundle Id of your Broadcast Extension to your main app's Info.plist as described in our documentation. If you have not, then no options will appear in the list after clicking the blue circular record button.&#x20;
-* Please verify you are not running any other screen recording or screen mirroring software at the same time, as this will interfere.&#x20;
+* Please verify you have added the Bundle Id of your Broadcast Extension to your main app's Info.plist as described in our documentation. If you have not, then no options will appear in the list after clicking the blue circular record button.
+* Please verify you are not running any other screen recording or screen mirroring software at the same time, as this will interfere.
 {% endtab %}
 
 {% tab title="Android" %}
@@ -201,7 +201,7 @@ The Cobrowse.io SDK for Android will allow full device screen capture, including
 
 No extra integration work is required to use full device mode via our Android SDK.
 
-#### Notes for unattended access
+**Notes for unattended access**
 
 For unattended full device access, we strongly recommend:
 
@@ -210,11 +210,11 @@ For unattended full device access, we strongly recommend:
 * Be wary of battery optimization policies. On some devices you may need to add your app to a battery optimization whitelist to prevent it from killing the push notifications. More info here: [https://dontkillmyapp.com/](https://dontkillmyapp.com/)
 * This requires enabling the Accessibility Service when integrating the Android SDK. Please see the [full device remote control docs](full-device-remote-control.md).
 
-### Troubleshooting
+#### Troubleshooting
 
 * If the screen is black during full device screen capture, please make sure your views are not marked as secure. More info here: [https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE)
 * If you are using Android Enterprise, please ensure your enterprise settings do not disallow screen capture.
-* If you get `compile error android:foregroundServiceType not found`, please update your Android project to use `compileSdkVersion 29`.&#x20;
+* If you get `compile error android:foregroundServiceType not found`, please update your Android project to use `compileSdkVersion 29`.
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -222,18 +222,16 @@ For unattended full device access, we strongly recommend:
 Please follow the iOS and Android documentation to implement full device capabilities on React Native.
 {% endhint %}
 
+#### Troubleshooting
 
-
-### Troubleshooting
-
-* For React Native on iOS, some clients have reported that Xcode does not automatically create the _\{{extensionname\}}.entitlements_ file in the extension directory, which is necessary for the "io.cobrowse" keychain sharing to work.&#x20;
+* For React Native on iOS, some clients have reported that Xcode does not automatically create the _\{{extensionname\}}.entitlements_ file in the extension directory, which is necessary for the "io.cobrowse" keychain sharing to work.
 {% endtab %}
 
 {% tab title="Xamarin.iOS" %}
 {% hint style="info" %}
-Please review the iOS documentation for full device capabilities first.&#x20;
+Please review the iOS documentation for full device capabilities first.
 
-This documentation specific to Xamarin.iOS is supplementary, and covers the differences only.&#x20;
+This documentation specific to Xamarin.iOS is supplementary, and covers the differences only.
 {% endhint %}
 
 **Add a Broadcast Extension project**
@@ -311,7 +309,7 @@ Open Info.plist of the extension project and make sure that `NSExtension` sectio
 
 {% tab title="Xamarin.Android" %}
 {% hint style="info" %}
-Please see the Android documentation for full device capabilities.&#x20;
+Please see the Android documentation for full device capabilities.
 {% endhint %}
 {% endtab %}
 
