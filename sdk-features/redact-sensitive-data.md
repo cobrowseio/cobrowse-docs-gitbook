@@ -36,7 +36,7 @@ Implement the `CobrowseIORedacted` protocol on any `UIViewController` that conta
 }
 ```
 
-If making changes to your `UIViewController` subclasses isn't an option, we also support a [delegate style](listening-for-events.md) method to allow you to supply this information in one place.  Implement `cobrowseRedactedViewsForViewController` in your `CobrowseIODelegate` class, then you can pass redacted views for a specific `UIViewController` in a single method:
+If making changes to your `UIViewController` subclasses isn't an option, we also support a [delegate style](listening-for-events.md) method to allow you to supply this information in one place. Implement `cobrowseRedactedViewsForViewController` in your `CobrowseIODelegate` class, then you can pass redacted views for a specific `UIViewController` in a single method:
 
 ```objc
 -(NSArray<UIView*>*) cobrowseRedactedViewsForViewController:(UIViewController*) vc {
@@ -46,7 +46,7 @@ If making changes to your `UIViewController` subclasses isn't an option, we also
 }
 ```
 
-#### Redaction by default
+**Redaction by default**
 
 Sometimes you may want to redact everything on the screen, then selectively "unredact" only the parts your support agents should be able to see. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.
 
@@ -77,7 +77,6 @@ Alternatively, you can implement `CobrowseIOUnredacted` protocol in your `UIView
     return @[viewToBeUnredacted];
 }
 ```
-
 {% endtab %}
 
 {% tab title="Android" %}
@@ -104,7 +103,7 @@ public List<View> redactedViews(@NonNull Activity activity) {
 }
 ```
 
-#### Redaction by default
+**Redaction by default**
 
 Sometimes you may want to redact everything on the screen, then selectively "unredact" only the parts your support agents should be able to see. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.
 
@@ -158,9 +157,9 @@ import { Redacted } from 'cobrowse-sdk-react-native';
 </View>
 ```
 
-####
 
-#### Redaction by default
+
+**Redaction by default**
 
 Sometimes you may want to redact everything on the screen, then selectively "unredact" only the parts your support agents should be able to see. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.
 
@@ -187,9 +186,9 @@ import { Unredacted } from 'cobrowse-sdk-react-native';
 </View>
 ```
 
-####
 
-#### Redacting views outside React Native
+
+**Redacting views outside React Native**
 
 Finally, within React Native some packages will render in new Windows/Root Views. You can follow the same [delegate implementation](listening-for-events.md#session-updated-events) to identify this views and redact or unredact them by default as required. You can check the provided examples for [iOS](https://github.com/cobrowseio/cobrowse-sdk-react-native/blob/master/Example/ios/Example/AppDelegate.m) and [Android](https://github.com/cobrowseio/cobrowse-sdk-react-native/blob/master/Example/android/app/src/main/java/com/example/MainApplication.java) which redact by default the React Native Dev menu keeping one of the options unredacted to illustrate the technique.
 {% endtab %}
