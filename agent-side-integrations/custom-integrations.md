@@ -13,9 +13,9 @@ Using a combination of these resources, Cobrowse.io can be seamlessly integrated
 
 After your initial Cobrowse account setup, there's no need to register each individual user to your Cobrowse account - this is all done automatically through use of [JWTs](json-web-tokens-jwts/).
 
+****
 
 
 
-
-
+****
 

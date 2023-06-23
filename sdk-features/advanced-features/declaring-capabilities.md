@@ -1,7 +1,5 @@
 # Declaring capabilities
 
-
-
 {% hint style="info" %}
 Account-level settings for remote control, full device screenshare, and others are available via your account dashboard. Declaring the supported capabilities on the SDK-side as described below is only necessary for fine-tuning or other advanced use cases.&#x20;
 {% endhint %}
@@ -24,7 +22,16 @@ Any capability included in the array will be enabled. To disable a capability om
 
 A full list of capabilities can be seen in the table below.
 
-<table><thead><tr><th width="183">Capability</th><th>Description</th></tr></thead><tbody><tr><td><code>cursor</code></td><td>Should agent cursor be rendered on client side</td></tr><tr><td><code>drawing</code></td><td>Can the agent draw over the users screen</td></tr><tr><td><code>full_device</code></td><td>Is full device mode enabled</td></tr><tr><td><code>keypress</code></td><td>Can the agent generate key events</td></tr><tr><td><code>laser</code></td><td>Can the agent direct user with laser pointer</td></tr><tr><td><code>pointer</code></td><td>Can the agent point and click on things when in remote control mode</td></tr><tr><td><code>scroll</code></td><td>Can the agent scroll the page <em>(web only)</em></td></tr><tr><td><code>select</code></td><td>Can the agent select text <em>(web only)</em></td></tr></tbody></table>
+| Capability   | Description                                                         |
+| ------------ | ------------------------------------------------------------------- |
+| cursor       | Should agent cursor be rendered on client side                      |
+| drawing      | Can the agent draw over the users screen                            |
+| full\_device | Is full device mode enabled                                         |
+| keypress     | Can the agent generate key events                                   |
+| laser        | Can the agent direct user with laser pointer                        |
+| pointer      | Can the agent point and click on things when in remote control mode |
+| scroll       | Can the agent scroll the page (web only)                            |
+| select       | Can the agent select text (web only)                                |
 
 #### Examples
 
