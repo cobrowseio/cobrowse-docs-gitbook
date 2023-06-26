@@ -37,6 +37,10 @@ cobrowse-sockets-envvars      6      25m
 
 Each of these **envvars** `ConfigMap`s can be overridden by creating `ConfigMap` resources named (respectively):
 
+{% hint style="info" %}
+The naming of each resource is prefixed with your `.Release.Name`. The examples below assume the `.Release.Name` is **`cobrowse`**.
+{% endhint %}
+
 ```
 cobrowse-api-custom-envvars
 cobrowse-frontend-custom-envvars
@@ -61,6 +65,10 @@ cobrowse-sockets-envvars     Opaque   2      41m
 
 Each of these **envvars** `Secret`s can be overridden by creating `Secret` resources named (respectively):
 
+{% hint style="info" %}
+The naming of each resource is prefixed with your `.Release.Name`. The examples below assume the `.Release.Name` is **`cobrowse`**.
+{% endhint %}
+
 ```
 cobrowse-api-custom-envvars
 cobrowse-frontend-venvvars
@@ -81,7 +89,7 @@ The following order of priority is followed while resolving environment variable
 
 Thus if you override an environment variable such as `redis_url` in the `cobrowse-api-custom-envvars` **ConfigMap**, then the value will be overridden by the Helm-managed `cobrowse-api-envvars` **Secret**. Thus, make sure before overriding an environment variable in the **ConfigMap** that it isn't set in one of the **Secret** resources first.
 
-****
+***
 {% endhint %}
 
 ## Optional recording components
