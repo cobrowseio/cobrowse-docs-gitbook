@@ -32,12 +32,17 @@ _Make sure you are on the latest stable version of Pods. Run `pod --version` to 
 
 {% tab title="Carthage" %}
 ```
-github "cobrowseio/cobrowse-sdk-ios-binary" ~> 2.0
+binary "https://raw.githubusercontent.com/cobrowseio/cobrowse-sdk-ios-binary/master/cobrowse-sdk-ios-binary.json" ~> 2.0
 ```
 
-_Don't forget to run `carthage update`  after you've edited your Cartfile._
+{% hint style="info" %}
+Remember to run `carthage update` after modifying your Cartfile.
+{% endhint %}
 
 _More information about Carthage at_ [_https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos_](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)_._
+
+Link the `CobrowseIO.framework` to your main app target that can be found at `./Carthage/Build/iOS`.
+
 {% endtab %}
 
 {% tab title="Manual" %}

@@ -141,6 +141,33 @@ end
 
 _Make sure to run `pod install` after updating your Podfile_
 {% endtab %}
+
+{% tab title="Carthage" %}
+**Add the extension framework to your Cartfile**
+
+```
+binary "https://raw.githubusercontent.com/cobrowseio/cobrowse-sdk-ios-binary/master/cobrowse-sdk-ios-extension-binary.json" ~> 2.0
+```
+
+{% hint style="info" %}
+Remember to run `carthage update` after modifying your Cartfile.
+{% endhint %}
+
+Link the `CobrowseIOAppExtension.framework` to your extension target that can be found at `./Carthage/Build/iOS`.
+
+{% endtab %}
+
+{% tab title="Manual" %}
+**Download the latest .zip**
+
+Visit [https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases](https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases) and download `CobrowseIOAppExtension.xcframework.zip`.
+
+Link the `CobrowseIOAppExtension.framework` to your extension target.
+
+{% hint style="info" %}
+Please be sure to use the same release for both `CobrowseIO` and `CobrowseIOAppExtension`.
+{% endhint %}
+{% endtab %}
 {% endtabs %}
 
 **Implement the extension**
