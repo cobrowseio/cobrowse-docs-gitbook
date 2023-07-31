@@ -10,7 +10,7 @@ Admin users may also disable this consent prompt from your account settings if y
 CobrowseIO.confirmSession = function() {
     return new Promise(function(resolve, reject) {
         // show your UI here
-        // call resovle(true) to accept the session
+        // call resolve(true) to accept the session
         resolve(true)
         // or reject() to reject the session
     })
