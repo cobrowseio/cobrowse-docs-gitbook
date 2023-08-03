@@ -77,6 +77,14 @@ Alternatively, you can implement `CobrowseIOUnredacted` protocol in your `UIView
     return @[viewToBeUnredacted];
 }
 ```
+
+**Redaction of WebView content**
+
+Your app may show web content that contains elements that you wish to redact. This can be achieved by setting the `webviewRedactedViews` property to an array of CSS selectors that identify the elements to be redacted.
+
+```objc
+CobrowseIO.instance.webviewRedactedViews = @[ @".redacted", ...some other selectors... ];
+```
 {% endtab %}
 
 {% tab title="Android" %}
@@ -141,6 +149,14 @@ public List<View> unredactedViews() {
     }};
 }
 ```
+
+**Redaction of WebView content**
+
+Your app may show web content that contains elements that you wish to redact. This can be achieved by setting the `webviewRedactedViews` property to an array of CSS selectors that identify the elements to be redacted.
+
+```java
+CobrowseIO.instance().webviewRedactedViews(new String[] { ".redacted",  ...some other selectors... });
+```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -186,7 +202,13 @@ import { Unredacted } from 'cobrowse-sdk-react-native';
 </View>
 ```
 
+**Redaction of WebView content**
 
+Your app may show web content that contains elements that you wish to redact. This can be achieved by setting the `webviewRedactedViews` property to an array of CSS selectors that identify the elements to be redacted.
+
+```javascript
+CobrowseIO.webviewRedactedViews = [ '.redacted', ...some other selectors... ];
+```
 
 **Redacting views outside React Native**
 
@@ -401,6 +423,14 @@ namespace YourAppNamespace.Android
         }
     }
 }
+```
+
+**Redaction of WebView content**
+
+Your app may show web content that contains elements that you wish to redact. This can be achieved by setting the `WebViewRedactedViews` property to an array of CSS selectors that identify the elements to be redacted.
+
+```csharp
+CobrowseIO.Instance.WebViewRedactedViews = new string[] { ".redacted", ...some other selectors... };
 ```
 {% endtab %}
 {% endtabs %}
