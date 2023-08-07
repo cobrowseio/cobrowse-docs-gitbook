@@ -6,9 +6,7 @@
 You must install our Zendesk apps using the marketplace links below in order for your Cobrowse.io account to be linked to your Zendesk organization. Do not sign up via our website first, as this will create an unlinked account!
 {% endhint %}
 
-Cobrowse.io provides an integration with both Zendesk Support and Zendesk Chat available in the Zendesk App Marketplace.&#x20;
-
-Overview with screenshots - [https://cobrowse.io/zendesk](https://cobrowse.io/zendesk)
+Cobrowse.io provides an integration with both Zendesk Support and Zendesk Chat available in the Zendesk App Marketplace.
 
 ### Demo videos
 
@@ -20,9 +18,13 @@ You must have an active trial/subscription with Zendesk Support (even to use our
 
 ### Zendesk App Marketplace links
 
-Zendesk Support App - [https://www.zendesk.com/apps/support/cobrowseio/](https://www.zendesk.com/apps/support/cobrowseio/)
+All newer accounts will only need to install the Cobrowse.io for Support app, it is also 100% compatible with the Sunshine Conversations widget.
 
-Zendesk Chat App - [https://www.zendesk.com/apps/chat/cobrowseio/](https://www.zendesk.com/apps/chat/cobrowseio/)
+If you are using the Legacy Zendesk Chat you will also need to install the Cobrowse.io for Chat app.
+
+Cobrowse.io for Support App - [https://www.zendesk.com/apps/support/cobrowseio/](https://www.zendesk.com/apps/support/cobrowseio/)
+
+Cobrowse.io for Chat App - [https://www.zendesk.com/apps/chat/cobrowseio/](https://www.zendesk.com/apps/chat/cobrowseio/)
 
 ### Controlling user access
 
