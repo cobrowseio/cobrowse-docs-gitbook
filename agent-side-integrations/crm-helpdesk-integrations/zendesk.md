@@ -32,4 +32,4 @@ Follow the Zendesk docs to restrict access to the Cobrowse.io Apps to certain ro
 
 ## Troubleshooting
 
-If you signed up via Zendesk and also via our website dashboard, you will have two accounts. See this link for a description of this problem and the solution [https://support.cobrowse.io/help-i-have-issues-with-my-zendesk-account](https://support.cobrowse.io/help-i-have-issues-with-my-zendesk-account).
+If you signed up via Zendesk and also via our website dashboard, you will have two accounts. See this link for a description of this problem and the solution [https://support.cobrowse.io/i-have-issues-with-my-zendesk-account](https://support.cobrowse.io/i-have-issues-with-my-zendesk-account).
