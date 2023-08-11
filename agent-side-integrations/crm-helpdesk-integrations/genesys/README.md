@@ -2,13 +2,13 @@
 
 ## Overview
 
-Cobrowse.io for Genesys is available in the Genesys AppFoundry. 
+Cobrowse.io for Genesys is available in the Genesys AppFoundry.&#x20;
 
-Cobrowse.io for Genesys supports Genesys Cloud, Genesys Engage Cloud, Genesys Engage Workspace Web Edition \(WWE\), and Genesys Engage Workspace Desktop Edition \(WDE\), both cloud-hosted and on-premise. 
+Cobrowse.io for Genesys supports Genesys Cloud, Genesys Engage Cloud, Genesys Engage Workspace Web Edition (WWE), and Genesys Engage Workspace Desktop Edition (WDE), both cloud-hosted and on-premise.&#x20;
 
 ### Demo videos
 
-Genesys Cloud - [https://www.youtube.com/watch?v=vd8A4\_JrpLs](https://www.youtube.com/watch?v=vd8A4_JrpLs)
+Genesys Cloud - [https://www.youtube.com/watch?v=vd8A4\_JrpLs](https://www.youtube.com/watch?v=vd8A4\_JrpLs)
 
 Genesys Engage WWE - [https://www.youtube.com/watch?v=ZKx5bOsodtw](https://www.youtube.com/watch?v=ZKx5bOsodtw)
 
@@ -22,19 +22,23 @@ Genesys Engage - [https://appfoundry.genesys.com/filter/genesysengage/listing/3c
 
 ### Installation instructions
 
-Please follow the links to the specific platforms below. 
+Please follow the links to the specific platforms below.&#x20;
 
-{% page-ref page="genesys-cloud.md" %}
+{% content-ref url="genesys-cloud.md" %}
+[genesys-cloud.md](genesys-cloud.md)
+{% endcontent-ref %}
 
-{% page-ref page="engage-workspace-web-edition-wwe.md" %}
+{% content-ref url="engage-workspace-web-edition-wwe.md" %}
+[engage-workspace-web-edition-wwe.md](engage-workspace-web-edition-wwe.md)
+{% endcontent-ref %}
 
-{% page-ref page="engage-workspace-desktop-edition-wde.md" %}
+{% content-ref url="engage-workspace-desktop-edition-wde.md" %}
+[engage-workspace-desktop-edition-wde.md](engage-workspace-desktop-edition-wde.md)
+{% endcontent-ref %}
 
 
 
 {% hint style="info" %}
-These instructions are for the agent-side integration into your Genesys workspace. For hosting the Cobrowse.io Server on-premise, or in your own cloud account, please see [Enterprise self-hosting](../../../enterprise-self-hosting/docker-compose.md). For client-side SDKs such as our Javascript Snippet to add Cobrowse to your website, please see our [SDK installation instructions](../../../sdk-installation/web.md). 
+These instructions are for the agent-side integration into your Genesys workspace. For hosting the Cobrowse.io Server on-premise, or in your own cloud account, please see [Enterprise self-hosting](../../../enterprise-self-hosting/docker-compose.md). For client-side SDKs such as our Javascript Snippet to add Cobrowse to your website, please see our [SDK installation instructions](https://docs.cobrowse.io/).&#x20;
 {% endhint %}
-
-
 

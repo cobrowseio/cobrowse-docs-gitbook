@@ -26,6 +26,10 @@ Cobrowse.io for Support App - [https://www.zendesk.com/apps/support/cobrowseio/]
 
 Cobrowse.io for Chat App - [https://www.zendesk.com/apps/chat/cobrowseio/](https://www.zendesk.com/apps/chat/cobrowseio/)
 
+### Add our SDKs to get started!
+
+See [Getting started](../../) to add our SDKs and begin end-to-end testing! Your license key can be found in your Account Settings, seen above.
+
 ### Controlling user access
 
 Follow the Zendesk docs to restrict access to the Cobrowse.io Apps to certain roles or groups [https://support.zendesk.com/hc/en-us/articles/4409155972378-Managing-your-installed-apps#topic\_xyf\_wmw\_qfb](https://support.zendesk.com/hc/en-us/articles/4409155972378-Managing-your-installed-apps#topic\_xyf\_wmw\_qfb).
