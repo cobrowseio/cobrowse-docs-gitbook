@@ -58,7 +58,7 @@
     * [Engage Workspace Web Edition (WWE)](agent-side-integrations/crm-helpdesk-integrations/genesys/engage-workspace-web-edition-wwe.md)
     * [Engage Workspace Desktop Edition (WDE)](agent-side-integrations/crm-helpdesk-integrations/genesys/engage-workspace-desktop-edition-wde.md)
   * [Intercom](agent-side-integrations/crm-helpdesk-integrations/intercom.md)
-  * [Freshdesk](agent-side-integrations/crm-helpdesk-integrations/freshdesk.md)
+  * [Freshworks](agent-side-integrations/crm-helpdesk-integrations/freshdesk.md)
 * [Custom integrations](agent-side-integrations/custom-integrations.md)
 * [Agent SDK](agent-side-integrations/agent-sdk/README.md)
   * [API Reference](agent-side-integrations/agent-sdk/api-reference.md)
