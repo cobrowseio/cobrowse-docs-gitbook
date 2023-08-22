@@ -16,6 +16,7 @@ To generate a 6-digit code in your integration you can use the following APIs. O
 // ensure Cobrowse is loaded
 CobrowseIO.client().then(function() {
     // create a code a display it to the user using your own UI
+    // ONLY GENERATE CODE WHEN NEEDED. DO NOT GENERATE CODE ON PAGE LOAD.
     CobrowseIO.createSessionCode().then(function(code) {
        console.log('your code is', code);
     });
