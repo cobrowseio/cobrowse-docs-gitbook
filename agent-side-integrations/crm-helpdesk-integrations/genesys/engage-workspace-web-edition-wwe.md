@@ -29,3 +29,17 @@ You should now see the COBROWSE tab within your Workspace Web Edition when inter
 
 Demo video - [https://www.youtube.com/watch?v=ZKx5bOsodtw](https://www.youtube.com/watch?v=ZKx5bOsodtw)
 
+## Configuring SSO
+
+If you wish to sign into Cobrowse from within WWE using SSO you must first follow our documentation to [setup SAML](https://docs.cobrowse.io/agent-side-integrations/authentication-saml-2.0).
+
+With SAML configured, visit the [integration settings](https://cobrowse.io/dashboard/settings/integrations) page of your Cobrowse dashboard and look to the **login page** URL seen within the **SAML Config** section. It should look something like `https://<DOMAIN>/login/saml/<PROVIDER_ID>`.
+
+Take note of your `<PROVIDER_ID>`. It should a string of 6 characters after the `/login/saml/` path seen in the login page URL.
+
+Update **cobrowse.initialUrl** to the URL below, replacing `<DOMAIN>` with the domain of the Cobrowse instance, often `cobrowse.io`, `<PROVIDER_ID>` with the 6 characters that you took note of in the previous step and `<YOUR_LICENSE_KEY>` with the license key for your account.
+
+`https://<DOMAIN>/api/1/saml/auth?provider=<PROVIDER_ID>&redirectTo=%2Fapps%2Fgenesys%2Findex.html%3Fenv%3Dwde%26interactionId%3D%24Interaction.Id%24%26license%<YOUR_LICENSE_KEY>`
+
+Now when opening the COBROWSE tab from within WWE you should be taken to your SSO provider allowing you to sign in and be authenticated within WWE.
+
