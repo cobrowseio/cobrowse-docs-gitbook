@@ -43,12 +43,3 @@ Update **url** to the URL below, replacing `<DOMAIN>` with the domain of the Cob
 
 Now when opening the COBROWSE tab from within WWE you should be taken to your SSO provider allowing you to sign in and be authenticated within WWE.
 
-### Configuring Admin users
-
-All users who login via SAML will, by default, have the Cobrowse.io "Support Agent" role. If you'd like to manage your Admin users through SAML, you must:
-
-* create a group/role named "cobrowseio\_administrator" within your identity provider
-* pass this value through as an attribute in your SAML profile as a value or an array, e.g.:
-  * `"groups" : "cobrowseio_administrator"`
-  * `"groups" : ["cobrowseio_administrator", "abc", "def", ...]`
-
