@@ -37,9 +37,18 @@ With SAML configured, visit the [integration settings](https://cobrowse.io/dashb
 
 Take note of your `<PROVIDER_ID>`. It should a string of 6 characters after the `/login/saml/` path seen in the login page URL.
 
-Update **cobrowse.initialUrl** to the URL below, replacing `<DOMAIN>` with the domain of the Cobrowse instance, often `cobrowse.io`, `<PROVIDER_ID>` with the 6 characters that you took note of in the previous step and `<YOUR_LICENSE_KEY>` with the license key for your account.
+Update **url** to the URL below, replacing `<DOMAIN>` with the domain of the Cobrowse instance, often `cobrowse.io`, `<PROVIDER_ID>` with the 6 characters that you took note of in the previous step and `<YOUR_LICENSE_KEY>` with the license key for your account.
 
 `https://<DOMAIN>/api/1/saml/auth?provider=<PROVIDER_ID>&redirectTo=%2Fapps%2Fgenesys%2Findex.html%3Fenv%3Dwde%26interactionId%3D%24Interaction.Id%24%26license%<YOUR_LICENSE_KEY>`
 
 Now when opening the COBROWSE tab from within WWE you should be taken to your SSO provider allowing you to sign in and be authenticated within WWE.
+
+### Configuring Admin users
+
+All users who login via SAML will, by default, have the Cobrowse.io "Support Agent" role. If you'd like to manage your Admin users through SAML, you must:
+
+* create a group/role named "cobrowseio\_administrator" within your identity provider
+* pass this value through as an attribute in your SAML profile as a value or an array, e.g.:
+  * `"groups" : "cobrowseio_administrator"`
+  * `"groups" : ["cobrowseio_administrator", "abc", "def", ...]`
 
