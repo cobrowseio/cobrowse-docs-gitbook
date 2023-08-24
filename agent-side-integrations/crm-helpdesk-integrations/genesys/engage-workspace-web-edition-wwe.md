@@ -39,7 +39,7 @@ Take note of your `<PROVIDER_ID>`. It should a string of 6 characters after the 
 
 Update **url** to the URL below, replacing `<DOMAIN>` with the domain of the Cobrowse instance, often `cobrowse.io`, `<PROVIDER_ID>` with the 6 characters that you took note of in the previous step and `<YOUR_LICENSE_KEY>` with the license key for your account.
 
-`https://<DOMAIN>/api/1/saml/auth?provider=<PROVIDER_ID>&redirectTo=%2Fapps%2Fgenesys%2Findex.html%3Fenv%3Dwde%26interactionId%3D%24Interaction.Id%24%26license%<YOUR_LICENSE_KEY>`
+`https://<DOMAIN>/api/1/saml/auth?provider=<PROVIDER_ID>&redirectTo=%2Fapps%2Fgenesys%2Findex.html%3Fenv%3Dwwe%26interactionId%3D%24Interaction.Id%24%26license%3D<YOUR_LICENSE_KEY>`
 
 Now when opening the COBROWSE tab from within WWE you should be taken to your SSO provider allowing you to sign in and be authenticated within WWE.
 
