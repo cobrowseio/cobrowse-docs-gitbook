@@ -6,19 +6,32 @@ You are responsible for backing up the database regularly. Cobrowse will not do 
 
 ### New releases
 
-To be notified when a new release is available (for any deployment type), please subscribe to this repo: [https://github.com/cobrowseio/cobrowse-enterprise-helm](https://github.com/cobrowseio/cobrowse-enterprise-helm).&#x20;
+To be notified when a new release is available (for any deployment type), please subscribe to this repo: [https://github.com/cobrowseio/cobrowse-enterprise-helm](https://github.com/cobrowseio/cobrowse-enterprise-helm).
 
 Changelog notes for all releases are available: [https://github.com/cobrowseio/cobrowse-enterprise-helm/releases](https://github.com/cobrowseio/cobrowse-enterprise-helm/releases). Image updates usually contain security patches.
 
 ### Upgrading Cobrowse
 
+**AWS, Azure, GCP and Docker-compose**
+
 The config directory created by our command line utility is a git repo. You can update to the latest version by doing:
 
-```bash
-git pull upstream stable
+```
+git pull upstream master
 ```
 
-Once you have done that, you can update your deployment via Terraform or Docker Compose as in the initial deployment.
+One you have done that, you can update your deployment via Terraform or Docker Compose as in the initial deployment.
+
+_Note: We recommend making a database backup before upgrading to new versions_
+
+**Helm**
+
+To upgrade your Helm deployment use:
+
+```
+helm repo update 
+helm upgrade cobrowse cobrowse-enterprise/cobrowse-enterprise
+```
 
 ### Dedicated staging instance
 
