@@ -252,6 +252,7 @@ Please follow the iOS and Android documentation to implement full device capabil
 #### Troubleshooting
 
 * For React Native on iOS, some clients have reported that Xcode does not automatically create the _\{{extensionname\}}.entitlements_ file in the extension directory, which is necessary for the "io.cobrowse" keychain sharing to work.
+* If you're not using `use_frameworks!` within CocoaPods, Xcode 13.3 and newer might not copy CobrowseIOExtension.framework extension dependency into resulting IPA builds. If this happens to you, please follow the guide under `iOS` -> `SPM` to create the script to copy `CobrowseIOAppExtension.framework` into the IPA on each build.
 {% endtab %}
 
 {% tab title="Xamarin.iOS" %}
