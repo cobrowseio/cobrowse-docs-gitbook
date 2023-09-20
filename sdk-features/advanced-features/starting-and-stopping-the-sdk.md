@@ -63,6 +63,17 @@ await CobrowseIO.Instance.Start();
 {% endtab %}
 {% endtabs %}
 
+{% hint style="info" %}
+If you do decide to delay or lazy load the SDK it is important to check if there is a currently active session and if so load and start the SDK right away. Without this check sessions would not continue between navigation or page refreshes as the SDK won't be loaded.
+
+```
+// On page load check if we should start the Cobrowse SDK right away
+if (CobrowseIO.currrentSession) {
+  CobrowseIO.start()
+}
+```
+{% endhint %}
+
 ### Automatic registration
 
 By default, when the SDK starts it will register the device to your account and share its connectivity state. This provides the dashboard with a list of devices which are online and ready to connect.
