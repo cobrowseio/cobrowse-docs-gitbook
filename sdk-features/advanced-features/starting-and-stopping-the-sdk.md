@@ -69,7 +69,8 @@ If you do decide to delay or lazy load the SDK it is important to check if there
 ```
 // On page load check if we should start the Cobrowse SDK right away
 if (CobrowseIO.currrentSession) {
-  CobrowseIO.start()
+  await CobrowseIO.client();
+  await CobrowseIO.start();
 }
 ```
 {% endhint %}
