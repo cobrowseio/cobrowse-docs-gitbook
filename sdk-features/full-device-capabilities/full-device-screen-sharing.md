@@ -213,7 +213,7 @@ If you've set everything up properly, after clicking the blue circular icon you 
 
 ![](../../.gitbook/assets/broadcast\_extension\_example.png)
 
-**Troubleshooting**
+#### Troubleshooting
 
 If full device screen capture on iOS is not working, please check the following:
 
@@ -236,7 +236,7 @@ For unattended full device access, we strongly recommend:
 * Be wary of battery optimization policies. On some devices you may need to add your app to a battery optimization whitelist to prevent it from killing the push notifications. More info here: [https://dontkillmyapp.com/](https://dontkillmyapp.com/)
 * This requires enabling the Accessibility Service when integrating the Android SDK. Please see the [full device remote control docs](full-device-remote-control.md).
 
-**Troubleshooting**
+#### Troubleshooting
 
 * If the screen is black during full device screen capture, please make sure your views are not marked as secure. More info here: [https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE)
 * If you are using Android Enterprise, please ensure your enterprise settings do not disallow screen capture.
@@ -248,7 +248,7 @@ For unattended full device access, we strongly recommend:
 Please follow the iOS and Android documentation to implement full device capabilities on React Native.
 {% endhint %}
 
-**Troubleshooting**
+#### Troubleshooting
 
 * For React Native on iOS, some clients have reported that Xcode does not automatically create the _\{{extensionname\}}.entitlements_ file in the extension directory, which is necessary for the "io.cobrowse" keychain sharing to work.
 * If you're not using `use_frameworks!` within CocoaPods, Xcode 13.3 and newer might not copy CobrowseIOExtension.framework extension dependency into resulting IPA builds. If this happens to you, please follow the guide under `iOS` -> `SPM` to create the script to copy `CobrowseIOAppExtension.framework` into the IPA on each build.
