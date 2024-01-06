@@ -24,7 +24,7 @@ When you override these functions, we will not show any default UI for the end-u
 {% tab title="iOS / MacOS" %}
 The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
 
-**Swift**
+#### **Swift**
 
 ```swift
 func cobrowseShowSessionControls(_ session: CBIOSession) {
@@ -36,7 +36,7 @@ func cobrowseHideSessionControls(_ session: CBIOSession) {
 }
 ```
 
-**Objective C**
+#### **Objective C**
 
 ```objectivec
 - (void)cobrowseShowSessionControls:(CBIOSession*) session {
@@ -92,7 +92,7 @@ CobrowseIO.showSessionControls = false;
 {% endtab %}
 
 {% tab title="Xamarin / .NET Mobile" %}
-**Xamarin.iOS / .NET iOS implementation**
+#### Xamarin.iOS / .NET iOS implementation
 
 The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
 
@@ -106,7 +106,7 @@ public override void CobrowseHideSessionControls(Session session) {
 }
 ```
 
-**Xamarin.Android / .NET Android implementation**
+#### Xamarin.Android / .NET Android implementation
 
 You can fully customize the interface for a Cobrowse session. The SDK provides hooks via `CobrowseIO.ISessionControlsDelegate` for you to render your own interface:
 
@@ -346,7 +346,7 @@ function App() {
 {% endtab %}
 
 {% tab title="Xamarin" %}
-**Xamarin.iOS implementation**
+#### Xamarin.iOS implementation
 
 ```csharp
 using Xamarin.CobrowseIO;
@@ -423,7 +423,7 @@ public class CustomCobrowseDelegate : CobrowseIODelegate
 }
 ```
 
-**Xamarin.Android implementation**
+#### Xamarin.Android implementation
 
 You can fully customize the interface for a Cobrowse session. The SDK provides hooks via `CobrowseIO.ISessionControlsDelegate` for you to render your own interface:
 
@@ -454,7 +454,7 @@ public class MainApplication : Application, CobrowseIO.ISessionControlsDelegate
 }
 ```
 
-**Xamarin.Forms implementation**
+#### Xamarin.Forms implementation
 
 Even though Cobrowse.io works with native views, there is nothing that would prevent you from using `Xamarin.Forms.VisualElement` as a session indicator.
 

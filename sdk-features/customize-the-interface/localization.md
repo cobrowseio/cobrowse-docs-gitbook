@@ -71,7 +71,7 @@ The content of `CobrowseIO.strings` should be the following (replace string valu
 "SessionIndicatorButtonCancel" = "Cancel";
 ```
 
-#### Full Device Screen Share
+### Full Device Screen Share
 
 In order to localize messages in the **broadcast upload extension** used for full device screen sharing, create another file named `CobrowseIO.strings` **in the extension project** and select all localization you want to support in the File Inspector.
 
