@@ -9,6 +9,7 @@
 * [Android](sdk-installation/android.md)
 * [React Native](sdk-installation/react-native.md)
 * [Xamarin](sdk-installation/xamarin.md)
+* [.NET Mobile](sdk-installation/xamarin-1.md)
 * [MacOS](sdk-installation/macos.md)
 * [Windows](sdk-installation/windows.md)
 
@@ -86,7 +87,7 @@
   * [Limiting account creation](enterprise-self-hosting/getting-started/limiting-account-creation.md)
   * [Configuring SMTP](enterprise-self-hosting/getting-started/configuring-smtp.md)
   * [Managing your deployment](enterprise-self-hosting/getting-started/management.md)
-* [Monitoring your instance](enterprise-self-hosting/monitoring-your-instance.md)
+* [Monitoring your instance](enterprise-self-hosting/monitoring-your-instance/README.md)
   * [Available metrics](enterprise-self-hosting/monitoring-your-instance/available-metrics.md)
   * [Self-Hosted Prometheus](enterprise-self-hosting/monitoring-your-instance/self-hosted-prometheus.md)
 * [Advanced configuration](enterprise-self-hosting/advanced/README.md)

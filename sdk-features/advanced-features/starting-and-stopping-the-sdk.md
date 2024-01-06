@@ -15,7 +15,7 @@ await CobrowseIO.client();
 await CobrowseIO.start();
 ```
 
-#### Advanced usage
+**Advanced usage**
 
 Sometimes it is required to run Cobrowse.io **only** within an IFrame, and not any containing or parent page. This is supported, but requires passing an extra configuration option when starting Cobrowse. **Most implementations should not need to use this.** Please contact us if you are unsure.
 
@@ -50,9 +50,9 @@ CobrowseIO.start();
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET Mobile" %}
 ```csharp
-CobrowseIO.Instance.Start();
+await CobrowseIO.Instance.Start();
 ```
 {% endtab %}
 
@@ -146,7 +146,7 @@ CobrowseIO.stop();
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET Mobile" %}
 ```csharp
 CobrowseIO.Instance.Stop();
 ```
