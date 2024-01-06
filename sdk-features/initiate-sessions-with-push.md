@@ -87,7 +87,7 @@ CobrowseIO.deviceToken = "<your FCM token>";
 {% endtab %}
 
 {% tab title="Xamarin / .NET Mobile" %}
-**Xamarin.iOS / .NET iOS implementation**
+#### Xamarin.iOS / .NET iOS implementation
 
 If you are already using push notifications in your app, there is nothing further required on the native side.
 
@@ -105,7 +105,7 @@ public void OnActivated(UIApplication application)
 }
 ```
 
-**Xamarin.Android / .NET Android implementation**
+#### Xamarin.Android / .NET Android implementation
 
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging](https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging).
 

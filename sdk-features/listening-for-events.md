@@ -202,7 +202,7 @@ CobrowseIO.instance().setDelegate(/* your delegate implementation */);
 {% endtab %}
 
 {% tab title="React Native" %}
-#### iOS
+### iOS
 
 To use the Delegate objects within React Native you can follow the examples below.
 
@@ -234,7 +234,7 @@ You should then instantiate the delegate in the `application: didFinishLaunching
 
 Finally, you can define the methods as required. You can refer to [this commit](https://github.com/cobrowseio/cobrowse-sdk-react-native/commit/db4ed8a57da53c2acc0310975f5eeda914db05f7) on our SDK for an example.
 
-#### Android
+### Android
 
 Ensure that your `MainApplication` implements the desired delegate (e.g. `CobrowseIO.RedactionDelegate`) and assign the instance of your application to the `CobrowseIOModule.delegate`. For this example we'll use the `RedactionDelegate`:
 
