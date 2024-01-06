@@ -89,6 +89,7 @@ By default, the native session indicator will still be visible to the user (a re
 ```javascript
 CobrowseIO.showSessionControls = false;
 ```
+
 {% endtab %}
 
 {% tab title="Xamarin / .NET Mobile" %}
@@ -344,6 +345,7 @@ function App() {
 }
 ```
 {% endtab %}
+
 
 {% tab title="Xamarin" %}
 #### Xamarin.iOS implementation

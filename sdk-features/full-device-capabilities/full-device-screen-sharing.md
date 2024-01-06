@@ -154,6 +154,7 @@ Remember to run `carthage update` after modifying your Cartfile.
 {% endhint %}
 
 Link the `CobrowseIOAppExtension.framework` to your extension target that can be found at `./Carthage/Build/iOS`.
+
 {% endtab %}
 
 {% tab title="Manual" %}
