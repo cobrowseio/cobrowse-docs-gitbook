@@ -8,12 +8,14 @@ description: .NET iOS and Android SDK
 
 We recommend installing the Cobrowse.io SDK using NuGet. Add the following package to your .NET 8 project:
 
-* `CobrowseIO.DotNet`: [![CobrowseIO NuGet](https://img.shields.io/nuget/v/CobrowseIO.Xamarin.svg?label=CobrowseIO.Xamarin)](https://www.nuget.org/packages/CobrowseIO.Xamarin/)
+* `CobrowseIO.DotNet`: [![CobrowseIO.DotNet NuGet](https://img.shields.io/nuget/v/CobrowseIO.DotNet.svg?label=CobrowseIO.DotNet)](https://www.nuget.org/packages/CobrowseIO.DotNet/)
 
-Add the following lines to your code which will register this device with the Cobrowse servers so you can connect to it. You could choose to do this on app startup, or when your users visits a support page in your application, or any other time.using Xamarin.CobrowseIO.Abstractions;
+Add the following lines to your code which will register this device with the Cobrowse servers so you can connect to it. You could choose to do this on app startup, or when your users visits a support page in your application, or any other time.
 
 ```csharp
-public partial class App : Xamarin.Forms.Application
+using Cobrowse.IO;
+
+public partial class App : Microsoft.Maui.Controls.Application
 {
     public App()
     {
@@ -33,7 +35,7 @@ This will associate sessions from your mobile app with your Cobrowse account.
 
 ### MAUI sample app
 
-We provide a sample application showing how to use Cobrowse.io NuGet packages in MAUI with .NET 8. [Xamarin.Forms sample](https://github.com/cobrowseio/cobrowse-sdk-xamarin/tree/master/SampleForms) includes using 6-digit codes, full device screen sharing, and redacting sensitive data.
+We provide a sample application showing how to use Cobrowse.io NuGet packages in MAUI with .NET 8. [MAUI sample](https://github.com/cobrowseio/cobrowse-sdk-xamarin/tree/dotnet/Sample) includes using 6-digit codes, full device screen sharing, and redacting sensitive data.
 
 ## Try it out
 

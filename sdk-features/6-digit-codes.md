@@ -5,7 +5,7 @@ By default, Cobrowse does not require any visible UI presented to the user. It w
 You may optionally present a UI in your app that enables users to generate 6-digit codes. Users may then read a code over the phone or in chat, and agents can use the 6-digit code to initiate the Cobrowse session.
 
 {% hint style="info" %}
-**Important**: 6-digit codes expire after approximately 15 minutes, so it's best practice to generate a code only when a user wants to start a session.
+**Important**: 6-digit codes expire after approximately 15 minutes, so it's best practice to generate a code only when a user wants to start a session.&#x20;
 {% endhint %}
 
 To generate a 6-digit code in your integration you can use the following APIs. Once you have generated the code you can display it to the user in your own UI. You should only generate a code when a user needs it as they expire shortly after creation.
@@ -91,7 +91,7 @@ The Cobrowse.io SDK for web does not provide a default UI for generating 6 digit
 1. Add the appropriate code below into a view controller in your app.
 2. Hook up a trigger for the action (or call it programatically if you prefer).
 
-**Swift**
+#### Swift
 
 ```swift
 import CobrowseIO
@@ -110,7 +110,7 @@ class ExampleViewController: UIViewController {
 
 For a full example written in Swift, see our Listr sample app at: [https://github.com/cobrowseio/Listr](https://github.com/cobrowseio/Listr)
 
-**Objective C**
+#### Objective C
 
 ```objectivec
 @import CobrowseIO;
@@ -168,7 +168,7 @@ export default class App extends Component {
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET Mobile" %}
 #### Xamarin.iOS implementation
 
 1. Add the appropriate code below into a view controller in your app.
@@ -228,6 +228,20 @@ namespace YourAppNamespace.Forms
         {
             CobrowseIO.Instance.OpenCobrowseUI();
         }
+    }
+}
+```
+
+#### .NET Mobile implementation
+
+```csharp
+using Cobrowse.IO;
+
+public partial class MainPage : Microsoft.Maui.Controls.ContentPage
+{
+    public void StartCobrowse()
+    {
+        CobrowseIO.Instance.OpenCobrowseUI();
     }
 }
 ```
