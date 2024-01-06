@@ -85,7 +85,6 @@ export default class App extends Component {
 ```
 
 By default, the native session indicator will still be visible to the user (a red horizontal bar at the top of the application). If you wish to hide this you can set `showSessionControls` to false:
-
 ```javascript
 CobrowseIO.showSessionControls = false;
 ```
