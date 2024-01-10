@@ -244,7 +244,7 @@ CobrowseIO.handleSessionRequest = function(session) {
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET Mobile" %}
 #### Xamarin.iOS implementation
 
 ```csharp

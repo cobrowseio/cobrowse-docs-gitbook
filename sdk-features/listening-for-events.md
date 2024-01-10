@@ -159,7 +159,7 @@ CobrowseIO.addListener('session.ended', session => {
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET Mobile" %}
 ```
 public void SessionDidEnd (Session session);
 ```
