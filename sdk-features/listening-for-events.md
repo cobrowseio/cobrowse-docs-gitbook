@@ -54,6 +54,18 @@ CobrowseIO.addListener('session.loaded', session => {
 })
 ```
 {% endtab %}
+
+{% tab title="Xamarin / .NET" %}
+```
+public void SessionDidLoad (Session session);
+```
+
+In Xamarin.Forms / .NET you can subscribe to the following CobrowseIO event:
+
+```
+event EventHandler<ISession> SessionDidLoad;
+```
+{% endtab %}
 {% endtabs %}
 
 #### Session Updated Events
@@ -95,12 +107,12 @@ CobrowseIO.addListener('session.updated', session => {
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET" %}
 ```
 public void SessionDidUpdate (Session session);
 ```
 
-In Xamarin.Forms you can subscribe to the following CobrowseIO events:
+In Xamarin.Forms you can subscribe to the following CobrowseIO event:
 
 ```
 event EventHandler<ISession> SessionDidUpdate;
@@ -152,7 +164,7 @@ CobrowseIO.addListener('session.ended', session => {
 public void SessionDidEnd (Session session);
 ```
 
-In Xamarin.Forms you can subscribe to the following CobrowseIO events:
+In Xamarin.Forms / .NET you can subscribe to the following CobrowseIO event:
 
 ```
 event EventHandler<ISession> SessionDidEnd;

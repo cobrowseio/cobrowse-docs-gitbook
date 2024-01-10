@@ -215,7 +215,7 @@ CobrowseIO.webviewRedactedViews = [ '.redacted', ...some other selectors... ];
 Finally, within React Native some packages will render in new Windows/Root Views. You can follow the same [delegate implementation](listening-for-events.md#session-updated-events) to identify this views and redact or unredact them by default as required. You can check the provided examples for [iOS](https://github.com/cobrowseio/cobrowse-sdk-react-native/blob/master/Example/ios/Example/AppDelegate.m) and [Android](https://github.com/cobrowseio/cobrowse-sdk-react-native/blob/master/Example/android/app/src/main/java/com/example/MainApplication.java) which redact by default the React Native Dev menu keeping one of the options unredacted to illustrate the technique.
 {% endtab %}
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET Mobile" %}
 **Xamarin.iOS implementation**
 
 Implement the `ICobrowseIORedacted` interface on any `UIViewController` that contains sensitive views. This interface contains one `RedactedViews` property:
@@ -252,7 +252,7 @@ public class MainActivity : AppCompatActivity, CobrowseIO.IRedacted
 
 While it is not possible to access platform-specific UI code directly from a cross-platform project, you can easily achieve it using [Effects](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/effects/introduction) and [Custom Renderers](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/).
 
-In your **cross-platform** project declare a new `Effect` for marking Xamarin.Forms UI elements as _redacted_:
+In your _cross-platform_ project declare a new `Effect` for marking Xamarin.Forms UI elements as _redacted_:
 
 ```csharp
 using Xamarin.Forms;
@@ -274,7 +274,7 @@ namespace YourAppNamespace.Forms
 }
 ```
 
-**iOS-specific** platform Effect would look like this:
+_iOS-specific_ platform Effect would look like this:
 
 ```csharp
 using System.Collections.Generic;
@@ -350,7 +350,7 @@ namespace YourAppNamespace.iOS
 }
 ```
 
-**Android-specific** platform Effect would look like this:
+_Android-specific_ platform Effect would look like this:
 
 ```csharp
 using System.Collections.Generic;
@@ -423,6 +423,157 @@ namespace YourAppNamespace.Android
         }
     }
 }
+```
+
+**MAUI implementation**
+
+Create a new [`Effect`](https://learn.microsoft.com/en-us/dotnet/maui/migration/effects?view=net-maui-8.0) which then will be used to redact certain MAUI views:
+
+```csharp
+public class CobrowseRedactedViewEffect : RoutingEffect
+{
+    public bool IsRedacted { get; set; } = true;
+}
+```
+
+Create the following _iOS-specific_ classes:
+
+```csharp
+public class CobrowseRedactionDelegate
+    : Cobrowse.IO.CobrowseDelegateImplementation
+{
+    public override UIView[] RedactedViewsForViewController(UIViewController vc)
+        => PlatformCobrowseRedactedViewEffect.RedactedViews;
+}
+
+public class PlatformCobrowseRedactedViewEffect : PlatformEffect
+{
+    private static readonly List<UIView> sRedacted = new List<UIView>();
+
+    public static UIView[] RedactedViews => sRedacted.ToArray();
+
+    public PlatformCobrowseRedactedViewEffect()
+    {
+    }
+
+    protected override void OnAttached()
+    {
+        AddToRedacted(Container);
+    }
+
+    protected override void OnDetached()
+    {
+        RemoveFromRedacted(Container);
+    }
+
+    private static void AddToRedacted(UIView view)
+    {
+        if (view == null)
+        {
+            return;
+        }
+        sRedacted.Add(view);
+    }
+
+    private static void RemoveFromRedacted(UIView view)
+    {
+        if (view == null)
+        {
+            return;
+        }
+        if (sRedacted.Contains(view))
+        {
+            sRedacted.Remove(view);
+        }
+    }
+}
+```
+
+_Android-specific_ classes:
+
+```csharp
+public class CobrowseRedactionDelegate
+    : Cobrowse.IO.CobrowseDelegateImplementation,
+    Cobrowse.IO.Android.CobrowseIO.IRedactionDelegate
+{
+    public IList<AView>? RedactedViews(Activity activity)
+        => PlatformCobrowseRedactedViewEffect.RedactedViews;
+}
+
+public class PlatformCobrowseRedactedViewEffect : PlatformEffect
+{
+    public PlatformCobrowseRedactedViewEffect()
+    {
+    }
+    private static readonly List<AView> sRedacted = new List<AView>();
+
+    public static IList<AView> RedactedViews => sRedacted;
+
+    protected override void OnAttached()
+    {
+        AddToRedacted(Control ?? Container);
+    }
+
+    protected override void OnDetached()
+    {
+        RemoveFromRedacted(Control ?? Container);
+    }
+
+    private static void AddToRedacted(AView view)
+    {
+        if (view == null)
+        {
+            return;
+        }
+        sRedacted.Add(view);
+    }
+
+    private static void RemoveFromRedacted(AView view)
+    {
+        if (view == null)
+        {
+            return;
+        }
+        if (sRedacted.Contains(view))
+        {
+            sRedacted.Remove(view);
+        }
+    }
+}
+```
+
+Make sure the delegates you just created are passed into the Cobrowse.io SDK after the SDK is started:
+
+```csharp
+public partial class App : Application
+{
+    public App()
+    {
+        InitializeComponent();
+
+        CobrowseIO.Instance.License = "<your license key>";
+        CobrowseIO.Instance.Start();
+
+#if ANDROID
+        Cobrowse.IO.Android.CobrowseIO.Instance.SetDelegate(new YourNamespace.Platforms.Android.CobrowseRedactionDelegate());
+#elif IOS
+        Cobrowse.IO.iOS.CobrowseIO.Instance.SetDelegate(new YourNamespace.Platforms.iOS.CobrowseRedactionDelegate());
+#endif
+    }
+```
+
+Last, utilize the created effect like this:
+
+```xml
+<ContentPage xmlns:local="clr-namespace:YourNamespace">
+...
+    <Label Text="This label is redacted">
+        <Label.Effects>
+            <local:CobrowseRedactedViewEffect />
+        </Label.Effects>
+    </Label>
+...
+</ContentPage>
 ```
 
 **Redaction of WebView content**

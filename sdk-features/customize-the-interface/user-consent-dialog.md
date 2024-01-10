@@ -56,8 +56,8 @@ CobrowseIO.handleSessionRequest = function(session) {
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
-#### Xamarin.iOS implementation
+{% tab title="Xamarin / .NET Mobile" %}
+#### Xamarin.iOS / .NET iOS implementation
 
 ```csharp
 public override void CobrowseHandleSessionRequest(Session session) {
@@ -69,7 +69,7 @@ public override void CobrowseHandleSessionRequest(Session session) {
 }
 ```
 
-#### Xamarin.Android implementation
+#### Xamarin.Android / .NET iOS implementation
 
 ```csharp
 public void HandleSessionRequest(Activity activity, Session session) {
@@ -83,7 +83,7 @@ public void HandleSessionRequest(Activity activity, Session session) {
 }
 ```
 
-#### Xamarin.Forms implementation
+#### Xamarin.Forms / .NET Mobile implementation
 
 You can also achieve this functionality from a cross-platform project. In this case you don't have to implement your own delegate, but instead you subscribe to the `SessionDidRequest` event:
 
@@ -367,6 +367,56 @@ public partial class App : Xamarin.Forms.Application
     private void Unsubscribe()
     {
         CobrowseIO.Instance.SessionDidRequest -= OnCobrowseSessionDidRequest;
+    }
+
+    private async void OnCobrowseSessionDidRequest(object sender, ISession session)
+    {
+        // Do something here, e.g. showing a permission request dialog
+        // Make sure to call Activate(<callback>) on the session object if
+        // you want to start the session.
+        // Provide a callback if you wish to handle errors during session
+        // initiation.
+        bool allowed = await this.MainPage.DisplayAlert(
+            title: "Cobrowse.io",
+            message: "Allow Cobrowse.io session?",
+            accept: "Allow",
+            cancel: "Reject");
+        if (allowed)
+        {
+            session.Activate(null);
+        }
+        else
+        {
+            session.End(null);
+        }
+    }
+}
+```
+
+#### MAUI implementation
+
+Subscribe to the `SessionDidRequest` event in a single place, for example in the MAUI application class:
+
+```csharp
+using Cobrowse.IO;
+
+namespace MauiSample;
+
+public partial class App : Microsoft.Maui.Controls.Application
+{
+    public App()
+    {
+        InitializeComponent();
+
+        CobrowseIO.Instance.License = "trial";
+        CobrowseIO.Instance.Start();
+        // and the rest of cobrowse setup ...
+    }
+
+
+    protected override void OnStart()
+    {
+        CobrowseIO.Instance.SessionDidRequest += OnCobrowseSessionDidRequestAsync;
     }
 
     private async void OnCobrowseSessionDidRequest(object sender, ISession session)

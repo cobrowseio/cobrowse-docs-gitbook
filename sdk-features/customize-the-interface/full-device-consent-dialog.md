@@ -178,6 +178,15 @@ To override the the full device consent prompt, you should implement the `cobrow
 ```
 {% endtab %}
 
+{% tab title="Xamarin / .NET Mobile" %}
+
+{% hint style="info" %}
+Please see the iOS and Android documentation for customizing the full device consent dialog.
+{% endhint %}
+
+{% endtab %}
+{% endtabs %}
+
 {% tab title="Windows" %}
 Full device by default, use the [user consent dialog](user-consent-dialog.md).
 {% endtab %}
