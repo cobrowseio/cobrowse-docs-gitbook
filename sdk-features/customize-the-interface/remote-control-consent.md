@@ -59,6 +59,17 @@ CobrowseIO.handleRemoteControlRequest = function(session) {
 }
 ```
 {% endtab %}
+
+{% tab title="Xamarin / .NET Mobile" %}
+```сsharp
+CobrowseIO.Instance.RemoteControlRequest += (object sender, ISession session) =>
+{
+    // Show your own UI here
+    // Use RemoteControlState.On to allow or RemoteControlState.Rejected to reject
+    session.SetRemoteControl(RemoteControlState.On, (e, s) => { });
+};
+```
+{% endtab %}
 {% endtabs %}
 
 ### Example UIs
@@ -273,6 +284,27 @@ CobrowseIO.handleRemoteControlRequest = function(session) {
       }], { cancelable: false })
   }
 }
+```
+{% endtab %}
+
+{% tab title="Xamarin / .NET Mobile" %}
+```сsharp
+CobrowseIO.Instance.RemoteControlRequest += async (object sender, ISession session) =>
+{
+    bool allowed = await RequireMainPage().DisplayAlert(
+        title: "Cobrowse.io",
+        message: "Allow remote control?",
+        accept: "Allow",
+        cancel: "Reject");
+    if (allowed)
+    {
+        session.SetRemoteControl(RemoteControlState.On, (e, s) => { });
+    }
+    else
+    {
+        session.SetRemoteControl(RemoteControlState.Rejected, (e, s) => { });
+    }
+};
 ```
 {% endtab %}
 {% endtabs %}

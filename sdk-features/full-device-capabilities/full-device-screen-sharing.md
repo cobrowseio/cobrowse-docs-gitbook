@@ -260,11 +260,11 @@ Please follow the iOS and Android documentation to implement full device capabil
 * If you're not using `use_frameworks!` within CocoaPods, Xcode 13.3 and newer might not copy CobrowseIOExtension.framework extension dependency into resulting IPA builds. If this happens to you, please follow the guide under `iOS` -> `SPM` to create the script to copy `CobrowseIOAppExtension.framework` into the IPA on each build.
 {% endtab %}
 
-{% tab title="Xamarin.iOS" %}
+{% tab title="Xamarin.iOS / .NET iOS" %}
 {% hint style="info" %}
 Please review the iOS documentation for full device capabilities first.
 
-This documentation specific to Xamarin.iOS is supplementary, and covers the differences only.
+This documentation specific to Xamarin.iOS / .NET iOS is supplementary, and covers the differences only.
 {% endhint %}
 
 **Add a Broadcast Extension project**
@@ -280,6 +280,14 @@ In Visual Studio for Mac:
 7. Create the location for the extension and press "Create"
 8. Visual Studio for Mac will create two extension projects for you: `YourApp.iOS.BroadcastUploadExtension` and `YourApp.iOS.BroadcastUploadExtensionUI`. The second project is not required and you can safely delete it.
 9. Change the target SDK of your Broadcast Extension target to at least iOS 10.0
+
+{% hint style="info" %}
+Visual Studio for Mac might not have project templates for iOS extensions in .NET. You can install [`DotNetTemplates from NuGet.org`](https://www.nuget.org/packages/VladislavAntonyuk.DotNetTemplates) and then run the following command:
+
+```
+dotnet new ios-broadcast-upload-extension -n YourBroadcastProjectName --applicationId com.youprojectid.myapp.myapp
+```
+{% endhint %}
 
 **Set up Keychain Sharing**
 
@@ -300,11 +308,14 @@ Take the bundle ID of the **extension** you created above, and add the following
 
 The app extension needs a dependency on the CobrowseIO app extension framework. Add the following NuGet to the **extension project** (not to the iOS app project):
 
-* [![CobrowseIO.AppExtension.iOS NuGet](https://img.shields.io/nuget/v/CobrowseIO.AppExtension.iOS.svg?label=CobrowseIO.AppExtension.iOS)](https://www.nuget.org/packages/CobrowseIO.AppExtension.iOS/)
+* [![CobrowseIO.AppExtension.iOS NuGet](https://img.shields.io/nuget/v/CobrowseIO.AppExtension.iOS.svg?label=CobrowseIO.AppExtension.iOS)](https://www.nuget.org/packages/CobrowseIO.AppExtension.iOS/) - Xamarin.iOS
+* [![CobrowseIO.DotNet.iOS.AppExtension NuGet](https://img.shields.io/nuget/v/CobrowseIO.DotNet.iOS.AppExtension.svg?label=CobrowseIO.DotNet.iOS.AppExtension)](https://www.nuget.org/packages/CobrowseIO.DotNet.iOS.AppExtension/) - .NET iOS
 
 **Implement the extension**
 
 Visual Studio will have added `SampleHandler.cs` file as part of the extension project you created earlier. Replace the content of the file with the following:
+
+_Xamarin.iOS:_
 
 ```csharp
 using Xamarin.CobrowseIO.AppExtension;
@@ -314,6 +325,23 @@ public class SampleHandler : CobrowseIOReplayKitExtension
 {
     protected SampleHandler(IntPtr handle) : base(handle)
     {
+    }
+}
+```
+
+_.NET iOS:_
+
+```csharp
+using Cobrowse.IO.iOS.AppExtension;
+
+namespace MauiSample.iOS.BroadcastUploadExtension
+{
+    [Register("SampleHandler")]
+    public class SampleHandler : CobrowseIOReplayKitExtension
+    {
+        protected SampleHandler(NativeHandle handle) : base (handle)
+        {
+        }
     }
 }
 ```
@@ -340,7 +368,7 @@ Open Info.plist of the extension project and make sure that `NSExtension` sectio
 ```
 {% endtab %}
 
-{% tab title="Xamarin.Android" %}
+{% tab title="Xamarin.Android / .NET Android" %}
 {% hint style="info" %}
 Please see the Android documentation for full device capabilities.
 {% endhint %}
