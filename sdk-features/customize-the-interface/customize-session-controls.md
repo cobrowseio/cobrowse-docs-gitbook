@@ -91,22 +91,22 @@ CobrowseIO.showSessionControls = false;
 
 {% endtab %}
 
-{% tab title="Xamarin" %}
-#### Xamarin.iOS implementation
+{% tab title="Xamarin / .NET Mobile" %}
+#### Xamarin.iOS / .NET iOS implementation
 
 The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
 
 ```csharp
-public override void CobrowseShowSessionControls(Session session) {
+public override void ShowSessionControls(Session session) {
     // show session controls
 }
 
-public override void CobrowseHideSessionControls(Session session) {
+public override void HideSessionControls(Session session) {
     // hide session controls
 }
 ```
 
-#### Xamarin.Android implementation
+#### Xamarin.Android / .NET Android implementation
 
 You can fully customize the interface for a Cobrowse session. The SDK provides hooks via `CobrowseIO.ISessionControlsDelegate` for you to render your own interface:
 
@@ -175,7 +175,7 @@ if (session) await session.end()
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET Mobile" %}
 ```csharp
 CobrowseIO.Instance().CurrentSession?.End(null);
 ```
@@ -346,7 +346,7 @@ function App() {
 {% endtab %}
 
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET Mobile" %}
 #### Xamarin.iOS implementation
 
 ```csharp
@@ -369,7 +369,7 @@ public class CustomCobrowseDelegate : CobrowseIODelegate
     // Sample end session UIView, constructor, and tap gesture recognizer implementation
     private UIView _indicatorInstance;
 
-    public override void CobrowseShowSessionControls(Session session)
+    public override void ShowSessionControls(Session session)
     {
         // You can render controls however you like here.
         // One option is to add our sample end session UI defined below.
@@ -380,7 +380,7 @@ public class CustomCobrowseDelegate : CobrowseIODelegate
         _indicatorInstance.Hidden = false;
     }
 
-    public override void CobrowseHideSessionControls(Session session)
+    public override void HideSessionControls(Session session)
     {
         if (_indicatorInstance != null)
             _indicatorInstance.Hidden = true;
@@ -500,7 +500,7 @@ public class CustomOverlayCobrowseDelegate : CobrowseDelegateImplementation
 {
     private UIView _indicatorInstance;
 
-    public override void CobrowseShowSessionControls(Session session)
+    public override void ShowSessionControls(Session session)
     {
         if (_indicatorInstance == null)
         {
@@ -509,7 +509,7 @@ public class CustomOverlayCobrowseDelegate : CobrowseDelegateImplementation
         _indicatorInstance.Hidden = false;
     }
 
-    public override void CobrowseHideSessionControls(Session session)
+    public override void HideSessionControls(Session session)
     {
         if (_indicatorInstance != null)
             _indicatorInstance.Hidden = true;
@@ -603,5 +603,161 @@ public class CustomOverlayCobrowseDelegate : CobrowseDelegateImplementation, Cob
     }
 }
 ```
+
+#### MAUI implementation
+
+First, create an indicator view using MAUI (`CobrowseCustomView.xaml`):
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourNamespace.CobrowseCustomView"
+             HeightRequest="42"
+             WidthRequest="130">
+    <Button
+        BackgroundColor="Red"
+        TextColor="White"
+        Text="End Session"
+        CornerRadius="4"
+        Clicked="OnEndSessionClicked" />
+</ContentView>
+```
+
+```csharp
+public partial class CobrowseCustomView : ContentView
+{
+    public CobrowseCustomView()
+    {
+        InitializeComponent();
+    }
+
+    private void OnEndSessionClicked(object sender, EventArgs e)
+    {
+        CobrowseIO.Instance.CurrentSession?.End(null);
+    }
+}
+```
+
+Then, in the **iOS-specific** files:
+
+```csharp
+public class CobrowseIndicatorDelegate
+    : Cobrowse.IO.CobrowseDelegateImplementation
+{
+    private UIView _indicatorInstance;
+
+    public override void ShowSessionControls(Session session)
+    {
+        if (_indicatorInstance == null)
+        {
+            _indicatorInstance = GetDefaultSessionIndicator(container: UIApplication.SharedApplication.KeyWindow);
+        }
+        _indicatorInstance.Hidden = false;
+    }
+
+    public override void HideSessionControls(Session session)
+    {
+        if (_indicatorInstance != null)
+            _indicatorInstance.Hidden = true;
+    }
+
+    private UIView GetDefaultSessionIndicator(UIView container)
+    {
+        var indicator = new CobrowseCustomView();
+        var renderer = Microsoft.Maui.Controls.Compatibility.Platform.iOS.Platform.CreateRenderer(indicator);
+        renderer.Element.Layout(new Rect(0, 0, indicator.WidthRequest, indicator.HeightRequest));
+        var nativeIndicator = renderer.NativeView;
+        nativeIndicator.TranslatesAutoresizingMaskIntoConstraints = false;
+
+        container.AddSubview(nativeIndicator);
+
+        nativeIndicator.WidthAnchor.ConstraintEqualTo((float)indicator.WidthRequest).Active = true;
+        nativeIndicator.HeightAnchor.ConstraintEqualTo((float)indicator.HeightRequest).Active = true;
+        nativeIndicator.CenterYAnchor.ConstraintEqualTo(container.CenterYAnchor).Active = true;
+        nativeIndicator.RightAnchor.ConstraintEqualTo(container.RightAnchor, constant: -20f).Active = true;
+
+        return nativeIndicator;
+    }
+}
+```
+
+And in the **Android-specific files**:
+
+```csharp
+public class CobrowseIndicatorDelegate
+    : Cobrowse.IO.CobrowseDelegateImplementation,
+    Cobrowse.IO.Android.CobrowseIO.ISessionControlsDelegate
+{
+    private global::Android.Views.View _overlayIndicator;
+
+    public void ShowSessionControls(Activity activity, Session session)
+    {
+        if (_overlayIndicator != null)
+        {
+            return;
+        }
+        if (!(activity is MauiAppCompatActivity))
+        {
+            return;
+        }
+        var indicator = new CobrowseCustomView();
+        var renderer = Microsoft.Maui.Controls.Compatibility.Platform.Android.Platform.CreateRendererWithContext(indicator, activity);
+        renderer.Element.Layout(new Rect(0, 0, indicator.WidthRequest, indicator.HeightRequest));
+        var nativeIndicator = renderer.View;
+
+        var modal = new RelativeLayout(activity);
+        var layoutParams = new RelativeLayout.LayoutParams(
+            (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, (float)indicator.WidthRequest, activity.Resources.DisplayMetrics),
+            (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, (float)indicator.HeightRequest, activity.Resources.DisplayMetrics))
+        {
+            MarginEnd = (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, 4f, activity.Resources.DisplayMetrics)
+        };
+        layoutParams.AddRule(LayoutRules.CenterVertical);
+        layoutParams.AddRule(LayoutRules.AlignParentEnd);
+        modal.AddView(nativeIndicator, layoutParams);
+
+        var rootFrameLayout = (ViewGroup)activity.Window.PeekDecorView();
+        rootFrameLayout.AddView(modal, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent));
+        rootFrameLayout.Invalidate();
+
+        _overlayIndicator = modal;
+    }
+
+    public void HideSessionControls(Activity activity, Session session)
+    {
+        if (_overlayIndicator == null)
+        {
+            return;
+        }
+        if (!(activity is MauiAppCompatActivity))
+        {
+            return;
+        }
+        var rootFrameLayout = (ViewGroup)activity.Window.PeekDecorView();
+        rootFrameLayout.RemoveView(_overlayIndicator);
+        _overlayIndicator = null;
+    }
+}
+```
+
+Make sure the delegates you just created are passed into the Cobrowse.io SDK after the SDK is started:
+
+```csharp
+public partial class App : Application
+{
+    public App()
+    {
+        InitializeComponent();
+        CobrowseIO.Instance.License = "<your license key>";
+        CobrowseIO.Instance.Start();
+#if ANDROID
+        Cobrowse.IO.Android.CobrowseIO.Instance.SetDelegate(new YourNamespace.Platforms.Android.CobrowseIndicatorDelegate());
+#elif IOS
+        Cobrowse.IO.iOS.CobrowseIO.Instance.SetDelegate(new YourNamespace.Platforms.iOS.CobrowseIndicatorDelegate());
+#endif
+    }
+```
+
 {% endtab %}
 {% endtabs %}

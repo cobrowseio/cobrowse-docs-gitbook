@@ -67,7 +67,7 @@ CobrowseIO.customData = {
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET Mobile" %}
 ```csharp
 CobrowseIO.Instance.CustomData = new Dictionary<string, object>
 {

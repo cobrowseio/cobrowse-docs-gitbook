@@ -50,7 +50,7 @@ CobrowseIO.start();
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET Mobile" %}
 ```csharp
 CobrowseIO.Instance.Start();
 ```
@@ -146,7 +146,7 @@ CobrowseIO.stop();
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET Mobile" %}
 ```csharp
 CobrowseIO.Instance.Stop();
 ```

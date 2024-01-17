@@ -49,7 +49,7 @@ CobrowseIO.instance().createSession((err, session) -> {
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
+{% tab title="Xamarin / .NET Mobile" %}
 ```csharp
 CobrowseIO.Instance.CreateSession((Exception err, ISession session) => {
     if (err != null) Debug.WriteLine("Failed to create a code");
@@ -168,8 +168,8 @@ export default class App extends Component {
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
-### Xamarin.iOS implementation
+{% tab title="Xamarin / .NET Mobile" %}
+#### Xamarin.iOS implementation
 
 1. Add the appropriate code below into a view controller in your app.
 2. Hook up a trigger for the action (or call it programatically if you prefer).
@@ -191,7 +191,7 @@ namespace SampleApp.iOS
 
 For a full example written in C#, see our sample app at: [https://github.com/cobrowseio/cobrowse-sdk-xamarin](https://github.com/cobrowseio/cobrowse-sdk-xamarin)
 
-### Xamarin.Android implementation
+#### Xamarin.Android implementation
 
 We have provided some default UI to make things easier to get started:
 
@@ -213,7 +213,7 @@ namespace SampleApp.Android
 }
 ```
 
-### Xamarin.Forms implementation
+#### Xamarin.Forms implementation
 
 The Cobrowse.io Xamarin SDK provides a convenient way to open the default 6 digit code UI. In your **cross-platform** project:
 
@@ -228,6 +228,20 @@ namespace YourAppNamespace.Forms
         {
             CobrowseIO.Instance.OpenCobrowseUI();
         }
+    }
+}
+```
+
+#### .NET Mobile implementation
+
+```csharp
+using Cobrowse.IO;
+
+public partial class MainPage : Microsoft.Maui.Controls.ContentPage
+{
+    public void StartCobrowse()
+    {
+        CobrowseIO.Instance.OpenCobrowseUI();
     }
 }
 ```
