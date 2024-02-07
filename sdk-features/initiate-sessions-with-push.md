@@ -18,7 +18,7 @@ Setup your Firebase account:
 2. Create a new project from your [Firebase console](https://console.firebase.google.com/).
 3. In your Project settings, add entries for your Android and iOS apps.
 4. For iOS, you will need generate an APNs Authentication Key (recommended) or APNs Certificate from [https://developer.apple.com](https://developer.apple.com/). You may then upload it under Project Settings -> Cloud Messaging.
-5. Please generate a Firebase Server Key from Project Settings -> Cloud Messaging and enter it into your [Firebase settings](https://cobrowse.io/dashboard/settings/firebase).
+5. Please generate a Firebase Private Key file from Project Settings -> Service Accounts, download it and enter its contents into your [Firebase settings](https://cobrowse.io/dashboard/settings/firebase).
 
 A few changes to native code as described below.
 
