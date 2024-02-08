@@ -231,7 +231,7 @@ No extra integration work is required to use full device mode via our Android SD
 {% hint style="warning" %}
 The SDK uses a service with the foreground type attribute set to `mediaProjection`. You are required to fill in a declaration form on Google Play and provide a video of your app using this permission. See the [Google Play Store requirements](https://support.google.com/googleplay/android-developer/answer/13392821?hl=en) for details on listing your app when using this API.&#x20;
 
-If your app does not use the full device screen capture, you can remove usage of the Media Projection API. Add a new service declaration to your application `AndroidManifest.xml` file (you must be using SDK version **v2.31.2** or above):
+If your app does not use the full device screen capture, you can remove usage of the Media Projection API. Add a new service declaration to your application `AndroidManifest.xml` file (you must be using SDK version **v2.32.0** or above):
 
 ```xml
 <service
