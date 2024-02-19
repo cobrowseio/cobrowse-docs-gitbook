@@ -52,9 +52,13 @@ You can find the API key in your user profile settings. From the dashboard page,
 
 #### Freshchat
 
+{% hint style="warning" %}
+The Freshchat API is only available on the **Pro** and **Enterprise** plans.
+{% endhint %}
+
 Your Freshchat sub-domain and API key can be found in the profile settings within the Freshworks sales area.
 
-{% hint style="warning" %}
+{% hint style="info" %}
 The Freshchat dashboard is divided into two separate sections: sales and messaging. To access the correct settings, ensure you are in the sales area. You can verify this by checking the page URL, which should be _https://mycompany.myfreshworks.com/crm/sales/..._. If you see _/crm/messaging_ instead of _/crm/sales_, navigate to a different section (e.g., Admin Settings or Contacts pages).
 {% endhint %}
 
