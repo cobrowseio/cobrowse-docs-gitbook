@@ -42,7 +42,7 @@ To connect to user devices, your next step is to install our SDKs for your platf
 
 ### Group based access control
 
-You can restrict access to Cobrowse.io based on user groups. To do this, navigate to the settings page and select the **Show advanced settings checkbox**. This action will display additional configuration options. By entering the appropriate Freshdesk or Freshchat API credentials, a multi-select input will appear. This input allows you to specify which groups can access Cobrowse.io. If no groups are selected, Cobrowse.io will be accessible to all groups.
+You can restrict access to Cobrowse.io based on user groups. To do this, navigate to the Cobrowse.io app's settings page on Freshdesk/Freshchat and select the **Show advanced settings checkbox**. This action will display additional configuration options. By entering the appropriate Freshdesk or Freshchat API credentials, a multi-select input will appear. This input allows you to specify which groups can access Cobrowse.io. If no groups are selected, Cobrowse.io will be accessible to all groups.
 
 #### Freshdesk
 
