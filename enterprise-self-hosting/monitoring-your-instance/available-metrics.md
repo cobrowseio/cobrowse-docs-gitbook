@@ -1,0 +1,19 @@
+---
+description: >-
+  Custom Cobrowse metrics are available via OpenMetrics endpoints and include
+  counters, gauges and summaries.
+---
+
+# Available metrics
+
+Some of the custom Cobrowse instance metrics we provide via our OpenMetrics endpoints are:
+
+<table><thead><tr><th width="416.3333333333333">Metric Name</th><th width="150">Metric Type</th><th>Description</th></tr></thead><tbody><tr><td><strong>cobrowse_device_registrations_total</strong></td><td>Counter</td><td>Count of devices registered</td></tr><tr><td><strong>cobrowse_presence_queue_delay_seconds</strong></td><td>Gauge</td><td>Current wait time for presence queue processing (should be close to 0 most of the time)</td></tr><tr><td><strong>cobrowse_presence_queue_length_count</strong></td><td>Gauge</td><td>Current number of sockets waiting in the presence system processing queue (should be close to 0 most of the time)</td></tr><tr><td><strong>cobrowse_session_created_total</strong></td><td>Counter</td><td>Count of sessions created</td></tr><tr><td><strong>cobrowse_session_duration_seconds</strong></td><td>Summary</td><td>Duration of sessions</td></tr><tr><td><strong>cobrowse_session_unused_total</strong></td><td>Counter</td><td>Count of sessions that were created but then never activated</td></tr><tr><td><strong>cobrowse_websocket_byte_in_total</strong></td><td>Counter</td><td>Count of WebSocket bytes received</td></tr><tr><td><strong>cobrowse_websocket_connection_duration_seconds</strong></td><td>Summary</td><td>Duration of WebSocket connection</td></tr><tr><td><strong>cobrowse_websocket_connection_end_total</strong></td><td>Counter</td><td>Count of WebSocket connections ended</td></tr><tr><td><strong>cobrowse_websocket_connection_start_total</strong></td><td>Counter</td><td>Count of WebSocket connections started</td></tr><tr><td><strong>cobrowse_websocket_connections_count</strong></td><td>Gauge</td><td>Current number of open WebSocket connections</td></tr><tr><td><strong>cobrowse_websocket_message_in_total</strong></td><td>Counter</td><td>Count of WebSocket messages received</td></tr><tr><td><strong>cobrowse_websocket_message_size_bytes</strong></td><td>Summary</td><td>Size of WebSocket message</td></tr><tr><td><strong>cobrowse_limits_members_used_count</strong></td><td>Gauge</td><td>Count of used members</td></tr><tr><td><strong>cobrowse_limits_members_remaining_count</strong></td><td>Gauge</td><td>Count of remaining members</td></tr><tr><td><strong>cobrowse_limits_members_daily_used_count</strong></td><td>Gauge</td><td>Count of used daily members</td></tr><tr><td><strong>cobrowse_limits_members_daily_remaining_count</strong></td><td>Gauge</td><td>Count of remaining daily members</td></tr><tr><td><strong>cobrowse_limits_sessions_used_count</strong></td><td>Gauge</td><td>Count of used sessions</td></tr><tr><td><strong>cobrowse_limits_sessions_remaining_count</strong></td><td>Gauge</td><td>Count of remaining sessions</td></tr><tr><td><strong>cobrowse_limits_session_concurrency_used_count</strong></td><td>Gauge</td><td>Count of used concurrent sessions</td></tr><tr><td><strong>cobrowse_limits_session_concurrency_remaining_count</strong></td><td>Gauge</td><td>Count of remaining concurrent sessions</td></tr></tbody></table>
+
+Many of these will depend on the behaviour of your deployment and use case, so we do not provide specific ranges thresholds to monitor by default. You should monitor and decide what the appropriate limits are for your deployment.
+
+As well as these custom metrics, the prometheus client also collects some generic system metrics and NodeJS specific metrics, see below for more information:
+
+{% embed url="https://prometheus.io/docs/instrumenting/writing_clientlibs/#standard-and-runtime-collectors" %}
+
+{% embed url="https://github.com/siimon/prom-client/tree/master/lib/metrics" %}
