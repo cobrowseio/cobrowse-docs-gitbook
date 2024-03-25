@@ -1,3 +1,9 @@
+---
+description: >-
+  Delve into advanced configurations for your self-hosted Cobrowse.io instance
+  on Kubernetes using Helm.
+---
+
 # Advanced Configuration
 
 ## Image Pull Secret

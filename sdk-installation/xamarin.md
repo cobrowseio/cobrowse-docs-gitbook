@@ -6,6 +6,10 @@ description: Xamarin SDK
 
 ## Installation
 
+{% hint style="info" %}
+Looking for `net6.0-android` and `net6.0-ios` support? Please [email us](mailto:hello@cobrowse.io)
+{% endhint %}
+
 We recommend installing the Cobrowse.io SDK using NuGet. Add the following package to your Xamarin projects:
 
 * `CobrowseIO.Xamarin`: [![CobrowseIO.iOS NuGet](https://img.shields.io/nuget/v/CobrowseIO.Xamarin.svg?label=CobrowseIO.Xamarin)](https://www.nuget.org/packages/CobrowseIO.Xamarin/)
@@ -30,6 +34,8 @@ public class AppDelegate : UIResponder, IUIApplicationDelegate
     }
 }
 ```
+
+
 
 **Xamarin.iOS Swift support**
 
@@ -121,3 +127,7 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}
+
+## .NET MAUI
+
+This is currently on our roadmap. If this is of intrest to you please do let us know at [hello@cobrowse.io](mailto://hello@cobrowse.io). In the meantime you should be able to use our Xamarin library within your MAUI applications.

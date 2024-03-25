@@ -1,12 +1,24 @@
+---
+description: >-
+  How to configure a custom SMTP server on your self-hosted Cobrowse.io instance
+  for sending magic link login emails via your company email.
+---
+
 # Configuring SMTP
 
 Cobrowse supports configuring a custom SMTP server to replace the default email provider. This will allow you to use your company email to send the magic link login emails.
 
 ### Configuring SMTP
 
+To configure the SMTP server using the Admin interface follow these steps:
+
 1. Firstly make sure you have configured at least one [superuser](adding-a-superuser.md) in your instance.&#x20;
 2. Open `/admin/configuration` on your instance while logged in as a superuser. e.g. https://example.com/admin/configuration
 3. Enter a new configuration key called "**smtp\_url**". The value should be the URL of your SMTP server including any authentication or non-standard ports.
+
+{% hint style="info" %}
+The SMTP server can also be configured by setting a "**smtp\_url"** environment variable on the API service of your deployment.
+{% endhint %}
 
 #### Configure from-address
 

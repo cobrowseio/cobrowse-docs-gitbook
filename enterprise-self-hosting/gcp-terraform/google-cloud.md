@@ -1,4 +1,11 @@
-# Google Cloud
+---
+description: >-
+  Utilize Cobrowse's Google Cloud Terraform configuration for an effortless
+  setup on GCP, ensuring efficient metric collection via Google Cloud's Workload
+  Metrics
+---
+
+# GCP metrics configuration
 
 If you are running the Cobrowse Enterprise Google Cloud terraform configuration, Google Cloud's [Workload Metrics](https://cloud.google.com/stackdriver/docs/solutions/gke/managing-metrics) offering is the easiest way to collect these metrics and make them available in Google Cloud Monitoring.
 

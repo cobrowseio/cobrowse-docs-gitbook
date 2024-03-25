@@ -1,3 +1,9 @@
+---
+description: >-
+  Customise and localize the Cobrowse interface to offer a tailored experience.
+  The website SDK provides support for more than 20 languages.
+---
+
 # Localization / translation
 
 You may use the documentation under [Customize the interface](./) to completely replace our default UI in our SDKs with your own custom UI. However, some clients prefer to use our existing default UI, but simply localize or modify the text strings.

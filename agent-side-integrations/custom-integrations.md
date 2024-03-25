@@ -1,3 +1,9 @@
+---
+description: >-
+  Customers may use custom integrations to deliver the agent-side UI directly
+  into their own applications.
+---
+
 # Custom integrations
 
 Rather than accessing Cobrowse.io via our website, many of our customers integrate the agent-side UI directly into their own applications.&#x20;
@@ -13,9 +19,9 @@ Using a combination of these resources, Cobrowse.io can be seamlessly integrated
 
 After your initial Cobrowse account setup, there's no need to register each individual user to your Cobrowse account - this is all done automatically through use of [JWTs](json-web-tokens-jwts/).
 
-****
 
 
 
-****
+
+
 

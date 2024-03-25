@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to customize the full device consent prompt which is required by
+  some of our supported platforms.
+---
+
 # Full device consent dialog
 
 Before a session is upgraded to [full device](../full-device-capabilities/), some platforms require a consent from the user. Here is how to customize these consent prompts where possible:
@@ -177,15 +183,6 @@ To override the the full device consent prompt, you should implement the `cobrow
 }
 ```
 {% endtab %}
-
-{% tab title="Xamarin / .NET Mobile" %}
-
-{% hint style="info" %}
-Please see the iOS and Android documentation for customizing the full device consent dialog.
-{% endhint %}
-
-{% endtab %}
-{% endtabs %}
 
 {% tab title="Windows" %}
 Full device by default, use the [user consent dialog](user-consent-dialog.md).

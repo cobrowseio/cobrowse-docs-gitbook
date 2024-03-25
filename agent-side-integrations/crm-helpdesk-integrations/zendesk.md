@@ -1,3 +1,9 @@
+---
+description: >-
+  Cobrowse provides an integration with both Zendesk Support and Zendesk Chat,
+  available from the Zendesk App Marketplace.
+---
+
 # Zendesk
 
 ## Overview
@@ -18,7 +24,7 @@ You must have an active trial/subscription with Zendesk Support (even to use our
 
 ### Zendesk App Marketplace links
 
-All newer accounts will only need to install the Cobrowse.io for Support app, it is also 100% compatible with the Sunshine Conversations widget.
+Newer accounts will only need to install the Cobrowse.io for Support app, it is  100% compatible with Zendesk Messaging and the new Sunshine Conversations widget.
 
 If you are using the Legacy Zendesk Chat you will also need to install the Cobrowse.io for Chat app.
 

@@ -1,3 +1,9 @@
+---
+description: >-
+  Enable your support agents to escalate in-app Cobrowse sessions to full device
+  screen sharing or remote control, facilitating comprehensive assistance.
+---
+
 # Full device capabilities
 
 If you wish, you can allow your support agents to upgrade in-app Cobrowse sessions to allow screen sharing from the entire device. For example, to capture other apps and settings on mobile, or the entire screen of a computer.

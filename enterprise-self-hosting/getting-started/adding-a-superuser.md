@@ -1,8 +1,14 @@
+---
+description: >-
+  How to set up superusers on your self-hosted Cobrowse instance to manage
+  global administrative tasks.
+---
+
 # Adding a superuser
 
 Superuser are the global administrators on your instance. They can access all accounts, priviliged sections of the system, and apply instance wide configurations. By default your Cobrowse Enterprise instance will not have any superusers configured.
 
-To add a superuser, you must configure them as part of the infrastructure deployment. 
+To add a superuser, you must configure them as part of the infrastructure deployment.&#x20;
 
 ### Configuring superusers via Terraform
 
@@ -18,4 +24,3 @@ For Terraform based deployments you need to add a "superusers" entry to the `ter
 ### Configuring superusers via Docker Compose
 
 For Docker Compose based deployments, you must configure the `SUPERUSERS` environment variable with a regular expression describing superuser emails. See the docs for [Docker Compose docs](../docker-compose.md).
-

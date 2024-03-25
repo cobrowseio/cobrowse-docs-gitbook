@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to use Docker Compose to set up Cobrowse Enterprise on a single
+  host.
+---
+
 # Docker Compose
 
 This is the documentation for how to use Docker Compose to set up Cobrowse Enterprise on a single host.
@@ -42,13 +48,7 @@ You can replace "./example" with the directory where you wish to save the config
 
 The installer above will generate a `.env` file that contains your configuration. You may edit this file to add further configuration. We support the following environment variables:
 
-|     ENV VAR     |                   Description                   |     Example     | Required |
-| :-------------: | :---------------------------------------------: | :-------------: | :------: |
-|      DOMAIN     |         Domain name to run Cobrowse on.         |   mydomain.com  |    Yes   |
-|     LICENSE     |   The license string you have been given by us  |                 |    Yes   |
-| SSL\_GENERATION |    "automatic" (uses LetsEncrypt) or "manual"   |    automatic    |    No    |
-| SSL\_VALIDATION | 0 = disable cert validation (self signed certs) |        0        |    No    |
-|    SUPERUSERS   |   RegEx to specify super user email addresses   | .\*@example.com |    No    |
+<table><thead><tr><th width="257" align="center">ENV VAR</th><th width="230" align="center">Description</th><th width="163" align="center">Example</th><th align="center">Required</th></tr></thead><tbody><tr><td align="center">DOMAIN</td><td align="center">Domain name to run Cobrowse on.</td><td align="center">mydomain.com</td><td align="center">Yes</td></tr><tr><td align="center">LICENSE</td><td align="center">The license string you have been given by us</td><td align="center"></td><td align="center">Yes</td></tr><tr><td align="center">SSL_GENERATION</td><td align="center">"automatic" (uses LetsEncrypt) or "manual"</td><td align="center">automatic</td><td align="center">No</td></tr><tr><td align="center">SSL_VALIDATION</td><td align="center">0 = disable cert validation (self signed certs)</td><td align="center">0</td><td align="center">No</td></tr><tr><td align="center">SUPERUSERS</td><td align="center">RegEx to specify super user email addresses</td><td align="center">.*@example.com</td><td align="center">No</td></tr><tr><td align="center">ACCOUNT_CREATORS</td><td align="center">RegEx of email addresses allowed to sign up for a new account</td><td align="center">.*@example.com</td><td align="center">No</td></tr><tr><td align="center">ALLOWED_USERNAMES</td><td align="center">RegEx of email addresses that should receive magic link emails</td><td align="center">.*@example.com</td><td align="center">No</td></tr></tbody></table>
 
 #### Configuring DNS
 

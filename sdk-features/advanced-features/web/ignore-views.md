@@ -1,3 +1,9 @@
+---
+description: >-
+  Ignore views in Cobrowse. It may be useful to ignore specific views from being
+  presented to the agents. Use this javascript snippet.
+---
+
 # Ignore Views
 
 It may be useful to ignore specific views from being presented to the agents. To achieve this, you'll need to add our javascript snippet and configure the set of selectors that should be ignored:

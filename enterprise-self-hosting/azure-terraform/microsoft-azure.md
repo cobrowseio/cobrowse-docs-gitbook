@@ -1,3 +1,10 @@
+---
+description: >-
+  Configure Cobrowse on Microsoft Azure using the provided Terraform
+  configurations, and seamlessly integrate with Azure Monitor for insightful
+  container metrics.
+---
+
 # Azure metrics configuration
 
 If you are running the Cobrowse Enterprise Azure Terraform configuration, Azure Monitor provides a [Prometheus integration](https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-prometheus-integration) for its container insights offering. To configure the integration you'll be asked to configure scrape settings (we have configured this already) and deploy a `ConfigMap` resource.

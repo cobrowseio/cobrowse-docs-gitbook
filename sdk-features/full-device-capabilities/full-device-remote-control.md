@@ -1,3 +1,9 @@
+---
+description: >-
+  Enable full device remote control on Android and Windows SDKs, allowing
+  support agents to modify system settings or control apps on a user's device.
+---
+
 # Full device remote control
 
 Full device remote control allows your support agents to take full control of a user's device, for example to change system settings or control other apps. This feature is only supported on the Android and Windows SDKs.
@@ -65,7 +71,7 @@ Please follow the Android documentation to implement full device remote control 
 {% endhint %}
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title="Xamarin" %}
 {% hint style="info" %}
 Please follow the Android documentation to implement full device remote control using Xamarin.
 {% endhint %}
@@ -100,7 +106,7 @@ CobrowseAccessibilityService.showSetup(...);
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title="Xamarin" %}
 ```csharp
 CobrowseAccessibilityService.ShowSetup(...)
 ```
@@ -123,7 +129,7 @@ CobrowseAccessibilityService.isRunning(...);
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title="Xamarin" %}
 ```csharp
 CobrowseAccessibilityService.IsRunning(...)
 ```
@@ -141,7 +147,7 @@ startActivity(intent);
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title="Xamarin" %}
 ```csharp
 Intent intent = new Intent(global::Android.Provider.Settings.ActionAccessibilitySettings);
 intent.AddFlags(ActivityFlags.NewTask);

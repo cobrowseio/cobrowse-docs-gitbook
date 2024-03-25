@@ -1,4 +1,10 @@
-# Amazon Web Services
+---
+description: >-
+  AWS metrics configuration. Our Terraform can set everything up to export your
+  Cobrowse EKS cluster metrics into CloudWatch for charting and alerts.
+---
+
+# AWS metrics configuration
 
 Cobrowse exposes its application metrics using the OpenMetrics API (i.e., Prometheus data format). If you are hosting Cobrowse Enterprise in AWS, our Terraform can set everything up to export your Cobrowse EKS cluster metrics into CloudWatch for charting and alerts. We also include by default a sample CloudWatch dashboard as part of this deployment.
 
@@ -67,4 +73,3 @@ For AWS deployments, access to Redis metrics through OpenMetrics is not supporte
 When the metrics collector begins collecting Prometheus metrics, it creates a CloudWatch Logs LogGroup to log them in. By default, this log data expires in one year, but can easily be modified.
 
 In your AWS Console, navigate to CloudWatch > Logs > LogGroups and find a log group named `/aws/containerinsights/cobrowse-enterprise/performance` or similar. You can now update the retention period of these logs to be inline with how long you wish to retain the metrics logs. Note that if you expire the log data, the data will still be available to explore in CloudWatch metrics dashboards and charts.
-

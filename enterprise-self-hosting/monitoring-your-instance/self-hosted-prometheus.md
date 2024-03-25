@@ -1,3 +1,9 @@
+---
+description: >-
+  Implement self-hosted Prometheus and Grafana in your Cobrowse Enterprise
+  Kubernetes cluster for enhanced monitoring and data visualization.
+---
+
 # Self-Hosted Prometheus
 
 If you are self-hosting your Cobrowse Enterprise Kubernetes cluster, then deploying your own Prometheus and Grafana instances into your cluster may make the most sense for you.
@@ -32,6 +38,14 @@ server:
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
 helm install prometheus prometheus-community/prometheus -f values.yml
+```
+
+#### Docker Compose
+
+For Docker Compose deployments a Prometheus container can be started as part of the deployment in the following way:
+
+```
+docker-compose -f docker-compose.yml -f metrics/docker-compose.metrics.yml up 
 ```
 
 ### Grafana

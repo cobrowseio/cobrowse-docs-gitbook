@@ -1,3 +1,9 @@
+---
+description: >-
+  Effortlessly identify, search, and filter devices on your dashboard by
+  specifying custom key/value pairs as metadata. Learn more.
+---
+
 # Identify your devices
 
 To help you identify, search, and filter devices in your Cobrowse dashboard, it's helpful to specify any meaningful metadata.
@@ -67,7 +73,7 @@ CobrowseIO.customData = {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title="Xamarin" %}
 ```csharp
 CobrowseIO.Instance.CustomData = new Dictionary<string, object>
 {

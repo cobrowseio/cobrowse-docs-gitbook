@@ -1,3 +1,9 @@
+---
+description: >-
+  In order to keep the SDK small there's some polyfills we don't include by
+  default. Learn which polyfills are required to support IE11.
+---
+
 # IE 11 polyfills
 
 The Cobrowse.io JS SDK works well with IE 11, but in order to keep the SDK small there's some polyfills we don't include by default. You may add these to your website yourself to support IE11. The ones we use are:

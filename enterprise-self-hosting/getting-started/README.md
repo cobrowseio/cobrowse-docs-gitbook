@@ -1,3 +1,9 @@
+---
+description: >-
+  Getting started with Cobrowse. Follow these simple steps to bootstrap your
+  account and configure the SDK to use your private instance.
+---
+
 # Running your instance
 
 Once your self-hosted instance is up and running, there are a few steps to bootstrap the account and configure our SDKs to use your private instance.

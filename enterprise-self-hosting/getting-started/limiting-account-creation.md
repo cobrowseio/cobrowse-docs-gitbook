@@ -1,3 +1,9 @@
+---
+description: >-
+  Control account creation on your self-hosted Cobrowse instance by configuring
+  specific email addresses or domains that are allowed to create new accounts.
+---
+
 # Limiting account creation
 
 By default your Cobrowse Enterprise instance supports multiple tennants and will allow anyone to create new accounts, just as in our hosted version. In most instances you will want to limit this to specific people, or members of your organisation.&#x20;

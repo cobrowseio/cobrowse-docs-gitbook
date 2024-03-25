@@ -1,3 +1,9 @@
+---
+description: >-
+  Cobrowse account config. Account-level settings may be configured once you
+  have logged in.
+---
+
 # Account config
 
 You may configure your account-level settings after logging in at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings).&#x20;

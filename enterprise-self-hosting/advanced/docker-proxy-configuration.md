@@ -1,3 +1,7 @@
+---
+description: Learn how to configure docker proxy when using Cobrowse enterprise.
+---
+
 # Docker proxy configuration
 
 When running our docker-compose setup on a network that requires an HTTP proxy you will need to configure some extra settings. Firstly you will need to familiarise yourself with the docker settings regarding proxies, for this please see the [Docker documentation](https://docs.docker.com/network/proxy/) directly.

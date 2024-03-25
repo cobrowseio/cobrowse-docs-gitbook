@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to listen to the various events that the Cobrowse SDKs exposes to
+  hook in to the lifecycle of a Cobrowse session.
+---
+
 # Listening for events
 
 The Cobrowse SDKs offer a range of events that you can use to hook in to the lifecycle of a Cobrowse session. The lifecycle of a Cobrowse session is based on the following states:
@@ -54,18 +60,6 @@ CobrowseIO.addListener('session.loaded', session => {
 })
 ```
 {% endtab %}
-
-{% tab title="Xamarin / .NET" %}
-```
-public void SessionDidLoad (Session session);
-```
-
-In Xamarin.Forms / .NET you can subscribe to the following CobrowseIO event:
-
-```
-event EventHandler<ISession> SessionDidLoad;
-```
-{% endtab %}
 {% endtabs %}
 
 #### Session Updated Events
@@ -107,12 +101,12 @@ CobrowseIO.addListener('session.updated', session => {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET" %}
+{% tab title="Xamarin" %}
 ```
 public void SessionDidUpdate (Session session);
 ```
 
-In Xamarin.Forms you can subscribe to the following CobrowseIO event:
+In Xamarin.Forms you can subscribe to the following CobrowseIO events:
 
 ```
 event EventHandler<ISession> SessionDidUpdate;
@@ -159,12 +153,12 @@ CobrowseIO.addListener('session.ended', session => {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title="Xamarin" %}
 ```
 public void SessionDidEnd (Session session);
 ```
 
-In Xamarin.Forms / .NET you can subscribe to the following CobrowseIO event:
+In Xamarin.Forms you can subscribe to the following CobrowseIO events:
 
 ```
 event EventHandler<ISession> SessionDidEnd;
