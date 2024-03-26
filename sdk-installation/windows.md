@@ -37,7 +37,7 @@ Once you have your app running on a Windows computer, navigate to [https://cobro
 
 ## Requirements
 
-* .NET Framework 4.6
+* .NET Framework 4.6+, .NET Core 3+, .NET 5.0+
 * Minimum supported OS is Windows 7
 * _x86_ and _x64_ architectures only are supported
 

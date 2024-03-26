@@ -1,3 +1,9 @@
+---
+description: >-
+  Full device screen sharing enables agents to view screens from applications
+  outside of your own, view settings and inter-application browsing.
+---
+
 # Full device screen sharing
 
 Full device screen sharing allows your support agents to view screens from applications outside of your own. This is often useful where support agents need to check the state of system settings, or need to see the user navigate between multiple applications.
@@ -154,7 +160,6 @@ Remember to run `carthage update` after modifying your Cartfile.
 {% endhint %}
 
 Link the `CobrowseIOAppExtension.framework` to your extension target that can be found at `./Carthage/Build/iOS`.
-
 {% endtab %}
 
 {% tab title="Manual" %}
@@ -214,7 +219,7 @@ If you've set everything up properly, after clicking the blue circular icon you 
 
 ![](../../.gitbook/assets/broadcast\_extension\_example.png)
 
-#### Troubleshooting
+**Troubleshooting**
 
 If full device screen capture on iOS is not working, please check the following:
 
@@ -228,20 +233,6 @@ The Cobrowse.io SDK for Android will allow full device screen capture, including
 
 No extra integration work is required to use full device mode via our Android SDK.
 
-{% hint style="warning" %}
-The SDK uses a service with the foreground type attribute set to `mediaProjection`. You are required to fill in a declaration form on Google Play and provide a video of your app using this permission. See the [Google Play Store requirements](https://support.google.com/googleplay/android-developer/answer/13392821?hl=en) for details on listing your app when using this API.&#x20;
-
-If your app does not use the full device screen capture, you can remove usage of the Media Projection API. Add a new service declaration to your application `AndroidManifest.xml` file (you must be using SDK version **v2.32.0** or above):
-
-```xml
-<service
-    android:name="io.cobrowse.CobrowseService"
-    android:foregroundServiceType=""
-    tools:replace="android:foregroundServiceType" />
-```
-
-{% endhint %}
-
 **Notes for unattended access**
 
 For unattended full device access, we strongly recommend:
@@ -251,7 +242,7 @@ For unattended full device access, we strongly recommend:
 * Be wary of battery optimization policies. On some devices you may need to add your app to a battery optimization whitelist to prevent it from killing the push notifications. More info here: [https://dontkillmyapp.com/](https://dontkillmyapp.com/)
 * This requires enabling the Accessibility Service when integrating the Android SDK. Please see the [full device remote control docs](full-device-remote-control.md).
 
-#### Troubleshooting
+**Troubleshooting**
 
 * If the screen is black during full device screen capture, please make sure your views are not marked as secure. More info here: [https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE)
 * If you are using Android Enterprise, please ensure your enterprise settings do not disallow screen capture.
@@ -263,17 +254,17 @@ For unattended full device access, we strongly recommend:
 Please follow the iOS and Android documentation to implement full device capabilities on React Native.
 {% endhint %}
 
-#### Troubleshooting
+**Troubleshooting**
 
 * For React Native on iOS, some clients have reported that Xcode does not automatically create the _\{{extensionname\}}.entitlements_ file in the extension directory, which is necessary for the "io.cobrowse" keychain sharing to work.
 * If you're not using `use_frameworks!` within CocoaPods, Xcode 13.3 and newer might not copy CobrowseIOExtension.framework extension dependency into resulting IPA builds. If this happens to you, please follow the guide under `iOS` -> `SPM` to create the script to copy `CobrowseIOAppExtension.framework` into the IPA on each build.
 {% endtab %}
 
-{% tab title="Xamarin.iOS / .NET iOS" %}
+{% tab title="Xamarin.iOS" %}
 {% hint style="info" %}
 Please review the iOS documentation for full device capabilities first.
 
-This documentation specific to Xamarin.iOS / .NET iOS is supplementary, and covers the differences only.
+This documentation specific to Xamarin.iOS is supplementary, and covers the differences only.
 {% endhint %}
 
 **Add a Broadcast Extension project**
@@ -289,14 +280,6 @@ In Visual Studio for Mac:
 7. Create the location for the extension and press "Create"
 8. Visual Studio for Mac will create two extension projects for you: `YourApp.iOS.BroadcastUploadExtension` and `YourApp.iOS.BroadcastUploadExtensionUI`. The second project is not required and you can safely delete it.
 9. Change the target SDK of your Broadcast Extension target to at least iOS 10.0
-
-{% hint style="info" %}
-Visual Studio for Mac might not have project templates for iOS extensions in .NET. You can install [`DotNetTemplates from NuGet.org`](https://www.nuget.org/packages/VladislavAntonyuk.DotNetTemplates) and then run the following command:
-
-```
-dotnet new ios-broadcast-upload-extension -n YourBroadcastProjectName --applicationId com.youprojectid.myapp.myapp
-```
-{% endhint %}
 
 **Set up Keychain Sharing**
 
@@ -317,14 +300,11 @@ Take the bundle ID of the **extension** you created above, and add the following
 
 The app extension needs a dependency on the CobrowseIO app extension framework. Add the following NuGet to the **extension project** (not to the iOS app project):
 
-* [![CobrowseIO.AppExtension.iOS NuGet](https://img.shields.io/nuget/v/CobrowseIO.AppExtension.iOS.svg?label=CobrowseIO.AppExtension.iOS)](https://www.nuget.org/packages/CobrowseIO.AppExtension.iOS/) - Xamarin.iOS
-* [![CobrowseIO.DotNet.iOS.AppExtension NuGet](https://img.shields.io/nuget/v/CobrowseIO.DotNet.iOS.AppExtension.svg?label=CobrowseIO.DotNet.iOS.AppExtension)](https://www.nuget.org/packages/CobrowseIO.DotNet.iOS.AppExtension/) - .NET iOS
+* [![CobrowseIO.AppExtension.iOS NuGet](https://img.shields.io/nuget/v/CobrowseIO.AppExtension.iOS.svg?label=CobrowseIO.AppExtension.iOS)](https://www.nuget.org/packages/CobrowseIO.AppExtension.iOS/)
 
 **Implement the extension**
 
 Visual Studio will have added `SampleHandler.cs` file as part of the extension project you created earlier. Replace the content of the file with the following:
-
-_Xamarin.iOS:_
 
 ```csharp
 using Xamarin.CobrowseIO.AppExtension;
@@ -334,23 +314,6 @@ public class SampleHandler : CobrowseIOReplayKitExtension
 {
     protected SampleHandler(IntPtr handle) : base(handle)
     {
-    }
-}
-```
-
-_.NET iOS:_
-
-```csharp
-using Cobrowse.IO.iOS.AppExtension;
-
-namespace MauiSample.iOS.BroadcastUploadExtension
-{
-    [Register("SampleHandler")]
-    public class SampleHandler : CobrowseIOReplayKitExtension
-    {
-        protected SampleHandler(NativeHandle handle) : base (handle)
-        {
-        }
     }
 }
 ```
@@ -377,7 +340,7 @@ Open Info.plist of the extension project and make sure that `NSExtension` sectio
 ```
 {% endtab %}
 
-{% tab title="Xamarin.Android / .NET Android" %}
+{% tab title="Xamarin.Android" %}
 {% hint style="info" %}
 Please see the Android documentation for full device capabilities.
 {% endhint %}

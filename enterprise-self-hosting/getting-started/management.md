@@ -1,3 +1,9 @@
+---
+description: >-
+  Manage your Cobrowse deployment effectively by regularly backing up the
+  database, staying updated on new releases, and more.
+---
+
 # Managing your deployment
 
 ### Managing the database
@@ -17,7 +23,7 @@ Changelog notes for all releases are available: [https://github.com/cobrowseio/c
 Our command line utility allows you to upgrade your deployment, you can use it like this:
 
 ```
-npx cobrowse-enterprise upgrade
+npx cobrowse-enterprise upgrade <directory>
 ```
 
 One you have done that, you can update your deployment via Terraform or Docker Compose as in the initial deployment.

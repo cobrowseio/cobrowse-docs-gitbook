@@ -1,3 +1,7 @@
+---
+description: Learn how to customize the remote control consent prompt to your needs.
+---
+
 # Remote control consent dialog
 
 By default, Cobrowse will show a remote control consent dialog when an agent requests remote control. You may modify and customize the remote control consent prompt as you wish, using the SDK hooks described below.
@@ -53,17 +57,6 @@ CobrowseIO.handleRemoteControlRequest = function(session) {
     // or session.setRemoteControl('rejected') to reject
     session.setRemoteControl('on')
 }
-```
-{% endtab %}
-
-{% tab title="Xamarin / .NET Mobile" %}
-```сsharp
-CobrowseIO.Instance.RemoteControlRequest += (object sender, ISession session) =>
-{
-    // Show your own UI here
-    // Use RemoteControlState.On to allow or RemoteControlState.Rejected to reject
-    session.SetRemoteControl(RemoteControlState.On, (e, s) => { });
-};
 ```
 {% endtab %}
 {% endtabs %}
@@ -280,27 +273,6 @@ CobrowseIO.handleRemoteControlRequest = function(session) {
       }], { cancelable: false })
   }
 }
-```
-{% endtab %}
-
-{% tab title="Xamarin / .NET Mobile" %}
-```сsharp
-CobrowseIO.Instance.RemoteControlRequest += async (object sender, ISession session) =>
-{
-    bool allowed = await RequireMainPage().DisplayAlert(
-        title: "Cobrowse.io",
-        message: "Allow remote control?",
-        accept: "Allow",
-        cancel: "Reject");
-    if (allowed)
-    {
-        session.SetRemoteControl(RemoteControlState.On, (e, s) => { });
-    }
-    else
-    {
-        session.SetRemoteControl(RemoteControlState.Rejected, (e, s) => { });
-    }
-};
 ```
 {% endtab %}
 {% endtabs %}

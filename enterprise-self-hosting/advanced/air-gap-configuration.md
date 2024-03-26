@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to install Cobrowse Enterprise with an air gap configuration,
+  isolated from public internet and untrusted local networks.
+---
+
 # Air gap configuration
 
 Cobrowse Enterprise can be installed with an air gap configuration, isolated from public internet and untrusted local networks.

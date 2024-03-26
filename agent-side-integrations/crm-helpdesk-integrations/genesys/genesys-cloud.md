@@ -1,3 +1,9 @@
+---
+description: >-
+  The Cobrowse integration for Genesys Cloud may be installed from the App
+  Foundry as a Premium App. Get links here.
+---
+
 # Genesys Cloud
 
 The Cobrowse.io integration for Genesys Cloud may be installed from the App Foundry as a Premium App.
@@ -37,7 +43,7 @@ For the Cobrowse.io Interaction Widget, you can also specify the Queue Filtering
 
 For the Cobrowse.io Interaction Widget, you can also specify the Communication Type Filtering, e.g. `chat,call,callback,email,sms,line,facebook,twitter,whatsapp`. This will determine which communication types the Widget app should appear for, **in addition to** any other filtering you have configured, e.g. Groups, Queues, etc. Leaving this blank will mean no additional filtering is performed by communication type.&#x20;
 
-![](../../../.gitbook/assets/screen-shot-2021-04-09-at-10.13.30-am.png)
+![](<../../../.gitbook/assets/Screen Shot 2021-04-09 at 10.13.30 AM.png>)
 
 Possible communication types can be found in the Genesys docs: [https://developer.genesys.cloud/routing/routing/available-media-types](https://developer.genesys.cloud/routing/routing/available-media-types). Note that for Message, you only need to list the subtype name, e.g. `open`.
 
@@ -48,6 +54,12 @@ Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io) before switchin
 If you are [self-hosting](../../../enterprise-self-hosting/self-hosting-overview.md) the Cobrowse.io instance, you will need to replace "`cobrowse.io`" in both Application URLs with your self-hosted domain, e.g. `https://<your self-hosted domain>/apps/genesys/index.html?langTag={{pcLangTag}}&environment={{pcEnvironment}}&env=cloud`
 
 ![](<../../../.gitbook/assets/Screenshot 2022-06-06 at 11.07.18.png>)
+
+## Agent Present Mode
+
+If you wish to present the Agent's desktop from within Genesys Cloud you need to add `display-capture` to the **Iframe Feature/Permissions Policy** configuration within the Cobrowse Integration. Without this you won't be able to share the agents desktop.&#x20;
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## Troubleshooting
 

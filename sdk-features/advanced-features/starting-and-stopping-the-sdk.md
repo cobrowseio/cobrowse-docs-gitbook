@@ -50,7 +50,7 @@ CobrowseIO.start();
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title="Xamarin" %}
 ```csharp
 CobrowseIO.Instance.Start();
 ```
@@ -64,7 +64,7 @@ await CobrowseIO.Instance.Start();
 {% endtabs %}
 
 {% hint style="info" %}
-If you do decide to delay or lazy load the SDK it is important to check if there is a currently active session and if so load and start the SDK right away. Without this check sessions would not continue between navigation or page refreshes as the SDK won't be loaded.
+If you do decide to delay or lazy load the SDK it is important to check if there is a currently active session and if so load and start the SDK right away. Without this check sessions would not continue between navigation or page refreshes as the SDK won't be loaded.&#x20;
 
 ```
 // On page load check if we should start the Cobrowse SDK right away
@@ -73,6 +73,8 @@ if (CobrowseIO.currrentSession) {
   await CobrowseIO.start();
 }
 ```
+
+See a full example with the Web SDK in [https://github.com/cobrowseio/cobrowse-sdk-js-examples?tab=readme-ov-file#standalone-support-code-with-delayed-sdk-start-example](https://github.com/cobrowseio/cobrowse-sdk-js-examples?tab=readme-ov-file#standalone-support-code-with-delayed-sdk-start-example)
 {% endhint %}
 
 ### Automatic registration
@@ -146,7 +148,7 @@ CobrowseIO.stop();
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title="Xamarin" %}
 ```csharp
 CobrowseIO.Instance.Stop();
 ```

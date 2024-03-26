@@ -1,3 +1,9 @@
+---
+description: >-
+  Cobrowse customers can use the default UI straight out of the box, or opt to
+  customize the interface to meet their specific requirements.
+---
+
 # Customize the interface
 
 Cobrowse.io provides some minimal default UI in the SDKs for things like user consent and to visually indicate when a session is active.

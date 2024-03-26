@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to use our Terraform for GCP to set up Cobrowse Enterprise in your
+  cloud.
+---
+
 # GCP terraform
 
 This is the documentation for how to use our Terraform for GCP to set up Cobrowse Enterprise in your cloud.
@@ -35,7 +41,7 @@ Terraform requires that the Google Cloud SDK be installed and authenticated:
 
 There are some resources that are not created by our Terraform. You will need to manually create:
 
-1. A secret in the [Secret Manager](https://console.cloud.google.com/security/secret-manager). Create a secret called "mongo\_url" with the value set to the url of the Mongo database from step 1.&#x20;
+1. A secret in the [Secret Manager](https://console.cloud.google.com/security/secret-manager). Create a secret called "mongo\_url" with the value set to the url of the Mongo database from step 1.
 2. A storage bucket to save terraform state (this is optional but **strongly** recommended)
 
 {% hint style="info" %}
@@ -117,7 +123,7 @@ In practice, this means that once the ManagedCertificate process detects that yo
 
 ### 7. Check your deployment
 
-Your Cobrowse instance should now be deployed. Head to `/register`on your domain to create an account.&#x20;
+Your Cobrowse instance should now be deployed. Head to `/register`on your domain to create an account.
 
 {% content-ref url="../getting-started/" %}
 [getting-started](../getting-started/)

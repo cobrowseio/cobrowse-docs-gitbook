@@ -1,3 +1,9 @@
+---
+description: >-
+  Seamless co-browsing experience for both End-Users and Agents. Learn about the
+  APIs and guides to implement a tailored Agent-side experience.
+---
+
 # Agent-side overview
 
 > We believe in a seamless co-browsing experience for _both_ End-Users and Agents. See below for APIs and guides to implement a highly tailored Agent-side experience.&#x20;

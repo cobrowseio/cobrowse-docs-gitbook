@@ -1,3 +1,9 @@
+---
+description: >-
+  To use Cobrowse for Web with cross document IFrames you will need to add a
+  javascript snippet to the page being embedded.
+---
+
 # IFrames support
 
 ## Cross-document IFrames

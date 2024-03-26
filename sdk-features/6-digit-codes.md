@@ -1,3 +1,9 @@
+---
+description: >-
+  Cobrowse does not require any visible UI presented to the user but there is
+  the option to present a UI that generates a 6-digit code. Learn more.
+---
+
 # Use 6-digit codes
 
 By default, Cobrowse does not require any visible UI presented to the user. It will exist in the background of your app, and only activate when agents initiate a new session.
@@ -5,7 +11,7 @@ By default, Cobrowse does not require any visible UI presented to the user. It w
 You may optionally present a UI in your app that enables users to generate 6-digit codes. Users may then read a code over the phone or in chat, and agents can use the 6-digit code to initiate the Cobrowse session.
 
 {% hint style="info" %}
-**Important**: 6-digit codes expire after approximately 15 minutes, so it's best practice to generate a code only when a user wants to start a session.&#x20;
+**Important**: 6-digit codes expire after approximately 20 minutes, so it's best practice to generate a code only when a user wants to start a session.&#x20;
 {% endhint %}
 
 To generate a 6-digit code in your integration you can use the following APIs. Once you have generated the code you can display it to the user in your own UI. You should only generate a code when a user needs it as they expire shortly after creation.
@@ -49,7 +55,7 @@ CobrowseIO.instance().createSession((err, session) -> {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title="Xamarin" %}
 ```csharp
 CobrowseIO.Instance.CreateSession((Exception err, ISession session) => {
     if (err != null) Debug.WriteLine("Failed to create a code");
@@ -168,8 +174,8 @@ export default class App extends Component {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
-#### Xamarin.iOS implementation
+{% tab title="Xamarin" %}
+### Xamarin.iOS implementation
 
 1. Add the appropriate code below into a view controller in your app.
 2. Hook up a trigger for the action (or call it programatically if you prefer).
@@ -191,7 +197,7 @@ namespace SampleApp.iOS
 
 For a full example written in C#, see our sample app at: [https://github.com/cobrowseio/cobrowse-sdk-xamarin](https://github.com/cobrowseio/cobrowse-sdk-xamarin)
 
-#### Xamarin.Android implementation
+### Xamarin.Android implementation
 
 We have provided some default UI to make things easier to get started:
 
@@ -213,7 +219,7 @@ namespace SampleApp.Android
 }
 ```
 
-#### Xamarin.Forms implementation
+### Xamarin.Forms implementation
 
 The Cobrowse.io Xamarin SDK provides a convenient way to open the default 6 digit code UI. In your **cross-platform** project:
 
@@ -228,20 +234,6 @@ namespace YourAppNamespace.Forms
         {
             CobrowseIO.Instance.OpenCobrowseUI();
         }
-    }
-}
-```
-
-#### .NET Mobile implementation
-
-```csharp
-using Cobrowse.IO;
-
-public partial class MainPage : Microsoft.Maui.Controls.ContentPage
-{
-    public void StartCobrowse()
-    {
-        CobrowseIO.Instance.OpenCobrowseUI();
     }
 }
 ```

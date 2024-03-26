@@ -1,3 +1,9 @@
+---
+description: >-
+  Cobrowse integrates with Intercom, and is available from the Intercom App
+  Store. Find out more.
+---
+
 # Intercom
 
 ## Overview

@@ -1,3 +1,9 @@
+---
+description: >-
+  Cobrowse SDK features. If you want to customize the interface, here's how to
+  to use a custom UI for the 6-digit code screen.
+---
+
 # 6-digit code screen
 
 For details on how to generate a 6-digit code, please see this page:

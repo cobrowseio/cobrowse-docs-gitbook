@@ -1,3 +1,9 @@
+---
+description: >-
+  Put Cobrowse where your agents are already working. So we've made it easy to
+  integrate seamlessly with your favorite helpdesk or custom CRM.
+---
+
 # Platform integrations
 
 By default, you may login to the Cobrowse website to view devices, initiate sessions, and manage your account. If you'd like to use Cobrowse with your existing tools, that's possible too - just read on!
@@ -24,7 +30,10 @@ We believe in putting Cobrowse where your agents are already working. Therefore,
 [freshdesk.md](freshdesk.md)
 {% endcontent-ref %}
 
+{% content-ref url="talkdesk.md" %}
+[talkdesk.md](talkdesk.md)
+{% endcontent-ref %}
+
 {% content-ref url="../custom-integrations.md" %}
 [custom-integrations.md](../custom-integrations.md)
 {% endcontent-ref %}
-

@@ -1,3 +1,9 @@
+---
+description: >-
+  Most iOS apps are supported out of the box by our remote control feature. For
+  others, we provide support for custom touch handling.
+---
+
 # Custom touch handling
 
 Most native components for iOS apps are supported out of the box by our remote control feature. Occasionally you may find a component that requires custom touch handling does not work with our remote control feature. To support these use cases, we provide a way to tap into the events coming from Cobrowse to implement custom touch handling in your app. A view or gesture recogniser can access the touch events via the following callback methods.

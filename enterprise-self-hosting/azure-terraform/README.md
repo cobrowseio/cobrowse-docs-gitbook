@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to use Terraform for Azure to set up Cobrowse Enterprise in your
+  cloud.
+---
+
 # Azure terraform
 
 This is the documentation for how to use our Terraform for Azure to set up Cobrowse Enterprise in your cloud.
@@ -124,7 +130,7 @@ The terraform automatically creates an SSL certificate for you using the [Let's 
 
 In practice, this means that upon initial deployment, a pod resource is polling your configured public service domain at the HTTP-01 path. Once the DNS provider configuration has finished propagating, the HTTP-01 challenge check will succeed and your SSL certificate will be issued.
 
-Only once the SSL certificate is issued will an HTTPS listener be created for your deployment. Once complete, the Let's Encrypt resources used to verify your DNS name will be destroyed.&#x20;
+Only once the SSL certificate is issued will an HTTPS listener be created for your deployment. Once complete, the Let's Encrypt resources used to verify your DNS name will be destroyed.
 {% endhint %}
 
 ### 7. Check your deployment

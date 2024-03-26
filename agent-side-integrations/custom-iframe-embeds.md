@@ -1,3 +1,10 @@
+---
+description: >-
+  Cobrowse provides a range of embeddable URLs to suit a range of use cases,
+  including full dashboard embeds, direct device connection or screen-share
+  only.
+---
+
 # IFrame embeds
 
 We provide a number of different embeddable URLs to suit a range of use cases:
@@ -35,7 +42,7 @@ All of our embed URLs support configuration via the parameters described here. W
 | **popout**           | Set to `none` to disable the popout button when in a session. For example`?popout=none`                                                                                                                                                                                                                                                                                                               |
 | **agent\_tools**     | Set to `none`  to remove the agent tool selection UI. This is useful when replacing our default UI with your own.                                                                                                                                                                                                                                                                                     |
 | **device\_controls** | Set to `none`  to remove the device options UI (e.g. full device mode switch). This is useful when replacing our default UI with your own.                                                                                                                                                                                                                                                            |
-| **session\_details** | Set to `none` to remove the device and custom data sidebar in the session view.                                                                                                                                                                                                                                                                                                                       |
+| **session\_details** | Set to `none` to remove the device and custom data pull-up footer in the session view.                                                                                                                                                                                                                                                                                                                |
 | **messages**         | Set to `none` to remove messages overlaid onto the screen to indicate events such as "Device not responding". This is useful when replacing our default UI with your own.                                                                                                                                                                                                                             |
 
 This logic enables you to embed the relevant IFrame data on each place in your CRM. For example, when an agent is looking at a user account view in your CRM, you might use filters to show all of that user's available devices.

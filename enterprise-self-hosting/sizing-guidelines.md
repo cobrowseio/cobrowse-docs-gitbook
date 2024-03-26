@@ -1,3 +1,9 @@
+---
+description: >-
+  In determining hardware requirements for self-hosted or on-premise
+  deployments, please use the following numbers as a guide.
+---
+
 # Sizing guidelines
 
 The Cobrowse Enterprise server is an efficient set of micro-services deployed via containers which can run on a single VM, or scale to a highly available architecture serving 100,000+ concurrent sessions across millions of end-users and devices.
@@ -6,8 +12,9 @@ In determining hardware requirements for self-hosted or on-premise deployments, 
 
 ### Hardware requirements
 
-* We recommend 1 vCPU and 1 GB memory for every 100 concurrent active co-browsing sessions, plus an extra 2 GB memory for system-level operations
+* We recommend 2 vCPU and 2 GB memory for every 100 concurrent active co-browsing sessions, plus an extra 2 GB memory for system-level operations
 * Storage requirement to run the services (excluding session recording) is 20GB total
+* Network throughput as described on the section below
 
 ### Session recording
 
@@ -18,6 +25,8 @@ You may estimate how many sessions will be stored by multiplying the # of sessio
 * **10GB** for every **100,000** web co-browsing session recordings
 * **10GB** for every **10,000** mobile co-browsing session recordings with an average length of 5 minutes, and minimal video content, approximately 3.33kb/s
 * **10GB** for every **1,000** mobile co-browsing session recordings with average length of 5 minutes, and video content playing 100% of the time, approximately 33.33kb/s
+
+Conversely, if session recording is not enabled for your account, you may choose to disable certain infrastructure components to optimize costs and simplify deployment. See the [optional recording components](helm/advanced-configuration.md#optional-recording-components) section of the advanced helm configuration guide for details.
 
 ### Database sizing
 
@@ -39,10 +48,10 @@ This section is for illustration only. The exact container sizing will depend on
 
 As a rough guide the split for our production environment is:
 
-api: 35%\
+api: 15%\
 sockets: 35%\
 proxy: 15%\
-recording: 15%
+recording: 35%
 
 MongoDB is separate, currently around the same resource requirements as the containers.
 

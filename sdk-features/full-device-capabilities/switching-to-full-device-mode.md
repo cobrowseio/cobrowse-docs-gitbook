@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn how to promote a session to full device mode using the SDK, as per your
+  requirements.
+---
+
 # Managing full device mode
 
 
@@ -9,7 +15,7 @@ In some situations it is useful to be able to switch a Cobrowse session into ful
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
-await session.setFullDevice(true)
+await session.setFullDevice('requested')
 ```
 {% endtab %}
 
@@ -45,7 +51,7 @@ For example, to request full device is used by default, you can set the full dev
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
-CobrowseIO.on('session.loaded', session => session.setFullDevice(true)) 
+CobrowseIO.on('session.loaded', session => session.setFullDevice('requested')) 
 ```
 {% endtab %}
 

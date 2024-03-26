@@ -1,3 +1,9 @@
+---
+description: >-
+  Build the experience that you want for your support agents with our powerful
+  agent SDK. Here are some examples of commonly required functionality.
+---
+
 # Sample code snippets
 
 Our agent SDK is a powerful toolkit to build the experience that you want for your support agents. Here we have put together a number of examples of commonly required functionality.
@@ -81,7 +87,7 @@ ctx.on('session.updated', (session) => {
 // interact with the iframe
 await ctx.setTool('laser')
 await ctx.clearAnnotations()
-await ctx.setFullDevice(true)
+await ctx.setFullDevice('requested')
 await ctx.setRemoteControl('requested')
 await ctx.endSession()
 ```

@@ -1,3 +1,10 @@
+---
+description: >-
+  Our JWT policy system provides a powerful mechanism to limit what a given
+  agent can do. Which devices a support agent can connect to or which sessions
+  they are allowed to view are a few examples.
+---
+
 # JWT Policies
 
 Sometimes you may want to limit the scope of what a JWT can be used for. For example, you may want to limit which devices a support agent can connect to, or which sessions they are allowed to view. Our JWT policy system provides a powerful mechanism for you to configure these types of rules. &#x20;
