@@ -34,6 +34,10 @@ Register a free account for development and testing at [https://cobrowse.io/regi
 [xamarin.md](sdk-installation/xamarin.md)
 {% endcontent-ref %}
 
+{% content-ref url="sdk-installation/dotnet.md" %}
+[dotnet.md](sdk-installation/dotnet.md)
+{% endcontent-ref %}
+
 {% content-ref url="sdk-installation/macos.md" %}
 [macos.md](sdk-installation/macos.md)
 {% endcontent-ref %}
