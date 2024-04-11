@@ -10,6 +10,8 @@ You may optionally send new session requests over the native push channel. Cobro
 
 {% hint style="info" %}
 For sessions to start by push the user needs to have the client application open in the foreground. This method will not send a visible push notification to the user.
+
+If you wish to use visible push, this is possible using your own existing push channel and can be fully customized.
 {% endhint %}
 
 Setup your Firebase account:
@@ -87,7 +89,7 @@ CobrowseIO.deviceToken = "<your FCM token>";
 {% endtab %}
 
 {% tab title="Xamarin / .NET Mobile" %}
-#### Xamarin.iOS / .NET iOS implementation
+**Xamarin.iOS / .NET iOS implementation**
 
 If you are already using push notifications in your app, there is nothing further required on the native side.
 
@@ -105,7 +107,7 @@ public void OnActivated(UIApplication application)
 }
 ```
 
-#### Xamarin.Android / .NET Android implementation
+**Xamarin.Android / .NET Android implementation**
 
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging](https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging).
 
@@ -146,4 +148,3 @@ namespace YourAppNamespace
 ```
 {% endtab %}
 {% endtabs %}
-
