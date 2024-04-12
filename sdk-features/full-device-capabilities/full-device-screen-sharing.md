@@ -228,13 +228,13 @@ If full device screen capture on iOS is not working, please check the following:
 * Please verify you are not running any other screen recording or screen mirroring software at the same time, as this will interfere.
 {% endtab %}
 
-{% tab title="Android" %}
+{% tab title="Android / Xamarin.Android / .NET Android" %}
 The Cobrowse.io SDK for Android will allow full device screen capture, including home screen, device settings, and everything else, just by toggling "full device mode" during an active session.
 
 No extra integration work is required to use full device mode via our Android SDK.
 
 {% hint style="warning" %}
-The SDK uses a service with the foreground type attribute set to `mediaProjection`. You are required to fill in a declaration form on Google Play and provide a video of your app using this permission. See the [Google Play Store requirements](https://support.google.com/googleplay/android-developer/answer/13392821?hl=en) for details on listing your app when using this API.&#x20;
+The SDK uses a service with the foreground type attribute set to `mediaProjection`. You are required to fill in a declaration form on Google Play and provide a video of your app using this permission. See the [Google Play Store requirements](https://support.google.com/googleplay/android-developer/answer/13392821?hl=en) for details on listing your app when using this API.
 
 If your app does not use the full device screen capture, you can remove usage of the Media Projection API. Add a new service declaration to your application `AndroidManifest.xml` file (you must be using SDK version **v2.32.0** or above):
 
@@ -244,7 +244,6 @@ If your app does not use the full device screen capture, you can remove usage of
     android:foregroundServiceType=""
     tools:replace="android:foregroundServiceType" />
 ```
-
 {% endhint %}
 
 **Notes for unattended access**
@@ -380,12 +379,6 @@ Open Info.plist of the extension project and make sure that `NSExtension` sectio
 </dict>
 </plist>
 ```
-{% endtab %}
-
-{% tab title="Xamarin.Android / .NET Android" %}
-{% hint style="info" %}
-Please see the Android documentation for full device capabilities.
-{% endhint %}
 {% endtab %}
 
 {% tab title="macOS" %}
