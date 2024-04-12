@@ -228,8 +228,12 @@ If full device screen capture on iOS is not working, please check the following:
 * Please verify you are not running any other screen recording or screen mirroring software at the same time, as this will interfere.
 {% endtab %}
 
-{% tab title="Android / Xamarin.Android / .NET Android" %}
+{% tab title="Android  " %}
 The Cobrowse.io SDK for Android will allow full device screen capture, including home screen, device settings, and everything else, just by toggling "full device mode" during an active session.
+
+{% hint style="info" %}
+These instructions also apply to Xamarin and .NET Android implementations.&#x20;
+{% endhint %}
 
 No extra integration work is required to use full device mode via our Android SDK.
 
