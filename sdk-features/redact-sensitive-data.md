@@ -180,6 +180,34 @@ import { Redacted } from 'cobrowse-sdk-react-native';
 </View>
 ```
 
+**Redaction of Jetpack Compose UI**
+
+Redaction for Jetpack Compose UI is shipped in a separate library on Maven Central:
+
+```
+dependencies {
+    // ... other dependencies ...
+    implementation 'io.cobrowse:cobrowse-sdk-android:2.+'
+    implementation 'io.cobrowse:cobrowse-sdk-android-compose-ui:2.+'
+}
+```
+
+{% hint style="info" %}
+You are supposed to use the same version of the Cobrowse.io SDK and Compose UI redaction archifacts. Using different versions of Cobrowse.io SDK artifacts is not supported.
+{% endhint %}
+
+Apply `Modifier.redacted()` to your composable to be redacted, like so:
+
+```kotlin
+import io.cobrowse.redacted
+
+Text("Redacted",
+     modifier = Modifier
+         .background(Color.Red)
+         // Other modifiers...
+         .redacted())
+```
+
 **Redaction by default**
 
 Sometimes you may want to redact everything on the screen, then selectively "unredact" only the parts your support agents should be able to see. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.
