@@ -193,7 +193,7 @@ dependencies {
 ```
 
 {% hint style="info" %}
-You are supposed to use the same version of the Cobrowse.io SDK and Compose UI redaction archifacts. Using different versions of Cobrowse.io SDK artifacts is not supported.
+You are required to use the same version of the Cobrowse.io SDK and Compose UI redaction artifacts. Using different versions of Cobrowse.io SDK artifacts is not supported.
 {% endhint %}
 
 Apply `Modifier.redacted()` to your composable to be redacted, like so:
@@ -201,7 +201,7 @@ Apply `Modifier.redacted()` to your composable to be redacted, like so:
 ```kotlin
 import io.cobrowse.redacted
 
-Text("Redacted",
+Text("Redacted label",
      modifier = Modifier
          .background(Color.Red)
          // Other modifiers...
