@@ -53,6 +53,52 @@ If making changes to your `UIViewController` subclasses isn't an option, we also
 }
 ```
 
+**Redaction of SwiftUI views**
+
+To redact any SwiftUI view please use the `.redacted()` view modifier supplied by the Cobrowse iOS SDK v2.30.0 +.
+
+The example below will redact the `Text` view that displays the email address.
+
+```swift
+struct AccountView: View {
+    
+    let name: String
+    let email: String
+    
+    var body: some View {
+        VStack {
+            Text(name)
+                .font(.largeTitle)
+            
+            Text(verbatim: email)
+                .font(.title2)
+                .redacted()
+        }
+    }
+}
+```
+
+You can add the `.redacted()` view modifier to views that contain child views like `VStack` and the entire stack will be redacted.
+
+```swift
+struct AccountView: View {
+    
+    let name: String
+    let email: String
+    
+    var body: some View {
+        VStack {
+            Text(name)
+                .font(.largeTitle)
+            
+            Text(verbatim: email)
+                .font(.title2)
+        }
+        .redacted()
+    }
+}
+```
+
 **Redaction by default**
 
 Sometimes you may want to redact everything on the screen, then selectively "unredact" only the parts your support agents should be able to see. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.
