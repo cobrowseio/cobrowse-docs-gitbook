@@ -117,6 +117,35 @@ recording:
 The persistent volume is responsible for persistent storage of past session recordings, and is not a requirement if session recordings are disabled. To disable the persistent volume requirement, you can configure your value parameters to set the `storage` parameter to `false`.
 
 ```yaml
-# values.yml
+# values.yaml
 storage: false
+```
+
+## Pod Annotations
+
+When required, annotations can be set on the different Pods.
+
+```yaml
+# values.yml
+api:
+  pod:
+    annotations:
+      key: value
+      another-key: value
+frontend:
+  pod:
+    annotations:
+      key: value
+sockets:
+  pod:
+    annotations:
+      key: value
+recording:
+  pod:
+    annotations:
+      key: value
+proxy:
+  pod:
+    annotations:
+      key: value
 ```
