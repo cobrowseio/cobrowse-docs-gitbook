@@ -12,7 +12,7 @@ Allow your users to authenticate using your SAML 2.0 identity provider for simpl
 
 In your account settings, go to `/dashboard/settings/integrations` and under SAML config enter your:
 
-* SAML certificate (your certificate only, e.g. `MII...` excluding any `<>` tags) and
+* SAML certificate - including the "-----BEGIN CERTIFICATE/END CERTIFICATE-----" lines;
 * entry point URL as configured within your IdP (for a Service Provider-initiated request).
 
 This will generate a login URL in the format `https://<your hosted domain>/login/saml/<provider ID>` where `<your hosted domain>` defaults to the domain that is hosting your cobrowse account, e.g. `cobrowse.io` in most cases. This URL can be used as the login page for your agents.&#x20;
