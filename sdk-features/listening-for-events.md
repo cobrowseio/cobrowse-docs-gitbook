@@ -61,6 +61,14 @@ CobrowseIO.addListener('session.loaded', session => {
 ```
 {% endtab %}
 
+{% tab title="Flutter" %}
+```dart
+CobrowseIO.instance.sessionDidLoad.listen((session) {
+    log('Session did load: $session');
+});
+```
+{% endtab %}
+
 {% tab title="Xamarin / .NET" %}
 ```
 public void SessionDidLoad (Session session);
@@ -113,6 +121,14 @@ CobrowseIO.addListener('session.updated', session => {
 ```
 {% endtab %}
 
+{% tab title="Flutter" %}
+```dart
+CobrowseIO.instance.sessionDidUpdate.listen((session) {
+    log('Session did update: $session');
+});
+```
+{% endtab %}
+
 {% tab title="Xamarin / .NET" %}
 ```
 public void SessionDidUpdate (Session session);
@@ -162,6 +178,14 @@ public void sessionDidEnd(@NonNull Session session) {
 CobrowseIO.addListener('session.ended', session => {
     console.log('A session was ended', session)
 })
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+```dart
+CobrowseIO.instance.sessionDidEnd.listen((session) {
+    log('Session did end: $session');
+});
 ```
 {% endtab %}
 

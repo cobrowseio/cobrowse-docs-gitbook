@@ -97,6 +97,22 @@ CobrowseIO.showSessionControls = false;
 ```
 {% endtab %}
 
+{% tab title="Flutter" %}
+
+Listen to these event emitters to override the default session indicator. These methods may be called several times as the session progresses through its lifecycle, so you may need to adjust your UI accordingly.
+
+```dart
+CobrowseIO.instance.showSessionControls.listen((session) {
+    // Show your session controls
+});
+
+CobrowseIO.instance.hideSessionControls.listen((session) {
+    // Hide your session controls
+});
+```
+
+{% endtab %}
+
 {% tab title="Xamarin / .NET Mobile" %}
 #### Xamarin.iOS / .NET iOS implementation
 
@@ -180,6 +196,17 @@ if (CobrowseIO.instance().currentSession() != null ) {
 const session = await CobrowseIO.currentSession();
 // if there's an ongoing session, end it
 if (session) await session.end()
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+```dart
+// Get a reference to the current session if you don't have one
+Session? session = await CobrowseIO.instance.currentSession();
+// if there's an ongoing session, end it
+if (session != null) {
+    await session.end()
+}
 ```
 {% endtab %}
 

@@ -40,6 +40,40 @@ session.setFullDevice(true, (err, arg) -> {
 await session.setFullDevice(true)
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+```dart
+Session? session = await CobrowseIO.instance.currentSession();
+if (session != null) {
+    try {
+        await session.setFullDevice(FullDeviceState.on);
+    } on PlatformException catch (e) {
+        // E.g. a network error
+        log('Cannot update the full device state: ${e.message}');
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin / .NET Mobile" %}
+```cs
+Session session = CobrowseIO.Instance.CurrentSession;
+if (session != null)
+{
+    session.SetFullDeviceState(FullDeviceState.On, (err, session) =>
+    {
+        if (err != null)
+        {
+            // E.g. a network error
+        }
+        else
+        {
+            // Full device mode is activated
+        }
+    });
+}
+```
+{% endtab %}
 {% endtabs %}
 
 See this in action: [https://github.com/cobrowseio/cobrowse-sdk-js-examples#full-device-mode-by-default](https://github.com/cobrowseio/cobrowse-sdk-js-examples#full-device-mode-by-default).
@@ -81,6 +115,38 @@ CobrowseIO.addListener('session.loaded', session => {
     console.log('A session was loaded', session)
     await session.setFullDevice(true)
 })
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+```dart
+CobrowseIO.instance.sessionDidLoad.listen((session) {
+    try {
+        await session.setFullDevice(FullDeviceState.on);
+    } on PlatformException catch (e) {
+        // E.g. a network error
+        log('Cannot update the full device state: ${e.message}');
+    }
+});
+```
+{% endtab %}
+
+{% tab title="Xamarin / .NET Mobile" %}
+```dart
+CobrowseIO.Instance.SessionDidLoad += (sender, session) =>
+{
+    session.SetFullDeviceState(FullDeviceState.On, (err, session) =>
+    {
+        if (err != null)
+        {
+            // E.g. a network error
+        }
+        else
+        {
+            // Full device mode is activated
+        }
+    });
+};
 ```
 {% endtab %}
 {% endtabs %}

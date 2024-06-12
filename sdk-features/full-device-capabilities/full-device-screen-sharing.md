@@ -277,6 +277,12 @@ Please follow the iOS and Android documentation to implement full device capabil
 * If you're not using `use_frameworks!` within CocoaPods, Xcode 13.3 and newer might not copy CobrowseIOExtension.framework extension dependency into resulting IPA builds. If this happens to you, please follow the guide under `iOS` -> `SPM` to create the script to copy `CobrowseIOAppExtension.framework` into the IPA on each build.
 {% endtab %}
 
+{% tab title="Flutter" %}
+{% hint style="info" %}
+Please follow the iOS and Android documentation to implement full device capabilities on Flutter.
+{% endhint %}
+{% endtab %}
+
 {% tab title="Xamarin.iOS / .NET iOS" %}
 {% hint style="info" %}
 Please review the iOS documentation for full device capabilities first.

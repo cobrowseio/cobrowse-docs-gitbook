@@ -88,6 +88,21 @@ CobrowseIO.deviceToken = "<your FCM token>";
 ```
 {% endtab %}
 
+{% tab title="Flutter" %}
+You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://firebase.google.com/docs/cloud-messaging/android/client](https://firebase.google.com/docs/cloud-messaging/android/client).
+
+Next, whenever your device receives a registration token from FCM, pass that to the Cobrowse.io SDK, for example:
+
+```dart
+import 'package:cobrowse_sdk_flutter/cobrowseio.dart';
+
+if (Platform.isAndroid) {
+    // Only required on Android, iOS does this automatically
+    CobrowseIO.instance.setDeviceToken('<your FCM token>');
+}
+```
+{% endtab %}
+
 {% tab title="Xamarin / .NET Mobile" %}
 **Xamarin.iOS / .NET iOS implementation**
 

@@ -73,6 +73,18 @@ CobrowseIO.customData = {
 ```
 {% endtab %}
 
+{% tab title="Flutter" %}
+```dart
+CobrowseIO.instance.setCustomData(<String, dynamic>{
+    'user_id': '<your_user_id>',
+    'user_name': '<your_user_name>',
+    'user_email': '<your_user_email>',
+    'device_id': '<your_device_id>',
+    'device_name': '<your_device_name>'
+});
+```
+{% endtab %}
+
 {% tab title="Xamarin / .NET Mobile" %}
 ```csharp
 CobrowseIO.Instance.CustomData = new Dictionary<string, object>
