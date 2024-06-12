@@ -60,6 +60,17 @@ CobrowseIO.handleRemoteControlRequest = function(session) {
 ```
 {% endtab %}
 
+{% tab title="Flutter" %}
+```dart
+CobrowseIO.instance.handleRemoteControlRequest.listen((session) {
+    // Show your own UI here
+    // call session.setRemoteControl(RemoteControlState.on) to allow
+    // or session.setRemoteControl(RemoteControlState.rejected) to reject
+    session.setRemoteControl(RemoteControlState.on);
+});
+```
+{% endtab %}
+
 {% tab title="Xamarin / .NET Mobile" %}
 ```сsharp
 CobrowseIO.Instance.RemoteControlRequest += (object sender, ISession session) =>
@@ -284,6 +295,46 @@ CobrowseIO.handleRemoteControlRequest = function(session) {
       }], { cancelable: false })
   }
 }
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+```dart
+CobrowseIO.instance.handleRemoteControlRequest.listen((session) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+            return AlertDialog(
+                title: const Text('Remote Control Request'),
+                content: const Text('A support agent would like to control this app. Do you accept?'),
+                actions: <Widget>[
+                    TextButton(
+                        onPressed: () {
+                            try {
+                                session.setRemoteControl(RemoteControlState.on);
+                                Navigator.of(context).pop();
+                            } on PlatformException {
+                                // E.g. a network error
+                            }
+                        },
+                        child: const Text('Accept'),
+                    ),
+                    TextButton(
+                        onPressed: () {
+                            try {
+                                session.setRemoteControl(RemoteControlState.off);
+                                Navigator.of(context).pop();
+                            } on PlatformException {
+                                // E.g. a network error
+                            }
+                        },
+                        child: const Text('Cancel'),
+                    ),
+                ],
+            );
+        },
+    );
+});
 ```
 {% endtab %}
 

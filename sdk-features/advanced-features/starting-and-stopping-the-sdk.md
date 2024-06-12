@@ -50,6 +50,12 @@ CobrowseIO.start();
 ```
 {% endtab %}
 
+{% tab title="Flutter" %}
+```dart
+CobrowseIO.instance.start();
+```
+{% endtab %}
+
 {% tab title="Xamarin / .NET Mobile" %}
 ```csharp
 CobrowseIO.Instance.Start();
@@ -145,6 +151,12 @@ CobrowseIO.instance().stop();
 {% tab title="React Native" %}
 ```javascript
 CobrowseIO.stop();
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+```dart
+CobrowseIO.instance.stop();
 ```
 {% endtab %}
 

@@ -71,6 +71,12 @@ Please follow the Android documentation to implement full device remote control 
 {% endhint %}
 {% endtab %}
 
+{% tab title="Flutter" %}
+{% hint style="info" %}
+Please follow the Android documentation to implement full device remote control using Flutter.
+{% endhint %}
+{% endtab %}
+
 {% tab title="Xamarin / .NET Mobile" %}
 {% hint style="info" %}
 Please follow the Android documentation to implement full device remote control using Xamarin.
@@ -106,6 +112,14 @@ CobrowseAccessibilityService.showSetup(...);
 ```
 {% endtab %}
 
+{% tab title="Flutter" %}
+The Cobrowse.io SDK for Flutter does not provide a default implementation to launch the accessibility service setup, but you can access this API in the native SDK using [Flutter platform channels](https://docs.flutter.dev/platform-integration/platform-channels).
+
+```java
+CobrowseAccessibilityService.showSetup(...);
+```
+{% endtab %}
+
 {% tab title="Xamarin / .NET Mobile" %}
 ```csharp
 CobrowseAccessibilityService.ShowSetup(...)
@@ -125,6 +139,14 @@ CobrowseAccessibilityService.isRunning(...);
 {% tab title="React Native" %}
 ```javascript
 import { CobrowseAccessibilityService } from 'cobrowse-sdk-react-native'
+CobrowseAccessibilityService.isRunning(...);
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+The Cobrowse.io SDK for Flutter does not provide a default implementation to detect the state of the accessibility service, but you can access this API in the native SDK using [Flutter platform channels](https://docs.flutter.dev/platform-integration/platform-channels).
+
+```java
 CobrowseAccessibilityService.isRunning(...);
 ```
 {% endtab %}

@@ -8,6 +8,7 @@
 * [iOS](sdk-installation/ios.md)
 * [Android](sdk-installation/android.md)
 * [React Native](sdk-installation/react-native.md)
+* [Flutter](sdk-installation/flutter.md)
 * [Xamarin](sdk-installation/xamarin.md)
 * [.NET Mobile](sdk-installation/dotnet.md)
 * [MacOS](sdk-installation/macos.md)

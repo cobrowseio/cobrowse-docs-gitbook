@@ -39,6 +39,15 @@ CobrowseIO.client().then(function() {
 ```
 {% endtab %}
 
+{% tab title="Android" %}
+```java
+CobrowseIO.instance().createSession((err, session) -> {
+    if (err != null) Log.w("App", "Failed to create code");
+    else if (session != null) Log.i("App", "Session code " + session.code());
+});
+```
+{% endtab %}
+
 {% tab title="React Native" %}
 ```javascript
 const session = await CobrowseIO.createSession()
@@ -46,12 +55,10 @@ console.log('Your 6 digit code is', session.code)
 ```
 {% endtab %}
 
-{% tab title="Android" %}
-```java
-CobrowseIO.instance().createSession((err, session) -> {
-    if (err != null) Log.w("App", "Failed to create code");
-    else if (session != null) Log.i("App", "Session code " + session.code());
-});
+{% tab title="Flutter" %}
+```dart
+Session session = await CobrowseIO.instance.createSession();
+log('Your session code: ${session.code}');
 ```
 {% endtab %}
 
@@ -172,6 +179,30 @@ export default class App extends Component {
     }
 }
 ```
+{% endtab %}
+
+{% tab title="Flutter" %}
+The Cobrowse.io SDK for Flutter does not provide a default UI for generating 6 digit codes, but you can show the default UI shipped in the native SDKs using [Flutter platform channel](https://docs.flutter.dev/platform-integration/platform-channels). It's not a requirement to use this UI, you can easily build your own if you like!
+
+#### iOS implementation
+
+```objc
+@import CobrowseIO;
+
+UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+CBIOViewController *sessionController = [[CBIOViewController alloc] init];
+[rootViewController presentViewController:sessionController animated:YES completion:nil];
+```
+
+#### Android implementation
+
+```java
+import io.cobrowse.ui.CobrowseActivity;
+
+Intent intent = new Intent(activity, CobrowseActivity.class);
+activity.startActivity(intent);
+```
+
 {% endtab %}
 
 {% tab title="Xamarin / .NET Mobile" %}

@@ -30,6 +30,10 @@ Register a free account for development and testing at [https://cobrowse.io/regi
 [react-native.md](sdk-installation/react-native.md)
 {% endcontent-ref %}
 
+{% content-ref url="sdk-installation/flutter.md" %}
+[flutter.md](sdk-installation/flutter.md)
+{% endcontent-ref %}
+
 {% content-ref url="sdk-installation/xamarin.md" %}
 [xamarin.md](sdk-installation/xamarin.md)
 {% endcontent-ref %}

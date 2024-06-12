@@ -62,6 +62,21 @@ CobrowseIO.handleSessionRequest = function(session) {
 ```
 {% endtab %}
 
+{% tab title="Flutter" %}
+```dart
+CobrowseIO.instance.handleSessionRequest.listen((session) {
+    // Replace this with your own logic
+    // Just be sure to call session.activate() to
+    // accept the session, or session.end() to reject it
+    try {
+        session.activate();
+    } on PlatformException {
+        // E.g. a network error
+    }
+});
+```
+{% endtab %}
+
 {% tab title="Xamarin / .NET Mobile" %}
 #### Xamarin.iOS / .NET iOS implementation
 
@@ -247,6 +262,46 @@ CobrowseIO.handleSessionRequest = function(session) {
         {cancelable: true},
     );
 }
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+```dart
+CobrowseIO.instance.handleSessionRequest.listen((session) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+            return AlertDialog(
+                title: const Text('Screen Sharing Request'),
+                content: const Text('A support agent would like to use this app with you. Do you accept?'),
+                actions: <Widget>[
+                    TextButton(
+                        onPressed: () {
+                            try {
+                                session.activate();
+                                Navigator.of(context).pop();
+                            } on PlatformException {
+                                // E.g. a network error
+                            }
+                        },
+                        child: const Text('Accept'),
+                    ),
+                    TextButton(
+                        onPressed: () {
+                            try {
+                                session.end();
+                                Navigator.of(context).pop();
+                            } on PlatformException {
+                                // E.g. a network error
+                            }
+                        },
+                        child: const Text('Cancel'),
+                    ),
+                ],
+            );
+        },
+    );
+});
 ```
 {% endtab %}
 
