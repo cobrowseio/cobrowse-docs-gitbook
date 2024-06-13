@@ -12,7 +12,7 @@ The Cobrowse.io is available for installation in Talkdesk AppConnect.
 
 ## Installation Instructions
 
-You only need to have a Talkdesk account and you can install the [Cobrowse.io](http://cobrowse.io) integration app directly from AppConnect.
+You only need to have a Talkdesk account and you can install the [Cobrowse.io](http://cobrowse.io) integration app directly from AppConnect. The link for the app is here: [https://appconnect.talkdesk.com/apps/cobrowse-io](https://appconnect.talkdesk.com/apps/cobrowse-io).
 
 During the installation you will go through the following steps:
 
