@@ -15,9 +15,11 @@ Once your instance is up and running, you will need to register yourself an acco
 You may register multiple accounts in your instance if you would like. Some customers register accounts for dev, test, staging, etc.&#x20;
 
 {% hint style="info" %}
-If you are using the Email "magic link" sign-in flow, but do not have a mail server set up and have disabled our default mail provider, then please retrieve the "magic link" from the application logs of the cobrowe-api container by setting the environment variable:
+If you are using the Email "magic link" sign-in flow, but do not have a mail server set up and have disabled our default mail provider, then please retrieve the "magic link" from the application logs of the cobrowe-api container by temporarily setting the environment variable:
 
 `DEBUG=cbio.email`
+
+This should be reverted to avoid the risk of credential leaks through the application logs.
 {% endhint %}
 
 ## Setting API location in the SDKs
