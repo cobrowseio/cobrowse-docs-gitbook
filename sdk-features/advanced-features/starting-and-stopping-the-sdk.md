@@ -108,6 +108,18 @@ CobrowseIO.instance().registration(false);
 ```
 {% endtab %}
 
+{% tab title="Flutter" %}
+```dart
+CobrowseIO.instance.setRegistration(false);
+```
+{% endtab %}
+
+{% tab title="Xamarin / .NET Mobile" %}
+```csharp
+CobrowseIO.Instance.Registration = false;
+```
+{% endtab %}
+
 {% tab title="Windows" %}
 ```csharp
 CobrowseIO.Instance.Registration = false;

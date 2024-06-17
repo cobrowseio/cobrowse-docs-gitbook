@@ -184,6 +184,14 @@ To override the the full device consent prompt, you should implement the `cobrow
 ```
 {% endtab %}
 
+{% tab title="Flutter" %}
+
+{% hint style="info" %}
+Please see the iOS and Android documentation for customizing the full device consent dialog.
+{% endhint %}
+
+{% endtab %}
+
 {% tab title="Xamarin / .NET Mobile" %}
 
 {% hint style="info" %}
