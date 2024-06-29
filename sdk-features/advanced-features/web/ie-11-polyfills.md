@@ -10,7 +10,7 @@ The Cobrowse.io JS SDK works well with IE 11, but in order to keep the SDK small
 
 ```markup
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dom4/2.0.0/dom4.js" crossorigin="anonymous"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=CustomEvent%2Cfetch%2CPromise" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=3.111.0&features=CustomEvent%2Cfetch%2CPromise" crossorigin="anonymous"></script>
 ```
 
 Make sure to add these before the Cobrowse snippet so they're available when the Cobrowse snippet runs.
