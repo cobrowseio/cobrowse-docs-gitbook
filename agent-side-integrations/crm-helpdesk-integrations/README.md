@@ -1,7 +1,8 @@
 ---
 description: >-
-  Put Cobrowse where your agents are already working. So we've made it easy to
-  integrate seamlessly with your favorite helpdesk or custom CRM.
+  Out-of-box integrations for leading CCaaS providers including Intercom,
+  Zendesk, Genesys, Salesforce, Freshworks, Talkdesk, NICE, and Five9, as well
+  as many private CX platforms. Inquire today.
 ---
 
 # Platform integrations
