@@ -1,14 +1,14 @@
 ---
 description: >-
-  Cobrowse.io supports a range of deployments covering public clouds and
-  on-premise requirements. Find a list and how to get started here.
+  Deploy your own instance of Cobrowse in your own AWS, Azure, or Google Cloud
+  account, or fully on-premises including support for air-gapped networks.
 ---
 
 # Self-hosting overview
 
 ## Deployment options
 
-Cobrowse.io is deployed as containers, and we try to support a range of deployments covering public clouds and on-premise requirements.
+Cobrowse is deployed as containers, and we support a range of deployments covering public clouds and on-premise enterprise requirements.
 
 {% content-ref url="docker-compose.md" %}
 [docker-compose.md](docker-compose.md)
