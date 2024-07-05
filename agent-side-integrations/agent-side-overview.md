@@ -1,7 +1,7 @@
 ---
 description: >-
-  Seamless co-browsing experience for both End-Users and Agents. Learn about the
-  APIs and guides to implement a tailored Agent-side experience.
+  100% white label, not just colors and logos. Add-on cobrowse to your CRM,
+  contact center, agent desktop, or any CX solutions you already use.
 ---
 
 # Agent-side overview
