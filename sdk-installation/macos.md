@@ -1,5 +1,5 @@
 ---
-description: MacOS SDK
+description: MacOS SDK for native desktop applications
 ---
 
 # MacOS
