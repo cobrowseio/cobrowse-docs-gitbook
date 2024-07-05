@@ -1,7 +1,7 @@
 ---
 description: >-
-  Get started with our easy to use SDKs for Android, iOS, MacOS, Windows and
-  Web.
+  Steps to see Cobrowse running in your own apps and websites, including third
+  party content.
 ---
 
 # Getting started
