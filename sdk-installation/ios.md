@@ -1,5 +1,5 @@
 ---
-description: iOS Native SDK
+description: iOS Native SDK, with support for SwiftUI and native webviews
 ---
 
 # iOS
@@ -15,7 +15,6 @@ https://github.com/cobrowseio/cobrowse-sdk-ios-binary.git
 ```
 
 Add the `CobrowseIO` package dependency to **your app target**.
-
 {% endtab %}
 
 {% tab title="Pods" %}
@@ -42,7 +41,6 @@ Remember to run `carthage update` after modifying your Cartfile.
 _More information about Carthage at_ [_https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos_](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)_._
 
 Link the `CobrowseIO.framework` to your main app target that can be found at `./Carthage/Build/iOS`.
-
 {% endtab %}
 
 {% tab title="Manual" %}
@@ -130,7 +128,7 @@ There is a community-built Flutter plugin: [https://github.com/robodigital/cobro
 
 ## Problems rendering certain views?
 
-&#x20;Try our alternative rendering method below:
+Try our alternative rendering method below:
 
 {% content-ref url="../sdk-features/advanced-features/ios/alternate-render-method.md" %}
 [alternate-render-method.md](../sdk-features/advanced-features/ios/alternate-render-method.md)
