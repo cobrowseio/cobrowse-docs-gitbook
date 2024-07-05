@@ -1,5 +1,5 @@
 ---
-description: Windows SDK
+description: Windows SDK for native desktop applications
 ---
 
 # Windows
