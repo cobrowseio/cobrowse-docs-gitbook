@@ -1,6 +1,6 @@
 ---
 description: >-
-  100% white label, not just colors and logos. Add-on cobrowse to your CRM,
+  100% white label, not just colors and logos. Add-on Cobrowse to your CRM,
   contact center, agent desktop, or any CX solutions you already use.
 ---
 
