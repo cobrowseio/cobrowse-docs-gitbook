@@ -1,5 +1,5 @@
 ---
-description: Android Native SDK
+description: Android Native SDK, with support for Compose and native webviews
 ---
 
 # Android
