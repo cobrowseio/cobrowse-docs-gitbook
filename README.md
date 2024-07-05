@@ -50,9 +50,9 @@ Register a free account for development and testing at [https://cobrowse.io/regi
 [windows.md](sdk-installation/windows.md)
 {% endcontent-ref %}
 
-Cobrowse.io is 100% free and easy to try out in your own apps.
+Cobrowse offers fully supported and free technical proof-of-concepts (PoCs) for your business’s complete evaluation.
 
-Try our **online demo** at the bottom of our homepage at [https://cobrowse.io/demo](https://cobrowse.io/demo).
+Try our **online demo** at [https://cobrowse.io/demo](https://cobrowse.io/demo).
 
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
