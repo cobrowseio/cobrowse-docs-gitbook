@@ -9,7 +9,7 @@ description: >-
 ## Overview
 
 {% hint style="warning" %}
-You must install our Zendesk apps using the marketplace links below in order for your Cobrowse.io account to be linked to your Zendesk organization. Do not sign up via our website first, as this will create an unlinked account!
+Installing our Zendesk apps using the marketplace links below will automatically create a new Cobrowse account linked to your Zendesk organization, and a new license key. If you've already created an account separately, you may switch between your multiple accounts by clicking your avatar from the dashboard.
 {% endhint %}
 
 Cobrowse.io provides an integration with both Zendesk Support and Zendesk Chat available in the Zendesk App Marketplace.
