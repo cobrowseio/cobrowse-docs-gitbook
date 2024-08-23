@@ -294,6 +294,19 @@ CobrowseIO.webviewRedactedViews = [ '.redacted', ...some other selectors... ];
 Finally, within React Native some packages will render in new Windows/Root Views. You can follow the same [delegate implementation](listening-for-events.md#session-updated-events) to identify this views and redact or unredact them by default as required. You can check the provided examples for [iOS](https://github.com/cobrowseio/cobrowse-sdk-react-native/blob/master/Example/ios/Example/AppDelegate.m) and [Android](https://github.com/cobrowseio/cobrowse-sdk-react-native/blob/master/Example/android/app/src/main/java/com/example/MainApplication.java) which redact by default the React Native Dev menu keeping one of the options unredacted to illustrate the technique.
 {% endtab %}
 
+{% tab title="Flutter" %}
+
+To redact an element in your Flutter application you can wrap it in a widget provided by the SDK:
+
+```dart
+Redacted(child: TextField(/* TextField properties */))
+```
+
+{% hint style="info" %}
+The widget will be redacted for both client and agent during an active screensharing session. Both client and agent will not be able to interact with it during a session.
+{% endhint %}
+{% endtab %}
+
 {% tab title="Xamarin / .NET Mobile" %}
 **Xamarin.iOS implementation**
 
