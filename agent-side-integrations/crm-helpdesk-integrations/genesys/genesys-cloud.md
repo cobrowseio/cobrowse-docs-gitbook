@@ -8,9 +8,9 @@ description: >-
 
 The Cobrowse.io integration for Genesys Cloud may be installed from the App Foundry as a Premium App.
 
-App Foundry link - [https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566](https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566)
+AppFoundry listing: [https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566](https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566)
 
-Demo video - [https://www.youtube.com/watch?v=vd8A4\_JrpLs](https://www.youtube.com/watch?v=vd8A4\_JrpLs)
+Demo video: [https://vimeo.com/919780454](https://vimeo.com/919780454).
 
 ## Installing the apps
 

@@ -10,6 +10,10 @@ description: >-
 
 Cobrowse.io provides an integration with Intercom available in the [Intercom App Store](https://www.intercom.com/app-store/?app\_package\_code=cobrowse-screenshare-permissions).
 
+## Demo videos
+
+Demo video: [https://vimeo.com/924748894](https://vimeo.com/924748894).
+
 ## Install the app
 
 Install the app from the [Intercom App Store](https://www.intercom.com/app-store/?app\_package\_code=cobrowse-screenshare-permissions) and follow the setup instructions!

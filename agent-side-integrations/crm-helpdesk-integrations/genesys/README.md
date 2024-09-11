@@ -1,30 +1,26 @@
 ---
 description: >-
-  Cobrowse.io for Genesys supports Genesys Cloud, Genesys Engage Cloud, Genesys
-  Engage Workspace Web Edition (WWE) and more.
+  Cobrowse.io for Genesys supports Genesys Cloud CX, Genesys Engage Cloud,
+  Genesys Engage Workspace Web Edition (WWE) and more.
 ---
 
 # Genesys
 
 ## Overview
 
-Cobrowse.io for Genesys is available in the Genesys AppFoundry.&#x20;
+Cobrowse.io for Genesys is available in the Genesys AppFoundry and through Genesys Professional Services.&#x20;
 
-Cobrowse.io for Genesys supports Genesys Cloud, Genesys Engage Cloud, Genesys Engage Workspace Web Edition (WWE), and Genesys Engage Workspace Desktop Edition (WDE), both cloud-hosted and on-premise.&#x20;
+Cobrowse.io for Genesys supports Genesys Cloud CX, Genesys Engage Cloud, Genesys Engage Workspace Web Edition (WWE), and Genesys Engage Workspace Desktop Edition (WDE), both cloud-hosted and on-premise.&#x20;
 
 ### Demo videos
 
-Genesys Cloud - [https://www.youtube.com/watch?v=vd8A4\_JrpLs](https://www.youtube.com/watch?v=vd8A4\_JrpLs)
+Genesys Cloud CX: [https://vimeo.com/919780454](https://vimeo.com/919780454).
 
-Genesys Engage WWE - [https://www.youtube.com/watch?v=ZKx5bOsodtw](https://www.youtube.com/watch?v=ZKx5bOsodtw)
+### Marketplace listing links
 
-Genesys Engage WDE - [https://www.youtube.com/watch?v=IuDv8YqcUa0](https://www.youtube.com/watch?v=IuDv8YqcUa0)
+Genesys Cloud CX Appfoundry: [https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566](https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566)
 
-### App Foundry links
-
-Genesys Cloud - [https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566](https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566)
-
-Genesys Engage - [https://appfoundry.genesys.com/filter/genesysengage/listing/3c4d2d1a-fbfc-4ddd-901b-f3f7b8253069](https://appfoundry.genesys.com/filter/genesysengage/listing/3c4d2d1a-fbfc-4ddd-901b-f3f7b8253069)
+Genesys Engage: contact us at [https://cobrowse.io/contact-us](https://cobrowse.io/contact-us).
 
 ### Installation instructions
 

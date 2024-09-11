@@ -16,7 +16,7 @@ Cobrowse.io provides an integration with both Zendesk Support and Zendesk Chat a
 
 ### Demo videos
 
-Demo video - [https://www.youtube.com/watch?v=uR1EEQA0\_ck](https://www.youtube.com/watch?v=uR1EEQA0\_ck)
+Demo video: [https://vimeo.com/922548750](https://vimeo.com/922548750).
 
 ### Zendesk Requirements
 

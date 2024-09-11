@@ -27,8 +27,6 @@ Next, navigate to the `interaction-workspace/interaction.web-content` and add th
 
 You should now see the COBROWSE tab within your Workspace Web Edition when interacting with an end-user, such as on a phone call, or via a live chat.&#x20;
 
-Demo video - [https://www.youtube.com/watch?v=ZKx5bOsodtw](https://www.youtube.com/watch?v=ZKx5bOsodtw)
-
 ## Configuring SSO
 
 If you wish to sign into Cobrowse from within WWE using SSO you must first follow our documentation to [setup SAML](https://docs.cobrowse.io/agent-side-integrations/authentication-saml-2.0).

@@ -10,7 +10,7 @@ The new version of our Salesforce integration is now available. System admins ca
 
 AppExchange Marketplace listing: [https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FvKspUAF](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FvKspUAF).
 
-Demo video: [https://youtu.be/bp4zzNGmDsU](https://youtu.be/bp4zzNGmDsU).
+Demo video: [https://vimeo.com/925557403](https://vimeo.com/925557403).
 
 **Migrating from version 1? Follow the instructions here first:** [**Migrating from legacy to v2**](migrating-from-legacy-to-v2.md)**.**
 

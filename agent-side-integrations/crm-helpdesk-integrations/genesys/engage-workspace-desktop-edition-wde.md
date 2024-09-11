@@ -37,8 +37,6 @@ When using Genesys GAX, please navigate to Environment/Applications -> Workspace
 
 You should now see the COBROWSE tab within your Workspace Desktop Edition when interacting with an end-user, such as on a phone call, or via a live chat.&#x20;
 
-Demo video - [https://www.youtube.com/watch?v=IuDv8YqcUa0](https://www.youtube.com/watch?v=IuDv8YqcUa0)
-
 ## Configuring SSO
 
 If you wish to sign into Cobrowse from within WDE using SSO you must first follow our documentation to [setup SAML](https://docs.cobrowse.io/agent-side-integrations/authentication-saml-2.0).

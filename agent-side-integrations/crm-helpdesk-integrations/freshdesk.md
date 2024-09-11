@@ -8,7 +8,13 @@ description: >-
 
 ## Overview
 
-Cobrowse.io provides an integration with Freshdesk and Freshchat available in the Freshdesk and Freshchat App Marketplaces.&#x20;
+Cobrowse.io provides an integration with Freshdesk and Freshchat available in the Freshdesk and Freshchat App Marketplaces.
+
+## Demo Videos
+
+Freshdesk demo video: [https://vimeo.com/923760845](https://vimeo.com/923760845).
+
+Freshchat demo video: [https://vimeo.com/923383745](https://vimeo.com/923383745).
 
 ## App Marketplace links
 
@@ -26,7 +32,7 @@ Make note of your account licence key at [https://cobrowse.io/dashboard](https:/
 
 Generate a new private/public key pair following our article: [https://support.cobrowse.io/generating-cryptographic-keys-for-jwt-authentication](https://support.cobrowse.io/generating-cryptographic-keys-for-jwt-authentication)
 
-Make sure you can access the contents of your `private.pem` file, as you will need to copy it later.  For example, using the command `cat private.pem` in the directory of your downloaded key will print the contents to a terminal window.
+Make sure you can access the contents of your `private.pem` file, as you will need to copy it later. For example, using the command `cat private.pem` in the directory of your downloaded key will print the contents to a terminal window.
 
 {% hint style="warning" %}
 You must keep your private key secure at all times as it grants access to your account.
@@ -34,13 +40,13 @@ You must keep your private key secure at all times as it grants access to your a
 
 Install the Freshdesk or Freshchat app from the app gallery (Admin -> Settings -> Apps and search cobrowse.io) or from the correct marketplace links above.
 
-Add your licence key and private key when prompted (include the first and final lines that look like  `-----BEGIN/END PRIVATE KEY-----`). Cobrowse.io API can be left as-is, unless you are using an account on our EU Cloud or a self-hosted instance.&#x20;
+Add your licence key and private key when prompted (include the first and final lines that look like `-----BEGIN/END PRIVATE KEY-----`). Cobrowse.io API can be left as-is, unless you are using an account on our EU Cloud or a self-hosted instance.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-02-16 at 10.24.55.png" alt=""><figcaption><p>Add your licence key and private key in the boxes. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-02-16 at 10.24.55.png" alt=""><figcaption><p>Add your licence key and private key in the boxes.</p></figcaption></figure>
 
 Afterwards, click install for the app to install. You can check successful installation by going to Manage Apps in the Admin settings to see if Cobrowse.io is there and enabled.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-02-16 at 10.35.31.png" alt=""><figcaption><p>The app is installed and enabled. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-02-16 at 10.35.31.png" alt=""><figcaption><p>The app is installed and enabled.</p></figcaption></figure>
 
 The app should then appear in the sidebar during Freshchats and Freshdesk tickets and contacts. If you do not see it then please refresh the page (you may need to log out/in again).
 
@@ -92,6 +98,3 @@ Requires:
 * `user_email` custom data to be set on the SDK-side, that matches the email in the ticket/contact
 
 You will see the device appear to connect to in the sidebar app!
-
-
-
