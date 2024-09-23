@@ -48,7 +48,7 @@ You can replace "./example" with the directory where you wish to save the config
 
 The installer above will generate a `.env` file that contains your configuration. You may edit this file to add further configuration. We support the following environment variables:
 
-<table><thead><tr><th width="257" align="center">ENV VAR</th><th width="230" align="center">Description</th><th width="163" align="center">Example</th><th align="center">Required</th></tr></thead><tbody><tr><td align="center">DOMAIN</td><td align="center">Domain name to run Cobrowse on.</td><td align="center">mydomain.com</td><td align="center">Yes</td></tr><tr><td align="center">LICENSE</td><td align="center">The license string you have been given by us</td><td align="center"></td><td align="center">Yes</td></tr><tr><td align="center">SSL_GENERATION</td><td align="center">"automatic" (uses LetsEncrypt) or "manual"</td><td align="center">automatic</td><td align="center">No</td></tr><tr><td align="center">SSL_VALIDATION</td><td align="center">0 = disable cert validation (self signed certs)</td><td align="center">0</td><td align="center">No</td></tr><tr><td align="center">SUPERUSERS</td><td align="center">RegEx to specify super user email addresses</td><td align="center">.*@example.com</td><td align="center">No</td></tr><tr><td align="center">ACCOUNT_CREATORS</td><td align="center">RegEx of email addresses allowed to sign up for a new account</td><td align="center">.*@example.com</td><td align="center">No</td></tr></tbody></table>
+<table><thead><tr><th width="257" align="center">ENV VAR</th><th width="230" align="center">Description</th><th width="163" align="center">Example</th><th align="center">Required</th></tr></thead><tbody><tr><td align="center">DOMAIN</td><td align="center">Domain name to run Cobrowse on.</td><td align="center">mydomain.com</td><td align="center">Yes</td></tr><tr><td align="center">LICENSE</td><td align="center">The license string you have been given by us</td><td align="center"></td><td align="center">Yes</td></tr><tr><td align="center">SSL_GENERATION</td><td align="center">"automatic" (uses LetsEncrypt), "manual" or "none"</td><td align="center">automatic</td><td align="center">No</td></tr><tr><td align="center">SSL_VALIDATION</td><td align="center">0 = disable cert validation (self signed certs)</td><td align="center">0</td><td align="center">No</td></tr><tr><td align="center">SUPERUSERS</td><td align="center">RegEx to specify super user email addresses</td><td align="center">.*@example.com</td><td align="center">No</td></tr><tr><td align="center">ACCOUNT_CREATORS</td><td align="center">RegEx of email addresses allowed to sign up for a new account</td><td align="center">.*@example.com</td><td align="center">No</td></tr></tbody></table>
 
 #### Configuring DNS
 
@@ -68,6 +68,10 @@ If your domain is not publicly resolvable, set `SSL_GENERATION=manual` in your e
 * `./data/certs/privkey.pem` – This is the private key for your certificate
 
 The files are relative to the placement of the `docker-compose.yml` file.
+
+#### SSL Termination in the load balancer
+
+If you'd like to the SSL termination in your load balancer and it's safe in your network set `SSL_GENERATION=none`. This will expose the Cobrowse services on port 80.
 
 ### Starting Cobrowse
 
