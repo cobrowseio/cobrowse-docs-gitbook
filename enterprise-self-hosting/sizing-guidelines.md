@@ -12,7 +12,7 @@ In determining hardware requirements for self-hosted or on-premise deployments, 
 
 ### Hardware requirements
 
-* We recommend 2 vCPU and 2 GB memory for every 100 concurrent active co-browsing sessions, plus an extra 2 GB memory for system-level operations
+* We recommend 1 vCPU and 1 GB memory for every 100 concurrent active co-browsing sessions, plus an extra 2 GB memory for system-level operations
 * Storage requirement to run the services (excluding session recording) is 20GB total
 * Network throughput as described on the section below
 
@@ -48,10 +48,10 @@ This section is for illustration only. The exact container sizing will depend on
 
 As a rough guide the split for our production environment is:
 
-api: 15%\
+api: 35%\
 sockets: 35%\
-proxy: 15%\
-recording: 35%
+proxy: 20%\
+recording: 10%
 
 MongoDB is separate, currently around the same resource requirements as the containers.
 
