@@ -232,7 +232,7 @@ If full device screen capture on iOS is not working, please check the following:
 The Cobrowse.io SDK for Android will allow full device screen capture, including home screen, device settings, and everything else, just by toggling "full device mode" during an active session.
 
 {% hint style="info" %}
-These instructions also apply to Xamarin and .NET Android implementations.&#x20;
+These instructions also apply to .NET Android implementations.&#x20;
 {% endhint %}
 
 No extra integration work is required to use full device mode via our Android SDK.
@@ -299,18 +299,18 @@ Please follow the iOS and Android documentation to implement full device capabil
 {% endhint %}
 {% endtab %}
 
-{% tab title="Xamarin.iOS / .NET iOS" %}
+{% tab title=".NET iOS" %}
 {% hint style="info" %}
 Please review the iOS documentation for full device capabilities first.
 
-This documentation specific to Xamarin.iOS / .NET iOS is supplementary, and covers the differences only.
+This documentation specific to .NET iOS is supplementary, and covers the differences only.
 {% endhint %}
 
 **Add a Broadcast Extension project**
 
 In Visual Studio for Mac:
 
-1. Open your Xamarin solution
+1. Open your .NET solution
 2. Right click on the solution, select Add > New Project...
 3. Navigate iOS > Extension
 4. Pick "Broadcast Upload Extension"
@@ -347,28 +347,11 @@ Take the bundle ID of the **extension** you created above, and add the following
 
 The app extension needs a dependency on the CobrowseIO app extension framework. Add the following NuGet to the **extension project** (not to the iOS app project):
 
-* [![CobrowseIO.AppExtension.iOS NuGet](https://img.shields.io/nuget/v/CobrowseIO.AppExtension.iOS.svg?label=CobrowseIO.AppExtension.iOS)](https://www.nuget.org/packages/CobrowseIO.AppExtension.iOS/) - Xamarin.iOS
 * [![CobrowseIO.DotNet.iOS.AppExtension NuGet](https://img.shields.io/nuget/v/CobrowseIO.DotNet.iOS.AppExtension.svg?label=CobrowseIO.DotNet.iOS.AppExtension)](https://www.nuget.org/packages/CobrowseIO.DotNet.iOS.AppExtension/) - .NET iOS
 
 **Implement the extension**
 
 Visual Studio will have added `SampleHandler.cs` file as part of the extension project you created earlier. Replace the content of the file with the following:
-
-_Xamarin.iOS:_
-
-```csharp
-using Xamarin.CobrowseIO.AppExtension;
-
-[Register("SampleHandler")]
-public class SampleHandler : CobrowseIOReplayKitExtension
-{
-    protected SampleHandler(IntPtr handle) : base(handle)
-    {
-    }
-}
-```
-
-_.NET iOS:_
 
 ```csharp
 using Cobrowse.IO.iOS.AppExtension;

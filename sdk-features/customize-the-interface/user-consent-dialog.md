@@ -77,8 +77,8 @@ CobrowseIO.instance.handleSessionRequest.listen((session) {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
-#### Xamarin.iOS / .NET iOS implementation
+{% tab title=".NET Mobile" %}
+#### .NET iOS implementation
 
 ```csharp
 public override void CobrowseHandleSessionRequest(Session session) {
@@ -90,7 +90,7 @@ public override void CobrowseHandleSessionRequest(Session session) {
 }
 ```
 
-#### Xamarin.Android / .NET iOS implementation
+#### .NET iOS implementation
 
 ```csharp
 public void HandleSessionRequest(Activity activity, Session session) {
@@ -104,7 +104,7 @@ public void HandleSessionRequest(Activity activity, Session session) {
 }
 ```
 
-#### Xamarin.Forms / .NET Mobile implementation
+#### MAUI implementation
 
 You can also achieve this functionality from a cross-platform project. In this case you don't have to implement your own delegate, but instead you subscribe to the `SessionDidRequest` event:
 
@@ -305,11 +305,11 @@ CobrowseIO.instance.handleSessionRequest.listen((session) {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
-#### Xamarin.iOS implementation
+{% tab title=".NET Mobile" %}
+#### iOS implementation
 
 ```csharp
-using Xamarin.CobrowseIO;
+using Cobrowse.IO.iOS;
 
 [Register("AppDelegate")]
 public class AppDelegate : UIResponder, IUIApplicationDelegate
@@ -337,10 +337,10 @@ public class CustomCobrowseDelegate : CobrowseIODelegate
 }
 ```
 
-#### Xamarin.Android implementation
+#### Android implementation
 
 ```csharp
-using Xamarin.CobrowseIO;
+using Cobrowse.IO.iOS;
 
 [Application]
 public class MainApplication : Application
@@ -384,73 +384,6 @@ public class CustomCobrowseDelegate : Java.Lang.Object, CobrowseIO.ISessionReque
     }
 
     // ...
-}
-```
-
-#### Xamarin.Forms implementation
-
-You can also achieve this functionality from a cross-platform project. In this case you don't have to implement your own delegate, but instead you subscribe to the `SessionDidRequest` event:
-
-```csharp
-using Xamarin.CobrowseIO.Abstractions;
-
-public partial class App : Xamarin.Forms.Application
-{
-    public App()
-    {
-        InitializeComponent();
-
-        CobrowseIO.Instance.License = "trial";
-        CobrowseIO.Instance.Start();
-        // and the rest of cobrowse setup ...
-    }
-
-    protected override void OnStart()
-    {
-        Subscribe();
-    }
-
-    protected override void OnSleep()
-    {
-        Unsubscribe();
-    }
-
-    protected override void OnResume()
-    {
-        Subscribe();
-    }
-
-    private void Subscribe()
-    {
-        CobrowseIO.Instance.SessionDidRequest += OnCobrowseSessionDidRequest;
-    }
-
-    private void Unsubscribe()
-    {
-        CobrowseIO.Instance.SessionDidRequest -= OnCobrowseSessionDidRequest;
-    }
-
-    private async void OnCobrowseSessionDidRequest(object sender, ISession session)
-    {
-        // Do something here, e.g. showing a permission request dialog
-        // Make sure to call Activate(<callback>) on the session object if
-        // you want to start the session.
-        // Provide a callback if you wish to handle errors during session
-        // initiation.
-        bool allowed = await this.MainPage.DisplayAlert(
-            title: "Cobrowse.io",
-            message: "Allow Cobrowse.io session?",
-            accept: "Allow",
-            cancel: "Reject");
-        if (allowed)
-        {
-            session.Activate(null);
-        }
-        else
-        {
-            session.End(null);
-        }
-    }
 }
 ```
 

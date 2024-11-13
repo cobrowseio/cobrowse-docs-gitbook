@@ -77,9 +77,9 @@ Please follow the Android documentation to implement full device remote control 
 {% endhint %}
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title=".NET Mobile" %}
 {% hint style="info" %}
-Please follow the Android documentation to implement full device remote control using Xamarin.
+Please follow the Android documentation to implement full device remote control using .NET / MAUI.
 {% endhint %}
 {% endtab %}
 
@@ -120,7 +120,7 @@ CobrowseAccessibilityService.showSetup(...);
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title=".NET Mobile" %}
 ```csharp
 CobrowseAccessibilityService.ShowSetup(...)
 ```
@@ -151,7 +151,7 @@ CobrowseAccessibilityService.isRunning(...);
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title=".NET Mobile" %}
 ```csharp
 CobrowseAccessibilityService.IsRunning(...)
 ```
@@ -169,7 +169,7 @@ startActivity(intent);
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title=".NET Mobile" %}
 ```csharp
 Intent intent = new Intent(global::Android.Provider.Settings.ActionAccessibilitySettings);
 intent.AddFlags(ActivityFlags.NewTask);

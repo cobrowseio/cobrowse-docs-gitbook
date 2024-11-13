@@ -192,7 +192,7 @@ Please see the iOS and Android documentation for customizing the full device con
 
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title=".NET Mobile" %}
 
 {% hint style="info" %}
 Please see the iOS and Android documentation for customizing the full device consent dialog.

@@ -1,5 +1,5 @@
 ---
-description: For use with Android, iOS, React Native, and Xamarin SDKs only.
+description: For use with Android, iOS, React Native, Flutter, and .NET Mobile SDKs only.
 ---
 
 # Initiate sessions with push
@@ -103,8 +103,8 @@ if (Platform.isAndroid) {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
-**Xamarin.iOS / .NET iOS implementation**
+{% tab title=".NET Mobile" %}
+**.NET iOS implementation**
 
 If you are already using push notifications in your app, there is nothing further required on the native side.
 
@@ -122,7 +122,7 @@ public void OnActivated(UIApplication application)
 }
 ```
 
-**Xamarin.Android / .NET Android implementation**
+**.NET Android implementation**
 
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging](https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging).
 
@@ -133,7 +133,7 @@ using System;
 using Android.App;
 using Android.Runtime;
 using Firebase.Messaging;
-using Xamarin.CobrowseIO;
+using Cobrowse.IO.Android;
 
 namespace YourAppNamespace
 {

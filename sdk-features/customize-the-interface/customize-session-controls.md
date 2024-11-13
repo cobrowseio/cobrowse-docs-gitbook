@@ -113,8 +113,8 @@ CobrowseIO.instance.hideSessionControls.listen((session) {
 
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
-#### Xamarin.iOS / .NET iOS implementation
+{% tab title=".NET Mobile" %}
+#### iOS implementation
 
 The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
 
@@ -128,7 +128,7 @@ public override void HideSessionControls(Session session) {
 }
 ```
 
-#### Xamarin.Android / .NET Android implementation
+#### Android implementation
 
 You can fully customize the interface for a Cobrowse session. The SDK provides hooks via `CobrowseIO.ISessionControlsDelegate` for you to render your own interface:
 
@@ -210,7 +210,7 @@ if (session != null) {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title=".NET Mobile" %}
 ```csharp
 CobrowseIO.Instance().CurrentSession?.End(null);
 ```
@@ -381,11 +381,11 @@ function App() {
 {% endtab %}
 
 
-{% tab title="Xamarin / .NET Mobile" %}
-#### Xamarin.iOS implementation
+{% tab title=".NET Mobile" %}
+#### iOS implementation
 
 ```csharp
-using Xamarin.CobrowseIO;
+using Cobrowse.IO.iOS;
 
 [Register("AppDelegate")]
 public class AppDelegate : UIResponder, IUIApplicationDelegate
@@ -459,12 +459,12 @@ public class CustomCobrowseDelegate : CobrowseIODelegate
 }
 ```
 
-**Xamarin.Android implementation**
+#### Android implementation
 
 You can fully customize the interface for a Cobrowse session. The SDK provides hooks via `CobrowseIO.ISessionControlsDelegate` for you to render your own interface:
 
 ```csharp
-using Xamarin.CobrowseIO;
+using Cobrowse.IO.Android;
 
 [Application]
 public class MainApplication : Application, CobrowseIO.ISessionControlsDelegate
@@ -487,155 +487,6 @@ public class MainApplication : Application, CobrowseIO.ISessionControlsDelegate
     }
 
     //...
-}
-```
-
-**Xamarin.Forms implementation**
-
-Even though Cobrowse.io works with native views, there is nothing that would prevent you from using `Xamarin.Forms.VisualElement` as a session indicator.
-
-First, create an indicator view using Xamarin.Forms (`CobrowseCustomView.xaml`):
-
-```markup
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentView
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="SampleApp.Forms.CobrowseCustomView"
-    HeightRequest="42"
-    WidthRequest="130">
-    <Button
-        BackgroundColor="Red"
-        TextColor="White"
-        Text="End Session"
-        CornerRadius="4"
-        Clicked="EndSessionButton_Clicked" />
-</ContentView>
-```
-
-Then, in the **iOS project**:
-
-```csharp
-using System;
-using Foundation;
-using UIKit;
-using Xamarin.CobrowseIO;
-using Xamarin.Forms.Platform.iOS;
-
-[Register("AppDelegate")]
-public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
-{
-    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-    {
-        CobrowseIO.Instance.SetDelegate(new CustomOverlayCobrowseDelegate());
-    }
-}
-
-public class CustomOverlayCobrowseDelegate : CobrowseDelegateImplementation
-{
-    private UIView _indicatorInstance;
-
-    public override void ShowSessionControls(Session session)
-    {
-        if (_indicatorInstance == null)
-        {
-            _indicatorInstance = GetDefaultSessionIndicator(container: UIApplication.SharedApplication.KeyWindow);
-        }
-        _indicatorInstance.Hidden = false;
-    }
-
-    public override void HideSessionControls(Session session)
-    {
-        if (_indicatorInstance != null)
-            _indicatorInstance.Hidden = true;
-    }
-
-    private UIView GetDefaultSessionIndicator(UIView container)
-    {
-        var indicator = new CobrowseCustomView();
-        var renderer = Platform.CreateRenderer(indicator);
-        renderer.Element.Layout(new Xamarin.Forms.Rectangle(0, 0, indicator.WidthRequest, indicator.HeightRequest));
-        var nativeIndicator = renderer.NativeView;
-        nativeIndicator.TranslatesAutoresizingMaskIntoConstraints = false;
-
-        container.AddSubview(nativeIndicator);
-
-        nativeIndicator.WidthAnchor.ConstraintEqualTo((float)indicator.WidthRequest).Active = true;
-        nativeIndicator.HeightAnchor.ConstraintEqualTo((float)indicator.HeightRequest).Active = true;
-        nativeIndicator.CenterYAnchor.ConstraintEqualTo(container.CenterYAnchor).Active = true;
-        nativeIndicator.RightAnchor.ConstraintEqualTo(container.RightAnchor, constant: -20f).Active = true;
-
-        return nativeIndicator;
-    }
-}
-```
-
-And in the **Android project**:
-
-```csharp
-using Xamarin.CobrowseIO;
-using Xamarin.Forms.Platform.Android;
-
-[Application]
-public class MainApplication : Application
-{
-    public override void OnCreate()
-    {
-        CobrowseIO.Instance.SetDelegate(new CustomOverlayCobrowseDelegate());
-    }
-}
-
-public class CustomOverlayCobrowseDelegate : CobrowseDelegateImplementation, CobrowseIO.ISessionControlsDelegate
-{
-    private View _overlayIndicator;
-
-    public void ShowSessionControls(Activity activity, Session session)
-    {
-        if (_overlayIndicator != null)
-        {
-            return;
-        }
-        if (!(activity is FormsAppCompatActivity))
-        {
-            return;
-        }
-        var indicator = new CobrowseCustomView();
-        var renderer = Platform.CreateRendererWithContext(indicator, activity);
-        renderer.Element.Layout(new Xamarin.Forms.Rectangle(0, 0, indicator.WidthRequest, indicator.HeightRequest));
-        var nativeIndicator = renderer.View;
-
-        var modal = new RelativeLayout(activity);
-        var layoutParams = new RelativeLayout.LayoutParams(
-            (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, (float)indicator.WidthRequest, activity.Resources.DisplayMetrics),
-            (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, (float)indicator.HeightRequest, activity.Resources.DisplayMetrics))
-        {
-            MarginEnd = (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, 4f, activity.Resources.DisplayMetrics)
-        };
-        layoutParams.AddRule(LayoutRules.CenterVertical);
-        layoutParams.AddRule(LayoutRules.AlignParentEnd);
-        modal.AddView(nativeIndicator, layoutParams);
-
-        var rootFrameLayout = (ViewGroup)activity.Window.PeekDecorView();
-        rootFrameLayout.AddView(modal, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent));
-        rootFrameLayout.Invalidate();
-
-        _overlayIndicator = modal;
-    }
-
-    public void HideSessionControls(Activity activity, Session session)
-    {
-        if (_overlayIndicator == null)
-        {
-            return;
-        }
-        if (!(activity is FormsAppCompatActivity))
-        {
-            return;
-        }
-        var rootFrameLayout = (ViewGroup)activity.Window.PeekDecorView();
-        rootFrameLayout.RemoveView(_overlayIndicator);
-        _overlayIndicator = null;
-    }
 }
 ```
 
