@@ -34,10 +34,6 @@ Register a free account for development and testing at [https://cobrowse.io/regi
 [flutter.md](sdk-installation/flutter.md)
 {% endcontent-ref %}
 
-{% content-ref url="sdk-installation/xamarin.md" %}
-[xamarin.md](sdk-installation/xamarin.md)
-{% endcontent-ref %}
-
 {% content-ref url="sdk-installation/dotnet.md" %}
 [dotnet.md](sdk-installation/dotnet.md)
 {% endcontent-ref %}

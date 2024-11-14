@@ -55,7 +55,7 @@ if (session != null) {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title=".NET Mobile" %}
 ```cs
 Session session = CobrowseIO.Instance.CurrentSession;
 if (session != null)
@@ -131,7 +131,7 @@ CobrowseIO.instance.sessionDidLoad.listen((session) {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title=".NET Mobile" %}
 ```dart
 CobrowseIO.Instance.SessionDidLoad += (sender, session) =>
 {

@@ -62,7 +62,7 @@ log('Your session code: ${session.code}');
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title=".NET Mobile" %}
 ```csharp
 CobrowseIO.Instance.CreateSession((Exception err, ISession session) => {
     if (err != null) Debug.WriteLine("Failed to create a code");
@@ -205,71 +205,7 @@ activity.startActivity(intent);
 
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
-#### Xamarin.iOS implementation
-
-1. Add the appropriate code below into a view controller in your app.
-2. Hook up a trigger for the action (or call it programatically if you prefer).
-
-```csharp
-using Xamarin.CobrowseIO;
-
-namespace SampleApp.iOS
-{
-    public partial class ViewController : UIViewController
-    {
-        private void StartCobrowse(object sender, EventArgs e)
-        {
-            NavigationController.PushViewController(new CobrowseViewController(), animated: true);
-        }
-    }
-}
-```
-
-For a full example written in C#, see our sample app at: [https://github.com/cobrowseio/cobrowse-sdk-xamarin](https://github.com/cobrowseio/cobrowse-sdk-xamarin)
-
-#### Xamarin.Android implementation
-
-We have provided some default UI to make things easier to get started:
-
-```csharp
-using Xamarin.CobrowseIO;
-using Xamarin.CobrowseIO.UI;
-
-namespace SampleApp.Android
-{
-    [Activity]
-    public class MainActivity : AppCompatActivity
-    {
-        private void StartCobrowse(object sender, EventArgs e)
-        {
-            var intent = new Intent(this, typeof(CobrowseActivity));
-            StartActivity(intent);
-        }
-    }
-}
-```
-
-#### Xamarin.Forms implementation
-
-The Cobrowse.io Xamarin SDK provides a convenient way to open the default 6 digit code UI. In your **cross-platform** project:
-
-```csharp
-using Xamarin.CobrowseIO.Abstractions;
-
-namespace YourAppNamespace.Forms
-{
-    public partial class YourPage : Xamarin.Forms.Page
-    {
-        public void StartCobrowse()
-        {
-            CobrowseIO.Instance.OpenCobrowseUI();
-        }
-    }
-}
-```
-
-#### .NET Mobile implementation
+{% tab title=".NET Mobile" %}
 
 ```csharp
 using Cobrowse.IO;

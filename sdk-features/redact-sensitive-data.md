@@ -307,8 +307,8 @@ The widget will be redacted for both client and agent during an active screensha
 {% endhint %}
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
-**Xamarin.iOS implementation**
+{% tab title=".NET Mobile" %}
+**iOS implementation**
 
 Implement the `ICobrowseIORedacted` interface on any `UIViewController` that contains sensitive views. This interface contains one `RedactedViews` property:
 
@@ -321,7 +321,7 @@ public partial class ViewController : UIViewController, ICobrowseIORedacted
 }
 ```
 
-**Xamarin.Android implementation**
+**Android implementation**
 
 Implement the `CobrowseIO.IRedacted` interface on any `Activity` that contains sensitive views. This interface contains one method:
 
@@ -335,183 +335,6 @@ public class MainActivity : AppCompatActivity, CobrowseIO.IRedacted
         return new[]
         {
             FindViewById(Resource.Id.redact_me)
-        }
-    }
-}
-```
-
-**Xamarin.Forms implementation**
-
-While it is not possible to access platform-specific UI code directly from a cross-platform project, you can easily achieve it using [Effects](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/effects/introduction) and [Custom Renderers](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/).
-
-In your _cross-platform_ project declare a new `Effect` for marking Xamarin.Forms UI elements as _redacted_:
-
-```csharp
-using Xamarin.Forms;
-
-namespace YourAppNamespace.Forms
-{
-    /// <summary>
-    /// A Xamarin.Forms effect that helps to redact Xamarin.Forms view in Cobrowse.io.
-    /// </summary>
-    public class CobrowseRedactedViewEffect : RoutingEffect
-    {
-        public bool IsRedacted { get; set; } = true;
-
-        public CobrowseRedactedViewEffect()
-            : base("YourAppName" + "." + nameof(CobrowseRedactedViewEffect))
-        {
-        }
-    }
-}
-```
-
-_iOS-specific_ platform Effect would look like this:
-
-```csharp
-using System.Collections.Generic;
-using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
-
-[assembly: ResolutionGroupName("YourAppName")]
-[assembly: ExportEffect(typeof(YourAppNamespace.iOS.PlatformCobrowseRedactedViewEffect), "CobrowseRedactedViewEffect")]
-namespace YourAppNamespace.iOS
-{
-    public class PlatformCobrowseRedactedViewEffect : PlatformEffect
-    {
-        private static readonly List<UIView> sRedacted = new List<UIView>();
-
-        public static UIView[] RedactedViews => sRedacted.ToArray();
-
-        public PlatformCobrowseRedactedViewEffect()
-        {
-        }
-
-        protected override void OnAttached()
-        {
-            // We have to always use 'Container' and never 'Control'
-            // because 'Control' is null in 'OnDetached', at least in Xamarin.Forms 4.5.0.356
-            AddToRedacted(Container);
-        }
-
-        protected override void OnDetached()
-        {
-            RemoveFromRedacted(Container);
-        }
-
-        private static void AddToRedacted(UIView view)
-        {
-            if (view == null)
-            {
-                return;
-            }
-            sRedacted.Add(view);
-        }
-
-        private static void RemoveFromRedacted(UIView view)
-        {
-            if (view == null)
-            {
-                return;
-            }
-            if (sRedacted.Contains(view))
-            {
-                sRedacted.Remove(view);
-            }
-        }
-    }
-}
-```
-
-Then create a new default `Xamarin.Forms.Page` renderer which would implement `ICobrowseIORedacted` interface:
-
-```csharp
-using UIKit;
-using Xamarin.CobrowseIO;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
-
-[assembly: ExportRenderer(typeof(ContentPage), typeof(YourAppNamespace.iOS.CobrowseRedactedPageRenderer))]
-namespace YourAppNamespace.iOS
-{
-    public class CobrowseRedactedPageRenderer : PageRenderer, ICobrowseIORedacted
-    {
-        public UIView[] RedactedViews => PlatformCobrowseRedactedViewEffect.RedactedViews;
-    }
-}
-```
-
-_Android-specific_ platform Effect would look like this:
-
-```csharp
-using System.Collections.Generic;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
-using AView = Android.Views.View;
-
-[assembly: ResolutionGroupName("YourAppName")]
-[assembly: ExportEffect(typeof(YourAppNamespace.Android.PlatformCobrowseRedactedViewEffect), "CobrowseRedactedViewEffect")]
-namespace YourAppNamespace.Android
-{
-    public class PlatformCobrowseRedactedViewEffect : PlatformEffect
-    {
-        private static readonly List<AView> sRedacted = new List<AView>();
-
-        public static IList<AView> RedactedViews => sRedacted;
-
-        protected override void OnAttached()
-        {
-            AddToRedacted(Control ?? Container);
-        }
-
-        protected override void OnDetached()
-        {
-            RemoveFromRedacted(Control ?? Container);
-        }
-
-        private static void AddToRedacted(AView view)
-        {
-            if (view == null)
-            {
-                return;
-            }
-            sRedacted.Add(view);
-        }
-
-        private static void RemoveFromRedacted(AView view)
-        {
-            if (view == null)
-            {
-                return;
-            }
-            if (sRedacted.Contains(view))
-            {
-                sRedacted.Remove(view);
-            }
-        }
-    }
-}
-```
-
-Then implement `CobrowseIO.IRedacted` interface in your Forms activity:
-
-```csharp
-using System.Collections.Generic;
-using Android.App;
-using Xamarin.CobrowseIO;
-using AView = Android.Views.View;
-
-namespace YourAppNamespace.Android
-{
-    [Activity]
-    public class MainActivity
-        : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity,
-        CobrowseIO.IRedacted
-    {
-        public IList<AView> RedactedViews()
-        {
-            return PlatformCobrowseRedactedViewEffect.RedactedViews;
         }
     }
 }

@@ -71,7 +71,7 @@ CobrowseIO.instance.handleRemoteControlRequest.listen((session) {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title=".NET Mobile" %}
 ```сsharp
 CobrowseIO.Instance.RemoteControlRequest += (object sender, ISession session) =>
 {
@@ -338,7 +338,7 @@ CobrowseIO.instance.handleRemoteControlRequest.listen((session) {
 ```
 {% endtab %}
 
-{% tab title="Xamarin / .NET Mobile" %}
+{% tab title=".NET Mobile" %}
 ```сsharp
 CobrowseIO.Instance.RemoteControlRequest += async (object sender, ISession session) =>
 {

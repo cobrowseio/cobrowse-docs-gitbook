@@ -35,7 +35,7 @@ This will associate sessions from your mobile app with your Cobrowse account.
 
 ### MAUI sample app
 
-We provide a sample application showing how to use Cobrowse.io NuGet packages in MAUI with .NET 8. [MAUI sample](https://github.com/cobrowseio/cobrowse-sdk-xamarin/tree/dotnet/Sample) includes using 6-digit codes, full device screen sharing, and redacting sensitive data.
+We provide a sample application showing how to use Cobrowse.io NuGet packages in MAUI with .NET 8. [MAUI sample](https://github.com/cobrowseio/cobrowse-sdk-dotnet-mobile/tree/master/Sample) includes using 6-digit codes, full device screen sharing, and redacting sensitive data.
 
 ## Try it out
 
