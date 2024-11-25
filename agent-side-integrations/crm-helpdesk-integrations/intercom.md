@@ -38,6 +38,10 @@ It's likely your Intercom account is linked to a separate Cobrowse.io account. W
 
 Please ensure a Cobrowse.io SDK has been added to the platform where you are using Intercom chat. Installation instructions for each SDK are found at [Getting Started](../../).
 
+New Intercom accounts prevent updating custom attributes via Messenger by default, which may hinder the functionality of the smart connect feature. To resolve this, navigate to your Intercom account settings: **Settings > Data > People**. If a **CobrowseID** custom attribute does not exist, create it and ensure the "Prevent updates via the Messenger" toggle is turned off.
+
+![Enabling custom attribute updates](../../.gitbook/assets/intercom-attribute-workaround.png)
+
 #### Agent is stuck on "waiting for authorization".
 
 We are aware of a possible issue with React Native apps only, where the user consent prompt is hidden behind the Intercom SDK's UI, so it is not visible for the user to take action. To confirm this is what is happening, you can disable "Require user consent" from [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings) and try to start a new session via Intercom.
