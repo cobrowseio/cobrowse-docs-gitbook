@@ -16,7 +16,7 @@ Demo video: [https://vimeo.com/923685192](https://vimeo.com/923685192).
 
 ## Installation Instructions
 
-You only need to have a Talkdesk account and you can install the [Cobrowse.io](http://cobrowse.io) integration app directly from AppConnect here: [https://appconnect.talkdesk.com/apps/cobrowse-io](https://appconnect.talkdesk.com/apps/cobrowse-io).
+You only need to have a Talkdesk account and you can install the [Cobrowse.io](https://cobrowse.io) integration app directly from AppConnect here: [https://appconnect.talkdesk.com/apps/cobrowse-io](https://appconnect.talkdesk.com/apps/cobrowse-io).
 
 During the installation you will go through the following steps:
 
