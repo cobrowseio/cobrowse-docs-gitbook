@@ -8,7 +8,7 @@ description: v1.x
 
 Salesforce (Legacy) has been upgraded, please see [Salesforce V2](./).&#x20;
 
-Cobrowse.io provides an integration with Salesforce available in the Salesforce AppExchange Marketplace. Get started here [https://cobrowse.io/salesforce](https://cobrowse.io/salesforce)
+Cobrowse.io provides an integration with Salesforce available in the Salesforce AppExchange Marketplace. Get started here [https://cobrowse.io/integrations/salesforce](https://cobrowse.io/integrations/salesforce)
 
 ## Install the app
 
