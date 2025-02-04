@@ -1,7 +1,7 @@
 ---
 description: >-
-  Cobrowse.io for Genesys supports Genesys Cloud CX, Genesys Engage Cloud,
-  Genesys Engage Workspace Web Edition (WWE) and more.
+  Cobrowse.io for Genesys supports Genesys Cloud, Genesys Engage Cloud, Genesys
+  Engage Workspace Web Edition (WWE) and more.
 ---
 
 # Genesys

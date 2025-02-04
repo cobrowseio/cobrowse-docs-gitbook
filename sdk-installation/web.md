@@ -1,5 +1,5 @@
 ---
-description: Javascript SDK for websites, including mobile websites
+description: Javascript SDK for Web
 ---
 
 # Web

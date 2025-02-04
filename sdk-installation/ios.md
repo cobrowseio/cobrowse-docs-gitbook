@@ -1,5 +1,5 @@
 ---
-description: iOS Native SDK, with support for SwiftUI and native webviews
+description: iOS Native SDK
 ---
 
 # iOS

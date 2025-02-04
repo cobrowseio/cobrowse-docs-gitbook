@@ -1,7 +1,7 @@
 ---
 description: >-
-  Account-level settings may be configured once you have logged in. All changes
-  saved to the audit log.
+  Cobrowse account config. Account-level settings may be configured once you
+  have logged in.
 ---
 
 # Account config
