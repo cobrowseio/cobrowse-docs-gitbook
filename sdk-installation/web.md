@@ -107,17 +107,21 @@ If you have CSPs on your website then they may block the functionality of Cobrow
 
 `Refused to connect to https://cobrowse.io/... because it violates the document's Content Security Policy.`
 
-To solve this, you will need to enable the following in your CSP:
+To allow access to Cobrowse APIs you will need to enable the following in your CSP:
 
 connect src of: **`connect-src cobrowse.io *.cobrowse.io wss://*.cobrowse.io;`**
 
-{% hint style="warning" %}
+{% hint style="info" %}
 If you self-host your instance, then replace`cobrowse.io` with your `<your instance domain>` in each case.
 {% endhint %}
 
-script-src of: **`script-src 'unsafe-inline' js.cobrowse.io;`**
+To load the JS SDK and the script tag at the top of this page:
 
-{% hint style="warning" %}
+script-src of: **`script-src js.cobrowse.io 'nonce-2726c7f26c';`**
+
+Note this is using  a nonce source which must also be present on the script tag which adds the Cobrowse SDK to your page. The value `2726c7f26c` represents the random value that should be dynamically generated and unique for each request. Read more about [CSP nonces here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src). &#x20;
+
+{% hint style="info" %}
 If you use the self-hosted version of the web SDK instead of `js.cobrowse.io`, e.g. [following this](../enterprise-self-hosting/advanced/web-sdk-pinning.md), then you should use that full URL instead, e.g. `https://<your instance domain>/sdk-js/CobrowseIO.js`.
 {% endhint %}
 
