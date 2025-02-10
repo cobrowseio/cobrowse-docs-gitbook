@@ -63,6 +63,7 @@
   * [Intercom](agent-side-integrations/crm-helpdesk-integrations/intercom.md)
   * [Freshworks](agent-side-integrations/crm-helpdesk-integrations/freshdesk.md)
   * [Talkdesk](agent-side-integrations/crm-helpdesk-integrations/talkdesk.md)
+  * [NICE](agent-side-integrations/crm-helpdesk-integrations/nice.md)
 * [Custom integrations](agent-side-integrations/custom-integrations.md)
 * [Agent SDK](agent-side-integrations/agent-sdk/README.md)
   * [API Reference](agent-side-integrations/agent-sdk/api-reference.md)
