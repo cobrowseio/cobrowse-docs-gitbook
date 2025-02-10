@@ -10,47 +10,51 @@ description: >-
 
 Cobrowse.io provides an integration with Freshdesk and Freshchat available in the Freshdesk and Freshchat App Marketplaces.
 
-## Demo Videos
+{% embed url="https://vimeo.com/923383745?share=copy#t=0" %}
+Cobrowse for Freshchat
+{% endembed %}
 
-Freshdesk demo video: [https://vimeo.com/923760845](https://vimeo.com/923760845).
-
-Freshchat demo video: [https://vimeo.com/923383745](https://vimeo.com/923383745).
+A demo video for [Freshdesk is also available](https://vimeo.com/923760845).
 
 ## App Marketplace links
 
-You can view our app descriptions and see more information for each platform below.
+Visit the marketplace to see our about the apps:
 
-**Freshdesk**: [https://www.freshworks.com/apps/freshdesk/cobrowseio\_1/](https://www.freshworks.com/apps/freshdesk/cobrowseio\_1/)
+**Freshdesk**: [https://www.freshworks.com/apps/freshdesk/cobrowseio\_1/](https://www.freshworks.com/apps/freshdesk/cobrowseio_1/)
 
-**Freshchat**: [https://www.freshworks.com/apps/freshchat/cobrowse\_io/](https://www.freshworks.com/apps/freshchat/cobrowse\_io/)
+**Freshchat**: [https://www.freshworks.com/apps/freshchat/cobrowse\_io/](https://www.freshworks.com/apps/freshchat/cobrowse_io/)
 
 ## Installation instructions
 
-Register for an account at [https://cobrowse.io/register.](https://cobrowse.io/register) **Note**: you only need to register for an account once. You can use the same account details in both Freshdesk and Freshchat.
+Before installing the Freshdesk or Freschat Cobrowse.io apps you'll need to:
 
-Make note of your account licence key at [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard).
+* You have a Cobrowse accoutnt. If you don't have a Cobrowse account please register at [https://cobrowse.io/register](https://cobrowse.io/register). Note that a single account can be used for both Freshdesk and Freshchat
+* Make note of your license key at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings)
+* Generate a new private/public key pair following our article: [https://support.cobrowse.io/generating-cryptographic-keys-for-jwt-authentication](https://support.cobrowse.io/generating-cryptographic-keys-for-jwt-authentication)
 
-Generate a new private/public key pair following our article: [https://support.cobrowse.io/generating-cryptographic-keys-for-jwt-authentication](https://support.cobrowse.io/generating-cryptographic-keys-for-jwt-authentication)
+After this you can install the Freshdesk or Freshchat app from the app gallery (Admin -> Settings -> Apps and search cobrowse.io) or from the correct marketplace links above and you'll be prompted to fill in these details.
 
-Make sure you can access the contents of your `private.pem` file, as you will need to copy it later. For example, using the command `cat private.pem` in the directory of your downloaded key will print the contents to a terminal window.
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-M9_9e-O8Q_M8gigM3zA%2Fuploads%2Fgit-blob-6d714fecb58a283f01a72ff91faf1436d8dcaa79%2FScreenshot%202024-02-16%20at%2010.24.55.png?alt=media" alt=""><figcaption></figcaption></figure>
 
-{% hint style="warning" %}
-You must keep your private key secure at all times as it grants access to your account.
-{% endhint %}
-
-Install the Freshdesk or Freshchat app from the app gallery (Admin -> Settings -> Apps and search cobrowse.io) or from the correct marketplace links above.
-
-Add your licence key and private key when prompted (include the first and final lines that look like `-----BEGIN/END PRIVATE KEY-----`). Cobrowse.io API can be left as-is, unless you are using an account on our EU Cloud or a self-hosted instance.
-
-<figure><img src="../../.gitbook/assets/Screenshot 2024-02-16 at 10.24.55.png" alt=""><figcaption><p>Add your licence key and private key in the boxes.</p></figcaption></figure>
-
-Afterwards, click install for the app to install. You can check successful installation by going to Manage Apps in the Admin settings to see if Cobrowse.io is there and enabled.
+Click install for the app to install. You can validate the installation was successful by going to Manage Apps in the Admin settings and see if Cobrowse.io is enabled.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-02-16 at 10.35.31.png" alt=""><figcaption><p>The app is installed and enabled.</p></figcaption></figure>
 
 The app should then appear in the sidebar during Freshchats and Freshdesk tickets and contacts. If you do not see it then please refresh the page (you may need to log out/in again).
 
 To connect to user devices, your next step is to install our SDKs for your platforms. You can find the links for each platform here: [https://docs.cobrowse.io/](https://docs.cobrowse.io/).
+
+### JWT Private Key Configuration
+
+The private key value can be found within the file downloaded when generating the JWT key pair as [described in our article](https://support.cobrowse.io/generating-cryptographic-keys-for-jwt-authentication). The value can be copied using any text editor.
+
+{% hint style="warning" %}
+You must keep your private key secure at all times as it grants access to your account.
+{% endhint %}
+
+If you see a "Invalid Cobrowse.io JWT private key" error this could mean the wrong value was copied on the JWT private key.
+
+Ensure that  the first line looks like `-----BEGIN PRIVATE KEY-----` and the last line looks like `-----END PRIVATE KEY-----` . If it says `PUBLIC KEY` this means the wrong key was copied, ensure you copy the right key.
 
 ### Group based access control
 

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Cobrowse.io for Genesys supports Genesys Cloud, Genesys Engage Cloud, Genesys
-  Engage Workspace Web Edition (WWE) and more.
+  Cobrowse.io for Genesys supports Genesys Cloud CX, Genesys Engage Cloud,
+  Genesys Engage Workspace Web Edition (WWE) and more.
 ---
 
 # Genesys
@@ -14,13 +14,15 @@ Cobrowse.io for Genesys supports Genesys Cloud CX, Genesys Engage Cloud, Genesys
 
 ### Demo videos
 
-Genesys Cloud CX: [https://vimeo.com/919780454](https://vimeo.com/919780454).
+{% embed url="https://vimeo.com/919780454?share=copy" %}
+Cobrowse for Genesys Cloud CX&#x20;
+{% endembed %}
 
 ### Marketplace listing links
 
-Genesys Cloud CX Appfoundry: [https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566](https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566)
+For Genesys Cloud CX please visit our [Appfoundry listing](https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566).&#x20;
 
-Genesys Engage: contact us at [https://cobrowse.io/contact-us](https://cobrowse.io/contact-us).
+For Genesys Engage please contact us through [https://cobrowse.io/contact-us](https://cobrowse.io/contact-us).
 
 ### Installation instructions
 
@@ -41,6 +43,8 @@ Please follow the links to the specific platforms below.&#x20;
 
 
 {% hint style="info" %}
-These instructions are for the agent-side integration into your Genesys workspace. For hosting the Cobrowse.io Server on-premise, or in your own cloud account, please see [Enterprise self-hosting](../../../enterprise-self-hosting/docker-compose.md). For client-side SDKs such as our Javascript Snippet to add Cobrowse to your website, please see our [SDK installation instructions](https://docs.cobrowse.io/).&#x20;
+These instructions are for the agent-side integration into your Genesys workspace.&#x20;
+
+For hosting the Cobrowse.io Server on-premise or in the cloud please see [Enterprise self-hosting](../../../enterprise-self-hosting/docker-compose.md). To add Cobrowse to your website or your app please see our [SDK installation instructions](https://docs.cobrowse.io/).&#x20;
 {% endhint %}
 

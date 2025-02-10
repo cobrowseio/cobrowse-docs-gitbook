@@ -8,15 +8,11 @@ description: >-
 
 ## Overview
 
-{% hint style="warning" %}
-Installing our Zendesk apps using the marketplace links below will automatically create a new Cobrowse account linked to your Zendesk organization, and a new license key. If you've already created an account separately, you may switch between your multiple accounts by clicking your avatar from the dashboard.
-{% endhint %}
-
 Cobrowse.io provides an integration with both Zendesk Support and Zendesk Chat available in the Zendesk App Marketplace.
 
-### Demo videos
-
-Demo video: [https://vimeo.com/922548750](https://vimeo.com/922548750).
+{% embed url="https://vimeo.com/922548750?share=copy#t=0" %}
+Cobrowse for Zendesk
+{% endembed %}
 
 ### Zendesk Requirements
 
@@ -28,9 +24,12 @@ Newer accounts will only need to install the Cobrowse.io for Support app, it is 
 
 If you are using the Legacy Zendesk Chat you will also need to install the Cobrowse.io for Chat app.
 
-Cobrowse.io for Support App - [https://www.zendesk.com/apps/support/cobrowseio/](https://www.zendesk.com/apps/support/cobrowseio/)
+* [Cobrowse.io for Support App](https://www.zendesk.com/apps/support/cobrowseio/)&#x20;
+* [Cobrowse.io for Chat App](https://www.zendesk.com/apps/chat/cobrowseio/)
 
-Cobrowse.io for Chat App - [https://www.zendesk.com/apps/chat/cobrowseio/](https://www.zendesk.com/apps/chat/cobrowseio/)
+{% hint style="warning" %}
+Installing our Zendesk apps using the marketplace links will automatically create a new Cobrowse account and a new license key. If you've already have a Cobrowse account you may switch between your accounts by clicking your avatar on the Cobrowse dashboard.
+{% endhint %}
 
 ### Add our SDKs to get started!
 
@@ -38,7 +37,7 @@ See [Getting started](../../) to add our SDKs and begin end-to-end testing! Your
 
 ### Controlling user access
 
-Follow the Zendesk docs to restrict access to the Cobrowse.io Apps to certain roles or groups [https://support.zendesk.com/hc/en-us/articles/4409155972378-Managing-your-installed-apps#topic\_xyf\_wmw\_qfb](https://support.zendesk.com/hc/en-us/articles/4409155972378-Managing-your-installed-apps#topic\_xyf\_wmw\_qfb).
+Follow the Zendesk docs to restrict access to the Cobrowse.io Apps to certain roles or groups [https://support.zendesk.com/hc/en-us/articles/4409155972378-Managing-your-installed-apps#topic\_xyf\_wmw\_qfb](https://support.zendesk.com/hc/en-us/articles/4409155972378-Managing-your-installed-apps#topic_xyf_wmw_qfb).
 
 ## Troubleshooting
 

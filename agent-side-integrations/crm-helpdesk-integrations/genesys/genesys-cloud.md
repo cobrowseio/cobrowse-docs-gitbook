@@ -1,27 +1,24 @@
 ---
 description: >-
   The Cobrowse integration for Genesys Cloud may be installed from the App
-  Foundry as a Premium App. Get links here.
+  Foundry.
 ---
 
 # Genesys Cloud
 
-The Cobrowse.io integration for Genesys Cloud may be installed from the App Foundry as a Premium App.
+The Cobrowse.io integration for Genesys Cloud may be installed as a Premium App from the [App Foundry Listing](https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566).&#x20;
 
-AppFoundry listing: [https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566](https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566)
-
-Demo video: [https://vimeo.com/919780454](https://vimeo.com/919780454).
+{% embed url="https://vimeo.com/919780454?share=copy#t=0" %}
 
 ## Installing the apps
 
-In total, there are two separate apps to install:
+There are two separate apps to install, please activate each Premium app:
 
 * Cobrowse.io (Standalone App) - installed as usual via AppFoundry.&#x20;
-* Cobrowse.io (Interaction) Widget - installed after the Standalone app. Go to Genesys Cloud at Admin -> Integrations -> + Integrations (shown below) and search for Cobrowse.io, selecting the Widget app.
+* Cobrowse.io (Interaction) Widget - installed after the Standalone app.&#x20;
+  * Go to Genesys Cloud at Admin -> Integrations -> + Integrations (as shown below) and search for Cobrowse.io, selecting the Widget app.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2023-06-19 at 15.38.04.png" alt=""><figcaption></figcaption></figure>
-
-For each Premium App, please activate it.
 
 For information on what is different between these apps, see this article - [https://support.cobrowse.io/genesys-cloud-standalone-and-widget-apps](https://support.cobrowse.io/genesys-cloud-standalone-and-widget-apps)
 

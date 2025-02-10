@@ -1,24 +1,26 @@
 ---
-description: v2.x
+description: Easily start a Cobrowse session from Salesforce.
 ---
 
 # Salesforce
 
 ## Overview
 
-The new version of our Salesforce integration is now available. System admins can follow the steps below in order to give your organization access to Cobrowse.io within Salesforce.
+Our Salesforce integration is now available. System admins can follow the steps below in order to give your organization access to Cobrowse.io within Salesforce - [AppExchange Marketplace listing](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FvKspUAF).
 
-AppExchange Marketplace listing: [https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FvKspUAF](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FvKspUAF).
+{% embed url="https://vimeo.com/925557403?share=copy#t=0" %}
+Cobrowse for Salesforce
+{% endembed %}
 
-Demo video: [https://vimeo.com/925557403](https://vimeo.com/925557403).
-
-**Migrating from version 1? Follow the instructions here first:** [**Migrating from legacy to v2**](migrating-from-legacy-to-v2.md)**.**
+{% hint style="info" %}
+Migrating from version 1? Follow the instructions here first: [Migrating from legacy to v2](migrating-from-legacy-to-v2.md).
+{% endhint %}
 
 ## Install the app
 
 Search for 'Cobrowse.io' in the AppExchange Marketplace and select our application.&#x20;
 
-![The Cobrowse.io AppExchange Marketplace application.](<../../../.gitbook/assets/Screenshot 2021-09-20 at 15.19.06.png>)
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>The Cobrowse.io AppExchange Marketplace application.</p></figcaption></figure>
 
 Follow the install guidance and complete the information until you see the screen below. Select Install for All Users at the install page.
 
@@ -116,7 +118,7 @@ The sidebar widget should then be displayed in all of the pages that it has been
 If you migrated from v1, then your Cobrowse.io account settings will have been preserved.
 {% endhint %}
 
-![Configure your Cobrowse.io Account Settings](<../../../.gitbook/assets/Screenshot 2021-09-20 at 11.34.44.png>)
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Cobrowse.io Dashboard</p></figcaption></figure>
 
 ## Add our SDKs to get started!
 
@@ -128,7 +130,7 @@ This step is optional for clients who wish to override the default device filter
 
 In Salesforce legacy, this filtering was provided in the Cobrowse.io Settings tab. It is now located within the Cobrowse.io Dashboard. Go to Cobrowse.io Dashboard (e.g. via App Launcher search) then Account Settings (Admins only), then Integrations, then Salesforce record Mapping.&#x20;
 
-![](<../../../.gitbook/assets/Screenshot 2021-09-20 at 16.31.34.png>)
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption><p>Salesforce record mapping</p></figcaption></figure>
 
 The first argument specifies the page for the filtering to be applied to, e.g. "Case". Then the key:value pair specifies the SalesforceMetadata:Cobrowse.ioCustomData that should be mapped together, linking the Salesforce metadata from a page to the corresponding Cobrowse.io custom data field to filter the devices.
 

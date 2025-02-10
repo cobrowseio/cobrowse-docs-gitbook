@@ -10,9 +10,9 @@ description: >-
 
 The Cobrowse.io app is available for installation in Talkdesk AppConnect.
 
-## Demo videos
-
-Demo video: [https://vimeo.com/923685192](https://vimeo.com/923685192).
+{% embed url="https://vimeo.com/923685192" %}
+Cobrowse for Talkdesk
+{% endembed %}
 
 ## Installation Instructions
 
