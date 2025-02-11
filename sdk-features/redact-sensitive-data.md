@@ -13,7 +13,7 @@ For this purpose, we provide a redaction API that automatically blocks out on de
 
 Cobrowse provides two methods for redacting sensitive data in your applications:
 
-**1. Define the redacted views in your app source code (recommended)**
+### **1. Define the redacted views in your app source code (recommended)**
 
 This is the recommended method as it will make sure your redactions are tied to application or websites code version.
 
@@ -36,7 +36,7 @@ CobrowseIO.redactedViews = [
 ]
 ```
 
-#### Unredaction
+#### **Unredaction aka** Private by Default
 
 Our web SDK also supports an un-redaction mechanism, where by you can define sub-elements inside of a redacted element that should be visible to the agent. You can specify un-redaction selectors like this:
 
@@ -46,110 +46,127 @@ CobrowseIO.unredactedViews = ['.unredacted', ...some other selectors...]
 {% endtab %}
 
 {% tab title="iOS" %}
-Implement the `CobrowseIORedacted` protocol on any `UIViewController` that contains sensitive views. This protocol contains one method:
-
-```objectivec
-// From this method you should return a list of the views you want
-// Cobrowse to redact, for example:
-- (NSArray*) redactedViews {
-    return @[ redactedTextView ];
-}
-```
-
-If making changes to your `UIViewController` subclasses isn't an option, we also support a [delegate style](listening-for-events.md) method to allow you to supply this information in one place. Implement `cobrowseRedactedViewsForViewController` in your `CobrowseIODelegate` class, then you can pass redacted views for a specific `UIViewController` in a single method:
-
-```objc
--(NSArray<UIView*>*) cobrowseRedactedViewsForViewController:(UIViewController*) vc {
-    NSMutableArray<UIView*>* redacted = [[NSMutableArray alloc] init];
-    // Return a list of redacted views for a provided UIViewController
-    return redacted;
-}
-```
-
-**Redaction of SwiftUI views**
-
-To redact any SwiftUI view please use the `.redacted()` view modifier supplied by the Cobrowse iOS SDK v2.30.0 +.
-
-The example below will redact the `Text` view that displays the email address.
+To redact a single view you can call `cobrowseRedacted` on any `UIView` or SwiftUI `View`.
 
 ```swift
-struct AccountView: View {
+// UIKit
+let uiView = UIView()
+uiView.cobrowseRedacted()
+
+// SwiftUI
+let swiftUIView = ExampleView()
+swiftUIView.cobrowseRedacted()
+```
+
+Any children of the view will also be redacted allowing you to redact container views like `VStack` or a `UIView` that contains subviews.
+
+#### Redact within UIViewController via CobrowseIORedacted
+
+You may wish to return all the views that should be redacted at once per view controller. By conforming your `UIViewController` to `CobrowseIORedacted` you can proved the reference to each `UIView` that should be redacted.
+
+```swift
+class ExampleViewController: UIViewController, CobrowseIORedacted {
+    let imageView: UIImageView
+    @IBOutlet weak var label: UILabel!
     
-    let name: String
-    let email: String
-    
-    var body: some View {
-        VStack {
-            Text(name)
-                .font(.largeTitle)
-            
-            Text(verbatim: email)
-                .font(.title2)
-                .cobrowseRedacted()
-        }
+    ...
+    func redactedViews() -> [UIView] {
+        [imageView, label]
     }
 }
 ```
 
-You can add the `.redacted()` view modifier to views that contain child views like `VStack` and the entire stack will be redacted.
+#### Redact within custom delegate via CobrowseIODelegate
+
+If you can't make changes to the `UIViewController` or you wish to centralize your redaction logic. You will need an object that conforms to `CobrowseIODelegate` and implement the `cobrowseRedactedViews(for vc: UIViewController)` within it.
+
+This method provides you with the `UIViewController` whereby you return the views within that view controller you wish to redact.
 
 ```swift
-struct AccountView: View {
-    
-    let name: String
-    let email: String
-    
-    var body: some View {
-        VStack {
-            Text(name)
-                .font(.largeTitle)
-            
-            Text(verbatim: email)
-                .font(.title2)
-        }
-        .cobrowseRedacted()
+class ExampleDelegate: NSObject, CobrowseIODelegate {
+    func cobrowseRedactedViews(for vc: UIViewController) -> [UIView] {
+        // Return an array of UIViews to redact
+        // For example only the subviews that have the tag of 1
+        vc.view.subviews.filter { $0.tag == 1 }
     }
 }
 ```
 
-**Redaction by default**
+Be sure to set the `delegate` property to your custom delegate before calling `start()`.
+
+```swift
+let delegate = ExampleDelegate()
+let cobrowse = CobrowseIO.instance()
+
+cobrowse.delegate = delegate
+cobrowse.start()
+```
+
+#### **Unredaction aka** Private by Default
 
 Sometimes you may want to redact everything on the screen, then selectively "unredact" only the parts your support agents should be able to see. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.
 
-To achieve this, you'll need to follow the delegate implementation and ensure you pass the all your applications root views to the Cobrowse redaction delegate method:
+To achieve this, you should return all of your application's root views via the `cobrowseRedactedViews(for vc: UIViewController)` delegate method.
 
-```objc
--(NSArray<UIView*>*) cobrowseRedactedViewsForViewController:(UIViewController*) vc {
-    return @[self.window.rootViewController.view];
+_Please note the example below may not redact all your root views as this can be application dependent._
+
+```swift
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate, CobrowseIODelegate {
+    
+    var window: UIWindow?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let cobrowse = CobrowseIO.instance()
+        cobrowse.delegate = self
+        cobrowse.start()
+        
+        return true
+    }
+    
+    func cobrowseRedactedViews(for vc: UIViewController) -> [UIView] {
+        guard let view = window?.rootViewController?.view
+            else { return [] }
+        
+        return [view]
+    }
 }
 ```
 
-Once you've done this, your application root views will be redacted by default and you'll be able to un-redact child components to make them visible to the agents by implementing `cobrowseUnredactedViewsForViewController` in your `CobrowseIODelegate` class:
+Once you've done this, your application root views will be redacted by default and you'll be able to unredact child components to make them visible to the agents by implementing `cobrowseUnredactedViews(for vc: UIViewController)` in your `CobrowseIODelegate` class:
 
-```objc
--(NSArray<UIView*>*) cobrowseUnredactedViewsForViewController:(UIViewController *) vc {
-    UIView *unredacted = [self findViewByAccessibilityLabel:self.window:@"viewToBeUnredacted"];
-    if (unredacted) {
-        return @[unredacted];
+```swift
+class ExampleDelegate: NSObject, CobrowseIODelegate {
+    func cobrowseUnredactedViews(for vc: UIViewController) -> [UIView] {
+        // Return an array of UIViews to unredact
+        // For example only the subviews that have the tag of 1
+        vc.view.subviews.filter { $0.tag == 1 }
     }
-    return @[];
 }
 ```
 
 Alternatively, you can implement `CobrowseIOUnredacted` protocol in your `UIViewController` subclasses:
 
-```objc
--(NSArray*) unredactedViews {
-    return @[viewToBeUnredacted];
+```swift
+class ExampleViewController: UIViewController, CobrowseIOUnredacted {
+    let imageView: UIImageView
+    @IBOutlet weak var label: UILabel!
+    
+    ...
+    func unredactedViews() -> [UIView] {
+        [imageView, label]
+    }
 }
 ```
 
-**Redaction of WebView content**
+#### **Redaction of WebView content**
 
 Your app may show web content that contains elements that you wish to redact. This can be achieved by setting the `webviewRedactedViews` property to an array of CSS selectors that identify the elements to be redacted.
 
-```objc
-CobrowseIO.instance.webviewRedactedViews = @[ @".redacted", ...some other selectors... ];
+```swift
+let cobrowse = CobrowseIO.instance()
+cobrowse.webviewRedactedViews = [ ".redacted", ...some other selectors... ]
 ```
 {% endtab %}
 
@@ -513,28 +530,101 @@ CobrowseIO.Instance.WebViewRedactedViews = new string[] { ".redacted", ...some o
 {% endtab %}
 {% endtabs %}
 
-**2. Use the Cobrowse web dashboard to define redacted views**
+### **2. Selector based redaction**
 
-{% hint style="warning" %}
-This mechanism is provided as a fallback, use the SDK APIs when possible for maximum resiliency and efficiency.
-{% endhint %}
+You can use CSS like selectors to identify what elements / views should be redacted. These selectors can be defined within your application using our SDK or via the Cobrowse dashboard.
 
-You can also define redactions using a selector entered into the web dashboard. This can be useful if your app is already in production and you need to redact a field retrospectively, either due to a missed redaction entry in the app build or changing requirements. Visit the [dashboard settings](https://cobrowse.io/dashboard/settings/redaction) to enter redaction selectors.
+Adding selectors via the dashboard can be useful if your app is already in production and you need to redact a field retrospectively, either due to a missed redaction entry in the app build or changing requirements.
 
 {% tabs %}
 {% tab title="Web" %}
-Enter your css selectors, e.g. `.redacted-class` or `#redacted-id`.
+**Via SDK**
+
+```
+CobrowseIO.redactedViews = ['.redacted', ...some other selectors...]
+```
+
+{% hint style="info" %}
+The full CSS selector standard is supported with nesting and complex comparators.
+{% endhint %}
+
+**Via dashboard**
+
+Visit [https://cobrowse.io/dashboard/settings/redaction](https://cobrowse.io/dashboard/settings/redaction) and enter your selectors into the Web redaction / unredaction configuration.
 {% endtab %}
 
 {% tab title="iOS" %}
-Enter your objective-C class name and/or view id, e.g. `ClassName#id` or just `#id`.
+**Via SDK**
 
-`ClassName` is the name of the UI class, and `id` is the integer tag of the view object.
+For UIKit you can use the class name of any `UIView`, the view's integer tag value or any property on the `UIView` that is string representable with no additional configuration.
+
+```swift
+let cobrowse = CobrowseIO.instance()
+cobrowse.redactedViews = [ 
+    "UIButton",
+    "MyCustomView UILabel#2[text=Hello]",
+    "[accessibilityIdentifier=\"HELLO MESSAGE\"]"
+]
+```
+
+{% hint style="info" %}
+* Nested selectors are supported
+* Only the `=` comparator is supported
+{% endhint %}
+
+For SwiftUI you will need to use the `cobrowseSelector(tag:, id:, classes:, attributes:)` view modifier filling our the values manually.
+
+```swift
+Text("Hello, Frank")
+    .accessibilityIdentifier("HELLO MESSAGE")
+    .cobrowseSelector(tag: "Text", attributes: ["accessibilityIdentifier" : "HELLO MESSAGE"]) 
+```
+
+This view can now be referenced using the selector of:
+
+`Text[accessibilityIdentifier="HELLO MESSAGE"]`
+
+**Via dashboard**
+
+Visit [https://cobrowse.io/dashboard/settings/redaction](https://cobrowse.io/dashboard/settings/redaction) and enter your selectors into the iOS redaction configuration.
 {% endtab %}
 
 {% tab title="Android" %}
-Enter your tag of the view class and/or the identifier name for the view, e.g. `tag#id` or just `#id`.
+**Via SDK**
 
-`tag` is the [simple name](https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getSimpleName--) of the view class, `#id` can usually be found in the XML layout like so `android:id="@+id/here_is_the_id`. The `#id` must be able to be used with system `android.view.View#findViewById()` and `android.app.Activity#findViewById()` methods.
+For Android Views you can use the [simple name](https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getSimpleName--) of any view class, the id of the view.
+
+The `#id` must be able to be used with system `android.view.View#findViewById()` and `android.app.Activity#findViewById()` methods.
+
+```java
+CobrowseIO.instance().redactedViews(new String[] {
+    "Button"
+    "Label#123[contentDescription=Hello]",
+    "[testTag=\"Hello Message\"]"
+});
+```
+
+{% hint style="info" %}
+* Nested selectors are **not** supported
+* Only the `=` comparator is supported
+{% endhint %}
+
+For JetPack Compose UIs you will need to use the `cobrowseSelector(tag, id, attributes)` modifier filling our the values manually.
+
+```kotlin
+Text("Hello, Frank", modifier = Modifier
+            .semantics { testTag = "HELLO MESSAGE" }
+            .cobrowseSelector(
+                tag = "Text",
+                attributes = mapOf("testTag" to "HELLO MESSAGE")))
+```
+
+This view can now be referenced using the selector of:
+
+`Text[testTag="HELLO MESSAGE"]`
+
+**Via dashboard**
+
+Visit [https://cobrowse.io/dashboard/settings/redaction](https://cobrowse.io/dashboard/settings/redaction) and enter your selectors into the iOS redaction configuration.
 {% endtab %}
 {% endtabs %}
