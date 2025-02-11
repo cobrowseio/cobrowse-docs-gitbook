@@ -15,7 +15,7 @@ On platforms that support full device remote control, there may be extra steps r
 {% tabs %}
 {% tab title="Android" %}
 {% hint style="warning" %}
-Due to recent Google Play Store policy changes these instructions have been updated. You must be using SDK version **v2.16.0** or above. See the [Google Play Store requirements](https://support.google.com/googleplay/android-developer/answer/10964491?hl=en) for details on listing your app when using this API.&#x20;
+Due to recent Google Play Store policy changes these instructions have been updated. You must be using SDK version **v2.16.0** or above. See the [Google Play Store requirements](https://support.google.com/googleplay/android-developer/answer/10964491?hl=en) for details on listing your app when using this API.
 {% endhint %}
 
 Full device remote control for Android, including unattended access, uses an Accessibility Service that must be enabled on the device to grant access.
@@ -50,7 +50,7 @@ When added, your manifest should look something similar to this:
 
 Enable the accessibility service the Cobrowse SDK will have added in the main device settings, eg. Settings -> Accessibility -> Your App Name. Note: this only has to be done the very first time.
 
-#### Uploading to the Google Play Store?
+**Uploading to the Google Play Store?**
 
 Add the following resource via an XML file to enable a consent request to your users each time full device remote control is requested:
 
@@ -96,12 +96,12 @@ Full device remote control by default, no extra integration needed.
 
 We have built some logic and APIs to detect if the Android accessibility service is running, and if not, to deep link the user to the settings to enable it.
 
-Show the sample UI with:
+Open system accessibility settings with:
 
 {% tabs %}
 {% tab title="Android" %}
 ```java
-CobrowseAccessibilityService.showSetup(...);
+CobrowseAccessibilityService.showSetup();
 ```
 {% endtab %}
 
@@ -132,7 +132,7 @@ Check if accessibility service is already running with:
 {% tabs %}
 {% tab title="Android" %}
 ```
-CobrowseAccessibilityService.isRunning(...);
+CobrowseAccessibilityService.isRunning();
 ```
 {% endtab %}
 

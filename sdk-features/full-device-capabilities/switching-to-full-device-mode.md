@@ -6,8 +6,6 @@ description: >-
 
 # Managing full device mode
 
-
-
 ### Managing full device state from the SDKs
 
 In some situations it is useful to be able to switch a Cobrowse session into full device mode using the SDK. For example, if you would like sessions to default to full device mode, or enforce full device mode is always (or never) used. We provide an API for doing this:
@@ -20,16 +18,22 @@ await session.setFullDevice('requested')
 {% endtab %}
 
 {% tab title="iOS / MacOS" %}
+**Swift**
+
+```swift
+session.setFullDevice(.requested)
+```
+
+**Objective-C**
+
 ```objectivec
-[session setFullDevice:YES callback:^(NSError* err, CBIOSession* session) {
-    // catch errors
-}];
+[session setFullDevice: CBIOFullDeviceStateRequested callback:nil];
 ```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
-session.setFullDevice(true, (err, arg) -> {
+session.setFullDevice(Session.FullDeviceState.Requested, (err, arg) -> {
     // handle error
 });
 ```
@@ -90,11 +94,21 @@ CobrowseIO.on('session.loaded', session => session.setFullDevice('requested'))
 {% endtab %}
 
 {% tab title="iOS / MacOS" %}
+**Swift**
+
+```swift
+// You must have implmented the CobrowseIODelegate
+func cobrowseSessionDidLoad(_ session: CBIOSession) {
+    session.setFullDevice(.requested)
+}
+```
+
+**Objective-C**
+
 ```objectivec
-// note: you must have implmented the CobrowseIODelegate
+// You must have implmented the CobrowseIODelegate
 - (void)cobrowseSessionDidLoad:(CBIOSession *)session {
-    // ensure the screen share session is always in full device
-    [session setFullDevice:YES callback: null];
+    [session setFullDevice: CBIOFullDeviceStateRequested callback:nil];
 }
 ```
 {% endtab %}
@@ -104,7 +118,7 @@ CobrowseIO.on('session.loaded', session => session.setFullDevice('requested'))
 // note: you must have implmented CobrowseIO.SessionLoadDelegate
 @Override
 public void sessionDidLoad(@NonNull Session session) {
-    session.setFullDevice(true, null);
+    session.setFullDevice(Session.FullDeviceState.Requested, null);
 }
 ```
 {% endtab %}
@@ -153,4 +167,4 @@ CobrowseIO.Instance.SessionDidLoad += (sender, session) =>
 
 ### Controlling full device state from the Agent SDK
 
-You may also set the full device state using the Agent SDK. See the Agent SDK [API Reference](../../agent-side-integrations/agent-sdk/api-reference.md) for more details.&#x20;
+You may also set the full device state using the Agent SDK. See the Agent SDK [API Reference](../../agent-side-integrations/agent-sdk/api-reference.md) for more details.

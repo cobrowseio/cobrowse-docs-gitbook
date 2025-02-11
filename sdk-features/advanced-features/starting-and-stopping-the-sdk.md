@@ -15,7 +15,7 @@ await CobrowseIO.client();
 await CobrowseIO.start();
 ```
 
-#### Advanced usage
+**Advanced usage**
 
 Sometimes it is required to run Cobrowse.io **only** within an IFrame, and not any containing or parent page. This is supported, but requires passing an extra configuration option when starting Cobrowse. **Most implementations should not need to use this.** Please contact us if you are unsure.
 
@@ -40,7 +40,7 @@ CobrowseIO.instance().start()
 
 {% tab title="Android" %}
 ```java
-CobrowseIO.instance().start(this);
+CobrowseIO.instance().start();
 ```
 {% endtab %}
 
@@ -70,7 +70,7 @@ await CobrowseIO.Instance.Start();
 {% endtabs %}
 
 {% hint style="info" %}
-If you do decide to delay or lazy load the SDK it is important to check if there is a currently active session and if so load and start the SDK right away. Without this check sessions would not continue between navigation or page refreshes as the SDK won't be loaded.&#x20;
+If you do decide to delay or lazy load the SDK it is important to check if there is a currently active session and if so load and start the SDK right away. Without this check sessions would not continue between navigation or page refreshes as the SDK won't be loaded.
 
 ```
 // On page load check if we should start the Cobrowse SDK right away

@@ -14,12 +14,12 @@ The Cobrowse SDK for iOS is available for installation via several dependency ma
 https://github.com/cobrowseio/cobrowse-sdk-ios-binary.git
 ```
 
-Add the `CobrowseIO` package dependency to **your app target**.
+Add the `CobrowseSDK` package dependency to **your app target**.
 {% endtab %}
 
 {% tab title="Pods" %}
 ```ruby
-pod 'CobrowseIO', '~>2'
+pod 'CobrowseIO', '~>3'
 ```
 
 _Don't forget to run `pod repo update` then `pod install` after you've edited your Podfile._
@@ -30,17 +30,16 @@ _Make sure you are on the latest stable version of Pods. Run `pod --version` to 
 {% endtab %}
 
 {% tab title="Carthage" %}
-```
-binary "https://raw.githubusercontent.com/cobrowseio/cobrowse-sdk-ios-binary/master/cobrowse-sdk-ios-binary.json" ~> 2.0
-```
+<pre><code><strong>binary "https://raw.githubusercontent.com/cobrowseio/cobrowse-sdk-ios-binary/master/cobrowse-sdk-ios-binary.json" ~> 3.0
+</strong></code></pre>
 
 {% hint style="info" %}
-Remember to run `carthage update` after modifying your Cartfile.
+Remember to run `carthage update --use-xcframeworks` after modifying your Cartfile.
 {% endhint %}
 
 _More information about Carthage at_ [_https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos_](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)_._
 
-Link the `CobrowseIO.framework` to your main app target that can be found at `./Carthage/Build/iOS`.
+Link the `CobrowseSDK.xcframework` to your main app target that can be found at `./Carthage/Build`.
 {% endtab %}
 
 {% tab title="Manual" %}
@@ -57,7 +56,7 @@ Add the following lines to your code which will register this device with the Co
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-import CobrowseIO
+import CobrowseSDK
 ...
 
 CobrowseIO.instance().license = "put your license key here"
@@ -67,43 +66,11 @@ CobrowseIO.instance().start()
 
 {% tab title="Objective-C" %}
 ```objectivec
-@import CobrowseIO;
+@import CobrowseSDK;
 ...
 
 CobrowseIO.instance.license = @"put your license key here";
 [CobrowseIO.instance start];
-```
-{% endtab %}
-{% endtabs %}
-
-#### Registering on startup
-
-If you would like your devices to register as soon as your app starts, we recommend doing this in your app delegate `application:didFinishLaunchingWithOptions:` method. For example:
-
-{% tabs %}
-{% tab title="Swift" %}
-```swift
-import CobrowseIO
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
-{
-    CobrowseIO.instance().license = "put your license key here"
-    CobrowseIO.instance().start()
-    return true
-}
-```
-{% endtab %}
-
-{% tab title="Objective-C" %}
-```objectivec
-@import CobrowseIO;
-
-- (BOOL)application:(UIApplication*) application didFinishLaunchingWithOptions:(NSDictionary*) launchOptions
-{
-    CobrowseIO.instance.license = @"put your license key here";
-    [CobrowseIO.instance start];
-    return YES;
-}
 ```
 {% endtab %}
 {% endtabs %}
@@ -120,7 +87,7 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 
 ## Requirements
 
-* iOS 11.0 or later
+* iOS 12.0 or later
 
 ## Problems rendering certain views?
 

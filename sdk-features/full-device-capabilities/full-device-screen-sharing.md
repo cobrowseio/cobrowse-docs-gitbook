@@ -40,13 +40,13 @@ The Cobrowse.io SDK for iOS allows full device screen capture, but this requires
 4. Enter a name for the target
 5. Uncheck "Include UI Extension"
 6. Create the target, noting its bundle ID
-7. Change the target SDK of your Broadcast Extension to iOS 12.0 or higher _(Note: it should still work as far back to iOS 11.0)_
+7. Change the target SDK of your Broadcast Extension to iOS 12.0 or higher
 
 **Set up Keychain Sharing**
 
 Your app and the app extension you created above need to share some secrets via the iOS Keychain. They do this using their own Keychain group so they are isolated from the rest of your apps Keychain.
 
-In **both** your **app target** and your **extension target** add a Keychain Sharing entitlement for the "io.cobrowse" keychain group.
+In **both** your **app target** and your **extension target** add a Keychain Sharing entitlement for the `io.cobrowse` keychain group.
 
 **Add the bundle ID to your plist**
 
@@ -57,63 +57,15 @@ Take the bundle ID of the **extension** you created above, and add the following
 <string>your.app.extension.bundle.ID.here</string>
 ```
 
-**Add `CobrowseIOExtension` dependency to your project**
+**Add `CobrowseSDK` to your Broadcast Extension target**
 
-The app extension needs a dependency on the CobrowseIO app extension framework. It is available for installation via several dependency managers.
+You should already have the `CobrowseSDK` added to your project via the method used during the initial installation.
 
 {% tabs %}
 {% tab title="SPM" %}
-**Add the new package dependency to your project**
+With your broadcast extension target selected click the `+` button under **Frameworks and Libraries** and add `CobrowseSDK` to your extension target.
 
-```
-https://github.com/cobrowseio/cobrowse-sdk-ios-binary.git
-```
-
-Make sure your **app target** uses `CobrowseIO` package and your **extension target** uses `CobrowseIOExtension` package, respectively:
-
-![](../../.gitbook/assets/xcode\_spm\_dependency\_structure.png)
-
-{% hint style="info" %}
-Xcode 13.3 and newer might not copy `CobrowseIOExtension.framework` extension dependency into resulting IPA builds. If that happens to you, follow the steps below:
-
-1.  Add a new script build phase to your **app target**:
-
-    ![](../../.gitbook/assets/xcode\_add\_new\_run\_script.png)
-2.  Configure the new script:
-
-    a) Set the phase name you like (e.g. _Copy Cobrowse.io broadcast extension framework_)
-
-    b) Set _Shell_ to `/usr/bin/ruby`
-
-    c) Copy and paste the script content:
-
-    ```ruby
-    require 'fileutils'
-
-    cbioExt = "CobrowseIOAppExtension.framework"
-    cbioExtFrameworkSource = "#{ENV['TARGET_BUILD_DIR']}/#{cbioExt}"
-    cbioExtFramework = "#{ENV['BUILT_PRODUCTS_DIR']}/#{ENV['FRAMEWORKS_FOLDER_PATH']}/#{cbioExt}"
-
-    if (!Dir.exist?(cbioExtFramework))
-        FileUtils.copy_entry cbioExtFrameworkSource, cbioExtFramework
-        FileUtils.rm_rf "#{cbioExtFramework}/Headers"
-        FileUtils.rm_rf "#{cbioExtFramework}/Modules"
-    end
-
-    if (ENV['PLATFORM_NAME'] == 'iphoneos')
-        codeSignIdentityForItems = ENV['EXPANDED_CODE_SIGN_IDENTITY_NAME']
-        if (!codeSignIdentityForItems || codeSignIdentityForItems.length == 0)
-            codeSignIdentityForItems = ENV['CODE_SIGN_IDENTITY']
-        end
-
-        `codesign --force --verbose --sign "#{codeSignIdentityForItems}" "#{cbioExtFramework}"`
-    end
-    ```
-
-    d) Uncheck _"For install builds only"_, _"Based on dependency analysis"_, _"Show environment variables in build log"_, and _"Use discovery dependency file"_:
-
-    ![](../../.gitbook/assets/xcode\_spm\_copy\_extension\_script.png)
-{% endhint %}
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Adding CobrwseSDK via SPM to the extension target</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Pods" %}
@@ -124,69 +76,32 @@ Add the following to your Podfile, replacing the target name with you own extens
 ```ruby
 # Replace YourExtensionTargetName with your extension target name
 target 'YourExtensionTargetName' do
-    pod 'CobrowseIO/Extension', '~>2'
+    pod 'CobrowseIO', '~>3'
 end
 ```
-
-{% hint style="info" %}
-By default CocoaPods links both `CobrowseIO.framework` and `CobrowseIOExtension.framework` with **your app target** which leads to several warnings shown at runtime, such as _Class CBIOSession is implemented in both CobrowseIOAppExtension.framework and CobrowseIO.framework. One of the two will be used. Which one is undefined._ To get rid of these warnings, add the following script to your Podfile:
-
-```ruby
-post_install do |installer|
-  # Replace YourAppTargetName with your app target name
-  target = 'YourAppTargetName'
-  aggregate_target = installer.aggregate_targets.find { |aggregate_target| aggregate_target.name == "Pods-#{target}" }
-  aggregate_target.xcconfigs.each do |config_name, config_file|
-    config_file.frameworks.delete('CobrowseIOAppExtension')
-    xcconfig_path = aggregate_target.xcconfig_path(config_name)
-    config_file.save_as(xcconfig_path)
-  end
-end
-```
-{% endhint %}
 
 _Make sure to run `pod install` after updating your Podfile_
 {% endtab %}
 
 {% tab title="Carthage" %}
-**Add the extension framework to your Cartfile**
-
-```
-binary "https://raw.githubusercontent.com/cobrowseio/cobrowse-sdk-ios-binary/master/cobrowse-sdk-ios-extension-binary.json" ~> 2.0
-```
-
-{% hint style="info" %}
-Remember to run `carthage update` after modifying your Cartfile.
-{% endhint %}
-
-Link the `CobrowseIOAppExtension.framework` to your extension target that can be found at `./Carthage/Build/iOS`.
+You can now add the same `CobrowseSDK.xcframework` to your broadcast extension target just as you did to your main app target.
 {% endtab %}
 
 {% tab title="Manual" %}
-**Download the latest .zip**
-
-Visit [https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases](https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases) and download `CobrowseIOAppExtension.xcframework.zip`.
-
-Link the `CobrowseIOAppExtension.framework` to your extension target.
-
-{% hint style="info" %}
-Please be sure to use the same release for both `CobrowseIO` and `CobrowseIOAppExtension`.
-{% endhint %}
+Manually link the `CobrowseSDK.xcframework` to your extension target.
 {% endtab %}
 {% endtabs %}
 
 **Implement the extension**
 
-Xcode will have added `SampleHandler.m` and `SampleHandler.h` (or `SampleHander.swift`) files as part of the target you created earlier. Replace the content of the files with the following:
+Xcode will have added `SampleHandler.swift` or `SampleHandler.m` and `SampleHandler.h` files as part of the target you created earlier. Replace the content of the files with the following:
 
 **Swift**
 
 ```swift
 import CobrowseIOAppExtension
 
-class SampleHandler: CobrowseIOReplayKitExtension {
-
-}
+class SampleHandler: CobrowseIOReplayKitExtension { }
 ```
 
 **Objective C**
@@ -217,7 +132,7 @@ You're now ready to build and run your app. The full device capability is only a
 
 If you've set everything up properly, after clicking the blue circular icon you should see the following screen to select your Broadcast Extension.
 
-![](../../.gitbook/assets/broadcast\_extension\_example.png)
+![](../../.gitbook/assets/broadcast_extension_example.png)
 
 **Troubleshooting**
 
@@ -232,7 +147,7 @@ If full device screen capture on iOS is not working, please check the following:
 The Cobrowse.io SDK for Android will allow full device screen capture, including home screen, device settings, and everything else, just by toggling "full device mode" during an active session.
 
 {% hint style="info" %}
-These instructions also apply to .NET Android implementations.&#x20;
+These instructions also apply to .NET Android implementations.
 {% endhint %}
 
 No extra integration work is required to use full device mode via our Android SDK.
@@ -241,8 +156,9 @@ No extra integration work is required to use full device mode via our Android SD
 The SDK uses a service with the foreground type attribute set to `mediaProjection`. You are required to fill in a declaration form on Google Play and provide a video of your app using this permission. See the [Google Play Store requirements](https://support.google.com/googleplay/android-developer/answer/13392821?hl=en) for details on listing your app when using this API.
 
 If your app does not use the full device screen capture, you can remove usage of the Media Projection API. In your application `AndroidManifest.xml` file:
-- remove `FOREGROUND_SERVICE_MEDIA_PROJECTION` permission declaration
-- remove `foregroundServiceType` attribute from `CobrowseService` declaration
+
+* remove `FOREGROUND_SERVICE_MEDIA_PROJECTION` permission declaration
+* remove `foregroundServiceType` attribute from `CobrowseService` declaration
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -277,7 +193,7 @@ For unattended full device access, we strongly recommend:
 
 **Troubleshooting**
 
-* If the screen is black during full device screen capture, please make sure your views are not marked as secure. More info here: [https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE)
+* If the screen is black during full device screen capture, please make sure your views are not marked as secure. More info here: [https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG\_SECURE](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_SECURE)
 * If you are using Android Enterprise, please ensure your enterprise settings do not disallow screen capture.
 * If you get `compile error android:foregroundServiceType not found`, please update your Android project to use `compileSdkVersion 29`.
 {% endtab %}

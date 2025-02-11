@@ -28,11 +28,11 @@ CobrowseIO.customData = {
 
 ```swift
 CobrowseIO.instance().customData = [
-    kCBIOUserIdKey: "<your_user_id>" as NSObject,
-    kCBIOUserNameKey: "<your_user_name>" as NSObject,
-    kCBIOUserEmailKey: "<your_user_email>" as NSObject,
-    kCBIODeviceIdKey: "<your_device_id>" as NSObject,
-    kCBIODeviceNameKey: "<your_device_name>" as NSObject
+    CBIOUserIdKey: "<your_user_id>",
+    CBIOUserNameKey: "<your_user_name>",
+    CBIOUserEmailKey: "<your_user_email>",
+    CBIODeviceIdKey: "<your_device_id>",
+    CBIODeviceNameKey: "<your_device_name>"
 ]
 ```
 
@@ -40,18 +40,18 @@ CobrowseIO.instance().customData = [
 
 ```objectivec
 CobrowseIO.instance.customData = @{
-    kCBIOUserIdKey: @"<your_user_id>",
-    kCBIOUserNameKey: @"<your_user_name>",
-    kCBIOUserEmailKey: @"<your_user_email>",
-    kCBIODeviceIdKey: @"<your_device_id>",
-    kCBIODeviceNameKey: @"<your_device_name>"
+    CBIOUserIdKey: @"<your_user_id>",
+    CBIOUserNameKey: @"<your_user_name>",
+    CBIOUserEmailKey: @"<your_user_email>",
+    CBIODeviceIdKey: @"<your_device_id>",
+    CBIODeviceNameKey: @"<your_device_name>"
 };
 ```
 {% endtab %}
 
 {% tab title="Android" %}
 ```java
-HashMap<String, Object> customData = new HashMap<>();
+HashMap<String, String> customData = new HashMap<>();
 customData.put("user_id", "<your_user_id>");
 customData.put("user_name", "<your_user_name>");
 customData.put("user_email", "<your_user_email>");

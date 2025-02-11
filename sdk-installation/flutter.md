@@ -45,7 +45,7 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 
 ## Requirements
 
-* iOS 11.0 or later
+* iOS 12.0 or later
 * Android API version 24 (7.0 Nougat) or later
 
 {% hint style="success" %}

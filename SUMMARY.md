@@ -10,7 +10,7 @@
 * [React Native](sdk-installation/react-native.md)
 * [Flutter](sdk-installation/flutter.md)
 * [.NET Mobile](sdk-installation/dotnet.md)
-* [MacOS](sdk-installation/macos.md)
+* [macOS](sdk-installation/macos.md)
 * [Windows](sdk-installation/windows.md)
 
 ## SDK Features

@@ -85,7 +85,7 @@ struct AccountView: View {
             
             Text(verbatim: email)
                 .font(.title2)
-                .redacted()
+                .cobrowseRedacted()
         }
     }
 }
@@ -107,7 +107,7 @@ struct AccountView: View {
             Text(verbatim: email)
                 .font(.title2)
         }
-        .redacted()
+        .cobrowseRedacted()
     }
 }
 ```

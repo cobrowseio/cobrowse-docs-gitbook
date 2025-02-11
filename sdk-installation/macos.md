@@ -2,25 +2,42 @@
 description: MacOS SDK for native desktop applications
 ---
 
-# MacOS
+# macOS
 
 ## Installation
 
-The Cobrowse SDK for MacOS is available for installation via several dependency managers, or as a framework to integrate directly into your project:
+The Cobrowse SDK for macOS is available for installation via several dependency managers, or as a framework to integrate directly into your project:
 
 {% tabs %}
+{% tab title="SPM" %}
+```
+https://github.com/cobrowseio/cobrowse-sdk-ios-binary.git
+```
+
+Add the `CobrowseSDK` package dependency to **your app target**.
+{% endtab %}
+
 {% tab title="Pods" %}
 ```ruby
-pod 'CobrowseIO', '~>2'
+pod 'CobrowseIO', '~>3'
 ```
+
+_Don't forget to run `pod repo update` then `pod install` after you've edited your Podfile._
 {% endtab %}
 
 {% tab title="Carthage" %}
-Carthage support is currently unavailable for our MacOS SDK as Carthage does not yet support XCFrameworks.
+<pre><code><strong>binary "https://raw.githubusercontent.com/cobrowseio/cobrowse-sdk-ios-binary/master/cobrowse-sdk-ios-binary.json" ~> 3.0
+</strong></code></pre>
+
+{% hint style="info" %}
+Remember to run `carthage update --use-xcframeworks` after modifying your Cartfile.
+{% endhint %}
+
+Link the `CobrowseSDK.xcframework` to your main app target that can be found at `./Carthage/Build`.
 {% endtab %}
 
 {% tab title="Manual" %}
-Add CobrowseIO._**xc**framework_  (_**not**_ CobrowseIO.framework) to your project to use the SDK for MacOS:
+Add `CobrowseSDK.xcframework`, _**not**_ `CobrowseSDK.framework`, to your project to use the SDK for MacOS:
 
 ```
 https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases
@@ -28,30 +45,24 @@ https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases
 {% endtab %}
 {% endtabs %}
 
-_Don't forget to run `pod repo update` then `pod install` after you've edited your Podfile._
-
 {% tabs %}
 {% tab title="MacOS (Swift)" %}
 ```swift
-import CobrowseIO
+import CobrowseSDK
+...
 
-func applicationDidFinishLaunching(_ aNotification: Notification)
-{
-    CobrowseIO.instance().license = "put your license key here"
-    CobrowseIO.instance().start()
-}
+CobrowseIO.instance().license = "put your license key here"
+CobrowseIO.instance().start()
 ```
 {% endtab %}
 
 {% tab title="MacOS (Objective-C)" %}
 ```objectivec
-@import CobrowseIO;
+@import CobrowseSDK;
+...
 
-- (void)applicationDidFinishLaunching:(NSNotification *)notification
-{
-    CobrowseIO.instance.license = @"put your license key here";
-    [CobrowseIO.instance start];
-}
+CobrowseIO.instance.license = @"put your license key here";
+[CobrowseIO.instance start];
 ```
 {% endtab %}
 {% endtabs %}

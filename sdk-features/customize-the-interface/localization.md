@@ -52,7 +52,6 @@ Create a new strings file named `CobrowseIO.strings` in your app project and sel
 The content of `CobrowseIO.strings` should be the following (replace string values with your own text):
 
 ```
-"CodeDisplayViewMessageInstruction" = "Provide this code to your support agent to begin screen sharing.";
 "ErrorDisplayViewMessage" = "Sorry, something went wrong. Check you're online and try again.";
 "ManageSessionViewMessage" = "You're sharing screens from this app with a support agent.";
 "ManageSessionViewButtonEnd" = "End Session";
@@ -104,22 +103,15 @@ Refer to [the Android documentation](https://developer.android.com/guide/topics/
 
 The content of `strings-cobrowse.xml` should be the following (replace XML values with your own text):
 
-```markup
+```xml
 <resources>
-    <string name="cobrowse_code_display_description">Provide this code to your support agent to begin screen sharing.</string>
     <string name="cobrowse_approve_session_description">A support agent would like to use this app with you. Do you accept?</string>
     <string name="cobrowse_approve_session_button_yes">Accept</string>
     <string name="cobrowse_approve_session_button_no">Cancel</string>
-    <string name="cobrowse_manage_session_description">You\'re sharing screens from this app with a support agent.</string>
     <string name="cobrowse_screenshare_request_title">Screen Sharing Request</string>
     <string name="cobrowse_button_end_session">End Session</string>
-    <string name="cobrowse_error_generic">Sorry, something went wrong. Check you\'re online and try again.</string>
     <string name="cobrowse_accessibility_service_description">Allows remote support</string>
-    <string name="cobrowse_cobrowse_accessibility_setup_title">Accessibility Service Setup</string>
     <string name="cobrowse_foreground_service_title">Your screen is shared with a support agent</string>
-    <string name="cobrowse_full_device_description">To allow full device control from remote support agents please enable the accessibility service for this app.</string>
-    <string name="cobrowse_full_device_title">Action Required</string>
-    <string name="cobrowse_open_accessibility_button">Open Settings</string>
     <string name="cobrowse_service_name">Remote Support</string>
     <string name="cobrowse_notification_channel_name">Support Notifications</string>
     <string name="cobrowse_remote_control_request_title">Remote Control Request</string>
