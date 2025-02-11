@@ -12,11 +12,11 @@ You should have the Web SDK installed on a client web page before following thes
 
 In some cases your customers using your website might need to complete tasks or view sites that you don't own or can modify. Universal Cobrowse allows for the session to continue to others sites whereby the agent can still browse and navigate with your customers in real time.
 
-## Demo
+### Demo
 
 {% embed url="https://vimeo.com/986762574/2fbdc3e837" %}
 
-## Setup
+### Setup
 
 You need to supply the SDK with a [glob pattern](https://en.wikipedia.org/wiki/Glob_\(programming\)) of URLs that should launch the Universal Cobrowse experience.
 
@@ -53,3 +53,12 @@ CobrowseIO.universalLinks = [ /^(?!.*(example.com|example.io)).+$/ ]
 ```
 
 _Notice the regex is an object not a String._
+
+### Redaction within Universal Cobrowse
+
+Redaction is still supported whilst using Universal Cobrowse. Please find full details by using the link below.
+
+{% content-ref url="redact-sensitive-data.md" %}
+[redact-sensitive-data.md](redact-sensitive-data.md)
+{% endcontent-ref %}
+

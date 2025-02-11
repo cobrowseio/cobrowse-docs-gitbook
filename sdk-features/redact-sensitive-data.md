@@ -25,6 +25,19 @@ Redactions are defined as CSS selectors, passed as an array to the Cobrowse SDK.
 CobrowseIO.redactedViews = ['.redacted', ...some other selectors...]
 ```
 
+Selectors can also be scoped by URL or [glob pattern](https://www.npmjs.com/package/glob-to-regexp#usage) by providing an `Object` where the key is the URL or glob pattern and the value is the array of `String` CSS Selectors to redact when viewing that page.
+
+The example below will always redact any element with the `redacted` class but will only redact all input elements when viewing any example.com page.
+
+```
+CobrowseIO.redactedViews = [ 
+    '.redacted',
+    { 'example.com*' : [ 'input' ] }
+]
+```
+
+#### Unredaction
+
 Our web SDK also supports an un-redaction mechanism, where by you can define sub-elements inside of a redacted element that should be visible to the agent. You can specify un-redaction selectors like this:
 
 ```javascript
@@ -295,7 +308,6 @@ Finally, within React Native some packages will render in new Windows/Root Views
 {% endtab %}
 
 {% tab title="Flutter" %}
-
 To redact an element in your Flutter application you can wrap it in a widget provided by the SDK:
 
 ```dart
