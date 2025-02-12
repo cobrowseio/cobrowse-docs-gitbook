@@ -55,7 +55,7 @@ This will associate sessions from your website with your Cobrowse.io account.
 
 Once you have your Javascript snippet and license key set up, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
 
-**Note: Cobrowse needs to be able to access your website, so localhost addresses are not recommenced for testing. To test on a local development version, we recommend using** [**ngrok**](https://ngrok.com/)**.**
+**Note: Cobrowse needs to be able to access your website, so localhost addresses are not recommended for testing. To test on a local development version, we recommend using** [**ngrok**](https://ngrok.com/)**.**
 
 ## Minimum browser requirements
 
