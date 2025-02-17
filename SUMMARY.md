@@ -37,6 +37,7 @@
 * [Advanced configuration](sdk-features/advanced-features/README.md)
   * [Starting and stopping the SDK](sdk-features/advanced-features/starting-and-stopping-the-sdk.md)
   * [Declaring capabilities](sdk-features/advanced-features/declaring-capabilities.md)
+  * [Intercepting mobile SDK network requests](sdk-features/advanced-features/intercepting-mobile-sdk-network-requests.md)
   * [Web](sdk-features/advanced-features/web/README.md)
     * [IFrames support](sdk-features/advanced-features/web/cross-document-iframes.md)
     * [IE 11 polyfills](sdk-features/advanced-features/web/ie-11-polyfills.md)
