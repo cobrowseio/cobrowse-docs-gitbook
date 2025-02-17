@@ -47,7 +47,7 @@
     * [Alternate render method](sdk-features/advanced-features/ios/alternate-render-method.md)
     * [Custom touch handling](sdk-features/advanced-features/ios/custom-touch-handling.md)
   * [Android](sdk-features/advanced-features/android/README.md)
-    * [Backporting TLS 1.2 to Android 4.4 (API 19)](sdk-features/advanced-features/android/android-tls.md)
+    * [Backporting TLS to older Android versions](sdk-features/advanced-features/android/android-tls.md)
 
 ## Agent-side integrations
 
