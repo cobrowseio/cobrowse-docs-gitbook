@@ -45,6 +45,14 @@ All users who login via SAML will, by default, have the Cobrowse.io "Support Age
 
 To import the real names of your users from your SAML provider, please configure a `displayName` SAML assertion within your IdP for your users.
 
+### Supporting Identity Provider initiated Logins
+
+To support IdP initiated logins please adjust the ACS / Callback / Recipient / Destination / SSO URL to specify the provider key in the query string.
+
+`https://<your hosted domain>/api/1/saml/auth/callback?provider=<abcdef>`
+
+Where `<abcdef>` is the provider key, it can be found as the last segment of the **Login page** URL shown on the Cobrowse dashboard, e.g. [https://cobrowse.io/login/saml/abcdef](https://cobrowse.io/login/saml/abcdef).
+
 ## IFrame integrations
 
 If you are running Cobrowse in your own IFrame integration, then you may optionally choose to perform the SSO within the IFrame by loading it from:
