@@ -29,7 +29,9 @@ If your SAML identity provider requires registering Cobrowse.io as an approved a
 * ACS / Callback / Recipient / Destination / SSO URL: `https://<your hosted domain>/api/1/saml/auth/callback`
 
 {% hint style="info" %}
-Please replace `<your hosted domain>` with `cobrowse.io` when using our hosted service.
+Please replace `<your hosted domain>` with `cobrowse.io` when using our hosted service.\
+\
+When setting the service provider id on your IdP ensure that the **Issuer** is left as  `cobrowseio-saml` on the Cobrowse dashboard.
 {% endhint %}
 
 ### Configuring Admin users
