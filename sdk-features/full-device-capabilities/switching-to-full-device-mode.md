@@ -64,7 +64,7 @@ if (session != null) {
 Session session = CobrowseIO.Instance.CurrentSession;
 if (session != null)
 {
-    session.SetFullDeviceState(FullDeviceState.On, (err, session) =>
+    session.SetFullDevice(FullDeviceState.On, (err, session) =>
     {
         if (err != null)
         {
@@ -149,7 +149,7 @@ CobrowseIO.instance.sessionDidLoad.listen((session) {
 ```dart
 CobrowseIO.Instance.SessionDidLoad += (sender, session) =>
 {
-    session.SetFullDeviceState(FullDeviceState.On, (err, session) =>
+    session.SetFullDevice(FullDeviceState.On, (err, session) =>
     {
         if (err != null)
         {
