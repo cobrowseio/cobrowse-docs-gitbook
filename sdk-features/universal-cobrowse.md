@@ -18,6 +18,8 @@ In some cases your customers using your website might need to complete tasks or 
 
 ### Setup
 
+Enable 'Universal Cobrowse' in the Cobrowse dashboard under Settings > General > Session Settings.
+
 You need to supply the SDK with a [glob pattern](https://en.wikipedia.org/wiki/Glob_\(programming\)) of URLs that should launch the Universal Cobrowse experience.
 
 {% hint style="info" %}
