@@ -12,7 +12,7 @@ The Cobrowse SDK for web is available either using a `<script>` tag via CDN, or 
 {% tab title="Script" %}
 Add this javascript snippet to the top of the `<head>` section of your website.
 
-```markup
+```javascript
 <script>
     (function(w,t,c,p,s,e){p=new Promise(function(r){w[c]={client:function(){if(!s){
     s=document.createElement(t);s.src='https://js.cobrowse.io/CobrowseIO.js';s.async=1;s.crossOrigin='anonymous';
