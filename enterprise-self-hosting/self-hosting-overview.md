@@ -38,7 +38,7 @@ Any questions or specific requirements to review? Please email us at [hello@cobr
 
 Depending on your choice, your deployment will already include specific versions of these components which you can adjust to your preference.
 
-MongoDB: We recommend 6.x for new deployments. The absolute minimum supported version is 3.2 , but using an end-of-life version this old is strongly discouraged.
+MongoDB: We recommend 6.x for new deployments. The absolute minimum supported version is 3.2, but using an end-of-life version this old is strongly discouraged.
 
 Redis: 6.x or 7.x but earlier versions are very likely supported. New deployments are recommended to use the latest available version.
 
