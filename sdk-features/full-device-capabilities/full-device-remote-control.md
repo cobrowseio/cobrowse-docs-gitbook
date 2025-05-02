@@ -101,7 +101,7 @@ Open system accessibility settings with:
 {% tabs %}
 {% tab title="Android" %}
 ```java
-CobrowseAccessibilityService.showSetup();
+CobrowseAccessibilityService.showSetup(...);
 ```
 {% endtab %}
 
@@ -113,16 +113,16 @@ CobrowseAccessibilityService.showSetup(...);
 {% endtab %}
 
 {% tab title="Flutter" %}
-The Cobrowse.io SDK for Flutter does not provide a default implementation to launch the accessibility service setup, but you can access this API in the native SDK using [Flutter platform channels](https://docs.flutter.dev/platform-integration/platform-channels).
-
-```java
-CobrowseAccessibilityService.showSetup(...);
+```dart
+CobrowseAccessibilityService.showSetup();
 ```
 {% endtab %}
 
 {% tab title=".NET Mobile" %}
 ```csharp
-CobrowseAccessibilityService.ShowSetup(...)
+#if __ANDROID__
+CobrowseAccessibilityService.ShowSetup(...);
+#endif
 ```
 {% endtab %}
 {% endtabs %}
@@ -144,16 +144,16 @@ CobrowseAccessibilityService.isRunning(...);
 {% endtab %}
 
 {% tab title="Flutter" %}
-The Cobrowse.io SDK for Flutter does not provide a default implementation to detect the state of the accessibility service, but you can access this API in the native SDK using [Flutter platform channels](https://docs.flutter.dev/platform-integration/platform-channels).
-
-```java
-CobrowseAccessibilityService.isRunning(...);
+```dart
+CobrowseAccessibilityService.isRunning();
 ```
 {% endtab %}
 
 {% tab title=".NET Mobile" %}
 ```csharp
-CobrowseAccessibilityService.IsRunning(...)
+#if __ANDROID__
+CobrowseAccessibilityService.IsRunning();
+#endif
 ```
 {% endtab %}
 {% endtabs %}

@@ -40,7 +40,7 @@ When you override this method you are responsible for presenting a `RPSystemBroa
 ```objectivec
 -(void) cobrowseHandleFullDeviceRequest:(CBIOSession*) session {
     // You must show a RPSystemBroadcastPickerView which is provided by the iOS platform.
-    // Call [session setFullDeviceState:kCBIOFullDeviceStateRejected callback:nil] if the user
+    // Call [session setFullDevice:kCBIOFullDeviceStateRejected callback:nil] if the user
     // dismisses the prompt without allowing the full device screen share.
 }
 ```
@@ -57,9 +57,9 @@ To override the the default remote control consent prompt, you should implement 
 @Override
 public void handleFullDeviceRequest(@NonNull Activity activity, @NonNull Session session) {
     // show your own UI here
-    // call session.setFullDeviceState(Session.FullDeviceState.On, null) to accept
-    // or session.setFullDeviceState(Session.FullDeviceState.Rejected, null) to reject
-    session.setFullDeviceState(Session.FullDeviceState.On, null);
+    // call session.setFullDevice(Session.FullDeviceState.On, null) to accept
+    // or session.setFullDevice(Session.FullDeviceState.Rejected, null) to reject
+    session.setFullDevice(Session.FullDeviceState.On, null);
 }
 ```
 {% endtab %}
@@ -176,9 +176,9 @@ To override the the full device consent prompt, you should implement the `cobrow
 
 ```objectivec
 -(void) cobrowseHandleFullDeviceRequest:(CBIOSession*) session {
-    // Call [session setFullDeviceState:kCBIOFullDeviceStateRejected callback:nil] if the user
+    // Call [session setFullDevice:kCBIOFullDeviceStateRejected callback:nil] if the user
     // dismisses the prompt without allowing the full device screen share.
-    // Or [session setFullDeviceState:kCBIOFullDeviceStateOn callback:nil] to allow the switch
+    // Or [session setFullDevice:kCBIOFullDeviceStateOn callback:nil] to allow the switch
     // full device mode.
 }
 ```
