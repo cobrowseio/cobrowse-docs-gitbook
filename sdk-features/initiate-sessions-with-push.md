@@ -26,11 +26,7 @@ A few changes to native code as described below.
 
 {% tabs %}
 {% tab title="iOS" %}
-If you are already using push notifications in your app, there is nothing further required on the native side.
-
-If you are not already using push notifications in your app, please enable them under Capabilities in Xcode and request push permission from the user whenever is appropriate:
-
-**Swift**
+You first need to `registerForRemoteNotificataions()`at a location that is right for your application.
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -38,11 +34,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-**Objective-C**
+Once requested the `didRegisterForRemoteNotificationsWithDeviceToken`delegate method will be called. You must then pass this token to Cobrowse using the `CobrowseIO.setDeviceToken` method.
 
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-    [application registerForRemoteNotifications];
+This device will now be associated associate with the push token winth the Cobrowse dashboard.
+
+```swift
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    CobrowseIO.setDeviceToken(deviceToken)
 }
 ```
 {% endtab %}

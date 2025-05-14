@@ -65,7 +65,7 @@ You should already have the `CobrowseSDK` added to your project via the method u
 {% tab title="SPM" %}
 With your broadcast extension target selected click the `+` button under **Frameworks and Libraries** and add `CobrowseSDK` to your extension target.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Adding CobrwseSDK via SPM to the extension target</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Adding CobrwseSDK via SPM to the extension target</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Pods" %}
@@ -157,8 +157,8 @@ The SDK uses a service with the foreground type attribute set to `mediaProjectio
 
 If your app does not use the full device screen capture, you can remove usage of the Media Projection API. In your application `AndroidManifest.xml` file:
 
-* remove `FOREGROUND_SERVICE_MEDIA_PROJECTION` permission declaration
-* remove `foregroundServiceType` attribute from `CobrowseService` declaration
+* remove `FOREGROUND_SERVICE_MEDIA_PROJECTION` permission declaration by adding the `<uses-permissions />` tag
+* remove `foregroundServiceType` attribute from `CobrowseService` declaration by setting the attributes in the `<service />` tag
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"

@@ -6,7 +6,7 @@ description: Have greater control over networking requests made by the mobile SD
 
 {% tabs %}
 {% tab title="iOS" %}
-You can proved the `URLSession` that will be used for all network requests made by the Cobrowse SDK.
+You can provide the `URLSession` that will be used for all network requests made by the Cobrowse SDK.
 
 ```swift
 CobrowseIO.instance().urlSession = \\ Your URLSession object
@@ -35,7 +35,6 @@ Requires iOS 15+ macOS 12+
 {% endtab %}
 
 {% tab title="Android" %}
-
 Cobrowse SDK uses [OkHttp](https://github.com/square/okhttp) for network communication. You can provide an `OkHttpClient` instance that will be used for all HTTP requests made by the Cobrowse SDK.
 
 ```kotlin
@@ -67,6 +66,3 @@ class LoggingInterceptor : Interceptor {
 ```
 {% endtab %}
 {% endtabs %}
-
-
-

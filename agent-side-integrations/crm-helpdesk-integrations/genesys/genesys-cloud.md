@@ -56,7 +56,7 @@ If you are [self-hosting](../../../enterprise-self-hosting/self-hosting-overview
 
 If you wish to present the Agent's desktop from within Genesys Cloud you need to add `display-capture` to the **Iframe Feature/Permissions Policy** configuration within the Cobrowse Integration. Without this you won't be able to share the agents desktop.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Troubleshooting
 
