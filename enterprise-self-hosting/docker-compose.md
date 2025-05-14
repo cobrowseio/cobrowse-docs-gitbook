@@ -78,7 +78,7 @@ If you'd like to the SSL termination in your load balancer and it's safe in your
 You're now ready to try starting Cobrowse. Just run these commands in the same location as the docker-compose.yml file:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 When all the docker containers have started, Cobrowse should be available on the domain you configured above. _Tip: add `--detach` to run the services in the background._
@@ -94,7 +94,7 @@ Open up a web browser and navigate to your Cobrowse domain, you should then be a
 Open up a terminal to the location of the docker-compose.yml file and run:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ## Other considerations

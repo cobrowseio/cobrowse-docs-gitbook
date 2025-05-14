@@ -10,7 +10,7 @@ description: >-
 You should have the Web SDK installed on a client web page before following these steps.
 {% endhint %}
 
-In some cases your customers using your website might need to complete tasks or view sites that you don't own or can modify. Universal Cobrowse allows for the session to continue to others sites whereby the agent can still browse and navigate with your customers in real time.
+In some cases your customers using your website might need to complete tasks or view sites that you don't own or can modify. Universal Cobrowse allows for the session to continue to others sites, via our Cobrowse Proxy, whereby the agent can still browse and navigate with your customers in real time.
 
 ### Demo
 
@@ -64,3 +64,12 @@ Redaction is still supported whilst using Universal Cobrowse. Please find full d
 [redact-sensitive-data.md](redact-sensitive-data.md)
 {% endcontent-ref %}
 
+### How does it work?
+
+When using Universal Cobrowse third-party websites are loaded in a modal window within your website. To achieve this experience we proxy all traffic seen in this modal window from the client to our Cobrowse Proxy.
+
+{% hint style="info" %}
+Only the pages loaded within the Universal Cobrowse window are proxied to the Cobrowse Proxy. When within a normal Cobrowse session the users requests are not proxied / modified.
+{% endhint %}
+
+Any request during the Universal Cobrowse session will be routed and performed through the Cobrowse Proxy, this includes any cookies set on these requests.
