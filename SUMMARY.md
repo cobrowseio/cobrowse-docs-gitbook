@@ -65,6 +65,7 @@
   * [Freshworks](agent-side-integrations/crm-helpdesk-integrations/freshdesk.md)
   * [Talkdesk](agent-side-integrations/crm-helpdesk-integrations/talkdesk.md)
   * [NICE](agent-side-integrations/crm-helpdesk-integrations/nice.md)
+  * [Dynamics 365 - Customer Service](agent-side-integrations/crm-helpdesk-integrations/dynamics.md)
 * [Custom integrations](agent-side-integrations/custom-integrations.md)
 * [Agent SDK](agent-side-integrations/agent-sdk/README.md)
   * [API Reference](agent-side-integrations/agent-sdk/api-reference.md)
