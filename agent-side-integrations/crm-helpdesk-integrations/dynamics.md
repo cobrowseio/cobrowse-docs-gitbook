@@ -31,15 +31,41 @@ To install and configure the Cobrowse integration with Dynamics 365:
    launcher. Under **Setup**, select the **OAuth Consent** link. This will
    generate a URL that must be approved by an Azure administrator.
 
-### Configuring chat channels
+### Enabling Cobrowse for live chat
 
-To enable Cobrowse functionality for specific chat channels:
+To enable Cobrowse functionality for live chat channels:
 
 1. Navigate to the **Copilot Service Admin Center** for your organization.
 2. Go to **Channels > Chat > Manage**.
 3. Edit your desired channel and open **User features**.
 4. Toggle the **Co-browse** feature on and select **Cobrowse.io** as the
    provider.
+
+Note that to use the Cobrowse user feature with the Dynamics live chat widget,
+you must integrate the [Cobrowse SDK](../../sdk-installation/web.md) into the
+webpage where the widget is hosted.
+
+### Enabling Cobrowse for other channel types
+
+Cobrowse functionality is also available for other communication channels such
+as voice, WhatsApp, and more. While the agent will not automatically see the
+user’s device in these cases, a cobrowsing session can still be initiated using
+a [6-digit code](../../sdk-features/6-digit-codes.md).
+
+If your channel is already set up, follow these steps to enable Cobrowse:
+
+1. Navigate to the **Copilot Service Admin Center** for your organization.
+2. Go to **Workspaces > Session Templates > Manage**.
+3. Select the session template associated with your channel and click **Edit**.
+4. Under **Additional Tabs**, choose **Add Existing Application**
+5. Search for **Cobrowse.io Tab** and add it to the list
+6. Click **Save & Close**
+
+Note: Default session templates cannot be edited. To work around this, create a
+new session template, replicate the settings from the default template, and then
+add the Cobrowse.io application tab.
+
+This will add Cobrowse as a default tab when agents open an interaction.
 
 ### Add our SDKs to get started!
 
