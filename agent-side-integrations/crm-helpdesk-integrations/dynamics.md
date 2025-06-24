@@ -1,30 +1,28 @@
 ---
 description: >-
-  Cobrowse integrates seamlessly with Omnichannel for Dynamics 365 Customer
-  Service, enabling real-time visual collaboration between agents and customers.
-  This integration is available through the Microsoft AppSource store.
+  Cobrowse integrates seamlessly with Dynamics 365 Customer Service, enabling
+  real-time visual collaboration between agents and customers. This integration
+  is available through the Microsoft AppSource store.
 ---
 
 # Dynamics 365 - Customer Service
 
 ## Overview
 
-Cobrowse integrates seamlessly with Omnichannel for Dynamics 365 Customer
-Service, enabling real-time visual collaboration between agents and customers.
-This integration is available through the [Microsoft AppSource store](TODO).
+Cobrowse integrates seamlessly with Dynamics 365 Customer Service, enabling
+real-time visual collaboration between agents and customers. This integration is
+available through the
+[Microsoft AppSource store](https://appsource.microsoft.com/en-us/product/dynamics-365/cobrowseiollc.integration).
 
-<!-- TODO: Link to AppSource listing -->
-
-<!-- TODO: Create video
-{% embed url="https://vimeo.com/924748894?share=copy" %} Cobrowse for Omnichannel for Dynamics 365 Customer Service
-{% endembed %}
--->
+{% embed url="https://vimeo.com/1095905912?share=copy" %} Cobrowse for Dynamics
+365 Customer Service {% endembed %}
 
 ## Installation guide
 
 To install and configure the Cobrowse integration with Dynamics 365:
 
-1. Install the app from the [Microsoft AppSource store](TODO).
+1. Install the app from the
+   [Microsoft AppSource store](https://appsource.microsoft.com/en-us/product/dynamics-365/cobrowseiollc.integration).
 2. _(Optional)_ If you are
    [self-hosting](../../../enterprise-self-hosting/self-hosting-overview.md)
    your Cobrowse.io instance, follow the
