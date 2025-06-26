@@ -82,8 +82,10 @@ the Cobrowse.io instance, there are two preliminary steps required:
    1. Visit [make.powerapps.com](https://make.powerapps.com).
    2. Select the environment where the Cobrowse application is deployed
    3. Navigate to **Solutions** and open the **Default Solution**
-   4. Update the value to your self-hosted instance URL, including protocol and
-      hostname (e.g., `https://cobrowse.example.com`).
+   4. Narrow down the object list to `Environment variables`, search for
+      `API base`. Identify the `cobrowse_api` variable and `Edit` it.
+   5. Set the `Current Value` the value to your self-hosted instance URL,
+      including protocol and hostname (e.g., `https://cobrowse.example.com`).
 
 2. Register an OAuth application.
 
