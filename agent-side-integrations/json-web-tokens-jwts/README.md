@@ -39,7 +39,11 @@ Follow these steps to generate your JWT:
 
 ### Step-by-step guidance
 
-We recorded a video showing the complete steps to generate a RS256 private key, use it to sign a JSON object with the required claims, and use it as a query parameter to automatically authenticate the specified user.  Hope it is helpful! [https://vimeo.com/812858694/dae42aa64a](https://vimeo.com/812858694/dae42aa64a)
+We recorded a video showing the complete steps to generate a RS256 private key, use it to sign a JSON object with the required claims, and use it as a query parameter to automatically authenticate the specified user. &#x20;
+
+{% embed url="https://player.vimeo.com/video/812858694?amp;app_id=58479&amp;autopause=0&amp;player_id=0&badge=0" %}
+Generate a JWT Token
+{% endembed %}
 
 We also recorded a video showing how to use the JWT Policy claim to restrict the scope of the JWT to a filtered set of devices. [https://www.youtube.com/watch?v=LCNEtzMv5U0](https://www.youtube.com/watch?v=LCNEtzMv5U0)
 
