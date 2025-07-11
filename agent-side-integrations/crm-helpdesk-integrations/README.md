@@ -35,6 +35,10 @@ We believe in putting Cobrowse where your agents are already working. Therefore,
 [talkdesk.md](talkdesk.md)
 {% endcontent-ref %}
 
+{% content-ref url="nice.md" %}
+[nice.md](nice.md)
+{% endcontent-ref %}
+
 {% content-ref url="../custom-integrations.md" %}
 [custom-integrations.md](../custom-integrations.md)
 {% endcontent-ref %}
