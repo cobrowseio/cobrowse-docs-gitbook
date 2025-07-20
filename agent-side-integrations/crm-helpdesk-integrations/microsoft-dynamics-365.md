@@ -1,11 +1,11 @@
 ---
 description: >-
-  Cobrowse integrates seamlessly with Dynamics 365 Customer Service, enabling
-  real-time visual collaboration between agents and customers. This integration
-  is available through the Microsoft AppSource store.
+  Cobrowse integrates seamlessly with Microsoft Dynamics 365 Customer Service,
+  enabling real-time visual collaboration between agents and customers. This
+  integration is available through the Microsoft AppSource store.
 ---
 
-# Dynamics 365 - Customer Service
+# Microsoft Dynamics 365 - Customer Service
 
 ## Overview
 
@@ -14,12 +14,12 @@ real-time visual collaboration between agents and customers. This integration is
 available through the
 [Microsoft AppSource store](https://appsource.microsoft.com/en-us/product/dynamics-365/cobrowseiollc.integration).
 
-{% embed url="https://vimeo.com/1095905912?share=copy" %} Cobrowse for Dynamics
-365 Customer Service {% endembed %}
+{% embed url="https://vimeo.com/1095905912?share=copy" %} Cobrowse for Microsoft
+Dynamics 365 Customer Service {% endembed %}
 
 ## Installation guide
 
-To install and configure the Cobrowse integration with Dynamics 365:
+To install and configure the Cobrowse integration with Microsoft Dynamics 365:
 
 1. Install the app from the
    [Microsoft AppSource store](https://appsource.microsoft.com/en-us/product/dynamics-365/cobrowseiollc.integration).
@@ -27,12 +27,12 @@ To install and configure the Cobrowse integration with Dynamics 365:
    [self-hosting](../../../enterprise-self-hosting/self-hosting-overview.md)
    your Cobrowse.io instance, follow the
    [self-hosted instructions](#self-hosted).
-3. Sign into your Dynamics 365 installation and assert you have a verified email
-   address. You can verify in **Copilot Service Admin Center** > User
-   management > Users > Manage > Your user > **Approve Email**
-4. As a Dynamics administrator, open the Cobrowse.io application from the app
-   launcher. Under **Setup**, select the **OAuth Consent** link. This will
-   generate a URL that must be approved by an Azure administrator.
+3. Sign into your Microsoft Dynamics 365 installation and assert you have a
+   verified email address. You can verify in **Copilot Service Admin Center** >
+   User management > Users > Manage > Your user > **Approve Email**
+4. As a Microsoft Dynamics administrator, open the Cobrowse.io application from
+   the app launcher. Under **Setup**, select the **OAuth Consent** link. This
+   will generate a URL that must be approved by an Azure administrator.
 
 ### Enabling Cobrowse for live chat
 
@@ -44,9 +44,9 @@ To enable Cobrowse functionality for live chat channels:
 4. Toggle the **Co-browse** feature on and select **Cobrowse.io** as the
    provider.
 
-Note that to use the Cobrowse user feature with the Dynamics live chat widget,
-you must integrate the [Cobrowse SDK](../../sdk-installation/web.md) into the
-webpage where the widget is hosted.
+Note that to use the Cobrowse user feature with the Customer Service live chat
+widget, you must integrate the [Cobrowse SDK](../../sdk-installation/web.md)
+into the webpage where the widget is hosted.
 
 ### Enabling Cobrowse for other channel types
 
@@ -122,7 +122,7 @@ the Cobrowse.io instance, there are two preliminary steps required:
 
 ## Controlling user access
 
-The Cobrowse Dynamics application includes two roles for managing user
+The Cobrowse Microsoft Dynamics application includes two roles for managing user
 permissions:
 
 1. `Cobrowse.io - Administrator`
@@ -136,4 +136,4 @@ permissions:
    sessions during customer interactions.
 
 Note that in order for your users to authenticate into Cobrowse, their email
-address has to be verified in Dynamics 365.
+address has to be verified in Microsoft Dynamics 365.

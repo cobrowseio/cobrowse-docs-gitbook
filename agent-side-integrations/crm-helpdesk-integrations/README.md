@@ -39,8 +39,8 @@ We believe in putting Cobrowse where your agents are already working. Therefore,
 [nice.md](nice.md)
 {% endcontent-ref %}
 
-{% content-ref url="dynamics.md" %}
-[dynamics.md](dynamics.md)
+{% content-ref url="microsoft-dynamics-365.md" %}
+[microsoft-dynamics-365.md](microsoft-dynamics-365.md)
 {% endcontent-ref %}
 
 {% content-ref url="../custom-integrations.md" %}
