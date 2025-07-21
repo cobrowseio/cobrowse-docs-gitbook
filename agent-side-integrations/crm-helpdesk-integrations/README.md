@@ -1,8 +1,8 @@
 ---
 description: >-
   Out-of-box integrations for leading CCaaS providers including Intercom,
-  Zendesk, Genesys, Salesforce, Freshworks, Talkdesk, NICE, and Five9, as well
-  as many private CX platforms. Inquire today.
+  Zendesk, Genesys, Salesforce, Freshworks, Talkdesk, NICE, Five9 and
+  Microsoft Dynamics 365, as well as many private CX platforms. Inquire today.
 ---
 
 # Platform integrations
@@ -37,6 +37,10 @@ We believe in putting Cobrowse where your agents are already working. Therefore,
 
 {% content-ref url="nice.md" %}
 [nice.md](nice.md)
+{% endcontent-ref %}
+
+{% content-ref url="microsoft-dynamics-365.md" %}
+[microsoft-dynamics-365.md](microsoft-dynamics-365.md)
 {% endcontent-ref %}
 
 {% content-ref url="../custom-integrations.md" %}
