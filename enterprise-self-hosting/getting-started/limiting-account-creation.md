@@ -6,7 +6,7 @@ description: >-
 
 # Limiting account creation
 
-By default your Cobrowse Enterprise instance supports multiple tennants and will allow anyone to create new accounts, just as in our hosted version. In most instances you will want to limit this to specific people, or members of your organisation.&#x20;
+By default your Cobrowse Enterprise instance supports multiple tenants and new account creation will be restricted to [superusers](adding-a-superuser.md). In most instances you will want to change this to allow other members of your organisation to also create accounts.&#x20;
 
 ### Configuring account creators
 
