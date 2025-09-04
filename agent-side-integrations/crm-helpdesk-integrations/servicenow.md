@@ -38,12 +38,12 @@ To install and configure the Cobrowse integration with ServiceNow:
          default, this is `my-cobrowse-keystore`.
    4. Configure the system properties, All > `sys_properties.list` + enter >
       Search for `x_1781074`:
-      1. Update the `x_1781074_cobrow_0.license` property and set it to your
+      1. Update the `x_billc_cobrowse_i.license` property and set it to your
          cobrowse account license which you find on the cobrowse dashboard>
          Settings > General
       2. _(Optional)_ If you are
          [self-hosting](../../enterprise-self-hosting/self-hosting-overview.md)
-         your Cobrowse.io instance, update the `x_1781074_cobrow_0.base_url`
+         your Cobrowse.io instance, update the `x_billc_cobrowse_i.base_url`
          system property and point it at your own installation.
 
 ### Enabling Cobrowse for Portable Virtual Agent chat widget
@@ -58,13 +58,13 @@ license key can be found in your **Account Settings**, seen above.
 The Cobrowse ServiceNow application includes two roles for managing user
 permissions:
 
-1.  `x_1781074_cobrow_0.Administrator`
+1.  `x_billc_cobrowse_i.Administrator`
 
     Grants access to the Cobrowse.io application via the All > Cobrowse.io >
     Dashboard. Users with this role can view active devices, sessions, and
     settings.
 
-2.  `x_1781074_cobrow_0.Agent`
+2.  `x_billc_cobrowse_i.Agent`
 
     Grants access to the Cobrowse sidebar, allowing agents to initiate cobrowse
     sessions during customer interactions.
