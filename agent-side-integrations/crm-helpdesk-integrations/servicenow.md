@@ -37,7 +37,7 @@ To install and configure the Cobrowse integration with ServiceNow:
       2. Signing Key: The password that was given on the cobrowse dashboard. By
          default, this is `my-cobrowse-keystore`.
    4. Configure the system properties, All > `sys_properties.list` + enter >
-      Search for `x_1781074`:
+      Search for `x_billc`:
       1. Update the `x_billc_cobrowse_i.license` property and set it to your
          cobrowse account license which you find on the cobrowse dashboard>
          Settings > General
