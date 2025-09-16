@@ -48,10 +48,34 @@ To install and configure the Cobrowse integration with ServiceNow:
 
 ### Enabling Cobrowse for Portable Virtual Agent chat widget
 
+The cobrowse device id needs to be passed into the chat widget. This can be done
+as follows:
+
+```javascript
+const snUrl = 'https://your-instance.service-now.com'
+const script = document.createElement('script')
+script.type = 'module'
+script.src = `${snUrl}/uxasset/externals/now-requestor-chat-popover-app/index.jsdbx?sysparm_substitute=false`
+script.onload = () => {
+  CobrowseIO.client().then(function() {
+    const deviceId = CobrowseIO.deviceId()
+    const chat = new ServiceNowChat({
+      instance: snUrl,
+      context: {
+        cobrowse_device_id: deviceId
+      },
+    });
+  });
+}
+document.body.appendChild(script)
+
+// We also recommend that the chat widget itself is automatically ignored for your agents
+CobrowseIO.ignoredViews = ['now-requestor-chat-popover'];
+```
+
 Don't forget to include the [Cobrowse SDK](../../sdk-installation/web.md) into
 the webpage where the Portable Virtual Agent chat widget is running. No further
-changes should be necessary on the ServiceNow side to enable cobrowsing. Your
-license key can be found in your **Account Settings**, seen above.
+changes should be necessary on the ServiceNow side to enable cobrowsing.
 
 ## Controlling user access
 
