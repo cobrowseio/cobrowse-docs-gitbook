@@ -25,7 +25,7 @@ This is great if the end-user navigates to browser tabs outside of your website,
 No extra integration work is required to use full device mode via our Web SDK.
 
 {% hint style="warning" %}
-Due to browser limitations, this feature is not available on IE11, or in the mobile browsers such as Mobile Chrome and Mobile Safari. Please see our native [Android](../../sdk-installation/android.md) and [iOS](../../sdk-installation/ios.md) SDKs for [full device capabilities](./) on mobile.
+Due to browser limitations, this feature is not available on mobile browsers such as mobile Chrome and mobile Safari. Please see our native [Android](../../sdk-installation/android.md) and [iOS](../../sdk-installation/ios.md) SDKs for [full device capabilities](./) on mobile.
 {% endhint %}
 {% endtab %}
 

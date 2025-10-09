@@ -4,7 +4,7 @@ description: >-
   connectivity.
 ---
 
-# NICE
+# NICE CX
 
 ## Overview
 

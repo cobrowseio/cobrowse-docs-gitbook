@@ -1,15 +1,14 @@
 ---
 description: >-
   Cobrowse integrates seamlessly with Microsoft Dynamics 365 Customer Service,
-  enabling real-time visual collaboration between agents and customers. This
-  integration is available through the Microsoft AppSource store.
+  enabling real-time visual collaboration between agents and customers.
 ---
 
 # Dynamics 365
 
 ## Overview
 
-Cobrowse integrates seamlessly with Dynamics 365 Customer Service, enabling real-time visual collaboration between agents and customers. This integration is available through the [Microsoft AppSource store](https://appsource.microsoft.com/en-us/product/dynamics-365/cobrowseiollc.integration).
+This integration is available through the [Microsoft AppSource store](https://appsource.microsoft.com/en-us/product/dynamics-365/cobrowseiollc.integration).
 
 {% embed url="https://vimeo.com/1095905912?share=copy" %}
 Cobrowse for Microsoft Dynamics 365 Customer Service

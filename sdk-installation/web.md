@@ -59,22 +59,16 @@ Once you have your Javascript snippet and license key set up, navigate to [https
 
 ## Minimum browser requirements
 
-Cobrowse.io for Web supports all major browsers including Chrome, Firefox, Safari, Opera, Edge, and IE11.
+Cobrowse.io for Web supports all major browsers including Chrome, Firefox, Safari, Opera and Edge.
 
-Our Web SDK has an optional "full-device" mode which enables the user to share their entire desktop without any installation. Due to browser limitations, this feature is not available on IE11, or in the mobile browsers such as Mobile Chrome and Mobile Safari. Please see our native [Android](android.md) and [iOS](ios.md) SDKs for [full device capabilities](../sdk-features/full-device-capabilities/) on mobile.
+Our Web SDK has an optional "full-device" mode which enables the user to share their entire desktop without any installation. Due to browser limitations, this feature is not available on mobile browsers such as mobile Chrome and mobile Safari. Please see our native [Android](android.md) and [iOS](ios.md) SDKs for [full device capabilities](../sdk-features/full-device-capabilities/) on mobile.
 
-The specific browser versions supported are Chrome 16+, Firefox 11+, Safari 7+, Opera 12.1+, Edge 12+, and IE11.
+The specific browser versions supported are Chrome 16+, Firefox 11+, Safari 7+, Opera 12.1+ and Edge 12+
 
 ## **IFrames support**
 
 {% content-ref url="../sdk-features/advanced-features/web/cross-document-iframes.md" %}
 [cross-document-iframes.md](../sdk-features/advanced-features/web/cross-document-iframes.md)
-{% endcontent-ref %}
-
-## IE 11 support
-
-{% content-ref url="../sdk-features/advanced-features/web/ie-11-polyfills.md" %}
-[ie-11-polyfills.md](../sdk-features/advanced-features/web/ie-11-polyfills.md)
 {% endcontent-ref %}
 
 ## Cross-domain support
