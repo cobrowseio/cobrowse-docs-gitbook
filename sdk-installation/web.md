@@ -63,7 +63,7 @@ Cobrowse.io for Web supports all major browsers including Chrome, Firefox, Safar
 
 Our Web SDK has an optional "full-device" mode which enables the user to share their entire desktop without any installation. Due to browser limitations, this feature is not available on mobile browsers such as mobile Chrome and mobile Safari. Please see our native [Android](android.md) and [iOS](ios.md) SDKs for [full device capabilities](../sdk-features/full-device-capabilities/) on mobile.
 
-The specific browser versions supported are Chrome 16+, Firefox 11+, Safari 7+, Opera 12.1+ and Edge 12+
+The specific browser versions supported are Chrome 105+, Firefox 142+, Safari 11+, Opera 120+, Edge 139+
 
 ## **IFrames support**
 
