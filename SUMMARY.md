@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Getting started](README.md)
+* [Getting startedss](README.md)
 
 ## SDK Installation
 
@@ -47,6 +47,7 @@
     * [Custom touch handling](sdk-features/advanced-features/ios/custom-touch-handling.md)
   * [Android](sdk-features/advanced-features/android/README.md)
     * [Backporting TLS to older Android versions](sdk-features/advanced-features/android/android-tls.md)
+  * [Session metrics](sdk-features/advanced-features/session-metrics.md)
 
 ## Agent-side integrations
 
