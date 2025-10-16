@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Getting startedss](README.md)
+* [Getting started](README.md)
 
 ## SDK Installation
 
