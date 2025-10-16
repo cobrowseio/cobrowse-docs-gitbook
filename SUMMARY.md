@@ -37,6 +37,7 @@
 * [Advanced configuration](sdk-features/advanced-features/README.md)
   * [Starting and stopping the SDK](sdk-features/advanced-features/starting-and-stopping-the-sdk.md)
   * [Declaring capabilities](sdk-features/advanced-features/declaring-capabilities.md)
+  * [Session metrics](sdk-features/advanced-features/session-metrics.md)
   * [Intercepting mobile SDK network requests](sdk-features/advanced-features/intercepting-mobile-sdk-network-requests.md)
   * [Web](sdk-features/advanced-features/web/README.md)
     * [IFrames support](sdk-features/advanced-features/web/cross-document-iframes.md)
@@ -47,7 +48,6 @@
     * [Custom touch handling](sdk-features/advanced-features/ios/custom-touch-handling.md)
   * [Android](sdk-features/advanced-features/android/README.md)
     * [Backporting TLS to older Android versions](sdk-features/advanced-features/android/android-tls.md)
-  * [Session metrics](sdk-features/advanced-features/session-metrics.md)
 
 ## Agent-side integrations
 
