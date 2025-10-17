@@ -12,7 +12,7 @@ Cobrowse.io is available as an add-on on the Five9 platform through the [Five9 C
 
 Cobrowse.io can be used on Chat and Phone interactions so that agents can quickly start Cobrowse sessions with full context of the customer.
 
-Our team can assist you on quickly setting these up in Five9. Please contact us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
+Our team can assist you on quickly setting these in Five9. Please contact us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 
 {% embed url="https://www.youtube.com/watch?v=zK81B6imCkk" %}
 
