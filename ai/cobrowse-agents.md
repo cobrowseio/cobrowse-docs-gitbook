@@ -14,7 +14,6 @@ Virtual agents are configured in the settings panel of the Cobrowse Dashboard. T
 Each virtual agent has:
 - A **display name** that users see (e.g., "Jessica")
 - An **identifier** used for SDK integration
-sica for the trial agent) and an identifier for use in the SDK.
 
 ## SDK integration
 
@@ -42,3 +41,11 @@ Production virtual agents connected to your ElevenLabs account have no usage lim
 - Additional MCP integrations
 
 **Note:** Production agents do not perform automatic web searches. You must configure a [knowledge base](https://elevenlabs.io/docs/agents-platform/customization/knowledge-base/rag) with relevant content to provide context for your virtual agent.
+
+## Billing
+
+Virtual agent sessions are billed separately from standard Cobrowse usage.
+
+{% hint style="success" %}
+Have questions about virtual agent pricing? Contact us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
+{% endhint %}

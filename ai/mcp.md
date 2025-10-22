@@ -42,3 +42,11 @@ Retrieves the semantic representation of the end user's current view. Requires a
 ### highlight_element_and_wait
 
 Highlights an element on the page and waits for user interaction. Requires an active cobrowsing session.
+
+## Billing
+
+Virtual agent sessions are billed separately from standard Cobrowse usage.
+
+{% hint style="success" %}
+Have questions about virtual agent pricing? Contact us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
+{% endhint %}
