@@ -9,7 +9,7 @@ Cobrowse provides ready-to-use virtual agents powered by ElevenLabs, offering se
 
 ## Enablement
 
-Virtual agents are configured in the settings panel of the Cobrowse Dashboard. To enable production-grade virtual agents, add your [ElevenLabs](https://elevenlabs.io) API key.
+Virtual agents are configured in the settings panel of the Cobrowse dashboard. To enable production-grade virtual agents, add your [ElevenLabs](https://elevenlabs.io) API key.
 
 Each virtual agent has:
 - A **display name** that users see (e.g., "Jessica")
