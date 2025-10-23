@@ -16,6 +16,19 @@ To be notified when a new release is available (for any deployment type), please
 
 Changelog notes for all releases are available: [https://github.com/cobrowseio/cobrowse-enterprise-helm/releases](https://github.com/cobrowseio/cobrowse-enterprise-helm/releases). Image updates usually contain security patches.
 
+#### Testing your deployment
+
+A sanity test package is available as a container as part of our Enterprise software. It can be used to check a deployment was succesful. It can be used with Docker in the following way:\
+
+
+```
+docker run -e COBROWSE_E2E_SUPERUSER_TOKEN=<super_user_token>                       \ 
+           -e COBROWSE_E2E_BASE_URL=https://example.com -e CI=true                  \                       \       
+           -e COBROWSE_E2E_CLIENT_SDK_URL=https://<deployment>/sdk-js/CobrowseIO.js \
+           -v $(pwd)/playwright-report:/app/playwright-report                       \
+           cobrowse-integration-tests-enterprise
+```
+
 ### Upgrading Cobrowse
 
 **AWS, Azure, GCP and Docker-compose**
