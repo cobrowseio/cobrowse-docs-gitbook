@@ -10,8 +10,12 @@ description: >-
 The Cobrowse MCP server endpoint is available at:
 
 ```
-https://<your instance domain>/virtual-agent/1/mcp
+https://cobrowse.io/virtual-agent/1/mcp
 ```
+
+{% hint style="info" %}
+If you self-host your instance, then replace`cobrowse.io` with your `<your instance domain>`.
+{% endhint %}
 
 Cobrowse MCP supports the Streamable HTTP transport.
 
