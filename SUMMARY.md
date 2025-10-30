@@ -49,6 +49,11 @@
   * [Android](sdk-features/advanced-features/android/README.md)
     * [Backporting TLS to older Android versions](sdk-features/advanced-features/android/android-tls.md)
 
+## AI
+
+* [Cobrowse virtual agents](ai/cobrowse-agents.md)
+* [MCP](ai/mcp.md)
+
 ## Agent-side integrations
 
 * [Agent-side overview](agent-side-integrations/agent-side-overview.md)
