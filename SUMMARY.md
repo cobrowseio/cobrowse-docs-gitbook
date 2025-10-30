@@ -107,3 +107,9 @@
   * [L7 firewall configuration](enterprise-self-hosting/advanced/firewalls.md)
   * [Docker proxy configuration](enterprise-self-hosting/advanced/docker-proxy-configuration.md)
 * [Troubleshooting](enterprise-self-hosting/troubleshooting.md)
+
+## AI
+
+* [Cobrowse virtual agents](ai/cobrowse-agents.md)
+* [MCP](ai/mcp.md)
+
