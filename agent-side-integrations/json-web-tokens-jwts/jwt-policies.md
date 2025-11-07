@@ -66,7 +66,7 @@ The examples so far showed how to provide restricted access to specific resource
 {
   role: null,
   policy: {
-    version:    3,
+    version: 3,
     sessions: { },
     push:     { },
     devices:  { }
