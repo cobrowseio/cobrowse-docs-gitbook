@@ -13,7 +13,7 @@ The rules are defined as an extra `policy` claim in the [JWT](./), described usi
 
 ```json
 {
-  version: 2,
+  version: 3,
   sessions: { ... optional policy description ... },
   devices: { ... optional policy description ... }
 }
@@ -29,17 +29,10 @@ A policy that limits the JWT to **devices only** that are associated to a partic
 
 ```javascript
 {
-  version: 2,
-  devices: { custom_data: { user_id: 'my user id here' } }
-}
-```
-
-A policy that limits the JWT to **sessions only** that are associated to a particular user id:
-
-```javascript
-{
-  version: 2,
-  sessions: { custom_data: { user_id: 'my user id here' } }
+  policy: {
+    version: 3,
+    devices: { custom_data: { user_id: 'my user id here' } }
+  }
 }
 ```
 
@@ -47,58 +40,48 @@ A policy that limits the JWT to **devices** and **sessions** that you have added
 
 ```javascript
 {
-  version: 2,
-  sessions: {
-    custom_data: {
-      my_custom_data: 'some value here',
-      my_other_custom_data: 'some other value here'
-    }
-  },
-  devices: {
-    custom_data: {
-      my_custom_data: 'some value here',
-      my_other_custom_data: 'some other value here'
+  policy: {
+    version: 3,
+    sessions: {
+      custom_data: {
+        my_custom_data: 'some value here',
+        my_other_custom_data: 'some other value here'
+      }
+    },
+    devices: {
+      custom_data: {
+        my_custom_data: 'some value here',
+        my_other_custom_data: 'some other value here'
+      }
     }
   }
 }
 ```
 
-A policy that allows full access to **sessions**, but no access at all to **devices**:
+### Custom Roles
+
+The examples so far showed how to provide restricted access to specific resources, it's also possible to adjust the permissions of existing roles or create a custom set of permissions. For example a policy that allows access to start a session on any **device** or join any existing **session**:
 
 ```javascript
 {
-  version: 2,
-  sessions: { }
+  role: null,
+  policy: {
+    version:    3,
+    sessions: { },
+    push:     { },
+    devices:  { }
+  }
 }
 ```
 
-A policy that allows access to a **session** with id _12345_, but no access at all to **devices**:
+In the same way granular access to each resource can be adjusted through policies. This policy allows full administrator permissions except for the ability to modify dashboard settings:
 
 ```javascript
 {
-  version: 2,
-  sessions: { id: '12345' }
-}
-```
-
-### Upgrading from V1 policies
-
-Version 1 of our JWT policies are being deprecated in favour of a more flexible structure, so you will need to update your integration with a simple change. To upgrade your policy you should add a `custom_data` object around the policy for each resource type, and an explicit version field to the policy.
-
-For example, a version 1 policy used to start sessions with matching devices looked like this:
-
-```javascript
-{
-    devices: { user_id: 'abcde123' } // Old format!
-} 
-```
-
-Would become a version 2 policy that looks like this:
-
-```javascript
-{
-    version: 2, // add an explicit version of 2
-    devices: { custom_data: { user_id: 'abcde123' } }, // Note the new custom_data object
-    sessions: {}
+  role: 'administrator',
+  policy: {
+    version: 3,
+    features: { permissions: ['read'] }
+  }
 }
 ```
