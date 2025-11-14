@@ -12,7 +12,7 @@ The available metrics are:
 
 With these it is possible to understand when the device last successfully responded and how long that message took to be acknowledged.
 
-A latencey of **200ms** or below is a good connection.
+A latency of **200ms** or below is a good connection.
 
 {% tabs %}
 {% tab title="Web" %}
