@@ -52,7 +52,7 @@
 ## AI
 
 * [Cobrowse virtual agents](ai/cobrowse-agents.md)
-* [MCP](ai/mcp.md)
+* [Cobrowse MCP](ai/mcp.md)
 
 ## Agent-side integrations
 
