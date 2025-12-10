@@ -18,7 +18,7 @@ Migrating from version 1? Follow the instructions here first: [Migrating from le
 
 ## Install the app
 
-Search for 'Cobrowse.io' in the AppExchange Marketplace and select our application.&#x20;
+Search for 'Cobrowse.io' in the AppExchange Marketplace and select our application.
 
 <figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>The Cobrowse.io AppExchange Marketplace application.</p></figcaption></figure>
 
@@ -48,26 +48,26 @@ Select Edit Policies and change Permitted Users to "Admin Approved users are pre
 
 ![Select Admin approved users are pre-authorized to enable access to users.](<../../../.gitbook/assets/Screenshot 2021-09-20 at 15.34.17.png>)
 
-## Managing access using Salesforce Profiles&#x20;
+## Managing access using Salesforce Profiles
 
 If you manage access using Salesforce Profiles within your organisation to access Cobrowse.io then follow the steps below. If you instead require Permission Sets, skip to the next section.
 
-Next select Manage Profiles from the Profiles section of the Manage page display.&#x20;
+Next select Manage Profiles from the Profiles section of the Manage page display.
 
-![Select Manage Profiles to allow user profiles access to Cobrowse.io. ](<../../../.gitbook/assets/Screenshot 2021-09-20 at 15.36.40.png>)
+![Select Manage Profiles to allow user profiles access to Cobrowse.io.](<../../../.gitbook/assets/Screenshot 2021-09-20 at 15.36.40.png>)
 
-Within the Manage Profiles options select System Administrator and other profiles (e.g. Standard User) and then Save.&#x20;
+Within the Manage Profiles options select System Administrator and other profiles (e.g. Standard User) and then Save.
 
 Search Cobrowse.io in the App Launcher search bar again and go back to the dashboard by selecting either option.
 
-The Cobrowse.io dashboard should now be visible to permitted profiles.&#x20;
+The Cobrowse.io dashboard should now be visible to permitted profiles.
 
 ## Managing access using Salesforce Permission Sets
 
-If you manage access using Salesforce Permission Sets, then follow the instructions below. Otherwise, use the previous section to enable Cobrowse.io using Salesforce Profiles. &#x20;
+If you manage access using Salesforce Permission Sets, then follow the instructions below. Otherwise, use the previous section to enable Cobrowse.io using Salesforce Profiles.
 
 {% hint style="warning" %}
-Due to an underlying Salesforce restriction, you need to clone the Permission Sets that are shipped with our App when it is installed in order to enabled them.&#x20;
+Due to an underlying Salesforce restriction, you need to clone the Permission Sets that are shipped with our App when it is installed in order to enabled them.
 {% endhint %}
 
 To do this, go to your organisation's Permission Sets tab and Clone the Cobrowse.io Agent and Cobrowse.io Admin Permission Sets.
@@ -76,11 +76,11 @@ To do this, go to your organisation's Permission Sets tab and Clone the Cobrowse
 **Note: you may change the name of the cloned permission sets, but you should not make any other changes.**
 {% endhint %}
 
-This will mean that two Permission Sets for both Cobrowse.io Agent and Cobrowse.io Admin appear, this is expected.&#x20;
+This will mean that two Permission Sets for both Cobrowse.io Agent and Cobrowse.io Admin appear, this is expected.
 
 ![Click the Clone button on the Permission Sets and save them without changing anything else.](<../../../.gitbook/assets/Screenshot 2021-09-14 at 16.42.46.png>)
 
-Go back to the App Manager and manage CobrowseIOWebApp again. Select Manage Permission Sets and add both of the cloned Cobrowse.io Agent and Cobrowse.io Admin Permission Sets to the App. The correct ones are the ones that are able to be added, the non-cloned ones will show an error message.&#x20;
+Go back to the App Manager and manage CobrowseIOWebApp again. Select Manage Permission Sets and add both of the cloned Cobrowse.io Agent and Cobrowse.io Admin Permission Sets to the App. The correct ones are the ones that are able to be added, the non-cloned ones will show an error message.
 
 ![Add the cloned Permission Sets to the CobrowseIOWebApp, leave the original in place.](<../../../.gitbook/assets/Screenshot 2021-09-14 at 16.44.57.png>)
 
@@ -118,7 +118,7 @@ The sidebar widget should then be displayed in all of the pages that it has been
 If you migrated from v1, then your Cobrowse.io account settings will have been preserved.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Cobrowse.io Dashboard</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Cobrowse.io Dashboard</p></figcaption></figure>
 
 ## Add our SDKs to get started!
 
@@ -128,7 +128,7 @@ See [Getting started](../../../) to add our SDKs and begin end-to-end testing! Y
 
 This step is optional for clients who wish to override the default device filtering in the Cobrowse.io Sidebar widget. For example in Cases and Contacts, the sidebar widget will filter by devices that match the end user's email address by default.
 
-In Salesforce legacy, this filtering was provided in the Cobrowse.io Settings tab. It is now located within the Cobrowse.io Dashboard. Go to Cobrowse.io Dashboard (e.g. via App Launcher search) then Account Settings (Admins only), then Integrations, then Salesforce record Mapping.&#x20;
+In Salesforce legacy, this filtering was provided in the Cobrowse.io Settings tab. It is now located within the Cobrowse.io Dashboard. Go to Cobrowse.io Dashboard (e.g. via App Launcher search) then Account Settings (Admins only), then Integrations, then Salesforce record Mapping.
 
 <figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption><p>Salesforce record mapping</p></figcaption></figure>
 
