@@ -1,15 +1,14 @@
 ---
 description: >-
   Cobrowse integrates seamlessly with ServiceNow workflows, enabling real-time
-  visual collaboration between agents and customers. This integration is
-  available through the ServiceNow Store.
+  visual collaboration between agents and customers.
 ---
 
 # ServiceNow
 
 ## Overview
 
-Cobrowse integrates seamlessly with ServiceNow workspaces such as _Service
+Cobrowse provides an integration with ServiceNow workspaces such as _Service
 Operations Workspace_ or _Customer Service Management_, enabling real-time
 visual collaboration between agents and customers. This integration is available
 through the [ServiceNow Store](https://store.servicenow.com).
