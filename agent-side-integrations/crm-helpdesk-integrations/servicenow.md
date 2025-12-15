@@ -11,7 +11,11 @@ description: >-
 Cobrowse provides an integration with ServiceNow workspaces such as _Service
 Operations Workspace_ or _Customer Service Management_, enabling real-time
 visual collaboration between agents and customers. This integration is available
-through the [ServiceNow Store](https://store.servicenow.com).
+through the [ServiceNow Store](https://store.servicenow.com/store/app/c989fa8247f9b694def56992e36d4328).
+
+{% embed url="https://vimeo.com/1112341553?share=copy" %}
+Cobrowse for ServiceNow
+{% endembed %}
 
 ## Installation guide
 
