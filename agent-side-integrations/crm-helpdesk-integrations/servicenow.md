@@ -26,7 +26,7 @@ To install and configure the Cobrowse integration with ServiceNow:
    1. Generate a public key under Settings > Integrations > JWT SSO.
    2. Generate a key store for it under Settings > Integrations > ServiceNow
 3. As a ServiceNow administrator:
-   1. Install the app from the [ServiceNow Store](https://store.servicenow.com).
+   1. Install the app from the [ServiceNow Store](https://store.servicenow.com/store/app/c989fa8247f9b694def56992e36d4328).
    2. Add the keystore under All > Multi-Provider SSO > Administration > x509
       Certificate.
       1. Name: Cobrowse.io
