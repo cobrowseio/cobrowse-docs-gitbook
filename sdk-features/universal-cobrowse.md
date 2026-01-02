@@ -28,8 +28,8 @@ You will need to share the domains, including any subdomains, that will be used 
 
 ```
 CobrowseIO.universalLinks = [
-    'example.com*',
-    'example.io/account*,
+    'https://example.com*',
+    'https://example.io/account*,
     '*.net*',
 ]
 ```
