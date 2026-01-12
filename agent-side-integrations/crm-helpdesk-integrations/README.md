@@ -48,7 +48,7 @@ We believe in putting Cobrowse where your agents are already working. Therefore,
 {% endcontent-ref %}
 
 {% content-ref url="servicenow.md" %}
-[servicenow.md](niservicenowce.md)
+[servicenow.md](servicenow.md)
 {% endcontent-ref %}
 
 {% content-ref url="../custom-integrations.md" %}
