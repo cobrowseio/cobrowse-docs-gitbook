@@ -72,6 +72,7 @@
   * [NICE CX](agent-side-integrations/crm-helpdesk-integrations/nice.md)
   * [Dynamics 365](agent-side-integrations/crm-helpdesk-integrations/microsoft-dynamics-365.md)
   * [Five9](agent-side-integrations/crm-helpdesk-integrations/five9.md)
+  * [ServiceNow](agent-side-integrations/crm-helpdesk-integrations/servicenow.md)
 * [Custom integrations](agent-side-integrations/custom-integrations.md)
 * [Agent SDK](agent-side-integrations/agent-sdk/README.md)
   * [API Reference](agent-side-integrations/agent-sdk/api-reference.md)
