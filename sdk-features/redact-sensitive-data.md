@@ -32,7 +32,7 @@ The example below will always redact any element with the `redacted` class but w
 ```
 CobrowseIO.redactedViews = [ 
     '.redacted',
-    { 'example.com*' : [ 'input' ] }
+    { 'https://example.com/*' : [ 'input' ] }
 ]
 ```
 
