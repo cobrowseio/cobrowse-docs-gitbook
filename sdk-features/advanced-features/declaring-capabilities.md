@@ -28,7 +28,7 @@ Any capability included in the array will be enabled. To disable a capability om
 
 A full list of capabilities can be seen in the table below.
 
-<table><thead><tr><th width="214">Capability</th><th>Description</th></tr></thead><tbody><tr><td><code>cursor</code></td><td>Should agent cursor be rendered on client side</td></tr><tr><td><code>disappearing_ink</code></td><td>Can the agent use the disappearing ink tool <em>(web only)</em></td></tr><tr><td><code>drawing</code></td><td>Can the agent draw over the users screen</td></tr><tr><td><code>full_device</code></td><td>Is full device mode enabled</td></tr><tr><td><code>keypress</code></td><td>Can the agent generate key events</td></tr><tr><td><code>laser</code></td><td>Can the agent direct user with laser pointer</td></tr><tr><td><code>pointer</code></td><td>Can the agent point and click on things when in remote control mode</td></tr><tr><td><code>scroll</code></td><td>Can the agent scroll the page <em>(web only)</em></td></tr><tr><td><code>select</code></td><td>Can the agent select text <em>(web only)</em></td></tr><tr><td><code>universal</code></td><td>Is Universal Cobrowse enabled</td></tr></tbody></table>
+<table><thead><tr><th width="214">Capability</th><th>Description</th></tr></thead><tbody><tr><td><code>cursor</code></td><td>Should agent cursor be rendered on client side</td></tr><tr><td><code>disappearing_ink</code></td><td>Can the agent use the disappearing ink tool <em>(web only)</em></td></tr><tr><td><code>drawing</code></td><td>Can the agent draw over the users screen</td></tr><tr><td><code>rectangles</code></td><td>Can the agent use the rectangle tool</td></tr><tr><td><code>arrows</code></td><td>Can the agent use the arrow tool</td></tr><tr><td><code>full_device</code></td><td>Is full device mode enabled</td></tr><tr><td><code>keypress</code></td><td>Can the agent generate key events</td></tr><tr><td><code>laser</code></td><td>Can the agent direct the user with a laser pointer</td></tr><tr><td><code>pointer</code></td><td>Can the agent point and click on things when in remote control mode</td></tr><tr><td><code>scroll</code></td><td>Can the agent scroll the page <em>(web only)</em></td></tr><tr><td><code>select</code></td><td>Can the agent select text <em>(web only)</em></td></tr><tr><td><code>universal</code></td><td>Is Universal Cobrowse enabled</td></tr></tbody></table>
 
 #### Examples
 
@@ -37,7 +37,7 @@ Allow the agent to scroll but not enter any values or navigate
 {% tabs %}
 {% tab title="Web" %}
 ```javascript
-CobrowseIO.capabilities = [ 'cursor', 'drawing', 'full_device', 'laser', 'scroll' ];
+CobrowseIO.capabilities = [ 'cursor', 'drawing', 'rectangles', 'arrows', 'full_device', 'laser', 'scroll' ];
 ```
 {% endtab %}
 {% endtabs %}
@@ -47,7 +47,7 @@ Disable full device mode
 {% tabs %}
 {% tab title="Web" %}
 ```
-CobrowseIO.capabilities = [ 'cursor', 'drawing', 'keypress', 'laser', 'pointer', 'scroll', 'select' ];
+CobrowseIO.capabilities = [ 'cursor', 'drawing', 'rectangles', 'arrows', 'keypress', 'laser', 'pointer', 'scroll', 'select' ];
 ```
 {% endtab %}
 {% endtabs %}
