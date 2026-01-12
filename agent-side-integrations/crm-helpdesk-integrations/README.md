@@ -43,6 +43,14 @@ We believe in putting Cobrowse where your agents are already working. Therefore,
 [microsoft-dynamics-365.md](microsoft-dynamics-365.md)
 {% endcontent-ref %}
 
+{% content-ref url="five9.md" %}
+[five9.md](five9.md)
+{% endcontent-ref %}
+
+{% content-ref url="servicenow.md" %}
+[servicenow.md](niservicenowce.md)
+{% endcontent-ref %}
+
 {% content-ref url="../custom-integrations.md" %}
 [custom-integrations.md](../custom-integrations.md)
 {% endcontent-ref %}
