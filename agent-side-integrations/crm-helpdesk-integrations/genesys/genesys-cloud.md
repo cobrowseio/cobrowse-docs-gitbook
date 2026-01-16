@@ -6,7 +6,7 @@ description: >-
 
 # Genesys Cloud
 
-The Cobrowse.io integration for Genesys Cloud may be installed as a Premium App from the [App Foundry Listing](https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566).&#x20;
+The Cobrowse.io integration for Genesys Cloud may be installed as a Premium App from the [App Foundry Listing](https://appfoundry.genesys.com/filter/genesyscloud/listing/af9a5848-07fd-4021-bce0-663c02970566).
 
 {% embed url="https://vimeo.com/919780454?share=copy#t=0" %}
 
@@ -14,8 +14,8 @@ The Cobrowse.io integration for Genesys Cloud may be installed as a Premium App 
 
 There are two separate apps to install, please activate each Premium app:
 
-* Cobrowse.io (Standalone App) - installed as usual via AppFoundry.&#x20;
-* Cobrowse.io (Interaction) Widget - installed after the Standalone app.&#x20;
+* Cobrowse.io (Standalone App) - installed as usual via AppFoundry.
+* Cobrowse.io (Interaction) Widget - installed after the Standalone app.
   * Go to Genesys Cloud at Admin -> Integrations -> + Integrations (as shown below) and search for Cobrowse.io, selecting the Widget app.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2023-06-19 at 15.38.04.png" alt=""><figcaption></figcaption></figure>
@@ -29,16 +29,16 @@ Under Configuration you can select which Groups will have access to each app. Re
 {% hint style="info" %}
 **Roles**: the Cobrowse.io apps will create two additional roles, one for Agents and one for Administrators. Please see this article for more information: [https://support.cobrowse.io/genesys-user-roles](https://support.cobrowse.io/genesys-user-roles)
 
-**Group** configuration: Groups can be configured to automatically assign Roles, so you may wish to control access based on Groups which use the default Cobrowse.io Roles. Group access must be configured in order for the apps to appear.&#x20;
+**Group** configuration: Groups can be configured to automatically assign Roles, so you may wish to control access based on Groups which use the default Cobrowse.io Roles. Group access must be configured in order for the apps to appear.
 {% endhint %}
 
 ### Widget app queue filtering
 
-For the Cobrowse.io Interaction Widget, you can also specify the Queue Filtering. This will determine which agent queues the Widget app should appear for, **in addition to** any other filtering you have configured, e.g. Groups, Communication type, etc. Leaving this blank will mean no additional filtering is performed by queue.&#x20;
+For the Cobrowse.io Interaction Widget, you can also specify the Queue Filtering. This will determine which agent queues the Widget app should appear for, **in addition to** any other filtering you have configured, e.g. Groups, Communication type, etc. Leaving this blank will mean no additional filtering is performed by queue.
 
 ### Widget app communication filtering
 
-For the Cobrowse.io Interaction Widget, you can also specify the Communication Type Filtering, e.g. `chat,call,callback,email,sms,line,facebook,twitter,whatsapp`. This will determine which communication types the Widget app should appear for, **in addition to** any other filtering you have configured, e.g. Groups, Queues, etc. Leaving this blank will mean no additional filtering is performed by communication type.&#x20;
+For the Cobrowse.io Interaction Widget, you can also specify the Communication Type Filtering, e.g. `chat,call,callback,email,sms,line,facebook,twitter,whatsapp`. This will determine which communication types the Widget app should appear for, **in addition to** any other filtering you have configured, e.g. Groups, Queues, etc. Leaving this blank will mean no additional filtering is performed by communication type.
 
 ![](<../../../.gitbook/assets/Screen Shot 2021-04-09 at 10.13.30 AM.png>)
 
@@ -46,7 +46,7 @@ Possible communication types can be found in the Genesys docs: [https://develope
 
 ## Self-hosted instances
 
-Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io) before switching to your self-hosted instance.&#x20;
+Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io) before switching to your self-hosted instance.
 
 If you are [self-hosting](../../../enterprise-self-hosting/self-hosting-overview.md) the Cobrowse.io instance, you will need to replace "`cobrowse.io`" in both Application URLs with your self-hosted domain, e.g. `https://<your self-hosted domain>/apps/genesys/index.html?langTag={{pcLangTag}}&environment={{pcEnvironment}}&env=cloud`
 
@@ -54,9 +54,15 @@ If you are [self-hosting](../../../enterprise-self-hosting/self-hosting-overview
 
 ## Agent Present Mode
 
-If you wish to present the Agent's desktop from within Genesys Cloud you need to add `display-capture` to the **Iframe Feature/Permissions Policy** configuration within the Cobrowse Integration. Without this you won't be able to share the agents desktop.&#x20;
+If you wish to present the Agent's desktop from within Genesys Cloud you need to add `display-capture` to the **Iframe Feature/Permissions Policy** configuration within the Cobrowse Integration. Without this you won't be able to share the agents desktop.
 
 <figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+### Genesys Web Messaging
+
+To ensure that the Cobrowse sessions are closed whenever the Genesys interaction is closed ensure that the "Conversation Disconnect" configuration is set as seen below.
+
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Troubleshooting
 
@@ -72,4 +78,4 @@ If not then it should also be available to install in the marketplace in the sam
 
 ![](<../../../.gitbook/assets/Screenshot 2022-07-26 at 13.57.37.png>)
 
-If the Widget app is still not appearing, then please check your Role, Group, Queue, and Communication Type filtering configuration for the Widget app. If you are testing in non-production, then removing any Queue and Communication filtering can help to see if the issue lies with this.&#x20;
+If the Widget app is still not appearing, then please check your Role, Group, Queue, and Communication Type filtering configuration for the Widget app. If you are testing in non-production, then removing any Queue and Communication filtering can help to see if the issue lies with this.
