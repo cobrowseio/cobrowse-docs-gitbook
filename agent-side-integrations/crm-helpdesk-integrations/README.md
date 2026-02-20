@@ -51,6 +51,10 @@ We believe in putting Cobrowse where your agents are already working. Therefore,
 [servicenow.md](servicenow.md)
 {% endcontent-ref %}
 
+{% content-ref url="amazon-connect.md" %}
+[amazon-connect.md](amazon-connect.md)
+{% endcontent-ref %}
+
 {% content-ref url="../custom-integrations.md" %}
 [custom-integrations.md](../custom-integrations.md)
 {% endcontent-ref %}
