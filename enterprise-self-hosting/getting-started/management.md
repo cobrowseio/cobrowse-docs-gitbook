@@ -23,7 +23,7 @@ A sanity test package is available as a container as part of our Enterprise soft
 ```
 docker run -e COBROWSE_E2E_SUPERUSER_TOKEN=<super_user_token>                       \ 
            -e COBROWSE_E2E_BASE_URL=https://<domain> -e CI=true                     \                       \       
-           -e COBROWSE_E2E_CLIENT_SDK_URL=https://<domain>/sdk-js/CobrowseIO.js     \
+           -e COBROWSE_E2E_CLIENT_SDK_URL=https://<domain>/sdk-js/CobrowseIO.mjs     \
            -v $(pwd)/playwright-report:/app/playwright-report                       \
            cobrowse-integration-tests-enterprise
 ```
