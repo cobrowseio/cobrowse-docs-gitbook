@@ -21,9 +21,9 @@ Changelog notes for all releases are available: [https://github.com/cobrowseio/c
 A sanity test package is available as a container as part of our Enterprise software. It can be used to check a deployment was succesful. It can be used with Docker in the following way:
 
 ```
-docker run -e COBROWSE_E2E_SUPERUSER_TOKEN=<super_user_token>                       \ 
-           -e COBROWSE_E2E_BASE_URL=https://<domain> -e CI=true                     \                       \       
-           -e COBROWSE_E2E_CLIENT_SDK_URL=https://<domain>/sdk-js/CobrowseIO.mjs     \
+docker run -e COBROWSE_E2E_SUPERUSER_TOKEN=<super_user_token>                       \
+           -e COBROWSE_E2E_BASE_URL=https://<domain> -e CI=true                     \
+           -e COBROWSE_E2E_CLIENT_SDK_URL=https://<domain>/sdk-js/CobrowseIO.mjs    \
            -v $(pwd)/playwright-report:/app/playwright-report                       \
            cobrowse-integration-tests-enterprise
 ```
