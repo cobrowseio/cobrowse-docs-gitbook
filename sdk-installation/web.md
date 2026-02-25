@@ -13,16 +13,10 @@ The Cobrowse SDK for web is available either using a `<script>` tag via CDN, or 
 Add this javascript snippet to the top of the `<head>` section of your website.
 
 ```javascript
-<script>
-    (function(w,t,c,p,s,e){p=new Promise(function(r){w[c]={client:function(){if(!s){
-    s=document.createElement(t);s.src='https://js.cobrowse.io/CobrowseIO.js';s.async=1;s.crossOrigin='anonymous';
-    e=document.getElementsByTagName(t)[0];e.parentNode.insertBefore(s,e);s.onload=function()
-    {r(w[c]);};}return p;}};});})(window,'script','CobrowseIO');
-
-    CobrowseIO.license = "put your license key here";    
-    CobrowseIO.client().then(function(){
-        CobrowseIO.start();
-    });
+<script type="module">
+    import CobrowseIO from "https://js.cobrowse.io/CobrowseIO.mjs"
+    CobrowseIO.license = "put your license key here";
+    CobrowseIO.start();
 </script>
 ```
 {% endtab %}
@@ -116,7 +110,7 @@ script-src of: **`script-src js.cobrowse.io 'nonce-2726c7f26c';`**
 Note this is using  a nonce source which must also be present on the script tag which adds the Cobrowse SDK to your page. The value `2726c7f26c` represents the random value that should be dynamically generated and unique for each request. Read more about [CSP nonces here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src). &#x20;
 
 {% hint style="info" %}
-If you use the self-hosted version of the web SDK instead of `js.cobrowse.io`, e.g. [following this](../enterprise-self-hosting/advanced/web-sdk-pinning.md), then you should use that full URL instead, e.g. `https://<your instance domain>/sdk-js/CobrowseIO.js`.
+If you use the self-hosted version of the web SDK instead of `js.cobrowse.io`, e.g. [following this](../enterprise-self-hosting/advanced/web-sdk-pinning.md), then you should use that full URL instead, e.g. `https://<your instance domain>/sdk-js/CobrowseIO.mjs`.
 {% endhint %}
 
 You should be able to replace the unsafe-inline with the hash of your snippet if you wish. This will be available in the javascript console.
