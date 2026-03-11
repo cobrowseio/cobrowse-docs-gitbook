@@ -18,6 +18,7 @@ Once each SDK is added to your app, authenticated agents can connect to user dev
 [Dynamic 365](agent-side-integrations/crm-helpdesk-integrations/microsoft-dynamics-365.md), 
 [Five9](agent-side-integrations/crm-helpdesk-integrations/five9.md),
 [ServiceNow](agent-side-integrations/crm-helpdesk-integrations/servicenow.md),
+[Amazon Connect](agent-side-integrations/crm-helpdesk-integrations/amazon-connect.md),
 or with your own custom CRM, CX platform, or agent desktop using [IFrames](agent-side-integrations/custom-iframe-embeds.md) or our [Agent SDK](agent-side-integrations/agent-sdk/).
 
 {% hint style="info" %}
