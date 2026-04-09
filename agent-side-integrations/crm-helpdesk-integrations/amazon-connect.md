@@ -32,11 +32,8 @@ To install and configure the Cobrowse.io integration with Amazon Connect:
      `https://cobrowse.io/api/1/amazonconnect/launch?license=<your cobrowse license key>`
 3. Under instance association, associate the application with your Amazon
    Connect instance.
-4. As an Amazon Connect administrator, grant your Amazon Connect roles access to
-   the Cobrowse.io application by navigating to _Connect Workspace_ > _Users_ >
-   Security Profiles. Edit each role that requires access to the Cobrowse.io
-   application. Under the _Agent Applications_ section, grant _Access_ to the
-   Cobrowse application.
+4. Ensure your Amazon Connect roles have access to the Cobrowse application.
+   See [Controlling user access](#controlling-user-access)
 
 ### Enabling Cobrowse.io for the chat widget
 
@@ -59,3 +56,11 @@ amazon_connect("registerCallback", {
 Ensure the [Cobrowse.io SDK](../../sdk-installation/web.md) is included on the
 webpage where the chat widget is running. No further changes are required on the
 Amazon Connect side to enable cobrowsing.
+
+## Controlling user access
+
+As an Amazon Connect administrator, grant your Amazon Connect roles access to
+the Cobrowse.io application by navigating to _Connect Workspace_ > _Users_ >
+_Security Profiles_. Edit each role that requires access to the Cobrowse.io
+application. Under the _Agent Applications_ section, grant _Access_ to the
+Cobrowse application.
