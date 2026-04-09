@@ -41,7 +41,7 @@ session.setFullDevice(Session.FullDeviceState.Requested, (err, arg) -> {
 
 {% tab title="React Native" %}
 ```javascript
-await session.setFullDevice(true)
+await session.setFullDevice('requested')
 ```
 {% endtab %}
 

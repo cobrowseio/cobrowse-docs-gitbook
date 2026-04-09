@@ -23,6 +23,54 @@ To install and configure the Cobrowse integration with Microsoft Dynamics 365:
 3. Sign into your Microsoft Dynamics 365 installation and assert you have a verified email address. You can verify in **Copilot Service Admin Center** > User management > Users > Manage > Your user > **Approve Email**
 4. As a Microsoft Dynamics administrator, open the Cobrowse.io application from the app launcher. Under **Setup**, select the **OAuth Consent** link. This will generate a URL that must be approved by an Azure administrator.
 
+#### Configure the API
+
+[EU cloud](https://eu.cobrowse.io) and self hosted customers should point the API to their Cobrowse cluster.
+
+{% tabs %}
+{% tab title="EU Cloud" %}
+[EU cloud](https://eu.cobrowse.io) customers should point the API to the EU cloud by following these steps:
+
+1. Visit [make.powerapps.com](https://make.powerapps.com).
+2. Select the environment where the Cobrowse application is deployed
+3. Navigate to **Solutions** and open the **Default Solution**
+4. Filter the object list to `Environment variables` and search for `API base`. Identify the `cobrowse_api` variable and `Edit` it.
+5. Set the `Current Value` the value to `https://eu.cobrowse.io`.
+{% endtab %}
+
+{% tab title="Self Hosting" %}
+When [self-hosting](../../enterprise-self-hosting/self-hosting-overview.md) the Cobrowse.io instance, there are two preliminary steps required:
+
+1. Update the `cobrowse_api` environment variable
+   1. Visit [make.powerapps.com](https://make.powerapps.com).
+   2. Select the environment where the Cobrowse application is deployed
+   3. Navigate to **Solutions** and open the **Default Solution**
+   4. Narrow down the object list to `Environment variables`, search for `API base`. Identify the `cobrowse_api` variable and `Edit` it.
+   5. Set the `Current Value` the value to your self-hosted instance URL, including protocol and hostname (e.g., `https://cobrowse.example.com`).
+2.  Register an OAuth application.
+
+    1. As an azure administrator, go to the [Azure portal](https://portal.azure.com) > [Microsoft Entra ID](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview) > +
+    2. Select **+ Add** > **App registration** and configure
+       1. **Name**: `Cobrowse.io Application`
+       2. **Supported account types**: `Accounts in this organizational directory only`
+       3.  **Redirect URI**
+
+           **Platform**: `Web`
+
+           **URL**: `https://<your cobrowse instance>/api/1/dynamics/auth/callback`
+    3. Click **Register**
+    4. After registration:
+       * Note the **Application (Client) ID**.
+       * Create a client secret under \*\*Certificates & secrets
+    5. In your cobrowse.io deployment, set the following environment variables:
+
+    ```
+    dynamics__client_id=<your client id>
+    dynamics__client_secret=<your client secret>
+    ```
+{% endtab %}
+{% endtabs %}
+
 ### Enabling Cobrowse for live chat
 
 To enable Cobrowse functionality for live chat channels:
@@ -54,38 +102,6 @@ This will add Cobrowse as a default tab when agents open an interaction.
 ### Add our SDKs to get started!
 
 See [Getting started](../../) to add our SDKs and begin end-to-end testing! Your license key can be found in your **Account Settings**, seen above.
-
-### Self hosted
-
-When [self-hosting](../../enterprise-self-hosting/self-hosting-overview.md) the Cobrowse.io instance, there are two preliminary steps required:
-
-1. Update the `cobrowse_api` environment variable
-   1. Visit [make.powerapps.com](https://make.powerapps.com).
-   2. Select the environment where the Cobrowse application is deployed
-   3. Navigate to **Solutions** and open the **Default Solution**
-   4. Narrow down the object list to `Environment variables`, search for `API base`. Identify the `cobrowse_api` variable and `Edit` it.
-   5. Set the `Current Value` the value to your self-hosted instance URL, including protocol and hostname (e.g., `https://cobrowse.example.com`).
-2.  Register an OAuth application.
-
-    1. As an azure administrator, go to the [Azure portal](https://portal.azure.com) > [Microsoft Entra ID](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview) > +
-    2. Select **+ Add** > **App registration** and configure
-       1. **Name**: `Cobrowse.io Application`
-       2. **Supported account types**: `Accounts in this organizational directory only`
-       3.  **Redirect URI**
-
-           **Platform**: `Web`
-
-           **URL**: `https://<your cobrowse instance>/api/1/dynamics/auth/callback`
-    3. Click **Register**
-    4. After registration:
-       * Note the **Application (Client) ID**.
-       * Create a client secret under \*\*Certificates & secrets
-    5. In your cobrowse.io deployment, set the following environment variables:
-
-    ```
-    dynamics__client_id=<your client id>
-    dynamics__client_secret=<your client secret>
-    ```
 
 ## Controlling user access
 

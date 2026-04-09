@@ -16,5 +16,5 @@ CobrowseIO.start();
 **With this option, any view that matches any of the configured selectors is removed from the agent view.**
 
 {% hint style="info" %}
-Ignored views are different from [redacted views](../../redact-sensitive-data.md), which appear black to the agent.
+Ignored views are different from [redacted views](../../redact-sensitive-data/), which appear black to the agent.
 {% endhint %}

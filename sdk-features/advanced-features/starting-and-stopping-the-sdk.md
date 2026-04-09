@@ -75,7 +75,6 @@ If you do decide to delay or lazy load the SDK it is important to check if there
 ```javascript
 // On page load check if we should start the Cobrowse SDK right away
 if (CobrowseIO.currrentSession) {
-  await CobrowseIO.client();
   await CobrowseIO.start();
 }
 ```
@@ -105,6 +104,12 @@ CobrowseIO.instance.registration = NO;
 {% tab title="Android" %}
 ```java
 CobrowseIO.instance().registration(false);
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+```javascript
+CobrowseIO.registration = false
 ```
 {% endtab %}
 

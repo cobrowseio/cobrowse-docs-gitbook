@@ -60,8 +60,8 @@ _Notice the regex is an object not a String._
 
 Redaction is still supported whilst using Universal Cobrowse. Please find full details by using the link below.
 
-{% content-ref url="redact-sensitive-data.md" %}
-[redact-sensitive-data.md](redact-sensitive-data.md)
+{% content-ref url="redact-sensitive-data/" %}
+[redact-sensitive-data](redact-sensitive-data/)
 {% endcontent-ref %}
 
 ### How does it work?

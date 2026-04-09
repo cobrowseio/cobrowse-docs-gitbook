@@ -29,8 +29,12 @@ public class ModernTlsOkHttpClient {
 
    private static final String TAG = "ModernTlsOkHttpClient";
 
-   private static class ReusableSingleton {
+   private static class OkHttpClientSingleton {
       private static final OkHttpClient INSTANCE = create();
+
+   }
+
+   private static class ConscryptSingleton {
       private static final Provider CONSCRYPT = Conscrypt.newProvider();
    }
 
@@ -41,14 +45,14 @@ public class ModernTlsOkHttpClient {
     * Returns an app-wide reusable {@link OkHttpClient} instance.
     */
    public static OkHttpClient reuse() {
-      return ReusableSingleton.INSTANCE;
+      return OkHttpClientSingleton.INSTANCE;
    }
 
    /**
     * Returns an app-wide reusable {@link Provider} instance from Conscrypt.
     */
    public static Provider conscrypt() {
-      return ReusableSingleton.CONSCRYPT;
+      return ConscryptSingleton.CONSCRYPT;
    }
 
    /**

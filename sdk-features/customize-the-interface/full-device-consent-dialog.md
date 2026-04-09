@@ -10,7 +10,7 @@ Before a session is upgraded to [full device](../full-device-capabilities/), som
 
 {% tabs %}
 {% tab title="Web" %}
-#### Customizing the full device UI on Web
+**Customizing the full device UI on Web**
 
 ```javascript
 CobrowseIO.confirmFullDevice = function() {
@@ -104,7 +104,7 @@ CobrowseIO.handleFullDeviceRequest = () => {}
 
 export function FullDevicePrompt () {
   const session = useSession();
-  const isVisible = session?.full_device_state === 'requested'
+  const isVisible = session?.full_device === 'requested'
 
   const reject = () => session?.setFullDevice('off')
 
@@ -141,7 +141,7 @@ CobrowseIO.handleFullDeviceRequest = () => {}
 
 export function FullDevicePrompt () {
   const session = useSession();
-  const isVisible = session?.full_device_state === 'requested'
+  const isVisible = session?.full_device === 'requested'
 
   const reject = () => session?.setFullDevice('rejected')
   const displaySystemPrompt = () => session?.setFullDevice('on')
@@ -185,23 +185,16 @@ To override the the full device consent prompt, you should implement the `cobrow
 {% endtab %}
 
 {% tab title="Flutter" %}
-
 {% hint style="info" %}
 Please see the iOS and Android documentation for customizing the full device consent dialog.
 {% endhint %}
-
 {% endtab %}
 
 {% tab title=".NET Mobile" %}
-
 {% hint style="info" %}
 Please see the iOS and Android documentation for customizing the full device consent dialog.
 {% endhint %}
-
 {% endtab %}
 {% endtabs %}
 
-{% tab title="Windows" %}
 Full device by default, use the [user consent dialog](user-consent-dialog.md).
-{% endtab %}
-{% endtabs %}

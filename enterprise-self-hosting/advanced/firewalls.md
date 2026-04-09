@@ -12,7 +12,9 @@ This guide contains some information that can be useful when needing to secure y
 Paths are listed as **prefixes only** – all subpaths must be allowed by a firewall configuration.
 {% endhint %}
 
-### SDK required APIs
+### SDK APIs
+
+#### Required endpoints
 
 Here you can find the subset of the APIs that must be accessible to end user devices running our SDKs.
 
@@ -26,6 +28,14 @@ Here you can find the subset of the APIs that must be accessible to end user dev
 /sockets/1/
 ```
 
+#### Universal Cobrowse / PDF viewer
+
+The following endpoints must be accessible when using Universal Cobrowse and/or PDF viewer.
+
+```bash
+/proxy/1/universal
+```
+
 #### Pinning the web SDK version
 
 If you choose to [pin the web SDK](web-sdk-pinning.md) using the version that is shipped with your deployment, then you will also need to add that route.
@@ -34,7 +44,27 @@ If you choose to [pin the web SDK](web-sdk-pinning.md) using the version that is
 /sdk-js/
 ```
 
-### Agent-side required APIs&#x20;
+### Cobrowse AI
+
+#### SDK APIs
+
+The following endpoints must also be accessible from the end user devices when using Cobrowse AI.
+
+```bash
+/api/1/virtualagents
+```
+
+#### MCP orchestrator
+
+If using MCP this endpoint only needs to be accessible to your MCP orchestrator, not end user devices, so may not need to be public.
+
+```bash
+/virtual-agent/1/mcp
+```
+
+### Agent-side APIs
+
+#### Required endpoints
 
 These are the APIs required by the agent dashboard, or embedded agent side UI.
 
@@ -66,5 +96,5 @@ As well as the routes above, the HTML frontend must also be accessible for agent
 All headers, including custom headers, must be forwarded on the non-frontend routes. All query parameters must be forwarded on all routes.
 
 {% hint style="warning" %}
-**Warning:** We may add routes and parameters between versions. We always recommend  deploying new software versions to a staging environment and testing behind your firewall configuration before promoting new versions to production.
+**Warning:** We may add routes and parameters between versions. We always recommend deploying new software versions to a staging environment and testing behind your firewall configuration before promoting new versions to production.
 {% endhint %}

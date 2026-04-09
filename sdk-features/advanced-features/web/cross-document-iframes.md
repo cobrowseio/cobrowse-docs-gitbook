@@ -34,15 +34,14 @@ Elements within the cross-document iframe can also be redacted by using the URL 
 
 Full details can be seen at the link below.
 
-{% content-ref url="../../redact-sensitive-data.md" %}
-[redact-sensitive-data.md](../../redact-sensitive-data.md)
+{% content-ref url="../../redact-sensitive-data/" %}
+[redact-sensitive-data](../../redact-sensitive-data/)
 {% endcontent-ref %}
 
 ### Running only in an IFrame
 
-A few customers want to run Cobrowse.io only within an IFrame, and not any containing or parent page. This is supported, but requires passing an extra configuration option when starting Cobrowse.&#x20;
+A few customers want to run Cobrowse.io only within an IFrame, and not any containing or parent page. This is supported, but requires passing an extra configuration option when starting Cobrowse.
 
 ```javascript
 CobrowseIO.start({allowIFrameStart:true});
 ```
-
