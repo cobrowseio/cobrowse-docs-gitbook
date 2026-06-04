@@ -32,4 +32,4 @@ Agent access to Cobrowse can be controlled by assigning ACD Skills to users in C
 
 See [Getting started](../../) to add our SDKs and begin end-to-end testing! Your license key can be found in the Cobrowse.io dashboard Account Settings. To access it click the 'Launch' icon in the sidebar.
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Cobrowse.io for CXOne in action</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Cobrowse.io for CXOne in action</p></figcaption></figure>

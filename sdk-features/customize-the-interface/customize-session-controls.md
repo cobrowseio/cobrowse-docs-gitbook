@@ -98,7 +98,6 @@ CobrowseIO.showSessionControls = false;
 {% endtab %}
 
 {% tab title="Flutter" %}
-
 Listen to these event emitters to override the default session indicator. These methods may be called several times as the session progresses through its lifecycle, so you may need to adjust your UI accordingly.
 
 ```dart
@@ -110,11 +109,10 @@ CobrowseIO.instance.hideSessionControls.listen((session) {
     // Hide your session controls
 });
 ```
-
 {% endtab %}
 
 {% tab title=".NET Mobile" %}
-#### iOS implementation
+**iOS implementation**
 
 The SDK provides hooks via `CobrowseIODelegate` for you to render your own interface:
 
@@ -128,7 +126,7 @@ public override void HideSessionControls(Session session) {
 }
 ```
 
-#### Android implementation
+**Android implementation**
 
 You can fully customize the interface for a Cobrowse session. The SDK provides hooks via `CobrowseIO.ISessionControlsDelegate` for you to render your own interface:
 
@@ -380,9 +378,8 @@ function App() {
 ```
 {% endtab %}
 
-
 {% tab title=".NET Mobile" %}
-#### iOS implementation
+**iOS implementation**
 
 ```csharp
 using Cobrowse.IO.iOS;
@@ -459,7 +456,7 @@ public class CustomCobrowseDelegate : CobrowseIODelegate
 }
 ```
 
-#### Android implementation
+**Android implementation**
 
 You can fully customize the interface for a Cobrowse session. The SDK provides hooks via `CobrowseIO.ISessionControlsDelegate` for you to render your own interface:
 
@@ -490,7 +487,7 @@ public class MainApplication : Application, CobrowseIO.ISessionControlsDelegate
 }
 ```
 
-#### MAUI implementation
+**MAUI implementation**
 
 First, create an indicator view using MAUI (`CobrowseCustomView.xaml`):
 
@@ -644,6 +641,5 @@ public partial class App : Application
 #endif
     }
 ```
-
 {% endtab %}
 {% endtabs %}

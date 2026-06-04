@@ -118,7 +118,7 @@ The sidebar widget should then be displayed in all of the pages that it has been
 If you migrated from v1, then your Cobrowse.io account settings will have been preserved.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Cobrowse.io Dashboard</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Cobrowse.io Dashboard</p></figcaption></figure>
 
 ## Add our SDKs to get started!
 

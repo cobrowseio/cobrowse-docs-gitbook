@@ -78,7 +78,7 @@ CobrowseIO.instance.handleSessionRequest.listen((session) {
 {% endtab %}
 
 {% tab title=".NET Mobile" %}
-#### .NET iOS implementation
+**.NET iOS implementation**
 
 ```csharp
 public override void CobrowseHandleSessionRequest(Session session) {
@@ -90,7 +90,7 @@ public override void CobrowseHandleSessionRequest(Session session) {
 }
 ```
 
-#### .NET iOS implementation
+**.NET iOS implementation**
 
 ```csharp
 public void HandleSessionRequest(Activity activity, Session session) {
@@ -104,7 +104,7 @@ public void HandleSessionRequest(Activity activity, Session session) {
 }
 ```
 
-#### MAUI implementation
+**MAUI implementation**
 
 You can also achieve this functionality from a cross-platform project. In this case you don't have to implement your own delegate, but instead you subscribe to the `SessionDidRequest` event:
 
@@ -306,7 +306,7 @@ CobrowseIO.instance.handleSessionRequest.listen((session) {
 {% endtab %}
 
 {% tab title=".NET Mobile" %}
-#### iOS implementation
+**iOS implementation**
 
 ```csharp
 using Cobrowse.IO.iOS;
@@ -337,7 +337,7 @@ public class CustomCobrowseDelegate : CobrowseIODelegate
 }
 ```
 
-#### Android implementation
+**Android implementation**
 
 ```csharp
 using Cobrowse.IO.iOS;
@@ -387,7 +387,7 @@ public class CustomCobrowseDelegate : Java.Lang.Object, CobrowseIO.ISessionReque
 }
 ```
 
-#### MAUI implementation
+**MAUI implementation**
 
 Subscribe to the `SessionDidRequest` event in a single place, for example in the MAUI application class:
 
