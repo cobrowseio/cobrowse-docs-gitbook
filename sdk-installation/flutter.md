@@ -29,20 +29,20 @@ CobrowseIO.instance.setLicense('put your license key here');
 CobrowseIO.instance.start();
 ```
 
-### Add your License Key
-
-Please register an account and generate your free License Key at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings).
-
-This will associate sessions from your mobile app with your Cobrowse account.
-
 {% hint style="info" %}
-If you configure the license in the native iOS and Android SDKs and do not use APIs from the Flutter SDK directly, you will need to make sure that the SDK is properly initialized. Run the code below at the early stage of the app, e.g. in the root widget:
+By default, the Flutter SDK initializes automatically on the first call to a native Dart Cobrowse API. If you don't use APIs from the Flutter SDK directly, in case if the license is configured exclusively in the native iOS and Android SDKs, your application requires the SDK to be initialized earlier. Invoke the code below during app startup, such as from your root widget.
 
 ```dart
 CobrowseIO.instance.ensureInititalized();
 ```
 
 {% endhint %}
+
+### Add your License Key
+
+Please register an account and generate your free License Key at [https://cobrowse.io/dashboard/settings](https://cobrowse.io/dashboard/settings).
+
+This will associate sessions from your mobile app with your Cobrowse account.
 
 ### Flutter sample app
 
