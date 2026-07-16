@@ -35,6 +35,15 @@ Please register an account and generate your free License Key at [https://cobrow
 
 This will associate sessions from your mobile app with your Cobrowse account.
 
+{% hint style="info" %}
+If you configure the license in the native iOS and Android SDKs and do not use APIs from the Flutter SDK directly, you will need to make sure that the SDK is properly initialized. Run the code below at the early stage of the app, e.g. in the root widget:
+
+```dart
+CobrowseIO.instance.ensureInititalized();
+```
+
+{% endhint %}
+
 ### Flutter sample app
 
 We provide [a sample application](https://github.com/cobrowseio/cobrowse-sdk-flutter/tree/master/example) showing how to use the Cobrowse.io SDK in a Flutter app.
