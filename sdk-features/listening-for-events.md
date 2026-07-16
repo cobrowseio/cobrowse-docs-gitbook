@@ -274,7 +274,7 @@ You should then instantiate the delegate in the `application: didFinishLaunching
 }
 ```
 
-Finally, you can define the methods as required. You can refer to [this commit](https://github.com/cobrowseio/cobrowse-sdk-react-native/commit/db4ed8a57da53c2acc0310975f5eeda914db05f7) on our SDK for an example.
+Finally, you can define the methods as required.
 
 **Android**
 
@@ -293,6 +293,6 @@ public class MainApplication extends Application implements ReactApplication, Co
 }
 ```
 
-From this you can override the methods you need. You can refer to [this commit](https://github.com/cobrowseio/cobrowse-sdk-react-native/commit/00e3036c2247b8a20ed705543ca9df4aa54218f6) for a reference implementation within our React Native example app.
+From this you can override the methods you need.
 {% endtab %}
 {% endtabs %}

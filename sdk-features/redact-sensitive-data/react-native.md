@@ -25,8 +25,6 @@ CobrowseIO.webviewRedactedViews = [ '.redacted', ...some other selectors... ];
 
 You can follow the same delegate implementation for [iOS](ios.md#redact-views-within-custom-delegate-via-cobrowseiodelegate) or [Android](android.md#redact-views-within-custom-delegate-via-cobrowseio.redactiondelegate) to identify this views and redact or unredact them by default as required.&#x20;
 
-You can check the provided examples for [iOS](https://github.com/cobrowseio/cobrowse-sdk-react-native/blob/master/Example/ios/Example/AppDelegate.m) and [Android](https://github.com/cobrowseio/cobrowse-sdk-react-native/blob/master/Example/android/app/src/main/java/com/example/MainApplication.java) which redact by default the React Native Dev menu keeping one of the options unredacted to illustrate the technique.
-
 ### **Private by Default**
 
 Sometimes you may want to redact everything on the screen, then selectively "unredact" only the parts your support agents should be able to see. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.

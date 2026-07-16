@@ -33,10 +33,6 @@ Please register an account and generate your free License Key at [https://cobrow
 
 This will associate sessions from your mobile app with your Cobrowse account.
 
-### MAUI sample app
-
-We provide a sample application showing how to use Cobrowse.io NuGet packages in MAUI with .NET 8. [MAUI sample](https://github.com/cobrowseio/cobrowse-sdk-dotnet-mobile/tree/master/Sample) includes using 6-digit codes, full device screen sharing, and redacting sensitive data.
-
 ## Try it out
 
 Once you have your app running in the iOS Simulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!

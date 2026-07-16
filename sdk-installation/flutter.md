@@ -44,10 +44,6 @@ CobrowseIO.instance.ensureInititalized();
 
 {% endhint %}
 
-### Flutter sample app
-
-We provide [a sample application](https://github.com/cobrowseio/cobrowse-sdk-flutter/tree/master/example) showing how to use the Cobrowse.io SDK in a Flutter app.
-
 ## Try it out
 
 Once you have your app running in the iOS Simulator or on a physical device, navigate to [https://cobrowse.io/dashboard](https://cobrowse.io/dashboard) to see your device listed. You can click the "Connect" button to initiate a Cobrowse session!
