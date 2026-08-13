@@ -18,6 +18,12 @@ Cobrowse for Intercom
 
 Install the app from the [Intercom App Store](https://www.intercom.com/app-store/?app_package_code=cobrowse-screenshare-permissions) and follow the setup instructions!
 
+## Storing the Cobrowse session ID
+
+Cobrowse can automatically store the session ID on the Intercom conversation, which is useful for reporting purposes. This requires a manual step in your Intercom workspace.
+
+To enable this, create a new conversation attribute in your Intercom account settings under **Settings > Data > Conversations**. The attribute must be called **CobrowseSessionID**.
+
 ## Add our SDKs to get started!
 
 See [Getting started](../../) to add our SDKs and begin end-to-end testing! Your license key can be found in your Account Settings, seen above.
