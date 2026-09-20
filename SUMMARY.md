@@ -88,6 +88,9 @@
 * [Authentication (JWTs)](agent-side-integrations/json-web-tokens-jwts/README.md)
   * [JWT Policies](agent-side-integrations/json-web-tokens-jwts/jwt-policies.md)
 * [Authentication (SAML 2.0)](agent-side-integrations/authentication-saml-2.0.md)
+* [User provisioning (SCIM)](agent-side-integrations/scim/README.md)
+  * [Microsoft Entra](agent-side-integrations/scim/microsoft-entra.md)
+  * [Okta](agent-side-integrations/scim/okta.md)
 * [IFrame embeds](agent-side-integrations/custom-iframe-embeds.md)
 
 ## Enterprise self-hosting
