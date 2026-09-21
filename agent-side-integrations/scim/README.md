@@ -11,7 +11,7 @@ description: >-
 Cobrowse supports user provisioning via SCIM 2.0 (System for Cross-domain Identity Management). Point your identity provider at Cobrowse and it will create account members as people join your team, keep their details up to date and remove access when they leave.
 
 {% hint style="info" %}
-SCIM manages **who has an account**. [SAML SSO](../authentication-saml-2.0.md) manages **how they log in**. They are designed to be used together but each can be configured on its own.
+SCIM manages **who has an account**. [SAML SSO](https://docs.cobrowse.io/agent-side-integrations/authentication-saml-2.0) manages **how they log in**. They are designed to be used together but each can be configured on its own.
 {% endhint %}
 
 ## Requirements
@@ -45,7 +45,7 @@ A complete set of claims looks like this:
 }
 ```
 
-The [`policy` claim](../json-web-tokens-jwts/jwt-policies.md) gives full access to the `members` resource. Set `role` to `null` as provisioning takes its permissions from the policy rather than from a user role.
+The [`policy` claim](../json-web-tokens-jwts/jwt-policies) gives full access to the `members` resource. Set `role` to `null` as provisioning takes its permissions from the policy rather than from a user role.
 
 The claims are signed using **RS256** with a private key that you should keep safe. Save the public key in [your Cobrowse account](https://cobrowse.io/dashboard/settings/integrations) so Cobrowse can verify the token is authentic.
 
@@ -115,7 +115,7 @@ We support the SCIM `Users` resource. We do not support `Groups` so turn off gro
 
 ### Roles
 
-Newly provisioned users are assigned the `agent` role. Roles cannot be managed through SCIM. Roles are assigned through SAML (../authentication-saml-2.0.md) or an administrator can change a user's role in the Cobrowse dashboard.
+Newly provisioned users are assigned the `agent` role. Roles cannot be managed through SCIM. Roles are assigned through [SAML](https://docs.cobrowse.io/agent-side-integrations/authentication-saml-2.0) or an administrator can change a user's role in the Cobrowse dashboard.
 
 ### Deactivation
 
@@ -123,7 +123,7 @@ Setting `active` to `false` removes access immediately with no grace period and 
 
 ### Usernames must match your SSO identity
 
-If your users log in through [SAML](../authentication-saml-2.0.md), the SAML attribute Cobrowse uses as the username is `nameID`. The value mapped to `nameID` in the SAML assertion must match the value mapped to `userName` in your provisioning configuration.
+If your users log in through [SAML](https://docs.cobrowse.io/agent-side-integrations/authentication-saml-2.0), the SAML attribute Cobrowse uses as the username is `nameID`. The value mapped to `nameID` in the SAML assertion must match the value mapped to `userName` in your provisioning configuration.
 
 {% hint style="danger" %}
 If these values do not match, provisioning and login will both appear to work but will create two separate account members for the same user. Please check them against each other before enabling provisioning.

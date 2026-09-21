@@ -14,7 +14,7 @@ Application provisioning requires a Microsoft Entra ID P1 or P2 license, or a pl
 
 ## Before you start
 
-[Create a Cobrowse JWT](./#1.-create-a-cobrowse-jwt) to use as the bearer token. You will enter it in step 2 below.
+[Create a Cobrowse JWT](./#id-1.-create-a-cobrowse-jwt) to use as the bearer token. You will enter it in step 2 below.
 
 ## 1. Create the enterprise application
 
@@ -43,7 +43,7 @@ Click **Test connection**. Entra queries for a user that does not exist and chec
 
 ## 4. Review the attribute mappings
 
-Cobrowse uses four attributes: `userName`, `displayName`, `active` and `externalId`. See [the supported attributes](./#4.-map-the-supported-attributes) for what each one does.
+Cobrowse uses four attributes: `userName`, `displayName`, `active` and `externalId`. See [the supported attributes](./#id-4.-map-the-supported-attributes) for what each one does.
 
 Entra's default mappings include many more attributes than these. Cobrowse ignores them and you can remove them under **Provisioning** > **Attribute Mappings** to keep the mappings readable.
 

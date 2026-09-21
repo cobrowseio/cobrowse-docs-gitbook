@@ -14,7 +14,7 @@ SCIM provisioning is only available on applications created with the Okta App In
 
 ## Before you start
 
-[Create a Cobrowse JWT](./#1.-create-a-cobrowse-jwt) to use as the bearer token. You will enter it in step 3 below.
+[Create a Cobrowse JWT](./#id-1.-create-a-cobrowse-jwt) to use as the bearer token. You will enter it in step 3 below.
 
 ## 1. Create the app integration
 
@@ -24,7 +24,7 @@ Cobrowse is not listed in the Okta Integration Network so you will need to creat
 2. Select **SAML 2.0** if you also want your agents to log in to Cobrowse through Okta or **SWA** if you only need provisioning.
 3. Complete the wizard and give the application a name.
 
-If you select SAML 2.0, configure the SAML side using our [SAML 2.0 guide](../authentication-saml-2.0.md).
+If you select SAML 2.0, configure the SAML side using our [SAML 2.0 guide](https://docs.cobrowse.io/agent-side-integrations/authentication-saml-2.0).
 
 ## 2. Enable SCIM provisioning
 
@@ -66,7 +66,7 @@ Deactivating a user in Okta sets `active` to `false` in Cobrowse which removes t
 
 ## 5. Review the attribute mappings
 
-Cobrowse uses four attributes: `userName`, `displayName`, `active`, and `externalId`. See [the supported attributes](./#4.-map-the-supported-attributes) for what each one does.
+Cobrowse uses four attributes: `userName`, `displayName`, `active`, and `externalId`. See [the supported attributes](./#id-4.-map-the-supported-attributes) for what each one does.
 
 Okta's default SCIM profile also maps attributes such as `name.givenName`, `name.familyName`, `emails` and `locale`. Cobrowse ignores these and you can remove them under **Provisioning** > **To App** > **Attribute Mappings** to keep the mappings readable.
 
