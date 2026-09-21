@@ -80,7 +80,7 @@ Most providers ask which actions your SCIM service supports. Cobrowse supports *
 Where your provider offers a choice, the following also apply:
 
 * **Updates.** We accept both `PATCH` and `PUT` style updates, so either setting will work.
-* **Deprovisioning.** Choose to **disable** users rather than delete them. Deleting also removes the link between your identity provider and the Cobrowse account member, so a returning user is provisioned as a new account member.
+* **Deprovisioning.** Choose to **disable** users rather than delete them. Both revoke access immediately but deleting also removes the SCIM resource so your identity provider has to create them again rather than reactivate them.
 * **Groups.** Leave group provisioning off. See [users, not groups](./#users-not-groups) below.
 
 ## 4. Map the supported attributes
