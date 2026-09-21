@@ -1,7 +1,7 @@
 ---
 description: >-
   Configure SCIM provisioning for Cobrowse in Microsoft Entra, from creating the
-  enterprise application to mapping attributes.
+  enterprise application to starting provisioning.
 ---
 
 # Microsoft Entra
@@ -41,30 +41,48 @@ If you use a dedicated or self-hosted instance, then replace `cobrowse.io` with 
 
 Click **Test connection**. Entra queries for a user that does not exist and checks that the response status code and schema are correct. The test will succeed if the token is valid.
 
-## 4. Review the attribute mappings
+## 4. Configure the scoping filters
+
+Scoping filters control both which object types Entra provisions and which users are in scope. Open the **Provisioning** tab and under **Manage** select **Scoping filters**.
+
+### 1. Scope settings
+
+Cobrowse supports the SCIM `Users` resource but not `Groups`. Entra provisions both by default, so if you leave groups enabled Entra will try to create groups in Cobrowse and report provisioning errors.
+
+1. Set **Enable user provisioning** to **Enabled**.
+2. Set **Enable group provisioning** to **Disabled**.
+
+### 2. Scope by assignment
+
+Set **Users scope** to **Selected users** to limit provisioning to specific users or groups. We recommend this for most accounts.
+
+Setting it to **All users** provisions everyone in your directory into Cobrowse. Each of them becomes an account member with the `agent` role, so only choose it if every user in your tenant needs Cobrowse access.
+
+### 3. Select users and groups
+
+If you chose **Selected users**, click **Add user/group** and select the users and groups who need Cobrowse access. This is the same assignment list used for single sign-on, so there is no need to assign them separately under **Users and groups** on the application.
+
+{% hint style="warning" %}
+Entra provisions the direct members of an assigned group only. Nested groups are not supported, so a user who is a member of a group inside an assigned group will not be provisioned. Assign each group that contains users who need Cobrowse access.
+{% endhint %}
+
+### 4. Scope by attribute
+
+Leave the **Attribute scope filter** empty. Cobrowse does not need attribute-based clauses, though you can add them to narrow the list further.
+
+### 5. Review and create
+
+Review the settings to ensure user provisioning is enabled but group provisioning is disabled, then click **Save**.
+
+## 5. Review the attribute mapping
 
 Cobrowse uses four attributes: `userName`, `displayName`, `active` and `externalId`. See [the supported attributes](./#id-4.-map-the-supported-attributes) for what each one does.
 
-Entra's default mappings include many more attributes than these. Cobrowse ignores them and you can remove them under **Provisioning** > **Attribute Mappings** to keep the mappings readable.
+Entra's default mappings include many more attributes than these. Cobrowse ignores them and you can remove them under **Provisioning** > **Attribute Mapping** to keep the mappings readable.
 
-## 5. Assign users and groups
+## 6. Start provisioning
 
-Entra provisions the users you assign to the application:
-
-1. Go to **Entra ID** > **Enterprise apps** > **All applications** and select your application.
-2. Select **Users and groups**, then **Add user/group**.
-3. Under **Users and groups**, select **None Selected**, choose the users or groups who need Cobrowse access, then click **Select**.
-4. Click **Assign**.
-
-Then turn provisioning on:
-
-1. Open **Provisioning** > **Settings**.
-2. Set **Scope** to **Sync only assigned users and groups**.
-3. Set **Provisioning Status** to **On** and save to start the first provisioning cycle.
-
-{% hint style="warning" %}
-Entra provisions the direct members of an assigned group only. Nested groups are not supported so a user who is a member of a group inside an assigned group will not be provisioned. Assign each group that contains users who need Cobrowse access.
-{% endhint %}
+On the **Provisioning** tab, set **Provisioning Status** to **On** and save to start the first provisioning cycle. Entra reads the users in scope, creates them in Cobrowse and then synchronizes automatically from then on.
 
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
