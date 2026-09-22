@@ -39,6 +39,10 @@ See [Getting started](../../) to add our SDKs and begin end-to-end testing! Your
 
 Follow the Zendesk docs to restrict access to the Cobrowse.io Apps to certain roles or groups [https://support.zendesk.com/hc/en-us/articles/4409155972378-Managing-your-installed-apps#topic\_xyf\_wmw\_qfb](https://support.zendesk.com/hc/en-us/articles/4409155972378-Managing-your-installed-apps#topic_xyf_wmw_qfb).
 
+### Configure privileges
+
+Zendesk Administrators accounts are also granted Administrator privileges within Cobrowse.io. All other Zendesk accounts will be assigned Support Agent privileges.
+
 ## Troubleshooting
 
 If you signed up via Zendesk and also via our website dashboard, you will have two accounts. See this link for a description of this problem and the solution [https://support.cobrowse.io/i-have-issues-with-my-zendesk-account](https://support.cobrowse.io/i-have-issues-with-my-zendesk-account).
