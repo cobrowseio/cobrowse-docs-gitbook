@@ -99,7 +99,7 @@ Xcode will have added `SampleHandler.swift` or `SampleHandler.m` and `SampleHand
 **Swift**
 
 ```swift
-import CobrowseIOAppExtension
+import CobrowseSDK
 
 class SampleHandler: CobrowseIOReplayKitExtension { }
 ```
@@ -109,7 +109,7 @@ class SampleHandler: CobrowseIOReplayKitExtension { }
 ```objectivec
 // SampleHandler.h
 
-@import CobrowseIOAppExtension;
+@import CobrowseSDK;
 
 @interface SampleHandler : CobrowseIOReplayKitExtension
 

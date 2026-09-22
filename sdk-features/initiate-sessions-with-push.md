@@ -26,7 +26,7 @@ A few changes to native code as described below.
 
 {% tabs %}
 {% tab title="iOS" %}
-You first need to `registerForRemoteNotificataions()`at a location that is right for your application.
+You first need to `registerForRemoteNotifications()` at a location that is right for your application.
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -34,9 +34,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-Once requested the `didRegisterForRemoteNotificationsWithDeviceToken`delegate method will be called. You must then pass this token to Cobrowse using the `CobrowseIO.setDeviceToken` method.
+Once requested the `didRegisterForRemoteNotificationsWithDeviceToken` delegate method will be called. You must then pass this token to Cobrowse using the `CobrowseIO.setDeviceToken` method.
 
-This device will now be associated associate with the push token winth the Cobrowse dashboard.
+This device will now be associated with the push token within the Cobrowse dashboard.
 
 ```swift
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

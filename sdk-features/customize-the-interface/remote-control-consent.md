@@ -28,9 +28,9 @@ To override the the default remote control consent prompt, you should implement 
 ```objectivec
 -(void) cobrowseHandleRemoteControlRequest:(CBIOSession*) session {
     // show your own UI here
-    // call [session setRemoteControl:kCBIORemoteControlStateOn callback:nil] to allow
-    // or [session setRemoteControl:kCBIORemoteControlStateRejected callback:nil] to reject
-    [session setRemoteControl:kCBIORemoteControlStateOn callback:nil]
+    // call [session setRemoteControl:CBIORemoteControlStateOn callback:nil] to allow
+    // or [session setRemoteControl:CBIORemoteControlStateRejected callback:nil] to reject
+    [session setRemoteControl:CBIORemoteControlStateOn callback:nil];
 }
 ```
 {% endtab %}
@@ -162,13 +162,13 @@ UIAlertController *remoteControlPrompt;
     [remoteControlPrompt addAction: [UIAlertAction actionWithTitle:@"Accept"
                                                    style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction * _Nonnull action) {
-        [session setRemoteControl:kCBIORemoteControlStateOn callback:nil];
+        [session setRemoteControl:CBIORemoteControlStateOn callback:nil];
         remoteControlPrompt = nil;
     }]];
     [remoteControlPrompt addAction: [UIAlertAction actionWithTitle:@"Decline"
                                                    style:UIAlertActionStyleCancel
                                                    handler:^(UIAlertAction * _Nonnull action) {
-        [session setRemoteControl:kCBIORemoteControlStateRejected callback:nil];
+        [session setRemoteControl:CBIORemoteControlStateRejected callback:nil];
         remoteControlPrompt = nil;
     }]];
 

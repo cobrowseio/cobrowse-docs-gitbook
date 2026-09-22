@@ -46,7 +46,7 @@ CobrowseIO.instance().createSession { error, session in
 
 ```objectivec
 [CobrowseIO.instance createSession:^(NSError * err, CBIOSession * session) {
-    if (err) NSLog(@"Failed to create code")
+    if (err) NSLog(@"Failed to create code");
     else NSLog(@"%@", session.code);
 }];
 ```

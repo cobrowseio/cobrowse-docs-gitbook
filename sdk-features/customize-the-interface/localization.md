@@ -52,10 +52,6 @@ Create a new strings file named `CobrowseIO.strings` in your app project and sel
 The content of `CobrowseIO.strings` should be the following (replace string values with your own text):
 
 ```
-"ErrorDisplayViewMessage" = "Sorry, something went wrong. Check you're online and try again.";
-"ManageSessionViewMessage" = "You're sharing screens from this app with a support agent.";
-"ManageSessionViewButtonEnd" = "End Session";
-"CobrowseViewButtonClose" = "Close";
 "FullDevicePromptViewButtonCancel" = "Cancel";
 "FullDevicePromptViewMessageSimulator" = "Full device screen capture is not available in the device simulator.";
 "FullDevicePromptViewMessageNoExtension" = "Full device screenshare is not available as a broadcast extension has not been configured.";
@@ -90,6 +86,30 @@ The content of CobrowseIO.strings should be the following (replace string values
 "ReplayKitExtensionSessionNoLongerFullDevice" = "Cobrowsing full-device session has ended";
 "ReplayKitExtensionLicenseKeyMissing" = "License key missing";
 "ReplayKitExtensionApiMissing" = "API missing";
+```
+{% endtab %}
+
+{% tab title="macOS" %}
+Create a new strings file named `CobrowseIO.strings` in your app project and select all localization you want to support in the File Inspector. Refer to [the Apple documentation](https://developer.apple.com/documentation/xcode/localization) to see more details about this approach.
+
+The content of `CobrowseIO.strings` should be the following (replace string values with your own text):
+
+```
+"SessionRequestConsentPromptTitle" = "Support Request";
+"SessionRequestConsentPromptMessage" = "A support agent would like to use this app with you. Do you wish to allow this?";
+"SessionRequestConsentPromptAllow" = "Allow";
+"SessionRequestConsentPromptDeny" = "Deny";
+"RemoteControlConsentPromptTitle" = "Remote Control Request";
+"RemoteControlConsentPromptMessage" = "A support agent would like to remotely control your device. Do you wish to allow this?";
+"RemoteControlConsentPromptAllow" = "Allow";
+"RemoteControlConsentPromptDeny" = "Deny";
+"RemoteControlConsentPromptPermissionAllow" = "Open System Preferences";
+"FullDeviceConsentPromptTitle" = "Full device screenshare";
+"FullDeviceConsentPromptMessage" = "A support agent would like to view your entire desktop, including other running applications. Do you wish to allow this?";
+"FullDeviceConsentPromptAllow" = "Allow";
+"FullDeviceConsentPromptDeny" = "Deny";
+"FullDeviceConsentPermissionPromptMessage" = "A support agent would like to view your entire desktop. To allow this, please grant the Screen Sharing permission in System Preferences.";
+"FullDeviceConsentPromptPermissionAllow" = "Open System Preferences";
 ```
 {% endtab %}
 

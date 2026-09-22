@@ -9,7 +9,7 @@ description: Have greater control over networking requests made by the mobile SD
 You can provide the `URLSession` that will be used for all network requests made by the Cobrowse SDK.
 
 ```swift
-CobrowseIO.instance().urlSession = \\ Your URLSession object
+CobrowseIO.instance().urlSession = // Your URLSession object
 ```
 
 By setting a delegate on the provided `URLSession` object it will be told of any network request. You can then take action such as cancelling the task to block the network request from being made.

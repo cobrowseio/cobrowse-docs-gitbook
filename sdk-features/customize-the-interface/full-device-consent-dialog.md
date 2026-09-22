@@ -40,7 +40,7 @@ When you override this method you are responsible for presenting a `RPSystemBroa
 ```objectivec
 -(void) cobrowseHandleFullDeviceRequest:(CBIOSession*) session {
     // You must show a RPSystemBroadcastPickerView which is provided by the iOS platform.
-    // Call [session setFullDevice:kCBIOFullDeviceStateRejected callback:nil] if the user
+    // Call [session setFullDevice:CBIOFullDeviceStateRejected callback:nil] if the user
     // dismisses the prompt without allowing the full device screen share.
 }
 ```
@@ -176,9 +176,9 @@ To override the the full device consent prompt, you should implement the `cobrow
 
 ```objectivec
 -(void) cobrowseHandleFullDeviceRequest:(CBIOSession*) session {
-    // Call [session setFullDevice:kCBIOFullDeviceStateRejected callback:nil] if the user
+    // Call [session setFullDevice:CBIOFullDeviceStateRejected callback:nil] if the user
     // dismisses the prompt without allowing the full device screen share.
-    // Or [session setFullDevice:kCBIOFullDeviceStateOn callback:nil] to allow the switch
+    // Or [session setFullDevice:CBIOFullDeviceStateOn callback:nil] to allow the switch
     // full device mode.
 }
 ```

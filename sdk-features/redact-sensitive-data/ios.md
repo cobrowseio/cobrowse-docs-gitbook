@@ -102,7 +102,7 @@ cobrowse.redactedViews = [
 {% endtab %}
 
 {% tab title="SwiftUI" %}
-You will need to use the `cobrowseSelector(tag:, id:, classes:, attributes:)` view modifier filling our the values manually.
+You will need to use the `cobrowseSelector(tag:id:attributes:)` view modifier, filling out the values manually.
 
 ```swift
 Text("Hello, Frank")

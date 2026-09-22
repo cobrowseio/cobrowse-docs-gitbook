@@ -442,7 +442,7 @@ public partial class App : Microsoft.Maui.Controls.Application
 ```objectivec
 @implementation CBAppDelegate // should implement CobrowseIODelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)notification
+- (void)applicationDidFinishLaunching:(NSNotification *)notification {
     CobrowseIO.instance.delegate = self;
     // ... the rest of your app setup
 }

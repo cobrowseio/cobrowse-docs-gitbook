@@ -37,7 +37,7 @@ CobrowseIO.on('session.loaded', session => {
 
 {% tab title="iOS / MacOS" %}
 ```objectivec
--(void) sessionDidLoad: (CBIOSession*) session {
+-(void) cobrowseSessionDidLoad: (CBIOSession*) session {
     NSLog(@"A session was loaded %@", session);
 }
 ```
@@ -97,7 +97,7 @@ CobrowseIO.on('session.updated', session => {
 
 {% tab title="iOS / MacOS" %}
 ```objectivec
--(void) sessionDidUpdate: (CBIOSession*) session {
+-(void) cobrowseSessionDidUpdate: (CBIOSession*) session {
     NSLog(@"A session was updated %@", session);
 }
 ```
@@ -157,8 +157,8 @@ CobrowseIO.on('session.ended', session => {
 
 {% tab title="iOS / MacOS" %}
 ```objectivec
--(void) sessionDidEnd: (CBIOSession*) session {
-    NSLog(@"A session was updated %@", session);
+-(void) cobrowseSessionDidEnd: (CBIOSession*) session {
+    NSLog(@"A session ended %@", session);
 }
 ```
 {% endtab %}
@@ -213,7 +213,7 @@ On iOS we offer a protocol you can implement called `CobrowseIODelegate`. This o
 To assign your delegate implementation, you should use:
 
 ```objectivec
-CobrowseIO.instance.delegate = /* your delegate instance */
+CobrowseIO.instance.delegate = /* your delegate instance */;
 ```
 {% endtab %}
 
