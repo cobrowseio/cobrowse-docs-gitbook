@@ -76,7 +76,7 @@ button.addEventListener('click', showSessionCode);
 {% endtab %}
 
 {% tab title="Android" %}
-An example can be seen at [https://github.com/lassana/cobrowse-sdk-android-examples/blob/master/standalone/src/main/java/io/cobrowse/standalone/ui/sessioncode/CobrowseCodeFragment.java](https://github.com/lassana/cobrowse-sdk-android-examples/blob/master/standalone/src/main/java/io/cobrowse/standalone/ui/sessioncode/CobrowseCodeFragment.java)
+An example can be seen in the [`CobrowseCodeFragment` example](https://github.com/cobrowseio/cobrowse-sdk-android-examples/blob/master/standalone/src/main/java/io/cobrowse/standalone/ui/sessioncode/CobrowseCodeFragment.java) in our Android examples repo.
 {% endtab %}
 {% endtabs %}
 

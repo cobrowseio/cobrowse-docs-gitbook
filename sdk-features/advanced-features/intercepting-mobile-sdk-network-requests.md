@@ -55,11 +55,11 @@ class LoggingInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
-        val host = request.url().host()
+        val host = request.url.host
         if (allowedHosts.any { host.endsWith(it) }) {
             return chain.proceed(request)
         } else {
-            throw IOException("This request is not allowed: " + request.url())
+            throw IOException("This request is not allowed: " + request.url)
         }
     }
 }

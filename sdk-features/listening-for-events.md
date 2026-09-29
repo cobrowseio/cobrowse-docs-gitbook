@@ -224,17 +224,23 @@ On Android we offer a range of delegate interfaces that you can implement depend
 You can only have one delegate instance configured, so the same instance must be used to implement any of the interfaces that you wish to use from the list here.
 {% endhint %}
 
-`CobrowseIO.Delegate` - provides callbacks for session lifecycle events
+`CobrowseIO.Delegate` - session updated and ended callbacks; this is the type `setDelegate()` accepts, so your delegate object must implement it
 
-`CobrowseIO.SessionLoadDelegate` - provides callbacks for session lifecycle events
+`CobrowseIO.SessionLoadDelegate` - called when a session is first loaded
 
 `CobrowseIO.SessionRequestDelegate` - for handling session consent requests
 
 `CobrowseIO.RemoteControlRequestDelegate` - for session remote control consent
 
+`CobrowseIO.FullDeviceRequestDelegate` - for full device consent
+
 `CobrowseIO.SessionControlsDelegate` - for altering session indicator UIs
 
-`CobrowseIO.RedactionDelegate` - an option for passing redactions to the SDK
+`CobrowseIO.SessionMetricsDelegate` - for session metrics updates
+
+`CobrowseIO.RedactionDelegate` - for passing redacted views to the SDK
+
+`CobrowseIO.UnredactionDelegate` - for passing unredacted views to the SDK
 
 To assign your delegate implementation, you should use:
 

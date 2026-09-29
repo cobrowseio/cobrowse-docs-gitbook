@@ -6,6 +6,50 @@ We provide two methods to redact views.
 
 Redacting views via your source code ensures your redaction configuration are tied directly to the application structure.
 
+#### **Redact per-view**
+
+To redact a single view you can call `cobrowseRedacted()` on any `View`, or apply `Modifier.cobrowseRedacted()` to a composable. Any children of the view are redacted too, so this also works for containers such as a `LinearLayout` or a `Column`.
+
+{% tabs %}
+{% tab title="Android Views" %}
+```kotlin
+import io.cobrowse.cobrowseRedacted
+
+findViewById<View>(R.id.card_number).cobrowseRedacted()
+```
+
+The extension function is Kotlin only and requires SDK 3.18.0 or later. From Java, use one of the interfaces below instead.
+{% endtab %}
+
+{% tab title="Jetpack Compose" %}
+Redaction for Jetpack Compose UI is shipped in a separate library on Maven Central:
+
+```
+dependencies {
+    // ... other dependencies ...
+    implementation 'io.cobrowse:cobrowse-sdk-android:3.+'
+    implementation 'io.cobrowse:cobrowse-sdk-android-compose-ui:3.+'
+}
+```
+
+{% hint style="info" %}
+You are required to use the same version of the Cobrowse.io SDK and Compose UI redaction artifacts. Using different versions of Cobrowse.io SDK artifacts is not supported.
+{% endhint %}
+
+Apply `Modifier.cobrowseRedacted()` to your composable to be redacted, like so:
+
+```kotlin
+import io.cobrowse.cobrowseRedacted
+
+Text("Redacted label",
+     modifier = Modifier
+         .background(Color.Red)
+         // Other modifiers...
+         .cobrowseRedacted())
+```
+{% endtab %}
+{% endtabs %}
+
 #### **Redact views within Activity via** `CobrowseIO.Redacted`
 
 Implement the `CobrowseIO.Redacted` interface on any Activity that contains sensitive views. This interface contains one method:
@@ -33,41 +77,27 @@ public List<View> redactedViews(@NonNull Activity activity) {
 }
 ```
 
-#### **Redact Jetpack Compose UI**
-
-Redaction for Jetpack Compose UI is shipped in a separate library on Maven Central:
-
-```
-dependencies {
-    // ... other dependencies ...
-    implementation 'io.cobrowse:cobrowse-sdk-android:2.+'
-    implementation 'io.cobrowse:cobrowse-sdk-android-compose-ui:2.+'
-}
-```
-
-{% hint style="info" %}
-You are required to use the same version of the Cobrowse.io SDK and Compose UI redaction artifacts. Using different versions of Cobrowse.io SDK artifacts is not supported.
-{% endhint %}
-
-Apply `Modifier.redacted()` to your composable to be redacted, like so:
-
-```kotlin
-import io.cobrowse.redacted
-
-Text("Redacted label",
-     modifier = Modifier
-         .background(Color.Red)
-         // Other modifiers...
-         .redacted())
-```
-
 #### **Redact WebView content**
 
-Your app may show web content that contains elements that you wish to redact. This can be achieved by setting the `webviewRedactedViews` property to an array of CSS selectors that identify the elements to be redacted.
+Your app may show web content that contains elements that you wish to redact. Pass `webviewRedactedViews` an array of CSS selectors that identify the elements to be redacted. These selectors apply to every page loaded in any `WebView` in your app:
 
 ```java
-CobrowseIO.instance().webviewRedactedViews(new String[] { ".redacted",  ...some other selectors... });
+CobrowseIO.instance().webviewRedactedViews(new String[] { ".redacted", ...some other selectors... });
 ```
+
+To apply selectors only to pages whose URL matches a glob pattern, pass the pattern as the first argument:
+
+```java
+CobrowseIO.instance().webviewRedactedViews("*/checkout.html", new String[] { ".card-number" });
+```
+
+Elements inside a redacted region can be made visible again with `webviewUnredactedViews`, which takes the same arguments:
+
+```java
+CobrowseIO.instance().webviewUnredactedViews(new String[] { ".order-total" });
+```
+
+All of these must be called before `CobrowseIO.instance().start()`.
 
 ### **2. Selector based redaction**
 
@@ -77,15 +107,18 @@ You can use CSS-like selectors to identify which views should be redacted. These
 
 {% tabs %}
 {% tab title="Android Views" %}
-You can use the [simple name](https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getSimpleName--) of any view class, the id of the view.
+You can use the [simple name](https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getSimpleName--) of any view class, the resource name of the view's id, or one of the supported view attributes: `id`, `contentDescription`, `tag`, `text`, `hint`, `enabled`, `checked`, `clickable`, `inputType` and `error`.
 
-The `#id` must be able to be used with system `android.view.View#findViewById()` and `android.app.Activity#findViewById()` methods.
+The class name is that of the view's runtime class, which may differ from the tag in your layout XML. Under an AppCompat theme a `<Button>` is inflated as `AppCompatButton`, and under a Material theme as `MaterialButton`, so those are the names to use in a selector.
+
+The `#id` is the resource entry name, so a view with `android:id="@+id/card_number"` is matched by `#card_number`. Ids assigned in code with `setId()` or `View.generateViewId()` have no resource name and cannot be matched.
 
 ```java
 CobrowseIO.instance().redactedViews(new String[] {
-    "Button"
-    "Label#123[contentDescription=Hello]",
-    "[testTag=\"Hello Message\"]"
+    "Button",
+    "TextView#card_number[contentDescription=Hello]",
+    "[tag=\"Hello Message\"]",
+    "PaymentCardView TextView"
 });
 ```
 {% endtab %}
@@ -108,7 +141,7 @@ This view can now be referenced using the selector of:
 {% endtabs %}
 
 {% hint style="info" %}
-* Nested selectors are **not** supported
+* Nested selectors are supported
 * Only the `=` comparator is supported
 {% endhint %}
 
@@ -141,6 +174,14 @@ public List<View> unredactedViews(@NonNull Activity activity) {
             add(findViewById(R.id.view_to_be_unredacted));
     }};
 }
+```
+
+From Kotlin, you can also call `cobrowseUnredacted()` on the view itself. The view and its ancestors become visible to the agent while the other children of those ancestors stay redacted:
+
+```kotlin
+import io.cobrowse.cobrowseUnredacted
+
+findViewById<View>(R.id.view_to_be_unredacted).cobrowseUnredacted()
 ```
 
 Alternatively, you can implement `CobrowseIO.Unredacted` interface in your `Activity` subclasses:

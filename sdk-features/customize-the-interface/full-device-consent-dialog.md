@@ -48,10 +48,10 @@ When you override this method you are responsible for presenting a `RPSystemBroa
 
 {% tab title="Android" %}
 {% hint style="info" %}
-**Note:** you cannot replace the system prompt for switching to full device mode. This methods allows you to add logic before the system prompt is shown, or cancel the prompt entirely.
+**Note:** you cannot replace the system prompt for switching to full device mode. This method allows you to add logic before the system prompt is shown, or cancel the prompt entirely.
 {% endhint %}
 
-To override the the default remote control consent prompt, you should implement the `CobrowseIO.FullDeviceRequestDelegate` interface on your `CobrowseIO.Delegate`.
+To override the default full device consent prompt, you should implement the `CobrowseIO.FullDeviceRequestDelegate` interface on your `CobrowseIO.Delegate`.
 
 ```java
 @Override

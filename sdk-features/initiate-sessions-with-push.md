@@ -67,7 +67,7 @@ public class FirebaseMessaging extends FirebaseMessagingService {
 
     @Override
     public void onNewToken(String token) {
-        CobrowseIO.instance().setDeviceToken(getApplication(), token);
+        CobrowseIO.instance().setDeviceToken(token);
     }
 
 }
