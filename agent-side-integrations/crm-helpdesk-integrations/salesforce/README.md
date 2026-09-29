@@ -142,7 +142,7 @@ See [https://docs.cobrowse.io/sdk-features/identify-your-devices](https://docs.c
 
 If you have any questions about the above steps then please get in touch at [hello@cobrowse.io](mailto:hello@cobrowse.io)!
 
-### Updating to the latest release
+## Updating to the latest release
 
 Check your installed version in Setup under Installed Packages and follow the matching step:
 
