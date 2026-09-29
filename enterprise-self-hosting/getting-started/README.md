@@ -56,7 +56,7 @@ CobrowseIO.instance().api("https://cobrowse.example.com");
 
 ## Useful resources
 
-Now your instance is up an running, you should review the documentation below to fine tune your deployment.
+Now your instance is up and running, you should review the documentation below to fine tune your deployment.
 
 {% content-ref url="adding-a-superuser.md" %}
 [adding-a-superuser.md](adding-a-superuser.md)
@@ -64,6 +64,10 @@ Now your instance is up an running, you should review the documentation below to
 
 {% content-ref url="limiting-account-creation.md" %}
 [limiting-account-creation.md](limiting-account-creation.md)
+{% endcontent-ref %}
+
+{% content-ref url="restricting-who-can-sign-in.md" %}
+[restricting-who-can-sign-in.md](restricting-who-can-sign-in.md)
 {% endcontent-ref %}
 
 {% content-ref url="configuring-smtp.md" %}
