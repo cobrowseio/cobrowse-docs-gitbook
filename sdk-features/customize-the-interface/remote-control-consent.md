@@ -36,7 +36,7 @@ To override the the default remote control consent prompt, you should implement 
 {% endtab %}
 
 {% tab title="Android" %}
-To override the the default remote control consent prompt, you should implement the `CobrowseIO.RemoteControlRequestDelegate` interface on your `CobrowseIO.Delegate`.
+To override the default remote control consent prompt, you should implement the `CobrowseIO.RemoteControlRequestDelegate` interface on your `CobrowseIO.Delegate`.
 
 ```java
 @Override
@@ -44,7 +44,7 @@ public void handleRemoteControlRequest(@NonNull Activity activity, @NonNull Sess
     // show your own UI here
     // call session.setRemoteControl(Session.RemoteControlState.On, null) to accept
     // or session.setRemoteControl(Session.RemoteControlState.Rejected, null) to reject
-    session.setRemoteControl(Session.RemoteControlState.On, null)
+    session.setRemoteControl(Session.RemoteControlState.On, null);
 }
 ```
 {% endtab %}
