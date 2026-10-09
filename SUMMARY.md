@@ -112,7 +112,7 @@
 * [Running your instance](enterprise-self-hosting/getting-started/README.md)
   * [Adding a superuser](enterprise-self-hosting/getting-started/adding-a-superuser.md)
   * [Limiting account creation](enterprise-self-hosting/getting-started/limiting-account-creation.md)
-  * [Limiting magic link recipients](enterprise-self-hosting/getting-started/limiting-magic-link-recipients.md)
+  * [Restricting who can sign in](enterprise-self-hosting/getting-started/restricting-who-can-sign-in.md)
   * [Configuring SMTP](enterprise-self-hosting/getting-started/configuring-smtp.md)
   * [Managing your deployment](enterprise-self-hosting/getting-started/management.md)
 * [Monitoring your instance](enterprise-self-hosting/monitoring-your-instance/README.md)
