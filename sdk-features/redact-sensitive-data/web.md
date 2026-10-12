@@ -12,12 +12,12 @@ CobrowseIO.redactedViews = ['.redacted', ...some other selectors...]
 
 Selectors can also be scoped by URL or [glob pattern](https://www.npmjs.com/package/glob-to-regexp#usage) by providing an `Object` where the key is the URL or glob pattern and the value is the array of `String` CSS Selectors to redact when viewing that page.
 
-The example below will always redact any element with the `redacted` class but will only redact all input elements when viewing any example.com page.
+The example below will always redact any element with the `redacted` class but will only redact all password elements when viewing any example.com page.
 
 ```javascript
 CobrowseIO.redactedViews = [ 
     '.redacted',
-    { 'https://example.com/*' : [ 'input' ] }
+    { 'https://example.com/*' : [ 'input[type="password"]' ] }
 ]
 ```
 
