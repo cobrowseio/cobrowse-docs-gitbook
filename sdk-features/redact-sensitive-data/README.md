@@ -6,10 +6,10 @@ description: >-
 
 # Redact sensitive data
 
-Within your applications you might show or input sensitive data such as credit card or social security numbers. With redaction you can configure anything so it is not seen by the agent.
+Within your applications you might show or input sensitive data such as passwords, credit card or social security numbers. With redaction you can configure anything so it is not seen by the agent.
 
 {% hint style="info" %}
-Anything that is redacted never leaves the users device and is never seen by the agent.
+Anything that is redacted never leaves the user's device and is never seen by the agent.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/Redaction.jpg" alt=""><figcaption><p>Agent can not see redacted content</p></figcaption></figure>
@@ -18,7 +18,11 @@ Anything that is redacted never leaves the users device and is never seen by the
 
 #### Default redaction
 
-In this mode you tell the SDK what must **not** be seen by the agent. This can be seen as a block list of views / elements that must **not** be show to the agent and must **not** be processed.
+In this mode you tell the SDK what must **not** be seen by the agent. This can be seen as a block list of views / elements that must **not** be shown to the agent and must **not** be processed. Any view / element that is not redacted is sent to the agent.
+
+{% hint style="info" %}
+In this mode, nothing is redacted automatically. Password, card number and similar fields are visible to the agent until you add them to your redaction configuration.
+{% endhint %}
 
 #### Private by Default
 
