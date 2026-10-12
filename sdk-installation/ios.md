@@ -97,14 +97,6 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 Our minimum supported iOS version is always the lowest Apple will accept as an App Store submission.
 {% endhint %}
 
-## Problems rendering certain views?
-
-Try our alternative rendering method below:
-
-{% content-ref url="../sdk-features/advanced-features/ios/alternate-render-method.md" %}
-[alternate-render-method.md](../sdk-features/advanced-features/ios/alternate-render-method.md)
-{% endcontent-ref %}
-
 ## Adding custom touch handlers
 
 {% content-ref url="../sdk-features/advanced-features/ios/custom-touch-handling.md" %}

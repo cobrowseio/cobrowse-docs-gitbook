@@ -1,7 +1,6 @@
 ---
 description: >-
-  Advances features of Cobrowse for iOS, including alternate render method and
-  custom touch handling.
+  Advanced features of Cobrowse for iOS, including custom touch handling.
 ---
 
 # iOS
