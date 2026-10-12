@@ -51,7 +51,6 @@
     * [Cross-domain session support](sdk-features/advanced-features/web/cross-domain-session-support.md)
     * [Ignore Views](sdk-features/advanced-features/web/ignore-views.md)
   * [iOS](sdk-features/advanced-features/ios/README.md)
-    * [Alternate render method](sdk-features/advanced-features/ios/alternate-render-method.md)
     * [Custom touch handling](sdk-features/advanced-features/ios/custom-touch-handling.md)
   * [Android](sdk-features/advanced-features/android/README.md)
     * [Backporting TLS to older Android versions](sdk-features/advanced-features/android/android-tls.md)
