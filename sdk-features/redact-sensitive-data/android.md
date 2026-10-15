@@ -66,7 +66,23 @@ override fun redactedViews(): List<View> {
 
 #### **Redact views within custom delegate via** `CobrowseIO.RedactionDelegate`
 
-If making changes to your `Activity` classes isn't an option, we also support a delegate style method to allow you to supply this information in one place. Implement `CobrowseIO.RedactionDelegate` interface in your `CobrowseIO.Delegate` class, then you can pass redacted views for a specific `Activity` in a single method:
+If making changes to your `Activity` classes isn't an option, we also support a delegate style method to allow you to supply this information in one place. Implement `CobrowseIO.RedactionDelegate` interface in your `CobrowseIO.Delegate` class, then you can return the redacted views for the whole app in a single method:
+
+```kotlin
+import androidx.core.view.allViews
+import io.cobrowse.rootViews
+
+override fun redactedViews(app: Application): List<View> {
+    val redactedIds = setOf(R.id.redact_me, R.id.card_number)
+    return app.rootViews()
+        .asSequence()
+        .flatMap { it.allViews }
+        .filter { it.id in redactedIds }
+        .toList()
+}
+```
+
+Or individually per activity:
 
 ```kotlin
 override fun redactedViews(activity: Activity): List<View> {
@@ -163,6 +179,22 @@ override fun redactedViews(app: Application): List<View> {
 ```
 
 Once you've done this, your application root views will be redacted by default and you'll be able to un-redact child components to make them visible to the agents by implementing `CobrowseIO.UnredactionDelegate` in your `CobrowseIO.Delegate` class:
+
+```kotlin
+import androidx.core.view.allViews
+import io.cobrowse.rootViews
+
+override fun unredactedViews(app: Application): List<View> {
+    val unredactedIds = setOf(R.id.view_to_be_unredacted)
+    return app.rootViews()
+        .asSequence()
+        .flatMap { it.allViews }
+        .filter { it.id in unredactedIds }
+        .toList()
+}
+```
+
+Or individually per activity:
 
 ```kotlin
 override fun unredactedViews(activity: Activity): List<View> {
