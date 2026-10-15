@@ -38,7 +38,7 @@ CobrowseIO.confirmSession = function() {
 
 {% tab title="Android" %}
 ```kotlin
-override fun handleSessionRequest(currentActivity: Activity, session: Session) {
+override fun handleSessionRequest(currentActivity: Activity?, session: Session) {
     // Do something here, e.g. showing a permission request dialog
     // Make sure to call activate(<callback>) on the session object if
     // you want to start the session.
@@ -225,7 +225,7 @@ class MainApplication : Application(), CobrowseIO.SessionRequestDelegate {
         // and the rest of cobrowse setup ...
     }
 
-    override fun handleSessionRequest(currentActivity: Activity, session: Session) {
+    override fun handleSessionRequest(currentActivity: Activity?, session: Session) {
         // Do something here, e.g. showing a permission request dialog
         // Make sure to call activate(<callback>) on the session object if
         // you want to start the session.

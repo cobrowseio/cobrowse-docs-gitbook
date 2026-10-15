@@ -56,10 +56,10 @@ CobrowseIO.instance().createSession { error, session in
 
 {% tab title="Android" %}
 ```kotlin
-CobrowseIO.instance().createSession({ err, session ->
+CobrowseIO.instance().createSession { err, session ->
     if (err != null) Log.w("App", "Failed to create code")
     else if (session != null) Log.i("App", "Session code ${session.code()}")
-})
+}
 ```
 {% endtab %}
 

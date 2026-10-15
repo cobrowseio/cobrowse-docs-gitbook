@@ -54,7 +54,7 @@ When you override this method you are responsible for presenting a `RPSystemBroa
 To override the default full device consent prompt, you should implement the `CobrowseIO.FullDeviceRequestDelegate` interface on your `CobrowseIO.Delegate`.
 
 ```kotlin
-override fun handleFullDeviceRequest(activity: Activity, session: Session) {
+override fun handleFullDeviceRequest(activity: Activity?, session: Session) {
     // show your own UI here
     // call session.setFullDevice(Session.FullDeviceState.On, null) to accept
     // or session.setFullDevice(Session.FullDeviceState.Rejected, null) to reject

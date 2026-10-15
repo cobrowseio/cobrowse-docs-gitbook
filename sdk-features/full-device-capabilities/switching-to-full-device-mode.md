@@ -33,9 +33,9 @@ session.setFullDevice(.requested)
 
 {% tab title="Android" %}
 ```kotlin
-session.setFullDevice(Session.FullDeviceState.Requested, { err, arg ->
+session.setFullDevice(Session.FullDeviceState.Requested) { err, arg ->
     // handle error
-})
+}
 ```
 {% endtab %}
 

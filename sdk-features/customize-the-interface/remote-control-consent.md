@@ -39,7 +39,7 @@ To override the the default remote control consent prompt, you should implement 
 To override the default remote control consent prompt, you should implement the `CobrowseIO.RemoteControlRequestDelegate` interface on your `CobrowseIO.Delegate`.
 
 ```kotlin
-override fun handleRemoteControlRequest(activity: Activity, session: Session) {
+override fun handleRemoteControlRequest(activity: Activity?, session: Session) {
     // show your own UI here
     // call session.setRemoteControl(Session.RemoteControlState.On, null) to accept
     // or session.setRemoteControl(Session.RemoteControlState.Rejected, null) to reject
@@ -206,10 +206,10 @@ class MainApplication : Application(),
      * Implement handleRemoteControlRequest(Activity, Session) from CobrowseIO.RemoteControlRequestDelegate
      * to show a custom prompt
      */
-    override fun handleRemoteControlRequest(activity: Activity, session: Session) {
+    override fun handleRemoteControlRequest(activity: Activity?, session: Session) {
         // replace the code below with your own confirmation prompt
         val tag = "RemoteControlConsentDialog"
-        val fragments = activity.fragmentManager
+        val fragments = activity?.fragmentManager ?: return
         val transaction = fragments.beginTransaction()
         fragments.findFragmentByTag(tag)?.let { transaction.remove(it) }
         customRemoteControlConsent = CustomRemoteControlConsentDialogFragment().also {

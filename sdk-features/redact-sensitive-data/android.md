@@ -167,7 +167,7 @@ Once you've done this, your application root views will be redacted by default a
 ```kotlin
 override fun unredactedViews(activity: Activity): List<View> {
     return listOfNotNull(
-        findViewById<View>(R.id.view_to_be_unredacted)
+        activity.findViewById<View>(R.id.view_to_be_unredacted)
     )
 }
 ```
