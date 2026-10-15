@@ -58,14 +58,12 @@ func cobrowseHideSessionControls(_ session: CBIOSession) {
 {% tab title="Android" %}
 The SDK provides hooks via `CobrowseIO.SessionControlsDelegate` for you to render your own interface:
 
-```java
-@Override
-public void showSessionControls(final Activity activity, final Session session) {
+```kotlin
+override fun showSessionControls(activity: Activity, session: Session) {
     // show your own controls here
 }
 
-@Override
-public void hideSessionControls(final Activity activity, final Session session) {
+override fun hideSessionControls(activity: Activity, session: Session) {
     // hide your controls here
 }
 ```
@@ -179,12 +177,10 @@ if (CobrowseIO.currentSession)
 {% endtab %}
 
 {% tab title="Android" %}
-```java
-if (CobrowseIO.instance().currentSession() != null ) {
-    CobrowseIO.instance().currentSession().end((err, session) -> {
-        // handle errors here
-    });
-}
+```kotlin
+CobrowseIO.instance().currentSession()?.end({ err, session ->
+    // handle errors here
+})
 ```
 {% endtab %}
 

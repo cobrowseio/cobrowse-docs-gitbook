@@ -28,8 +28,8 @@ CobrowseIO.instance.api = @"https://cobrowse.example.com";
 {% endtab %}
 
 {% tab title="Android" %}
-```java
-CobrowseIO.instance().api("https://cobrowse.example.com");
+```kotlin
+CobrowseIO.instance().api("https://cobrowse.example.com")
 ```
 {% endtab %}
 {% endtabs %}

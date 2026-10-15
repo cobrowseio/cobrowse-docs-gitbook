@@ -38,13 +38,12 @@ To override the the default remote control consent prompt, you should implement 
 {% tab title="Android" %}
 To override the default remote control consent prompt, you should implement the `CobrowseIO.RemoteControlRequestDelegate` interface on your `CobrowseIO.Delegate`.
 
-```java
-@Override
-public void handleRemoteControlRequest(@NonNull Activity activity, @NonNull Session session) {
+```kotlin
+override fun handleRemoteControlRequest(activity: Activity, session: Session) {
     // show your own UI here
     // call session.setRemoteControl(Session.RemoteControlState.On, null) to accept
     // or session.setRemoteControl(Session.RemoteControlState.Rejected, null) to reject
-    session.setRemoteControl(Session.RemoteControlState.On, null);
+    session.setRemoteControl(Session.RemoteControlState.On, null)
 }
 ```
 {% endtab %}
@@ -189,90 +188,77 @@ UIAlertController *remoteControlPrompt;
 {% endtab %}
 
 {% tab title="Android" %}
-```java
-public class MainApplication extends Application 
-    implements CobrowseIO.Delegate, CobrowseIO.RemoteControlRequestDelegate {
+```kotlin
+class MainApplication : Application(),
+    CobrowseIO.Delegate, CobrowseIO.RemoteControlRequestDelegate {
 
     // Custom consent dialog UI
-    private CustomRemoteControlConsentDialogFragment customRemoteControlConsent;
+    private var customRemoteControlConsent: CustomRemoteControlConsentDialogFragment? = null
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
+    override fun onCreate() {
+        super.onCreate()
 
-        CobrowseIO.instance().setDelegate(this);
-        ...
+        CobrowseIO.instance().setDelegate(this)
+        // ...
     }
 
     /*
      * Implement handleRemoteControlRequest(Activity, Session) from CobrowseIO.RemoteControlRequestDelegate
      * to show a custom prompt
      */
-    @Override
-    public void handleRemoteControlRequest(@NonNull Activity activity, @NonNull Session session) {
+    override fun handleRemoteControlRequest(activity: Activity, session: Session) {
         // replace the code below with your own confirmation prompt
-        String tag = "RemoteControlConsentDialog";
-        FragmentManager fragments = activity.getFragmentManager();
-        FragmentTransaction transaction = fragments.beginTransaction();
-        Fragment previous = fragments.findFragmentByTag(tag);
-        if (previous != null) transaction.remove(previous);
-        customRemoteControlConsent = new CustomRemoteControlConsentDialogFragment();
-        customRemoteControlConsent.show(transaction, tag);
-    }  
-
-    @Override
-    public void sessionDidEnd(@NonNull Session session) {
-        if (customRemoteControlConsent != null && customRemoteControlConsent.isAdded()) {
-            customRemoteControlConsent.dismiss();
-            customRemoteControlConsent = null;
+        val tag = "RemoteControlConsentDialog"
+        val fragments = activity.fragmentManager
+        val transaction = fragments.beginTransaction()
+        fragments.findFragmentByTag(tag)?.let { transaction.remove(it) }
+        customRemoteControlConsent = CustomRemoteControlConsentDialogFragment().also {
+            it.show(transaction, tag)
         }
-    }  
+    }
+
+    override fun sessionDidEnd(session: Session) {
+        customRemoteControlConsent?.let {
+            if (it.isAdded) {
+                it.dismiss()
+                customRemoteControlConsent = null
+            }
+        }
+    }
 }
 ```
 
 And an example Fragment for showing the UI:
 
-```java
-public class CustomRemoteControlConsentDialogFragment extends DialogFragment {
+```kotlin
+class CustomRemoteControlConsentDialogFragment : DialogFragment() {
 
-    public CustomRemoteControlConsentDialogFragment() {
-        super();
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        retainInstance = true
     }
 
-    @Override
-    public void onCreate(@NonNull Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setRetainInstance(true);
-    }
-
-
-    @Override
-    public void onDestroyView() {
-        if (getDialog() != null && getRetainInstance()) {
-            getDialog().setDismissMessage(null);
+    override fun onDestroyView() {
+        if (retainInstance) {
+            dialog?.setDismissMessage(null)
         }
-        super.onDestroyView();
+        super.onDestroyView()
     }
 
-    @NonNull
-    @Override
-    public Dialog onCreateDialog(@NonNull Bundle savedInstanceState) {
-        this.setCancelable(false);
-        return new AlertDialog.Builder(getActivity())
-                .setTitle("Allow remote control?")
-                .setMessage("A support agent would like to control this app. Do you accept?")
-                .setPositiveButton("Allow", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int w) {
-                        Session session = CobrowseIO.instance().currentSession();
-                        if (session != null) session.setRemoteControl(Session.RemoteControlState.On, null);
-                    }})
-                .setNegativeButton("Reject", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int w) {
-                        Session session = CobrowseIO.instance().currentSession();
-                        if (session != null) session.setRemoteControl(Session.RemoteControlState.Rejected, null);
-                    }
-                })
-                .create();
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        isCancelable = false
+        return AlertDialog.Builder(activity)
+            .setTitle("Allow remote control?")
+            .setMessage("A support agent would like to control this app. Do you accept?")
+            .setPositiveButton("Allow") { _, _ ->
+                CobrowseIO.instance().currentSession()
+                    ?.setRemoteControl(Session.RemoteControlState.On, null)
+            }
+            .setNegativeButton("Reject") { _, _ ->
+                CobrowseIO.instance().currentSession()
+                    ?.setRemoteControl(Session.RemoteControlState.Rejected, null)
+            }
+            .create()
     }
 }
 ```

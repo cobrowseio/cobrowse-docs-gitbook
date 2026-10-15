@@ -7,7 +7,7 @@ description: Android Native SDK, with support for Compose and native webviews
 ## Installation
 
 {% code title="build.gradle" %}
-```java
+```groovy
 dependencies {
     // ... other dependencies ...
     implementation 'io.cobrowse:cobrowse-sdk-android:3.+'
@@ -17,12 +17,12 @@ dependencies {
 
 Add the following lines to your code which will register this device with the Cobrowse servers so you can connect to it. You could choose to do this on app startup, or when your users visits a support page in your application, or any other time.
 
-```java
-import io.cobrowse.CobrowseIO;
-...
+```kotlin
+import io.cobrowse.CobrowseIO
+// ...
 
-CobrowseIO.instance().license("put your license key here");
-CobrowseIO.instance().start();
+CobrowseIO.instance().license("put your license key here")
+CobrowseIO.instance().start()
 ```
 
 You may also start Cobrowse in your MainActivity or other Activity if necessary. In that case, the SDK will continue to function even as new Activities are being created and destroyed.

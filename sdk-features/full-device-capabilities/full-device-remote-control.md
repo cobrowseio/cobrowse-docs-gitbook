@@ -100,8 +100,8 @@ Open system accessibility settings with:
 
 {% tabs %}
 {% tab title="Android" %}
-```java
-CobrowseAccessibilityService.showSetup(...);
+```kotlin
+CobrowseAccessibilityService.showSetup(...)
 ```
 {% endtab %}
 
@@ -162,10 +162,10 @@ Deep link user to accessibility settings with:
 
 {% tabs %}
 {% tab title="Android" %}
-```java
-Intent intent = new Intent(android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS);
-intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-startActivity(intent);
+```kotlin
+val intent = Intent(android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS)
+intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+startActivity(intent)
 ```
 {% endtab %}
 

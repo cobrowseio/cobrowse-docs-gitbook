@@ -50,14 +50,15 @@ CobrowseIO.instance.customData = @{
 {% endtab %}
 
 {% tab title="Android" %}
-```java
-HashMap<String, String> customData = new HashMap<>();
-customData.put("user_id", "<your_user_id>");
-customData.put("user_name", "<your_user_name>");
-customData.put("user_email", "<your_user_email>");
-customData.put("device_id", "<your_device_id>");
-customData.put("device_name", "<your_device_name>");
-CobrowseIO.instance().customData(customData);
+```kotlin
+val customData = mapOf(
+    "user_id" to "<your_user_id>",
+    "user_name" to "<your_user_name>",
+    "user_email" to "<your_user_email>",
+    "device_id" to "<your_device_id>",
+    "device_name" to "<your_device_name>"
+)
+CobrowseIO.instance().customData(customData)
 ```
 {% endtab %}
 

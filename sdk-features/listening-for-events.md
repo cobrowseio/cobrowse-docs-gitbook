@@ -44,11 +44,10 @@ CobrowseIO.on('session.loaded', session => {
 {% endtab %}
 
 {% tab title="Android" %}
-```java
+```kotlin
 // Must implement CobrowseIO.SessionLoadDelegate
-@Override
-public void sessionDidLoad(@NonNull Session session) {
-    Log.i("App", "A session was loaded " + session);
+override fun sessionDidLoad(session: Session) {
+    Log.i("App", "A session was loaded $session")
 }
 ```
 {% endtab %}
@@ -104,11 +103,10 @@ CobrowseIO.on('session.updated', session => {
 {% endtab %}
 
 {% tab title="Android" %}
-```java
+```kotlin
 // Must implement CobrowseIO.Delegate
-@Override
-public void sessionDidUpdate(@NonNull Session session) {
-    Log.i("App", "A session was updated " + session);
+override fun sessionDidUpdate(session: Session) {
+    Log.i("App", "A session was updated $session")
 }
 ```
 {% endtab %}
@@ -164,11 +162,10 @@ CobrowseIO.on('session.ended', session => {
 {% endtab %}
 
 {% tab title="Android" %}
-```java
+```kotlin
 // Must implement CobrowseIO.Delegate
-@Override
-public void sessionDidEnd(@NonNull Session session) {
-    Log.i("App", "A session was ended " + session);
+override fun sessionDidEnd(session: Session) {
+    Log.i("App", "A session was ended $session")
 }
 ```
 {% endtab %}
@@ -244,8 +241,8 @@ You can only have one delegate instance configured, so the same instance must be
 
 To assign your delegate implementation, you should use:
 
-```java
-CobrowseIO.instance().setDelegate(/* your delegate implementation */);
+```kotlin
+CobrowseIO.instance().setDelegate(/* your delegate implementation */)
 ```
 {% endtab %}
 
@@ -286,16 +283,21 @@ Finally, you can define the methods as required.
 
 Ensure that your `MainApplication` implements the desired delegate (e.g. `CobrowseIO.RedactionDelegate`) and assign the instance of your application to the `CobrowseIOModule.delegate`. For this example we'll use the `RedactionDelegate`:
 
-```java
-// android/app/src/main/java/com/example/MainApplication.java
+```kotlin
+// android/app/src/main/java/com/example/MainApplication.kt
 
 // ...
-import io.cobrowse.reactnative.CobrowseIO;
-import io.cobrowse.reactnative.CobrowseIOModule;
+import io.cobrowse.reactnative.CobrowseIO
+import io.cobrowse.reactnative.CobrowseIOModule
 
-public class MainApplication extends Application implements ReactApplication, CobrowseIO.RedactionDelegate {
-    // ... 
-    CobrowseIOModule.delegate = this;
+class MainApplication : Application(), ReactApplication, CobrowseIO.RedactionDelegate {
+    // ...
+
+    override fun onCreate() {
+        super.onCreate()
+        // ...
+        CobrowseIOModule.delegate = this
+    }
 }
 ```
 

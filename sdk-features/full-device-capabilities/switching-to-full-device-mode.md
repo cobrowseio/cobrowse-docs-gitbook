@@ -32,10 +32,10 @@ session.setFullDevice(.requested)
 {% endtab %}
 
 {% tab title="Android" %}
-```java
-session.setFullDevice(Session.FullDeviceState.Requested, (err, arg) -> {
+```kotlin
+session.setFullDevice(Session.FullDeviceState.Requested, { err, arg ->
     // handle error
-});
+})
 ```
 {% endtab %}
 
@@ -114,11 +114,10 @@ func cobrowseSessionDidLoad(_ session: CBIOSession) {
 {% endtab %}
 
 {% tab title="Android" %}
-```java
-// note: you must have implmented CobrowseIO.SessionLoadDelegate
-@Override
-public void sessionDidLoad(@NonNull Session session) {
-    session.setFullDevice(Session.FullDeviceState.Requested, null);
+```kotlin
+// note: you must have implemented CobrowseIO.SessionLoadDelegate
+override fun sessionDidLoad(session: Session) {
+    session.setFullDevice(Session.FullDeviceState.Requested, null)
 }
 ```
 {% endtab %}
