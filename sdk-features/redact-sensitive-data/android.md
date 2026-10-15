@@ -18,7 +18,7 @@ import io.cobrowse.cobrowseRedacted
 findViewById<View>(R.id.card_number).cobrowseRedacted()
 ```
 
-The extension function is Kotlin only and requires SDK 3.18.0 or later. From Java, use one of the interfaces below instead.
+The extension function is Kotlin only and requires SDK 3.18.0 or later.
 {% endtab %}
 
 {% tab title="Jetpack Compose" %}
