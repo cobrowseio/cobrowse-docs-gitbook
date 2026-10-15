@@ -39,8 +39,8 @@ CobrowseIO.instance().start()
 {% endtab %}
 
 {% tab title="Android" %}
-```java
-CobrowseIO.instance().start();
+```kotlin
+CobrowseIO.instance().start()
 ```
 {% endtab %}
 
@@ -102,8 +102,8 @@ CobrowseIO.instance.registration = NO;
 {% endtab %}
 
 {% tab title="Android" %}
-```java
-CobrowseIO.instance().registration(false);
+```kotlin
+CobrowseIO.instance().registration(false)
 ```
 {% endtab %}
 
@@ -160,8 +160,8 @@ CobrowseIO.instance().stop()
 {% endtab %}
 
 {% tab title="Android" %}
-```java
-CobrowseIO.instance().stop();
+```kotlin
+CobrowseIO.instance().stop()
 ```
 {% endtab %}
 
