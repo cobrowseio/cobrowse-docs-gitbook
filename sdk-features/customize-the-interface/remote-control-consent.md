@@ -209,7 +209,7 @@ class MainApplication : Application(),
     override fun handleRemoteControlRequest(activity: Activity?, session: Session) {
         // replace the code below with your own confirmation prompt
         val tag = "RemoteControlConsentDialog"
-        val fragments = activity?.fragmentManager ?: return
+        val fragments = (activity as? FragmentActivity)?.supportFragmentManager ?: return
         val transaction = fragments.beginTransaction()
         fragments.findFragmentByTag(tag)?.let { transaction.remove(it) }
         customRemoteControlConsent = CustomRemoteControlConsentDialogFragment().also {
@@ -229,21 +229,9 @@ And an example Fragment for showing the UI:
 ```kotlin
 class CustomRemoteControlConsentDialogFragment : DialogFragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        retainInstance = true
-    }
-
-    override fun onDestroyView() {
-        if (retainInstance) {
-            dialog?.setDismissMessage(null)
-        }
-        super.onDestroyView()
-    }
-
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         isCancelable = false
-        return AlertDialog.Builder(activity)
+        return AlertDialog.Builder(requireContext())
             .setTitle("Allow remote control?")
             .setMessage("A support agent would like to control this app. Do you accept?")
             .setPositiveButton("Allow") { _, _ ->
