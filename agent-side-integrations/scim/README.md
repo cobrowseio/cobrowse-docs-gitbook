@@ -91,6 +91,10 @@ Cobrowse supports the following user attributes:
 
 Only `userName` is required to create a user. Any attributes outside of this list are ignored and can be safely removed.
 
+{% hint style="info" %}
+On self-hosted instances, a provisioned user's `userName` must match [`allowed_usernames`](../../enterprise-self-hosting/getting-started/restricting-who-can-sign-in.md) if that is configured, or the provisioning request is rejected.
+{% endhint %}
+
 ### Matching on userName
 
 Use `userName` as the matching attribute and where your provider asks for a matching precedence, set it to 1. This is the unique key we join on, so your identity provider will adopt existing account members by username instead of creating duplicates.

@@ -14,6 +14,10 @@ By default your Cobrowse Enterprise instance supports multiple tenants and new a
 2. Open `/admin/configuration` on your instance while logged in as a superuser. e.g. https://example.com/admin/configuration
 3. Enter a new configuration key called "**account\_creators**". The value should be a regular expression that describes the email addresses that should be allowed to create new accounts. For example `.*@example.com` would allow anyone with an example.com email to create an account.
 
+{% hint style="info" %}
+`account_creators` controls who may create a new account. To restrict who may sign in at all, see [Restricting who can sign in](restricting-who-can-sign-in.md).
+{% endhint %}
+
 ### What do we mean by account?
 
 An account in your Cobrowse instance is a single tenant that groups together devices, users, and cobrowsing sessions. You may choose to use a single account for all your devices, or create separate accounts for dev, test, production etc...
