@@ -218,12 +218,8 @@ class MainApplication : Application(),
     }
 
     override fun sessionDidEnd(session: Session) {
-        customRemoteControlConsent?.let {
-            if (it.isAdded) {
-                it.dismiss()
-                customRemoteControlConsent = null
-            }
-        }
+        customRemoteControlConsent?.takeIf { it.isAdded }?.dismiss()
+        customRemoteControlConsent = null
     }
 }
 ```
