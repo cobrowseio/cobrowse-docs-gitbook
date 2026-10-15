@@ -54,13 +54,13 @@ Text("Redacted label",
 
 Implement the `CobrowseIO.Redacted` interface on any Activity that contains sensitive views. This interface contains one method:
 
-```java
+```kotlin
 // From this method you should return a list of the views you want
 // Cobrowse to redact, for example:
-public List<View> redactedViews() {
-    List<View> redacted = new ArrayList<>();
-    redacted.add(findViewById(R.id.redact_me));
-    return redacted;
+override fun redactedViews(): List<View> {
+    val redacted = mutableListOf<View>()
+    redacted.add(findViewById(R.id.redact_me))
+    return redacted
 }
 ```
 
@@ -68,12 +68,11 @@ public List<View> redactedViews() {
 
 If making changes to your `Activity` classes isn't an option, we also support a delegate style method to allow you to supply this information in one place. Implement `CobrowseIO.RedactionDelegate` interface in your `CobrowseIO.Delegate` class, then you can pass redacted views for a specific `Activity` in a single method:
 
-```java
-@Override
-public List<View> redactedViews(@NonNull Activity activity) {
-    List<View> redacted = new ArrayList<>();
+```kotlin
+override fun redactedViews(activity: Activity): List<View> {
+    val redacted = mutableListOf<View>()
     // Return a list of redacted views for a provided activity
-    return redacted;
+    return redacted
 }
 ```
 
@@ -81,20 +80,20 @@ public List<View> redactedViews(@NonNull Activity activity) {
 
 Your app may show web content that contains elements that you wish to redact. Pass `webviewRedactedViews` an array of CSS selectors that identify the elements to be redacted. These selectors apply to every page loaded in any `WebView` in your app:
 
-```java
-CobrowseIO.instance().webviewRedactedViews(new String[] { ".redacted", ...some other selectors... });
+```kotlin
+CobrowseIO.instance().webviewRedactedViews(arrayOf(".redacted", /* ...some other selectors... */))
 ```
 
 To apply selectors only to pages whose URL matches a glob pattern, pass the pattern as the first argument:
 
-```java
-CobrowseIO.instance().webviewRedactedViews("*/checkout.html", new String[] { ".card-number" });
+```kotlin
+CobrowseIO.instance().webviewRedactedViews("*/checkout.html", arrayOf(".card-number"))
 ```
 
 Elements inside a redacted region can be made visible again with `webviewUnredactedViews`, which takes the same arguments:
 
-```java
-CobrowseIO.instance().webviewUnredactedViews(new String[] { ".order-total" });
+```kotlin
+CobrowseIO.instance().webviewUnredactedViews(arrayOf(".order-total"))
 ```
 
 All of these must be called before `CobrowseIO.instance().start()`.
@@ -113,13 +112,13 @@ The class name is that of the view's runtime class, which may differ from the ta
 
 The `#id` is the resource entry name, so a view with `android:id="@+id/card_number"` is matched by `#card_number`. Ids assigned in code with `setId()` or `View.generateViewId()` have no resource name and cannot be matched.
 
-```java
-CobrowseIO.instance().redactedViews(new String[] {
+```kotlin
+CobrowseIO.instance().redactedViews(arrayOf(
     "Button",
     "TextView#card_number[contentDescription=Hello]",
     "[tag=\"Hello Message\"]",
     "PaymentCardView TextView"
-});
+))
 ```
 {% endtab %}
 
@@ -153,26 +152,43 @@ Visit [https://cobrowse.io/dashboard/settings/redaction](https://cobrowse.io/das
 
 Sometimes you may want to redact everything on the screen, then selectively "unredact" only the parts your support agents should be able to see. This is particularly useful on applications that require a higher privacy standard or where only specific sections of the App should be visible to the agent.
 
-To achieve this, you'll need to follow the delegate implementation and ensure you pass the all your applications root views to the Cobrowse redaction delegate method:
+To achieve this, you'll need to follow the delegate implementation and ensure you pass the all your applications root views to the `CobrowseIO.RedactionDelegate` delegate method:
 
-```java
-@Override
-public List<View> redactedViews(@NonNull Activity activity) {
-    return new ArrayList<View>() {{
-        add(activity.getWindow().getDecorView());
-    }};
+```kotlin
+import io.cobrowse.rootViews
+
+override fun redactedViews(app: Application): List<View> {
+    return app.rootViews()
 }
 ```
 
 Once you've done this, your application root views will be redacted by default and you'll be able to un-redact child components to make them visible to the agents by implementing `CobrowseIO.UnredactionDelegate` in your `CobrowseIO.Delegate` class:
 
-```java
-@Override
-public List<View> unredactedViews(@NonNull Activity activity) {
-    return new ArrayList<View>(){{
-        if (findViewById(R.id.view_to_be_unredacted) != null)
-            add(findViewById(R.id.view_to_be_unredacted));
-    }};
+```kotlin
+override fun unredactedViews(activity: Activity): List<View> {
+    return listOfNotNull(
+        findViewById<View>(R.id.view_to_be_unredacted)
+    )
+}
+```
+
+You can also find and unredact views of certain types, such as web views:
+
+```kotlin
+import androidx.core.view.allViews
+
+override fun unredactedViews(app: Application): List<View> {
+    val unredactedClasses = listOf(
+        androidx.compose.ui.platform.ComposeView::class,
+        io.flutter.embedding.android.FlutterView::class,
+        android.webkit.WebView::class)
+    return app.rootViews()
+        .asSequence()
+        .flatMap { it.allViews }
+        .filter { view ->
+            unredactedClasses.any { it.isInstance(view) }
+        }
+        .toList()
 }
 ```
 
@@ -186,13 +202,11 @@ findViewById<View>(R.id.view_to_be_unredacted).cobrowseUnredacted()
 
 Alternatively, you can implement `CobrowseIO.Unredacted` interface in your `Activity` subclasses:
 
-```java
-@Override
-public List<View> unredactedViews() {
-    return new ArrayList<View>(){{
-        if (findViewById(R.id.view_to_be_unredacted) != null)
-            add(findViewById(R.id.view_to_be_unredacted));
-    }};
+```kotlin
+override fun unredactedViews(): List<View> {
+    return listOfNotNull(
+        findViewById<View>(R.id.view_to_be_unredacted)
+    )
 }
 ```
 
