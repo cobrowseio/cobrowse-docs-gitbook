@@ -189,11 +189,7 @@ UIAlertController *remoteControlPrompt;
 
 {% tab title="Android" %}
 ```kotlin
-import android.app.Activity
-import android.app.Application
 import androidx.fragment.app.FragmentActivity
-import io.cobrowse.CobrowseIO
-import io.cobrowse.Session
 
 class MainApplication : Application(),
     CobrowseIO.Delegate, CobrowseIO.RemoteControlRequestDelegate {
@@ -233,12 +229,7 @@ class MainApplication : Application(),
 And an example Fragment for showing the UI:
 
 ```kotlin
-import android.app.AlertDialog
-import android.app.Dialog
-import android.os.Bundle
 import androidx.fragment.app.DialogFragment
-import io.cobrowse.CobrowseIO
-import io.cobrowse.Session
 
 class CustomRemoteControlConsentDialogFragment : DialogFragment() {
 
