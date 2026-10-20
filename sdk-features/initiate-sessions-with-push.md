@@ -50,26 +50,23 @@ You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM do
 
 Next, whenever your device receives a registration token or push notification from FCM, pass that to the Cobrowse.io SDK, for example:
 
-```java
-package com.example;
+```kotlin
+package com.example
 
-import com.google.firebase.messaging.FirebaseMessagingService;
-import com.google.firebase.messaging.RemoteMessage;
+import com.google.firebase.messaging.FirebaseMessagingService
+import com.google.firebase.messaging.RemoteMessage
 
-import io.cobrowse.CobrowseIO;
+import io.cobrowse.CobrowseIO
 
-public class FirebaseMessaging extends FirebaseMessagingService {
+class FirebaseMessaging : FirebaseMessagingService() {
 
-    @Override
-    public void onMessageReceived(RemoteMessage remoteMessage) {
-        CobrowseIO.instance().onPushNotification(remoteMessage.getData());
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        CobrowseIO.instance().onPushNotification(remoteMessage.data)
     }
 
-    @Override
-    public void onNewToken(String token) {
-        CobrowseIO.instance().setDeviceToken(token);
+    override fun onNewToken(token: String) {
+        CobrowseIO.instance().setDeviceToken(token)
     }
-
 }
 ```
 {% endtab %}
