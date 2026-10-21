@@ -182,6 +182,21 @@ If your app does not use the full device screen capture, you can remove usage of
 You must be using SDK version **v2.32.0** or above.
 {% endhint %}
 
+**Sharing secondary displays**
+
+Full device mode always shares the whole screen of the device's primary display. A secondary display, such as an external monitor, shows only your app's own windows unless you opt in to sharing its whole screen. To opt in, set the `cobrowse_accessibility_display_capture` resource to `true` in any resource file in your app, for example `res/values/bools.xml`:
+
+```xml
+<resources>
+    <bool name="cobrowse_accessibility_display_capture">true</bool>
+</resources>
+```
+
+Secondary displays are shared through the [Accessibility Service](full-device-remote-control.md), so it must be declared in your manifest and enabled on the device. Setting the resource to `true` gives the service the permission to take screenshots, which users are asked to grant when they enable it.
+
+* Requires Android 11 (API 30) or above.
+* Secondary displays are shared only after the full device screen sharing prompt has been accepted. While the Accessibility Service is enabled, the SDK accepts the prompt for the user unless `cobrowse_automatically_accept_media_projection_prompt` is set to `false`, as described in [Full device remote control](full-device-remote-control.md).
+
 **Notes for unattended access**
 
 For unattended full device access, we strongly recommend:
