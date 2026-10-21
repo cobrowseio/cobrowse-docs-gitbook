@@ -34,6 +34,14 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 
 * iOS 15.0, Android API 23 or above.
 
+## Stay up to date
+
+There are a few ways to find out about new releases of the React Native SDK:
+
+* Run `npm outdated cobrowse-sdk-react-native` to check for a newer version.
+* Enable Dependabot or Renovate version updates on your repository to get a pull request for each new version.
+* Subscribe to [cobrowse-sdk-react-native on libraries.io](https://libraries.io/npm/cobrowse-sdk-react-native) to get an email for each new version.
+
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}

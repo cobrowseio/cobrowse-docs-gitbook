@@ -84,6 +84,13 @@ Once you have your app running, navigate to [https://cobrowse.io/dashboard](http
 
 * MacOS 13.0 or later
 
+## Stay up to date
+
+There are a few ways to find out about new releases of the macOS SDK:
+
+* Watch the [cobrowse-sdk-ios-binary](https://github.com/cobrowseio/cobrowse-sdk-ios-binary) repository on GitHub and choose **Custom → Releases** to get an email for each new release. If you use GitHub Enterprise and can't watch repositories outside your organization, subscribe to `https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases.atom` in your RSS reader instead.
+* If you use SPM, choose **File → Packages → Update to Latest Package Versions** in Xcode.
+
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}

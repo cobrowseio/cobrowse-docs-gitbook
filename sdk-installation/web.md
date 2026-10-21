@@ -78,6 +78,16 @@ Our Web SDK has an optional "full-device" mode which enables the user to share t
 
 The specific browser versions supported are Chrome 105+, Firefox 142+, Safari 11+, Opera 120+, Edge 139+
 
+## Stay up to date
+
+If you load the SDK from `https://js.cobrowse.io/CobrowseIO.js`, you'll always get the latest version automatically. Specific versions are available at `https://js.cobrowse.io/cobrowse-sdk-js/vX.Y.Z/CobrowseIO.js` if you need to pin one.
+
+If you install the SDK via NPM, there are a few ways to find out about new releases:
+
+* Subscribe to `https://github.com/cobrowseio/cobrowse-sdk-js-release/releases.atom` in your RSS reader. Release notes are in the [changelog](https://github.com/cobrowseio/cobrowse-sdk-js-release/blob/master/CHANGELOG.md).
+* Run `npm outdated cobrowse-sdk-js` to check for a newer version.
+* Subscribe to [cobrowse-sdk-js on libraries.io](https://libraries.io/npm/cobrowse-sdk-js) to get an email for each new version.
+
 ## **IFrames support**
 
 {% content-ref url="../sdk-features/advanced-features/web/cross-document-iframes.md" %}
