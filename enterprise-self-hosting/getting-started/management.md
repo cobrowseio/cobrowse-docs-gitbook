@@ -51,6 +51,38 @@ helm repo update
 helm upgrade cobrowse cobrowse-enterprise/cobrowse-enterprise
 ```
 
+### Rotating secrets
+
+Some credentials on your instance are owned by you and should be rotated on your own schedule, or immediately if you believe they have been exposed.
+
+**Account JWT keys**
+
+Each account verifies the JWTs your backend signs against the public keys listed under **Public keys** in `/dashboard/settings/integrations` (see [Authentication (JWTs)](../../agent-side-integrations/json-web-tokens-jwts/README.md)). An account can hold several keys at once, so you can rotate without downtime:
+
+1. Generate a new RS256 key pair.
+2. Add the new public key to the account.
+3. Switch your backend to sign with the new private key.
+4. Delete the old public key from the account.
+
+JWTs signed with the old key stop being accepted as soon as it is deleted. Repeat for every account on the instance that uses JWT authentication.
+
+**SSO integrations**
+
+SAML configuration is also per account, under **SAML config** in `/dashboard/settings/integrations` (see [Authentication (SAML 2.0)](../../agent-side-integrations/authentication-saml-2.0.md)). When your identity provider rotates its signing certificate, update the **Certificate** field with the new one. If you have configured a `saml:private_key` for the instance to sign its SAML requests, rotating it also requires updating the certificate registered with your identity provider.
+
+**Instance service account**
+
+The `service_account:public_key` configuration key is the public half of the instance level service account. It verifies JWTs issued with `iss=service`, which is the only issuer allowed to grant superuser tokens. Treat its private key as the most sensitive credential on the instance. To rotate it:
+
+1. Generate a new RS256 key pair.
+2. Replace the value of `service_account:public_key` in the instance configuration. Superusers can do this at `/admin/configuration`, or you can set the `service_account__public_key` environment variable on the **api** service.
+3. Restart the **api** pods or containers. Configuration from the database is only read at startup.
+4. Move any tooling that signs service tokens over to the new private key.
+
+{% hint style="info" %}
+Database, Redis, SMTP and cloud provider credentials are managed by your infrastructure, not by Cobrowse. Rotate them through your deployment configuration and roll the affected services as you would for any other configuration change.
+{% endhint %}
+
 ### Dedicated staging instance
 
 We recommend self-hosting a separate staging instance of our software to develop against and also to test new releases before moving to production. Please contact us if you are interested.
