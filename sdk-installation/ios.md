@@ -97,6 +97,13 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 Our minimum supported iOS version is always the lowest Apple will accept as an App Store submission.
 {% endhint %}
 
+## Stay up to date
+
+There are a few ways to find out about new releases of the iOS SDK:
+
+* Watch the [cobrowse-sdk-ios-binary](https://github.com/cobrowseio/cobrowse-sdk-ios-binary) repository on GitHub and choose **Custom → Releases** to get an email for each new release. If you use GitHub Enterprise and can't watch repositories outside your organization, subscribe to `https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases.atom` in your RSS reader instead.
+* If you use SPM, choose **File → Packages → Update to Latest Package Versions** in Xcode. If you use Pods, run `pod outdated`.
+
 ## Adding custom touch handlers
 
 {% content-ref url="../sdk-features/advanced-features/ios/custom-touch-handling.md" %}

@@ -42,6 +42,14 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 * iOS 15.0 or later
 * Android API version 21 (5.0 Lollipop) or later
 
+## Stay up to date
+
+There are a few ways to find out about new releases of the .NET Mobile SDK:
+
+* Run `dotnet list package --outdated` or check the **Updates** tab in Visual Studio's NuGet Package Manager.
+* Enable Dependabot version updates for the `nuget` ecosystem on your repository to get a pull request for each new version.
+* Subscribe to [CobrowseIO.DotNet on libraries.io](https://libraries.io/nuget/CobrowseIO.DotNet) to get an email for each new version.
+
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}

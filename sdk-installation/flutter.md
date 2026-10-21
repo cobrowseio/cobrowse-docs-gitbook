@@ -53,6 +53,14 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 * iOS 15.0 or later
 * Android API version 24 (7.0 Nougat) or later
 
+## Stay up to date
+
+There are a few ways to find out about new releases of the Flutter SDK:
+
+* Run `flutter pub outdated` to check for a newer version.
+* Enable Dependabot version updates for the `pub` ecosystem on your repository to get a pull request for each new version.
+* Subscribe to [cobrowse_sdk_flutter on libraries.io](https://libraries.io/pub/cobrowse_sdk_flutter) to get an email for each new version.
+
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}

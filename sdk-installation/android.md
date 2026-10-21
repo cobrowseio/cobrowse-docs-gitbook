@@ -45,6 +45,14 @@ Once you have your app running in the Android emulator or on a physical device, 
 Support for Android 4.4 and Android 5.0 will be ended in upcoming versions
 {% endhint %}
 
+## Stay up to date
+
+The `3.+` dependency above picks up the latest 3.x release each time your dependencies are resolved. There are a few ways to find out about new releases:
+
+* Subscribe to `https://github.com/cobrowseio/cobrowse-sdk-android-binary/releases.atom` in your RSS reader. Release notes are in the [changelog](https://github.com/cobrowseio/cobrowse-sdk-android-binary/blob/master/CHANGELOG.md).
+* If you pin a specific version, Android Studio highlights the dependency in your build file when a newer version is available.
+* Subscribe to [cobrowse-sdk-android on libraries.io](https://libraries.io/maven/io.cobrowse:cobrowse-sdk-android) to get an email for each new version.
+
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}

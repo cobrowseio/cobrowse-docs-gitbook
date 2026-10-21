@@ -54,6 +54,14 @@ For Windows 10 HiDPI mode (when display scale is not 100%) client application sh
 </application>
 ```
 
+## Stay up to date
+
+There are a few ways to find out about new releases of the Windows SDK:
+
+* Run `dotnet list package --outdated` or check the **Updates** tab in Visual Studio's NuGet Package Manager.
+* Enable Dependabot version updates for the `nuget` ecosystem on your repository to get a pull request for each new version.
+* Subscribe to [CobrowseIO.Windows on libraries.io](https://libraries.io/nuget/CobrowseIO.Windows) to get an email for each new version.
+
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@cobrowse.io](mailto:hello@cobrowse.io).
 {% endhint %}
