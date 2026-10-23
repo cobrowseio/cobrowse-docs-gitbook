@@ -74,6 +74,10 @@ Now your instance is up and running, you should review the documentation below t
 [configuring-smtp.md](configuring-smtp.md)
 {% endcontent-ref %}
 
+{% content-ref url="configuring-data-retention.md" %}
+[configuring-data-retention.md](configuring-data-retention.md)
+{% endcontent-ref %}
+
 {% content-ref url="management.md" %}
 [management.md](management.md)
 {% endcontent-ref %}
