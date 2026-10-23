@@ -113,6 +113,7 @@
   * [Limiting account creation](enterprise-self-hosting/getting-started/limiting-account-creation.md)
   * [Restricting who can sign in](enterprise-self-hosting/getting-started/restricting-who-can-sign-in.md)
   * [Configuring SMTP](enterprise-self-hosting/getting-started/configuring-smtp.md)
+  * [Configuring data retention](enterprise-self-hosting/getting-started/configuring-data-retention.md)
   * [Managing your deployment](enterprise-self-hosting/getting-started/management.md)
 * [Monitoring your instance](enterprise-self-hosting/monitoring-your-instance/README.md)
   * [Available metrics](enterprise-self-hosting/monitoring-your-instance/available-metrics.md)
