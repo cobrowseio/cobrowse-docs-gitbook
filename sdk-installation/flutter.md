@@ -52,6 +52,7 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 
 * iOS 15.0 or later
 * Android API version 24 (7.0 Nougat) or later
+* Flutter 3.44 or later, with Swift Package Manager enabled (the default) for iOS
 
 ## Stay up to date
 
