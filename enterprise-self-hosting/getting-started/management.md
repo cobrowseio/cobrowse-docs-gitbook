@@ -14,7 +14,7 @@ You are responsible for backing up the database regularly. Cobrowse will not do 
 
 To be notified when a new release is available (for any deployment type), please subscribe to this repo: [https://github.com/cobrowseio/cobrowse-enterprise-helm](https://github.com/cobrowseio/cobrowse-enterprise-helm).
 
-Changelog notes for all releases are available: [https://github.com/cobrowseio/cobrowse-enterprise-helm/releases](https://github.com/cobrowseio/cobrowse-enterprise-helm/releases). Semantic versioning is used and details on breaking changes can be found alongside major version. Security patches are usually released as patch versions and in that case are backward compatible.
+Changelog notes for all releases are available: [https://github.com/cobrowseio/cobrowse-enterprise-helm/releases](https://github.com/cobrowseio/cobrowse-enterprise-helm/releases). Releases follow [Semantic Versioning](https://semver.org). Details on breaking changes are included in the release notes for each major version. Security fixes are usually released as patch versions, which are backward compatible.
 
 #### Testing your deployment
 
