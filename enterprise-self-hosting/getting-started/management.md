@@ -14,7 +14,7 @@ You are responsible for backing up the database regularly. Cobrowse will not do 
 
 To be notified when a new release is available (for any deployment type), please subscribe to this repo: [https://github.com/cobrowseio/cobrowse-enterprise-helm](https://github.com/cobrowseio/cobrowse-enterprise-helm).
 
-Changelog notes for all releases are available: [https://github.com/cobrowseio/cobrowse-enterprise-helm/releases](https://github.com/cobrowseio/cobrowse-enterprise-helm/releases). Image updates usually contain security patches.
+Changelog notes for all releases are available: [https://github.com/cobrowseio/cobrowse-enterprise-helm/releases](https://github.com/cobrowseio/cobrowse-enterprise-helm/releases). Semantic versioning is used and details on breaking changes can be found alongside major version. Security patches are usually released as patch versions and in that case are backward compatible.
 
 #### Testing your deployment
 
@@ -57,7 +57,7 @@ Some credentials on your instance are owned by you and should be rotated on your
 
 **Account JWT keys**
 
-Each account verifies the JWTs your backend signs against the public keys listed under **Public keys** in `/dashboard/settings/integrations` (see [Authentication (JWTs)](../../agent-side-integrations/json-web-tokens-jwts/README.md)). An account can hold several keys at once, so you can rotate without downtime:
+Each account verifies the JWTs your backend signs against the public keys listed under **Public keys** in `/dashboard/settings/integrations` (see [Authentication (JWTs)](../../agent-side-integrations/json-web-tokens-jwts/)). An account can hold several keys at once, so you can rotate without downtime:
 
 1. Generate a new RS256 key pair.
 2. Add the new public key to the account.
