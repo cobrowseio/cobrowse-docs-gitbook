@@ -19,18 +19,8 @@ Add the `CobrowseSDK` package dependency to **your app target**.
 
 {% tab title="Pods" %}
 {% hint style="warning" %}
-[CocoaPods will no longer accept pod updates after 2nd December 2026](https://blog.cocoapods.org/CocoaPods-Specs-Repo/) so Cobrowse cannot publish updates through that platform after this date. We recommend migrating to the Swift Package Manager (SPM) instead.
+[CocoaPods stops accepting updates on 2 December 2026](https://blog.cocoapods.org/CocoaPods-Specs-Repo/), so the iOS SDK is no longer published there. Version 3.19.8 is the last version available as a pod. If you installed the SDK with CocoaPods, remove `pod 'CobrowseIO'` from your Podfile, run `pod install`, then follow the **SPM** tab.
 {% endhint %}
-
-```ruby
-pod 'CobrowseIO', '~>3'
-```
-
-_Don't forget to run `pod repo update` then `pod install` after you've edited your Podfile._
-
-_Make sure you are on the latest stable version of Pods. Run `pod --version` to check!_
-
-**Note:** Depending on your project, you may also need `use_frameworks!` in your Podfile.
 {% endtab %}
 
 {% tab title="Carthage" %}
@@ -102,7 +92,7 @@ Our minimum supported iOS version is always the lowest Apple will accept as an A
 There are a few ways to find out about new releases of the iOS SDK:
 
 * Watch the [cobrowse-sdk-ios-binary](https://github.com/cobrowseio/cobrowse-sdk-ios-binary) repository on GitHub and choose **Custom → Releases** to get an email for each new release. If you use GitHub Enterprise and can't watch repositories outside your organization, subscribe to `https://github.com/cobrowseio/cobrowse-sdk-ios-binary/releases.atom` in your RSS reader instead.
-* If you use SPM, choose **File → Packages → Update to Latest Package Versions** in Xcode. If you use Pods, run `pod outdated`.
+* If you use SPM, choose **File → Packages → Update to Latest Package Versions** in Xcode.
 
 ## Adding custom touch handlers
 

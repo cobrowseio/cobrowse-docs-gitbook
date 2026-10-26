@@ -249,35 +249,41 @@ CobrowseIO.instance().setDelegate(/* your delegate implementation */)
 {% tab title="React Native" %}
 **iOS**
 
-To use the Delegate objects within React Native you can follow the examples below.
+To use the Delegate objects within React Native, make your `AppDelegate` conform to the `RCTCobrowseIODelegate` protocol and assign it to `RCTCobrowseIO.delegate` in `application(_:didFinishLaunchingWithOptions:)`:
 
-{% hint style="info" %}
-**Note:** For newer versions of React Native you may need to to enable **C++ modules** to use the delegate. To do this, you can pass the `-fmodules` or `-fcxx-modules` flags to the "Other C++ Flags" under your project build settings. Remember to do this for any build configuration (ie: Debug, Release and so on).
-{% endhint %}
+```swift
+// ios/YourApp/AppDelegate.swift
 
-Ensure that your `AppDelegate` implements the `RCTCobrowseIODelegate` protocol.
-
-```objectivec
-// ios/Example/AppDelegate.h
 // ...
-#import <RCTCobrowseIO.h>
+import CobrowseSDKReactNative
 
-@interface AppDelegate : UIResponder <
-    UIApplicationDelegate, RCTBridgeDelegate, RCTCobrowseIODelegate
->
-```
-
-You should then instantiate the delegate in the `application: didFinishLaunchingWithOptions:` function as such:
-
-```objectivec
-// ios/Example/AppDelegate.m
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
+  func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+  ) -> Bool {
     // ...
-    RCTCobrowseIO.delegate = self;
+    RCTCobrowseIO.delegate = self
+    // ...
+    return true
+  }
+}
+
+extension AppDelegate: RCTCobrowseIODelegate {
+  func cobrowseRedactedViews(for viewController: UIViewController) -> [UIView] {
+    // Return the native views to redact
+    []
+  }
+
+  func cobrowseUnredactedViews(for viewController: UIViewController) -> [UIView] {
+    // Return the native views to unredact
+    []
+  }
 }
 ```
 
-Finally, you can define the methods as required.
+Both methods are optional, so implement only the ones you need.
 
 **Android**
 
