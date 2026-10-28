@@ -48,7 +48,23 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 {% tab title="Android" %}
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://firebase.google.com/docs/cloud-messaging/android/client](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-Next, whenever your device receives a registration token or push notification from FCM, pass that to the Cobrowse.io SDK, for example:
+FCM identifies devices by their Firebase installation ID. Enable it in your `AndroidManifest.xml`:
+
+```xml
+<application>
+    <meta-data
+        android:name="firebase_messaging_installation_id_enabled"
+        android:value="true" />
+</application>
+```
+
+Register with FCM every time your app starts, for example in `Application.onCreate()`:
+
+```kotlin
+FirebaseMessaging.getInstance().register()
+```
+
+Then pass the installation ID and push notifications from FCM to the Cobrowse.io SDK, for example:
 
 ```kotlin
 package com.example
@@ -58,14 +74,14 @@ import com.google.firebase.messaging.RemoteMessage
 
 import io.cobrowse.CobrowseIO
 
-class FirebaseMessaging : FirebaseMessagingService() {
+class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         CobrowseIO.instance().onPushNotification(remoteMessage.data)
     }
 
-    override fun onNewToken(token: String) {
-        CobrowseIO.instance().setDeviceToken(token)
+    override fun onRegistered(installationId: String) {
+        CobrowseIO.instance().setDeviceToken(installationId)
     }
 }
 ```
@@ -74,26 +90,57 @@ class FirebaseMessaging : FirebaseMessagingService() {
 {% tab title="React Native" %}
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://firebase.google.com/docs/cloud-messaging/android/client](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-Next, whenever your device receives a registration token from FCM, pass that to the Cobrowse.io SDK, for example:
+FCM identifies devices by their Firebase installation ID. Enable it in your `firebase.json`:
+
+```json
+{
+  "react-native": {
+    "messaging_installation_id_enabled": true
+  }
+}
+```
+
+Next, on Android, register with FCM every time your app starts and pass the installation ID to the Cobrowse.io SDK, for example:
 
 ```javascript
+import { Platform } from 'react-native';
+import { getMessaging, onRegistered, register } from '@react-native-firebase/messaging';
 import CobrowseIO from 'cobrowse-sdk-react-native';
 
-CobrowseIO.deviceToken = "<your FCM token>";
+if (Platform.OS === 'android') {
+    onRegistered(getMessaging(), (installationId) => {
+        CobrowseIO.deviceToken = installationId;
+    });
+    register(getMessaging());
+}
 ```
 {% endtab %}
 
 {% tab title="Flutter" %}
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://firebase.google.com/docs/cloud-messaging/android/client](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-Next, whenever your device receives a registration token from FCM, pass that to the Cobrowse.io SDK, for example:
+FCM identifies devices by their Firebase installation ID. Enable it in your `android/app/src/main/AndroidManifest.xml`:
+
+```xml
+<application>
+    <meta-data
+        android:name="firebase_messaging_installation_id_enabled"
+        android:value="true" />
+</application>
+```
+
+Next, register with FCM every time your app starts and pass the installation ID to the Cobrowse.io SDK, for example:
 
 ```dart
 import 'package:cobrowse_sdk_flutter/cobrowseio.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 if (Platform.isAndroid) {
     // Only required on Android, iOS does this automatically
-    CobrowseIO.instance.setDeviceToken('<your FCM token>');
+    FirebaseMessaging.instance.onRegistered.listen((installationId) {
+        CobrowseIO.instance.setDeviceToken(installationId);
+    });
+    FirebaseMessaging.instance.register();
 }
 ```
 {% endtab %}
@@ -121,7 +168,23 @@ public void OnActivated(UIApplication application)
 
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging](https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging).
 
-Next, whenever your device receives a registration token or push notification from FCM, pass that to the Cobrowse.io SDK, for example:
+FCM identifies devices by their Firebase installation ID. Enable it in your `AndroidManifest.xml`:
+
+```xml
+<application>
+    <meta-data
+        android:name="firebase_messaging_installation_id_enabled"
+        android:value="true" />
+</application>
+```
+
+Register with FCM every time your app starts, for example in `MainApplication.OnCreate()`:
+
+```csharp
+Firebase.Messaging.FirebaseMessaging.Instance.Register();
+```
+
+Then pass the installation ID and push notifications from FCM to the Cobrowse.io SDK, for example:
 
 ```csharp
 using System;
@@ -134,13 +197,13 @@ namespace YourAppNamespace
 {
     [Service]
     [IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
-    public class FirebaseMessaging : FirebaseMessagingService
+    public class MyFirebaseMessagingService : FirebaseMessagingService
     {
-        public FirebaseMessaging()
+        public MyFirebaseMessagingService()
         {
         }
 
-        protected FirebaseMessaging(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
+        protected MyFirebaseMessagingService(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
         {
         }
 
@@ -149,9 +212,9 @@ namespace YourAppNamespace
             CobrowseIO.Instance.OnPushNotification(remoteMessage.Data);
         }
 
-        public override void OnNewToken(string token)
+        public override void OnRegistered(string installationId)
         {
-            CobrowseIO.Instance.SetDeviceToken(Application, token);
+            CobrowseIO.Instance.SetDeviceToken(Application, installationId);
         }
     }
 }
