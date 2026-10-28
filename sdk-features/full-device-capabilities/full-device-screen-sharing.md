@@ -192,7 +192,7 @@ Full device mode always shares the whole screen of the device's primary display.
 </resources>
 ```
 
-Secondary displays are shared through the [Accessibility Service](full-device-remote-control.md), so it must be declared in your manifest and enabled on the device. Setting the resource to `true` gives the service the permission to take screenshots, which users are asked to grant when they enable it.
+Secondary displays are shared through the [Accessibility Service](full-device-remote-control.md), so it must be declared in your manifest and enabled on the device. Setting the resource to `true` gives the service the permission to take screenshots, which users are asked to grant when they enable it. See the [Google Play Store requirements](https://support.google.com/googleplay/android-developer/answer/10964491?hl=en) for details on listing your app when using this API.
 
 * Requires Android 11 (API 30) or above.
 * Secondary displays are shared only after the full device screen sharing prompt has been accepted. While the Accessibility Service is enabled, the SDK accepts the prompt for the user unless `cobrowse_automatically_accept_media_projection_prompt` is set to `false`, as described in [Full device remote control](full-device-remote-control.md).
