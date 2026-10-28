@@ -48,7 +48,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 {% tab title="Android" %}
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://firebase.google.com/docs/cloud-messaging/android/client](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-FCM identifies devices by their Firebase installation ID. This requires Firebase Messaging 25.1.0 (Firebase BoM 34.15.0) or later. Enable it in your `AndroidManifest.xml`:
+FCM identifies devices by their Firebase installation ID. Enable it in your `AndroidManifest.xml`:
 
 ```xml
 <application>
@@ -85,16 +85,12 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     }
 }
 ```
-
-{% hint style="info" %}
-On older Firebase Messaging versions, pass the FCM registration token instead: from `FirebaseMessaging.getInstance().getToken()` every time your app starts, and from `onNewToken()` when it changes.
-{% endhint %}
 {% endtab %}
 
 {% tab title="React Native" %}
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://firebase.google.com/docs/cloud-messaging/android/client](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-FCM identifies devices by their Firebase installation ID. This requires React Native Firebase 27.0.0 or later. Enable it in your `firebase.json`:
+FCM identifies devices by their Firebase installation ID. Enable it in your `firebase.json`:
 
 ```json
 {
@@ -123,7 +119,7 @@ if (Platform.OS === 'android') {
 {% tab title="Flutter" %}
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://firebase.google.com/docs/cloud-messaging/android/client](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-FCM identifies devices by their Firebase installation ID. This requires `firebase_messaging` 17.0.0 or later. Enable it in your `android/app/src/main/AndroidManifest.xml`:
+FCM identifies devices by their Firebase installation ID. Enable it in your `android/app/src/main/AndroidManifest.xml`:
 
 ```xml
 <application>
@@ -172,7 +168,7 @@ public void OnActivated(UIApplication application)
 
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging](https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging).
 
-FCM identifies devices by their Firebase installation ID. This requires `Xamarin.Firebase.Messaging` 125.1.0 or later. Enable it in your `AndroidManifest.xml`:
+FCM identifies devices by their Firebase installation ID. Enable it in your `AndroidManifest.xml`:
 
 ```xml
 <application>
