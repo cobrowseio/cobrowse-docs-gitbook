@@ -8,7 +8,7 @@ description: >-
 
 The `instance_policy` config value is a policy applied to every API request on your instance. It can only take access away: whatever a user's role or a JWT allows, the instance policy is intersected with it, so nothing can exceed the instance policy.
 
-Use it to enforce a rule across every account on the instance, for example turning off access to recordings, or making audit events read-only.
+Use it to enforce a rule across every account on the instance, for example turning off access to recordings, or stopping account settings from being changed.
 
 It uses the same format as [JWT policies](../../agent-side-integrations/json-web-tokens-jwts/jwt-policies.md).
 
@@ -39,13 +39,13 @@ Deny access to session recordings on every account:
 }
 ```
 
-Allow audit events to be read, but never changed or deleted:
+Allow account settings to be viewed, but not changed:
 
 ```json
 {
   "version": 3,
   "*": {},
-  "auditevents": { "permissions": ["read"] }
+  "features": { "permissions": ["read"] }
 }
 ```
 
