@@ -90,6 +90,7 @@
 * [User provisioning (SCIM)](agent-side-integrations/scim/README.md)
   * [Microsoft Entra](agent-side-integrations/scim/microsoft-entra.md)
   * [Okta](agent-side-integrations/scim/okta.md)
+* [Account metrics](agent-side-integrations/account-metrics.md)
 * [IFrame embeds](agent-side-integrations/custom-iframe-embeds.md)
 
 ## Enterprise self-hosting
