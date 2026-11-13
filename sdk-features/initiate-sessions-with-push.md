@@ -111,57 +111,26 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 {% tab title="React Native" %}
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://firebase.google.com/docs/cloud-messaging/android/client](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-FCM identifies devices by their Firebase installation ID. Enable it in your `firebase.json`:
-
-```json
-{
-  "react-native": {
-    "messaging_installation_id_enabled": true
-  }
-}
-```
-
-Next, on Android, register with FCM every time your app starts and pass the installation ID to the Cobrowse.io SDK, for example:
+Next, whenever your device receives a registration token from FCM, pass that to the Cobrowse.io SDK, for example:
 
 ```javascript
-import { Platform } from 'react-native';
-import { getMessaging, onRegistered, register } from '@react-native-firebase/messaging';
 import CobrowseIO from 'cobrowse-sdk-react-native';
 
-if (Platform.OS === 'android') {
-    onRegistered(getMessaging(), (installationId) => {
-        CobrowseIO.deviceToken = installationId;
-    });
-    register(getMessaging());
-}
+CobrowseIO.deviceToken = "<your FCM token>";
 ```
 {% endtab %}
 
 {% tab title="Flutter" %}
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://firebase.google.com/docs/cloud-messaging/android/client](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-FCM identifies devices by their Firebase installation ID. Enable it in your `android/app/src/main/AndroidManifest.xml`:
-
-```xml
-<application>
-    <meta-data
-        android:name="firebase_messaging_installation_id_enabled"
-        android:value="true" />
-</application>
-```
-
-Next, register with FCM every time your app starts and pass the installation ID to the Cobrowse.io SDK, for example:
+Next, whenever your device receives a registration token from FCM, pass that to the Cobrowse.io SDK, for example:
 
 ```dart
 import 'package:cobrowse_sdk_flutter/cobrowseio.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 
 if (Platform.isAndroid) {
     // Only required on Android, iOS does this automatically
-    FirebaseMessaging.instance.onRegistered.listen((installationId) {
-        CobrowseIO.instance.setDeviceToken(installationId);
-    });
-    FirebaseMessaging.instance.register();
+    CobrowseIO.instance.setDeviceToken('<your FCM token>');
 }
 ```
 {% endtab %}
@@ -189,23 +158,7 @@ public void OnActivated(UIApplication application)
 
 You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging](https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging).
 
-FCM identifies devices by their Firebase installation ID. Enable it in your `AndroidManifest.xml`:
-
-```xml
-<application>
-    <meta-data
-        android:name="firebase_messaging_installation_id_enabled"
-        android:value="true" />
-</application>
-```
-
-Register with FCM every time your app starts, for example in `MainApplication.OnCreate()`:
-
-```csharp
-Firebase.Messaging.FirebaseMessaging.Instance.Register();
-```
-
-Then pass the installation ID and push notifications from FCM to the Cobrowse.io SDK, for example:
+Next, whenever your device receives a registration token or push notification from FCM, pass that to the Cobrowse.io SDK, for example:
 
 ```csharp
 using System;
@@ -218,13 +171,13 @@ namespace YourAppNamespace
 {
     [Service]
     [IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
-    public class MyFirebaseMessagingService : FirebaseMessagingService
+    public class FirebaseMessaging : FirebaseMessagingService
     {
-        public MyFirebaseMessagingService()
+        public FirebaseMessaging()
         {
         }
 
-        protected MyFirebaseMessagingService(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
+        protected FirebaseMessaging(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
         {
         }
 
@@ -233,9 +186,9 @@ namespace YourAppNamespace
             CobrowseIO.Instance.OnPushNotification(remoteMessage.Data);
         }
 
-        public override void OnRegistered(string installationId)
+        public override void OnNewToken(string token)
         {
-            CobrowseIO.Instance.SetDeviceToken(Application, installationId);
+            CobrowseIO.Instance.SetDeviceToken(Application, token);
         }
     }
 }
