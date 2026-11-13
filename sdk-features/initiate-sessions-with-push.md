@@ -26,23 +26,43 @@ A few changes to native code as described below.
 
 {% tabs %}
 {% tab title="iOS" %}
-You first need to `registerForRemoteNotifications()` at a location that is right for your application.
+You must first add Firebase Cloud Messaging (FCM) to your app. Please see FCM documentation at [https://firebase.google.com/docs/cloud-messaging/ios/client](https://firebase.google.com/docs/cloud-messaging/ios/client).
+
+FCM identifies devices by their Firebase installation ID. Enable it in your `Info.plist`:
+
+```xml
+<key>FirebaseMessagingInstallationIdEnabled</key>
+<true/>
+```
+
+You then need to `registerForRemoteNotifications()` at a location that is right for your application. Firebase maps the APNs token to the installation ID for you, unless you have disabled its method swizzling, in which case pass the token to `Messaging.messaging().apnsToken` yourself.
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    FirebaseApp.configure()
+    Messaging.messaging().delegate = self
     application.registerForRemoteNotifications()
+    return true
 }
 ```
 
-Once requested the `didRegisterForRemoteNotificationsWithDeviceToken` delegate method will be called. You must then pass this token to Cobrowse using the `CobrowseIO.setDeviceToken` method.
-
-This device will now be associated with the push token within the Cobrowse dashboard.
+Firebase Messaging registers with FCM every time your app starts and hands the installation ID to its delegate. Pass it and push notifications from FCM to the Cobrowse.io SDK, for example:
 
 ```swift
-func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    CobrowseIO.setDeviceToken(deviceToken)
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistration installationId: String?) {
+        guard let installationId else { return }
+        CobrowseIO.setDeviceToken(.firebaseInstallationId(installationId))
+    }
+}
+
+func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) async -> UIBackgroundFetchResult {
+    CobrowseIO.onPushNotification(userInfo)
+    return .noData
 }
 ```
+
+This device will now be associated with the push token within the Cobrowse dashboard.
 {% endtab %}
 
 {% tab title="Android" %}
@@ -73,6 +93,7 @@ import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
 import io.cobrowse.CobrowseIO
+import io.cobrowse.PushToken
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
@@ -81,7 +102,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     }
 
     override fun onRegistered(installationId: String) {
-        CobrowseIO.instance().setDeviceToken(installationId)
+        CobrowseIO.instance().setDeviceToken(PushToken.firebaseInstallationId(installationId))
     }
 }
 ```
