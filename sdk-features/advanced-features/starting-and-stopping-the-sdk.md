@@ -84,7 +84,7 @@ See a full example with the Web SDK in [https://github.com/cobrowseio/cobrowse-s
 
 ### Automatic registration
 
-By default, when the SDK starts it will register the device to your account and share its connectivity state. This provides the dashboard with a list of devices which are online and ready to connect.
+By default, when the SDK starts it will register the device to your account and share its connectivity state. This provides the dashboard with a list of devices which are online and ready to connect. The SDK also reports the state of this connection to your app, see [Device connection state](../device-connection-state.md).
 
 If you don't need to see a list of devices in your dashboard, e.g. your sessions start only using [6-digit codes](../customize-the-interface/customize-6-digit-code-screen.md), then you can stop the SDK from registering the device and its connectivity status by setting the registration option with a value of `false`.
 

@@ -239,6 +239,8 @@ You can only have one delegate instance configured, so the same instance must be
 
 `CobrowseIO.UnredactionDelegate` - for passing unredacted views to the SDK
 
+`CobrowseIO.DeviceConnectionStateDelegate` - for changes to the [device's connection to Cobrowse](device-connection-state.md)
+
 To assign your delegate implementation, you should use:
 
 ```kotlin
