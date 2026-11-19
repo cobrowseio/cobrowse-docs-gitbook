@@ -19,13 +19,8 @@ Add the `CobrowseSDK` package dependency to **your app target**.
 
 {% tab title="Pods" %}
 {% hint style="warning" %}
-[CocoaPods will no longer accept pod updates after 2nd December 2026](https://blog.cocoapods.org/CocoaPods-Specs-Repo/) so Cobrowse cannot publish updates through that platform after this date. We recommend migrating to the Swift Package Manager (SPM) instead.
+[CocoaPods stops accepting updates on 2 December 2026](https://blog.cocoapods.org/CocoaPods-Specs-Repo/), so the macOS SDK is no longer published there. Version 3.19.8 is the last version available as a pod. If you installed the SDK with CocoaPods, remove `pod 'CobrowseIO'` from your Podfile, run `pod install`, then follow the **SPM** tab.
 {% endhint %}
-
-<pre class="language-ruby"><code class="lang-ruby"><strong>pod 'CobrowseIO', '~>3'
-</strong></code></pre>
-
-_Don't forget to run `pod repo update` then `pod install` after you've edited your Podfile._
 {% endtab %}
 
 {% tab title="Carthage" %}
