@@ -68,21 +68,6 @@ With your broadcast extension target selected click the `+` button under **Frame
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Adding CobrwseSDK via SPM to the extension target</p></figcaption></figure>
 {% endtab %}
 
-{% tab title="Pods" %}
-**Add the new target to your Podfile**
-
-Add the following to your Podfile, replacing the target name with you own extensions target name:
-
-```ruby
-# Replace YourExtensionTargetName with your extension target name
-target 'YourExtensionTargetName' do
-    pod 'CobrowseIO', '~>3'
-end
-```
-
-_Make sure to run `pod install` after updating your Podfile_
-{% endtab %}
-
 {% tab title="Carthage" %}
 You can now add the same `CobrowseSDK.xcframework` to your broadcast extension target just as you did to your main app target.
 {% endtab %}
