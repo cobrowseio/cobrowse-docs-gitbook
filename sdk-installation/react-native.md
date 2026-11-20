@@ -8,10 +8,10 @@ description: React Native SDK
 
 ```bash
 npm install --save cobrowse-sdk-react-native
-(cd ios && pod install)
+(cd ios && npx react-native spm)
 ```
 
-**Note:** For older versions of React Native, you may need to run `react-native link` before running `pod install`. Depending on your project, you may also need `use_frameworks!` in your Podfile. If using Pods causes a problem for your project, you may use Carthage to manage your Cobrowse.io dependencies, or you may also add the frameworks to your project by hand. More info at [iOS SDK Installation](ios.md).
+On iOS, the SDK is linked with Swift Package Manager (SPM) through React Native's SPM integration, which requires React Native 0.87 or later.
 
 ### Add your License Key
 
@@ -33,6 +33,7 @@ Once you have your app running in the iOS Simulator or on a physical device, nav
 ## Requirements
 
 * iOS 15.0, Android API 23 or above.
+* React Native 0.87 or later for version 4.0 and above.
 
 ## Stay up to date
 
