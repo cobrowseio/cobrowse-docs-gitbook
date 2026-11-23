@@ -35,7 +35,7 @@ docker run -e COBROWSE_E2E_SUPERUSER_TOKEN=<super_user_token>                   
 Our command line utility allows you to upgrade your deployment, you can use it like this:
 
 ```
-npx cobrowse-enterprise upgrade <directory>
+npx cobrowse-enterprise@latest upgrade <directory>
 ```
 
 One you have done that, you can update your deployment via Terraform or Docker Compose as in the initial deployment.
